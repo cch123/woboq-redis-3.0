@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='147' type='lua_Integer lua_tointeger(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='323' ll='334' macro='1' type='lua_Integer lua_tointeger(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='190' u='c' c='luaL_checkinteger'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='489' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/ldblib.c' l='105' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='329' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/liolib.c' l='348' u='c' c='g_read'/>
+<use f='redis/deps/lua/src/loslib.c' l='113' u='c' c='getfield'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='557' u='c' c='gmatch_aux'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='357' u='c' c='mp_encode_lua_integer'/>

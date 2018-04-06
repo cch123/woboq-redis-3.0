@@ -1,0 +1,5 @@
+<def f='redis/src/config.c' l='609' ll='982' type='void configSetCommand(redisClient * c)'/>
+<use f='redis/src/config.c' l='1898' u='c' c='configCommand'/>
+<doc f='redis/src/config.c' l='605'>/*-----------------------------------------------------------------------------
+ * CONFIG SET implementation
+ *----------------------------------------------------------------------------*/</doc>

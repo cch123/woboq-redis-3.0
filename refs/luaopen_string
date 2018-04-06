@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lualib.h' l='31' type='int luaopen_string(lua_State * L)'/>
+<use f='redis/deps/lua/src/linit.c' l='23' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='23' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='23' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='23' u='r'/>
+<def f='redis/deps/lua/src/lstrlib.c' l='862' ll='870' macro='1' type='int luaopen_string(lua_State * L)'/>
+<use f='redis/src/scripting.c' l='582' u='r' c='luaLoadLibraries'/>

@@ -1,0 +1,8 @@
+<def f='redis/src/adlist.h' l='47' ll='54'/>
+<size>48</size>
+<mbr r='list::head' o='0' t='listNode *'/>
+<mbr r='list::tail' o='64' t='listNode *'/>
+<mbr r='list::dup' o='128' t='void *(*)(void *)'/>
+<mbr r='list::free' o='192' t='void (*)(void *)'/>
+<mbr r='list::match' o='256' t='int (*)(void *, void *)'/>
+<mbr r='list::len' o='320' t='unsigned long'/>

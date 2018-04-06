@@ -1,0 +1,6 @@
+<dec f='redis/src/config.c' l='1248' type='void dictListDestructor(void * privdata, void * val)'/>
+<use f='redis/src/config.c' l='1260'/>
+<use f='redis/src/config.c' l='1260'/>
+<def f='redis/src/redis.c' l='420' ll='424' type='void dictListDestructor(void * privdata, void * val)'/>
+<use f='redis/src/redis.c' l='603'/>
+<use f='redis/src/redis.c' l='603'/>

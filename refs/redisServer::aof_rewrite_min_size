@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='741' type='off_t'/>
+<offset>12800</offset>
+<doc f='redis/src/redis.h' l='741'>/* the AOF file is at least N bytes. */</doc>
+<use f='redis/src/config.c' l='367' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='733' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1037' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1849' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1205' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1429' u='w' c='initServerConfig'/>

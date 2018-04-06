@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1173' type='char * replicationGetSlaveName(redisClient * c)'/>
+<use f='redis/src/networking.c' l='709' u='c' c='freeClient'/>
+<use f='redis/src/rdb.c' l='1352' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1359' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<def f='redis/src/replication.c' l='51' ll='67' type='char * replicationGetSlaveName(redisClient * c)'/>
+<use f='redis/src/replication.c' l='374' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='387' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='390' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='415' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='484' u='c' c='syncCommand'/>
+<use f='redis/src/replication.c' l='673' u='c' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='769' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='2028' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='47'>/* Return the pointer to a string representing the slave ip:listening_port
+ * pair. Mostly useful for logging, since we want to log a slave using its
+ * IP address and it&apos;s listening port which is more clear for the user, for
+ * example: &quot;Closing connection with slave 10.1.2.3:6380&quot;. */</doc>

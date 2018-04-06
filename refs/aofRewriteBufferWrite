@@ -1,0 +1,5 @@
+<def f='redis/src/aof.c' l='172' ll='192' type='ssize_t aofRewriteBufferWrite(int fd)'/>
+<use f='redis/src/aof.c' l='1386' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/aof.c' l='169'>/* Write the buffer (possibly composed of multiple blocks) into the specified
+ * fd. If a short write or any other error happens -1 is returned,
+ * otherwise the number of bytes written is returned. */</doc>

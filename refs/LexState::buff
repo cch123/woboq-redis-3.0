@@ -1,0 +1,24 @@
+<dec f='redis/deps/lua/src/llex.h' l='64' type='Mbuffer *'/>
+<offset>576</offset>
+<doc f='redis/deps/lua/src/llex.h' l='64'>/* buffer for tokens */</doc>
+<use f='redis/deps/lua/src/llex.c' l='52' u='r' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='95' u='r' c='txtToken'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='r' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='r' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='r' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='r' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='172' u='r' c='buffreplace'/>
+<use f='redis/deps/lua/src/llex.c' l='173' u='r' c='buffreplace'/>
+<use f='redis/deps/lua/src/llex.c' l='185' u='r' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='205' u='r' c='read_numeral'/>
+<use f='redis/deps/lua/src/llex.c' l='263' u='r' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='273' u='r' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='274' u='r' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='329' u='r' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='330' u='r' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='335' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='350' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='353' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='428' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='429' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='386' u='w' c='luaY_parser'/>

@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='292' type='lu_byte'/>
+<offset>80</offset>
+<use f='redis/deps/lua/src/ldo.c' l='273' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/lfunc.c' l='36' u='w' c='luaF_newLclosure'/>

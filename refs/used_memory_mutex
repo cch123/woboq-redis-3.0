@@ -1,0 +1,1 @@
+<def f='redis/src/zmalloc.c' l='113' type='pthread_mutex_t'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1467' type='void zlexcountCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='187' u='r'/>
+<use f='redis/src/redis.c' l='187' u='r'/>
+<use f='redis/src/redis.c' l='187' u='r'/>
+<use f='redis/src/redis.c' l='187' u='r'/>
+<def f='redis/src/t_zset.c' l='2474' ll='2551' type='void zlexcountCommand(redisClient * c)'/>

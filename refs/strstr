@@ -1,0 +1,15 @@
+<dec f='include/string.h' l='337' type='char * strstr(const char * __haystack, const char * __needle)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='346' u='c' c='luaL_gsub'/>
+<use f='redis/src/debug.c' l='747' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='748' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='749' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='750' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='751' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/latency.c' l='74' u='c' c='THPIsEnabled'/>
+<use f='redis/src/redis-cli.c' l='1837' u='c' c='getInfoField'/>
+<use f='redis/src/redis.c' l='3525' u='c' c='checkForSentinelMode'/>
+<use f='redis/src/sentinel.c' l='1820' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1831' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1833' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2224' u='c' c='sentinelReceiveHelloMessages'/>
+<use f='redis/src/sort.c' l='90' u='c' c='lookupKeyByPattern'/>

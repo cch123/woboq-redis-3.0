@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='153' type='double pow(double __x, double __y)'/>
+<use f='redis/deps/lua/src/lcode.c' l='642' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='110' u='c' c='math_pow'/>
+<use f='redis/deps/lua/src/lvm.c' l='330' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='495' macro='1' u='c'/>
+<use f='redis/src/redis-cli.c' l='2024' u='c' c='powerLawRand'/>
+<use f='redis/src/redis-cli.c' l='2025' u='c' c='powerLawRand'/>
+<use f='redis/src/redis-cli.c' l='2025' u='c' c='powerLawRand'/>
+<use f='redis/src/redis-cli.c' l='2025' u='c' c='powerLawRand'/>

@@ -1,0 +1,37 @@
+<dec f='redis/deps/lua/src/lua.h' l='160' type='void lua_pushnil(lua_State * L)'/>
+<def f='redis/deps/lua/src/lapi.c' l='421' ll='426' macro='1' type='void lua_pushnil(lua_State * L)'/>
+<use f='redis/deps/lua/src/lapi.c' l='456' u='c' c='lua_pushstring'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='76' u='c' c='luaB_tonumber'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='96' u='c' c='luaB_getmetatable'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='232' u='c' c='luaB_next'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='242' u='c' c='luaB_pairs'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='270' u='c' c='load_aux'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='600' u='c' c='luaB_corunning'/>
+<use f='redis/deps/lua/src/ldblib.c' l='31' u='c' c='db_getmetatable'/>
+<use f='redis/deps/lua/src/ldblib.c' l='106' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='159' u='c' c='db_getlocal'/>
+<use f='redis/deps/lua/src/ldblib.c' l='218' u='c' c='hookf'/>
+<use f='redis/deps/lua/src/liolib.c' l='37' u='c' c='pushresult'/>
+<use f='redis/deps/lua/src/liolib.c' l='63' u='c' c='io_type'/>
+<use f='redis/deps/lua/src/liolib.c' l='99' u='c' c='io_noclose'/>
+<use f='redis/deps/lua/src/liolib.c' l='280' u='c' c='read_number'/>
+<use f='redis/deps/lua/src/liolib.c' l='375' u='c' c='g_read'/>
+<use f='redis/deps/lua/src/loadlib.c' l='316' u='c' c='ll_loadlib'/>
+<use f='redis/deps/lua/src/loslib.c' l='30' u='c' c='os_pushresult'/>
+<use f='redis/deps/lua/src/loslib.c' l='135' u='c' c='os_date'/>
+<use f='redis/deps/lua/src/loslib.c' l='188' u='c' c='os_time'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='533' u='c' c='str_find_aux'/>
+<use f='redis/deps/lua/src/ltablib.c' l='42' u='c' c='foreach'/>
+<use f='redis/deps/lua/src/ltablib.c' l='59' u='c' c='maxn'/>
+<use f='redis/deps/lua/src/ltablib.c' l='129' u='c' c='tremove'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='214' u='c' c='json_arg_init'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='502' u='c' c='lua_array_length'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='626' u='c' c='json_append_object'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1333' u='c' c='json_protect_conversion'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='401' u='c' c='mp_encode_lua_table_as_map'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='409' u='c' c='mp_encode_lua_table_as_map'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='434' u='c' c='table_is_an_array'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='657' u='c' c='mp_decode_to_lua_type'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='865' u='c' c='mp_safe'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='213' u='c' c='b_pack'/>
+<use f='redis/src/scripting.c' l='599' u='c' c='luaRemoveUnsupportedFunctions'/>

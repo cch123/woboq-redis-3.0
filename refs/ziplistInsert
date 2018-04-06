@@ -1,0 +1,9 @@
+<dec f='redis/src/ziplist.h' l='40' type='unsigned char * ziplistInsert(unsigned char * zl, unsigned char * p, unsigned char * s, unsigned int slen)'/>
+<use f='redis/src/t_hash.c' l='193' u='c' c='hashTypeSet'/>
+<use f='redis/src/t_list.c' l='213' u='c' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='216' u='c' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='469' u='c' c='lsetCommand'/>
+<use f='redis/src/t_zset.c' l='963' u='c' c='zzlInsertAt'/>
+<use f='redis/src/t_zset.c' l='968' u='c' c='zzlInsertAt'/>
+<def f='redis/src/ziplist.c' l='766' ll='768' type='unsigned char * ziplistInsert(unsigned char * zl, unsigned char * p, unsigned char * s, unsigned int slen)'/>
+<doc f='redis/src/ziplist.c' l='765'>/* Insert an entry at &quot;p&quot;. */</doc>

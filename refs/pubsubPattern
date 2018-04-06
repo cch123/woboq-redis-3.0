@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='909' ll='912'/>
+<size>16</size>
+<mbr r='pubsubPattern::client' o='0' t='redisClient *'/>
+<mbr r='pubsubPattern::pattern' o='64' t='robj *'/>

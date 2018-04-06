@@ -1,0 +1,6 @@
+<def f='redis/src/redis.c' l='943' ll='963' type='int clientsCronResizeQueryBuffer(redisClient * c)'/>
+<use f='redis/src/redis.c' l='990' u='c' c='clientsCron'/>
+<doc f='redis/src/redis.c' l='939'>/* The client query buffer is an sds.c string that can end with a lot of
+ * free space not used, this function reclaims space if needed.
+ *
+ * The function always returns 0 as it never terminates the client. */</doc>

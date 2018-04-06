@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='1976' ll='1992' type='void clusterWriteHandler(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/cluster.c' l='2068' u='r' c='clusterSendMessage'/>
+<doc f='redis/src/cluster.c' l='1973'>/* Send data. This is handled using a trivial send buffer that gets
+ * consumed by write(). We don&apos;t try to optimize this for speed too much
+ * as this is a very low traffic channel. */</doc>

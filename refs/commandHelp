@@ -1,0 +1,12 @@
+<def f='redis/src/help.h' l='21' ll='27'/>
+<def f='redis/src/help.h' l='21' ll='828' type='struct commandHelp [160]'/>
+<use f='redis/src/redis-cli.c' l='217' u='r' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='236' u='m' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='237' u='m' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='239' u='a' c='cliInitHelp'/>
+<size>40</size>
+<mbr r='commandHelp::name' o='0' t='char *'/>
+<mbr r='commandHelp::params' o='64' t='char *'/>
+<mbr r='commandHelp::summary' o='128' t='char *'/>
+<mbr r='commandHelp::group' o='192' t='int'/>
+<mbr r='commandHelp::since' o='256' t='char *'/>

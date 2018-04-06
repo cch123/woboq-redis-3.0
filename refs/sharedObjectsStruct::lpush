@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='575' type='robj *'/>
+<offset>2560</offset>
+<use f='redis/src/redis.c' l='1378' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_list.c' l='922' u='r' c='serveClientBlockedOnList'/>

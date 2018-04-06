@@ -1,0 +1,19 @@
+<def f='redis/src/sentinel.c' l='1069' ll='1087' type='int removeMatchingSentinelsFromMaster(sentinelRedisInstance * master, char * ip, int port, char * runid)'/>
+<use f='redis/src/sentinel.c' l='2137' u='c' c='sentinelProcessHelloMessage'/>
+<doc f='redis/src/sentinel.c' l='1052'>/* This function removes all the instances found in the dictionary of
+ * sentinels in the specified &apos;master&apos;, having either:
+ *
+ * 1) The same ip/port as specified.
+ * 2) The same runid.
+ *
+ * &quot;1&quot; and &quot;2&quot; don&apos;t need to verify at the same time, just one is enough.
+ * If &quot;runid&quot; is NULL it is not checked.
+ * Similarly if &quot;ip&quot; is NULL it is not checked.
+ *
+ * This function is useful because every time we add a new Sentinel into
+ * a master&apos;s Sentinels dictionary, we want to be very sure about not
+ * having duplicated instances for any reason. This is important because
+ * other sentinels are needed to reach ODOWN quorum, and later to get
+ * voted for a given configuration epoch in order to perform the failover.
+ *
+ * The function returns the number of Sentinels removed. */</doc>

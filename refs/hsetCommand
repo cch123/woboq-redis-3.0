@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1484' type='void hsetCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='194' u='r'/>
+<use f='redis/src/redis.c' l='194' u='r'/>
+<use f='redis/src/redis.c' l='194' u='r'/>
+<use f='redis/src/redis.c' l='194' u='r'/>
+<def f='redis/src/t_hash.c' l='464' ll='476' type='void hsetCommand(redisClient * c)'/>
+<doc f='redis/src/t_hash.c' l='460'>/*-----------------------------------------------------------------------------
+ * Hash type commands
+ *----------------------------------------------------------------------------*/</doc>

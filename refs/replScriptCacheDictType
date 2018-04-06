@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1005' type='dictType'/>
+<def f='redis/src/redis.c' l='642' ll='649' type='dictType'/>
+<doc f='redis/src/redis.c' l='639'>/* Replication cached script dict (server.repl_scriptcache_dict).
+ * Keys are sds SHA1 strings, while values are not used at all in the current
+ * implementation. */</doc>
+<use f='redis/src/replication.c' l='1736' u='a' c='replicationScriptCacheInit'/>

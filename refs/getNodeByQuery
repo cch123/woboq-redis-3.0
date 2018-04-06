@@ -1,0 +1,34 @@
+<dec f='redis/src/cluster.h' l='252' type='clusterNode * getNodeByQuery(redisClient * c, struct redisCommand * cmd, robj ** argv, int argc, int * hashslot, int * ask)'/>
+<def f='redis/src/cluster.c' l='4775' ll='4927' type='clusterNode * getNodeByQuery(redisClient * c, struct redisCommand * cmd, robj ** argv, int argc, int * hashslot, int * error_code)'/>
+<doc f='redis/src/cluster.c' l='4746'>/* Return the pointer to the cluster node that is able to serve the command.
+ * For the function to succeed the command should only target either:
+ *
+ * 1) A single key (even multiple times like LPOPRPUSH mylist mylist).
+ * 2) Multiple keys in the same hash slot, while the slot is stable (no
+ *    resharding in progress).
+ *
+ * On success the function returns the node that is able to serve the request.
+ * If the node is not &apos;myself&apos; a redirection must be perfomed. The kind of
+ * redirection is specified setting the integer passed by reference
+ * &apos;error_code&apos;, which will be set to REDIS_CLUSTER_REDIR_ASK or
+ * REDIS_CLUSTER_REDIR_MOVED.
+ *
+ * When the node is &apos;myself&apos; &apos;error_code&apos; is set to REDIS_CLUSTER_REDIR_NONE.
+ *
+ * If the command fails NULL is returned, and the reason of the failure is
+ * provided via &apos;error_code&apos;, which will be set to:
+ *
+ * REDIS_CLUSTER_REDIR_CROSS_SLOT if the request contains multiple keys that
+ * don&apos;t belong to the same hash slot.
+ *
+ * REDIS_CLUSTER_REDIR_UNSTABLE if the request contains mutliple keys
+ * belonging to the same slot, but the slot is not stable (in migration or
+ * importing state, likely because a resharding is in progress).
+ *
+ * REDIS_CLUSTER_REDIR_DOWN_UNBOUND if the request addresses a slot which is
+ * not bound to any node. In this case the cluster global state should be
+ * already &quot;down&quot; but it is fragile to rely on the update of the global state,
+ * so we also handle it here. */</doc>
+<doc f='redis/src/cluster.h' l='251'>/* ---------------------- API exported outside cluster.c -------------------- */</doc>
+<use f='redis/src/redis.c' l='2179' u='c' c='processCommand'/>
+<use f='redis/src/scripting.c' l='366' u='c' c='luaRedisGenericCommand'/>

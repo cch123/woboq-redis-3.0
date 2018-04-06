@@ -1,0 +1,45 @@
+<dec f='redis/src/adlist.h' l='76' type='list * listAddNodeTail(list * list, void * value)'/>
+<def f='redis/src/adlist.c' l='106' ll='124' type='list * listAddNodeTail(list * list, void * value)'/>
+<use f='redis/src/adlist.c' l='266' u='c' c='listDup'/>
+<doc f='redis/src/adlist.c' l='100'>/* Add a new node to the list, to tail, containing the specified &apos;value&apos;
+ * pointer as value.
+ *
+ * On error, NULL is returned and no operation is performed (i.e. the
+ * list remains unaltered).
+ * On success the &apos;list&apos; pointer you pass to the function is returned. */</doc>
+<use f='redis/src/aof.c' l='147' u='c' c='aofRewriteBufferAppend'/>
+<use f='redis/src/bio.c' l='134' u='c' c='bioCreateBackgroundJob'/>
+<use f='redis/src/blocked.c' l='145' u='c' c='unblockClient'/>
+<use f='redis/src/cluster.c' l='704' u='c' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/config.c' l='1296' u='c' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/db.c' l='389' u='c' c='scanCallback'/>
+<use f='redis/src/db.c' l='390' u='c' c='scanCallback'/>
+<use f='redis/src/db.c' l='517' u='c' c='scanGenericCommand'/>
+<use f='redis/src/db.c' l='527' u='c' c='scanGenericCommand'/>
+<use f='redis/src/multi.c' l='222' u='c' c='watchForKey'/>
+<use f='redis/src/multi.c' l='228' u='c' c='watchForKey'/>
+<use f='redis/src/networking.c' l='126' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='228' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='244' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='262' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='277' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='292' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='308' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='428' u='c' c='addDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='802' u='c' c='freeClientAsync'/>
+<use f='redis/src/networking.c' l='1737' u='c' c='clientsArePaused'/>
+<use f='redis/src/pubsub.c' l='76' u='c' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='133' u='c' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='138' u='c' c='pubsubSubscribePattern'/>
+<use f='redis/src/rdb.c' l='859' u='c' c='rdbLoadObject'/>
+<use f='redis/src/redis.c' l='3054' u='c' c='monitorCommand'/>
+<use f='redis/src/replication.c' l='403' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='579' u='c' c='syncCommand'/>
+<use f='redis/src/replication.c' l='1660' u='c' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1862' u='c' c='waitCommand'/>
+<use f='redis/src/sentinel.c' l='639' u='c' c='sentinelScheduleScriptExecution'/>
+<use f='redis/src/sort.c' l='269' u='c' c='sortCommand'/>
+<use f='redis/src/t_list.c' l='67' u='c' c='listTypePush'/>
+<use f='redis/src/t_list.c' l='280' u='c' c='listTypeConvert'/>
+<use f='redis/src/t_list.c' l='803' u='c' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='860' u='c' c='signalListAsReady'/>

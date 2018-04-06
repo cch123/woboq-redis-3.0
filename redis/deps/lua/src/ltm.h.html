@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ltm.h source code [redis/deps/lua/src/ltm.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/ltm.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='ltm.h.html'>ltm.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: ltm.h,v 2.6.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Tag methods</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/ltm_h">ltm_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/ltm_h" data-ref="_M/ltm_h">ltm_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><i>/*</i></td></tr>
+<tr><th id="15">15</th><td><i>* WARNING: if you change the order of this enumeration,</i></td></tr>
+<tr><th id="16">16</th><td><i>* grep "ORDER TM"</i></td></tr>
+<tr><th id="17">17</th><td><i>*/</i></td></tr>
+<tr><th id="18">18</th><td><b>typedef</b> <b>enum</b> {</td></tr>
+<tr><th id="19">19</th><td>  <dfn class="enum" id="TM_INDEX" title='TM_INDEX' data-ref="TM_INDEX">TM_INDEX</dfn>,</td></tr>
+<tr><th id="20">20</th><td>  <dfn class="enum" id="TM_NEWINDEX" title='TM_NEWINDEX' data-ref="TM_NEWINDEX">TM_NEWINDEX</dfn>,</td></tr>
+<tr><th id="21">21</th><td>  <dfn class="enum" id="TM_GC" title='TM_GC' data-ref="TM_GC">TM_GC</dfn>,</td></tr>
+<tr><th id="22">22</th><td>  <dfn class="enum" id="TM_MODE" title='TM_MODE' data-ref="TM_MODE">TM_MODE</dfn>,</td></tr>
+<tr><th id="23">23</th><td>  <dfn class="enum" id="TM_EQ" title='TM_EQ' data-ref="TM_EQ">TM_EQ</dfn>,  <i>/* last tag method with `fast' access */</i></td></tr>
+<tr><th id="24">24</th><td>  <dfn class="enum" id="TM_ADD" title='TM_ADD' data-ref="TM_ADD">TM_ADD</dfn>,</td></tr>
+<tr><th id="25">25</th><td>  <dfn class="enum" id="TM_SUB" title='TM_SUB' data-ref="TM_SUB">TM_SUB</dfn>,</td></tr>
+<tr><th id="26">26</th><td>  <dfn class="enum" id="TM_MUL" title='TM_MUL' data-ref="TM_MUL">TM_MUL</dfn>,</td></tr>
+<tr><th id="27">27</th><td>  <dfn class="enum" id="TM_DIV" title='TM_DIV' data-ref="TM_DIV">TM_DIV</dfn>,</td></tr>
+<tr><th id="28">28</th><td>  <dfn class="enum" id="TM_MOD" title='TM_MOD' data-ref="TM_MOD">TM_MOD</dfn>,</td></tr>
+<tr><th id="29">29</th><td>  <dfn class="enum" id="TM_POW" title='TM_POW' data-ref="TM_POW">TM_POW</dfn>,</td></tr>
+<tr><th id="30">30</th><td>  <dfn class="enum" id="TM_UNM" title='TM_UNM' data-ref="TM_UNM">TM_UNM</dfn>,</td></tr>
+<tr><th id="31">31</th><td>  <dfn class="enum" id="TM_LEN" title='TM_LEN' data-ref="TM_LEN">TM_LEN</dfn>,</td></tr>
+<tr><th id="32">32</th><td>  <dfn class="enum" id="TM_LT" title='TM_LT' data-ref="TM_LT">TM_LT</dfn>,</td></tr>
+<tr><th id="33">33</th><td>  <dfn class="enum" id="TM_LE" title='TM_LE' data-ref="TM_LE">TM_LE</dfn>,</td></tr>
+<tr><th id="34">34</th><td>  <dfn class="enum" id="TM_CONCAT" title='TM_CONCAT' data-ref="TM_CONCAT">TM_CONCAT</dfn>,</td></tr>
+<tr><th id="35">35</th><td>  <dfn class="enum" id="TM_CALL" title='TM_CALL' data-ref="TM_CALL">TM_CALL</dfn>,</td></tr>
+<tr><th id="36">36</th><td>  <dfn class="enum" id="TM_N" title='TM_N' data-ref="TM_N">TM_N</dfn>		<i>/* number of elements in the enum */</i></td></tr>
+<tr><th id="37">37</th><td>} <dfn class="typedef" id="TMS" title='TMS' data-type='enum TMS' data-ref="TMS">TMS</dfn>;</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/gfasttm" data-ref="_M/gfasttm">gfasttm</dfn>(g,et,e) ((et) == NULL ? NULL : \</u></td></tr>
+<tr><th id="42">42</th><td><u>  ((et)-&gt;flags &amp; (1u&lt;&lt;(e))) ? NULL : luaT_gettm(et, e, (g)-&gt;tmname[e]))</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/fasttm" data-ref="_M/fasttm">fasttm</dfn>(l,et,e)	gfasttm(G(l), et, e)</u></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><a class="macro" href="luaconf.h.html#188" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_DATA">LUAI_DATA</a> <em>const</em> <em>char</em> *<em>const</em> <dfn class="decl" id="luaT_typenames" title='luaT_typenames' data-ref="luaT_typenames">luaT_typenames</dfn>[];</td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="decl fn" id="luaT_gettm" title='luaT_gettm' data-ref="luaT_gettm">luaT_gettm</dfn> (<a class="typedef" href="lobject.h.html#Table" title='Table' data-type='struct Table' data-ref="Table">Table</a> *<dfn class="local col1 decl" id="711events" title='events' data-type='Table *' data-ref="711events">events</dfn>, <a class="typedef" href="#TMS" title='TMS' data-type='enum TMS' data-ref="TMS">TMS</a> <dfn class="local col2 decl" id="712event" title='event' data-type='TMS' data-ref="712event">event</dfn>, <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="local col3 decl" id="713ename" title='ename' data-type='TString *' data-ref="713ename">ename</dfn>);</td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="decl fn" id="luaT_gettmbyobj" title='luaT_gettmbyobj' data-ref="luaT_gettmbyobj">luaT_gettmbyobj</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="714L" title='L' data-type='lua_State *' data-ref="714L">L</dfn>, <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col5 decl" id="715o" title='o' data-type='const TValue *' data-ref="715o">o</dfn>,</td></tr>
+<tr><th id="51">51</th><td>                                                       <a class="typedef" href="#TMS" title='TMS' data-type='enum TMS' data-ref="TMS">TMS</a> <dfn class="local col6 decl" id="716event" title='event' data-type='TMS' data-ref="716event">event</dfn>);</td></tr>
+<tr><th id="52">52</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaT_init" title='luaT_init' data-ref="luaT_init">luaT_init</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col7 decl" id="717L" title='L' data-type='lua_State *' data-ref="717L">L</dfn>);</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lapi.c.html'>redis/deps/lua/src/lapi.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

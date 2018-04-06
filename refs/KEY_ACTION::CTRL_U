@@ -1,0 +1,3 @@
+<dec f='redis/deps/linenoise/linenoise.c' l='166' type='21'/>
+<use f='redis/deps/linenoise/linenoise.c' l='872' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='166'>/* Ctrl+u */</doc>

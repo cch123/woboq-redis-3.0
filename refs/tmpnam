@@ -1,0 +1,3 @@
+<dec f='include/stdio.h' l='209' type='char * tmpnam(char * __s)'/>
+<doc f='include/stdio.h' l='208'>/* Generate a temporary filename.  */</doc>
+<use f='redis/deps/lua/src/loslib.c' l='60' macro='1' u='c'/>

@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='774' type='struct saveparam *'/>
+<offset>14272</offset>
+<doc f='redis/src/redis.h' l='774'>/* Save points array for RDB */</doc>
+<use f='redis/src/config.c' l='70' u='w' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='70' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='71' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='72' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='77' u='r' c='resetServerSaveParams'/>
+<use f='redis/src/config.c' l='78' u='w' c='resetServerSaveParams'/>
+<use f='redis/src/config.c' l='1155' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1156' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1551' u='r' c='rewriteConfigSaveOption'/>
+<use f='redis/src/config.c' l='1551' u='r' c='rewriteConfigSaveOption'/>
+<use f='redis/src/redis.c' l='1182' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1418' u='w' c='initServerConfig'/>

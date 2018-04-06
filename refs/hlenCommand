@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1490' type='void hlenCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='202' u='r'/>
+<use f='redis/src/redis.c' l='202' u='r'/>
+<use f='redis/src/redis.c' l='202' u='r'/>
+<use f='redis/src/redis.c' l='202' u='r'/>
+<def f='redis/src/t_hash.c' l='680' ll='686' type='void hlenCommand(redisClient * c)'/>

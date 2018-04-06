@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/termios.h' l='33' type='tcflag_t'/>
+<use f='redis/deps/linenoise/linenoise.c' l='235' u='w' c='enableRawMode'/>
+<offset>96</offset>
+<doc f='include/x86_64-linux-gnu/bits/termios.h' l='33'>/* local mode flags */</doc>

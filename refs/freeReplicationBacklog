@@ -1,0 +1,4 @@
+<def f='redis/src/replication.c' l='115' ll='119' type='void freeReplicationBacklog()'/>
+<use f='redis/src/replication.c' l='1445' u='c' c='replicationSetMaster'/>
+<use f='redis/src/replication.c' l='1464' u='c' c='replicationUnsetMaster'/>
+<use f='redis/src/replication.c' l='2042' u='c' c='replicationCron'/>

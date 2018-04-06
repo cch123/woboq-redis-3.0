@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1499' type='void hscanCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='207' u='r'/>
+<use f='redis/src/redis.c' l='207' u='r'/>
+<use f='redis/src/redis.c' l='207' u='r'/>
+<use f='redis/src/redis.c' l='207' u='r'/>
+<def f='redis/src/t_hash.c' l='763' ll='771' type='void hscanCommand(redisClient * c)'/>

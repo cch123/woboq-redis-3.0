@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='182' type='void * lua_newuserdata(lua_State * L, size_t sz)'/>
+<def f='redis/deps/lua/src/lapi.c' l='1025' ll='1034' macro='1' type='void * lua_newuserdata(lua_State * L, size_t size)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='423' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/liolib.c' l='87' u='c' c='newfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='270' u='c' c='ll_register'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='378' u='c' c='json_create_config'/>

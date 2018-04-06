@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='679' ll='723' type='void sentinelRunPendingScripts()'/>
+<use f='redis/src/sentinel.c' l='3888' u='c' c='sentinelTimer'/>
+<doc f='redis/src/sentinel.c' l='677'>/* Run pending scripts if we are not already at max number of running
+ * scripts. */</doc>

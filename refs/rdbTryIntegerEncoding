@@ -1,0 +1,5 @@
+<def f='redis/src/rdb.c' l='196' ll='210' type='int rdbTryIntegerEncoding(char * s, size_t len, unsigned char * enc)'/>
+<use f='redis/src/rdb.c' l='277' u='c' c='rdbSaveRawString'/>
+<doc f='redis/src/rdb.c' l='193'>/* String objects in the form &quot;2391&quot; &quot;-100&quot; without any space and with a
+ * range of values that can fit in an 8, 16 or 32 bit signed value can be
+ * encoded as integers to save space */</doc>

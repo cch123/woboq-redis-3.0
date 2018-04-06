@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='1243' type='void usage()'/>
+<def f='redis/src/redis.c' l='3415' ll='3430' type='void usage()'/>
+<use f='redis/src/redis.c' l='3603' u='c' c='main'/>

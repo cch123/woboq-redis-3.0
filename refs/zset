@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='599' ll='602'/>
+<size>16</size>
+<mbr r='zset::dict' o='0' t='dict *'/>
+<mbr r='zset::zsl' o='64' t='zskiplist *'/>

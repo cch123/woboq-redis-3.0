@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='80'/>
+<use f='redis/deps/hiredis/async.c' l='416' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='450' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='615' u='c'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='79'>/* Flag that is set when monitor mode is active */</doc>

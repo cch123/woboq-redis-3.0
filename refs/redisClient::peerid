@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='555' type='sds'/>
+<use f='redis/src/aof.c' l='573' u='w' c='createFakeClient'/>
+<offset>3008</offset>
+<doc f='redis/src/redis.h' l='555'>/* Cached peer ID. */</doc>
+<use f='redis/src/networking.c' l='123' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='791' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1295' u='r' c='getClientPeerId'/>
+<use f='redis/src/networking.c' l='1297' u='w' c='getClientPeerId'/>
+<use f='redis/src/networking.c' l='1299' u='r' c='getClientPeerId'/>
+<use f='redis/src/replication.c' l='1622' u='r' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1623' u='r' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1624' u='w' c='replicationCacheMaster'/>

@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='76' type='double tanh(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='57' u='c' c='math_tanh'/>

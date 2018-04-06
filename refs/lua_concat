@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lua.h' l='241' type='void lua_concat(lua_State * L, int n)'/>
+<def f='redis/deps/lua/src/lapi.c' l='990' ll='1004' macro='1' type='void lua_concat(lua_State * L, int n)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='92' u='c' c='luaL_error'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='423' u='c' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='449' u='c' c='luaL_pushresult'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='87' u='c' c='luaB_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='568' u='c' c='luaB_auxwrap'/>
+<use f='redis/deps/lua/src/ldblib.c' l='368' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldblib.c' l='370' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/loadlib.c' l='368' u='c' c='findfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='477' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='536' u='c' c='mp_pack'/>

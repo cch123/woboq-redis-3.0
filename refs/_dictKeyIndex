@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/dict.c' l='46' type='int _dictKeyIndex(dict * ht, const void * key)'/>
+<use f='redis/deps/hiredis/dict.c' l='141' u='c' c='dictAdd'/>
+<def f='redis/deps/hiredis/dict.c' l='320' ll='337' type='int _dictKeyIndex(dict * ht, const void * key)'/>
+<doc f='redis/deps/hiredis/dict.c' l='317'>/* Returns the index of a free slot that can be populated with
+ * an hash entry for the given &apos;key&apos;.
+ * If the key already exists, -1 is returned. */</doc>

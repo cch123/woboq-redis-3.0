@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='36' type='const char *'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='237' u='r' c='libsize'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='260' u='r' c='luaL_openlib'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='265' u='r' c='luaL_openlib'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/linit.c' l='34' u='r' c='luaL_openlibs'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1305' u='r' c='luaL_setfuncs'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1309' u='r' c='luaL_setfuncs'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='888' u='r' c='luaopen_create'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='922' u='r' c='luaopen_cmsgpack_safe'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='924' u='r' c='luaopen_cmsgpack_safe'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='812' type='int'/>
+<offset>16032</offset>
+<doc f='redis/src/redis.h' l='812'>/* Send RDB to slaves sockets directly. */</doc>
+<use f='redis/src/config.c' l='274' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='934' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1097' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1823' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1502' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='449' u='r' c='startBgsaveForReplication'/>
+<use f='redis/src/replication.c' l='451' u='r' c='startBgsaveForReplication'/>
+<use f='redis/src/replication.c' l='556' u='r' c='syncCommand'/>

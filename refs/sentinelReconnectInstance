@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='1706' ll='1766' type='void sentinelReconnectInstance(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='3797' u='c' c='sentinelHandleRedisInstance'/>
+<doc f='redis/src/sentinel.c' l='1703'>/* Create the async connections for the specified instance if the instance
+ * is disconnected. Note that the SRI_DISCONNECTED flag is set even if just
+ * one of the two links (commands and pub/sub) is missing. */</doc>

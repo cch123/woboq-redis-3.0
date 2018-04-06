@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='2588' ll='2600' type='void addReplyDictOfRedisInstances(redisClient * c, dict * instances)'/>
+<use f='redis/src/sentinel.c' l='2622' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2638' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2646' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='2586'>/* Output a number of instances contained inside a dictionary as
+ * Redis protocol. */</doc>

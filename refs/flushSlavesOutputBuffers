@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1061' type='void flushSlavesOutputBuffers()'/>
+<def f='redis/src/networking.c' l='1673' ll='1690' type='void flushSlavesOutputBuffers()'/>
+<doc f='redis/src/networking.c' l='1671'>/* Helper function used by freeMemoryIfNeeded() in order to flush slaves
+ * output buffers without returning control to the event loop. */</doc>
+<use f='redis/src/redis.c' l='3337' u='c' c='freeMemoryIfNeeded'/>

@@ -1,0 +1,2 @@
+<dec f='include/stdio.h' l='919' type='void funlockfile(FILE * __stream)'/>
+<doc f='include/stdio.h' l='918'>/* Relinquish the ownership granted for STREAM.  */</doc>

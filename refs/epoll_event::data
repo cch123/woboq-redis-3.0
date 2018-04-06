@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='90' type='epoll_data_t'/>
+<use f='redis/src/ae_epoll.c' l='85' u='m' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='86' u='m' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='99' u='m' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='100' u='m' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='128' u='m' c='aeApiPoll'/>
+<offset>32</offset>
+<doc f='include/x86_64-linux-gnu/sys/epoll.h' l='90'>/* User data variable */</doc>

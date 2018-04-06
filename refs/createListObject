@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1127' type='robj * createListObject()'/>
+<def f='redis/src/object.c' l='183' ll='189' type='robj * createListObject()'/>
+<use f='redis/src/rdb.c' l='836' u='c' c='rdbLoadObject'/>
+<use f='redis/src/sort.c' l='223' u='c' c='sortCommand'/>

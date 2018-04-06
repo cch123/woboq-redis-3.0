@@ -1,0 +1,11 @@
+bioCreateBackgroundJob|bioCreateBackgroundJob
+bioInit|bioInit
+bioKillThreads|bioKillThreads
+bioPendingJobsOfType|bioPendingJobsOfType
+bioProcessBackgroundJobs|bioProcessBackgroundJobs
+bitcountCommand|bitcountCommand
+bitopCommand|bitopCommand
+bitposCommand|bitposCommand
+bitmapClearBit|bitmapClearBit
+bitmapSetBit|bitmapSetBit
+bitmapTestBit|bitmapTestBit

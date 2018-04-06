@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='473' type='int'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='473'>/* Total number of MULTI commands */</doc>
+<use f='redis/src/cluster.c' l='4799' u='w' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4807' u='r' c='getNodeByQuery'/>
+<use f='redis/src/multi.c' l='37' u='w' c='initClientMultiState'/>
+<use f='redis/src/multi.c' l='44' u='r' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='61' u='r' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='62' u='r' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='69' u='w' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='144' u='r' c='execCommand'/>
+<use f='redis/src/multi.c' l='145' u='r' c='execCommand'/>
+<use f='redis/src/networking.c' l='1344' u='r' c='catClientInfoString'/>

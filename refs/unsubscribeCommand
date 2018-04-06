@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1504' type='void unsubscribeCommand(redisClient * c)'/>
+<def f='redis/src/pubsub.c' l='285' ll='295' type='void unsubscribeCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='254' u='r'/>
+<use f='redis/src/redis.c' l='254' u='r'/>
+<use f='redis/src/redis.c' l='254' u='r'/>
+<use f='redis/src/redis.c' l='254' u='r'/>
+<use f='redis/src/redis.c' l='2250' u='r' c='processCommand'/>
+<use f='redis/src/sentinel.c' l='394'/>
+<use f='redis/src/sentinel.c' l='394'/>
+<use f='redis/src/sentinel.c' l='394'/>
+<use f='redis/src/sentinel.c' l='394'/>

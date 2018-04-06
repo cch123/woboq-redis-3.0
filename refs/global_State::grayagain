@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lstate.h' l='78' type='GCObject *'/>
+<offset>512</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='78'>/* list of objects to be traversed atomically */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='300' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='301' u='w' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='504' u='w' c='markroot'/>
+<use f='redis/deps/lua/src/lgc.c' l='540' u='r' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='541' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='643' u='w' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='680' u='r' c='luaC_barrierback'/>
+<use f='redis/deps/lua/src/lgc.c' l='681' u='w' c='luaC_barrierback'/>
+<use f='redis/deps/lua/src/lstate.c' l='174' u='w' c='lua_newstate'/>

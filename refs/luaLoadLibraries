@@ -1,0 +1,2 @@
+<def f='redis/src/scripting.c' l='579' ll='594' type='void luaLoadLibraries(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='647' u='c' c='scriptingInit'/>

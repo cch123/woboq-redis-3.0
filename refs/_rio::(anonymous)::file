@@ -1,0 +1,18 @@
+<dec f='redis/src/rio.h' l='75' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/rio.h:71:9)'/>
+<offset>0</offset>
+<doc f='redis/src/rio.h' l='70'>/* Stdio file pointer target. */</doc>
+<use f='redis/src/rio.c' l='112' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='113' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='115' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='116' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='116' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='118' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='119' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='120' u='m' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='127' u='m' c='rioFileRead'/>
+<use f='redis/src/rio.c' l='132' u='m' c='rioFileTell'/>
+<use f='redis/src/rio.c' l='138' u='m' c='rioFileFlush'/>
+<use f='redis/src/rio.c' l='155' u='m' c='rioInitWithFile'/>
+<use f='redis/src/rio.c' l='156' u='m' c='rioInitWithFile'/>
+<use f='redis/src/rio.c' l='157' u='m' c='rioInitWithFile'/>
+<use f='redis/src/rio.c' l='303' u='m' c='rioSetAutoSync'/>

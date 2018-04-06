@@ -1,0 +1,4 @@
+<dec f='redis/src/dict.h' l='170' type='unsigned int dictGenCaseHashFunction(const unsigned char * buf, int len)'/>
+<def f='redis/src/dict.c' l='147' ll='153' type='unsigned int dictGenCaseHashFunction(const unsigned char * buf, int len)'/>
+<doc f='redis/src/dict.c' l='146'>/* And a case insensitive hash function (based on djb hash) */</doc>
+<use f='redis/src/redis.c' l='480' u='c' c='dictSdsCaseHash'/>

@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='705' type='long long'/>
+<use f='redis/src/aof.c' l='1297' u='w' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1298' u='r' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1299' u='r' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1299' u='r' c='rewriteAppendOnlyFileBackground'/>
+<offset>7296</offset>
+<doc f='redis/src/redis.h' l='705'>/* Time needed to perform latest fork() */</doc>
+<use f='redis/src/rdb.c' l='793' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='794' u='r' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='795' u='r' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='795' u='r' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1502' u='w' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1503' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1504' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1504' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='1728' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2854' u='r' c='genRedisInfoString'/>

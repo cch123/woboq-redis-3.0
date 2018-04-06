@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='170' type='uint16_t'/>
+<dec f='redis/src/cluster.h' l='237' type='uint16_t'/>
+<use f='redis/src/cluster.c' l='1295' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1533' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2124' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2259' u='w' c='clusterSendPing'/>
+<offset>17616</offset>
+<doc f='redis/src/cluster.h' l='170'>/* node-&gt;flags copy */</doc>
+<doc f='redis/src/cluster.h' l='237'>/* Sender node flags */</doc>

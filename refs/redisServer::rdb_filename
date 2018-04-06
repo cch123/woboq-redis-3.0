@@ -1,0 +1,23 @@
+<dec f='redis/src/redis.h' l='776' type='char *'/>
+<offset>14400</offset>
+<doc f='redis/src/redis.h' l='776'>/* Name of RDB file */</doc>
+<use f='redis/src/config.c' l='393' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='394' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='622' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='623' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1022' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1022' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1812' u='r' c='rewriteConfig'/>
+<use f='redis/src/db.c' l='274' u='r' c='flushallCommand'/>
+<use f='redis/src/debug.c' l='266' u='r' c='debugCommand'/>
+<use f='redis/src/debug.c' l='271' u='r' c='debugCommand'/>
+<use f='redis/src/rdb.c' l='1529' u='r' c='saveCommand'/>
+<use f='redis/src/rdb.c' l='1541' u='r' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='1196' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1443' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2358' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='3538' u='r' c='loadDataFromDisk'/>
+<use f='redis/src/replication.c' l='454' u='r' c='startBgsaveForReplication'/>
+<use f='redis/src/replication.c' l='784' u='r' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1000' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1014' u='r' c='readSyncBulkPayload'/>

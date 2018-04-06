@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1334' type='void scanGenericCommand(redisClient * c, robj * o, unsigned long cursor)'/>
+<def f='redis/src/db.c' l='423' ll='598' type='void scanGenericCommand(redisClient * c, robj * o, unsigned long cursor)'/>
+<use f='redis/src/db.c' l='604' u='c' c='scanCommand'/>
+<doc f='redis/src/db.c' l='412'>/* This command implements SCAN, HSCAN and SSCAN commands.
+ * If object &apos;o&apos; is passed, then it must be a Hash or Set object, otherwise
+ * if &apos;o&apos; is NULL the command will operate on the dictionary associated with
+ * the current database.
+ *
+ * When &apos;o&apos; is not NULL the function assumes that the first argument in
+ * the client arguments vector is a key so it skips it before iterating
+ * in order to parse options.
+ *
+ * In the case of a Hash object the function returns both the field and value
+ * of every element on the Hash. */</doc>
+<use f='redis/src/t_hash.c' l='770' u='c' c='hscanCommand'/>
+<use f='redis/src/t_set.c' l='918' u='c' c='sscanCommand'/>
+<use f='redis/src/t_zset.c' l='2855' u='c' c='zscanCommand'/>

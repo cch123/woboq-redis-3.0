@@ -1,0 +1,3 @@
+<def f='redis/src/config.c' l='1289' ll='1297' type='void rewriteConfigAddLineNumberToOption(struct rewriteConfigState * state, sds option, int linenum)'/>
+<use f='redis/src/config.c' l='1363' u='c' c='rewriteConfigReadOldFile'/>
+<doc f='redis/src/config.c' l='1288'>/* Populate the option -&gt; list of line numbers map. */</doc>

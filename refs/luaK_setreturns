@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lcode.h' l='62' type='void luaK_setreturns(FuncState * fs, expdesc * e, int nresults)'/>
+<def f='redis/deps/lua/src/lcode.c' l='280' ll='289' type='void luaK_setreturns(FuncState * fs, expdesc * e, int nresults)'/>
+<use f='redis/deps/lua/src/lparser.c' l='262' u='c' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='478' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='623' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1249' macro='1' u='c'/>

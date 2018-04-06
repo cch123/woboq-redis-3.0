@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='39' type='int'/>
+<offset>160</offset>
+<use f='redis/deps/lua/src/strbuf.c' l='57' u='w' c='strbuf_init'/>
+<use f='redis/deps/lua/src/strbuf.c' l='79' u='w' c='strbuf_new'/>
+<use f='redis/deps/lua/src/strbuf.c' l='112' u='r' c='strbuf_free'/>
+<use f='redis/deps/lua/src/strbuf.c' l='128' u='r' c='strbuf_free_to_string'/>

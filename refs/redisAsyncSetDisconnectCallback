@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/async.h' l='108' type='int redisAsyncSetDisconnectCallback(redisAsyncContext * ac, redisDisconnectCallback * fn)'/>
+<def f='redis/deps/hiredis/async.c' l='207' ll='213' type='int redisAsyncSetDisconnectCallback(redisAsyncContext * ac, redisDisconnectCallback * fn)'/>
+<use f='redis/src/sentinel.c' l='1722' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1746' u='c' c='sentinelReconnectInstance'/>

@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='997' type='dictType'/>
+<use f='redis/src/networking.c' l='115' u='a' c='createClient'/>
+<use f='redis/src/networking.c' l='121' u='a' c='createClient'/>
+<use f='redis/src/object.c' l='199' u='a' c='createSetObject'/>
+<def f='redis/src/redis.c' l='525' ll='532' type='dictType'/>
+<use f='redis/src/redis.c' l='1803' u='a' c='initServer'/>
+<doc f='redis/src/redis.c' l='524'>/* Sets type hash table */</doc>
+<use f='redis/src/t_set.c' l='228' u='a' c='setTypeConvert'/>
+<use f='redis/src/t_set.c' l='477' u='a' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_zset.c' l='1982' u='a' c='zunionInterGenericCommand'/>

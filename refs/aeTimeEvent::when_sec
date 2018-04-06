@@ -1,0 +1,13 @@
+<dec f='redis/src/ae.h' l='72' type='long'/>
+<use f='redis/src/ae.c' l='213' u='a' c='aeCreateTimeEvent'/>
+<use f='redis/src/ae.c' l='261' u='r' c='aeSearchNearestTimer'/>
+<use f='redis/src/ae.c' l='261' u='r' c='aeSearchNearestTimer'/>
+<use f='redis/src/ae.c' l='262' u='r' c='aeSearchNearestTimer'/>
+<use f='redis/src/ae.c' l='262' u='r' c='aeSearchNearestTimer'/>
+<use f='redis/src/ae.c' l='288' u='w' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='305' u='r' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='306' u='r' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='327' u='a' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='378' u='r' c='aeProcessEvents'/>
+<offset>64</offset>
+<doc f='redis/src/ae.h' l='72'>/* seconds */</doc>

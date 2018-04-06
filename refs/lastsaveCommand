@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1402' type='void lastsaveCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='611' ll='613' type='void lastsaveCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='233' u='r'/>
+<use f='redis/src/redis.c' l='233' u='r'/>
+<use f='redis/src/redis.c' l='233' u='r'/>
+<use f='redis/src/redis.c' l='233' u='r'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1018' type='void redisSetProcTitle(char * title)'/>
+<use f='redis/src/aof.c' l='1281' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/rdb.c' l='779' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1443' u='c' c='rdbSaveToSlavesSockets'/>
+<def f='redis/src/redis.c' l='3554' ll='3568' type='void redisSetProcTitle(char * title)'/>
+<use f='redis/src/redis.c' l='3652' u='c' c='main'/>

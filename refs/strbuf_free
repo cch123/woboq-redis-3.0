@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='57' type='void strbuf_free(strbuf_t * s)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='320' u='c' c='json_cfg_encode_keep_buffer'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='367' u='c' c='json_destroy_config'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='452' u='c' c='json_encode_exception'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='553' u='c' c='json_check_encode_depth'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='729' u='c' c='json_encode'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1104' u='c' c='json_throw_parse_error'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1130' u='c' c='json_decode_descend'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1288' u='c' c='json_decode'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='56'>/* Release */</doc>
+<def f='redis/deps/lua/src/strbuf.c' l='104' ll='114' type='void strbuf_free(strbuf_t * s)'/>
+<doc f='redis/deps/lua/src/strbuf.c' l='102'>/* If strbuf_t has not been dynamically allocated, strbuf_free() can
+ * be called any number of times strbuf_init() */</doc>

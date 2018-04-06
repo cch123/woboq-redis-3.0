@@ -1,0 +1,3 @@
+<dec f='include/string.h' l='258' type='char * strrchr(const char * __s, int __c)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='535' u='c' c='modinit'/>
+<use f='redis/src/cluster.c' l='168' u='c' c='clusterLoadConfig'/>

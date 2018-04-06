@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1409' type='void renamenxCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='705' ll='707' type='void renamenxCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='218' u='r'/>
+<use f='redis/src/redis.c' l='218' u='r'/>
+<use f='redis/src/redis.c' l='218' u='r'/>
+<use f='redis/src/redis.c' l='218' u='r'/>

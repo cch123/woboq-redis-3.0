@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='468'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='464'>/*
+@@ LUAI_MAXCCALLS is the maximum depth for nested C calls (short) and
+@* syntactical nested non-terminals in a program.
+*/</doc>
+<use f='redis/deps/lua/src/ldo.c' l='371' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='372' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='374' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='374' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='423' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='277' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='941' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='164' u='c'/>

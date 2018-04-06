@@ -1,0 +1,26 @@
+<dec f='redis/deps/lua/src/lstate.h' l='108' type='StkId'/>
+<use f='redis/deps/lua/src/lapi.c' l='101' macro='1' u='r'/>
+<offset>448</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='108'>/* last free slot in the stack */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='189' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='253' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='624' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='147' u='w' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='193' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='220' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='252' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='277' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='310' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='412' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='505' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='106' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='118' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='135' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='140' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lparser.c' l='350' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lparser.c' l='352' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='52' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lundump.c' l='166' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='86' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='102' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='749' macro='1' u='r'/>

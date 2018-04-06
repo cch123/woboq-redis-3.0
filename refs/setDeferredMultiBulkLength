@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1028' type='void setDeferredMultiBulkLength(redisClient * c, void * node, long length)'/>
+<use f='redis/src/cluster.c' l='3791' u='c' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3797' u='c' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/config.c' l='1233' u='c' c='configGetCommand'/>
+<use f='redis/src/db.c' l='359' u='c' c='keysCommand'/>
+<use f='redis/src/latency.c' l='490' u='c' c='latencyCommandReplyWithSamples'/>
+<def f='redis/src/networking.c' l='433' ll='457' type='void setDeferredMultiBulkLength(redisClient * c, void * node, long length)'/>
+<doc f='redis/src/networking.c' l='432'>/* Populate the length object and try gluing it to the next chunk. */</doc>
+<use f='redis/src/pubsub.c' l='351' u='c' c='pubsubCommand'/>
+<use f='redis/src/redis.c' l='2514' u='c' c='addReplyCommand'/>
+<use f='redis/src/replication.c' l='1538' u='c' c='roleCommand'/>
+<use f='redis/src/scripting.c' l='857' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/sentinel.c' l='2583' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/slowlog.c' l='164' u='c' c='slowlogCommand'/>
+<use f='redis/src/t_set.c' l='720' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2386' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2727' u='c' c='genericZrangebylexCommand'/>

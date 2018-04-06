@@ -1,0 +1,11 @@
+<dec f='redis/src/adlist.h' l='82' type='list * listDup(list * orig)'/>
+<def f='redis/src/adlist.c' l='242' ll='274' type='list * listDup(list * orig)'/>
+<doc f='redis/src/adlist.c' l='234'>/* Duplicate the whole list. On out of memory NULL is returned.
+ * On success a copy of the original list is returned.
+ *
+ * The &apos;Dup&apos; method set with listSetDupMethod() function is used
+ * to copy the node value. Otherwise the same pointer value of
+ * the original node is used as value of the copied node.
+ *
+ * The original list both on success or error is never modified. */</doc>
+<use f='redis/src/networking.c' l='577' u='c' c='copyClientOutputBuffer'/>

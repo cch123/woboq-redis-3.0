@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='130' type='int'/>
+<use f='redis/src/cluster.c' l='2689' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2983' u='w' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='3004' u='r' c='clusterHandleManualFailover'/>
+<use f='redis/src/cluster.c' l='3011' u='w' c='clusterHandleManualFailover'/>
+<use f='redis/src/cluster.c' l='4224' u='w' c='clusterCommand'/>
+<offset>3146624</offset>
+<doc f='redis/src/cluster.h' l='130'>/* If non-zero signal that the manual failover
+                                   can start requesting masters vote. */</doc>

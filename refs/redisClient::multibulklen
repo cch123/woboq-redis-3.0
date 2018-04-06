@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='526' type='int'/>
+<offset>736</offset>
+<doc f='redis/src/redis.h' l='526'>/* number of multi bulk arguments left to read */</doc>
+<use f='redis/src/networking.c' l='96' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='905' u='w' c='resetClient'/>
+<use f='redis/src/networking.c' l='992' u='r' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1026' u='w' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1030' u='r' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1033' u='r' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1034' u='r' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1111' u='w' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1119' u='r' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1182' u='r' c='readQueryFromClient'/>

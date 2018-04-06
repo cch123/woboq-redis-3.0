@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='109' type='double log(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='115' u='c' c='math_log'/>
+<use f='redis/src/hyperloglog.c' l='1006' u='c' c='hllCount'/>
+<use f='redis/src/sparkline.c' l='108' u='c' c='sparklineRenderRange'/>
+<use f='redis/src/sparkline.c' l='121' u='c' c='sparklineRenderRange'/>

@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>async.h source code [redis/deps/hiredis/async.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="redisAsyncContext,redisCallback,redisCallbackList "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/hiredis/async.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>redis</a>/<a href='..'>deps</a>/<a href='./'>hiredis</a>/<a href='async.h.html'>async.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2009-2011, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * Copyright (c) 2010-2011, Pieter Noordhuis &lt;pcnoordhuis at gmail dot com&gt;</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="6">6</th><td><i> *</i></td></tr>
+<tr><th id="7">7</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="8">8</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="9">9</th><td><i> *</i></td></tr>
+<tr><th id="10">10</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="11">11</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="12">12</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="13">13</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="14">14</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="15">15</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="16">16</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="17">17</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="18">18</th><td><i> *</i></td></tr>
+<tr><th id="19">19</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="20">20</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="21">21</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="22">22</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="23">23</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="24">24</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="25">25</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="26">26</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="27">27</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="28">28</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="29">29</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="30">30</th><td><i> */</i></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">ifndef</span> <span class="macro" data-ref="_M/__HIREDIS_ASYNC_H">__HIREDIS_ASYNC_H</span></u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/__HIREDIS_ASYNC_H" data-ref="_M/__HIREDIS_ASYNC_H">__HIREDIS_ASYNC_H</dfn></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="hiredis.h.html">"hiredis.h"</a></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#<span data-ppcond="36">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="37">37</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="36">endif</span></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><b>struct</b> <a class="type" href="#redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a>; <i>/* need forward declaration of redisAsyncContext */</i></td></tr>
+<tr><th id="41">41</th><td><b>struct</b> <a class="type" href="dict.h.html#dict" title='dict' data-ref="dict" id="dict">dict</a>; <i>/* dictionary header is included in async.c */</i></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><i>/* Reply callback prototype and container */</i></td></tr>
+<tr><th id="44">44</th><td><b>typedef</b> <em>void</em> (<dfn class="typedef" id="redisCallbackFn" title='redisCallbackFn' data-type='void (struct redisAsyncContext *, void *, void *)' data-ref="redisCallbackFn">redisCallbackFn</dfn>)(<b>struct</b> <a class="type" href="#redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a>*, <em>void</em>*, <em>void</em>*);</td></tr>
+<tr><th id="45">45</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisCallback" title='redisCallback' data-ref="redisCallback"><a class="type" href="#redisCallback" title='redisCallback' data-ref="redisCallback">redisCallback</a></dfn> {</td></tr>
+<tr><th id="46">46</th><td>    <b>struct</b> <a class="type" href="#redisCallback" title='redisCallback' data-ref="redisCallback">redisCallback</a> *<dfn class="decl field" id="redisCallback::next" title='redisCallback::next' data-ref="redisCallback::next">next</dfn>; <i>/* simple singly linked list */</i></td></tr>
+<tr><th id="47">47</th><td>    <a class="typedef" href="#redisCallbackFn" title='redisCallbackFn' data-type='void (struct redisAsyncContext *, void *, void *)' data-ref="redisCallbackFn">redisCallbackFn</a> *<dfn class="decl field" id="redisCallback::fn" title='redisCallback::fn' data-ref="redisCallback::fn">fn</dfn>;</td></tr>
+<tr><th id="48">48</th><td>    <em>void</em> *<dfn class="decl field" id="redisCallback::privdata" title='redisCallback::privdata' data-ref="redisCallback::privdata">privdata</dfn>;</td></tr>
+<tr><th id="49">49</th><td>} <dfn class="typedef" id="redisCallback" title='redisCallback' data-type='struct redisCallback' data-ref="redisCallback">redisCallback</dfn>;</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/* List of callbacks for either regular replies or pub/sub */</i></td></tr>
+<tr><th id="52">52</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisCallbackList" title='redisCallbackList' data-ref="redisCallbackList"><a class="type" href="#redisCallbackList" title='redisCallbackList' data-ref="redisCallbackList">redisCallbackList</a></dfn> {</td></tr>
+<tr><th id="53">53</th><td>    <a class="typedef" href="#redisCallback" title='redisCallback' data-type='struct redisCallback' data-ref="redisCallback">redisCallback</a> *<dfn class="decl field" id="redisCallbackList::head" title='redisCallbackList::head' data-ref="redisCallbackList::head">head</dfn>, *<dfn class="decl field" id="redisCallbackList::tail" title='redisCallbackList::tail' data-ref="redisCallbackList::tail">tail</dfn>;</td></tr>
+<tr><th id="54">54</th><td>} <dfn class="typedef" id="redisCallbackList" title='redisCallbackList' data-type='struct redisCallbackList' data-ref="redisCallbackList">redisCallbackList</dfn>;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><i>/* Connection callback prototypes */</i></td></tr>
+<tr><th id="57">57</th><td><b>typedef</b> <em>void</em> (<dfn class="typedef" id="redisDisconnectCallback" title='redisDisconnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisDisconnectCallback">redisDisconnectCallback</dfn>)(<em>const</em> <b>struct</b> <a class="type" href="#redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a>*, <em>int</em> <dfn class="local col5 decl" id="615status" title='status' data-type='int' data-ref="615status">status</dfn>);</td></tr>
+<tr><th id="58">58</th><td><b>typedef</b> <em>void</em> (<dfn class="typedef" id="redisConnectCallback" title='redisConnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisConnectCallback">redisConnectCallback</dfn>)(<em>const</em> <b>struct</b> <a class="type" href="#redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a>*, <em>int</em> <dfn class="local col6 decl" id="616status" title='status' data-type='int' data-ref="616status">status</dfn>);</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td><i>/* Context for an async connection to Redis */</i></td></tr>
+<tr><th id="61">61</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext"><a class="type" href="#redisAsyncContext" title='redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a></dfn> {</td></tr>
+<tr><th id="62">62</th><td>    <i>/* Hold the regular context, so it can be realloc'ed. */</i></td></tr>
+<tr><th id="63">63</th><td>    <a class="typedef" href="hiredis.h.html#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> <dfn class="decl field" id="redisAsyncContext::c" title='redisAsyncContext::c' data-ref="redisAsyncContext::c">c</dfn>;</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td>    <i>/* Setup error flags so they can be used directly. */</i></td></tr>
+<tr><th id="66">66</th><td>    <em>int</em> <dfn class="decl field" id="redisAsyncContext::err" title='redisAsyncContext::err' data-ref="redisAsyncContext::err">err</dfn>;</td></tr>
+<tr><th id="67">67</th><td>    <em>char</em> *<dfn class="decl field" id="redisAsyncContext::errstr" title='redisAsyncContext::errstr' data-ref="redisAsyncContext::errstr">errstr</dfn>;</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td>    <i>/* Not used by hiredis */</i></td></tr>
+<tr><th id="70">70</th><td>    <em>void</em> *<dfn class="decl field" id="redisAsyncContext::data" title='redisAsyncContext::data' data-ref="redisAsyncContext::data">data</dfn>;</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td>    <i>/* Event library data and hooks */</i></td></tr>
+<tr><th id="73">73</th><td>    <b>struct</b> {</td></tr>
+<tr><th id="74">74</th><td>        <em>void</em> *<dfn class="decl field" id="redisAsyncContext::(anonymous)::data" title='redisAsyncContext::(anonymous struct)::data' data-ref="redisAsyncContext::(anonymous)::data">data</dfn>;</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td>        <i>/* Hooks that are called when the library expects to start</i></td></tr>
+<tr><th id="77">77</th><td><i>         * reading/writing. These functions should be idempotent. */</i></td></tr>
+<tr><th id="78">78</th><td>        <em>void</em> (*<dfn class="decl field" id="redisAsyncContext::(anonymous)::addRead" title='redisAsyncContext::(anonymous struct)::addRead' data-ref="redisAsyncContext::(anonymous)::addRead">addRead</dfn>)(<em>void</em> *<dfn class="local col7 decl" id="617privdata" title='privdata' data-type='void *' data-ref="617privdata">privdata</dfn>);</td></tr>
+<tr><th id="79">79</th><td>        <em>void</em> (*<dfn class="decl field" id="redisAsyncContext::(anonymous)::delRead" title='redisAsyncContext::(anonymous struct)::delRead' data-ref="redisAsyncContext::(anonymous)::delRead">delRead</dfn>)(<em>void</em> *<dfn class="local col8 decl" id="618privdata" title='privdata' data-type='void *' data-ref="618privdata">privdata</dfn>);</td></tr>
+<tr><th id="80">80</th><td>        <em>void</em> (*<dfn class="decl field" id="redisAsyncContext::(anonymous)::addWrite" title='redisAsyncContext::(anonymous struct)::addWrite' data-ref="redisAsyncContext::(anonymous)::addWrite">addWrite</dfn>)(<em>void</em> *<dfn class="local col9 decl" id="619privdata" title='privdata' data-type='void *' data-ref="619privdata">privdata</dfn>);</td></tr>
+<tr><th id="81">81</th><td>        <em>void</em> (*<dfn class="decl field" id="redisAsyncContext::(anonymous)::delWrite" title='redisAsyncContext::(anonymous struct)::delWrite' data-ref="redisAsyncContext::(anonymous)::delWrite">delWrite</dfn>)(<em>void</em> *<dfn class="local col0 decl" id="620privdata" title='privdata' data-type='void *' data-ref="620privdata">privdata</dfn>);</td></tr>
+<tr><th id="82">82</th><td>        <em>void</em> (*<dfn class="decl field" id="redisAsyncContext::(anonymous)::cleanup" title='redisAsyncContext::(anonymous struct)::cleanup' data-ref="redisAsyncContext::(anonymous)::cleanup">cleanup</dfn>)(<em>void</em> *<dfn class="local col1 decl" id="621privdata" title='privdata' data-type='void *' data-ref="621privdata">privdata</dfn>);</td></tr>
+<tr><th id="83">83</th><td>    } <dfn class="decl field" id="redisAsyncContext::ev" title='redisAsyncContext::ev' data-ref="redisAsyncContext::ev">ev</dfn>;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    <i>/* Called when either the connection is terminated due to an error or per</i></td></tr>
+<tr><th id="86">86</th><td><i>     * user request. The status is set accordingly (REDIS_OK, REDIS_ERR). */</i></td></tr>
+<tr><th id="87">87</th><td>    <a class="typedef" href="#redisDisconnectCallback" title='redisDisconnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisDisconnectCallback">redisDisconnectCallback</a> *<dfn class="decl field" id="redisAsyncContext::onDisconnect" title='redisAsyncContext::onDisconnect' data-ref="redisAsyncContext::onDisconnect">onDisconnect</dfn>;</td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td>    <i>/* Called when the first write event was received. */</i></td></tr>
+<tr><th id="90">90</th><td>    <a class="typedef" href="#redisConnectCallback" title='redisConnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisConnectCallback">redisConnectCallback</a> *<dfn class="decl field" id="redisAsyncContext::onConnect" title='redisAsyncContext::onConnect' data-ref="redisAsyncContext::onConnect">onConnect</dfn>;</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>    <i>/* Regular command callbacks */</i></td></tr>
+<tr><th id="93">93</th><td>    <a class="typedef" href="#redisCallbackList" title='redisCallbackList' data-type='struct redisCallbackList' data-ref="redisCallbackList">redisCallbackList</a> <dfn class="decl field" id="redisAsyncContext::replies" title='redisAsyncContext::replies' data-ref="redisAsyncContext::replies">replies</dfn>;</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+<tr><th id="95">95</th><td>    <i>/* Subscription callbacks */</i></td></tr>
+<tr><th id="96">96</th><td>    <b>struct</b> {</td></tr>
+<tr><th id="97">97</th><td>        <a class="typedef" href="#redisCallbackList" title='redisCallbackList' data-type='struct redisCallbackList' data-ref="redisCallbackList">redisCallbackList</a> <dfn class="decl field" id="redisAsyncContext::(anonymous)::invalid" title='redisAsyncContext::(anonymous struct)::invalid' data-ref="redisAsyncContext::(anonymous)::invalid">invalid</dfn>;</td></tr>
+<tr><th id="98">98</th><td>        <b>struct</b> <a class="type" href="dict.h.html#dict" title='dict' data-ref="dict">dict</a> *<dfn class="decl field" id="redisAsyncContext::(anonymous)::channels" title='redisAsyncContext::(anonymous struct)::channels' data-ref="redisAsyncContext::(anonymous)::channels">channels</dfn>;</td></tr>
+<tr><th id="99">99</th><td>        <b>struct</b> <a class="type" href="dict.h.html#dict" title='dict' data-ref="dict">dict</a> *<dfn class="decl field" id="redisAsyncContext::(anonymous)::patterns" title='redisAsyncContext::(anonymous struct)::patterns' data-ref="redisAsyncContext::(anonymous)::patterns">patterns</dfn>;</td></tr>
+<tr><th id="100">100</th><td>    } <dfn class="decl field" id="redisAsyncContext::sub" title='redisAsyncContext::sub' data-ref="redisAsyncContext::sub">sub</dfn>;</td></tr>
+<tr><th id="101">101</th><td>} <dfn class="typedef" id="redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</dfn>;</td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td><i>/* Functions that proxy to hiredis */</i></td></tr>
+<tr><th id="104">104</th><td><a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<a class="decl fn" href="async.c.html#redisAsyncConnect" title='redisAsyncConnect' data-ref="redisAsyncConnect" id="redisAsyncConnect">redisAsyncConnect</a>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="622ip" title='ip' data-type='const char *' data-ref="622ip">ip</dfn>, <em>int</em> <dfn class="local col3 decl" id="623port" title='port' data-type='int' data-ref="623port">port</dfn>);</td></tr>
+<tr><th id="105">105</th><td><a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<a class="decl fn" href="async.c.html#redisAsyncConnectBind" title='redisAsyncConnectBind' data-ref="redisAsyncConnectBind" id="redisAsyncConnectBind">redisAsyncConnectBind</a>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="624ip" title='ip' data-type='const char *' data-ref="624ip">ip</dfn>, <em>int</em> <dfn class="local col5 decl" id="625port" title='port' data-type='int' data-ref="625port">port</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="626source_addr" title='source_addr' data-type='const char *' data-ref="626source_addr">source_addr</dfn>);</td></tr>
+<tr><th id="106">106</th><td><a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<a class="decl fn" href="async.c.html#redisAsyncConnectUnix" title='redisAsyncConnectUnix' data-ref="redisAsyncConnectUnix" id="redisAsyncConnectUnix">redisAsyncConnectUnix</a>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="627path" title='path' data-type='const char *' data-ref="627path">path</dfn>);</td></tr>
+<tr><th id="107">107</th><td><em>int</em> <a class="decl fn" href="async.c.html#redisAsyncSetConnectCallback" title='redisAsyncSetConnectCallback' data-ref="redisAsyncSetConnectCallback" id="redisAsyncSetConnectCallback">redisAsyncSetConnectCallback</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col8 decl" id="628ac" title='ac' data-type='redisAsyncContext *' data-ref="628ac">ac</dfn>, <a class="typedef" href="#redisConnectCallback" title='redisConnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisConnectCallback">redisConnectCallback</a> *<dfn class="local col9 decl" id="629fn" title='fn' data-type='redisConnectCallback *' data-ref="629fn">fn</dfn>);</td></tr>
+<tr><th id="108">108</th><td><em>int</em> <a class="decl fn" href="async.c.html#redisAsyncSetDisconnectCallback" title='redisAsyncSetDisconnectCallback' data-ref="redisAsyncSetDisconnectCallback" id="redisAsyncSetDisconnectCallback">redisAsyncSetDisconnectCallback</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col0 decl" id="630ac" title='ac' data-type='redisAsyncContext *' data-ref="630ac">ac</dfn>, <a class="typedef" href="#redisDisconnectCallback" title='redisDisconnectCallback' data-type='void (const struct redisAsyncContext *, int)' data-ref="redisDisconnectCallback">redisDisconnectCallback</a> *<dfn class="local col1 decl" id="631fn" title='fn' data-type='redisDisconnectCallback *' data-ref="631fn">fn</dfn>);</td></tr>
+<tr><th id="109">109</th><td><em>void</em> <a class="decl fn" href="async.c.html#redisAsyncDisconnect" title='redisAsyncDisconnect' data-ref="redisAsyncDisconnect" id="redisAsyncDisconnect">redisAsyncDisconnect</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col2 decl" id="632ac" title='ac' data-type='redisAsyncContext *' data-ref="632ac">ac</dfn>);</td></tr>
+<tr><th id="110">110</th><td><em>void</em> <a class="decl fn" href="async.c.html#redisAsyncFree" title='redisAsyncFree' data-ref="redisAsyncFree" id="redisAsyncFree">redisAsyncFree</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col3 decl" id="633ac" title='ac' data-type='redisAsyncContext *' data-ref="633ac">ac</dfn>);</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><i>/* Handle read/write events */</i></td></tr>
+<tr><th id="113">113</th><td><em>void</em> <a class="decl fn" href="async.c.html#redisAsyncHandleRead" title='redisAsyncHandleRead' data-ref="redisAsyncHandleRead" id="redisAsyncHandleRead">redisAsyncHandleRead</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col4 decl" id="634ac" title='ac' data-type='redisAsyncContext *' data-ref="634ac">ac</dfn>);</td></tr>
+<tr><th id="114">114</th><td><em>void</em> <a class="decl fn" href="async.c.html#redisAsyncHandleWrite" title='redisAsyncHandleWrite' data-ref="redisAsyncHandleWrite" id="redisAsyncHandleWrite">redisAsyncHandleWrite</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col5 decl" id="635ac" title='ac' data-type='redisAsyncContext *' data-ref="635ac">ac</dfn>);</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><i>/* Command functions for an async context. Write the command to the</i></td></tr>
+<tr><th id="117">117</th><td><i> * output buffer and register the provided callback. */</i></td></tr>
+<tr><th id="118">118</th><td><em>int</em> <a class="decl fn" href="async.c.html#redisvAsyncCommand" title='redisvAsyncCommand' data-ref="redisvAsyncCommand" id="redisvAsyncCommand">redisvAsyncCommand</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col6 decl" id="636ac" title='ac' data-type='redisAsyncContext *' data-ref="636ac">ac</dfn>, <a class="typedef" href="#redisCallbackFn" title='redisCallbackFn' data-type='void (struct redisAsyncContext *, void *, void *)' data-ref="redisCallbackFn">redisCallbackFn</a> *<dfn class="local col7 decl" id="637fn" title='fn' data-type='redisCallbackFn *' data-ref="637fn">fn</dfn>, <em>void</em> *<dfn class="local col8 decl" id="638privdata" title='privdata' data-type='void *' data-ref="638privdata">privdata</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="639format" title='format' data-type='const char *' data-ref="639format">format</dfn>, <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col0 decl" id="640ap" title='ap' data-type='struct __va_list_tag *' data-ref="640ap">ap</dfn>);</td></tr>
+<tr><th id="119">119</th><td><em>int</em> <a class="decl fn" href="async.c.html#redisAsyncCommand" title='redisAsyncCommand' data-ref="redisAsyncCommand" id="redisAsyncCommand">redisAsyncCommand</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col1 decl" id="641ac" title='ac' data-type='redisAsyncContext *' data-ref="641ac">ac</dfn>, <a class="typedef" href="#redisCallbackFn" title='redisCallbackFn' data-type='void (struct redisAsyncContext *, void *, void *)' data-ref="redisCallbackFn">redisCallbackFn</a> *<dfn class="local col2 decl" id="642fn" title='fn' data-type='redisCallbackFn *' data-ref="642fn">fn</dfn>, <em>void</em> *<dfn class="local col3 decl" id="643privdata" title='privdata' data-type='void *' data-ref="643privdata">privdata</dfn>, <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="644format" title='format' data-type='const char *' data-ref="644format">format</dfn>, ...);</td></tr>
+<tr><th id="120">120</th><td><em>int</em> <a class="decl fn" href="async.c.html#redisAsyncCommandArgv" title='redisAsyncCommandArgv' data-ref="redisAsyncCommandArgv" id="redisAsyncCommandArgv">redisAsyncCommandArgv</a>(<a class="typedef" href="#redisAsyncContext" title='redisAsyncContext' data-type='struct redisAsyncContext' data-ref="redisAsyncContext">redisAsyncContext</a> *<dfn class="local col5 decl" id="645ac" title='ac' data-type='redisAsyncContext *' data-ref="645ac">ac</dfn>, <a class="typedef" href="#redisCallbackFn" title='redisCallbackFn' data-type='void (struct redisAsyncContext *, void *, void *)' data-ref="redisCallbackFn">redisCallbackFn</a> *<dfn class="local col6 decl" id="646fn" title='fn' data-type='redisCallbackFn *' data-ref="646fn">fn</dfn>, <em>void</em> *<dfn class="local col7 decl" id="647privdata" title='privdata' data-type='void *' data-ref="647privdata">privdata</dfn>, <em>int</em> <dfn class="local col8 decl" id="648argc" title='argc' data-type='int' data-ref="648argc">argc</dfn>, <em>const</em> <em>char</em> **<dfn class="local col9 decl" id="649argv" title='argv' data-type='const char **' data-ref="649argv">argv</dfn>, <em>const</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> *<dfn class="local col0 decl" id="650argvlen" title='argvlen' data-type='const size_t *' data-ref="650argvlen">argvlen</dfn>);</td></tr>
+<tr><th id="121">121</th><td></td></tr>
+<tr><th id="122">122</th><td><u>#<span data-ppcond="122">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="123">123</th><td>}</td></tr>
+<tr><th id="124">124</th><td><u>#<span data-ppcond="122">endif</span></u></td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="127">127</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='async.c.html'>redis/deps/hiredis/async.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/llimits.h' l='99'/>
+<use f='redis/deps/lua/src/lgc.c' l='435' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='76' u='c'/>

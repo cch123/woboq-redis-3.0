@@ -1,0 +1,2 @@
+<def f='redis/src/sentinel.c' l='1129' ll='1139' type='void sentinelAddFlagsToDictOfRedisInstances(dict * instances, int flags)'/>
+<doc f='redis/src/sentinel.c' l='1128'>/* Add the specified flags to all the instances in the specified dictionary. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1259' type='int setTypeIsMember(robj * subject, robj * value)'/>
+<def f='redis/src/t_set.c' l='100' ll='112' type='int setTypeIsMember(robj * subject, robj * value)'/>
+<use f='redis/src/t_set.c' l='365' u='c' c='sismemberCommand'/>
+<use f='redis/src/t_set.c' l='657' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='674' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='824' u='c' c='sunionDiffGenericCommand'/>

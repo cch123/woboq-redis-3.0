@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lcode.h' l='53' type='void luaK_dischargevars(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='304' ll='334' type='void luaK_dischargevars(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='344' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='415' u='c' c='luaK_exp2nextreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='423' u='c' c='luaK_exp2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='440' u='c' c='luaK_exp2val'/>
+<use f='redis/deps/lua/src/lcode.c' l='541' u='c' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='565' u='c' c='luaK_goiffalse'/>
+<use f='redis/deps/lua/src/lcode.c' l='587' u='c' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='741' u='c' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='748' u='c' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lparser.c' l='675' u='c' c='prefixexp'/>

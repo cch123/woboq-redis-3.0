@@ -1,0 +1,58 @@
+<dec f='redis/src/cluster.h' l='83' type='char [40]'/>
+<use f='redis/src/cluster.c' l='267' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='426' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='522' u='r' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='525' u='r' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='649' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='651' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='828' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='844' u='r' c='clusterAddNode'/>
+<use f='redis/src/cluster.c' l='905' u='r' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='908' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='912' u='r' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='1036' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1036' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1044' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1096' u='r' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1160' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='1169' u='r' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='1186' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1202' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1317' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1317' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1324' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1324' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1394' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1502' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1681' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1697' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1701' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1841' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1841' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1934' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2117' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2122' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2246' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2254' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2379' u='r' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2469' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2479' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2493' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2497' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2501' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2514' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2536' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2547' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2923' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='2924' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='2938' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3106' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3132' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3222' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3625' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3634' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3673' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3676' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3833' u='r' c='clusterCommand'/>
+<offset>64</offset>
+<doc f='redis/src/cluster.h' l='83'>/* Node name, hex string, sha1-size */</doc>

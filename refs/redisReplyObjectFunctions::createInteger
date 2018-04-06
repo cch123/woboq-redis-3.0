@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='119' type='void *(*)(const redisReadTask *, long long)'/>
+<offset>128</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='363' u='r' c='processLineItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='364' u='r' c='processLineItem'/>

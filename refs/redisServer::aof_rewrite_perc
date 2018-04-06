@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='740' type='int'/>
+<offset>12768</offset>
+<doc f='redis/src/redis.h' l='740'>/* Rewrite AOF if % growth is &gt; M and... */</doc>
+<use f='redis/src/config.c' l='359' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='360' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='730' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1035' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1848' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1204' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1210' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1428' u='w' c='initServerConfig'/>

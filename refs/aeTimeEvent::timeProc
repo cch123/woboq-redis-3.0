@@ -1,0 +1,4 @@
+<dec f='redis/src/ae.h' l='74' type='aeTimeProc *'/>
+<use f='redis/src/ae.c' l='214' u='w' c='aeCreateTimeEvent'/>
+<use f='redis/src/ae.c' l='311' u='r' c='processTimeEvents'/>
+<offset>192</offset>

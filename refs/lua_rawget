@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='179' type='void lua_rawget(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='557' ll='564' macro='1' type='void lua_rawget(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='207' u='c' c='luaL_getmetafield'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='365' u='c' c='luaL_findtable'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='173' u='c' c='luaB_rawget'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='435' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/ldblib.c' l='211' u='c' c='hookf'/>
+<use f='redis/deps/lua/src/ldblib.c' l='213' u='c' c='hookf'/>
+<use f='redis/deps/lua/src/ldblib.c' l='247' u='c' c='gethooktable'/>
+<use f='redis/deps/lua/src/ldblib.c' l='293' u='c' c='db_gethook'/>

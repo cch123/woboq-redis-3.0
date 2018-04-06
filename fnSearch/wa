@@ -1,0 +1,5 @@
+watchdogScheduleSignal|watchdogScheduleSignal
+watchdogSignalHandler|watchdogSignalHandler
+watchCommand|watchCommand
+watchForKey|watchForKey
+waitCommand|waitCommand

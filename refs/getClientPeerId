@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1050' type='char * getClientPeerId(redisClient * client)'/>
+<def f='redis/src/networking.c' l='1292' ll='1300' type='char * getClientPeerId(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1335' u='c' c='catClientInfoString'/>
+<use f='redis/src/networking.c' l='1439' u='c' c='clientCommand'/>
+<doc f='redis/src/networking.c' l='1288'>/* This function returns the client peer id, by creating and caching it
+ * if client-&gt;peerid is NULL, otherwise returning the cached value.
+ * The Peer ID never changes during the life of the client, however it
+ * is expensive to compute. */</doc>
+<use f='redis/src/replication.c' l='276' u='c' c='replicationFeedMonitors'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1327' type='int selectDb(redisClient * c, int id)'/>
+<use f='redis/src/aof.c' l='556' u='c' c='createFakeClient'/>
+<def f='redis/src/db.c' l='225' ll='230' type='int selectDb(redisClient * c, int id)'/>
+<use f='redis/src/db.c' l='316' u='c' c='selectCommand'/>
+<use f='redis/src/db.c' l='726' u='c' c='moveCommand'/>
+<use f='redis/src/db.c' l='732' u='c' c='moveCommand'/>
+<use f='redis/src/networking.c' l='85' u='c' c='createClient'/>
+<use f='redis/src/scripting.c' l='1009' u='c' c='evalGenericCommand'/>

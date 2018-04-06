@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1250' type='void closeListeningSockets(int unlink_unix_socket)'/>
+<use f='redis/src/aof.c' l='1280' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/rdb.c' l='778' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1442' u='c' c='rdbSaveToSlavesSockets'/>
+<def f='redis/src/redis.c' l='2311' ll='2322' type='void closeListeningSockets(int unlink_unix_socket)'/>
+<use f='redis/src/redis.c' l='2373' u='c' c='prepareForShutdown'/>
+<doc f='redis/src/redis.c' l='2309'>/* Close listening sockets. Also unlink the unix domain socket if
+ * unlink_unix_socket is non-zero. */</doc>

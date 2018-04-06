@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='815' type='char *'/>
+<offset>16128</offset>
+<doc f='redis/src/redis.h' l='814'>/* Replication (slave) */</doc>
+<doc f='redis/src/redis.h' l='815'>/* AUTH with this password with master */</doc>
+<use f='redis/src/config.c' l='297' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='629' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='630' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1024' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1024' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1815' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1490' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='1290' u='r' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1291' u='r' c='syncWithMaster'/>

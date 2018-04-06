@@ -1,0 +1,10 @@
+<def f='redis/src/sentinel.c' l='465' ll='481' type='sentinelAddr * createSentinelAddr(char * hostname, int port)'/>
+<use f='redis/src/sentinel.c' l='906' u='c' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1233' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1244' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1254' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<doc f='redis/src/sentinel.c' l='460'>/* Create a sentinelAddr object and return it on success.
+ * On error NULL is returned and errno is set to:
+ *  ENOENT: Can&apos;t resolve the hostname.
+ *  EINVAL: Invalid port number.
+ */</doc>

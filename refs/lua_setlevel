@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='298' type='void lua_setlevel(lua_State * from, lua_State * to)'/>
+<def f='redis/deps/lua/src/lapi.c' l='125' ll='127' macro='1' type='void lua_setlevel(lua_State * from, lua_State * to)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='527' u='c' c='auxresume'/>

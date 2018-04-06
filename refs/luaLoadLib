@@ -1,0 +1,10 @@
+<def f='redis/src/scripting.c' l='568' ll='572' type='void luaLoadLib(lua_State * lua, const char * libname, lua_CFunction luafunc)'/>
+<use f='redis/src/scripting.c' l='580' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='581' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='582' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='583' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='584' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='585' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='586' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='587' u='c' c='luaLoadLibraries'/>
+<use f='redis/src/scripting.c' l='588' u='c' c='luaLoadLibraries'/>

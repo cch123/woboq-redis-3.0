@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/ltable.h' l='25' type='const TValue * luaH_get(Table * t, const TValue * key)'/>
+<use f='redis/deps/lua/src/lapi.c' l='562' u='c' c='lua_rawget'/>
+<def f='redis/deps/lua/src/ltable.c' l='469' ll='491' type='const TValue * luaH_get(Table * t, const TValue * key)'/>
+<use f='redis/deps/lua/src/ltable.c' l='495' u='c' c='luaH_set'/>
+<doc f='redis/deps/lua/src/ltable.c' l='466'>/*
+** main search function
+*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='114' u='c' c='luaV_gettable'/>

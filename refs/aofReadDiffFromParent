@@ -1,0 +1,7 @@
+<def f='redis/src/aof.c' l='1002' ll='1012' type='ssize_t aofReadDiffFromParent()'/>
+<use f='redis/src/aof.c' l='1104' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1132' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1147' u='c' c='rewriteAppendOnlyFile'/>
+<doc f='redis/src/aof.c' l='999'>/* This function is called by the child rewriting the AOF file to read
+ * the difference accumulated from the parent into a buffer, that is
+ * concatenated at the end of the rewrite. */</doc>

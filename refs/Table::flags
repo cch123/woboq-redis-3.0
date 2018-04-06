@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lobject.h' l='340' type='lu_byte'/>
+<offset>80</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='340'>/* 1&lt;&lt;p means tagmethod(p) is not present */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='136' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='362' u='w' c='luaH_new'/>
+<use f='redis/deps/lua/src/ltable.c' l='496' u='w' c='luaH_set'/>
+<use f='redis/deps/lua/src/ltm.c' l='54' u='w' c='luaT_gettm'/>
+<use f='redis/deps/lua/src/lvm.c' l='116' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='145' u='w' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='178' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='182' macro='1' u='r'/>

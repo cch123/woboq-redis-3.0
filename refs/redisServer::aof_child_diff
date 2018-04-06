@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='769' type='sds'/>
+<use f='redis/src/aof.c' l='1008' u='w' c='aofReadDiffFromParent'/>
+<use f='redis/src/aof.c' l='1008' u='r' c='aofReadDiffFromParent'/>
+<use f='redis/src/aof.c' l='1041' u='w' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1152' u='r' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1153' u='r' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1153' u='r' c='rewriteAppendOnlyFile'/>
+<offset>14016</offset>
+<doc f='redis/src/redis.h' l='769'>/* AOF diff accumulator child side. */</doc>

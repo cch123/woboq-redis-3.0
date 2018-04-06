@@ -1,0 +1,24 @@
+<dec f='redis/src/zmalloc.h' l='72' type='char * zstrdup(const char * s)'/>
+<use f='redis/src/config.c' l='142' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='145' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='182' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='200' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='297' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='339' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='384' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='387' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='394' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='441' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='623' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='627' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='630' u='c' c='configSetCommand'/>
+<use f='redis/src/latency.c' l='109' u='c' c='latencyAddSample'/>
+<use f='redis/src/redis.c' l='1420' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1422' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1442' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1443' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1444' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1474' u='c' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='1367' u='c' c='syncWithMaster'/>
+<use f='redis/src/sparkline.c' l='66' u='c' c='sparklineSequenceAddSample'/>
+<def f='redis/src/zmalloc.c' l='213' ll='219' type='char * zstrdup(const char * s)'/>

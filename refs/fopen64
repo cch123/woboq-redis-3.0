@@ -1,0 +1,16 @@
+<use f='redis/src/aof.c' l='601' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1035' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='91' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/config.c' l='186' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='586' u='c' c='loadServerConfig'/>
+<use f='redis/src/config.c' l='1315' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/debug.c' l='728' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/latency.c' l='67' u='c' c='THPIsEnabled'/>
+<use f='redis/src/rdb.c' l='726' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='1138' u='c' c='rdbLoad'/>
+<use f='redis/src/redis-cli.c' l='1061' u='c' c='evalMode'/>
+<use f='redis/src/redis.c' l='306' u='c' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='1637' u='c' c='checkTcpBacklogSettings'/>
+<use f='redis/src/redis.c' l='3355' u='c' c='linuxOvercommitMemoryValue'/>
+<use f='redis/src/redis.c' l='3380' u='c' c='createPidFile'/>
+<use f='redis/src/util.c' l='458' u='c' c='getRandomHexChars'/>

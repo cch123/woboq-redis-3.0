@@ -1,0 +1,6 @@
+<dec f='redis/src/ziplist.h' l='43' type='unsigned int ziplistCompare(unsigned char * p, unsigned char * s, unsigned int slen)'/>
+<use f='redis/src/t_list.c' l='236' u='c' c='listTypeEqual'/>
+<use f='redis/src/t_zset.c' l='923' u='c' c='zzlFind'/>
+<use f='redis/src/t_zset.c' l='2802' u='c' c='zrankGenericCommand'/>
+<def f='redis/src/ziplist.c' l='793' ll='816' type='unsigned int ziplistCompare(unsigned char * p, unsigned char * sstr, unsigned int slen)'/>
+<doc f='redis/src/ziplist.c' l='792'>/* Return 1 if equal. */</doc>

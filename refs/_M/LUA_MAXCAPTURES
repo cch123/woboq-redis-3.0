@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='633'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='628'>/*
+@@ LUA_MAXCAPTURES is the maximum number of captures that a pattern
+@* can do during pattern-matching.
+** CHANGE it if you need more captures. This limit is arbitrary.
+*/</doc>
+<use f='redis/deps/lua/src/lstrlib.c' l='178' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='333' u='c'/>

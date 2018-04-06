@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='67' type='void strbuf_extend_length(strbuf_t * s, int len)'/>
+<def f='redis/deps/lua/src/strbuf.h' l='106' ll='109' type='void strbuf_extend_length(strbuf_t * s, int len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='615' u='c' c='json_append_number'/>

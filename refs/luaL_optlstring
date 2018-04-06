@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='52' type='const char * luaL_optlstring(lua_State * L, int numArg, const char * def, size_t * l)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='101' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='165' ll='173' macro='1' type='const char * luaL_optlstring(lua_State * L, int narg, const char * def, size_t * len)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='280' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='286' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='317' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='326' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='337' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='103' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='163' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='176' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loslib.c' l='39' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loslib.c' l='125' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loslib.c' l='209' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='148' u='c' c='tconcat'/>

@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='164'/>
+<doc f='redis/src/redis.h' l='162'>/* Command flags. Please check the command table defined in the redis.c file
+ * for more information about the meaning of every flag. */</doc>
+<use f='redis/src/redis.c' l='1897' u='c'/>
+<use f='redis/src/redis.c' l='2209' u='c'/>
+<use f='redis/src/redis.c' l='2228' u='c'/>
+<use f='redis/src/redis.c' l='2240' u='c'/>
+<use f='redis/src/redis.c' l='2497' u='c'/>
+<use f='redis/src/scripting.c' l='323' u='c'/>
+<use f='redis/src/scripting.c' l='357' u='c'/>

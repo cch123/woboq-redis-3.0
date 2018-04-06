@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.h' l='43' type='sds'/>
+<use f='redis/src/cluster.c' l='543' u='w' c='createClusterLink'/>
+<use f='redis/src/cluster.c' l='558' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='1530' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1545' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2007' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2014' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2043' u='w' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2043' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2044' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2051' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2052' u='w' c='clusterReadHandler'/>
+<offset>192</offset>
+<doc f='redis/src/cluster.h' l='43'>/* Packet reception buffer */</doc>

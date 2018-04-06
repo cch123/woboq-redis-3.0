@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='103' type='int rdbSaveBackground(char * filename)'/>
+<def f='redis/src/rdb.c' l='764' ll='810' type='int rdbSaveBackground(char * filename)'/>
+<use f='redis/src/rdb.c' l='1541' u='c' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='1196' u='c' c='serverCron'/>
+<use f='redis/src/replication.c' l='454' u='c' c='startBgsaveForReplication'/>

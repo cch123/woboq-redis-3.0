@@ -1,0 +1,17 @@
+<def f='redis/src/aof.c' l='756' ll='766' type='int rioWriteBulkObject(rio * r, robj * obj)'/>
+<use f='redis/src/aof.c' l='787' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='813' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='815' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='841' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='859' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='861' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='900' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='927' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='930' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='964' u='c' c='rioWriteHashIteratorCursor'/>
+<use f='redis/src/aof.c' l='985' u='c' c='rewriteHashObject'/>
+<use f='redis/src/aof.c' l='1081' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1082' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1098' u='c' c='rewriteAppendOnlyFile'/>
+<doc f='redis/src/aof.c' l='754'>/* Delegate writing an object to writing a bulk string or bulk long long.
+ * This is not placed in rio.c since that adds the redis.h dependency. */</doc>

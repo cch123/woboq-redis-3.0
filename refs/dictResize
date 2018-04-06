@@ -1,0 +1,10 @@
+<dec f='redis/src/dict.h' l='161' type='int dictResize(dict * d)'/>
+<def f='redis/src/dict.c' l='192' ll='201' type='int dictResize(dict * d)'/>
+<doc f='redis/src/dict.c' l='190'>/* Resize the table to the minimal size that contains all the elements,
+ * but with the invariant of a USED/BUCKETS ratio near to &lt;= 1 */</doc>
+<use f='redis/src/redis.c' l='664' u='c' c='tryResizeHashTables'/>
+<use f='redis/src/redis.c' l='666' u='c' c='tryResizeHashTables'/>
+<use f='redis/src/t_hash.c' l='251' u='c' c='hashTypeDelete'/>
+<use f='redis/src/t_set.c' l='85' u='c' c='setTypeRemove'/>
+<use f='redis/src/t_zset.c' l='1355' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1457' u='c' c='zremrangeGenericCommand'/>

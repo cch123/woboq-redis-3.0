@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='699' type='long long'/>
+<offset>6912</offset>
+<doc f='redis/src/redis.h' l='699'>/* Number of connections received */</doc>
+<use f='redis/src/networking.c' l='608' u='w' c='acceptCommonHandler'/>
+<use f='redis/src/redis.c' l='1723' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2837' u='r' c='genRedisInfoString'/>

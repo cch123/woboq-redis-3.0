@@ -1,0 +1,10 @@
+<dec f='redis/src/util.h' l='35' type='int stringmatchlen(const char * p, int plen, const char * s, int slen, int nocase)'/>
+<use f='redis/src/db.c' l='349' u='c' c='keysCommand'/>
+<use f='redis/src/db.c' l='547' u='c' c='scanGenericCommand'/>
+<use f='redis/src/db.c' l='555' u='c' c='scanGenericCommand'/>
+<use f='redis/src/pubsub.c' l='256' u='c' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='343' u='c' c='pubsubCommand'/>
+<def f='redis/src/util.c' l='47' ll='167' type='int stringmatchlen(const char * pattern, int patternLen, const char * string, int stringLen, int nocase)'/>
+<use f='redis/src/util.c' l='60' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='170' u='c' c='stringmatch'/>
+<doc f='redis/src/util.c' l='46'>/* Glob-style pattern matching. */</doc>

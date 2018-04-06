@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='924' type='redisGetKeysProc *'/>
+<offset>320</offset>
+<doc f='redis/src/redis.h' l='922'>/* Use a function to determine keys arguments in a command line.
+     * Used for Redis Cluster redirect. */</doc>
+<use f='redis/src/db.c' l='1014' u='r' c='getKeysFromCommand'/>
+<use f='redis/src/db.c' l='1015' u='r' c='getKeysFromCommand'/>
+<use f='redis/src/redis.c' l='2169' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2510' u='r' c='addReplyCommand'/>

@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='765' ll='789' type='unsigned char * zzlFirstInRange(unsigned char * zl, zrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='1019' u='c' c='zzlDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='2264' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2419' u='c' c='zcountCommand'/>
+<doc f='redis/src/t_zset.c' l='763'>/* Find pointer to the first element contained in the specified range.
+ * Returns NULL when no element is contained in the range. */</doc>

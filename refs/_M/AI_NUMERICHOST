@@ -1,0 +1,2 @@
+<dec f='include/netdb.h' l='600'/>
+<use f='redis/src/anet.c' l='210' u='c'/>

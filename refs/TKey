@@ -1,0 +1,7 @@
+<def f='redis/deps/lua/src/lobject.h' l='323' ll='329'/>
+<size>24</size>
+<doc f='redis/deps/lua/src/lobject.h' l='319'>/*
+** Tables
+*/</doc>
+<mbr r='TKey::nk' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:324:3)'/>
+<mbr r='TKey::tvk' o='0' t='TValue'/>

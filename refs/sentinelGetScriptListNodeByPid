@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='663' ll='675' type='listNode * sentinelGetScriptListNodeByPid(pid_t pid)'/>
+<use f='redis/src/sentinel.c' l='757' u='c' c='sentinelCollectTerminatedScripts'/>
+<doc f='redis/src/sentinel.c' l='661'>/* Lookup a script in the scripts queue via pid, and returns the list node
+ * (so that we can easily remove it from the queue if needed). */</doc>

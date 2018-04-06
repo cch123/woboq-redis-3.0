@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='181' type='uint32_t'/>
+<use f='redis/src/cluster.c' l='1566' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1897' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2331' u='w' c='clusterSendPublish'/>
+<offset>32</offset>

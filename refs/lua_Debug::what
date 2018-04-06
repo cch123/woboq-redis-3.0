@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='350' type='const char *'/>
+<offset>192</offset>
+<doc f='redis/deps/lua/src/lua.h' l='350'>/* (S) `Lua&apos;, `C&apos;, `main&apos;, `tail&apos; */</doc>
+<use f='redis/deps/lua/src/ldblib.c' l='126' u='r' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='360' u='r' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldblib.c' l='362' u='r' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldblib.c' l='362' u='r' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldebug.c' l='155' u='w' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='161' u='w' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='169' u='w' c='info_tailcall'/>

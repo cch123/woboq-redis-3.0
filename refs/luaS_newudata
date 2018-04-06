@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lstring.h' l='27' type='Udata * luaS_newudata(lua_State * L, size_t s, Table * e)'/>
+<use f='redis/deps/lua/src/lapi.c' l='1029' u='c' c='lua_newuserdata'/>
+<def f='redis/deps/lua/src/lstring.c' l='96' ll='110' type='Udata * luaS_newudata(lua_State * L, size_t s, Table * e)'/>

@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>linenoise.h source code [redis/deps/linenoise/linenoise.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="linenoiseCompletions "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/linenoise/linenoise.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>redis</a>/<a href='..'>deps</a>/<a href='./'>linenoise</a>/<a href='linenoise.h.html'>linenoise.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* linenoise.h -- guerrilla line editing library against the idea that a</i></td></tr>
+<tr><th id="2">2</th><td><i> * line editing lib needs to be 20,000 lines of C code.</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * See linenoise.c for more information.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * ------------------------------------------------------------------------</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Copyright (c) 2010, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="9">9</th><td><i> * Copyright (c) 2010, Pieter Noordhuis &lt;pcnoordhuis at gmail dot com&gt;</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="12">12</th><td><i> *</i></td></tr>
+<tr><th id="13">13</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="14">14</th><td><i> * modification, are permitted provided that the following conditions are</i></td></tr>
+<tr><th id="15">15</th><td><i> * met:</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> *  *  Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="18">18</th><td><i> *     notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> *  *  Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="21">21</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="22">22</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="23">23</th><td><i> *</i></td></tr>
+<tr><th id="24">24</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</i></td></tr>
+<tr><th id="25">25</th><td><i> * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="26">26</th><td><i> * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR</i></td></tr>
+<tr><th id="27">27</th><td><i> * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT</i></td></tr>
+<tr><th id="28">28</th><td><i> * HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,</i></td></tr>
+<tr><th id="29">29</th><td><i> * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT</i></td></tr>
+<tr><th id="30">30</th><td><i> * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,</i></td></tr>
+<tr><th id="31">31</th><td><i> * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY</i></td></tr>
+<tr><th id="32">32</th><td><i> * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</i></td></tr>
+<tr><th id="33">33</th><td><i> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</i></td></tr>
+<tr><th id="34">34</th><td><i> * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="35">35</th><td><i> */</i></td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><u>#<span data-ppcond="37">ifndef</span> <span class="macro" data-ref="_M/__LINENOISE_H">__LINENOISE_H</span></u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/__LINENOISE_H" data-ref="_M/__LINENOISE_H">__LINENOISE_H</dfn></u></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="40">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="41">41</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="42">42</th><td><u>#<span data-ppcond="40">endif</span></u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="linenoiseCompletions" title='linenoiseCompletions' data-ref="linenoiseCompletions"><a class="type" href="#linenoiseCompletions" title='linenoiseCompletions' data-ref="linenoiseCompletions">linenoiseCompletions</a></dfn> {</td></tr>
+<tr><th id="45">45</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="linenoiseCompletions::len" title='linenoiseCompletions::len' data-ref="linenoiseCompletions::len">len</dfn>;</td></tr>
+<tr><th id="46">46</th><td>  <em>char</em> **<dfn class="decl field" id="linenoiseCompletions::cvec" title='linenoiseCompletions::cvec' data-ref="linenoiseCompletions::cvec">cvec</dfn>;</td></tr>
+<tr><th id="47">47</th><td>} <dfn class="typedef" id="linenoiseCompletions" title='linenoiseCompletions' data-type='struct linenoiseCompletions' data-ref="linenoiseCompletions">linenoiseCompletions</dfn>;</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><b>typedef</b> <em>void</em>(<dfn class="typedef" id="linenoiseCompletionCallback" title='linenoiseCompletionCallback' data-type='void (const char *, linenoiseCompletions *)' data-ref="linenoiseCompletionCallback">linenoiseCompletionCallback</dfn>)(<em>const</em> <em>char</em> *, <a class="typedef" href="#linenoiseCompletions" title='linenoiseCompletions' data-type='struct linenoiseCompletions' data-ref="linenoiseCompletions">linenoiseCompletions</a> *);</td></tr>
+<tr><th id="50">50</th><td><em>void</em> <a class="decl fn" href="linenoise.c.html#linenoiseSetCompletionCallback" title='linenoiseSetCompletionCallback' data-ref="linenoiseSetCompletionCallback" id="linenoiseSetCompletionCallback">linenoiseSetCompletionCallback</a>(<a class="typedef" href="#linenoiseCompletionCallback" title='linenoiseCompletionCallback' data-type='void (const char *, linenoiseCompletions *)' data-ref="linenoiseCompletionCallback">linenoiseCompletionCallback</a> *);</td></tr>
+<tr><th id="51">51</th><td><em>void</em> <a class="decl fn" href="linenoise.c.html#linenoiseAddCompletion" title='linenoiseAddCompletion' data-ref="linenoiseAddCompletion" id="linenoiseAddCompletion">linenoiseAddCompletion</a>(<a class="typedef" href="#linenoiseCompletions" title='linenoiseCompletions' data-type='struct linenoiseCompletions' data-ref="linenoiseCompletions">linenoiseCompletions</a> *, <em>const</em> <em>char</em> *);</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><em>char</em> *<a class="decl fn" href="linenoise.c.html#linenoise" title='linenoise' data-ref="linenoise" id="linenoise">linenoise</a>(<em>const</em> <em>char</em> *<dfn class="local col5 decl" id="25prompt" title='prompt' data-type='const char *' data-ref="25prompt">prompt</dfn>);</td></tr>
+<tr><th id="54">54</th><td><em>int</em> <a class="decl fn" href="linenoise.c.html#linenoiseHistoryAdd" title='linenoiseHistoryAdd' data-ref="linenoiseHistoryAdd" id="linenoiseHistoryAdd">linenoiseHistoryAdd</a>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="26line" title='line' data-type='const char *' data-ref="26line">line</dfn>);</td></tr>
+<tr><th id="55">55</th><td><em>int</em> <a class="decl fn" href="linenoise.c.html#linenoiseHistorySetMaxLen" title='linenoiseHistorySetMaxLen' data-ref="linenoiseHistorySetMaxLen" id="linenoiseHistorySetMaxLen">linenoiseHistorySetMaxLen</a>(<em>int</em> <dfn class="local col7 decl" id="27len" title='len' data-type='int' data-ref="27len">len</dfn>);</td></tr>
+<tr><th id="56">56</th><td><em>int</em> <a class="decl fn" href="linenoise.c.html#linenoiseHistorySave" title='linenoiseHistorySave' data-ref="linenoiseHistorySave" id="linenoiseHistorySave">linenoiseHistorySave</a>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="28filename" title='filename' data-type='const char *' data-ref="28filename">filename</dfn>);</td></tr>
+<tr><th id="57">57</th><td><em>int</em> <a class="decl fn" href="linenoise.c.html#linenoiseHistoryLoad" title='linenoiseHistoryLoad' data-ref="linenoiseHistoryLoad" id="linenoiseHistoryLoad">linenoiseHistoryLoad</a>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="29filename" title='filename' data-type='const char *' data-ref="29filename">filename</dfn>);</td></tr>
+<tr><th id="58">58</th><td><em>void</em> <a class="decl fn" href="linenoise.c.html#linenoiseClearScreen" title='linenoiseClearScreen' data-ref="linenoiseClearScreen" id="linenoiseClearScreen">linenoiseClearScreen</a>(<em>void</em>);</td></tr>
+<tr><th id="59">59</th><td><em>void</em> <a class="decl fn" href="linenoise.c.html#linenoiseSetMultiLine" title='linenoiseSetMultiLine' data-ref="linenoiseSetMultiLine" id="linenoiseSetMultiLine">linenoiseSetMultiLine</a>(<em>int</em> <dfn class="local col0 decl" id="30ml" title='ml' data-type='int' data-ref="30ml">ml</dfn>);</td></tr>
+<tr><th id="60">60</th><td><em>void</em> <a class="decl fn" href="linenoise.c.html#linenoisePrintKeyCodes" title='linenoisePrintKeyCodes' data-ref="linenoisePrintKeyCodes" id="linenoisePrintKeyCodes">linenoisePrintKeyCodes</a>(<em>void</em>);</td></tr>
+<tr><th id="61">61</th><td></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="62">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="63">63</th><td>}</td></tr>
+<tr><th id="64">64</th><td><u>#<span data-ppcond="62">endif</span></u></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><u>#<span data-ppcond="37">endif</span> /* __LINENOISE_H */</u></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='linenoise.c.html'>redis/deps/linenoise/linenoise.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

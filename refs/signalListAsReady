@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1094' type='void signalListAsReady(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='98' u='c' c='dbAdd'/>
+<def f='redis/src/t_list.c' l='846' ll='867' type='void signalListAsReady(redisDb * db, robj * key)'/>
+<doc f='redis/src/t_list.c' l='839'>/* If the specified key has clients blocked waiting for list pushes, this
+ * function will put the key reference into the server.ready_keys list.
+ * Note that db-&gt;ready_keys is a hash table that allows us to avoid putting
+ * the same key again and again in the list in case of multiple pushes
+ * made by a script or in the context of MULTI/EXEC.
+ *
+ * The list will be finally processed by handleClientsBlockedOnLists() */</doc>

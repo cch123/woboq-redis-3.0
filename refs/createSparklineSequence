@@ -1,0 +1,4 @@
+<dec f='redis/src/sparkline.h' l='50' type='struct sequence * createSparklineSequence()'/>
+<use f='redis/src/latency.c' l='518' u='c' c='latencyCommandGenSparkeline'/>
+<def f='redis/src/sparkline.c' l='57' ll='62' type='struct sequence * createSparklineSequence()'/>
+<doc f='redis/src/sparkline.c' l='56'>/* Create a new sequence. */</doc>

@@ -1,0 +1,2 @@
+<dec f='redis/src/anet.h' l='50' type='int anetTcpConnect(char * err, char * addr, int port)'/>
+<def f='redis/src/anet.c' l='339' ll='342' type='int anetTcpConnect(char * err, char * addr, int port)'/>

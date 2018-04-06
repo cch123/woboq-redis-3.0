@@ -1,0 +1,7 @@
+<dec f='redis/src/sentinel.c' l='384' type='void sentinelCommand(redisClient * c)'/>
+<use f='redis/src/sentinel.c' l='392'/>
+<use f='redis/src/sentinel.c' l='392'/>
+<use f='redis/src/sentinel.c' l='392'/>
+<use f='redis/src/sentinel.c' l='392'/>
+<def f='redis/src/sentinel.c' l='2618' ll='2790' type='void sentinelCommand(redisClient * c)'/>
+<doc f='redis/src/sentinel.c' l='382'>/* =========================== Initialization =============================== */</doc>

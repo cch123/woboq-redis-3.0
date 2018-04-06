@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='952' type='robj *'/>
+<dec f='redis/src/redis.h' l='968' type='robj *'/>
+<dec f='redis/src/redis.h' l='979' type='robj *'/>
+<offset>0</offset>
+<use f='redis/src/t_hash.c' l='278' u='w' c='hashTypeInitIterator'/>
+<use f='redis/src/t_hash.c' l='308' u='r' c='hashTypeNext'/>
+<use f='redis/src/t_list.c' l='125' u='w' c='listTypeInitIterator'/>
+<use f='redis/src/t_list.c' l='148' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='155' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='157' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='202' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='249' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='249' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='255' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='262' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_set.c' l='116' u='w' c='setTypeInitIterator'/>
+<use f='redis/src/t_set.c' l='151' u='r' c='setTypeNext'/>

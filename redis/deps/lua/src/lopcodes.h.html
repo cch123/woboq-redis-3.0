@@ -1,0 +1,287 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lopcodes.h source code [redis/deps/lua/src/lopcodes.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="OpArgMask,OpMode "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lopcodes.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lopcodes.h.html'>lopcodes.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lopcodes.h,v 1.125.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Opcodes for Lua virtual machine</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/lopcodes_h">lopcodes_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/lopcodes_h" data-ref="_M/lopcodes_h">lopcodes_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="llimits.h.html">"llimits.h"</a></u></td></tr>
+<tr><th id="11">11</th><td></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/*===========================================================================</i></td></tr>
+<tr><th id="14">14</th><td><i>  We assume that instructions are unsigned numbers.</i></td></tr>
+<tr><th id="15">15</th><td><i>  All instructions have an opcode in the first 6 bits.</i></td></tr>
+<tr><th id="16">16</th><td><i>  Instructions can have the following fields:</i></td></tr>
+<tr><th id="17">17</th><td><i>	`A' : 8 bits</i></td></tr>
+<tr><th id="18">18</th><td><i>	`B' : 9 bits</i></td></tr>
+<tr><th id="19">19</th><td><i>	`C' : 9 bits</i></td></tr>
+<tr><th id="20">20</th><td><i>	`Bx' : 18 bits (`B' and `C' together)</i></td></tr>
+<tr><th id="21">21</th><td><i>	`sBx' : signed Bx</i></td></tr>
+<tr><th id="22">22</th><td><i></i></td></tr>
+<tr><th id="23">23</th><td><i>  A signed argument is represented in excess K; that is, the number</i></td></tr>
+<tr><th id="24">24</th><td><i>  value is the unsigned value minus K. K is exactly the maximum value</i></td></tr>
+<tr><th id="25">25</th><td><i>  for that argument (so that -max is represented by 0, and +max is</i></td></tr>
+<tr><th id="26">26</th><td><i>  represented by 2*max), which is half the maximum for the corresponding</i></td></tr>
+<tr><th id="27">27</th><td><i>  unsigned argument.</i></td></tr>
+<tr><th id="28">28</th><td><i>===========================================================================*/</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><b>enum</b> <dfn class="type def" id="OpMode" title='OpMode' data-ref="OpMode">OpMode</dfn> {<dfn class="enum" id="OpMode::iABC" title='OpMode::iABC' data-ref="OpMode::iABC">iABC</dfn>, <dfn class="enum" id="OpMode::iABx" title='OpMode::iABx' data-ref="OpMode::iABx">iABx</dfn>, <dfn class="enum" id="OpMode::iAsBx" title='OpMode::iAsBx' data-ref="OpMode::iAsBx">iAsBx</dfn>};  <i>/* basic instruction format */</i></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td><i>/*</i></td></tr>
+<tr><th id="35">35</th><td><i>** size and position of opcode arguments.</i></td></tr>
+<tr><th id="36">36</th><td><i>*/</i></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/SIZE_C" data-ref="_M/SIZE_C">SIZE_C</dfn>		9</u></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/SIZE_B" data-ref="_M/SIZE_B">SIZE_B</dfn>		9</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/SIZE_Bx" data-ref="_M/SIZE_Bx">SIZE_Bx</dfn>		(SIZE_C + SIZE_B)</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/SIZE_A" data-ref="_M/SIZE_A">SIZE_A</dfn>		8</u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/SIZE_OP" data-ref="_M/SIZE_OP">SIZE_OP</dfn>		6</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/POS_OP" data-ref="_M/POS_OP">POS_OP</dfn>		0</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/POS_A" data-ref="_M/POS_A">POS_A</dfn>		(POS_OP + SIZE_OP)</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/POS_C" data-ref="_M/POS_C">POS_C</dfn>		(POS_A + SIZE_A)</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/POS_B" data-ref="_M/POS_B">POS_B</dfn>		(POS_C + SIZE_C)</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/POS_Bx" data-ref="_M/POS_Bx">POS_Bx</dfn>		POS_C</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/*</i></td></tr>
+<tr><th id="52">52</th><td><i>** limits for opcode arguments.</i></td></tr>
+<tr><th id="53">53</th><td><i>** we use (signed) int to manipulate most arguments,</i></td></tr>
+<tr><th id="54">54</th><td><i>** so they must fit in LUAI_BITSINT-1 bits (-1 for sign)</i></td></tr>
+<tr><th id="55">55</th><td><i>*/</i></td></tr>
+<tr><th id="56">56</th><td><u>#<span data-ppcond="56">if</span> <a class="macro" href="#39" title="(9 + 9)" data-ref="_M/SIZE_Bx">SIZE_Bx</a> &lt; <a class="macro" href="luaconf.h.html#395" title="32" data-ref="_M/LUAI_BITSINT">LUAI_BITSINT</a>-1</u></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/MAXARG_Bx" data-ref="_M/MAXARG_Bx">MAXARG_Bx</dfn>        ((1&lt;&lt;SIZE_Bx)-1)</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/MAXARG_sBx" data-ref="_M/MAXARG_sBx">MAXARG_sBx</dfn>        (MAXARG_Bx&gt;&gt;1)         /* `sBx' is signed */</u></td></tr>
+<tr><th id="59">59</th><td><u>#<span data-ppcond="56">else</span></u></td></tr>
+<tr><th id="60">60</th><td><u>#define MAXARG_Bx        MAX_INT</u></td></tr>
+<tr><th id="61">61</th><td><u>#define MAXARG_sBx        MAX_INT</u></td></tr>
+<tr><th id="62">62</th><td><u>#<span data-ppcond="56">endif</span></u></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><u>#define <dfn class="macro" id="_M/MAXARG_A" data-ref="_M/MAXARG_A">MAXARG_A</dfn>        ((1&lt;&lt;SIZE_A)-1)</u></td></tr>
+<tr><th id="66">66</th><td><u>#define <dfn class="macro" id="_M/MAXARG_B" data-ref="_M/MAXARG_B">MAXARG_B</dfn>        ((1&lt;&lt;SIZE_B)-1)</u></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/MAXARG_C" data-ref="_M/MAXARG_C">MAXARG_C</dfn>        ((1&lt;&lt;SIZE_C)-1)</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><i>/* creates a mask with `n' 1 bits at position `p' */</i></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/MASK1" data-ref="_M/MASK1">MASK1</dfn>(n,p)	((~((~(Instruction)0)&lt;&lt;n))&lt;&lt;p)</u></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* creates a mask with `n' 0 bits at position `p' */</i></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/MASK0" data-ref="_M/MASK0">MASK0</dfn>(n,p)	(~MASK1(n,p))</u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/*</i></td></tr>
+<tr><th id="77">77</th><td><i>** the following macros help to manipulate instructions</i></td></tr>
+<tr><th id="78">78</th><td><i>*/</i></td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/GET_OPCODE" data-ref="_M/GET_OPCODE">GET_OPCODE</dfn>(i)	(cast(OpCode, ((i)&gt;&gt;POS_OP) &amp; MASK1(SIZE_OP,0)))</u></td></tr>
+<tr><th id="81">81</th><td><u>#define <dfn class="macro" id="_M/SET_OPCODE" data-ref="_M/SET_OPCODE">SET_OPCODE</dfn>(i,o)	((i) = (((i)&amp;MASK0(SIZE_OP,POS_OP)) | \</u></td></tr>
+<tr><th id="82">82</th><td><u>		((cast(Instruction, o)&lt;&lt;POS_OP)&amp;MASK1(SIZE_OP,POS_OP))))</u></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/GETARG_A" data-ref="_M/GETARG_A">GETARG_A</dfn>(i)	(cast(int, ((i)&gt;&gt;POS_A) &amp; MASK1(SIZE_A,0)))</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/SETARG_A" data-ref="_M/SETARG_A">SETARG_A</dfn>(i,u)	((i) = (((i)&amp;MASK0(SIZE_A,POS_A)) | \</u></td></tr>
+<tr><th id="86">86</th><td><u>		((cast(Instruction, u)&lt;&lt;POS_A)&amp;MASK1(SIZE_A,POS_A))))</u></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><u>#define <dfn class="macro" id="_M/GETARG_B" data-ref="_M/GETARG_B">GETARG_B</dfn>(i)	(cast(int, ((i)&gt;&gt;POS_B) &amp; MASK1(SIZE_B,0)))</u></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/SETARG_B" data-ref="_M/SETARG_B">SETARG_B</dfn>(i,b)	((i) = (((i)&amp;MASK0(SIZE_B,POS_B)) | \</u></td></tr>
+<tr><th id="90">90</th><td><u>		((cast(Instruction, b)&lt;&lt;POS_B)&amp;MASK1(SIZE_B,POS_B))))</u></td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td><u>#define <dfn class="macro" id="_M/GETARG_C" data-ref="_M/GETARG_C">GETARG_C</dfn>(i)	(cast(int, ((i)&gt;&gt;POS_C) &amp; MASK1(SIZE_C,0)))</u></td></tr>
+<tr><th id="93">93</th><td><u>#define <dfn class="macro" id="_M/SETARG_C" data-ref="_M/SETARG_C">SETARG_C</dfn>(i,b)	((i) = (((i)&amp;MASK0(SIZE_C,POS_C)) | \</u></td></tr>
+<tr><th id="94">94</th><td><u>		((cast(Instruction, b)&lt;&lt;POS_C)&amp;MASK1(SIZE_C,POS_C))))</u></td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><u>#define <dfn class="macro" id="_M/GETARG_Bx" data-ref="_M/GETARG_Bx">GETARG_Bx</dfn>(i)	(cast(int, ((i)&gt;&gt;POS_Bx) &amp; MASK1(SIZE_Bx,0)))</u></td></tr>
+<tr><th id="97">97</th><td><u>#define <dfn class="macro" id="_M/SETARG_Bx" data-ref="_M/SETARG_Bx">SETARG_Bx</dfn>(i,b)	((i) = (((i)&amp;MASK0(SIZE_Bx,POS_Bx)) | \</u></td></tr>
+<tr><th id="98">98</th><td><u>		((cast(Instruction, b)&lt;&lt;POS_Bx)&amp;MASK1(SIZE_Bx,POS_Bx))))</u></td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/GETARG_sBx" data-ref="_M/GETARG_sBx">GETARG_sBx</dfn>(i)	(GETARG_Bx(i)-MAXARG_sBx)</u></td></tr>
+<tr><th id="101">101</th><td><u>#define <dfn class="macro" id="_M/SETARG_sBx" data-ref="_M/SETARG_sBx">SETARG_sBx</dfn>(i,b)	SETARG_Bx((i),cast(unsigned int, (b)+MAXARG_sBx))</u></td></tr>
+<tr><th id="102">102</th><td></td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><u>#define <dfn class="macro" id="_M/CREATE_ABC" data-ref="_M/CREATE_ABC">CREATE_ABC</dfn>(o,a,b,c)	((cast(Instruction, o)&lt;&lt;POS_OP) \</u></td></tr>
+<tr><th id="105">105</th><td><u>			| (cast(Instruction, a)&lt;&lt;POS_A) \</u></td></tr>
+<tr><th id="106">106</th><td><u>			| (cast(Instruction, b)&lt;&lt;POS_B) \</u></td></tr>
+<tr><th id="107">107</th><td><u>			| (cast(Instruction, c)&lt;&lt;POS_C))</u></td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><u>#define <dfn class="macro" id="_M/CREATE_ABx" data-ref="_M/CREATE_ABx">CREATE_ABx</dfn>(o,a,bc)	((cast(Instruction, o)&lt;&lt;POS_OP) \</u></td></tr>
+<tr><th id="110">110</th><td><u>			| (cast(Instruction, a)&lt;&lt;POS_A) \</u></td></tr>
+<tr><th id="111">111</th><td><u>			| (cast(Instruction, bc)&lt;&lt;POS_Bx))</u></td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><i>/*</i></td></tr>
+<tr><th id="115">115</th><td><i>** Macros to operate RK indices</i></td></tr>
+<tr><th id="116">116</th><td><i>*/</i></td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td><i>/* this bit 1 means constant (0 means register) */</i></td></tr>
+<tr><th id="119">119</th><td><u>#define <dfn class="macro" id="_M/BITRK" data-ref="_M/BITRK">BITRK</dfn>		(1 &lt;&lt; (SIZE_B - 1))</u></td></tr>
+<tr><th id="120">120</th><td></td></tr>
+<tr><th id="121">121</th><td><i>/* test whether value is a constant */</i></td></tr>
+<tr><th id="122">122</th><td><u>#define <dfn class="macro" id="_M/ISK" data-ref="_M/ISK">ISK</dfn>(x)		((x) &amp; BITRK)</u></td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i>/* gets the index of the constant */</i></td></tr>
+<tr><th id="125">125</th><td><u>#define <dfn class="macro" id="_M/INDEXK" data-ref="_M/INDEXK">INDEXK</dfn>(r)	((int)(r) &amp; ~BITRK)</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/MAXINDEXRK" data-ref="_M/MAXINDEXRK">MAXINDEXRK</dfn>	(BITRK - 1)</u></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><i>/* code a constant index as a RK value */</i></td></tr>
+<tr><th id="130">130</th><td><u>#define <dfn class="macro" id="_M/RKASK" data-ref="_M/RKASK">RKASK</dfn>(x)	((x) | BITRK)</u></td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td></td></tr>
+<tr><th id="133">133</th><td><i>/*</i></td></tr>
+<tr><th id="134">134</th><td><i>** invalid register that fits in 8 bits</i></td></tr>
+<tr><th id="135">135</th><td><i>*/</i></td></tr>
+<tr><th id="136">136</th><td><u>#define <dfn class="macro" id="_M/NO_REG" data-ref="_M/NO_REG">NO_REG</dfn>		MAXARG_A</u></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><i>/*</i></td></tr>
+<tr><th id="140">140</th><td><i>** R(x) - register</i></td></tr>
+<tr><th id="141">141</th><td><i>** Kst(x) - constant (in constant table)</i></td></tr>
+<tr><th id="142">142</th><td><i>** RK(x) == if ISK(x) then Kst(INDEXK(x)) else R(x)</i></td></tr>
+<tr><th id="143">143</th><td><i>*/</i></td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><i>/*</i></td></tr>
+<tr><th id="147">147</th><td><i>** grep "ORDER OP" if you change these enums</i></td></tr>
+<tr><th id="148">148</th><td><i>*/</i></td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td><b>typedef</b> <b>enum</b> {</td></tr>
+<tr><th id="151">151</th><td><i>/*----------------------------------------------------------------------</i></td></tr>
+<tr><th id="152">152</th><td><i>name		args	description</i></td></tr>
+<tr><th id="153">153</th><td><i>------------------------------------------------------------------------*/</i></td></tr>
+<tr><th id="154">154</th><td><dfn class="enum" id="OP_MOVE" title='OP_MOVE' data-ref="OP_MOVE">OP_MOVE</dfn>,<i>/*	A B	R(A) := R(B)					*/</i></td></tr>
+<tr><th id="155">155</th><td><dfn class="enum" id="OP_LOADK" title='OP_LOADK' data-ref="OP_LOADK">OP_LOADK</dfn>,<i>/*	A Bx	R(A) := Kst(Bx)					*/</i></td></tr>
+<tr><th id="156">156</th><td><dfn class="enum" id="OP_LOADBOOL" title='OP_LOADBOOL' data-ref="OP_LOADBOOL">OP_LOADBOOL</dfn>,<i>/*	A B C	R(A) := (Bool)B; if (C) pc++			*/</i></td></tr>
+<tr><th id="157">157</th><td><dfn class="enum" id="OP_LOADNIL" title='OP_LOADNIL' data-ref="OP_LOADNIL">OP_LOADNIL</dfn>,<i>/*	A B	R(A) := ... := R(B) := nil			*/</i></td></tr>
+<tr><th id="158">158</th><td><dfn class="enum" id="OP_GETUPVAL" title='OP_GETUPVAL' data-ref="OP_GETUPVAL">OP_GETUPVAL</dfn>,<i>/*	A B	R(A) := UpValue[B]				*/</i></td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><dfn class="enum" id="OP_GETGLOBAL" title='OP_GETGLOBAL' data-ref="OP_GETGLOBAL">OP_GETGLOBAL</dfn>,<i>/*	A Bx	R(A) := Gbl[Kst(Bx)]				*/</i></td></tr>
+<tr><th id="161">161</th><td><dfn class="enum" id="OP_GETTABLE" title='OP_GETTABLE' data-ref="OP_GETTABLE">OP_GETTABLE</dfn>,<i>/*	A B C	R(A) := R(B)[RK(C)]				*/</i></td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td><dfn class="enum" id="OP_SETGLOBAL" title='OP_SETGLOBAL' data-ref="OP_SETGLOBAL">OP_SETGLOBAL</dfn>,<i>/*	A Bx	Gbl[Kst(Bx)] := R(A)				*/</i></td></tr>
+<tr><th id="164">164</th><td><dfn class="enum" id="OP_SETUPVAL" title='OP_SETUPVAL' data-ref="OP_SETUPVAL">OP_SETUPVAL</dfn>,<i>/*	A B	UpValue[B] := R(A)				*/</i></td></tr>
+<tr><th id="165">165</th><td><dfn class="enum" id="OP_SETTABLE" title='OP_SETTABLE' data-ref="OP_SETTABLE">OP_SETTABLE</dfn>,<i>/*	A B C	R(A)[RK(B)] := RK(C)				*/</i></td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><dfn class="enum" id="OP_NEWTABLE" title='OP_NEWTABLE' data-ref="OP_NEWTABLE">OP_NEWTABLE</dfn>,<i>/*	A B C	R(A) := {} (size = B,C)				*/</i></td></tr>
+<tr><th id="168">168</th><td></td></tr>
+<tr><th id="169">169</th><td><dfn class="enum" id="OP_SELF" title='OP_SELF' data-ref="OP_SELF">OP_SELF</dfn>,<i>/*	A B C	R(A+1) := R(B); R(A) := R(B)[RK(C)]		*/</i></td></tr>
+<tr><th id="170">170</th><td></td></tr>
+<tr><th id="171">171</th><td><dfn class="enum" id="OP_ADD" title='OP_ADD' data-ref="OP_ADD">OP_ADD</dfn>,<i>/*	A B C	R(A) := RK(B) + RK(C)				*/</i></td></tr>
+<tr><th id="172">172</th><td><dfn class="enum" id="OP_SUB" title='OP_SUB' data-ref="OP_SUB">OP_SUB</dfn>,<i>/*	A B C	R(A) := RK(B) - RK(C)				*/</i></td></tr>
+<tr><th id="173">173</th><td><dfn class="enum" id="OP_MUL" title='OP_MUL' data-ref="OP_MUL">OP_MUL</dfn>,<i>/*	A B C	R(A) := RK(B) * RK(C)				*/</i></td></tr>
+<tr><th id="174">174</th><td><dfn class="enum" id="OP_DIV" title='OP_DIV' data-ref="OP_DIV">OP_DIV</dfn>,<i>/*	A B C	R(A) := RK(B) / RK(C)				*/</i></td></tr>
+<tr><th id="175">175</th><td><dfn class="enum" id="OP_MOD" title='OP_MOD' data-ref="OP_MOD">OP_MOD</dfn>,<i>/*	A B C	R(A) := RK(B) % RK(C)				*/</i></td></tr>
+<tr><th id="176">176</th><td><dfn class="enum" id="OP_POW" title='OP_POW' data-ref="OP_POW">OP_POW</dfn>,<i>/*	A B C	R(A) := RK(B) ^ RK(C)				*/</i></td></tr>
+<tr><th id="177">177</th><td><dfn class="enum" id="OP_UNM" title='OP_UNM' data-ref="OP_UNM">OP_UNM</dfn>,<i>/*	A B	R(A) := -R(B)					*/</i></td></tr>
+<tr><th id="178">178</th><td><dfn class="enum" id="OP_NOT" title='OP_NOT' data-ref="OP_NOT">OP_NOT</dfn>,<i>/*	A B	R(A) := not R(B)				*/</i></td></tr>
+<tr><th id="179">179</th><td><dfn class="enum" id="OP_LEN" title='OP_LEN' data-ref="OP_LEN">OP_LEN</dfn>,<i>/*	A B	R(A) := length of R(B)				*/</i></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><dfn class="enum" id="OP_CONCAT" title='OP_CONCAT' data-ref="OP_CONCAT">OP_CONCAT</dfn>,<i>/*	A B C	R(A) := R(B).. ... ..R(C)			*/</i></td></tr>
+<tr><th id="182">182</th><td></td></tr>
+<tr><th id="183">183</th><td><dfn class="enum" id="OP_JMP" title='OP_JMP' data-ref="OP_JMP">OP_JMP</dfn>,<i>/*	sBx	pc+=sBx					*/</i></td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><dfn class="enum" id="OP_EQ" title='OP_EQ' data-ref="OP_EQ">OP_EQ</dfn>,<i>/*	A B C	if ((RK(B) == RK(C)) ~= A) then pc++		*/</i></td></tr>
+<tr><th id="186">186</th><td><dfn class="enum" id="OP_LT" title='OP_LT' data-ref="OP_LT">OP_LT</dfn>,<i>/*	A B C	if ((RK(B) &lt;  RK(C)) ~= A) then pc++  		*/</i></td></tr>
+<tr><th id="187">187</th><td><dfn class="enum" id="OP_LE" title='OP_LE' data-ref="OP_LE">OP_LE</dfn>,<i>/*	A B C	if ((RK(B) &lt;= RK(C)) ~= A) then pc++  		*/</i></td></tr>
+<tr><th id="188">188</th><td></td></tr>
+<tr><th id="189">189</th><td><dfn class="enum" id="OP_TEST" title='OP_TEST' data-ref="OP_TEST">OP_TEST</dfn>,<i>/*	A C	if not (R(A) &lt;=&gt; C) then pc++			*/</i> </td></tr>
+<tr><th id="190">190</th><td><dfn class="enum" id="OP_TESTSET" title='OP_TESTSET' data-ref="OP_TESTSET">OP_TESTSET</dfn>,<i>/*	A B C	if (R(B) &lt;=&gt; C) then R(A) := R(B) else pc++	*/</i> </td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><dfn class="enum" id="OP_CALL" title='OP_CALL' data-ref="OP_CALL">OP_CALL</dfn>,<i>/*	A B C	R(A), ... ,R(A+C-2) := R(A)(R(A+1), ... ,R(A+B-1)) */</i></td></tr>
+<tr><th id="193">193</th><td><dfn class="enum" id="OP_TAILCALL" title='OP_TAILCALL' data-ref="OP_TAILCALL">OP_TAILCALL</dfn>,<i>/*	A B C	return R(A)(R(A+1), ... ,R(A+B-1))		*/</i></td></tr>
+<tr><th id="194">194</th><td><dfn class="enum" id="OP_RETURN" title='OP_RETURN' data-ref="OP_RETURN">OP_RETURN</dfn>,<i>/*	A B	return R(A), ... ,R(A+B-2)	(see note)	*/</i></td></tr>
+<tr><th id="195">195</th><td></td></tr>
+<tr><th id="196">196</th><td><dfn class="enum" id="OP_FORLOOP" title='OP_FORLOOP' data-ref="OP_FORLOOP">OP_FORLOOP</dfn>,<i>/*	A sBx	R(A)+=R(A+2);</i></td></tr>
+<tr><th id="197">197</th><td><i>			if R(A) &lt;?= R(A+1) then { pc+=sBx; R(A+3)=R(A) }*/</i></td></tr>
+<tr><th id="198">198</th><td><dfn class="enum" id="OP_FORPREP" title='OP_FORPREP' data-ref="OP_FORPREP">OP_FORPREP</dfn>,<i>/*	A sBx	R(A)-=R(A+2); pc+=sBx				*/</i></td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td><dfn class="enum" id="OP_TFORLOOP" title='OP_TFORLOOP' data-ref="OP_TFORLOOP">OP_TFORLOOP</dfn>,<i>/*	A C	R(A+3), ... ,R(A+2+C) := R(A)(R(A+1), R(A+2)); </i></td></tr>
+<tr><th id="201">201</th><td><i>                        if R(A+3) ~= nil then R(A+2)=R(A+3) else pc++	*/</i> </td></tr>
+<tr><th id="202">202</th><td><dfn class="enum" id="OP_SETLIST" title='OP_SETLIST' data-ref="OP_SETLIST">OP_SETLIST</dfn>,<i>/*	A B C	R(A)[(C-1)*FPF+i] := R(A+i), 1 &lt;= i &lt;= B	*/</i></td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td><dfn class="enum" id="OP_CLOSE" title='OP_CLOSE' data-ref="OP_CLOSE">OP_CLOSE</dfn>,<i>/*	A 	close all variables in the stack up to (&gt;=) R(A)*/</i></td></tr>
+<tr><th id="205">205</th><td><dfn class="enum" id="OP_CLOSURE" title='OP_CLOSURE' data-ref="OP_CLOSURE">OP_CLOSURE</dfn>,<i>/*	A Bx	R(A) := closure(KPROTO[Bx], R(A), ... ,R(A+n))	*/</i></td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><dfn class="enum" id="OP_VARARG" title='OP_VARARG' data-ref="OP_VARARG">OP_VARARG</dfn><i>/*	A B	R(A), R(A+1), ..., R(A+B-1) = vararg		*/</i></td></tr>
+<tr><th id="208">208</th><td>} <dfn class="typedef" id="OpCode" title='OpCode' data-type='enum OpCode' data-ref="OpCode">OpCode</dfn>;</td></tr>
+<tr><th id="209">209</th><td></td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><u>#define <dfn class="macro" id="_M/NUM_OPCODES" data-ref="_M/NUM_OPCODES">NUM_OPCODES</dfn>	(cast(int, <a class="enum" href="#OP_VARARG" title='OP_VARARG' data-ref="OP_VARARG">OP_VARARG</a>) + 1)</u></td></tr>
+<tr><th id="212">212</th><td></td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><i>/*===========================================================================</i></td></tr>
+<tr><th id="216">216</th><td><i>  Notes:</i></td></tr>
+<tr><th id="217">217</th><td><i>  (*) In OP_CALL, if (B == 0) then B = top. C is the number of returns - 1,</i></td></tr>
+<tr><th id="218">218</th><td><i>      and can be 0: OP_CALL then sets `top' to last_result+1, so</i></td></tr>
+<tr><th id="219">219</th><td><i>      next open instruction (OP_CALL, OP_RETURN, OP_SETLIST) may use `top'.</i></td></tr>
+<tr><th id="220">220</th><td><i></i></td></tr>
+<tr><th id="221">221</th><td><i>  (*) In OP_VARARG, if (B == 0) then use actual number of varargs and</i></td></tr>
+<tr><th id="222">222</th><td><i>      set top (like in OP_CALL with C == 0).</i></td></tr>
+<tr><th id="223">223</th><td><i></i></td></tr>
+<tr><th id="224">224</th><td><i>  (*) In OP_RETURN, if (B == 0) then return up to `top'</i></td></tr>
+<tr><th id="225">225</th><td><i></i></td></tr>
+<tr><th id="226">226</th><td><i>  (*) In OP_SETLIST, if (B == 0) then B = `top';</i></td></tr>
+<tr><th id="227">227</th><td><i>      if (C == 0) then next `instruction' is real C</i></td></tr>
+<tr><th id="228">228</th><td><i></i></td></tr>
+<tr><th id="229">229</th><td><i>  (*) For comparisons, A specifies what condition the test should accept</i></td></tr>
+<tr><th id="230">230</th><td><i>      (true or false).</i></td></tr>
+<tr><th id="231">231</th><td><i></i></td></tr>
+<tr><th id="232">232</th><td><i>  (*) All `skips' (pc++) assume that next instruction is a jump</i></td></tr>
+<tr><th id="233">233</th><td><i>===========================================================================*/</i></td></tr>
+<tr><th id="234">234</th><td></td></tr>
+<tr><th id="235">235</th><td></td></tr>
+<tr><th id="236">236</th><td><i>/*</i></td></tr>
+<tr><th id="237">237</th><td><i>** masks for instruction properties. The format is:</i></td></tr>
+<tr><th id="238">238</th><td><i>** bits 0-1: op mode</i></td></tr>
+<tr><th id="239">239</th><td><i>** bits 2-3: C arg mode</i></td></tr>
+<tr><th id="240">240</th><td><i>** bits 4-5: B arg mode</i></td></tr>
+<tr><th id="241">241</th><td><i>** bit 6: instruction set register A</i></td></tr>
+<tr><th id="242">242</th><td><i>** bit 7: operator is a test</i></td></tr>
+<tr><th id="243">243</th><td><i>*/</i>  </td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td><b>enum</b> <dfn class="type def" id="OpArgMask" title='OpArgMask' data-ref="OpArgMask">OpArgMask</dfn> {</td></tr>
+<tr><th id="246">246</th><td>  <dfn class="enum" id="OpArgMask::OpArgN" title='OpArgMask::OpArgN' data-ref="OpArgMask::OpArgN">OpArgN</dfn>,  <i>/* argument is not used */</i></td></tr>
+<tr><th id="247">247</th><td>  <dfn class="enum" id="OpArgMask::OpArgU" title='OpArgMask::OpArgU' data-ref="OpArgMask::OpArgU">OpArgU</dfn>,  <i>/* argument is used */</i></td></tr>
+<tr><th id="248">248</th><td>  <dfn class="enum" id="OpArgMask::OpArgR" title='OpArgMask::OpArgR' data-ref="OpArgMask::OpArgR">OpArgR</dfn>,  <i>/* argument is a register or a jump offset */</i></td></tr>
+<tr><th id="249">249</th><td>  <dfn class="enum" id="OpArgMask::OpArgK" title='OpArgMask::OpArgK' data-ref="OpArgMask::OpArgK">OpArgK</dfn>   <i>/* argument is a constant or register/constant */</i></td></tr>
+<tr><th id="250">250</th><td>};</td></tr>
+<tr><th id="251">251</th><td></td></tr>
+<tr><th id="252">252</th><td><a class="macro" href="luaconf.h.html#188" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_DATA">LUAI_DATA</a> <em>const</em> <a class="typedef" href="llimits.h.html#lu_byte" title='lu_byte' data-type='unsigned char' data-ref="lu_byte">lu_byte</a> <dfn class="decl" id="luaP_opmodes" title='luaP_opmodes' data-ref="luaP_opmodes">luaP_opmodes</dfn>[<a class="macro" href="#211" title="(((int)(OP_VARARG)) + 1)" data-ref="_M/NUM_OPCODES">NUM_OPCODES</a>];</td></tr>
+<tr><th id="253">253</th><td></td></tr>
+<tr><th id="254">254</th><td><u>#define <dfn class="macro" id="_M/getOpMode" data-ref="_M/getOpMode">getOpMode</dfn>(m)	(cast(enum OpMode, luaP_opmodes[m] &amp; 3))</u></td></tr>
+<tr><th id="255">255</th><td><u>#define <dfn class="macro" id="_M/getBMode" data-ref="_M/getBMode">getBMode</dfn>(m)	(cast(enum OpArgMask, (luaP_opmodes[m] &gt;&gt; 4) &amp; 3))</u></td></tr>
+<tr><th id="256">256</th><td><u>#define <dfn class="macro" id="_M/getCMode" data-ref="_M/getCMode">getCMode</dfn>(m)	(cast(enum OpArgMask, (luaP_opmodes[m] &gt;&gt; 2) &amp; 3))</u></td></tr>
+<tr><th id="257">257</th><td><u>#define <dfn class="macro" id="_M/testAMode" data-ref="_M/testAMode">testAMode</dfn>(m)	(luaP_opmodes[m] &amp; (1 &lt;&lt; 6))</u></td></tr>
+<tr><th id="258">258</th><td><u>#define <dfn class="macro" id="_M/testTMode" data-ref="_M/testTMode">testTMode</dfn>(m)	(luaP_opmodes[m] &amp; (1 &lt;&lt; 7))</u></td></tr>
+<tr><th id="259">259</th><td></td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><a class="macro" href="luaconf.h.html#188" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_DATA">LUAI_DATA</a> <em>const</em> <em>char</em> *<em>const</em> <dfn class="decl" id="luaP_opnames" title='luaP_opnames' data-ref="luaP_opnames">luaP_opnames</dfn>[<a class="macro" href="#211" title="(((int)(OP_VARARG)) + 1)" data-ref="_M/NUM_OPCODES">NUM_OPCODES</a>+<var>1</var>];  <i>/* opcode names */</i></td></tr>
+<tr><th id="262">262</th><td></td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td><i>/* number of list items to accumulate before a SETLIST instruction */</i></td></tr>
+<tr><th id="265">265</th><td><u>#define <dfn class="macro" id="_M/LFIELDS_PER_FLUSH" data-ref="_M/LFIELDS_PER_FLUSH">LFIELDS_PER_FLUSH</dfn>	50</u></td></tr>
+<tr><th id="266">266</th><td></td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="269">269</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lcode.c.html'>redis/deps/lua/src/lcode.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

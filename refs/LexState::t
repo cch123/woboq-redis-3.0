@@ -1,0 +1,37 @@
+<dec f='redis/deps/lua/src/llex.h' l='59' type='Token'/>
+<offset>128</offset>
+<doc f='redis/deps/lua/src/llex.h' l='59'>/* current token */</doc>
+<use f='redis/deps/lua/src/llex.c' l='113' u='m' c='luaX_syntaxerror'/>
+<use f='redis/deps/lua/src/llex.c' l='451' u='w' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='455' u='m' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='455' u='m' c='luaX_next'/>
+<use f='redis/deps/lua/src/lparser.c' l='58' u='m' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='58' u='m' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='59' u='m' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='81' u='m' c='testnext'/>
+<use f='redis/deps/lua/src/lparser.c' l='90' u='m' c='check'/>
+<use f='redis/deps/lua/src/lparser.c' l='120' u='m' c='str_checkname'/>
+<use f='redis/deps/lua/src/lparser.c' l='449' u='m' c='recfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='512' u='m' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='514' u='m' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='549' u='m' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='551' u='m' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='614' u='m' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='619' u='m' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='633' u='m' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='669' u='m' c='prefixexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='696' u='m' c='primaryexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='730' u='m' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='733' u='m' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='737' u='m' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='832' u='m' c='subexpr'/>
+<use f='redis/deps/lua/src/lparser.c' l='840' u='m' c='subexpr'/>
+<use f='redis/deps/lua/src/lparser.c' l='1120' u='m' c='forstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1147' u='m' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1152' u='m' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1202' u='m' c='funcname'/>
+<use f='redis/deps/lua/src/lparser.c' l='1204' u='m' c='funcname'/>
+<use f='redis/deps/lua/src/lparser.c' l='1244' u='m' c='retstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1244' u='m' c='retstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1273' u='m' c='statement'/>
+<use f='redis/deps/lua/src/lparser.c' l='1329' u='m' c='chunk'/>

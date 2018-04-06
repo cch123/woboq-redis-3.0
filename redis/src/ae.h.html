@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ae.h source code [redis/src/ae.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="aeEventLoop,aeFileEvent,aeFiredEvent,aeTimeEvent "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/ae.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='ae.h.html'>ae.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* A simple event-driven programming library. Originally I wrote this code</i></td></tr>
+<tr><th id="2">2</th><td><i> * for the Jim's event-loop (Jim is a Tcl interpreter) but later translated</i></td></tr>
+<tr><th id="3">3</th><td><i> * it in form of a library for easy reuse.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Copyright (c) 2006-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="6">6</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="9">9</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="12">12</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="13">13</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="14">14</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="15">15</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="16">16</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="17">17</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="18">18</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="21">21</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="22">22</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="23">23</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="24">24</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="25">25</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="26">26</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="27">27</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="28">28</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="29">29</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="30">30</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="31">31</th><td><i> */</i></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="33">ifndef</span> <span class="macro" data-ref="_M/__AE_H__">__AE_H__</span></u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/__AE_H__" data-ref="_M/__AE_H__">__AE_H__</dfn></u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/AE_OK" data-ref="_M/AE_OK">AE_OK</dfn> 0</u></td></tr>
+<tr><th id="37">37</th><td><u>#define <dfn class="macro" id="_M/AE_ERR" data-ref="_M/AE_ERR">AE_ERR</dfn> -1</u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/AE_NONE" data-ref="_M/AE_NONE">AE_NONE</dfn> 0</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/AE_READABLE" data-ref="_M/AE_READABLE">AE_READABLE</dfn> 1</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/AE_WRITABLE" data-ref="_M/AE_WRITABLE">AE_WRITABLE</dfn> 2</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/AE_FILE_EVENTS" data-ref="_M/AE_FILE_EVENTS">AE_FILE_EVENTS</dfn> 1</u></td></tr>
+<tr><th id="44">44</th><td><u>#define <dfn class="macro" id="_M/AE_TIME_EVENTS" data-ref="_M/AE_TIME_EVENTS">AE_TIME_EVENTS</dfn> 2</u></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/AE_ALL_EVENTS" data-ref="_M/AE_ALL_EVENTS">AE_ALL_EVENTS</dfn> (AE_FILE_EVENTS|AE_TIME_EVENTS)</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/AE_DONT_WAIT" data-ref="_M/AE_DONT_WAIT">AE_DONT_WAIT</dfn> 4</u></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/AE_NOMORE" data-ref="_M/AE_NOMORE">AE_NOMORE</dfn> -1</u></td></tr>
+<tr><th id="49">49</th><td></td></tr>
+<tr><th id="50">50</th><td><i>/* Macros */</i></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/AE_NOTUSED" data-ref="_M/AE_NOTUSED">AE_NOTUSED</dfn>(V) ((void) V)</u></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td><b>struct</b> <a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a>;</td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><i>/* Types and data structures */</i></td></tr>
+<tr><th id="56">56</th><td><b>typedef</b> <em>void</em> <dfn class="typedef" id="aeFileProc" title='aeFileProc' data-type='void (struct aeEventLoop *, int, void *, int)' data-ref="aeFileProc">aeFileProc</dfn>(<b>struct</b> <a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col1 decl" id="1eventLoop" title='eventLoop' data-type='struct aeEventLoop *' data-ref="1eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col2 decl" id="2fd" title='fd' data-type='int' data-ref="2fd">fd</dfn>, <em>void</em> *<dfn class="local col3 decl" id="3clientData" title='clientData' data-type='void *' data-ref="3clientData">clientData</dfn>, <em>int</em> <dfn class="local col4 decl" id="4mask" title='mask' data-type='int' data-ref="4mask">mask</dfn>);</td></tr>
+<tr><th id="57">57</th><td><b>typedef</b> <em>int</em> <dfn class="typedef" id="aeTimeProc" title='aeTimeProc' data-type='int (struct aeEventLoop *, long long, void *)' data-ref="aeTimeProc">aeTimeProc</dfn>(<b>struct</b> <a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col5 decl" id="5eventLoop" title='eventLoop' data-type='struct aeEventLoop *' data-ref="5eventLoop">eventLoop</dfn>, <em>long</em> <em>long</em> <dfn class="local col6 decl" id="6id" title='id' data-type='long long' data-ref="6id">id</dfn>, <em>void</em> *<dfn class="local col7 decl" id="7clientData" title='clientData' data-type='void *' data-ref="7clientData">clientData</dfn>);</td></tr>
+<tr><th id="58">58</th><td><b>typedef</b> <em>void</em> <dfn class="typedef" id="aeEventFinalizerProc" title='aeEventFinalizerProc' data-type='void (struct aeEventLoop *, void *)' data-ref="aeEventFinalizerProc">aeEventFinalizerProc</dfn>(<b>struct</b> <a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col8 decl" id="8eventLoop" title='eventLoop' data-type='struct aeEventLoop *' data-ref="8eventLoop">eventLoop</dfn>, <em>void</em> *<dfn class="local col9 decl" id="9clientData" title='clientData' data-type='void *' data-ref="9clientData">clientData</dfn>);</td></tr>
+<tr><th id="59">59</th><td><b>typedef</b> <em>void</em> <dfn class="typedef" id="aeBeforeSleepProc" title='aeBeforeSleepProc' data-type='void (struct aeEventLoop *)' data-ref="aeBeforeSleepProc">aeBeforeSleepProc</dfn>(<b>struct</b> <a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col0 decl" id="10eventLoop" title='eventLoop' data-type='struct aeEventLoop *' data-ref="10eventLoop">eventLoop</dfn>);</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* File event structure */</i></td></tr>
+<tr><th id="62">62</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="aeFileEvent" title='aeFileEvent' data-ref="aeFileEvent"><a class="type" href="#aeFileEvent" title='aeFileEvent' data-ref="aeFileEvent">aeFileEvent</a></dfn> {</td></tr>
+<tr><th id="63">63</th><td>    <em>int</em> <dfn class="decl field" id="aeFileEvent::mask" title='aeFileEvent::mask' data-ref="aeFileEvent::mask">mask</dfn>; <i>/* one of AE_(READABLE|WRITABLE) */</i></td></tr>
+<tr><th id="64">64</th><td>    <a class="typedef" href="#aeFileProc" title='aeFileProc' data-type='void (struct aeEventLoop *, int, void *, int)' data-ref="aeFileProc">aeFileProc</a> *<dfn class="decl field" id="aeFileEvent::rfileProc" title='aeFileEvent::rfileProc' data-ref="aeFileEvent::rfileProc">rfileProc</dfn>;</td></tr>
+<tr><th id="65">65</th><td>    <a class="typedef" href="#aeFileProc" title='aeFileProc' data-type='void (struct aeEventLoop *, int, void *, int)' data-ref="aeFileProc">aeFileProc</a> *<dfn class="decl field" id="aeFileEvent::wfileProc" title='aeFileEvent::wfileProc' data-ref="aeFileEvent::wfileProc">wfileProc</dfn>;</td></tr>
+<tr><th id="66">66</th><td>    <em>void</em> *<dfn class="decl field" id="aeFileEvent::clientData" title='aeFileEvent::clientData' data-ref="aeFileEvent::clientData">clientData</dfn>;</td></tr>
+<tr><th id="67">67</th><td>} <dfn class="typedef" id="aeFileEvent" title='aeFileEvent' data-type='struct aeFileEvent' data-ref="aeFileEvent">aeFileEvent</dfn>;</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>/* Time event structure */</i></td></tr>
+<tr><th id="70">70</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="aeTimeEvent" title='aeTimeEvent' data-ref="aeTimeEvent"><a class="type" href="#aeTimeEvent" title='aeTimeEvent' data-ref="aeTimeEvent">aeTimeEvent</a></dfn> {</td></tr>
+<tr><th id="71">71</th><td>    <em>long</em> <em>long</em> <dfn class="decl field" id="aeTimeEvent::id" title='aeTimeEvent::id' data-ref="aeTimeEvent::id">id</dfn>; <i>/* time event identifier. */</i></td></tr>
+<tr><th id="72">72</th><td>    <em>long</em> <dfn class="decl field" id="aeTimeEvent::when_sec" title='aeTimeEvent::when_sec' data-ref="aeTimeEvent::when_sec">when_sec</dfn>; <i>/* seconds */</i></td></tr>
+<tr><th id="73">73</th><td>    <em>long</em> <dfn class="decl field" id="aeTimeEvent::when_ms" title='aeTimeEvent::when_ms' data-ref="aeTimeEvent::when_ms">when_ms</dfn>; <i>/* milliseconds */</i></td></tr>
+<tr><th id="74">74</th><td>    <a class="typedef" href="#aeTimeProc" title='aeTimeProc' data-type='int (struct aeEventLoop *, long long, void *)' data-ref="aeTimeProc">aeTimeProc</a> *<dfn class="decl field" id="aeTimeEvent::timeProc" title='aeTimeEvent::timeProc' data-ref="aeTimeEvent::timeProc">timeProc</dfn>;</td></tr>
+<tr><th id="75">75</th><td>    <a class="typedef" href="#aeEventFinalizerProc" title='aeEventFinalizerProc' data-type='void (struct aeEventLoop *, void *)' data-ref="aeEventFinalizerProc">aeEventFinalizerProc</a> *<dfn class="decl field" id="aeTimeEvent::finalizerProc" title='aeTimeEvent::finalizerProc' data-ref="aeTimeEvent::finalizerProc">finalizerProc</dfn>;</td></tr>
+<tr><th id="76">76</th><td>    <em>void</em> *<dfn class="decl field" id="aeTimeEvent::clientData" title='aeTimeEvent::clientData' data-ref="aeTimeEvent::clientData">clientData</dfn>;</td></tr>
+<tr><th id="77">77</th><td>    <b>struct</b> <a class="type" href="#aeTimeEvent" title='aeTimeEvent' data-ref="aeTimeEvent">aeTimeEvent</a> *<dfn class="decl field" id="aeTimeEvent::next" title='aeTimeEvent::next' data-ref="aeTimeEvent::next">next</dfn>;</td></tr>
+<tr><th id="78">78</th><td>} <dfn class="typedef" id="aeTimeEvent" title='aeTimeEvent' data-type='struct aeTimeEvent' data-ref="aeTimeEvent">aeTimeEvent</dfn>;</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>/* A fired event */</i></td></tr>
+<tr><th id="81">81</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="aeFiredEvent" title='aeFiredEvent' data-ref="aeFiredEvent"><a class="type" href="#aeFiredEvent" title='aeFiredEvent' data-ref="aeFiredEvent">aeFiredEvent</a></dfn> {</td></tr>
+<tr><th id="82">82</th><td>    <em>int</em> <dfn class="decl field" id="aeFiredEvent::fd" title='aeFiredEvent::fd' data-ref="aeFiredEvent::fd">fd</dfn>;</td></tr>
+<tr><th id="83">83</th><td>    <em>int</em> <dfn class="decl field" id="aeFiredEvent::mask" title='aeFiredEvent::mask' data-ref="aeFiredEvent::mask">mask</dfn>;</td></tr>
+<tr><th id="84">84</th><td>} <dfn class="typedef" id="aeFiredEvent" title='aeFiredEvent' data-type='struct aeFiredEvent' data-ref="aeFiredEvent">aeFiredEvent</dfn>;</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><i>/* State of an event based program */</i></td></tr>
+<tr><th id="87">87</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop"><a class="type" href="#aeEventLoop" title='aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a></dfn> {</td></tr>
+<tr><th id="88">88</th><td>    <em>int</em> <dfn class="decl field" id="aeEventLoop::maxfd" title='aeEventLoop::maxfd' data-ref="aeEventLoop::maxfd">maxfd</dfn>;   <i>/* highest file descriptor currently registered */</i></td></tr>
+<tr><th id="89">89</th><td>    <em>int</em> <dfn class="decl field" id="aeEventLoop::setsize" title='aeEventLoop::setsize' data-ref="aeEventLoop::setsize">setsize</dfn>; <i>/* max number of file descriptors tracked */</i></td></tr>
+<tr><th id="90">90</th><td>    <em>long</em> <em>long</em> <dfn class="decl field" id="aeEventLoop::timeEventNextId" title='aeEventLoop::timeEventNextId' data-ref="aeEventLoop::timeEventNextId">timeEventNextId</dfn>;</td></tr>
+<tr><th id="91">91</th><td>    <a class="typedef" href="../../include/time.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t">time_t</a> <dfn class="decl field" id="aeEventLoop::lastTime" title='aeEventLoop::lastTime' data-ref="aeEventLoop::lastTime">lastTime</dfn>;     <i>/* Used to detect system clock skew */</i></td></tr>
+<tr><th id="92">92</th><td>    <a class="typedef" href="#aeFileEvent" title='aeFileEvent' data-type='struct aeFileEvent' data-ref="aeFileEvent">aeFileEvent</a> *<dfn class="decl field" id="aeEventLoop::events" title='aeEventLoop::events' data-ref="aeEventLoop::events">events</dfn>; <i>/* Registered events */</i></td></tr>
+<tr><th id="93">93</th><td>    <a class="typedef" href="#aeFiredEvent" title='aeFiredEvent' data-type='struct aeFiredEvent' data-ref="aeFiredEvent">aeFiredEvent</a> *<dfn class="decl field" id="aeEventLoop::fired" title='aeEventLoop::fired' data-ref="aeEventLoop::fired">fired</dfn>; <i>/* Fired events */</i></td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="#aeTimeEvent" title='aeTimeEvent' data-type='struct aeTimeEvent' data-ref="aeTimeEvent">aeTimeEvent</a> *<dfn class="decl field" id="aeEventLoop::timeEventHead" title='aeEventLoop::timeEventHead' data-ref="aeEventLoop::timeEventHead">timeEventHead</dfn>;</td></tr>
+<tr><th id="95">95</th><td>    <em>int</em> <dfn class="decl field" id="aeEventLoop::stop" title='aeEventLoop::stop' data-ref="aeEventLoop::stop">stop</dfn>;</td></tr>
+<tr><th id="96">96</th><td>    <em>void</em> *<dfn class="decl field" id="aeEventLoop::apidata" title='aeEventLoop::apidata' data-ref="aeEventLoop::apidata">apidata</dfn>; <i>/* This is used for polling API specific data */</i></td></tr>
+<tr><th id="97">97</th><td>    <a class="typedef" href="#aeBeforeSleepProc" title='aeBeforeSleepProc' data-type='void (struct aeEventLoop *)' data-ref="aeBeforeSleepProc">aeBeforeSleepProc</a> *<dfn class="decl field" id="aeEventLoop::beforesleep" title='aeEventLoop::beforesleep' data-ref="aeEventLoop::beforesleep">beforesleep</dfn>;</td></tr>
+<tr><th id="98">98</th><td>} <dfn class="typedef" id="aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</dfn>;</td></tr>
+<tr><th id="99">99</th><td></td></tr>
+<tr><th id="100">100</th><td><i>/* Prototypes */</i></td></tr>
+<tr><th id="101">101</th><td><a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<a class="decl fn" href="ae.c.html#aeCreateEventLoop" title='aeCreateEventLoop' data-ref="aeCreateEventLoop" id="aeCreateEventLoop">aeCreateEventLoop</a>(<em>int</em> <dfn class="local col1 decl" id="11setsize" title='setsize' data-type='int' data-ref="11setsize">setsize</dfn>);</td></tr>
+<tr><th id="102">102</th><td><em>void</em> <a class="decl fn" href="ae.c.html#aeDeleteEventLoop" title='aeDeleteEventLoop' data-ref="aeDeleteEventLoop" id="aeDeleteEventLoop">aeDeleteEventLoop</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col2 decl" id="12eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="12eventLoop">eventLoop</dfn>);</td></tr>
+<tr><th id="103">103</th><td><em>void</em> <a class="decl fn" href="ae.c.html#aeStop" title='aeStop' data-ref="aeStop" id="aeStop">aeStop</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col3 decl" id="13eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="13eventLoop">eventLoop</dfn>);</td></tr>
+<tr><th id="104">104</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeCreateFileEvent" title='aeCreateFileEvent' data-ref="aeCreateFileEvent" id="aeCreateFileEvent">aeCreateFileEvent</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col4 decl" id="14eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="14eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col5 decl" id="15fd" title='fd' data-type='int' data-ref="15fd">fd</dfn>, <em>int</em> <dfn class="local col6 decl" id="16mask" title='mask' data-type='int' data-ref="16mask">mask</dfn>,</td></tr>
+<tr><th id="105">105</th><td>        <a class="typedef" href="#aeFileProc" title='aeFileProc' data-type='void (struct aeEventLoop *, int, void *, int)' data-ref="aeFileProc">aeFileProc</a> *<dfn class="local col7 decl" id="17proc" title='proc' data-type='aeFileProc *' data-ref="17proc">proc</dfn>, <em>void</em> *<dfn class="local col8 decl" id="18clientData" title='clientData' data-type='void *' data-ref="18clientData">clientData</dfn>);</td></tr>
+<tr><th id="106">106</th><td><em>void</em> <a class="decl fn" href="ae.c.html#aeDeleteFileEvent" title='aeDeleteFileEvent' data-ref="aeDeleteFileEvent" id="aeDeleteFileEvent">aeDeleteFileEvent</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col9 decl" id="19eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="19eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col0 decl" id="20fd" title='fd' data-type='int' data-ref="20fd">fd</dfn>, <em>int</em> <dfn class="local col1 decl" id="21mask" title='mask' data-type='int' data-ref="21mask">mask</dfn>);</td></tr>
+<tr><th id="107">107</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeGetFileEvents" title='aeGetFileEvents' data-ref="aeGetFileEvents" id="aeGetFileEvents">aeGetFileEvents</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col2 decl" id="22eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="22eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col3 decl" id="23fd" title='fd' data-type='int' data-ref="23fd">fd</dfn>);</td></tr>
+<tr><th id="108">108</th><td><em>long</em> <em>long</em> <a class="decl fn" href="ae.c.html#aeCreateTimeEvent" title='aeCreateTimeEvent' data-ref="aeCreateTimeEvent" id="aeCreateTimeEvent">aeCreateTimeEvent</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col4 decl" id="24eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="24eventLoop">eventLoop</dfn>, <em>long</em> <em>long</em> <dfn class="local col5 decl" id="25milliseconds" title='milliseconds' data-type='long long' data-ref="25milliseconds">milliseconds</dfn>,</td></tr>
+<tr><th id="109">109</th><td>        <a class="typedef" href="#aeTimeProc" title='aeTimeProc' data-type='int (struct aeEventLoop *, long long, void *)' data-ref="aeTimeProc">aeTimeProc</a> *<dfn class="local col6 decl" id="26proc" title='proc' data-type='aeTimeProc *' data-ref="26proc">proc</dfn>, <em>void</em> *<dfn class="local col7 decl" id="27clientData" title='clientData' data-type='void *' data-ref="27clientData">clientData</dfn>,</td></tr>
+<tr><th id="110">110</th><td>        <a class="typedef" href="#aeEventFinalizerProc" title='aeEventFinalizerProc' data-type='void (struct aeEventLoop *, void *)' data-ref="aeEventFinalizerProc">aeEventFinalizerProc</a> *<dfn class="local col8 decl" id="28finalizerProc" title='finalizerProc' data-type='aeEventFinalizerProc *' data-ref="28finalizerProc">finalizerProc</dfn>);</td></tr>
+<tr><th id="111">111</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeDeleteTimeEvent" title='aeDeleteTimeEvent' data-ref="aeDeleteTimeEvent" id="aeDeleteTimeEvent">aeDeleteTimeEvent</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col9 decl" id="29eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="29eventLoop">eventLoop</dfn>, <em>long</em> <em>long</em> <dfn class="local col0 decl" id="30id" title='id' data-type='long long' data-ref="30id">id</dfn>);</td></tr>
+<tr><th id="112">112</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeProcessEvents" title='aeProcessEvents' data-ref="aeProcessEvents" id="aeProcessEvents">aeProcessEvents</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col1 decl" id="31eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="31eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col2 decl" id="32flags" title='flags' data-type='int' data-ref="32flags">flags</dfn>);</td></tr>
+<tr><th id="113">113</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeWait" title='aeWait' data-ref="aeWait" id="aeWait">aeWait</a>(<em>int</em> <dfn class="local col3 decl" id="33fd" title='fd' data-type='int' data-ref="33fd">fd</dfn>, <em>int</em> <dfn class="local col4 decl" id="34mask" title='mask' data-type='int' data-ref="34mask">mask</dfn>, <em>long</em> <em>long</em> <dfn class="local col5 decl" id="35milliseconds" title='milliseconds' data-type='long long' data-ref="35milliseconds">milliseconds</dfn>);</td></tr>
+<tr><th id="114">114</th><td><em>void</em> <a class="decl fn" href="ae.c.html#aeMain" title='aeMain' data-ref="aeMain" id="aeMain">aeMain</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col6 decl" id="36eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="36eventLoop">eventLoop</dfn>);</td></tr>
+<tr><th id="115">115</th><td><em>char</em> *<a class="decl fn" href="ae.c.html#aeGetApiName" title='aeGetApiName' data-ref="aeGetApiName" id="aeGetApiName">aeGetApiName</a>(<em>void</em>);</td></tr>
+<tr><th id="116">116</th><td><em>void</em> <a class="decl fn" href="ae.c.html#aeSetBeforeSleepProc" title='aeSetBeforeSleepProc' data-ref="aeSetBeforeSleepProc" id="aeSetBeforeSleepProc">aeSetBeforeSleepProc</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col7 decl" id="37eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="37eventLoop">eventLoop</dfn>, <a class="typedef" href="#aeBeforeSleepProc" title='aeBeforeSleepProc' data-type='void (struct aeEventLoop *)' data-ref="aeBeforeSleepProc">aeBeforeSleepProc</a> *<dfn class="local col8 decl" id="38beforesleep" title='beforesleep' data-type='aeBeforeSleepProc *' data-ref="38beforesleep">beforesleep</dfn>);</td></tr>
+<tr><th id="117">117</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeGetSetSize" title='aeGetSetSize' data-ref="aeGetSetSize" id="aeGetSetSize">aeGetSetSize</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col9 decl" id="39eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="39eventLoop">eventLoop</dfn>);</td></tr>
+<tr><th id="118">118</th><td><em>int</em> <a class="decl fn" href="ae.c.html#aeResizeSetSize" title='aeResizeSetSize' data-ref="aeResizeSetSize" id="aeResizeSetSize">aeResizeSetSize</a>(<a class="typedef" href="#aeEventLoop" title='aeEventLoop' data-type='struct aeEventLoop' data-ref="aeEventLoop">aeEventLoop</a> *<dfn class="local col0 decl" id="40eventLoop" title='eventLoop' data-type='aeEventLoop *' data-ref="40eventLoop">eventLoop</dfn>, <em>int</em> <dfn class="local col1 decl" id="41setsize" title='setsize' data-type='int' data-ref="41setsize">setsize</dfn>);</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><u>#<span data-ppcond="33">endif</span></u></td></tr>
+<tr><th id="121">121</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='ae.c.html'>redis/src/ae.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

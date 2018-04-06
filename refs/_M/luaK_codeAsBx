@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='41'/>
+<use f='redis/deps/lua/src/lcode.c' l='63' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1053' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1060' u='c'/>

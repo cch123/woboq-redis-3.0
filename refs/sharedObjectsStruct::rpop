@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='574' type='robj *'/>
+<offset>2432</offset>
+<use f='redis/src/redis.c' l='1376' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_list.c' l='895' u='r' c='serveClientBlockedOnList'/>
+<use f='redis/src/t_list.c' l='913' u='r' c='serveClientBlockedOnList'/>
+<use f='redis/src/t_list.c' l='1065' u='r' c='blockingPopGenericCommand'/>

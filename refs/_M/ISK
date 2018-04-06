@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='122'/>
+<use f='redis/deps/lua/src/lcode.c' l='216' u='c'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='121'>/* test whether value is a constant */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='310' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='490' u='c'/>

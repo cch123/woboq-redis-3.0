@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lstate.h' l='117' type='lu_byte'/>
+<offset>808</offset>
+<use f='redis/deps/lua/src/ldo.c' l='87' u='w' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='183' u='r' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/ldo.c' l='196' u='w' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/ldo.c' l='201' u='w' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/ldo.c' l='461' u='r' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/ldo.c' l='473' u='w' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/lgc.c' l='460' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='462' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='468' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lstate.c' l='92' u='w' c='preinit_state'/>

@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='151' type='lua_CFunction lua_tocfunction(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='379' ll='382' macro='1' type='lua_CFunction lua_tocfunction(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/liolib.c' l='130' u='c' c='aux_close'/>

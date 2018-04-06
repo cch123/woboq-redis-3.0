@@ -1,0 +1,31 @@
+<dec f='redis/src/cluster.h' l='108' type='dict *'/>
+<use f='redis/src/cluster.c' l='400' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='502' u='r' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='523' u='r' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='829' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='843' u='r' c='clusterAddNode'/>
+<use f='redis/src/cluster.c' l='875' u='r' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='893' u='r' c='clusterLookupNode'/>
+<use f='redis/src/cluster.c' l='909' u='r' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='927' u='r' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='1215' u='r' c='clusterHandshakeInProgress'/>
+<use f='redis/src/cluster.c' l='2084' u='r' c='clusterBroadcastMessage'/>
+<use f='redis/src/cluster.c' l='2167' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2167' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2195' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2195' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2218' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2295' u='r' c='clusterBroadcastPong'/>
+<use f='redis/src/cluster.c' l='2905' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3045' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3119' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3146' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3439' u='r' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3700' u='r' c='clusterGenNodesDescription'/>
+<use f='redis/src/cluster.c' l='3744' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4029' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4029' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4246' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4246' u='r' c='clusterCommand'/>
+<offset>192</offset>
+<doc f='redis/src/cluster.h' l='108'>/* Hash table of name -&gt; clusterNode structures */</doc>

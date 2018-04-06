@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1144' type='int equalStringObjects(robj * a, robj * b)'/>
+<use f='redis/src/cluster.c' l='4855' u='c' c='getNodeByQuery'/>
+<use f='redis/src/multi.c' l='212' u='c' c='watchForKey'/>
+<use f='redis/src/networking.c' l='61' u='c' c='listMatchObjects'/>
+<def f='redis/src/object.c' l='520' ll='529' type='int equalStringObjects(robj * a, robj * b)'/>
+<doc f='redis/src/object.c' l='516'>/* Equal string objects return 1 if the two objects are the same from the
+ * point of view of a string comparison, otherwise 0 is returned. Note that
+ * this function is faster then checking for (compareStringObject(a,b) == 0)
+ * because it can perform some more optimization. */</doc>
+<use f='redis/src/pubsub.c' l='47' u='c' c='listMatchPubsubPattern'/>
+<use f='redis/src/t_list.c' l='238' u='c' c='listTypeEqual'/>
+<use f='redis/src/t_zset.c' l='204' u='c' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='402' u='c' c='zslGetRank'/>

@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.h' l='104' type='clusterNode *'/>
+<use f='redis/src/cluster.c' l='179' u='r' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='180' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='262' u='r' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='395' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='423' u='w' c='clusterInit'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='104'>/* This node */</doc>
+<use f='redis/src/redis.c' l='2180' u='r' c='processCommand'/>
+<use f='redis/src/scripting.c' l='367' u='r' c='luaRedisGenericCommand'/>

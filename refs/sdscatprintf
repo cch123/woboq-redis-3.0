@@ -1,0 +1,147 @@
+<dec f='redis/deps/hiredis/sds.h' l='73' type='sds sdscatprintf(sds s, const char * fmt)'/>
+<def f='redis/deps/hiredis/sds.c' l='426' ll='433' type='sds sdscatprintf(sds s, const char * fmt)'/>
+<use f='redis/deps/hiredis/sds.c' l='750' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='759' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='761' u='c' c='sdscatrepr'/>
+<doc f='redis/deps/hiredis/sds.c' l='410'>/* Append to the sds string &apos;s&apos; a string obtained using printf-alike format
+ * specifier.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call.
+ *
+ * Example:
+ *
+ * s = sdsempty(&quot;Sum is: &quot;);
+ * s = sdscatprintf(s,&quot;%d+%d = %d&quot;,a,b,a+b).
+ *
+ * Often you need to create a string from scratch with the printf-alike
+ * format. When this is the need, just use sdsempty() as the target string:
+ *
+ * s = sdscatprintf(sdsempty(), &quot;... your format ...&quot;, args);
+ */</doc>
+<dec f='redis/src/sds.h' l='73' type='sds sdscatprintf(sds s, const char * fmt)'/>
+<use f='redis/src/aof.c' l='507' u='c' c='feedAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='308' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='3624' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3634' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3639' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3658' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3660' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3672' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3675' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='4012' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4036' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4951' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/config.c' l='188' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1154' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1184' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1447' u='c' c='rewriteConfigBytesOption'/>
+<use f='redis/src/config.c' l='1454' u='c' c='rewriteConfigYesNoOption'/>
+<use f='redis/src/config.c' l='1485' u='c' c='rewriteConfigNumericalOption'/>
+<use f='redis/src/config.c' l='1493' u='c' c='rewriteConfigOctalOption'/>
+<use f='redis/src/config.c' l='1520' u='c' c='rewriteConfigEnumOption'/>
+<use f='redis/src/config.c' l='1537' u='c' c='rewriteConfigSyslogfacilityOption'/>
+<use f='redis/src/config.c' l='1550' u='c' c='rewriteConfigSaveOption'/>
+<use f='redis/src/config.c' l='1581' u='c' c='rewriteConfigSlaveofOption'/>
+<use f='redis/src/config.c' l='1620' u='c' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/debug.c' l='358' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='825' u='c' c='sigsegvHandler'/>
+<use f='redis/src/hyperloglog.c' l='1510' u='c' c='pfdebugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1514' u='c' c='pfdebugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1519' u='c' c='pfdebugCommand'/>
+<use f='redis/src/latency.c' l='264' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='289' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='403' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='407' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='549' u='c' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/networking.c' l='441' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/redis-cli.c' l='170' u='c' c='getHistoryPath'/>
+<use f='redis/src/redis-cli.c' l='175' u='c' c='getHistoryPath'/>
+<use f='redis/src/redis-cli.c' l='204' u='c' c='cliVersion'/>
+<use f='redis/src/redis-cli.c' l='208' u='c' c='cliVersion'/>
+<use f='redis/src/redis-cli.c' l='210' u='c' c='cliVersion'/>
+<use f='redis/src/redis-cli.c' l='228' u='c' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='421' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='428' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='467' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='501' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='531' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='1084' u='c' c='evalMode'/>
+<use f='redis/src/redis.c' l='1365' u='c' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='1385' u='c' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='1387' u='c' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='2217' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2634' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2679' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2706' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2730' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2764' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2798' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2816' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2861' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2873' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2891' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2901' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2905' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2912' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2920' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2955' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2963' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2979' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2994' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3000' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3010' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3019' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3026' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3043' u='c' c='infoCommand'/>
+<use f='redis/src/replication.c' l='192' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='270' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='272' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='274' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='276' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='281' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='793' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1085' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1093' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/scripting.c' l='163' u='c' c='luaPushError'/>
+<use f='redis/src/scripting.c' l='825' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='838' u='c' c='luaReplyToRedisReply'/>
+<def f='redis/src/sds.c' l='426' ll='433' type='sds sdscatprintf(sds s, const char * fmt)'/>
+<use f='redis/src/sds.c' l='750' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='759' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='761' u='c' c='sdscatrepr'/>
+<doc f='redis/src/sds.c' l='410'>/* Append to the sds string &apos;s&apos; a string obtained using printf-alike format
+ * specifier.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call.
+ *
+ * Example:
+ *
+ * s = sdsnew(&quot;Sum is: &quot;);
+ * s = sdscatprintf(s,&quot;%d+%d = %d&quot;,a,b,a+b).
+ *
+ * Often you need to create a string from scratch with the printf-alike
+ * format. When this is the need, just use sdsempty() as the target string:
+ *
+ * s = sdscatprintf(sdsempty(), &quot;... your format ...&quot;, args);
+ */</doc>
+<use f='redis/src/sentinel.c' l='1036' u='c' c='sentinelRedisInstanceLookupSlave'/>
+<use f='redis/src/sentinel.c' l='1467' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1474' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1482' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1490' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1498' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1506' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1514' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1521' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1527' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1547' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1558' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1569' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1582' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='2817' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sentinel.c' l='2835' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sentinel.c' l='2846' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/slowlog.c' l='61' u='c' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='71' u='c' c='slowlogCreateEntry'/>

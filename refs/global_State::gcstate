@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lstate.h' l='73' type='lu_byte'/>
+<use f='redis/deps/lua/src/lapi.c' l='934' u='r' c='lua_gc'/>
+<offset>264</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='73'>/* state of garbage collector */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='511' u='w' c='markroot'/>
+<use f='redis/deps/lua/src/lgc.c' l='551' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='559' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='576' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='586' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='600' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='618' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='621' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='637' u='r' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='645' u='w' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='649' u='r' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='654' u='r' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='667' u='r' c='luaC_barrierf'/>
+<use f='redis/deps/lua/src/lgc.c' l='700' u='r' c='luaC_linkupval'/>
+<use f='redis/deps/lua/src/lstate.c' l='169' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstring.c' l='26' u='r' c='luaS_resize'/>

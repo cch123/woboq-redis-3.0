@@ -1,0 +1,19 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='63' type='void luaL_checkany(lua_State * L, int narg)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='152' ll='155' macro='1' type='void luaL_checkany(lua_State * L, int narg)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='56' u='c' c='luaB_tonumber'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='94' u='c' c='luaB_getmetatable'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='162' u='c' c='luaB_rawequal'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='163' u='c' c='luaB_rawequal'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='171' u='c' c='luaB_rawget'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='179' u='c' c='luaB_rawset'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='180' u='c' c='luaB_rawset'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='220' u='c' c='luaB_type'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='335' u='c' c='luaB_assert'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='376' u='c' c='luaB_pcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='386' u='c' c='luaB_xpcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='397' u='c' c='luaB_tostring'/>
+<use f='redis/deps/lua/src/ldblib.c' l='29' u='c' c='db_getmetatable'/>
+<use f='redis/deps/lua/src/ldblib.c' l='48' u='c' c='db_getfenv'/>
+<use f='redis/deps/lua/src/ldblib.c' l='171' u='c' c='db_setlocal'/>
+<use f='redis/deps/lua/src/ldblib.c' l='198' u='c' c='db_setupvalue'/>
+<use f='redis/deps/lua/src/liolib.c' l='59' u='c' c='io_type'/>

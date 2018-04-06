@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='179'/>
+<doc f='redis/deps/lua/src/lobject.h' l='178'>/* from table to same table */</doc>
+<use f='redis/deps/lua/src/ltable.c' l='311' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='320' u='c'/>

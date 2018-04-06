@@ -1,0 +1,11 @@
+<dec f='redis/src/cluster.c' l='51' type='int clusterAddNode(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='165' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='209' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='241' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='427' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='526' u='c' c='clusterReset'/>
+<def f='redis/src/cluster.c' l='840' ll='846' type='int clusterAddNode(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='913' u='c' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='1281' u='c' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1653' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='839'>/* Add a node to the nodes hash table */</doc>

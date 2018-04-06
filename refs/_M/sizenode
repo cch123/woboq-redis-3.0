@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lobject.h' l='360'/>
+<use f='redis/deps/lua/src/lgc.c' l='183' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='288' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='364' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='171' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='250' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='328' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='376' u='c'/>

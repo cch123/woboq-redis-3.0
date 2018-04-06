@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='746'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='750' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='751' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='752' u='c'/>

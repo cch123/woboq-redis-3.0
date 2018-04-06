@@ -1,0 +1,16 @@
+<dec f='redis/src/cluster.c' l='59' type='sds clusterGenNodesDescription(int filter)'/>
+<use f='redis/src/cluster.c' l='307' u='c' c='clusterSaveConfig'/>
+<def f='redis/src/cluster.c' l='3695' ll='3712' type='sds clusterGenNodesDescription(int filter)'/>
+<use f='redis/src/cluster.c' l='3826' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3683'>/* Generate a csv-alike representation of the nodes we are aware of,
+ * including the &quot;myself&quot; node, and return an SDS string containing the
+ * representation (it is up to the caller to free it).
+ *
+ * All the nodes matching at least one of the node flags specified in
+ * &quot;filter&quot; are excluded from the output, so using zero as a filter will
+ * include all the known nodes in the representation, including nodes in
+ * the HANDSHAKE state.
+ *
+ * The representation obtained using this function is used for the output
+ * of the CLUSTER NODES function, and as format for the cluster
+ * configuration file (nodes.conf) for a given node. */</doc>

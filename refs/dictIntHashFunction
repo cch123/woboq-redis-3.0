@@ -1,0 +1,2 @@
+<def f='redis/src/dict.c' l='71' ll='80' type='unsigned int dictIntHashFunction(unsigned int key)'/>
+<doc f='redis/src/dict.c' l='70'>/* Thomas Wang&apos;s 32 bit Mix Function */</doc>

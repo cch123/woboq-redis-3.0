@@ -1,0 +1,19 @@
+<dec f='redis/deps/hiredis/sds.h' l='99' type='size_t sdsAllocSize(sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='171' ll='175' type='size_t sdsAllocSize(sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='164'>/* Return the total size of the allocation of the specifed sds string,
+ * including:
+ * 1) The sds header before the pointer.
+ * 2) The string.
+ * 3) The free buffer at the end if any.
+ * 4) The implicit null term.
+ */</doc>
+<dec f='redis/src/sds.h' l='99' type='size_t sdsAllocSize(sds s)'/>
+<use f='redis/src/redis.c' l='944' u='c' c='clientsCronResizeQueryBuffer'/>
+<def f='redis/src/sds.c' l='171' ll='175' type='size_t sdsAllocSize(sds s)'/>
+<doc f='redis/src/sds.c' l='164'>/* Return the total size of the allocation of the specifed sds string,
+ * including:
+ * 1) The sds header before the pointer.
+ * 2) The string.
+ * 3) The free buffer at the end if any.
+ * 4) The implicit null term.
+ */</doc>

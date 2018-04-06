@@ -1,0 +1,4 @@
+<dec f='redis/src/anet.h' l='72' type='int anetSockName(int fd, char * ip, size_t ip_len, int * port)'/>
+<def f='redis/src/anet.c' l='592' ll='612' type='int anetSockName(int fd, char * ip, size_t ip_len, int * port)'/>
+<use f='redis/src/cluster.c' l='1633' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/sentinel.c' l='2256' u='c' c='sentinelSendHello'/>

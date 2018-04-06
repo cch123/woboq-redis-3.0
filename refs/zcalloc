@@ -1,0 +1,6 @@
+<dec f='redis/src/zmalloc.h' l='69' type='void * zcalloc(size_t size)'/>
+<use f='redis/src/cluster.c' l='2207' u='c' c='clusterSendPing'/>
+<use f='redis/src/dict.c' l='220' u='c' c='dictExpand'/>
+<use f='redis/src/sds.c' l='57' u='c' c='sdsnewlen'/>
+<use f='redis/src/t_zset.c' l='1873' u='c' c='zunionInterGenericCommand'/>
+<def f='redis/src/zmalloc.c' l='138' ll='150' type='void * zcalloc(size_t size)'/>

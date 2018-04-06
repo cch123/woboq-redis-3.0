@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1380' type='void commandCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='280' u='r'/>
+<use f='redis/src/redis.c' l='280' u='r'/>
+<use f='redis/src/redis.c' l='280' u='r'/>
+<use f='redis/src/redis.c' l='280' u='r'/>
+<def f='redis/src/redis.c' l='2523' ll='2564' type='void commandCommand(redisClient * c)'/>
+<doc f='redis/src/redis.c' l='2522'>/* COMMAND &lt;subcommand&gt; &lt;args&gt; */</doc>

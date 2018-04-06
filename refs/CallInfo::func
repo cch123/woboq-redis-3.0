@@ -1,0 +1,46 @@
+<dec f='redis/deps/lua/src/lstate.h' l='50' type='StkId'/>
+<use f='redis/deps/lua/src/lapi.c' l='63' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='69' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='83' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='213' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='221' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='221' macro='1' u='r'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='50'>/* function index in the stack */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='37' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='37' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='40' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='49' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='49' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='90' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='108' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='108' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='108' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='118' u='r' c='findlocal'/>
+<use f='redis/deps/lua/src/ldebug.c' l='247' u='r' c='lua_getinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='499' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='499' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='500' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='549' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='609' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='609' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='135' u='w' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='135' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='290' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='312' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='313' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='320' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='335' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='350' u='r' c='luaD_poscall'/>
+<use f='redis/deps/lua/src/ldo.c' l='395' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='54' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lvm.c' l='69' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='385' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='617' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='618' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='620' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='747' u='r' c='luaV_execute'/>

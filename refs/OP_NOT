@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='178' type='19'/>
+<use f='redis/deps/lua/src/lcode.c' l='527' u='r' c='jumponcond'/>
+<use f='redis/deps/lua/src/lcode.c' l='605' u='r' c='codenot'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='178'>/*	A B	R(A) := not R(B)				*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='509' c='luaV_execute'/>

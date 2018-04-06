@@ -1,0 +1,32 @@
+<dec f='redis/src/redis.h' l='550' type='blockingState'/>
+<offset>2432</offset>
+<doc f='redis/src/redis.h' l='550'>/* blocking state */</doc>
+<use f='redis/src/blocked.c' l='154' u='m' c='replyToBlockedClientTimedOut'/>
+<use f='redis/src/cluster.c' l='4982' u='m' c='clusterRedirectBlockedClientIfNeeded'/>
+<use f='redis/src/networking.c' l='114' u='m' c='createClient'/>
+<use f='redis/src/networking.c' l='115' u='m' c='createClient'/>
+<use f='redis/src/networking.c' l='116' u='m' c='createClient'/>
+<use f='redis/src/networking.c' l='117' u='m' c='createClient'/>
+<use f='redis/src/networking.c' l='118' u='m' c='createClient'/>
+<use f='redis/src/networking.c' l='718' u='m' c='freeClient'/>
+<use f='redis/src/redis.c' l='925' u='m' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='925' u='m' c='clientsCronHandleTimeout'/>
+<use f='redis/src/replication.c' l='1859' u='m' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1860' u='m' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1861' u='m' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1897' u='m' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1898' u='m' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1903' u='m' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1905' u='m' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1906' u='m' c='processClientsWaitingReplicas'/>
+<use f='redis/src/t_list.c' l='780' u='m' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='781' u='m' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='787' u='m' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='815' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='815' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='816' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='832' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='833' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='834' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='835' u='m' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='983' u='m' c='handleClientsBlockedOnLists'/>

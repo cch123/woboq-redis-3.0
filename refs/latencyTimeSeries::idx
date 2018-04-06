@@ -1,0 +1,13 @@
+<dec f='redis/src/latency.h' l='48' type='int'/>
+<offset>0</offset>
+<doc f='redis/src/latency.h' l='48'>/* Index of the next sample to store. */</doc>
+<use f='redis/src/latency.c' l='106' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='114' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='121' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='122' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='125' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='126' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='126' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='482' u='r' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='504' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='523' u='r' c='latencyCommandGenSparkeline'/>

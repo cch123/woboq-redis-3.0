@@ -1,0 +1,5 @@
+<def f='redis/src/sparkline.h' l='34' ll='37'/>
+<size>16</size>
+<doc f='redis/src/sparkline.h' l='33'>/* A sequence is represented of many &quot;samples&quot; */</doc>
+<mbr r='sample::value' o='0' t='double'/>
+<mbr r='sample::label' o='64' t='char *'/>

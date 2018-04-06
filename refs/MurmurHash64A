@@ -1,0 +1,5 @@
+<def f='redis/src/hyperloglog.c' l='393' ll='439' type='uint64_t MurmurHash64A(const void * key, int len, unsigned int seed)'/>
+<use f='redis/src/hyperloglog.c' l='459' u='c' c='hllPatLen'/>
+<doc f='redis/src/hyperloglog.c' l='390'>/* Our hash function is MurmurHash2, 64 bit version.
+ * It was modified for Redis in order to provide the same result in
+ * big and little endian archs (endian neutral). */</doc>

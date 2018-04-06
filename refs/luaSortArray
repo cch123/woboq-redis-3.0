@@ -1,0 +1,8 @@
+<def f='redis/src/scripting.c' l='179' ll='202' type='void luaSortArray(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='405' u='c' c='luaRedisGenericCommand'/>
+<doc f='redis/src/scripting.c' l='173'>/* Sort the array currently in the stack. We do this to make the output
+ * of commands like KEYS or SMEMBERS something deterministic when called
+ * from Lua (to play well with AOf/replication).
+ *
+ * The array is sorted using table.sort itself, and assuming all the
+ * list elements are strings. */</doc>

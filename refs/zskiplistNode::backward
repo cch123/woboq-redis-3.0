@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='586' type='struct zskiplistNode *'/>
+<offset>128</offset>
+<use f='redis/src/sort.c' l='400' u='r' c='sortCommand'/>
+<use f='redis/src/t_zset.c' l='77' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='157' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='159' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='178' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='178' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='180' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='2187' u='r' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2350' u='r' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2373' u='r' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2698' u='r' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2717' u='r' c='genericZrangebylexCommand'/>

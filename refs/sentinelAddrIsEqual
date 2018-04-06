@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='500' ll='502' type='int sentinelAddrIsEqual(sentinelAddr * a, sentinelAddr * b)'/>
+<use f='redis/src/sentinel.c' l='1242' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1252' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1545' u='c' c='rewriteConfigSentinelOption'/>
+<doc f='redis/src/sentinel.c' l='499'>/* Return non-zero if two addresses are equal. */</doc>

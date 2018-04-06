@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='827' type='int'/>
+<offset>16736</offset>
+<doc f='redis/src/redis.h' l='827'>/* Slave -&gt; Master SYNC temp file descriptor */</doc>
+<use f='redis/src/replication.c' l='828' u='r' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='964' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='972' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='988' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1021' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1365' u='w' c='syncWithMaster'/>

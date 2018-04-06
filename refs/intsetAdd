@@ -1,0 +1,5 @@
+<dec f='redis/src/intset.h' l='42' type='intset * intsetAdd(intset * is, int64_t value, uint8_t * success)'/>
+<def f='redis/src/intset.c' l='204' ll='231' type='intset * intsetAdd(intset * is, int64_t value, uint8_t * success)'/>
+<doc f='redis/src/intset.c' l='203'>/* Insert an integer in the intset */</doc>
+<use f='redis/src/rdb.c' l='886' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_set.c' l='57' u='c' c='setTypeAdd'/>

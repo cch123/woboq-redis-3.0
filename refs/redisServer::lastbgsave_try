@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='780' type='time_t'/>
+<offset>14592</offset>
+<doc f='redis/src/redis.h' l='780'>/* Unix time of last attempted bgsave */</doc>
+<use f='redis/src/rdb.c' l='771' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/redis.c' l='1190' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1820' u='w' c='initServer'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='905' type='int'/>
+<offset>20256</offset>
+<doc f='redis/src/redis.h' l='905'>/* True if bug report header was already logged. */</doc>
+<use f='redis/src/debug.c' l='476' u='r' c='bugReportStart'/>
+<use f='redis/src/debug.c' l='479' u='w' c='bugReportStart'/>
+<use f='redis/src/redis.c' l='1549' u='w' c='initServerConfig'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1002' type='dictType'/>
+<def f='redis/src/redis.c' l='555' ll='562' type='dictType'/>
+<doc f='redis/src/redis.c' l='554'>/* server.lua_scripts sha (as sds string) -&gt; scripts (as robj) cache. */</doc>
+<use f='redis/src/scripting.c' l='653' u='a' c='scriptingInit'/>

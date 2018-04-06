@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lcode.h' l='61' type='void luaK_storevar(FuncState * fs, expdesc * var, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='472' ll='500' type='void luaK_storevar(FuncState * fs, expdesc * var, expdesc * ex)'/>
+<use f='redis/deps/lua/src/lparser.c' l='956' u='c' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='961' u='c' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='1173' u='c' c='localfunc'/>
+<use f='redis/deps/lua/src/lparser.c' l='1219' u='c' c='funcstat'/>

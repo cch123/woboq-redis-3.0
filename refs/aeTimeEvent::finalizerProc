@@ -1,0 +1,5 @@
+<dec f='redis/src/ae.h' l='75' type='aeEventFinalizerProc *'/>
+<use f='redis/src/ae.c' l='215' u='w' c='aeCreateTimeEvent'/>
+<use f='redis/src/ae.c' l='233' u='r' c='aeDeleteTimeEvent'/>
+<use f='redis/src/ae.c' l='234' u='r' c='aeDeleteTimeEvent'/>
+<offset>256</offset>

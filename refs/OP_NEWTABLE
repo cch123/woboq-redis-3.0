@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='167' type='10'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='167'>/*	A B C	R(A) := {} (size = B,C)				*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='502' u='r' c='constructor'/>
+<use f='redis/deps/lua/src/lvm.c' l='461' c='luaV_execute'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1119' type='robj * createEmbeddedStringObject(char * ptr, size_t len)'/>
+<def f='redis/src/object.c' l='60' ll='79' type='robj * createEmbeddedStringObject(char * ptr, size_t len)'/>
+<use f='redis/src/object.c' l='90' u='c' c='createStringObject'/>
+<use f='redis/src/object.c' l='171' u='c' c='dupStringObject'/>
+<use f='redis/src/object.c' l='419' u='c' c='tryObjectEncoding'/>
+<doc f='redis/src/object.c' l='57'>/* Create a string object with encoding REDIS_ENCODING_EMBSTR, that is
+ * an object where the sds string is actually an unmodifiable string
+ * allocated in the same chunk as the object itself. */</doc>

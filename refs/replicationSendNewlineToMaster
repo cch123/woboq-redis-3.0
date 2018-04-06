@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1171' type='void replicationSendNewlineToMaster()'/>
+<use f='redis/src/rdb.c' l='1123' u='c' c='rdbLoadProgressCallback'/>
+<def f='redis/src/replication.c' l='842' ll='850' type='void replicationSendNewlineToMaster()'/>
+<use f='redis/src/replication.c' l='856' u='c' c='replicationEmptyDbCallback'/>
+<doc f='redis/src/replication.c' l='834'>/* Avoid the master to detect the slave is timing out while loading the
+ * RDB file in initial synchronization. We send a single newline character
+ * that is valid protocol but is guaranteed to either be sent entierly or
+ * not, since the byte is indivisible.
+ *
+ * The function is called in two contexts: while we flush the current
+ * data with emptyDb(), and while we load the new data received as an
+ * RDB file from the master. */</doc>

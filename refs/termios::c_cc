@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/termios.h' l='35' type='cc_t [32]'/>
+<use f='redis/deps/linenoise/linenoise.c' l='238' u='w' c='enableRawMode'/>
+<use f='redis/deps/linenoise/linenoise.c' l='238' u='w' c='enableRawMode'/>
+<offset>136</offset>
+<doc f='include/x86_64-linux-gnu/bits/termios.h' l='35'>/* control characters */</doc>

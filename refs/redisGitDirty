@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1373' type='char * redisGitDirty()'/>
+<dec f='redis/src/redis-cli.c' l='121' type='char * redisGitDirty()'/>
+<use f='redis/src/redis-cli.c' l='209' u='c' c='cliVersion'/>
+<use f='redis/src/redis.c' l='2655' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3408' u='c' c='version'/>
+<use f='redis/src/redis.c' l='3446' u='c' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3455' u='c' c='redisAsciiArt'/>
+<def f='redis/src/release.c' l='44' ll='46' type='char * redisGitDirty()'/>

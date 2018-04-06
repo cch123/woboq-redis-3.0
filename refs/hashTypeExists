@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1273' type='int hashTypeExists(robj * o, robj * key)'/>
+<def f='redis/src/t_hash.c' l='149' ll='164' type='int hashTypeExists(robj * o, robj * field)'/>
+<use f='redis/src/t_hash.c' l='483' u='c' c='hsetnxCommand'/>
+<use f='redis/src/t_hash.c' l='760' u='c' c='hexistsCommand'/>
+<doc f='redis/src/t_hash.c' l='147'>/* Test if the specified field exists in the given hash. Returns 1 if the field
+ * exists, and 0 when it doesn&apos;t. */</doc>

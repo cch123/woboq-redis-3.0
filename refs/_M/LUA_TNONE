@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lua.h' l='72'/>
+<use f='redis/deps/lua/src/lapi.c' l='244' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='250' u='c'/>
+<doc f='redis/deps/lua/src/lua.h' l='69'>/*
+** basic types
+*/</doc>
+<use f='redis/deps/lua/src/lauxlib.c' l='153' u='c'/>

@@ -1,0 +1,10 @@
+<def f='redis/deps/lua/src/lparser.c' l='40' ll='46'/>
+<size>16</size>
+<doc f='redis/deps/lua/src/lparser.c' l='37'>/*
+** nodes for block list (list of active blocks)
+*/</doc>
+<mbr r='BlockCnt::previous' o='0' t='struct BlockCnt *'/>
+<mbr r='BlockCnt::breaklist' o='64' t='int'/>
+<mbr r='BlockCnt::nactvar' o='96' t='lu_byte'/>
+<mbr r='BlockCnt::upval' o='104' t='lu_byte'/>
+<mbr r='BlockCnt::isbreakable' o='112' t='lu_byte'/>

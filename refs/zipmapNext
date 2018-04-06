@@ -1,0 +1,15 @@
+<dec f='redis/src/zipmap.h' l='42' type='unsigned char * zipmapNext(unsigned char * zm, unsigned char ** key, unsigned int * klen, unsigned char ** value, unsigned int * vlen)'/>
+<use f='redis/src/rdb.c' l='1029' u='c' c='rdbLoadObject'/>
+<def f='redis/src/zipmap.c' l='315' ll='330' type='unsigned char * zipmapNext(unsigned char * zm, unsigned char ** key, unsigned int * klen, unsigned char ** value, unsigned int * vlen)'/>
+<use f='redis/src/zipmap.c' l='356' u='c' c='zipmapLen'/>
+<doc f='redis/src/zipmap.c' l='304'>/* This function is used to iterate through all the zipmap elements.
+ * In the first call the first argument is the pointer to the zipmap + 1.
+ * In the next calls what zipmapNext returns is used as first argument.
+ * Example:
+ *
+ * unsigned char *i = zipmapRewind(my_zipmap);
+ * while((i = zipmapNext(i,&amp;key,&amp;klen,&amp;value,&amp;vlen)) != NULL) {
+ *     printf(&quot;%d bytes key at $p\n&quot;, klen, key);
+ *     printf(&quot;%d bytes value at $p\n&quot;, vlen, value);
+ * }
+ */</doc>

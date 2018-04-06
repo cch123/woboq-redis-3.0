@@ -1,0 +1,33 @@
+<def f='redis/src/config.c' l='63' ll='67' type='int yesnotoi(char * s)'/>
+<use f='redis/src/config.c' l='195' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='270' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='274' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='299' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='303' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='307' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='311' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='315' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='319' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='329' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='342' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='372' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='376' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='436' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='445' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='509' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='711' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='716' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='735' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='740' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='779' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='784' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='789' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='892' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='916' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='926' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='931' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='954' u='c' c='configSetCommand'/>
+<doc f='redis/src/config.c' l='59'>/*-----------------------------------------------------------------------------
+ * Config file parsing
+ *----------------------------------------------------------------------------*/</doc>
+<dec f='redis/src/sentinel.c' l='328' type='int yesnotoi(char * s)'/>

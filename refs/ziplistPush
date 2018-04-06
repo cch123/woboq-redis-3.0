@@ -1,0 +1,13 @@
+<dec f='redis/src/ziplist.h' l='35' type='unsigned char * ziplistPush(unsigned char * zl, unsigned char * s, unsigned int slen, int where)'/>
+<use f='redis/src/rdb.c' l='854' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='961' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='962' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1032' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1033' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='199' u='c' c='hashTypeSet'/>
+<use f='redis/src/t_hash.c' l='200' u='c' c='hashTypeSet'/>
+<use f='redis/src/t_list.c' l='61' u='c' c='listTypePush'/>
+<use f='redis/src/t_list.c' l='211' u='c' c='listTypeInsert'/>
+<use f='redis/src/t_zset.c' l='958' u='c' c='zzlInsertAt'/>
+<use f='redis/src/t_zset.c' l='959' u='c' c='zzlInsertAt'/>
+<def f='redis/src/ziplist.c' l='668' ll='672' type='unsigned char * ziplistPush(unsigned char * zl, unsigned char * s, unsigned int slen, int where)'/>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='101' macro='1' type='GCObject *'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lgc.c' l='131' u='a' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='455' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='456' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lstate.c' l='151' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstring.c' l='107' u='r' c='luaS_newudata'/>
+<use f='redis/deps/lua/src/lstring.c' l='108' u='w' c='luaS_newudata'/>

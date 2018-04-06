@@ -1,0 +1,23 @@
+<dec f='redis/src/redis.h' l='1136' type='int getLongLongFromObjectOrReply(redisClient * c, robj * o, long long * target, const char * msg)'/>
+<use f='redis/src/bitops.c' l='44' u='c' c='getBitOffsetFromArgument'/>
+<use f='redis/src/blocked.c' l='79' u='c' c='getTimeoutFromObjectOrReply'/>
+<use f='redis/src/cluster.c' l='4057' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4070' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4072' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4241' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4403' u='c' c='restoreCommand'/>
+<use f='redis/src/db.c' l='873' u='c' c='expireGenericCommand'/>
+<use f='redis/src/networking.c' l='1403' u='c' c='clientCommand'/>
+<def f='redis/src/object.c' l='646' ll='658' type='int getLongLongFromObjectOrReply(redisClient * c, robj * o, long long * target, const char * msg)'/>
+<use f='redis/src/object.c' l='663' u='c' c='getLongFromObjectOrReply'/>
+<use f='redis/src/replication.c' l='380' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/scripting.c' l='946' u='c' c='evalGenericCommand'/>
+<use f='redis/src/sentinel.c' l='2658' u='c' c='sentinelCommand'/>
+<use f='redis/src/t_hash.c' l='520' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_hash.c' l='523' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_string.c' l='69' u='c' c='setGenericCommand'/>
+<use f='redis/src/t_string.c' l='238' u='c' c='getrangeCommand'/>
+<use f='redis/src/t_string.c' l='240' u='c' c='getrangeCommand'/>
+<use f='redis/src/t_string.c' l='331' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_string.c' l='374' u='c' c='incrbyCommand'/>
+<use f='redis/src/t_string.c' l='381' u='c' c='decrbyCommand'/>

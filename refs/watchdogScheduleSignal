@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1553' type='void watchdogScheduleSignal(int period)'/>
+<def f='redis/src/debug.c' l='918' ll='928' type='void watchdogScheduleSignal(int period)'/>
+<use f='redis/src/debug.c' l='949' u='c' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='957' u='c' c='disableWatchdog'/>
+<doc f='redis/src/debug.c' l='915'>/* Schedule a SIGALRM delivery after the specified period in milliseconds.
+ * If a timer is already scheduled, this function will re-schedule it to the
+ * specified time. If period is 0 the current timer is disabled. */</doc>
+<use f='redis/src/redis.c' l='1075' u='c' c='serverCron'/>

@@ -1,0 +1,18 @@
+<dec f='redis/deps/lua/src/lua.h' l='124' type='void lua_insert(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='191' ll='200' macro='1' type='void lua_insert(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='258' u='c' c='luaL_openlib'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='465' u='c' c='luaL_addvalue'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='150' u='c' c='luaB_setfenv'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='271' u='c' c='load_aux'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='379' u='c' c='luaB_pcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='388' u='c' c='luaB_xpcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='550' u='c' c='luaB_coresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='555' u='c' c='luaB_coresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='567' u='c' c='luaB_auxwrap'/>
+<use f='redis/deps/lua/src/ldblib.c' l='187' u='c' c='auxupvalue'/>
+<use f='redis/deps/lua/src/loadlib.c' l='317' u='c' c='ll_loadlib'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1327' u='c' c='json_protect_conversion'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1334' u='c' c='json_protect_conversion'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='822' u='c' c='mp_unpack_full'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='857' u='c' c='mp_safe'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='866' u='c' c='mp_safe'/>

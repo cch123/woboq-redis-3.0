@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='38'/>
+<use f='redis/deps/lua/src/lapi.c' l='67' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='70' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='220' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='252' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='136' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='628' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='552' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='579' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='661' u='c'/>

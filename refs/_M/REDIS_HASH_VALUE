@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='989'/>
+<use f='redis/src/aof.c' l='989' u='c'/>
+<use f='redis/src/debug.c' l='236' u='c'/>
+<use f='redis/src/t_hash.c' l='429' u='c'/>
+<use f='redis/src/t_hash.c' l='722' u='c'/>
+<use f='redis/src/t_hash.c' l='733' u='c'/>
+<use f='redis/src/t_hash.c' l='734' u='c'/>
+<use f='redis/src/t_hash.c' l='748' u='c'/>
+<use f='redis/src/t_hash.c' l='752' u='c'/>

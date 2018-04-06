@@ -1,0 +1,11 @@
+<dec f='include/stdio.h' l='172'/>
+<doc f='include/stdio.h' l='171'>/* C89/C99 say they&apos;re macros.  Make them happy.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='939' u='c'/>
+<use f='redis/deps/linenoise/linenoise.c' l='969' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='560' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='306' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='546' u='c'/>
+<use f='redis/src/config.c' l='584' u='c'/>
+<use f='redis/src/config.c' l='594' u='c'/>
+<use f='redis/src/redis-cli.c' l='853' u='c'/>
+<use f='redis/src/redis-cli.c' l='976' u='c'/>

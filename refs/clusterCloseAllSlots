@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.c' l='73' type='void clusterCloseAllSlots()'/>
+<use f='redis/src/cluster.c' l='412' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='495' u='c' c='clusterReset'/>
+<def f='redis/src/cluster.c' l='3375' ll='3380' type='void clusterCloseAllSlots()'/>
+<use f='redis/src/cluster.c' l='3569' u='c' c='clusterSetMaster'/>
+<doc f='redis/src/cluster.c' l='3373'>/* Clear the migrating / importing state for all the slots.
+ * This is useful at initialization and when turning a master into slave. */</doc>

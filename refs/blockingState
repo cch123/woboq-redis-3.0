@@ -1,0 +1,9 @@
+<def f='redis/src/redis.h' l='480' ll='494'/>
+<size>40</size>
+<doc f='redis/src/redis.h' l='478'>/* This structure holds the blocking operation state for a client.
+ * The fields used depend on client-&gt;btype. */</doc>
+<mbr r='blockingState::timeout' o='0' t='mstime_t'/>
+<mbr r='blockingState::keys' o='64' t='dict *'/>
+<mbr r='blockingState::target' o='128' t='robj *'/>
+<mbr r='blockingState::numreplicas' o='192' t='int'/>
+<mbr r='blockingState::reploffset' o='256' t='long long'/>

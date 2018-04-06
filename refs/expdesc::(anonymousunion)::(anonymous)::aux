@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.h' l='40' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='321' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='323' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='491' u='r' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='622' u='w' c='luaK_indexed'/>
+<offset>32</offset>
+<use f='redis/deps/lua/src/lparser.c' l='918' u='r' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='920' u='w' c='check_conflict'/>

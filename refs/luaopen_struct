@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lua_struct.c' l='391' type='int luaopen_struct(lua_State * L)'/>
+<def f='redis/deps/lua/src/lua_struct.c' l='393' ll='396' macro='1' type='int luaopen_struct(lua_State * L)'/>
+<dec f='redis/src/scripting.c' l='575' type='int luaopen_struct(lua_State * L)'/>
+<use f='redis/src/scripting.c' l='586' u='r' c='luaLoadLibraries'/>

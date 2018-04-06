@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='888' type='dict *'/>
+<offset>19648</offset>
+<doc f='redis/src/redis.h' l='888'>/* A dictionary of SHA1 -&gt; Lua scripts */</doc>
+<use f='redis/src/scripting.c' l='653' u='w' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='770' u='r' c='scriptingRelease'/>
+<use f='redis/src/scripting.c' l='916' u='r' c='luaCreateFunction'/>
+<use f='redis/src/scripting.c' l='1082' u='r' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1164' u='r' c='scriptCommand'/>
+<use f='redis/src/scripting.c' l='1177' u='r' c='scriptCommand'/>

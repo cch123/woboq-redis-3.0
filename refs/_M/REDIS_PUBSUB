@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='251'/>
+<use f='redis/src/networking.c' l='1591' u='c'/>
+<use f='redis/src/pubsub.c' l='282' u='c'/>
+<use f='redis/src/pubsub.c' l='294' u='c'/>
+<use f='redis/src/pubsub.c' l='302' u='c'/>
+<use f='redis/src/pubsub.c' l='314' u='c'/>
+<use f='redis/src/redis.c' l='913' u='c'/>
+<use f='redis/src/redis.c' l='2247' u='c'/>
+<use f='redis/src/redis.c' l='2445' u='c'/>

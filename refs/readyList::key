@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='509' type='robj *'/>
+<offset>64</offset>
+<use f='redis/src/t_list.c' l='857' u='w' c='signalListAsReady'/>
+<use f='redis/src/t_list.c' l='965' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='969' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='975' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='997' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='1013' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='1019' u='r' c='handleClientsBlockedOnLists'/>

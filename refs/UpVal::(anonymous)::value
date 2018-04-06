@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lobject.h' l='278' type='TValue'/>
+<offset>0</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='278'>/* the value (when closed) */</doc>
+<use f='redis/deps/lua/src/lfunc.c' l='47' u='a' c='luaF_newupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='90' u='a' c='luaF_freeupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='107' u='a' c='luaF_close'/>
+<use f='redis/deps/lua/src/lfunc.c' l='108' u='a' c='luaF_close'/>
+<use f='redis/deps/lua/src/lgc.c' l='86' u='a' c='reallymarkobject'/>

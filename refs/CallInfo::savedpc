@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='52' type='const Instruction *'/>
+<offset>192</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='39' u='w' c='currentpc'/>
+<use f='redis/deps/lua/src/ldebug.c' l='40' u='r' c='currentpc'/>
+<use f='redis/deps/lua/src/ldo.c' l='272' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='353' u='r' c='luaD_poscall'/>
+<use f='redis/deps/lua/src/ldo.c' l='472' u='r' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/lvm.c' l='625' u='w' c='luaV_execute'/>

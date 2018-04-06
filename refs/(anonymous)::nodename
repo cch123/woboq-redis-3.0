@@ -1,0 +1,16 @@
+<dec f='redis/src/cluster.h' l='165' type='char [40]'/>
+<dec f='redis/src/cluster.h' l='176' type='char [40]'/>
+<dec f='redis/src/cluster.h' l='190' type='char [40]'/>
+<use f='redis/src/cluster.c' l='1301' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1308' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1348' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1869' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1875' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1885' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1941' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2246' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2254' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2366' u='r' c='clusterSendFail'/>
+<use f='redis/src/cluster.c' l='2379' u='r' c='clusterSendUpdate'/>
+<offset>64</offset>
+<doc f='redis/src/cluster.h' l='190'>/* Name of the slots owner. */</doc>

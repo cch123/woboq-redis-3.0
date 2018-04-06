@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.c' l='44' type='lu_byte'/>
+<use f='redis/deps/lua/src/lparser.c' l='220' u='w' c='markupval'/>
+<use f='redis/deps/lua/src/lparser.c' l='289' u='w' c='enterblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='300' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='980' u='r' c='breakstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1022' u='r' c='repeatstat'/>
+<offset>104</offset>
+<doc f='redis/deps/lua/src/lparser.c' l='44'>/* true if some variable in the block is an upvalue */</doc>

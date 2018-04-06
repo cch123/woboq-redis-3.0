@@ -1,0 +1,19 @@
+<dec f='redis/src/cluster.c' l='60' type='clusterNode * clusterLookupNode(char * name)'/>
+<use f='redis/src/cluster.c' l='162' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='206' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='238' u='c' c='clusterLoadConfig'/>
+<def f='redis/src/cluster.c' l='889' ll='897' type='clusterNode * clusterLookupNode(char * name)'/>
+<use f='redis/src/cluster.c' l='1292' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1308' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1583' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1755' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1869' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1941' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='3911' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3923' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3935' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4087' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4106' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4143' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4167' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='888'>/* Node lookup by name */</doc>

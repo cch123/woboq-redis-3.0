@@ -1,0 +1,11 @@
+<def f='redis/src/cluster.c' l='1233' ll='1283' type='int clusterStartHandshake(char * ip, int port)'/>
+<use f='redis/src/cluster.c' l='1337' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1350' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='3815' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='1226'>/* Start an handshake with the specified address if there is not one
+ * already in progress. Returns non-zero if the handshake was actually
+ * started. On error zero is returned and errno is set to one of the
+ * following values:
+ *
+ * EAGAIN - There is already an handshake in progress for this address.
+ * EINVAL - IP or port are not valid. */</doc>

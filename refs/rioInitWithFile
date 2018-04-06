@@ -1,0 +1,5 @@
+<dec f='redis/src/rio.h' l='127' type='void rioInitWithFile(rio * r, FILE * fp)'/>
+<use f='redis/src/aof.c' l='1042' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/rdb.c' l='733' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='1140' u='c' c='rdbLoad'/>
+<def f='redis/src/rio.c' l='153' ll='158' type='void rioInitWithFile(rio * r, FILE * fp)'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='970' type='int'/>
+<offset>96</offset>
+<doc f='redis/src/redis.h' l='970'>/* intset iterator */</doc>
+<use f='redis/src/t_set.c' l='121' u='w' c='setTypeInitIterator'/>
+<use f='redis/src/t_set.c' l='151' u='w' c='setTypeNext'/>

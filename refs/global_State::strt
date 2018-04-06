@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lstate.h' l='69' type='stringtable'/>
+<offset>0</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='69'>/* hash table for strings */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='390' u='m' c='freeobj'/>
+<use f='redis/deps/lua/src/lgc.c' l='434' u='m' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='434' u='m' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='435' u='m' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='436' u='m' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='488' u='m' c='luaC_freeall'/>
+<use f='redis/deps/lua/src/lgc.c' l='489' u='m' c='luaC_freeall'/>
+<use f='redis/deps/lua/src/lgc.c' l='574' u='m' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='575' u='m' c='singlestep'/>
+<use f='redis/deps/lua/src/lstate.c' l='111' u='m' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='111' u='m' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='163' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='164' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='165' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstring.c' l='29' u='a' c='luaS_resize'/>
+<use f='redis/deps/lua/src/lstring.c' l='64' u='a' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='82' u='m' c='luaS_newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='82' u='m' c='luaS_newlstr'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/zipmap.h' l='43' type='int zipmapGet(unsigned char * zm, unsigned char * key, unsigned int klen, unsigned char ** value, unsigned int * vlen)'/>
+<def f='redis/src/zipmap.c' l='334' ll='342' type='int zipmapGet(unsigned char * zm, unsigned char * key, unsigned int klen, unsigned char ** value, unsigned int * vlen)'/>
+<doc f='redis/src/zipmap.c' l='332'>/* Search a key and retrieve the pointer and len of the associated value.
+ * If the key is found the function returns 1, otherwise 0. */</doc>

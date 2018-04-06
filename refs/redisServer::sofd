@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='675' type='int'/>
+<offset>2944</offset>
+<doc f='redis/src/redis.h' l='675'>/* Unix socket file descriptor */</doc>
+<use f='redis/src/redis.c' l='1411' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1783' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='1785' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1789' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1793' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1852' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1852' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2315' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2315' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='3673' u='r' c='main'/>

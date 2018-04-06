@@ -1,0 +1,10 @@
+<def f='redis/src/ae.h' l='70' ll='78'/>
+<size>56</size>
+<doc f='redis/src/ae.h' l='69'>/* Time event structure */</doc>
+<mbr r='aeTimeEvent::id' o='0' t='long long'/>
+<mbr r='aeTimeEvent::when_sec' o='64' t='long'/>
+<mbr r='aeTimeEvent::when_ms' o='128' t='long'/>
+<mbr r='aeTimeEvent::timeProc' o='192' t='aeTimeProc *'/>
+<mbr r='aeTimeEvent::finalizerProc' o='256' t='aeEventFinalizerProc *'/>
+<mbr r='aeTimeEvent::clientData' o='320' t='void *'/>
+<mbr r='aeTimeEvent::next' o='384' t='struct aeTimeEvent *'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1297' type='int keyspaceEventsStringToFlags(char * classes)'/>
+<use f='redis/src/config.c' l='525' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='921' u='c' c='configSetCommand'/>
+<def f='redis/src/notify.c' l='40' ll='61' type='int keyspaceEventsStringToFlags(char * classes)'/>
+<doc f='redis/src/notify.c' l='35'>/* Turn a string representing notification classes into an integer
+ * representing notification classes flags xored.
+ *
+ * The function returns -1 if the input contains characters not mapping to
+ * any class. */</doc>

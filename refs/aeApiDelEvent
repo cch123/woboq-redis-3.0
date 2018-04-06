@@ -1,0 +1,2 @@
+<def f='redis/src/ae_epoll.c' l='91' ll='108' type='void aeApiDelEvent(aeEventLoop * eventLoop, int fd, int delmask)'/>
+<use f='redis/src/ae.c' l='161' u='c' c='aeDeleteFileEvent'/>

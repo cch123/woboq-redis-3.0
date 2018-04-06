@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lzio.h' l='61' type='lua_State *'/>
+<offset>256</offset>
+<doc f='redis/deps/lua/src/lzio.h' l='61'>/* Lua state (for reader) */</doc>
+<use f='redis/deps/lua/src/lzio.c' l='23' u='r' c='luaZ_fill'/>
+<use f='redis/deps/lua/src/lzio.c' l='49' u='w' c='luaZ_init'/>

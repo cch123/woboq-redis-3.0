@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lobject.h' l='283' type='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:277:3)'/>
+<offset>192</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='47' u='m' c='luaF_newupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='73' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='76' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='90' u='m' c='luaF_freeupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='107' u='m' c='luaF_close'/>
+<use f='redis/deps/lua/src/lfunc.c' l='108' u='m' c='luaF_close'/>
+<use f='redis/deps/lua/src/lgc.c' l='86' u='m' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='m' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='m' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lstate.c' l='160' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='161' u='m' c='lua_newstate'/>

@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.h' l='51'/>
+<use f='redis/src/cluster.c' l='189' u='c'/>
+<use f='redis/src/cluster.c' l='1164' u='c'/>
+<use f='redis/src/cluster.c' l='1188' u='c'/>
+<use f='redis/src/cluster.c' l='1203' u='c'/>
+<use f='redis/src/cluster.c' l='1313' u='c'/>
+<use f='redis/src/cluster.c' l='1334' u='c'/>
+<use f='redis/src/cluster.c' l='1871' u='c'/>
+<use f='redis/src/cluster.c' l='1876' u='c'/>
+<use f='redis/src/cluster.c' l='2229' u='c'/>
+<use f='redis/src/cluster.c' l='3220' u='c'/>
+<use f='redis/src/cluster.c' l='3421' u='c'/>
+<use f='redis/src/cluster.c' l='3445' u='c'/>
+<use f='redis/src/cluster.c' l='3594' u='c'/>

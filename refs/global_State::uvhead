@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lstate.h' l='91' type='UpVal'/>
+<offset>1472</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='91'>/* head of double-linked list of all open upvalues */</doc>
+<use f='redis/deps/lua/src/lfunc.c' l='73' u='a' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='76' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='m' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='a' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lstate.c' l='160' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='160' u='a' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='161' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='161' u='a' c='lua_newstate'/>

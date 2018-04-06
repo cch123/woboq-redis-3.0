@@ -1,0 +1,13 @@
+<def f='redis/src/cluster.c' l='4462' ll='4515' type='migrateCachedSocket * migrateGetSocket(redisClient * c, robj * host, robj * port, long timeout)'/>
+<use f='redis/src/cluster.c' l='4598' u='c' c='migrateCommand'/>
+<doc f='redis/src/cluster.c' l='4451'>/* Return a migrateCachedSocket containing a TCP socket connected with the
+ * target instance, possibly returning a cached one.
+ *
+ * This function is responsible of sending errors to the client if a
+ * connection can&apos;t be established. In this case -1 is returned.
+ * Otherwise on success the socket is returned, and the caller should not
+ * attempt to free it after usage.
+ *
+ * If the caller detects an error while using the socket, migrateCloseSocket()
+ * should be called so that the connection will be created from scratch
+ * the next time. */</doc>

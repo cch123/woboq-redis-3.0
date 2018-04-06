@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>llex.h source code [redis/deps/lua/src/llex.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="LexState,RESERVED,Token "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/llex.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='llex.h.html'>llex.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: llex.h,v 1.58.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Lexical Analyzer</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/llex_h">llex_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/llex_h" data-ref="_M/llex_h">llex_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lzio.h.html">"lzio.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/FIRST_RESERVED" data-ref="_M/FIRST_RESERVED">FIRST_RESERVED</dfn>	257</u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><i>/* maximum length of a reserved word */</i></td></tr>
+<tr><th id="17">17</th><td><u>#define <dfn class="macro" id="_M/TOKEN_LEN" data-ref="_M/TOKEN_LEN">TOKEN_LEN</dfn>	(sizeof("function")/sizeof(char))</u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><i>/*</i></td></tr>
+<tr><th id="21">21</th><td><i>* WARNING: if you change the order of this enumeration,</i></td></tr>
+<tr><th id="22">22</th><td><i>* grep "ORDER RESERVED"</i></td></tr>
+<tr><th id="23">23</th><td><i>*/</i></td></tr>
+<tr><th id="24">24</th><td><b>enum</b> <dfn class="type def" id="RESERVED" title='RESERVED' data-ref="RESERVED">RESERVED</dfn> {</td></tr>
+<tr><th id="25">25</th><td>  <i>/* terminal symbols denoted by reserved words */</i></td></tr>
+<tr><th id="26">26</th><td>  <dfn class="enum" id="RESERVED::TK_AND" title='RESERVED::TK_AND' data-ref="RESERVED::TK_AND">TK_AND</dfn> = <a class="macro" href="#14" title="257" data-ref="_M/FIRST_RESERVED">FIRST_RESERVED</a>, <dfn class="enum" id="RESERVED::TK_BREAK" title='RESERVED::TK_BREAK' data-ref="RESERVED::TK_BREAK">TK_BREAK</dfn>,</td></tr>
+<tr><th id="27">27</th><td>  <dfn class="enum" id="RESERVED::TK_DO" title='RESERVED::TK_DO' data-ref="RESERVED::TK_DO">TK_DO</dfn>, <dfn class="enum" id="RESERVED::TK_ELSE" title='RESERVED::TK_ELSE' data-ref="RESERVED::TK_ELSE">TK_ELSE</dfn>, <dfn class="enum" id="RESERVED::TK_ELSEIF" title='RESERVED::TK_ELSEIF' data-ref="RESERVED::TK_ELSEIF">TK_ELSEIF</dfn>, <dfn class="enum" id="RESERVED::TK_END" title='RESERVED::TK_END' data-ref="RESERVED::TK_END">TK_END</dfn>, <dfn class="enum" id="RESERVED::TK_FALSE" title='RESERVED::TK_FALSE' data-ref="RESERVED::TK_FALSE">TK_FALSE</dfn>, <dfn class="enum" id="RESERVED::TK_FOR" title='RESERVED::TK_FOR' data-ref="RESERVED::TK_FOR">TK_FOR</dfn>, <dfn class="enum" id="RESERVED::TK_FUNCTION" title='RESERVED::TK_FUNCTION' data-ref="RESERVED::TK_FUNCTION">TK_FUNCTION</dfn>,</td></tr>
+<tr><th id="28">28</th><td>  <dfn class="enum" id="RESERVED::TK_IF" title='RESERVED::TK_IF' data-ref="RESERVED::TK_IF">TK_IF</dfn>, <dfn class="enum" id="RESERVED::TK_IN" title='RESERVED::TK_IN' data-ref="RESERVED::TK_IN">TK_IN</dfn>, <dfn class="enum" id="RESERVED::TK_LOCAL" title='RESERVED::TK_LOCAL' data-ref="RESERVED::TK_LOCAL">TK_LOCAL</dfn>, <dfn class="enum" id="RESERVED::TK_NIL" title='RESERVED::TK_NIL' data-ref="RESERVED::TK_NIL">TK_NIL</dfn>, <dfn class="enum" id="RESERVED::TK_NOT" title='RESERVED::TK_NOT' data-ref="RESERVED::TK_NOT">TK_NOT</dfn>, <dfn class="enum" id="RESERVED::TK_OR" title='RESERVED::TK_OR' data-ref="RESERVED::TK_OR">TK_OR</dfn>, <dfn class="enum" id="RESERVED::TK_REPEAT" title='RESERVED::TK_REPEAT' data-ref="RESERVED::TK_REPEAT">TK_REPEAT</dfn>,</td></tr>
+<tr><th id="29">29</th><td>  <dfn class="enum" id="RESERVED::TK_RETURN" title='RESERVED::TK_RETURN' data-ref="RESERVED::TK_RETURN">TK_RETURN</dfn>, <dfn class="enum" id="RESERVED::TK_THEN" title='RESERVED::TK_THEN' data-ref="RESERVED::TK_THEN">TK_THEN</dfn>, <dfn class="enum" id="RESERVED::TK_TRUE" title='RESERVED::TK_TRUE' data-ref="RESERVED::TK_TRUE">TK_TRUE</dfn>, <dfn class="enum" id="RESERVED::TK_UNTIL" title='RESERVED::TK_UNTIL' data-ref="RESERVED::TK_UNTIL">TK_UNTIL</dfn>, <dfn class="enum" id="RESERVED::TK_WHILE" title='RESERVED::TK_WHILE' data-ref="RESERVED::TK_WHILE">TK_WHILE</dfn>,</td></tr>
+<tr><th id="30">30</th><td>  <i>/* other terminal symbols */</i></td></tr>
+<tr><th id="31">31</th><td>  <dfn class="enum" id="RESERVED::TK_CONCAT" title='RESERVED::TK_CONCAT' data-ref="RESERVED::TK_CONCAT">TK_CONCAT</dfn>, <dfn class="enum" id="RESERVED::TK_DOTS" title='RESERVED::TK_DOTS' data-ref="RESERVED::TK_DOTS">TK_DOTS</dfn>, <dfn class="enum" id="RESERVED::TK_EQ" title='RESERVED::TK_EQ' data-ref="RESERVED::TK_EQ">TK_EQ</dfn>, <dfn class="enum" id="RESERVED::TK_GE" title='RESERVED::TK_GE' data-ref="RESERVED::TK_GE">TK_GE</dfn>, <dfn class="enum" id="RESERVED::TK_LE" title='RESERVED::TK_LE' data-ref="RESERVED::TK_LE">TK_LE</dfn>, <dfn class="enum" id="RESERVED::TK_NE" title='RESERVED::TK_NE' data-ref="RESERVED::TK_NE">TK_NE</dfn>, <dfn class="enum" id="RESERVED::TK_NUMBER" title='RESERVED::TK_NUMBER' data-ref="RESERVED::TK_NUMBER">TK_NUMBER</dfn>,</td></tr>
+<tr><th id="32">32</th><td>  <dfn class="enum" id="RESERVED::TK_NAME" title='RESERVED::TK_NAME' data-ref="RESERVED::TK_NAME">TK_NAME</dfn>, <dfn class="enum" id="RESERVED::TK_STRING" title='RESERVED::TK_STRING' data-ref="RESERVED::TK_STRING">TK_STRING</dfn>, <dfn class="enum" id="RESERVED::TK_EOS" title='RESERVED::TK_EOS' data-ref="RESERVED::TK_EOS">TK_EOS</dfn></td></tr>
+<tr><th id="33">33</th><td>};</td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* number of reserved words */</i></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/NUM_RESERVED" data-ref="_M/NUM_RESERVED">NUM_RESERVED</dfn>	(cast(int, TK_WHILE-FIRST_RESERVED+1))</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>/* array with token `names' */</i></td></tr>
+<tr><th id="40">40</th><td><a class="macro" href="luaconf.h.html#188" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_DATA">LUAI_DATA</a> <em>const</em> <em>char</em> *<em>const</em> <dfn class="decl" id="luaX_tokens" title='luaX_tokens' data-ref="luaX_tokens">luaX_tokens</dfn> [];</td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><b>typedef</b> <b>union</b> {</td></tr>
+<tr><th id="44">44</th><td>  <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="decl field" id="(anonymous)::r" title='(anonymous union)::r' data-ref="(anonymous)::r">r</dfn>;</td></tr>
+<tr><th id="45">45</th><td>  <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="decl field" id="(anonymous)::ts" title='(anonymous union)::ts' data-ref="(anonymous)::ts">ts</dfn>;</td></tr>
+<tr><th id="46">46</th><td>} <dfn class="typedef" id="SemInfo" title='SemInfo' data-type='union SemInfo' data-ref="SemInfo">SemInfo</dfn>;  <i>/* semantics information */</i></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="Token" title='Token' data-ref="Token"><a class="type" href="#Token" title='Token' data-ref="Token">Token</a></dfn> {</td></tr>
+<tr><th id="50">50</th><td>  <em>int</em> <dfn class="decl field" id="Token::token" title='Token::token' data-ref="Token::token">token</dfn>;</td></tr>
+<tr><th id="51">51</th><td>  <a class="typedef" href="#SemInfo" title='SemInfo' data-type='union SemInfo' data-ref="SemInfo">SemInfo</a> <dfn class="decl field" id="Token::seminfo" title='Token::seminfo' data-ref="Token::seminfo">seminfo</dfn>;</td></tr>
+<tr><th id="52">52</th><td>} <dfn class="typedef" id="Token" title='Token' data-type='struct Token' data-ref="Token">Token</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="LexState" title='LexState' data-ref="LexState"><a class="type" href="#LexState" title='LexState' data-ref="LexState">LexState</a></dfn> {</td></tr>
+<tr><th id="56">56</th><td>  <em>int</em> <dfn class="decl field" id="LexState::current" title='LexState::current' data-ref="LexState::current">current</dfn>;  <i>/* current character (charint) */</i></td></tr>
+<tr><th id="57">57</th><td>  <em>int</em> <dfn class="decl field" id="LexState::linenumber" title='LexState::linenumber' data-ref="LexState::linenumber">linenumber</dfn>;  <i>/* input line counter */</i></td></tr>
+<tr><th id="58">58</th><td>  <em>int</em> <dfn class="decl field" id="LexState::lastline" title='LexState::lastline' data-ref="LexState::lastline">lastline</dfn>;  <i>/* line of last token `consumed' */</i></td></tr>
+<tr><th id="59">59</th><td>  <a class="typedef" href="#Token" title='Token' data-type='struct Token' data-ref="Token">Token</a> <dfn class="decl field" id="LexState::t" title='LexState::t' data-ref="LexState::t">t</dfn>;  <i>/* current token */</i></td></tr>
+<tr><th id="60">60</th><td>  <a class="typedef" href="#Token" title='Token' data-type='struct Token' data-ref="Token">Token</a> <dfn class="decl field" id="LexState::lookahead" title='LexState::lookahead' data-ref="LexState::lookahead">lookahead</dfn>;  <i>/* look ahead token */</i></td></tr>
+<tr><th id="61">61</th><td>  <b>struct</b> <a class="type" href="lparser.h.html#FuncState" title='FuncState' data-ref="FuncState" id="FuncState"><a class="type" href="lparser.h.html#FuncState" title='FuncState' data-ref="FuncState">FuncState</a></a> *<dfn class="decl field" id="LexState::fs" title='LexState::fs' data-ref="LexState::fs">fs</dfn>;  <i>/* `FuncState' is private to the parser */</i></td></tr>
+<tr><th id="62">62</th><td>  <b>struct</b> <a class="type" href="lstate.h.html#lua_State" title='lua_State' data-ref="lua_State">lua_State</a> *<dfn class="decl field" id="LexState::L" title='LexState::L' data-ref="LexState::L">L</dfn>;</td></tr>
+<tr><th id="63">63</th><td>  <a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="decl field" id="LexState::z" title='LexState::z' data-ref="LexState::z">z</dfn>;  <i>/* input stream */</i></td></tr>
+<tr><th id="64">64</th><td>  <a class="typedef" href="lzio.h.html#Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</a> *<dfn class="decl field" id="LexState::buff" title='LexState::buff' data-ref="LexState::buff">buff</dfn>;  <i>/* buffer for tokens */</i></td></tr>
+<tr><th id="65">65</th><td>  <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="decl field" id="LexState::source" title='LexState::source' data-ref="LexState::source">source</dfn>;  <i>/* current source name */</i></td></tr>
+<tr><th id="66">66</th><td>  <em>char</em> <dfn class="decl field" id="LexState::decpoint" title='LexState::decpoint' data-ref="LexState::decpoint">decpoint</dfn>;  <i>/* locale decimal point */</i></td></tr>
+<tr><th id="67">67</th><td>} <dfn class="typedef" id="LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</dfn>;</td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_init" title='luaX_init' data-ref="luaX_init">luaX_init</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="1L" title='L' data-type='lua_State *' data-ref="1L">L</dfn>);</td></tr>
+<tr><th id="71">71</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_setinput" title='luaX_setinput' data-ref="luaX_setinput">luaX_setinput</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col2 decl" id="2L" title='L' data-type='lua_State *' data-ref="2L">L</dfn>, <a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col3 decl" id="3ls" title='ls' data-type='LexState *' data-ref="3ls">ls</dfn>, <a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col4 decl" id="4z" title='z' data-type='ZIO *' data-ref="4z">z</dfn>,</td></tr>
+<tr><th id="72">72</th><td>                              <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="local col5 decl" id="5source" title='source' data-type='TString *' data-ref="5source">source</dfn>);</td></tr>
+<tr><th id="73">73</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="decl fn" id="luaX_newstring" title='luaX_newstring' data-ref="luaX_newstring">luaX_newstring</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col6 decl" id="6ls" title='ls' data-type='LexState *' data-ref="6ls">ls</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="7str" title='str' data-type='const char *' data-ref="7str">str</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="8l" title='l' data-type='size_t' data-ref="8l">l</dfn>);</td></tr>
+<tr><th id="74">74</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_next" title='luaX_next' data-ref="luaX_next">luaX_next</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col9 decl" id="9ls" title='ls' data-type='LexState *' data-ref="9ls">ls</dfn>);</td></tr>
+<tr><th id="75">75</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_lookahead" title='luaX_lookahead' data-ref="luaX_lookahead">luaX_lookahead</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col0 decl" id="10ls" title='ls' data-type='LexState *' data-ref="10ls">ls</dfn>);</td></tr>
+<tr><th id="76">76</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_lexerror" title='luaX_lexerror' data-ref="luaX_lexerror">luaX_lexerror</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col1 decl" id="11ls" title='ls' data-type='LexState *' data-ref="11ls">ls</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="12msg" title='msg' data-type='const char *' data-ref="12msg">msg</dfn>, <em>int</em> <dfn class="local col3 decl" id="13token" title='token' data-type='int' data-ref="13token">token</dfn>);</td></tr>
+<tr><th id="77">77</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaX_syntaxerror" title='luaX_syntaxerror' data-ref="luaX_syntaxerror">luaX_syntaxerror</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col4 decl" id="14ls" title='ls' data-type='LexState *' data-ref="14ls">ls</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="15s" title='s' data-type='const char *' data-ref="15s">s</dfn>);</td></tr>
+<tr><th id="78">78</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>const</em> <em>char</em> *<dfn class="decl fn" id="luaX_token2str" title='luaX_token2str' data-ref="luaX_token2str">luaX_token2str</dfn> (<a class="typedef" href="#LexState" title='LexState' data-type='struct LexState' data-ref="LexState">LexState</a> *<dfn class="local col6 decl" id="16ls" title='ls' data-type='LexState *' data-ref="16ls">ls</dfn>, <em>int</em> <dfn class="local col7 decl" id="17token" title='token' data-type='int' data-ref="17token">token</dfn>);</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lcode.c.html'>redis/deps/lua/src/lcode.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

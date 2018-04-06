@@ -1,0 +1,9 @@
+<dec f='redis/src/replication.c' l='41' type='void replicationResurrectCachedMaster(int newfd)'/>
+<use f='redis/src/replication.c' l='1189' u='c' c='slaveTryPartialResynchronization'/>
+<def f='redis/src/replication.c' l='1650' ll='1676' type='void replicationResurrectCachedMaster(int newfd)'/>
+<doc f='redis/src/replication.c' l='1644'>/* Turn the cached master into the current master, using the file descriptor
+ * passed as argument as the socket for the new master.
+ *
+ * This function is called when successfully setup a partial resynchronization
+ * so the stream of data that we&apos;ll receive will start from were this
+ * master left. */</doc>

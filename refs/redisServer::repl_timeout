@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='818' type='int'/>
+<offset>16288</offset>
+<doc f='redis/src/redis.h' l='818'>/* Timeout after N seconds of master idle */</doc>
+<use f='redis/src/config.c' l='264' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='265' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='901' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1065' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1819' u='r' c='rewriteConfig'/>
+<use f='redis/src/rdb.c' l='1428' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='1466' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='1943' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1951' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1959' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2025' u='r' c='replicationCron'/>

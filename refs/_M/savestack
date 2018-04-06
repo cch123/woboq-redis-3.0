@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/ldo.h' l='24'/>
+<use f='redis/deps/lua/src/lapi.c' l='817' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='821' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='856' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='184' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='247' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='270' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='333' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='514' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='82' u='c'/>

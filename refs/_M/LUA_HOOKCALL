@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='311'/>
+<doc f='redis/deps/lua/src/lua.h' l='308'>/*
+** Event codes
+*/</doc>
+<use f='redis/deps/lua/src/ldo.c' l='302' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='318' u='c'/>

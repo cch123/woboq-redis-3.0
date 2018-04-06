@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='620' type='int'/>
+<offset>96</offset>
+<use f='redis/src/redis.c' l='1950' u='w' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='2111' u='r' c='call'/>

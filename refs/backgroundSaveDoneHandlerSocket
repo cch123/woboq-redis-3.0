@@ -1,0 +1,5 @@
+<def f='redis/src/rdb.c' l='1279' ll='1369' type='void backgroundSaveDoneHandlerSocket(int exitcode, int bysignal)'/>
+<use f='redis/src/rdb.c' l='1378' u='c' c='backgroundSaveDoneHandler'/>
+<doc f='redis/src/rdb.c' l='1276'>/* A background saving child (BGSAVE) terminated its work. Handle this.
+ * This function covers the case of RDB -&gt; Salves socket transfers for
+ * diskless replication. */</doc>

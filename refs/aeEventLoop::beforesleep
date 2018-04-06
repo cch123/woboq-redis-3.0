@@ -1,0 +1,6 @@
+<dec f='redis/src/ae.h' l='97' type='aeBeforeSleepProc *'/>
+<use f='redis/src/ae.c' l='77' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='453' u='r' c='aeMain'/>
+<use f='redis/src/ae.c' l='454' u='r' c='aeMain'/>
+<use f='redis/src/ae.c' l='464' u='w' c='aeSetBeforeSleepProc'/>
+<offset>512</offset>

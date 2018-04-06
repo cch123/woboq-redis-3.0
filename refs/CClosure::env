@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lobject.h' l='293' type='struct Table *'/>
+<use f='redis/deps/lua/src/lapi.c' l='64' u='r' c='index2adr'/>
+<use f='redis/deps/lua/src/lapi.c' l='84' u='r' c='getcurrenv'/>
+<use f='redis/deps/lua/src/lapi.c' l='215' u='w' c='lua_replace'/>
+<use f='redis/deps/lua/src/lapi.c' l='623' u='r' c='lua_getfenv'/>
+<use f='redis/deps/lua/src/lapi.c' l='744' u='w' c='lua_setfenv'/>
+<offset>192</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='27' u='w' c='luaF_newCclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='225' u='r' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='225' u='r' c='traverseclosure'/>

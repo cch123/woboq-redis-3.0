@@ -1,0 +1,13 @@
+<dec f='redis/src/cluster.h' l='106' type='int'/>
+<use f='redis/src/cluster.c' l='397' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='2125' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2885' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3256' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3410' u='r' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3464' u='r' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3486' u='w' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='4024' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4977' u='r' c='clusterRedirectBlockedClientIfNeeded'/>
+<offset>128</offset>
+<doc f='redis/src/cluster.h' l='106'>/* REDIS_CLUSTER_OK, REDIS_CLUSTER_FAIL, ... */</doc>
+<use f='redis/src/redis.c' l='2173' u='r' c='processCommand'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='655' type='dict *'/>
+<offset>320</offset>
+<doc f='redis/src/redis.h' l='655'>/* Command table before command renaming. */</doc>
+<use f='redis/src/redis.c' l='1530' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1918' u='r' c='populateCommandTable'/>
+<use f='redis/src/redis.c' l='1997' u='r' c='lookupCommandOrOriginal'/>

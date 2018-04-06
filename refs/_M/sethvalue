@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lobject.h' l='148'/>
+<use f='redis/deps/lua/src/lapi.c' l='64' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='581' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='607' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='623' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='626' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='750' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='275' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='187' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='237' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='74' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='75' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='435' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='446' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='464' u='c'/>

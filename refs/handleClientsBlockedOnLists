@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1092' type='void handleClientsBlockedOnLists()'/>
+<use f='redis/src/redis.c' l='2302' u='c' c='processCommand'/>
+<def f='redis/src/t_list.c' l='948' ll='1025' type='void handleClientsBlockedOnLists()'/>
+<doc f='redis/src/t_list.c' l='938'>/* This function should be called by Redis every time a single command,
+ * a MULTI/EXEC block, or a Lua script, terminated its execution after
+ * being called by a client.
+ *
+ * All the keys with at least one client blocked that received at least
+ * one new element via some PUSH operation are accumulated into
+ * the server.ready_keys list. This function will run the list and will
+ * serve clients accordingly. Note that the function will iterate again and
+ * again as a result of serving BRPOPLPUSH we can have new blocking clients
+ * to serve because of the PUSH side of BRPOPLPUSH. */</doc>

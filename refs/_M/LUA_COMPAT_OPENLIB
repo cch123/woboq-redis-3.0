@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='366'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='360'>/*
+@@ LUA_COMPAT_OPENLIB controls compatibility with old &apos;luaL_openlib&apos;
+@* behavior.
+** CHANGE it to undefined as soon as you replace to &apos;luaL_register&apos;
+** your uses of &apos;luaL_openlib&apos;
+*/</doc>
+<use f='redis/deps/lua/src/lauxlib.h' l='26' u='a'/>

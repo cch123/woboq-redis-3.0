@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='541' type='off_t'/>
+<offset>1472</offset>
+<doc f='redis/src/redis.h' l='541'>/* replication DB file size */</doc>
+<use f='redis/src/replication.c' l='724' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='791' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='794' u='r' c='updateSlavesWaitingBgsave'/>

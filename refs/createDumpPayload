@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='4304' ll='4331' type='void createDumpPayload(rio * payload, robj * o)'/>
+<use f='redis/src/cluster.c' l='4370' u='c' c='dumpCommand'/>
+<use f='redis/src/cluster.c' l='4630' u='c' c='migrateCommand'/>
+<doc f='redis/src/cluster.c' l='4302'>/* Generates a DUMP-format representation of the object &apos;o&apos;, adding it to the
+ * io stream pointed by &apos;rio&apos;. This function can&apos;t fail. */</doc>

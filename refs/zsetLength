@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='1219' type='unsigned int zsetLength(robj * zobj)'/>
+<use f='redis/src/aof.c' l='875' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/debug.c' l='445' u='c' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/rdb.c' l='931' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1063' u='c' c='rdbLoadObject'/>
+<def f='redis/src/t_zset.c' l='1081' ll='1091' type='unsigned int zsetLength(robj * zobj)'/>
+<use f='redis/src/t_zset.c' l='1413' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2069' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2115' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2745' u='c' c='zcardCommand'/>
+<use f='redis/src/t_zset.c' l='2787' u='c' c='zrankGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='1077'>/*-----------------------------------------------------------------------------
+ * Common sorted set API
+ *----------------------------------------------------------------------------*/</doc>

@@ -1,0 +1,10 @@
+<def f='redis/src/sentinel.c' l='1226' ll='1284' type='int sentinelResetMasterAndChangeAddress(sentinelRedisInstance * master, char * ip, int port)'/>
+<use f='redis/src/sentinel.c' l='2182' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='3743' u='c' c='sentinelFailoverSwitchToPromotedSlave'/>
+<doc f='redis/src/sentinel.c' l='1219'>/* Reset the specified master with sentinelResetMaster(), and also change
+ * the ip:port address, but take the name of the instance unmodified.
+ *
+ * This is used to handle the +switch-master event.
+ *
+ * The function returns REDIS_ERR if the address can&apos;t be resolved for some
+ * reason. Otherwise REDIS_OK is returned.  */</doc>

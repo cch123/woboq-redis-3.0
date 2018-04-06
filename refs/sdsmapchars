@@ -1,0 +1,25 @@
+<dec f='redis/deps/hiredis/sds.h' l='92' type='sds sdsmapchars(sds s, const char * from, const char * to, size_t setlen)'/>
+<def f='redis/deps/hiredis/sds.c' l='938' ll='950' type='sds sdsmapchars(sds s, const char * from, const char * to, size_t setlen)'/>
+<doc f='redis/deps/hiredis/sds.c' l='929'>/* Modify the string substituting all the occurrences of the set of
+ * characters specified in the &apos;from&apos; string to the corresponding character
+ * in the &apos;to&apos; array.
+ *
+ * For instance: sdsmapchars(mystring, &quot;ho&quot;, &quot;01&quot;, 2)
+ * will have the effect of turning the string &quot;hello&quot; into &quot;0ell1&quot;.
+ *
+ * The function returns the sds string pointer, that is always the same
+ * as the input pointer since no resize is needed. */</doc>
+<dec f='redis/src/sds.h' l='92' type='sds sdsmapchars(sds s, const char * from, const char * to, size_t setlen)'/>
+<use f='redis/src/debug.c' l='379' u='c' c='debugCommand'/>
+<use f='redis/src/scripting.c' l='824' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='837' u='c' c='luaReplyToRedisReply'/>
+<def f='redis/src/sds.c' l='938' ll='950' type='sds sdsmapchars(sds s, const char * from, const char * to, size_t setlen)'/>
+<doc f='redis/src/sds.c' l='929'>/* Modify the string substituting all the occurrences of the set of
+ * characters specified in the &apos;from&apos; string to the corresponding character
+ * in the &apos;to&apos; array.
+ *
+ * For instance: sdsmapchars(mystring, &quot;ho&quot;, &quot;01&quot;, 2)
+ * will have the effect of turning the string &quot;hello&quot; into &quot;0ell1&quot;.
+ *
+ * The function returns the sds string pointer, that is always the same
+ * as the input pointer since no resize is needed. */</doc>

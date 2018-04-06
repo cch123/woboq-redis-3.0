@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1414' type='void linsertCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='145' u='r'/>
+<use f='redis/src/redis.c' l='145' u='r'/>
+<use f='redis/src/redis.c' l='145' u='r'/>
+<use f='redis/src/redis.c' l='145' u='r'/>
+<def f='redis/src/t_list.c' l='395' ll='404' type='void linsertCommand(redisClient * c)'/>

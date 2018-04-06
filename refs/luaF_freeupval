@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='29' type='void luaF_freeupval(lua_State * L, UpVal * uv)'/>
+<def f='redis/deps/lua/src/lfunc.c' l='89' ll='93' type='void luaF_freeupval(lua_State * L, UpVal * uv)'/>
+<use f='redis/deps/lua/src/lfunc.c' l='104' u='c' c='luaF_close'/>
+<use f='redis/deps/lua/src/lgc.c' l='382' u='c' c='freeobj'/>

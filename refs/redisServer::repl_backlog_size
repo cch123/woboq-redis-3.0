@@ -1,0 +1,21 @@
+<dec f='redis/src/redis.h' l='800' type='long long'/>
+<offset>15552</offset>
+<doc f='redis/src/redis.h' l='800'>/* Backlog circular buffer size */</doc>
+<use f='redis/src/config.c' l='1066' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1820' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1509' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2971' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='73' u='r' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='97' u='r' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='99' u='w' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='107' u='r' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='133' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='137' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='143' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='144' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='313' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='328' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='329' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='333' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='341' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='342' u='r' c='addReplyReplicationBacklog'/>

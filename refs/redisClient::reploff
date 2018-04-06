@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='543' type='long long'/>
+<offset>1600</offset>
+<doc f='redis/src/redis.h' l='543'>/* replication offset if this is our master */</doc>
+<use f='redis/src/networking.c' l='104' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='1210' u='w' c='readQueryFromClient'/>
+<use f='redis/src/redis.c' l='2869' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2871' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1026' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1031' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1140' u='r' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1463' u='r' c='replicationUnsetMaster'/>
+<use f='redis/src/replication.c' l='1556' u='r' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1571' u='r' c='replicationSendAck'/>
+<use f='redis/src/replication.c' l='1922' u='r' c='replicationGetSlaveOffset'/>
+<use f='redis/src/replication.c' l='1924' u='r' c='replicationGetSlaveOffset'/>

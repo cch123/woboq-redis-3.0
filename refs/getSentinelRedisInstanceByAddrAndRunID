@@ -1,0 +1,9 @@
+<def f='redis/src/sentinel.c' l='1095' ll='1116' type='sentinelRedisInstance * getSentinelRedisInstanceByAddrAndRunID(dict * instances, char * ip, int port, char * runid)'/>
+<use f='redis/src/sentinel.c' l='2128' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2661' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='1089'>/* Search an instance with the same runid, ip and port into a dictionary
+ * of instances. Return NULL if not found, otherwise return the instance
+ * pointer.
+ *
+ * runid or ip can be NULL. In such a case the search is performed only
+ * by the non-NULL field. */</doc>

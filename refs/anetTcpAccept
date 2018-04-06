@@ -1,0 +1,4 @@
+<dec f='redis/src/anet.h' l='61' type='int anetTcpAccept(char * err, int serversock, char * ip, size_t ip_len, int * port)'/>
+<def f='redis/src/anet.c' l='527' ll='544' type='int anetTcpAccept(char * err, int s, char * ip, size_t ip_len, int * port)'/>
+<use f='redis/src/cluster.c' l='580' u='c' c='clusterAcceptHandler'/>
+<use f='redis/src/networking.c' l='620' u='c' c='acceptTcpHandler'/>

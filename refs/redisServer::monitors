@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='680' type='list *'/>
+<offset>3712</offset>
+<use f='redis/src/multi.c' l='180' u='r' c='execCommand'/>
+<use f='redis/src/multi.c' l='181' u='r' c='execCommand'/>
+<use f='redis/src/networking.c' l='762' u='r' c='freeClient'/>
+<use f='redis/src/redis.c' l='1762' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2041' u='r' c='call'/>
+<use f='redis/src/redis.c' l='2045' u='r' c='call'/>
+<use f='redis/src/redis.c' l='3054' u='r' c='monitorCommand'/>

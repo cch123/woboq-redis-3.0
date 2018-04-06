@@ -1,0 +1,3 @@
+<def f='redis/src/redis.c' l='630' ll='637' type='dictType'/>
+<use f='redis/src/redis.c' l='1479' u='a' c='initServerConfig'/>
+<doc f='redis/src/redis.c' l='629'>/* Migrate cache dict type. */</doc>

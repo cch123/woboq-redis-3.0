@@ -1,0 +1,4 @@
+<def f='redis/src/cluster.c' l='4518' ll='4535' type='void migrateCloseSocket(robj * host, robj * port)'/>
+<use f='redis/src/cluster.c' l='4696' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4704' u='c' c='migrateCommand'/>
+<doc f='redis/src/cluster.c' l='4517'>/* Free a migrate cached connection. */</doc>

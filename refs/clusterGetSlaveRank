@@ -1,0 +1,15 @@
+<def f='redis/src/cluster.c' l='2562' ll='2576' type='int clusterGetSlaveRank()'/>
+<use f='redis/src/cluster.c' l='2759' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2791' u='c' c='clusterHandleSlaveFailover'/>
+<doc f='redis/src/cluster.c' l='2550'>/* This function returns the &quot;rank&quot; of this instance, a slave, in the context
+ * of its master-slaves ring. The rank of the slave is given by the number of
+ * other slaves for the same master that have a better replication offset
+ * compared to the local one (better means, greater, so they claim more data).
+ *
+ * A slave with rank 0 is the one with the greatest (most up to date)
+ * replication offset, and so forth. Note that because how the rank is computed
+ * multiple slaves may have the same rank, in case they have the same offset.
+ *
+ * The slave rank is used to add a delay to start an election in order to
+ * get voted and replace a failing master. Slaves with better replication
+ * offsets are more likely to win. */</doc>

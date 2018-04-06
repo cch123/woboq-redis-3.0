@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='248'/>
+<use f='redis/src/redis.c' l='2030' u='c'/>
+<use f='redis/src/redis.c' l='2049' u='c'/>
+<use f='redis/src/redis.c' l='2067' u='c'/>
+<use f='redis/src/redis.c' l='2068' u='c'/>
+<use f='redis/src/redis.c' l='2090' u='c'/>
+<use f='redis/src/redis.c' l='2100' u='c'/>
+<use f='redis/src/redis.c' l='2101' u='c'/>

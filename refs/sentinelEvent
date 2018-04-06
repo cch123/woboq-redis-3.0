@@ -1,0 +1,80 @@
+<dec f='redis/src/sentinel.c' l='333' type='void sentinelEvent(int level, char * type, sentinelRedisInstance * ri, const char * fmt)'/>
+<def f='redis/src/sentinel.c' l='530' ll='585' type='void sentinelEvent(int level, char * type, sentinelRedisInstance * ri, const char * fmt)'/>
+<use f='redis/src/sentinel.c' l='598' u='c' c='sentinelGenerateInitialMonitorEvents'/>
+<use f='redis/src/sentinel.c' l='708' u='c' c='sentinelRunPendingScripts'/>
+<use f='redis/src/sentinel.c' l='720' u='c' c='sentinelRunPendingScripts'/>
+<use f='redis/src/sentinel.c' l='754' u='c' c='sentinelCollectTerminatedScripts'/>
+<use f='redis/src/sentinel.c' l='778' u='c' c='sentinelCollectTerminatedScripts'/>
+<use f='redis/src/sentinel.c' l='802' u='c' c='sentinelKillTimedoutScripts'/>
+<use f='redis/src/sentinel.c' l='1194' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='1273' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1644' u='c' c='sentinelDisconnectInstanceFromContext'/>
+<use f='redis/src/sentinel.c' l='1660' u='c' c='sentinelLinkEstablishedCallback'/>
+<use f='redis/src/sentinel.c' l='1713' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1735' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1805' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1846' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1915' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1952' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1953' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1973' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1996' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2014' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2023' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2140' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2149' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2162' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2174' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2175' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2765' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2774' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2946' u='c' c='sentinelSetCommand'/>
+<use f='redis/src/sentinel.c' l='3026' u='c' c='sentinelCheckSubjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3033' u='c' c='sentinelCheckSubjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3067' u='c' c='sentinelCheckObjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3074' u='c' c='sentinelCheckObjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3179' u='c' c='sentinelVoteLeader'/>
+<use f='redis/src/sentinel.c' l='3189' u='c' c='sentinelVoteLeader'/>
+<use f='redis/src/sentinel.c' l='3369' u='c' c='sentinelStartFailover'/>
+<use f='redis/src/sentinel.c' l='3371' u='c' c='sentinelStartFailover'/>
+<use f='redis/src/sentinel.c' l='3541' u='c' c='sentinelFailoverWaitStart'/>
+<use f='redis/src/sentinel.c' l='3546' u='c' c='sentinelFailoverWaitStart'/>
+<use f='redis/src/sentinel.c' l='3549' u='c' c='sentinelFailoverWaitStart'/>
+<use f='redis/src/sentinel.c' l='3558' u='c' c='sentinelFailoverSelectSlave'/>
+<use f='redis/src/sentinel.c' l='3561' u='c' c='sentinelFailoverSelectSlave'/>
+<use f='redis/src/sentinel.c' l='3566' u='c' c='sentinelFailoverSelectSlave'/>
+<use f='redis/src/sentinel.c' l='3579' u='c' c='sentinelFailoverSendSlaveOfNoOne'/>
+<use f='redis/src/sentinel.c' l='3591' u='c' c='sentinelFailoverSendSlaveOfNoOne'/>
+<use f='redis/src/sentinel.c' l='3603' u='c' c='sentinelFailoverWaitPromotion'/>
+<use f='redis/src/sentinel.c' l='3635' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3639' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3663' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3705' u='c' c='sentinelFailoverReconfNextSlave'/>
+<use f='redis/src/sentinel.c' l='3722' u='c' c='sentinelFailoverReconfNextSlave'/>
+<use f='redis/src/sentinel.c' l='3739' u='c' c='sentinelFailoverSwitchToPromotedSlave'/>
+<use f='redis/src/sentinel.c' l='3807' u='c' c='sentinelHandleRedisInstance'/>
+<use f='redis/src/sentinel.c' l='3880' u='c' c='sentinelCheckTiltCondition'/>
+<doc f='redis/src/sentinel.c' l='506'>/* Send an event to log, pub/sub, user notification script.
+ *
+ * &apos;level&apos; is the log level for logging. Only REDIS_WARNING events will trigger
+ * the execution of the user notification script.
+ *
+ * &apos;type&apos; is the message type, also used as a pub/sub channel name.
+ *
+ * &apos;ri&apos;, is the redis instance target of this event if applicable, and is
+ * used to obtain the path of the notification script to execute.
+ *
+ * The remaining arguments are printf-alike.
+ * If the format specifier starts with the two characters &quot;%@&quot; then ri is
+ * not NULL, and the message is prefixed with an instance identifier in the
+ * following format:
+ *
+ *  &lt;instance type&gt; &lt;instance name&gt; &lt;ip&gt; &lt;port&gt;
+ *
+ *  If the instance type is not master, than the additional string is
+ *  added to specify the originating master:
+ *
+ *  @ &lt;master name&gt; &lt;master ip&gt; &lt;master port&gt;
+ *
+ *  Any other specifier after &quot;%@&quot; is processed by printf itself.
+ */</doc>

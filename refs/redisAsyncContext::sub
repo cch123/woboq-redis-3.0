@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/async.h' l='100' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/hiredis/async.h:96:5)'/>
+<use f='redis/deps/hiredis/async.c' l='135' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='136' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='137' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='138' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='275' u='m' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='279' u='m' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='283' u='m' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='285' u='m' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='289' u='m' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='370' u='m' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='372' u='m' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='395' u='m' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='601' u='m' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='603' u='m' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='621' u='m' c='__redisAsyncCommand'/>
+<offset>2112</offset>
+<doc f='redis/deps/hiredis/async.h' l='95'>/* Subscription callbacks */</doc>

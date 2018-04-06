@@ -1,0 +1,10 @@
+<def f='redis/src/cluster.c' l='2098' ll='2153' type='void clusterBuildMessageHdr(clusterMsg * hdr, int type)'/>
+<use f='redis/src/cluster.c' l='2213' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2326' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2365' u='c' c='clusterSendFail'/>
+<use f='redis/src/cluster.c' l='2378' u='c' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2411' u='c' c='clusterRequestFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2428' u='c' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2441' u='c' c='clusterSendMFStart'/>
+<doc f='redis/src/cluster.c' l='2096'>/* Build the message header. hdr must point to a buffer at least
+ * sizeof(clusterMsg) in bytes. */</doc>

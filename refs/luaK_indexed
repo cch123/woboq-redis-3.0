@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='59' type='void luaK_indexed(FuncState * fs, expdesc * t, expdesc * k)'/>
+<def f='redis/deps/lua/src/lcode.c' l='621' ll='624' type='void luaK_indexed(FuncState * fs, expdesc * t, expdesc * k)'/>
+<use f='redis/deps/lua/src/lparser.c' l='414' u='c' c='field'/>
+<use f='redis/deps/lua/src/lparser.c' l='705' u='c' c='primaryexp'/>

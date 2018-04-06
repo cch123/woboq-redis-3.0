@@ -1,0 +1,33 @@
+<dec f='redis/deps/lua/src/lcode.h' l='20'/>
+<use f='redis/deps/lua/src/lcode.c' l='31' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='31' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='62' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='63' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='102' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='103' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='123' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='145' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='152' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='165' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='186' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='187' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='192' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='396' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='397' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='399' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='408' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='544' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='559' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='568' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='582' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='691' u='c'/>
+<doc f='redis/deps/lua/src/lcode.h' l='16'>/*
+** Marks the end of a patch list. It is an invalid value both as an absolute
+** address, and as a list link (would link an element to itself).
+*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='127' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='286' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='338' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1053' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1060' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1145' u='c'/>

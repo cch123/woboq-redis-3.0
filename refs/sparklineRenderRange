@@ -1,0 +1,6 @@
+<dec f='redis/src/sparkline.h' l='53' type='sds sparklineRenderRange(sds output, struct sequence * seq, int rows, int offset, int len, int flags)'/>
+<def f='redis/src/sparkline.c' l='97' ll='162' type='sds sparklineRenderRange(sds output, struct sequence * seq, int rows, int offset, int len, int flags)'/>
+<use f='redis/src/sparkline.c' l='172' u='c' c='sparklineRender'/>
+<doc f='redis/src/sparkline.c' l='94'>/* Render part of a sequence, so that render_sequence() call call this function
+ * with differnent parts in order to create the full output without overflowing
+ * the current terminal columns. */</doc>

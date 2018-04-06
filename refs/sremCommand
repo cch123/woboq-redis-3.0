@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1424' type='void sremCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='159' u='r'/>
+<use f='redis/src/redis.c' l='159' u='r'/>
+<use f='redis/src/redis.c' l='159' u='r'/>
+<use f='redis/src/redis.c' l='159' u='r'/>
+<def f='redis/src/t_set.c' l='277' ll='303' type='void sremCommand(redisClient * c)'/>

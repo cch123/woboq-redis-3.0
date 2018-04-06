@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lmem.h' l='44' type='void * luaM_growaux_(lua_State * L, void * block, int * size, size_t size_elem, int limit, const char * errormsg)'/>
+<use f='redis/deps/lua/src/lcode.c' l='240' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='793' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='797' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lmem.c' l='46' ll='63' type='void * luaM_growaux_(lua_State * L, void * block, int * size, size_t size_elems, int limit, const char * errormsg)'/>
+<use f='redis/deps/lua/src/lparser.c' l='147' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='195' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='315' macro='1' u='c'/>

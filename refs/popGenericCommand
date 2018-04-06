@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1093' type='void popGenericCommand(redisClient * c, int where)'/>
+<def f='redis/src/t_list.c' l='494' ll='515' type='void popGenericCommand(redisClient * c, int where)'/>
+<use f='redis/src/t_list.c' l='518' u='c' c='lpopCommand'/>
+<use f='redis/src/t_list.c' l='522' u='c' c='rpopCommand'/>

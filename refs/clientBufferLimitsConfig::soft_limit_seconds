@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='607' type='time_t'/>
+<offset>128</offset>
+<use f='redis/src/config.c' l='506' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='888' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1188' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1610' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1611' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1622' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/networking.c' l='1640' u='r' c='checkClientOutputBufferLimits'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/rio.h' l='78' type='int *'/>
+<offset>0</offset>
+<doc f='redis/src/rio.h' l='78'>/* File descriptors. */</doc>
+<use f='redis/src/rio.c' l='205' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='270' u='w' c='rioInitWithFdset'/>
+<use f='redis/src/rio.c' l='272' u='r' c='rioInitWithFdset'/>
+<use f='redis/src/rio.c' l='280' u='r' c='rioFreeFdset'/>

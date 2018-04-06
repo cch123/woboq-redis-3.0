@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='1217' type='void zzlNext(unsigned char * zl, unsigned char ** eptr, unsigned char ** sptr)'/>
+<use f='redis/src/aof.c' l='908' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/debug.c' l='203' u='c' c='computeDatasetDigest'/>
+<def f='redis/src/t_zset.c' l='701' ll='716' type='void zzlNext(unsigned char * zl, unsigned char ** eptr, unsigned char ** sptr)'/>
+<use f='redis/src/t_zset.c' l='1131' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1687' u='c' c='zuiNext'/>
+<use f='redis/src/t_zset.c' l='2161' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2288' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2320' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2441' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2519' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2640' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2667' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2805' u='c' c='zrankGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='699'>/* Move to next entry based on the values in eptr and sptr. Both are set to
+ * NULL when there is no next entry. */</doc>

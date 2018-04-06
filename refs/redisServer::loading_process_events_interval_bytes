@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='692' type='off_t'/>
+<offset>6400</offset>
+<use f='redis/src/rdb.c' l='1115' u='r' c='rdbLoadProgressCallback'/>
+<use f='redis/src/rdb.c' l='1116' u='r' c='rdbLoadProgressCallback'/>
+<use f='redis/src/rdb.c' l='1116' u='r' c='rdbLoadProgressCallback'/>
+<use f='redis/src/rdb.c' l='1142' u='r' c='rdbLoad'/>
+<use f='redis/src/redis.c' l='1481' u='w' c='initServerConfig'/>

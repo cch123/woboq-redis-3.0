@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='102' type='int rdbLoad(char * filename)'/>
+<use f='redis/src/debug.c' l='271' u='c' c='debugCommand'/>
+<def f='redis/src/rdb.c' l='1129' ll='1239' type='int rdbLoad(char * filename)'/>
+<use f='redis/src/redis.c' l='3538' u='c' c='loadDataFromDisk'/>
+<use f='redis/src/replication.c' l='1014' u='c' c='readSyncBulkPayload'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/sentinel.c' l='388' type='void sentinelRoleCommand(redisClient * c)'/>
+<use f='redis/src/sentinel.c' l='399'/>
+<use f='redis/src/sentinel.c' l='399'/>
+<use f='redis/src/sentinel.c' l='399'/>
+<use f='redis/src/sentinel.c' l='399'/>
+<def f='redis/src/sentinel.c' l='2854' ll='2869' type='void sentinelRoleCommand(redisClient * c)'/>
+<doc f='redis/src/sentinel.c' l='2852'>/* Implements Sentinel verison of the ROLE command. The output is
+ * &quot;sentinel&quot; and the list of currently monitored master names. */</doc>

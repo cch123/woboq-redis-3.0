@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='681' type='redisClient *'/>
+<offset>3776</offset>
+<doc f='redis/src/redis.h' l='681'>/* Current client, only used on crash report */</doc>
+<use f='redis/src/blocked.c' l='122' u='w' c='processUnblockedClients'/>
+<use f='redis/src/blocked.c' l='124' u='w' c='processUnblockedClients'/>
+<use f='redis/src/debug.c' l='688' u='r' c='logCurrentClient'/>
+<use f='redis/src/debug.c' l='690' u='r' c='logCurrentClient'/>
+<use f='redis/src/networking.c' l='687' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='687' u='w' c='freeClient'/>
+<use f='redis/src/networking.c' l='1174' u='w' c='readQueryFromClient'/>
+<use f='redis/src/networking.c' l='1213' u='w' c='readQueryFromClient'/>
+<use f='redis/src/networking.c' l='1227' u='w' c='readQueryFromClient'/>
+<use f='redis/src/redis.c' l='1758' u='w' c='initServer'/>

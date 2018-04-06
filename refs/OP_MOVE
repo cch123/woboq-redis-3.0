@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='154' type='0'/>
+<use f='redis/deps/lua/src/lcode.c' l='369' u='r' c='discharge2reg'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='151'>/*----------------------------------------------------------------------
+name		args	description
+------------------------------------------------------------------------*/</doc>
+<doc f='redis/deps/lua/src/lopcodes.h' l='154'>/*	A B	R(A) := R(B)					*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='457' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='515' c='getobjname'/>
+<use f='redis/deps/lua/src/lparser.c' l='322' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='925' u='r' c='check_conflict'/>
+<use f='redis/deps/lua/src/lvm.c' l='407' c='luaV_execute'/>

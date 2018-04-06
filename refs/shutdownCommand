@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1406' type='void shutdownCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='635' ll='661' type='void shutdownCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='232' u='r'/>
+<use f='redis/src/redis.c' l='232' u='r'/>
+<use f='redis/src/redis.c' l='232' u='r'/>
+<use f='redis/src/redis.c' l='232' u='r'/>
+<use f='redis/src/redis.c' l='2279' u='r' c='processCommand'/>
+<use f='redis/src/sentinel.c' l='401'/>
+<use f='redis/src/sentinel.c' l='401'/>
+<use f='redis/src/sentinel.c' l='401'/>
+<use f='redis/src/sentinel.c' l='401'/>

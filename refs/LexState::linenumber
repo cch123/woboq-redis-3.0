@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/llex.h' l='57' type='int'/>
+<offset>32</offset>
+<doc f='redis/deps/lua/src/llex.h' l='57'>/* input line counter */</doc>
+<use f='redis/deps/lua/src/llex.c' l='105' u='r' c='luaX_lexerror'/>
+<use f='redis/deps/lua/src/llex.c' l='135' u='w' c='inclinenumber'/>
+<use f='redis/deps/lua/src/llex.c' l='146' u='w' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='449' u='r' c='luaX_next'/>
+<use f='redis/deps/lua/src/lparser.c' l='106' u='r' c='check_match'/>
+<use f='redis/deps/lua/src/lparser.c' l='501' u='r' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='589' u='r' c='body'/>
+<use f='redis/deps/lua/src/lparser.c' l='613' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='671' u='r' c='prefixexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='766' u='r' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='1105' u='r' c='forlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='1172' u='r' c='localfunc'/>
+<use f='redis/deps/lua/src/lparser.c' l='1272' u='r' c='statement'/>

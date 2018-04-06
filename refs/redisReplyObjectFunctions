@@ -1,0 +1,7 @@
+<def f='redis/deps/hiredis/hiredis.h' l='116' ll='122'/>
+<size>40</size>
+<mbr r='redisReplyObjectFunctions::createString' o='0' t='void *(*)(const redisReadTask *, char *, size_t)'/>
+<mbr r='redisReplyObjectFunctions::createArray' o='64' t='void *(*)(const redisReadTask *, int)'/>
+<mbr r='redisReplyObjectFunctions::createInteger' o='128' t='void *(*)(const redisReadTask *, long long)'/>
+<mbr r='redisReplyObjectFunctions::createNil' o='192' t='void *(*)(const redisReadTask *)'/>
+<mbr r='redisReplyObjectFunctions::freeObject' o='256' t='void (*)(void *)'/>

@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='746' type='list *'/>
+<use f='redis/src/aof.c' l='70' u='r' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='71' u='r' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='73' u='w' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='74' u='r' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='83' u='r' c='aofRewriteBufferSize'/>
+<use f='redis/src/aof.c' l='104' u='r' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='118' u='r' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='124' u='r' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='147' u='r' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='151' u='r' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='177' u='r' c='aofRewriteBufferWrite'/>
+<offset>13056</offset>
+<doc f='redis/src/redis.h' l='746'>/* Hold changes during an AOF rewrite. */</doc>

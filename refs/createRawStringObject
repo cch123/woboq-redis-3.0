@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1118' type='robj * createRawStringObject(char * ptr, size_t len)'/>
+<use f='redis/src/db.c' l='205' u='c' c='dbUnshareStringValue'/>
+<def f='redis/src/object.c' l='53' ll='55' type='robj * createRawStringObject(char * ptr, size_t len)'/>
+<use f='redis/src/object.c' l='92' u='c' c='createStringObject'/>
+<use f='redis/src/object.c' l='169' u='c' c='dupStringObject'/>
+<doc f='redis/src/object.c' l='51'>/* Create a string object with encoding REDIS_ENCODING_RAW, that is a plain
+ * string object where o-&gt;ptr points to a proper sds string. */</doc>
+<use f='redis/src/rdb.c' l='354' u='c' c='rdbGenericLoadStringObject'/>

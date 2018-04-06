@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='575' type='robj *'/>
+<offset>2624</offset>
+<use f='redis/src/redis.c' l='1322' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_hash.c' l='768' u='r' c='hscanCommand'/>
+<use f='redis/src/t_set.c' l='916' u='r' c='sscanCommand'/>
+<use f='redis/src/t_zset.c' l='2853' u='r' c='zscanCommand'/>

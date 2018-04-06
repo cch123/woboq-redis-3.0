@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='403' ll='425' type='void _redisAssertPrintClientInfo(redisClient * c)'/>
+<use f='redis/src/debug.c' l='458' u='c' c='_redisAssertWithInfo'/>

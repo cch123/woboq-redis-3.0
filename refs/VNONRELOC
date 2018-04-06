@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lparser.h' l='32' type='12'/>
+<use f='redis/deps/lua/src/lcode.c' l='224' u='r' c='freeexp'/>
+<use f='redis/deps/lua/src/lcode.c' l='294' u='r' c='luaK_setoneret'/>
+<use f='redis/deps/lua/src/lcode.c' l='307' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='367' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='378' u='r' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='383' u='r' c='discharge2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='410' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='424' u='r' c='luaK_exp2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='512' u='r' c='luaK_self'/>
+<use f='redis/deps/lua/src/lcode.c' l='602' c='codenot'/>
+<doc f='redis/deps/lua/src/lparser.h' l='32'>/* info = result register */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='960' u='r' c='assignment'/>

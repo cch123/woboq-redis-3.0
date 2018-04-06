@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lua.h' l='74'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='107' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='410' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='39' u='c'/>
+<use f='redis/deps/lua/src/ldump.c' l='90' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='27' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='75' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='76' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='77' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='471' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='687' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='484' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='113' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='259' u='c'/>
+<use f='redis/src/scripting.c' l='850' u='c'/>

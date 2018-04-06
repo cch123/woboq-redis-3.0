@@ -1,0 +1,17 @@
+<dec f='include/stdlib.h' l='374' type='int rand()'/>
+<doc f='include/stdlib.h' l='373'>/* Return a random integer between 0 and RAND_MAX inclusive.  */</doc>
+<use f='redis/deps/lua/src/lmathlib.c' l='184' u='c' c='math_random'/>
+<use f='redis/src/hyperloglog.c' l='1366' u='c' c='pfselftestCommand'/>
+<use f='redis/src/hyperloglog.c' l='1399' u='c' c='pfselftestCommand'/>
+<use f='redis/src/hyperloglog.c' l='1399' u='c' c='pfselftestCommand'/>
+<use f='redis/src/intset.c' l='261' u='c' c='intsetRandom'/>
+<use f='redis/src/memtest.c' l='136' u='c' c='memtest_fill_random'/>
+<use f='redis/src/memtest.c' l='137' u='c' c='memtest_fill_random'/>
+<use f='redis/src/memtest.c' l='138' u='c' c='memtest_fill_random'/>
+<use f='redis/src/memtest.c' l='139' u='c' c='memtest_fill_random'/>
+<use f='redis/src/redis-cli.c' l='1512' u='c' c='pipeMode'/>
+<use f='redis/src/redis-cli.c' l='2023' u='c' c='powerLawRand'/>
+<use f='redis/src/sentinel.c' l='3195' u='c' c='sentinelVoteLeader'/>
+<use f='redis/src/sentinel.c' l='3372' u='c' c='sentinelStartFailover'/>
+<use f='redis/src/sentinel.c' l='3898' u='c' c='sentinelTimer'/>
+<use f='redis/src/util.c' l='511' u='c' c='getRandomHexChars'/>

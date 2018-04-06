@@ -1,0 +1,5 @@
+<def f='redis/src/t_zset.c' l='940' ll='947' type='unsigned char * zzlDelete(unsigned char * zl, unsigned char * eptr)'/>
+<use f='redis/src/t_zset.c' l='1235' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1331' u='c' c='zremCommand'/>
+<doc f='redis/src/t_zset.c' l='938'>/* Delete (element,score) pair from ziplist. Use local copy of eptr because we
+ * don&apos;t want to modify the one given as argument. */</doc>

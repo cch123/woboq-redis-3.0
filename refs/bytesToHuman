@@ -1,0 +1,9 @@
+<def f='redis/src/redis-cli.c' l='1866' ll='1888' type='void bytesToHuman(char * s, long long n)'/>
+<use f='redis/src/redis-cli.c' l='1926' u='c' c='statMode'/>
+<doc f='redis/src/redis-cli.c' l='1864'>/* Convert number of bytes into a human readable string of the form:
+ * 100B, 2G, 100M, 4K, and so forth. */</doc>
+<def f='redis/src/redis.c' l='2568' ll='2594' type='void bytesToHuman(char * s, unsigned long long n)'/>
+<use f='redis/src/redis.c' l='2703' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2704' u='c' c='genRedisInfoString'/>
+<doc f='redis/src/redis.c' l='2566'>/* Convert an amount of bytes into a human readable string in the form
+ * of 100B, 2G, 100M, 4K, and so forth. */</doc>

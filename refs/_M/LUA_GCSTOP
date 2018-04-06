@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='221'/>
+<use f='redis/deps/lua/src/lapi.c' l='905' u='c'/>
+<doc f='redis/deps/lua/src/lua.h' l='217'>/*
+** garbage-collection function and options
+*/</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='196' u='c'/>

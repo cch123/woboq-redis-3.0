@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1041' type='void addReplyStatus(redisClient * c, char * status)'/>
+<use f='redis/src/aof.c' l='1328' u='c' c='bgrewriteaofCommand'/>
+<use f='redis/src/aof.c' l='1330' u='c' c='bgrewriteaofCommand'/>
+<use f='redis/src/db.c' l='632' u='c' c='typeCommand'/>
+<use f='redis/src/debug.c' l='359' u='c' c='debugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1531' u='c' c='pfdebugCommand'/>
+<def f='redis/src/networking.c' l='408' ll='410' type='void addReplyStatus(redisClient * c, char * status)'/>
+<use f='redis/src/rdb.c' l='1542' u='c' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='2479' u='c' c='addReplyCommandFlag'/>
+<use f='redis/src/redis.c' l='2511' u='c' c='addReplyCommand'/>

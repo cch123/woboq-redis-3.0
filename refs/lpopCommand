@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1415' type='void lpopCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='147' u='r'/>
+<use f='redis/src/redis.c' l='147' u='r'/>
+<use f='redis/src/redis.c' l='147' u='r'/>
+<use f='redis/src/redis.c' l='147' u='r'/>
+<def f='redis/src/t_list.c' l='517' ll='519' type='void lpopCommand(redisClient * c)'/>

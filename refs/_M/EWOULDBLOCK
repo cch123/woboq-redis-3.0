@@ -1,0 +1,6 @@
+<dec f='include/asm-generic/errno.h' l='21'/>
+<use f='redis/src/cluster.c' l='373' u='c'/>
+<use f='redis/src/cluster.c' l='582' u='c'/>
+<use f='redis/src/networking.c' l='622' u='c'/>
+<use f='redis/src/networking.c' l='641' u='c'/>
+<use f='redis/src/rio.c' l='211' u='c'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='697' type='time_t'/>
+<offset>6784</offset>
+<doc f='redis/src/redis.h' l='696'>/* Fields used only for stats */</doc>
+<doc f='redis/src/redis.h' l='697'>/* Server start time */</doc>
+<use f='redis/src/redis.c' l='1826' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2601' u='r' c='genRedisInfoString'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='889' ll='913' type='unsigned char * zzlLastInLexRange(unsigned char * zl, zlexrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='2613' u='c' c='genericZrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='887'>/* Find pointer to the last element contained in the specified lex range.
+ * Returns NULL when no element is contained in the range. */</doc>

@@ -1,0 +1,2 @@
+<dec f='include/stdio.h' l='195' type='FILE * tmpfile()'/>
+<use f='redis/deps/lua/src/liolib.c' l='185' u='c' c='io_tmpfile'/>

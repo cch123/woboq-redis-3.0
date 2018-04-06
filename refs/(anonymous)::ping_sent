@@ -1,0 +1,3 @@
+<dec f='redis/src/cluster.h' l='166' type='uint32_t'/>
+<use f='redis/src/cluster.c' l='2255' u='w' c='clusterSendPing'/>
+<offset>320</offset>

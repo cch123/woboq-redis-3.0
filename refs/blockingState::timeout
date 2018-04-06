@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='482' type='mstime_t'/>
+<offset>0</offset>
+<doc f='redis/src/redis.h' l='481'>/* Generic fields. */</doc>
+<doc f='redis/src/redis.h' l='482'>/* Blocking operation timeout. If UNIX current time
+                             * is &gt; timeout then the operation timed out. */</doc>
+<use f='redis/src/networking.c' l='114' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='925' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='925' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/replication.c' l='1859' u='w' c='waitCommand'/>
+<use f='redis/src/t_list.c' l='780' u='w' c='blockForKeys'/>

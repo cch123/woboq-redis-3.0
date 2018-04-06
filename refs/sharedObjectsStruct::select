@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='576' type='robj *[10]'/>
+<offset>2816</offset>
+<use f='redis/src/redis.c' l='1364' u='w' c='createSharedObjects'/>
+<use f='redis/src/replication.c' l='186' u='r' c='replicationFeedSlaves'/>

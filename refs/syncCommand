@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1437' type='void syncCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='238' u='r'/>
+<use f='redis/src/redis.c' l='238' u='r'/>
+<use f='redis/src/redis.c' l='239' u='r'/>
+<use f='redis/src/redis.c' l='239' u='r'/>
+<use f='redis/src/redis.c' l='238' u='r'/>
+<use f='redis/src/redis.c' l='238' u='r'/>
+<use f='redis/src/redis.c' l='239' u='r'/>
+<use f='redis/src/redis.c' l='239' u='r'/>
+<def f='redis/src/replication.c' l='463' ll='583' type='void syncCommand(redisClient * c)'/>
+<doc f='redis/src/replication.c' l='462'>/* SYNC and PSYNC command implemenation. */</doc>

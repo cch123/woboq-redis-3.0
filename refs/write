@@ -1,0 +1,45 @@
+<dec f='include/unistd.h' l='369' type='ssize_t write(int __fd, const void * __buf, size_t __n)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1179' u='c' c='redisBufferWrite'/>
+<doc f='include/unistd.h' l='365'>/* Write N bytes of BUF to FD.  Return the number written, or -1.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='265' u='c' c='getCursorPosition'/>
+<use f='redis/deps/linenoise/linenoise.c' l='295' u='c' c='getColumns'/>
+<use f='redis/deps/linenoise/linenoise.c' l='303' u='c' c='getColumns'/>
+<use f='redis/deps/linenoise/linenoise.c' l='318' u='c' c='linenoiseClearScreen'/>
+<use f='redis/deps/linenoise/linenoise.c' l='494' u='c' c='refreshSingleLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='578' u='c' c='refreshMultiLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='604' u='c' c='linenoiseEditInsert'/>
+<use f='redis/deps/linenoise/linenoise.c' l='750' u='c' c='linenoiseEdit'/>
+<use f='redis/src/anet.c' l='411' u='c' c='anetWrite'/>
+<use f='redis/src/aof.c' l='112' u='c' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='183' u='c' c='aofRewriteBufferWrite'/>
+<use f='redis/src/aof.c' l='311' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1136' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1195' u='c' c='aofChildPipeReadable'/>
+<use f='redis/src/cluster.c' l='323' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='1982' u='c' c='clusterWriteHandler'/>
+<use f='redis/src/config.c' l='1751' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/networking.c' l='601' u='c' c='acceptCommonHandler'/>
+<use f='redis/src/networking.c' l='826' u='c' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='848' u='c' c='sendReplyToClient'/>
+<use f='redis/src/rdb.c' l='1490' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis-cli.c' l='1295' u='c' c='sendSync'/>
+<use f='redis/src/redis-cli.c' l='1382' u='c' c='getRDB'/>
+<use f='redis/src/redis-cli.c' l='1479' u='c' c='pipeMode'/>
+<use f='redis/src/redis.c' l='369' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='370' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='372' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='373' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='374' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='375' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/replication.c' l='408' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='433' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='687' u='c' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='714' u='c' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='846' u='c' c='replicationSendNewlineToMaster'/>
+<use f='redis/src/replication.c' l='964' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='2007' u='c' c='replicationCron'/>
+<use f='redis/src/rio.c' l='205' u='c' c='rioFdsetWrite'/>
+<use f='redis/src/syncio.c' l='61' u='c' c='syncWrite'/>

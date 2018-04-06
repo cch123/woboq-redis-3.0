@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1220' type='void zsetConvert(robj * zobj, int encoding)'/>
+<use f='redis/src/rdb.c' l='933' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1064' u='c' c='rdbLoadObject'/>
+<use f='redis/src/sort.c' l='306' u='c' c='sortCommand'/>
+<def f='redis/src/t_zset.c' l='1093' ll='1167' type='void zsetConvert(robj * zobj, int encoding)'/>
+<use f='redis/src/t_zset.c' l='1245' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1247' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2066' u='c' c='zunionInterGenericCommand'/>

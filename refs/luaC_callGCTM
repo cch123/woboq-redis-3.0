@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lgc.h' l='100' type='void luaC_callGCTM(lua_State * L)'/>
+<def f='redis/deps/lua/src/lgc.c' l='477' ll='480' type='void luaC_callGCTM(lua_State * L)'/>
+<doc f='redis/deps/lua/src/lgc.c' l='474'>/*
+** Call all GC tag methods
+*/</doc>
+<use f='redis/deps/lua/src/lstate.c' l='195' u='c' c='callallgcTM'/>

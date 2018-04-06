@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lstate.h' l='79' type='GCObject *'/>
+<offset>576</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='79'>/* list of weak tables (to be cleared) */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='173' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='174' u='w' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='505' u='w' c='markroot'/>
+<use f='redis/deps/lua/src/lgc.c' l='533' u='r' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='534' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='546' u='r' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='644' u='w' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lstate.c' l='175' u='w' c='lua_newstate'/>

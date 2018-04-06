@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='3599' ll='3606' type='void sentinelFailoverWaitPromotion(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='3762' u='c' c='sentinelFailoverStateMachine'/>
+<doc f='redis/src/sentinel.c' l='3597'>/* We actually wait for promotion indirectly checking with INFO when the
+ * slave turns into a master. */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1253' type='unsigned int getLRUClock()'/>
+<use f='redis/src/db.c' l='53' macro='1' u='c'/>
+<use f='redis/src/object.c' l='47' macro='1' u='c'/>
+<use f='redis/src/object.c' l='68' macro='1' u='c'/>
+<use f='redis/src/object.c' l='693' macro='1' u='c'/>
+<def f='redis/src/redis.c' l='874' ll='876' type='unsigned int getLRUClock()'/>
+<use f='redis/src/redis.c' l='1099' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1483' u='c' c='initServerConfig'/>

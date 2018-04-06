@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='803' type='long long'/>
+<offset>15744</offset>
+<doc f='redis/src/redis.h' l='803'>/* Replication offset of first byte in the
+                                       backlog buffer. */</doc>
+<use f='redis/src/redis.c' l='1512' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2972' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='85' u='w' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='111' u='w' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='146' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='315' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='322' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='383' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='384' u='r' c='masterTryPartialResynchronization'/>

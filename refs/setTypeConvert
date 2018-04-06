@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1266' type='void setTypeConvert(robj * subject, int enc)'/>
+<use f='redis/src/rdb.c' l='888' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1058' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_set.c' l='62' u='c' c='setTypeAdd'/>
+<use f='redis/src/t_set.c' l='67' u='c' c='setTypeAdd'/>
+<def f='redis/src/t_set.c' l='221' ll='248' type='void setTypeConvert(robj * setobj, int enc)'/>
+<doc f='redis/src/t_set.c' l='218'>/* Convert the set to specified encoding. The resulting dict (when converting
+ * to a hash table) is presized to hold the number of elements in the original
+ * set. */</doc>

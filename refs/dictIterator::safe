@@ -1,0 +1,6 @@
+<dec f='redis/src/dict.h' l='91' type='int'/>
+<offset>160</offset>
+<use f='redis/src/dict.c' l='562' u='w' c='dictGetIterator'/>
+<use f='redis/src/dict.c' l='571' u='w' c='dictGetSafeIterator'/>
+<use f='redis/src/dict.c' l='581' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='613' u='r' c='dictReleaseIterator'/>

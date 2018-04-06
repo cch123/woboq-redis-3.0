@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ltm.h' l='22' type='3'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/rdb.h' l='111' type='void backgroundSaveDoneHandler(int exitcode, int bysignal)'/>
+<def f='redis/src/rdb.c' l='1372' ll='1384' type='void backgroundSaveDoneHandler(int exitcode, int bysignal)'/>
+<doc f='redis/src/rdb.c' l='1371'>/* When a background RDB saving/transfer terminates, call the right handler. */</doc>
+<use f='redis/src/redis.c' l='1168' u='c' c='serverCron'/>

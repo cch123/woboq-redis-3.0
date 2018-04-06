@@ -1,0 +1,6 @@
+<def f='redis/src/latency.h' l='47' ll='51'/>
+<size>1288</size>
+<doc f='redis/src/latency.h' l='46'>/* The latency time series for a given event. */</doc>
+<mbr r='latencyTimeSeries::idx' o='0' t='int'/>
+<mbr r='latencyTimeSeries::max' o='32' t='uint32_t'/>
+<mbr r='latencyTimeSeries::samples' o='64' t='struct latencySample [160]'/>

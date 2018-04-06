@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1489' type='void hdelCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='201' u='r'/>
+<use f='redis/src/redis.c' l='201' u='r'/>
+<use f='redis/src/redis.c' l='201' u='r'/>
+<use f='redis/src/redis.c' l='201' u='r'/>
+<def f='redis/src/t_hash.c' l='652' ll='678' type='void hdelCommand(redisClient * c)'/>

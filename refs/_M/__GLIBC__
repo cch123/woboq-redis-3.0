@@ -1,0 +1,9 @@
+<dec f='include/features.h' l='358'/>
+<doc f='include/features.h' l='356'>/* Major and minor version number of the GNU C library package.  Use
+   these macros to test for features in specific releases.  */</doc>
+<use f='redis/src/config.h' l='65' u='a'/>
+<use f='redis/src/config.h' l='95' u='a'/>
+<use f='redis/src/config.h' l='119' u='a'/>
+<use f='redis/src/config.h' l='197' u='a'/>
+<use f='redis/src/setproctitle.c' l='80' u='c'/>
+<use f='redis/src/setproctitle.c' l='176' u='c'/>

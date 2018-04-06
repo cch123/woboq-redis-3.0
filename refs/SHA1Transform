@@ -1,0 +1,5 @@
+<dec f='redis/src/sha1.h' l='14' type='void SHA1Transform(u_int32_t * state, const unsigned char * buffer)'/>
+<def f='redis/src/sha1.c' l='56' ll='112' type='void SHA1Transform(u_int32_t * state, const unsigned char * buffer)'/>
+<use f='redis/src/sha1.c' l='142' u='c' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='144' u='c' c='SHA1Update'/>
+<doc f='redis/src/sha1.c' l='54'>/* Hash a single 512-bit block. This is the core of the algorithm. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/src/endianconv.h' l='49'/>
+<use f='redis/src/intset.c' l='70' u='c'/>
+<use f='redis/src/intset.c' l='92' u='c'/>
+<use f='redis/src/ziplist.c' l='354' u='c'/>
+<use f='redis/src/ziplist.c' l='383' u='c'/>

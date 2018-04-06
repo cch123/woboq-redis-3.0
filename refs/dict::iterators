@@ -1,0 +1,8 @@
+<dec f='redis/src/dict.h' l='81' type='int'/>
+<offset>704</offset>
+<doc f='redis/src/dict.h' l='81'>/* number of iterators currently running */</doc>
+<use f='redis/src/dict.c' l='186' u='w' c='_dictInit'/>
+<use f='redis/src/dict.c' l='318' u='r' c='_dictRehashStep'/>
+<use f='redis/src/dict.c' l='582' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='614' u='w' c='dictReleaseIterator'/>
+<use f='redis/src/dict.c' l='991' u='w' c='dictEmpty'/>

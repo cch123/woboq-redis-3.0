@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1521' type='void evalShaCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<def f='redis/src/scripting.c' l='1098' ll='1108' type='void evalShaCommand(redisClient * c)'/>

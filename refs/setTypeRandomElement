@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='1264' type='int setTypeRandomElement(robj * setobj, robj ** objele, int64_t * llele)'/>
+<def f='redis/src/t_set.c' l='196' ll='206' type='int setTypeRandomElement(robj * setobj, robj ** objele, int64_t * llele)'/>
+<use f='redis/src/t_set.c' l='388' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='458' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='524' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='570' u='c' c='srandmemberCommand'/>
+<doc f='redis/src/t_set.c' l='183'>/* Return random element from a non empty set.
+ * The returned element can be a int64_t value if the set is encoded
+ * as an &quot;intset&quot; blob of integers, or a redis object if the set
+ * is a regular set.
+ *
+ * The caller provides both pointers to be populated with the right
+ * object. The return value of the function is the object-&gt;encoding
+ * field of the object and is used by the caller to check if the
+ * int64_t pointer or the redis object pointer was populated.
+ *
+ * When an object is returned (the set was a real set) the ref count
+ * of the object is not incremented so this function can be considered
+ * copy on write friendly. */</doc>

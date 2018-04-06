@@ -1,0 +1,12 @@
+<def f='redis/deps/hiredis/async.h' l='61' ll='101'/>
+<size>296</size>
+<doc f='redis/deps/hiredis/async.h' l='60'>/* Context for an async connection to Redis */</doc>
+<mbr r='redisAsyncContext::c' o='0' t='redisContext'/>
+<mbr r='redisAsyncContext::err' o='1280' t='int'/>
+<mbr r='redisAsyncContext::errstr' o='1344' t='char *'/>
+<mbr r='redisAsyncContext::data' o='1408' t='void *'/>
+<mbr r='redisAsyncContext::ev' o='1472' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/hiredis/async.h:73:5)'/>
+<mbr r='redisAsyncContext::onDisconnect' o='1856' t='redisDisconnectCallback *'/>
+<mbr r='redisAsyncContext::onConnect' o='1920' t='redisConnectCallback *'/>
+<mbr r='redisAsyncContext::replies' o='1984' t='redisCallbackList'/>
+<mbr r='redisAsyncContext::sub' o='2112' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/hiredis/async.h:96:5)'/>

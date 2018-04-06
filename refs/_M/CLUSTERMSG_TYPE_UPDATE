@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='158'/>
+<use f='redis/src/cluster.c' l='1575' u='c'/>
+<use f='redis/src/cluster.c' l='1935' u='c'/>
+<use f='redis/src/cluster.c' l='2147' u='c'/>
+<use f='redis/src/cluster.c' l='2378' u='c'/>

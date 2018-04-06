@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1306' type='int rewriteConfig(char * path)'/>
+<def f='redis/src/config.c' l='1777' ll='1889' type='int rewriteConfig(char * path)'/>
+<use f='redis/src/config.c' l='1913' u='c' c='configCommand'/>
+<doc f='redis/src/config.c' l='1769'>/* Rewrite the configuration file at &quot;path&quot;.
+ * If the configuration file already exists, we try at best to retain comments
+ * and overall structure.
+ *
+ * Configuration parameters that are at their default value, unless already
+ * explicitly included in the old configuration file, are not rewritten.
+ *
+ * On error -1 is returned and errno is set accordingly, otherwise 0. */</doc>
+<use f='redis/src/sentinel.c' l='1603' u='c' c='sentinelFlushConfig'/>

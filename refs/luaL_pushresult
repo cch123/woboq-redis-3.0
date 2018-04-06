@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='150' type='void luaL_pushresult(luaL_Buffer * B)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='352' u='c' c='luaL_gsub'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='447' ll='451' macro='1' type='void luaL_pushresult(luaL_Buffer * B)'/>
+<use f='redis/deps/lua/src/liolib.c' l='301' u='c' c='read_line'/>
+<use f='redis/deps/lua/src/liolib.c' l='309' u='c' c='read_line'/>
+<use f='redis/deps/lua/src/liolib.c' l='329' u='c' c='read_chars'/>
+<use f='redis/deps/lua/src/loslib.c' l='164' u='c' c='os_date'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='63' u='c' c='str_reverse'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='76' u='c' c='str_lower'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='89' u='c' c='str_upper'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='101' u='c' c='str_rep'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='135' u='c' c='str_char'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='154' u='c' c='str_dump'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='677' u='c' c='str_gsub'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='822' u='c' c='str_format'/>
+<use f='redis/deps/lua/src/ltablib.c' l='159' u='c' c='tconcat'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='259' u='c' c='b_pack'/>

@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ltm.h' l='36' type='17'/>
+<use f='redis/deps/lua/src/lstate.h' l='93'/>
+<doc f='redis/deps/lua/src/ltm.h' l='36'>/* number of elements in the enum */</doc>
+<use f='redis/deps/lua/src/ltm.c' l='39' u='r' c='luaT_init'/>

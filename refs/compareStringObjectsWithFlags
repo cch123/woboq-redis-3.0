@@ -1,0 +1,3 @@
+<def f='redis/src/object.c' l='474' ll='504' type='int compareStringObjectsWithFlags(robj * a, robj * b, int flags)'/>
+<use f='redis/src/object.c' l='508' u='c' c='compareStringObjects'/>
+<use f='redis/src/object.c' l='513' u='c' c='collateStringObjects'/>

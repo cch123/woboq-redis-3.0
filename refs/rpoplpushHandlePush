@@ -1,0 +1,18 @@
+<def f='redis/src/t_list.c' l='702' ll='713' type='void rpoplpushHandlePush(redisClient * c, robj * dstkey, robj * dstobj, robj * value)'/>
+<use f='redis/src/t_list.c' l='734' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='919' u='c' c='serveClientBlockedOnList'/>
+<doc f='redis/src/t_list.c' l='686'>/* This is the semantic of this command:
+ *  RPOPLPUSH srclist dstlist:
+ *    IF LLEN(srclist) &gt; 0
+ *      element = RPOP srclist
+ *      LPUSH dstlist element
+ *      RETURN element
+ *    ELSE
+ *      RETURN nil
+ *    END
+ *  END
+ *
+ * The idea is to be able to get an element from a list in a reliable way
+ * since the element is not just returned but pushed against another list
+ * as well. This command was originally proposed by Ezra Zygmuntowicz.
+ */</doc>

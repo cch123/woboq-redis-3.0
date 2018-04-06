@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/async.h' l='66' type='int'/>
+<use f='redis/deps/hiredis/async.c' l='119' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='146' u='w' c='__redisAsyncCopyError'/>
+<use f='redis/deps/hiredis/async.c' l='300' u='r' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='326' u='r' c='__redisAsyncDisconnect'/>
+<offset>1280</offset>
+<doc f='redis/deps/hiredis/async.h' l='65'>/* Setup error flags so they can be used directly. */</doc>
+<use f='redis/src/sentinel.c' l='1712' u='r' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1734' u='r' c='sentinelReconnectInstance'/>

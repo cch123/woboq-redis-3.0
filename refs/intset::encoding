@@ -1,0 +1,13 @@
+<dec f='redis/src/intset.h' l='36' type='uint32_t'/>
+<offset>0</offset>
+<use f='redis/src/intset.c' l='77' u='r' c='_intsetGet'/>
+<use f='redis/src/intset.c' l='82' u='r' c='_intsetSet'/>
+<use f='redis/src/intset.c' l='99' u='w' c='intsetNew'/>
+<use f='redis/src/intset.c' l='106' u='r' c='intsetResize'/>
+<use f='redis/src/intset.c' l='158' u='r' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='164' u='w' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='185' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='212' u='r' c='intsetAdd'/>
+<use f='redis/src/intset.c' l='239' u='r' c='intsetRemove'/>
+<use f='redis/src/intset.c' l='256' u='r' c='intsetFind'/>
+<use f='redis/src/intset.c' l='281' u='r' c='intsetBlobLen'/>

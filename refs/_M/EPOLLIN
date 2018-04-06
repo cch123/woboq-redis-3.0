@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='43'/>
+<use f='redis/src/ae_epoll.c' l='83' u='c'/>
+<use f='redis/src/ae_epoll.c' l='97' u='c'/>
+<use f='redis/src/ae_epoll.c' l='124' u='c'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/zmalloc.h' l='78' type='size_t zmalloc_get_private_dirty()'/>
+<use f='redis/src/aof.c' l='1284' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/rdb.c' l='782' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1450' u='c' c='rdbSaveToSlavesSockets'/>
+<def f='redis/src/zmalloc.c' l='364' ll='366' type='size_t zmalloc_get_private_dirty()'/>

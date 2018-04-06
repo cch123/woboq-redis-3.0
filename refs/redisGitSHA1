@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1372' type='char * redisGitSHA1()'/>
+<doc f='redis/src/redis.h' l='1371'>/* Git SHA1 */</doc>
+<dec f='redis/src/redis-cli.c' l='120' type='char * redisGitSHA1()'/>
+<use f='redis/src/redis-cli.c' l='207' u='c' c='cliVersion'/>
+<use f='redis/src/redis-cli.c' l='208' u='c' c='cliVersion'/>
+<use f='redis/src/redis.c' l='2654' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3407' u='c' c='version'/>
+<use f='redis/src/redis.c' l='3445' u='c' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3454' u='c' c='redisAsciiArt'/>
+<def f='redis/src/release.c' l='40' ll='42' type='char * redisGitSHA1()'/>

@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='1211' ll='1224' type='int clusterHandshakeInProgress(char * ip, int port)'/>
+<use f='redis/src/cluster.c' l='1270' u='c' c='clusterStartHandshake'/>
+<doc f='redis/src/cluster.c' l='1208'>/* Return true if we already have a node in HANDSHAKE state matching the
+ * specified ip address and port number. This function is used in order to
+ * avoid adding a new handshake node for the same address multiple times. */</doc>

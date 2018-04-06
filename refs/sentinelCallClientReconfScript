@@ -1,0 +1,15 @@
+<def f='redis/src/sentinel.c' l='862' ll='872' type='void sentinelCallClientReconfScript(sentinelRedisInstance * master, int role, char * state, sentinelAddr * from, sentinelAddr * to)'/>
+<use f='redis/src/sentinel.c' l='1955' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2183' u='c' c='sentinelProcessHelloMessage'/>
+<doc f='redis/src/sentinel.c' l='850'>/* This function calls, if any, the client reconfiguration script with the
+ * following parameters:
+ *
+ * &lt;master-name&gt; &lt;role&gt; &lt;state&gt; &lt;from-ip&gt; &lt;from-port&gt; &lt;to-ip&gt; &lt;to-port&gt;
+ *
+ * It is called every time a failover is performed.
+ *
+ * &lt;state&gt; is currently always &quot;failover&quot;.
+ * &lt;role&gt; is either &quot;leader&quot; or &quot;observer&quot;.
+ *
+ * from/to fields are respectively master -&gt; promoted slave addresses for
+ * &quot;start&quot; and &quot;end&quot;. */</doc>

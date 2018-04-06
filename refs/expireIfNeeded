@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1311' type='int expireIfNeeded(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='63' u='c' c='lookupKeyRead'/>
+<use f='redis/src/db.c' l='73' u='c' c='lookupKeyWrite'/>
+<use f='redis/src/db.c' l='152' u='c' c='dbRandomKey'/>
+<use f='redis/src/db.c' l='284' u='c' c='delCommand'/>
+<use f='redis/src/db.c' l='297' u='c' c='existsCommand'/>
+<use f='redis/src/db.c' l='351' u='c' c='keysCommand'/>
+<use f='redis/src/db.c' l='560' u='c' c='scanGenericCommand'/>
+<def f='redis/src/db.c' l='822' ll='856' type='int expireIfNeeded(redisDb * db, robj * key)'/>

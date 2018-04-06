@@ -1,0 +1,9 @@
+<def f='redis/src/rdb.c' l='322' ll='331' type='int rdbSaveStringObject(rio * rdb, robj * obj)'/>
+<use f='redis/src/rdb.c' l='484' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='504' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='522' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='553' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='581' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='583' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='625' u='c' c='rdbSaveKeyValuePair'/>
+<doc f='redis/src/rdb.c' l='321'>/* Like rdbSaveStringObjectRaw() but handle encoded objects */</doc>

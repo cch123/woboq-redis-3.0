@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/ltable.h' l='21' type='const TValue * luaH_getnum(Table * t, int key)'/>
+<use f='redis/deps/lua/src/lapi.c' l='572' u='c' c='lua_rawgeti'/>
+<def f='redis/deps/lua/src/ltable.c' l='435' ll='449' type='const TValue * luaH_getnum(Table * t, int key)'/>
+<use f='redis/deps/lua/src/ltable.c' l='478' u='c' c='luaH_get'/>
+<use f='redis/deps/lua/src/ltable.c' l='509' u='c' c='luaH_setnum'/>
+<use f='redis/deps/lua/src/ltable.c' l='536' u='c' c='unbound_search'/>
+<use f='redis/deps/lua/src/ltable.c' l='542' u='c' c='unbound_search'/>
+<use f='redis/deps/lua/src/ltable.c' l='549' u='c' c='unbound_search'/>
+<doc f='redis/deps/lua/src/ltable.c' l='432'>/*
+** search function for integers
+*/</doc>

@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/llimits.h' l='64'/>
+<use f='redis/deps/lua/src/lapi.c' l='52' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='57' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='115' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='116' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='167' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='173' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='214' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='561' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='571' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='676' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='689' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='707' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='741' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='978' u='c'/>

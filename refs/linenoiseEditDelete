@@ -1,0 +1,5 @@
+<def f='redis/deps/linenoise/linenoise.c' l='680' ll='687' type='void linenoiseEditDelete(struct linenoiseState * l)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='786' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='829' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='678'>/* Delete the character at the right of the cursor without altering the cursor
+ * position. Basically this is what happens with the &quot;Delete&quot; keyboard key. */</doc>

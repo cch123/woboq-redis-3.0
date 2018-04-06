@@ -1,0 +1,1121 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>sds.c source code [redis/deps/hiredis/sds.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/hiredis/sds.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>redis</a>/<a href='..'>deps</a>/<a href='./'>hiredis</a>/<a href='sds.c.html'>sds.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* SDSLib, A C dynamic strings library</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * Copyright (c) 2006-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="4">4</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="7">7</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="10">10</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="11">11</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="13">13</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="14">14</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="15">15</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="16">16</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="17">17</th><td><i> *</i></td></tr>
+<tr><th id="18">18</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="19">19</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="20">20</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="21">21</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="22">22</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="23">23</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="24">24</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="25">25</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="26">26</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="27">27</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="28">28</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="29">29</th><td><i> */</i></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../../../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="../../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../../../include/ctype.h.html">&lt;ctype.h&gt;</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="../../../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="sds.h.html">"sds.h"</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="zmalloc.h.html">"zmalloc.h"</a></u></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><i>/* Create a new sds string with the content specified by the 'init' pointer</i></td></tr>
+<tr><th id="40">40</th><td><i> * and 'initlen'.</i></td></tr>
+<tr><th id="41">41</th><td><i> * If NULL is used for 'init' the string is initialized with zero bytes.</i></td></tr>
+<tr><th id="42">42</th><td><i> *</i></td></tr>
+<tr><th id="43">43</th><td><i> * The string is always null-termined (all the sds strings are, always) so</i></td></tr>
+<tr><th id="44">44</th><td><i> * even if you create an sds string with:</i></td></tr>
+<tr><th id="45">45</th><td><i> *</i></td></tr>
+<tr><th id="46">46</th><td><i> * mystring = sdsnewlen("abc",3");</i></td></tr>
+<tr><th id="47">47</th><td><i> *</i></td></tr>
+<tr><th id="48">48</th><td><i> * You can print the string with printf() as there is an implicit \0 at the</i></td></tr>
+<tr><th id="49">49</th><td><i> * end of the string. However the string is binary safe and can contain</i></td></tr>
+<tr><th id="50">50</th><td><i> * \0 characters in the middle, as the length is stored in the sds header. */</i></td></tr>
+<tr><th id="51">51</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</dfn>(<em>const</em> <em>void</em> *<dfn class="local col1 decl" id="1init" title='init' data-type='const void *' data-ref="1init">init</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="2initlen" title='initlen' data-type='size_t' data-ref="2initlen">initlen</dfn>) {</td></tr>
+<tr><th id="52">52</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col3 decl" id="3sh" title='sh' data-type='struct sdshdr *' data-ref="3sh">sh</dfn>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td>    <b>if</b> (<a class="local col1 ref" href="#1init" title='init' data-ref="1init">init</a>) {</td></tr>
+<tr><th id="55">55</th><td>        <a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a> = <a class="macro" href="zmalloc.h.html#7" title="malloc" data-ref="_M/zmalloc">zmalloc</a>(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)+<a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a>+<var>1</var>);</td></tr>
+<tr><th id="56">56</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="57">57</th><td>        <a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a> = <a class="macro" href="zmalloc.h.html#9" title="calloc(sizeof(struct sdshdr)+initlen+1,1)" data-ref="_M/zcalloc">zcalloc</a>(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)+<a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a>+<var>1</var>);</td></tr>
+<tr><th id="58">58</th><td>    }</td></tr>
+<tr><th id="59">59</th><td>    <b>if</b> (<a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="60">60</th><td>    <a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a>;</td></tr>
+<tr><th id="61">61</th><td>    <a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <var>0</var>;</td></tr>
+<tr><th id="62">62</th><td>    <b>if</b> (<a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a> &amp;&amp; <a class="local col1 ref" href="#1init" title='init' data-ref="1init">init</a>)</td></tr>
+<tr><th id="63">63</th><td>        <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>, <a class="local col1 ref" href="#1init" title='init' data-ref="1init">init</a>, <a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a>);</td></tr>
+<tr><th id="64">64</th><td>    <a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>[<a class="local col2 ref" href="#2initlen" title='initlen' data-ref="2initlen">initlen</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="65">65</th><td>    <b>return</b> (<em>char</em>*)<a class="local col3 ref" href="#3sh" title='sh' data-ref="3sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>;</td></tr>
+<tr><th id="66">66</th><td>}</td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><i>/* Create an empty (zero length) sds string. Even in this case the string</i></td></tr>
+<tr><th id="69">69</th><td><i> * always has an implicit null term. */</i></td></tr>
+<tr><th id="70">70</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsempty" title='sdsempty' data-ref="sdsempty">sdsempty</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="71">71</th><td>    <b>return</b> <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<q>""</q>,<var>0</var>);</td></tr>
+<tr><th id="72">72</th><td>}</td></tr>
+<tr><th id="73">73</th><td></td></tr>
+<tr><th id="74">74</th><td><i>/* Create a new sds string starting from a null termined C string. */</i></td></tr>
+<tr><th id="75">75</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsnew" title='sdsnew' data-ref="sdsnew">sdsnew</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4init" title='init' data-type='const char *' data-ref="4init">init</dfn>) {</td></tr>
+<tr><th id="76">76</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="5initlen" title='initlen' data-type='size_t' data-ref="5initlen">initlen</dfn> = (<a class="local col4 ref" href="#4init" title='init' data-ref="4init">init</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) ? <var>0</var> : <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col4 ref" href="#4init" title='init' data-ref="4init">init</a>);</td></tr>
+<tr><th id="77">77</th><td>    <b>return</b> <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<a class="local col4 ref" href="#4init" title='init' data-ref="4init">init</a>, <a class="local col5 ref" href="#5initlen" title='initlen' data-ref="5initlen">initlen</a>);</td></tr>
+<tr><th id="78">78</th><td>}</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i>/* Duplicate an sds string. */</i></td></tr>
+<tr><th id="81">81</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsdup" title='sdsdup' data-ref="sdsdup">sdsdup</dfn>(<em>const</em> <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col6 decl" id="6s" title='s' data-type='const sds' data-ref="6s">s</dfn>) {</td></tr>
+<tr><th id="82">82</th><td>    <b>return</b> <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a>, <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col6 ref" href="#6s" title='s' data-ref="6s">s</a>));</td></tr>
+<tr><th id="83">83</th><td>}</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><i>/* Free an sds string. No operation is performed if 's' is NULL. */</i></td></tr>
+<tr><th id="86">86</th><td><em>void</em> <dfn class="decl def fn" id="sdsfree" title='sdsfree' data-ref="sdsfree">sdsfree</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col7 decl" id="7s" title='s' data-type='sds' data-ref="7s">s</dfn>) {</td></tr>
+<tr><th id="87">87</th><td>    <b>if</b> (<a class="local col7 ref" href="#7s" title='s' data-ref="7s">s</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b>;</td></tr>
+<tr><th id="88">88</th><td>    <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col7 ref" href="#7s" title='s' data-ref="7s">s</a>-<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>));</td></tr>
+<tr><th id="89">89</th><td>}</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><i>/* Set the sds string length to the length as obtained with strlen(), so</i></td></tr>
+<tr><th id="92">92</th><td><i> * considering as content only up to the first null term character.</i></td></tr>
+<tr><th id="93">93</th><td><i> *</i></td></tr>
+<tr><th id="94">94</th><td><i> * This function is useful when the sds string is hacked manually in some</i></td></tr>
+<tr><th id="95">95</th><td><i> * way, like in the following example:</i></td></tr>
+<tr><th id="96">96</th><td><i> *</i></td></tr>
+<tr><th id="97">97</th><td><i> * s = sdsnew("foobar");</i></td></tr>
+<tr><th id="98">98</th><td><i> * s[2] = '\0';</i></td></tr>
+<tr><th id="99">99</th><td><i> * sdsupdatelen(s);</i></td></tr>
+<tr><th id="100">100</th><td><i> * printf("%d\n", sdslen(s));</i></td></tr>
+<tr><th id="101">101</th><td><i> *</i></td></tr>
+<tr><th id="102">102</th><td><i> * The output will be "2", but if we comment out the call to sdsupdatelen()</i></td></tr>
+<tr><th id="103">103</th><td><i> * the output will be "6" as the string was modified but the logical length</i></td></tr>
+<tr><th id="104">104</th><td><i> * remains 6 bytes. */</i></td></tr>
+<tr><th id="105">105</th><td><em>void</em> <dfn class="decl def fn" id="sdsupdatelen" title='sdsupdatelen' data-ref="sdsupdatelen">sdsupdatelen</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col8 decl" id="8s" title='s' data-type='sds' data-ref="8s">s</dfn>) {</td></tr>
+<tr><th id="106">106</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col9 decl" id="9sh" title='sh' data-type='struct sdshdr *' data-ref="9sh">sh</dfn> = (<em>void</em>*) (<a class="local col8 ref" href="#8s" title='s' data-ref="8s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="107">107</th><td>    <em>int</em> <dfn class="local col0 decl" id="10reallen" title='reallen' data-type='int' data-ref="10reallen">reallen</dfn> = <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col8 ref" href="#8s" title='s' data-ref="8s">s</a>);</td></tr>
+<tr><th id="108">108</th><td>    <a class="local col9 ref" href="#9sh" title='sh' data-ref="9sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> += (<a class="local col9 ref" href="#9sh" title='sh' data-ref="9sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>-<a class="local col0 ref" href="#10reallen" title='reallen' data-ref="10reallen">reallen</a>);</td></tr>
+<tr><th id="109">109</th><td>    <a class="local col9 ref" href="#9sh" title='sh' data-ref="9sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col0 ref" href="#10reallen" title='reallen' data-ref="10reallen">reallen</a>;</td></tr>
+<tr><th id="110">110</th><td>}</td></tr>
+<tr><th id="111">111</th><td></td></tr>
+<tr><th id="112">112</th><td><i>/* Modify an sds string on-place to make it empty (zero length).</i></td></tr>
+<tr><th id="113">113</th><td><i> * However all the existing buffer is not discarded but set as free space</i></td></tr>
+<tr><th id="114">114</th><td><i> * so that next append operations will not require allocations up to the</i></td></tr>
+<tr><th id="115">115</th><td><i> * number of bytes previously available. */</i></td></tr>
+<tr><th id="116">116</th><td><em>void</em> <dfn class="decl def fn" id="sdsclear" title='sdsclear' data-ref="sdsclear">sdsclear</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col1 decl" id="11s" title='s' data-type='sds' data-ref="11s">s</dfn>) {</td></tr>
+<tr><th id="117">117</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col2 decl" id="12sh" title='sh' data-type='struct sdshdr *' data-ref="12sh">sh</dfn> = (<em>void</em>*) (<a class="local col1 ref" href="#11s" title='s' data-ref="11s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="118">118</th><td>    <a class="local col2 ref" href="#12sh" title='sh' data-ref="12sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> += <a class="local col2 ref" href="#12sh" title='sh' data-ref="12sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>;</td></tr>
+<tr><th id="119">119</th><td>    <a class="local col2 ref" href="#12sh" title='sh' data-ref="12sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <var>0</var>;</td></tr>
+<tr><th id="120">120</th><td>    <a class="local col2 ref" href="#12sh" title='sh' data-ref="12sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>[<var>0</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="121">121</th><td>}</td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><i>/* Enlarge the free space at the end of the sds string so that the caller</i></td></tr>
+<tr><th id="124">124</th><td><i> * is sure that after calling this function can overwrite up to addlen</i></td></tr>
+<tr><th id="125">125</th><td><i> * bytes after the end of the string, plus one more byte for nul term.</i></td></tr>
+<tr><th id="126">126</th><td><i> *</i></td></tr>
+<tr><th id="127">127</th><td><i> * Note: this does not change the *length* of the sds string as returned</i></td></tr>
+<tr><th id="128">128</th><td><i> * by sdslen(), but only the free buffer space we have. */</i></td></tr>
+<tr><th id="129">129</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col3 decl" id="13s" title='s' data-type='sds' data-ref="13s">s</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="14addlen" title='addlen' data-type='size_t' data-ref="14addlen">addlen</dfn>) {</td></tr>
+<tr><th id="130">130</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col5 decl" id="15sh" title='sh' data-type='struct sdshdr *' data-ref="15sh">sh</dfn>, *<dfn class="local col6 decl" id="16newsh" title='newsh' data-type='struct sdshdr *' data-ref="16newsh">newsh</dfn>;</td></tr>
+<tr><th id="131">131</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="17free" title='free' data-type='size_t' data-ref="17free">free</dfn> = <a class="ref fn" href="sds.h.html#sdsavail" title='sdsavail' data-ref="sdsavail">sdsavail</a>(<a class="local col3 ref" href="#13s" title='s' data-ref="13s">s</a>);</td></tr>
+<tr><th id="132">132</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="18len" title='len' data-type='size_t' data-ref="18len">len</dfn>, <dfn class="local col9 decl" id="19newlen" title='newlen' data-type='size_t' data-ref="19newlen">newlen</dfn>;</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>    <b>if</b> (<a class="local col7 ref" href="#17free" title='free' data-ref="17free">free</a> &gt;= <a class="local col4 ref" href="#14addlen" title='addlen' data-ref="14addlen">addlen</a>) <b>return</b> <a class="local col3 ref" href="#13s" title='s' data-ref="13s">s</a>;</td></tr>
+<tr><th id="135">135</th><td>    <a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col3 ref" href="#13s" title='s' data-ref="13s">s</a>);</td></tr>
+<tr><th id="136">136</th><td>    <a class="local col5 ref" href="#15sh" title='sh' data-ref="15sh">sh</a> = (<em>void</em>*) (<a class="local col3 ref" href="#13s" title='s' data-ref="13s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="137">137</th><td>    <a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a> = (<a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a>+<a class="local col4 ref" href="#14addlen" title='addlen' data-ref="14addlen">addlen</a>);</td></tr>
+<tr><th id="138">138</th><td>    <b>if</b> (<a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a> &lt; <a class="macro" href="sds.h.html#34" title="(1024*1024)" data-ref="_M/SDS_MAX_PREALLOC">SDS_MAX_PREALLOC</a>)</td></tr>
+<tr><th id="139">139</th><td>        <a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a> *= <var>2</var>;</td></tr>
+<tr><th id="140">140</th><td>    <b>else</b></td></tr>
+<tr><th id="141">141</th><td>        <a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a> += <a class="macro" href="sds.h.html#34" title="(1024*1024)" data-ref="_M/SDS_MAX_PREALLOC">SDS_MAX_PREALLOC</a>;</td></tr>
+<tr><th id="142">142</th><td>    <a class="local col6 ref" href="#16newsh" title='newsh' data-ref="16newsh">newsh</a> = <a class="macro" href="zmalloc.h.html#8" title="realloc" data-ref="_M/zrealloc">zrealloc</a>(<a class="local col5 ref" href="#15sh" title='sh' data-ref="15sh">sh</a>, <b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)+<a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a>+<var>1</var>);</td></tr>
+<tr><th id="143">143</th><td>    <b>if</b> (<a class="local col6 ref" href="#16newsh" title='newsh' data-ref="16newsh">newsh</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td>    <a class="local col6 ref" href="#16newsh" title='newsh' data-ref="16newsh">newsh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col9 ref" href="#19newlen" title='newlen' data-ref="19newlen">newlen</a> - <a class="local col8 ref" href="#18len" title='len' data-ref="18len">len</a>;</td></tr>
+<tr><th id="146">146</th><td>    <b>return</b> <a class="local col6 ref" href="#16newsh" title='newsh' data-ref="16newsh">newsh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>;</td></tr>
+<tr><th id="147">147</th><td>}</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/* Reallocate the sds string so that it has no free space at the end. The</i></td></tr>
+<tr><th id="150">150</th><td><i> * contained string remains not altered, but next concatenation operations</i></td></tr>
+<tr><th id="151">151</th><td><i> * will require a reallocation.</i></td></tr>
+<tr><th id="152">152</th><td><i> *</i></td></tr>
+<tr><th id="153">153</th><td><i> * After the call, the passed sds string is no longer valid and all the</i></td></tr>
+<tr><th id="154">154</th><td><i> * references must be substituted with the new pointer returned by the call. */</i></td></tr>
+<tr><th id="155">155</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsRemoveFreeSpace" title='sdsRemoveFreeSpace' data-ref="sdsRemoveFreeSpace">sdsRemoveFreeSpace</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col0 decl" id="20s" title='s' data-type='sds' data-ref="20s">s</dfn>) {</td></tr>
+<tr><th id="156">156</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col1 decl" id="21sh" title='sh' data-type='struct sdshdr *' data-ref="21sh">sh</dfn>;</td></tr>
+<tr><th id="157">157</th><td></td></tr>
+<tr><th id="158">158</th><td>    <a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a> = (<em>void</em>*) (<a class="local col0 ref" href="#20s" title='s' data-ref="20s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="159">159</th><td>    <a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a> = <a class="macro" href="zmalloc.h.html#8" title="realloc" data-ref="_M/zrealloc">zrealloc</a>(<a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a>, <b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)+<a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>+<var>1</var>);</td></tr>
+<tr><th id="160">160</th><td>    <a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <var>0</var>;</td></tr>
+<tr><th id="161">161</th><td>    <b>return</b> <a class="local col1 ref" href="#21sh" title='sh' data-ref="21sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>;</td></tr>
+<tr><th id="162">162</th><td>}</td></tr>
+<tr><th id="163">163</th><td></td></tr>
+<tr><th id="164">164</th><td><i>/* Return the total size of the allocation of the specifed sds string,</i></td></tr>
+<tr><th id="165">165</th><td><i> * including:</i></td></tr>
+<tr><th id="166">166</th><td><i> * 1) The sds header before the pointer.</i></td></tr>
+<tr><th id="167">167</th><td><i> * 2) The string.</i></td></tr>
+<tr><th id="168">168</th><td><i> * 3) The free buffer at the end if any.</i></td></tr>
+<tr><th id="169">169</th><td><i> * 4) The implicit null term.</i></td></tr>
+<tr><th id="170">170</th><td><i> */</i></td></tr>
+<tr><th id="171">171</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl def fn" id="sdsAllocSize" title='sdsAllocSize' data-ref="sdsAllocSize">sdsAllocSize</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col2 decl" id="22s" title='s' data-type='sds' data-ref="22s">s</dfn>) {</td></tr>
+<tr><th id="172">172</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col3 decl" id="23sh" title='sh' data-type='struct sdshdr *' data-ref="23sh">sh</dfn> = (<em>void</em>*) (<a class="local col2 ref" href="#22s" title='s' data-ref="22s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>    <b>return</b> <b>sizeof</b>(*<a class="local col3 ref" href="#23sh" title='sh' data-ref="23sh">sh</a>)+<a class="local col3 ref" href="#23sh" title='sh' data-ref="23sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>+<a class="local col3 ref" href="#23sh" title='sh' data-ref="23sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>+<var>1</var>;</td></tr>
+<tr><th id="175">175</th><td>}</td></tr>
+<tr><th id="176">176</th><td></td></tr>
+<tr><th id="177">177</th><td><i>/* Increment the sds length and decrements the left free space at the</i></td></tr>
+<tr><th id="178">178</th><td><i> * end of the string according to 'incr'. Also set the null term</i></td></tr>
+<tr><th id="179">179</th><td><i> * in the new end of the string.</i></td></tr>
+<tr><th id="180">180</th><td><i> *</i></td></tr>
+<tr><th id="181">181</th><td><i> * This function is used in order to fix the string length after the</i></td></tr>
+<tr><th id="182">182</th><td><i> * user calls sdsMakeRoomFor(), writes something after the end of</i></td></tr>
+<tr><th id="183">183</th><td><i> * the current string, and finally needs to set the new length.</i></td></tr>
+<tr><th id="184">184</th><td><i> *</i></td></tr>
+<tr><th id="185">185</th><td><i> * Note: it is possible to use a negative increment in order to</i></td></tr>
+<tr><th id="186">186</th><td><i> * right-trim the string.</i></td></tr>
+<tr><th id="187">187</th><td><i> *</i></td></tr>
+<tr><th id="188">188</th><td><i> * Usage example:</i></td></tr>
+<tr><th id="189">189</th><td><i> *</i></td></tr>
+<tr><th id="190">190</th><td><i> * Using sdsIncrLen() and sdsMakeRoomFor() it is possible to mount the</i></td></tr>
+<tr><th id="191">191</th><td><i> * following schema, to cat bytes coming from the kernel to the end of an</i></td></tr>
+<tr><th id="192">192</th><td><i> * sds string without copying into an intermediate buffer:</i></td></tr>
+<tr><th id="193">193</th><td><i> *</i></td></tr>
+<tr><th id="194">194</th><td><i> * oldlen = sdslen(s);</i></td></tr>
+<tr><th id="195">195</th><td><i> * s = sdsMakeRoomFor(s, BUFFER_SIZE);</i></td></tr>
+<tr><th id="196">196</th><td><i> * nread = read(fd, s+oldlen, BUFFER_SIZE);</i></td></tr>
+<tr><th id="197">197</th><td><i> * ... check for nread &lt;= 0 and handle it ...</i></td></tr>
+<tr><th id="198">198</th><td><i> * sdsIncrLen(s, nread);</i></td></tr>
+<tr><th id="199">199</th><td><i> */</i></td></tr>
+<tr><th id="200">200</th><td><em>void</em> <dfn class="decl def fn" id="sdsIncrLen" title='sdsIncrLen' data-ref="sdsIncrLen">sdsIncrLen</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col4 decl" id="24s" title='s' data-type='sds' data-ref="24s">s</dfn>, <em>int</em> <dfn class="local col5 decl" id="25incr" title='incr' data-type='int' data-ref="25incr">incr</dfn>) {</td></tr>
+<tr><th id="201">201</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col6 decl" id="26sh" title='sh' data-type='struct sdshdr *' data-ref="26sh">sh</dfn> = (<em>void</em>*) (<a class="local col4 ref" href="#24s" title='s' data-ref="24s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td>    <b>if</b> (<a class="local col5 ref" href="#25incr" title='incr' data-ref="25incr">incr</a> &gt;= <var>0</var>)</td></tr>
+<tr><th id="204">204</th><td>        <a class="macro" href="../../../include/assert.h.html#88" title="((sh-&gt;free &gt;= (unsigned int)incr) ? (void) (0) : __assert_fail (&quot;sh-&gt;free &gt;= (unsigned int)incr&quot;, &quot;/vagrant/data/redis-v3.0.0/deps/hiredis/sds.c&quot;, 204, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col6 ref" href="#26sh" title='sh' data-ref="26sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> &gt;= (<em>unsigned</em> <em>int</em>)<a class="local col5 ref" href="#25incr" title='incr' data-ref="25incr">incr</a>);</td></tr>
+<tr><th id="205">205</th><td>    <b>else</b></td></tr>
+<tr><th id="206">206</th><td>        <a class="macro" href="../../../include/assert.h.html#88" title="((sh-&gt;len &gt;= (unsigned int)(-incr)) ? (void) (0) : __assert_fail (&quot;sh-&gt;len &gt;= (unsigned int)(-incr)&quot;, &quot;/vagrant/data/redis-v3.0.0/deps/hiredis/sds.c&quot;, 206, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col6 ref" href="#26sh" title='sh' data-ref="26sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> &gt;= (<em>unsigned</em> <em>int</em>)(-<a class="local col5 ref" href="#25incr" title='incr' data-ref="25incr">incr</a>));</td></tr>
+<tr><th id="207">207</th><td>    <a class="local col6 ref" href="#26sh" title='sh' data-ref="26sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <a class="local col5 ref" href="#25incr" title='incr' data-ref="25incr">incr</a>;</td></tr>
+<tr><th id="208">208</th><td>    <a class="local col6 ref" href="#26sh" title='sh' data-ref="26sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <a class="local col5 ref" href="#25incr" title='incr' data-ref="25incr">incr</a>;</td></tr>
+<tr><th id="209">209</th><td>    <a class="local col4 ref" href="#24s" title='s' data-ref="24s">s</a>[<a class="local col6 ref" href="#26sh" title='sh' data-ref="26sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="210">210</th><td>}</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><i>/* Grow the sds to have the specified length. Bytes that were not part of</i></td></tr>
+<tr><th id="213">213</th><td><i> * the original length of the sds will be set to zero.</i></td></tr>
+<tr><th id="214">214</th><td><i> *</i></td></tr>
+<tr><th id="215">215</th><td><i> * if the specified length is smaller than the current length, no operation</i></td></tr>
+<tr><th id="216">216</th><td><i> * is performed. */</i></td></tr>
+<tr><th id="217">217</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsgrowzero" title='sdsgrowzero' data-ref="sdsgrowzero">sdsgrowzero</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col7 decl" id="27s" title='s' data-type='sds' data-ref="27s">s</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="28len" title='len' data-type='size_t' data-ref="28len">len</dfn>) {</td></tr>
+<tr><th id="218">218</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col9 decl" id="29sh" title='sh' data-type='struct sdshdr *' data-ref="29sh">sh</dfn> = (<em>void</em>*)(<a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="219">219</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="30totlen" title='totlen' data-type='size_t' data-ref="30totlen">totlen</dfn>, <dfn class="local col1 decl" id="31curlen" title='curlen' data-type='size_t' data-ref="31curlen">curlen</dfn> = <a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>;</td></tr>
+<tr><th id="220">220</th><td></td></tr>
+<tr><th id="221">221</th><td>    <b>if</b> (<a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a> &lt;= <a class="local col1 ref" href="#31curlen" title='curlen' data-ref="31curlen">curlen</a>) <b>return</b> <a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>;</td></tr>
+<tr><th id="222">222</th><td>    <a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>,<a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a>-<a class="local col1 ref" href="#31curlen" title='curlen' data-ref="31curlen">curlen</a>);</td></tr>
+<tr><th id="223">223</th><td>    <b>if</b> (<a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="224">224</th><td></td></tr>
+<tr><th id="225">225</th><td>    <i>/* Make sure added region doesn't contain garbage */</i></td></tr>
+<tr><th id="226">226</th><td>    <a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a> = (<em>void</em>*)(<a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="227">227</th><td>    <a class="ref fn" href="../../../include/string.h.html#memset" title='memset' data-ref="memset">memset</a>(<a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>+<a class="local col1 ref" href="#31curlen" title='curlen' data-ref="31curlen">curlen</a>,<var>0</var>,(<a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a>-<a class="local col1 ref" href="#31curlen" title='curlen' data-ref="31curlen">curlen</a>+<var>1</var>)); <i>/* also set trailing \0 byte */</i></td></tr>
+<tr><th id="228">228</th><td>    <a class="local col0 ref" href="#30totlen" title='totlen' data-ref="30totlen">totlen</a> = <a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>+<a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>;</td></tr>
+<tr><th id="229">229</th><td>    <a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col8 ref" href="#28len" title='len' data-ref="28len">len</a>;</td></tr>
+<tr><th id="230">230</th><td>    <a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col0 ref" href="#30totlen" title='totlen' data-ref="30totlen">totlen</a>-<a class="local col9 ref" href="#29sh" title='sh' data-ref="29sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>;</td></tr>
+<tr><th id="231">231</th><td>    <b>return</b> <a class="local col7 ref" href="#27s" title='s' data-ref="27s">s</a>;</td></tr>
+<tr><th id="232">232</th><td>}</td></tr>
+<tr><th id="233">233</th><td></td></tr>
+<tr><th id="234">234</th><td><i>/* Append the specified binary-safe string pointed by 't' of 'len' bytes to the</i></td></tr>
+<tr><th id="235">235</th><td><i> * end of the specified sds string 's'.</i></td></tr>
+<tr><th id="236">236</th><td><i> *</i></td></tr>
+<tr><th id="237">237</th><td><i> * After the call, the passed sds string is no longer valid and all the</i></td></tr>
+<tr><th id="238">238</th><td><i> * references must be substituted with the new pointer returned by the call. */</i></td></tr>
+<tr><th id="239">239</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col2 decl" id="32s" title='s' data-type='sds' data-ref="32s">s</dfn>, <em>const</em> <em>void</em> *<dfn class="local col3 decl" id="33t" title='t' data-type='const void *' data-ref="33t">t</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="34len" title='len' data-type='size_t' data-ref="34len">len</dfn>) {</td></tr>
+<tr><th id="240">240</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col5 decl" id="35sh" title='sh' data-type='struct sdshdr *' data-ref="35sh">sh</dfn>;</td></tr>
+<tr><th id="241">241</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="36curlen" title='curlen' data-type='size_t' data-ref="36curlen">curlen</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>);</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td>    <a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>,<a class="local col4 ref" href="#34len" title='len' data-ref="34len">len</a>);</td></tr>
+<tr><th id="244">244</th><td>    <b>if</b> (<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="245">245</th><td>    <a class="local col5 ref" href="#35sh" title='sh' data-ref="35sh">sh</a> = (<em>void</em>*) (<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="246">246</th><td>    <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>+<a class="local col6 ref" href="#36curlen" title='curlen' data-ref="36curlen">curlen</a>, <a class="local col3 ref" href="#33t" title='t' data-ref="33t">t</a>, <a class="local col4 ref" href="#34len" title='len' data-ref="34len">len</a>);</td></tr>
+<tr><th id="247">247</th><td>    <a class="local col5 ref" href="#35sh" title='sh' data-ref="35sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col6 ref" href="#36curlen" title='curlen' data-ref="36curlen">curlen</a>+<a class="local col4 ref" href="#34len" title='len' data-ref="34len">len</a>;</td></tr>
+<tr><th id="248">248</th><td>    <a class="local col5 ref" href="#35sh" title='sh' data-ref="35sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col5 ref" href="#35sh" title='sh' data-ref="35sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>-<a class="local col4 ref" href="#34len" title='len' data-ref="34len">len</a>;</td></tr>
+<tr><th id="249">249</th><td>    <a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>[<a class="local col6 ref" href="#36curlen" title='curlen' data-ref="36curlen">curlen</a>+<a class="local col4 ref" href="#34len" title='len' data-ref="34len">len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="250">250</th><td>    <b>return</b> <a class="local col2 ref" href="#32s" title='s' data-ref="32s">s</a>;</td></tr>
+<tr><th id="251">251</th><td>}</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td><i>/* Append the specified null termianted C string to the sds string 's'.</i></td></tr>
+<tr><th id="254">254</th><td><i> *</i></td></tr>
+<tr><th id="255">255</th><td><i> * After the call, the passed sds string is no longer valid and all the</i></td></tr>
+<tr><th id="256">256</th><td><i> * references must be substituted with the new pointer returned by the call. */</i></td></tr>
+<tr><th id="257">257</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscat" title='sdscat' data-ref="sdscat">sdscat</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col7 decl" id="37s" title='s' data-type='sds' data-ref="37s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="38t" title='t' data-type='const char *' data-ref="38t">t</dfn>) {</td></tr>
+<tr><th id="258">258</th><td>    <b>return</b> <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#37s" title='s' data-ref="37s">s</a>, <a class="local col8 ref" href="#38t" title='t' data-ref="38t">t</a>, <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col8 ref" href="#38t" title='t' data-ref="38t">t</a>));</td></tr>
+<tr><th id="259">259</th><td>}</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td><i>/* Append the specified sds 't' to the existing sds 's'.</i></td></tr>
+<tr><th id="262">262</th><td><i> *</i></td></tr>
+<tr><th id="263">263</th><td><i> * After the call, the modified sds string is no longer valid and all the</i></td></tr>
+<tr><th id="264">264</th><td><i> * references must be substituted with the new pointer returned by the call. */</i></td></tr>
+<tr><th id="265">265</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatsds" title='sdscatsds' data-ref="sdscatsds">sdscatsds</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col9 decl" id="39s" title='s' data-type='sds' data-ref="39s">s</dfn>, <em>const</em> <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col0 decl" id="40t" title='t' data-type='const sds' data-ref="40t">t</dfn>) {</td></tr>
+<tr><th id="266">266</th><td>    <b>return</b> <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#39s" title='s' data-ref="39s">s</a>, <a class="local col0 ref" href="#40t" title='t' data-ref="40t">t</a>, <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col0 ref" href="#40t" title='t' data-ref="40t">t</a>));</td></tr>
+<tr><th id="267">267</th><td>}</td></tr>
+<tr><th id="268">268</th><td></td></tr>
+<tr><th id="269">269</th><td><i>/* Destructively modify the sds string 's' to hold the specified binary</i></td></tr>
+<tr><th id="270">270</th><td><i> * safe string pointed by 't' of length 'len' bytes. */</i></td></tr>
+<tr><th id="271">271</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscpylen" title='sdscpylen' data-ref="sdscpylen">sdscpylen</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col1 decl" id="41s" title='s' data-type='sds' data-ref="41s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="42t" title='t' data-type='const char *' data-ref="42t">t</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="43len" title='len' data-type='size_t' data-ref="43len">len</dfn>) {</td></tr>
+<tr><th id="272">272</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col4 decl" id="44sh" title='sh' data-type='struct sdshdr *' data-ref="44sh">sh</dfn> = (<em>void</em>*) (<a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="273">273</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="45totlen" title='totlen' data-type='size_t' data-ref="45totlen">totlen</dfn> = <a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>+<a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>;</td></tr>
+<tr><th id="274">274</th><td></td></tr>
+<tr><th id="275">275</th><td>    <b>if</b> (<a class="local col5 ref" href="#45totlen" title='totlen' data-ref="45totlen">totlen</a> &lt; <a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>) {</td></tr>
+<tr><th id="276">276</th><td>        <a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>,<a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>-<a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>);</td></tr>
+<tr><th id="277">277</th><td>        <b>if</b> (<a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="278">278</th><td>        <a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a> = (<em>void</em>*) (<a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="279">279</th><td>        <a class="local col5 ref" href="#45totlen" title='totlen' data-ref="45totlen">totlen</a> = <a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>+<a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>;</td></tr>
+<tr><th id="280">280</th><td>    }</td></tr>
+<tr><th id="281">281</th><td>    <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>, <a class="local col2 ref" href="#42t" title='t' data-ref="42t">t</a>, <a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>);</td></tr>
+<tr><th id="282">282</th><td>    <a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>[<a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="283">283</th><td>    <a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>;</td></tr>
+<tr><th id="284">284</th><td>    <a class="local col4 ref" href="#44sh" title='sh' data-ref="44sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col5 ref" href="#45totlen" title='totlen' data-ref="45totlen">totlen</a>-<a class="local col3 ref" href="#43len" title='len' data-ref="43len">len</a>;</td></tr>
+<tr><th id="285">285</th><td>    <b>return</b> <a class="local col1 ref" href="#41s" title='s' data-ref="41s">s</a>;</td></tr>
+<tr><th id="286">286</th><td>}</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><i>/* Like sdscpylen() but 't' must be a null-termined string so that the length</i></td></tr>
+<tr><th id="289">289</th><td><i> * of the string is obtained with strlen(). */</i></td></tr>
+<tr><th id="290">290</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscpy" title='sdscpy' data-ref="sdscpy">sdscpy</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col6 decl" id="46s" title='s' data-type='sds' data-ref="46s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="47t" title='t' data-type='const char *' data-ref="47t">t</dfn>) {</td></tr>
+<tr><th id="291">291</th><td>    <b>return</b> <a class="ref fn" href="#sdscpylen" title='sdscpylen' data-ref="sdscpylen">sdscpylen</a>(<a class="local col6 ref" href="#46s" title='s' data-ref="46s">s</a>, <a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>, <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col7 ref" href="#47t" title='t' data-ref="47t">t</a>));</td></tr>
+<tr><th id="292">292</th><td>}</td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td><i>/* Helper for sdscatlonglong() doing the actual number -&gt; string</i></td></tr>
+<tr><th id="295">295</th><td><i> * conversion. 's' must point to a string with room for at least</i></td></tr>
+<tr><th id="296">296</th><td><i> * SDS_LLSTR_SIZE bytes.</i></td></tr>
+<tr><th id="297">297</th><td><i> *</i></td></tr>
+<tr><th id="298">298</th><td><i> * The function returns the lenght of the null-terminated string</i></td></tr>
+<tr><th id="299">299</th><td><i> * representation stored at 's'. */</i></td></tr>
+<tr><th id="300">300</th><td><u>#define <dfn class="macro" id="_M/SDS_LLSTR_SIZE" data-ref="_M/SDS_LLSTR_SIZE">SDS_LLSTR_SIZE</dfn> 21</u></td></tr>
+<tr><th id="301">301</th><td><em>int</em> <dfn class="decl def fn" id="sdsll2str" title='sdsll2str' data-ref="sdsll2str">sdsll2str</dfn>(<em>char</em> *<dfn class="local col8 decl" id="48s" title='s' data-type='char *' data-ref="48s">s</dfn>, <em>long</em> <em>long</em> <dfn class="local col9 decl" id="49value" title='value' data-type='long long' data-ref="49value">value</dfn>) {</td></tr>
+<tr><th id="302">302</th><td>    <em>char</em> *<dfn class="local col0 decl" id="50p" title='p' data-type='char *' data-ref="50p">p</dfn>, <dfn class="local col1 decl" id="51aux" title='aux' data-type='char' data-ref="51aux">aux</dfn>;</td></tr>
+<tr><th id="303">303</th><td>    <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col2 decl" id="52v" title='v' data-type='unsigned long long' data-ref="52v">v</dfn>;</td></tr>
+<tr><th id="304">304</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="53l" title='l' data-type='size_t' data-ref="53l">l</dfn>;</td></tr>
+<tr><th id="305">305</th><td></td></tr>
+<tr><th id="306">306</th><td>    <i>/* Generate the string representation, this method produces</i></td></tr>
+<tr><th id="307">307</th><td><i>     * an reversed string. */</i></td></tr>
+<tr><th id="308">308</th><td>    <a class="local col2 ref" href="#52v" title='v' data-ref="52v">v</a> = (<a class="local col9 ref" href="#49value" title='value' data-ref="49value">value</a> &lt; <var>0</var>) ? -<a class="local col9 ref" href="#49value" title='value' data-ref="49value">value</a> : <a class="local col9 ref" href="#49value" title='value' data-ref="49value">value</a>;</td></tr>
+<tr><th id="309">309</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> = <a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a>;</td></tr>
+<tr><th id="310">310</th><td>    <b>do</b> {</td></tr>
+<tr><th id="311">311</th><td>        *<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>++ = <kbd>'0'</kbd>+(<a class="local col2 ref" href="#52v" title='v' data-ref="52v">v</a>%<var>10</var>);</td></tr>
+<tr><th id="312">312</th><td>        <a class="local col2 ref" href="#52v" title='v' data-ref="52v">v</a> /= <var>10</var>;</td></tr>
+<tr><th id="313">313</th><td>    } <b>while</b>(<a class="local col2 ref" href="#52v" title='v' data-ref="52v">v</a>);</td></tr>
+<tr><th id="314">314</th><td>    <b>if</b> (<a class="local col9 ref" href="#49value" title='value' data-ref="49value">value</a> &lt; <var>0</var>) *<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>++ = <kbd>'-'</kbd>;</td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td>    <i>/* Compute length and add null term. */</i></td></tr>
+<tr><th id="317">317</th><td>    <a class="local col3 ref" href="#53l" title='l' data-ref="53l">l</a> = <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>-<a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a>;</td></tr>
+<tr><th id="318">318</th><td>    *<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="319">319</th><td></td></tr>
+<tr><th id="320">320</th><td>    <i>/* Reverse the string. */</i></td></tr>
+<tr><th id="321">321</th><td>    <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>--;</td></tr>
+<tr><th id="322">322</th><td>    <b>while</b>(<a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a> &lt; <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>) {</td></tr>
+<tr><th id="323">323</th><td>        <a class="local col1 ref" href="#51aux" title='aux' data-ref="51aux">aux</a> = *<a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a>;</td></tr>
+<tr><th id="324">324</th><td>        *<a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a> = *<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>;</td></tr>
+<tr><th id="325">325</th><td>        *<a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a> = <a class="local col1 ref" href="#51aux" title='aux' data-ref="51aux">aux</a>;</td></tr>
+<tr><th id="326">326</th><td>        <a class="local col8 ref" href="#48s" title='s' data-ref="48s">s</a>++;</td></tr>
+<tr><th id="327">327</th><td>        <a class="local col0 ref" href="#50p" title='p' data-ref="50p">p</a>--;</td></tr>
+<tr><th id="328">328</th><td>    }</td></tr>
+<tr><th id="329">329</th><td>    <b>return</b> <a class="local col3 ref" href="#53l" title='l' data-ref="53l">l</a>;</td></tr>
+<tr><th id="330">330</th><td>}</td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td><i>/* Identical sdsll2str(), but for unsigned long long type. */</i></td></tr>
+<tr><th id="333">333</th><td><em>int</em> <dfn class="decl def fn" id="sdsull2str" title='sdsull2str' data-ref="sdsull2str">sdsull2str</dfn>(<em>char</em> *<dfn class="local col4 decl" id="54s" title='s' data-type='char *' data-ref="54s">s</dfn>, <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col5 decl" id="55v" title='v' data-type='unsigned long long' data-ref="55v">v</dfn>) {</td></tr>
+<tr><th id="334">334</th><td>    <em>char</em> *<dfn class="local col6 decl" id="56p" title='p' data-type='char *' data-ref="56p">p</dfn>, <dfn class="local col7 decl" id="57aux" title='aux' data-type='char' data-ref="57aux">aux</dfn>;</td></tr>
+<tr><th id="335">335</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="58l" title='l' data-type='size_t' data-ref="58l">l</dfn>;</td></tr>
+<tr><th id="336">336</th><td></td></tr>
+<tr><th id="337">337</th><td>    <i>/* Generate the string representation, this method produces</i></td></tr>
+<tr><th id="338">338</th><td><i>     * an reversed string. */</i></td></tr>
+<tr><th id="339">339</th><td>    <a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a> = <a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a>;</td></tr>
+<tr><th id="340">340</th><td>    <b>do</b> {</td></tr>
+<tr><th id="341">341</th><td>        *<a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>++ = <kbd>'0'</kbd>+(<a class="local col5 ref" href="#55v" title='v' data-ref="55v">v</a>%<var>10</var>);</td></tr>
+<tr><th id="342">342</th><td>        <a class="local col5 ref" href="#55v" title='v' data-ref="55v">v</a> /= <var>10</var>;</td></tr>
+<tr><th id="343">343</th><td>    } <b>while</b>(<a class="local col5 ref" href="#55v" title='v' data-ref="55v">v</a>);</td></tr>
+<tr><th id="344">344</th><td></td></tr>
+<tr><th id="345">345</th><td>    <i>/* Compute length and add null term. */</i></td></tr>
+<tr><th id="346">346</th><td>    <a class="local col8 ref" href="#58l" title='l' data-ref="58l">l</a> = <a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>-<a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a>;</td></tr>
+<tr><th id="347">347</th><td>    *<a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a> = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="348">348</th><td></td></tr>
+<tr><th id="349">349</th><td>    <i>/* Reverse the string. */</i></td></tr>
+<tr><th id="350">350</th><td>    <a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>--;</td></tr>
+<tr><th id="351">351</th><td>    <b>while</b>(<a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a> &lt; <a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>) {</td></tr>
+<tr><th id="352">352</th><td>        <a class="local col7 ref" href="#57aux" title='aux' data-ref="57aux">aux</a> = *<a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a>;</td></tr>
+<tr><th id="353">353</th><td>        *<a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a> = *<a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>;</td></tr>
+<tr><th id="354">354</th><td>        *<a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a> = <a class="local col7 ref" href="#57aux" title='aux' data-ref="57aux">aux</a>;</td></tr>
+<tr><th id="355">355</th><td>        <a class="local col4 ref" href="#54s" title='s' data-ref="54s">s</a>++;</td></tr>
+<tr><th id="356">356</th><td>        <a class="local col6 ref" href="#56p" title='p' data-ref="56p">p</a>--;</td></tr>
+<tr><th id="357">357</th><td>    }</td></tr>
+<tr><th id="358">358</th><td>    <b>return</b> <a class="local col8 ref" href="#58l" title='l' data-ref="58l">l</a>;</td></tr>
+<tr><th id="359">359</th><td>}</td></tr>
+<tr><th id="360">360</th><td></td></tr>
+<tr><th id="361">361</th><td><i>/* Create an sds string from a long long value. It is much faster than:</i></td></tr>
+<tr><th id="362">362</th><td><i> *</i></td></tr>
+<tr><th id="363">363</th><td><i> * sdscatprintf(sdsempty(),"%lld\n", value);</i></td></tr>
+<tr><th id="364">364</th><td><i> */</i></td></tr>
+<tr><th id="365">365</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsfromlonglong" title='sdsfromlonglong' data-ref="sdsfromlonglong">sdsfromlonglong</dfn>(<em>long</em> <em>long</em> <dfn class="local col9 decl" id="59value" title='value' data-type='long long' data-ref="59value">value</dfn>) {</td></tr>
+<tr><th id="366">366</th><td>    <em>char</em> <dfn class="local col0 decl" id="60buf" title='buf' data-type='char [21]' data-ref="60buf">buf</dfn>[<a class="macro" href="#300" title="21" data-ref="_M/SDS_LLSTR_SIZE">SDS_LLSTR_SIZE</a>];</td></tr>
+<tr><th id="367">367</th><td>    <em>int</em> <dfn class="local col1 decl" id="61len" title='len' data-type='int' data-ref="61len">len</dfn> = <a class="ref fn" href="#sdsll2str" title='sdsll2str' data-ref="sdsll2str">sdsll2str</a>(<a class="local col0 ref" href="#60buf" title='buf' data-ref="60buf">buf</a>,<a class="local col9 ref" href="#59value" title='value' data-ref="59value">value</a>);</td></tr>
+<tr><th id="368">368</th><td></td></tr>
+<tr><th id="369">369</th><td>    <b>return</b> <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<a class="local col0 ref" href="#60buf" title='buf' data-ref="60buf">buf</a>,<a class="local col1 ref" href="#61len" title='len' data-ref="61len">len</a>);</td></tr>
+<tr><th id="370">370</th><td>}</td></tr>
+<tr><th id="371">371</th><td></td></tr>
+<tr><th id="372">372</th><td><i>/* Like sdscatpritf() but gets va_list instead of being variadic. */</i></td></tr>
+<tr><th id="373">373</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatvprintf" title='sdscatvprintf' data-ref="sdscatvprintf">sdscatvprintf</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col2 decl" id="62s" title='s' data-type='sds' data-ref="62s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="63fmt" title='fmt' data-type='const char *' data-ref="63fmt">fmt</dfn>, <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col4 decl" id="64ap" title='ap' data-type='struct __va_list_tag *' data-ref="64ap">ap</dfn>) {</td></tr>
+<tr><th id="374">374</th><td>    <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col5 decl" id="65cpy" title='cpy' data-type='va_list' data-ref="65cpy">cpy</dfn>;</td></tr>
+<tr><th id="375">375</th><td>    <em>char</em> <dfn class="local col6 decl" id="66staticbuf" title='staticbuf' data-type='char [1024]' data-ref="66staticbuf">staticbuf</dfn>[<var>1024</var>], *<dfn class="local col7 decl" id="67buf" title='buf' data-type='char *' data-ref="67buf">buf</dfn> = <a class="local col6 ref" href="#66staticbuf" title='staticbuf' data-ref="66staticbuf">staticbuf</a>, *<dfn class="local col8 decl" id="68t" title='t' data-type='char *' data-ref="68t">t</dfn>;</td></tr>
+<tr><th id="376">376</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="69buflen" title='buflen' data-type='size_t' data-ref="69buflen">buflen</dfn> = <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col3 ref" href="#63fmt" title='fmt' data-ref="63fmt">fmt</a>)*<var>2</var>;</td></tr>
+<tr><th id="377">377</th><td></td></tr>
+<tr><th id="378">378</th><td>    <i>/* We try to start using a static buffer for speed.</i></td></tr>
+<tr><th id="379">379</th><td><i>     * If not possible we revert to heap allocation. */</i></td></tr>
+<tr><th id="380">380</th><td>    <b>if</b> (<a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a> &gt; <b>sizeof</b>(<a class="local col6 ref" href="#66staticbuf" title='staticbuf' data-ref="66staticbuf">staticbuf</a>)) {</td></tr>
+<tr><th id="381">381</th><td>        <a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> = <a class="macro" href="zmalloc.h.html#7" title="malloc" data-ref="_M/zmalloc">zmalloc</a>(<a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a>);</td></tr>
+<tr><th id="382">382</th><td>        <b>if</b> (<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="383">383</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="384">384</th><td>        <a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a> = <b>sizeof</b>(<a class="local col6 ref" href="#66staticbuf" title='staticbuf' data-ref="66staticbuf">staticbuf</a>);</td></tr>
+<tr><th id="385">385</th><td>    }</td></tr>
+<tr><th id="386">386</th><td></td></tr>
+<tr><th id="387">387</th><td>    <i>/* Try with buffers two times bigger every time we fail to</i></td></tr>
+<tr><th id="388">388</th><td><i>     * fit the string in the current buffer size. */</i></td></tr>
+<tr><th id="389">389</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="390">390</th><td>        <a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>[<a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a>-<var>2</var>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="391">391</th><td>        <span class="macro" title="__builtin_va_copy(cpy, ap)" data-ref="_M/va_copy">va_copy</span>(<a class="local col5 ref" href="#65cpy" title='cpy' data-ref="65cpy">cpy</a>,<a class="local col4 ref" href="#64ap" title='ap' data-ref="64ap">ap</a>);</td></tr>
+<tr><th id="392">392</th><td>        <a class="ref fn" href="../../../include/stdio.h.html#vsnprintf" title='vsnprintf' data-ref="vsnprintf">vsnprintf</a>(<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>, <a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a>, <a class="local col3 ref" href="#63fmt" title='fmt' data-ref="63fmt">fmt</a>, <a class="local col5 ref" href="#65cpy" title='cpy' data-ref="65cpy">cpy</a>);</td></tr>
+<tr><th id="393">393</th><td>        <span class="macro" title="__builtin_va_end(ap)" data-ref="_M/va_end">va_end</span>(<a class="local col4 ref" href="#64ap" title='ap' data-ref="64ap">ap</a>);</td></tr>
+<tr><th id="394">394</th><td>        <b>if</b> (<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>[<a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a>-<var>2</var>] != <kbd>'\0'</kbd>) {</td></tr>
+<tr><th id="395">395</th><td>            <b>if</b> (<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> != <a class="local col6 ref" href="#66staticbuf" title='staticbuf' data-ref="66staticbuf">staticbuf</a>) <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>);</td></tr>
+<tr><th id="396">396</th><td>            <a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a> *= <var>2</var>;</td></tr>
+<tr><th id="397">397</th><td>            <a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> = <a class="macro" href="zmalloc.h.html#7" title="malloc" data-ref="_M/zmalloc">zmalloc</a>(<a class="local col9 ref" href="#69buflen" title='buflen' data-ref="69buflen">buflen</a>);</td></tr>
+<tr><th id="398">398</th><td>            <b>if</b> (<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="399">399</th><td>            <b>continue</b>;</td></tr>
+<tr><th id="400">400</th><td>        }</td></tr>
+<tr><th id="401">401</th><td>        <b>break</b>;</td></tr>
+<tr><th id="402">402</th><td>    }</td></tr>
+<tr><th id="403">403</th><td></td></tr>
+<tr><th id="404">404</th><td>    <i>/* Finally concat the obtained string to the SDS string and return it. */</i></td></tr>
+<tr><th id="405">405</th><td>    <a class="local col8 ref" href="#68t" title='t' data-ref="68t">t</a> = <a class="ref fn" href="#sdscat" title='sdscat' data-ref="sdscat">sdscat</a>(<a class="local col2 ref" href="#62s" title='s' data-ref="62s">s</a>, <a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>);</td></tr>
+<tr><th id="406">406</th><td>    <b>if</b> (<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a> != <a class="local col6 ref" href="#66staticbuf" title='staticbuf' data-ref="66staticbuf">staticbuf</a>) <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col7 ref" href="#67buf" title='buf' data-ref="67buf">buf</a>);</td></tr>
+<tr><th id="407">407</th><td>    <b>return</b> <a class="local col8 ref" href="#68t" title='t' data-ref="68t">t</a>;</td></tr>
+<tr><th id="408">408</th><td>}</td></tr>
+<tr><th id="409">409</th><td></td></tr>
+<tr><th id="410">410</th><td><i>/* Append to the sds string 's' a string obtained using printf-alike format</i></td></tr>
+<tr><th id="411">411</th><td><i> * specifier.</i></td></tr>
+<tr><th id="412">412</th><td><i> *</i></td></tr>
+<tr><th id="413">413</th><td><i> * After the call, the modified sds string is no longer valid and all the</i></td></tr>
+<tr><th id="414">414</th><td><i> * references must be substituted with the new pointer returned by the call.</i></td></tr>
+<tr><th id="415">415</th><td><i> *</i></td></tr>
+<tr><th id="416">416</th><td><i> * Example:</i></td></tr>
+<tr><th id="417">417</th><td><i> *</i></td></tr>
+<tr><th id="418">418</th><td><i> * s = sdsempty("Sum is: ");</i></td></tr>
+<tr><th id="419">419</th><td><i> * s = sdscatprintf(s,"%d+%d = %d",a,b,a+b).</i></td></tr>
+<tr><th id="420">420</th><td><i> *</i></td></tr>
+<tr><th id="421">421</th><td><i> * Often you need to create a string from scratch with the printf-alike</i></td></tr>
+<tr><th id="422">422</th><td><i> * format. When this is the need, just use sdsempty() as the target string:</i></td></tr>
+<tr><th id="423">423</th><td><i> *</i></td></tr>
+<tr><th id="424">424</th><td><i> * s = sdscatprintf(sdsempty(), "... your format ...", args);</i></td></tr>
+<tr><th id="425">425</th><td><i> */</i></td></tr>
+<tr><th id="426">426</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatprintf" title='sdscatprintf' data-ref="sdscatprintf">sdscatprintf</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col0 decl" id="70s" title='s' data-type='sds' data-ref="70s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="71fmt" title='fmt' data-type='const char *' data-ref="71fmt">fmt</dfn>, ...) {</td></tr>
+<tr><th id="427">427</th><td>    <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col2 decl" id="72ap" title='ap' data-type='va_list' data-ref="72ap">ap</dfn>;</td></tr>
+<tr><th id="428">428</th><td>    <em>char</em> *<dfn class="local col3 decl" id="73t" title='t' data-type='char *' data-ref="73t">t</dfn>;</td></tr>
+<tr><th id="429">429</th><td>    <span class="macro" title="__builtin_va_start(ap, fmt)" data-ref="_M/va_start">va_start</span>(<a class="local col2 ref" href="#72ap" title='ap' data-ref="72ap">ap</a>, <a class="local col1 ref" href="#71fmt" title='fmt' data-ref="71fmt">fmt</a>);</td></tr>
+<tr><th id="430">430</th><td>    <a class="local col3 ref" href="#73t" title='t' data-ref="73t">t</a> = <a class="ref fn" href="#sdscatvprintf" title='sdscatvprintf' data-ref="sdscatvprintf">sdscatvprintf</a>(<a class="local col0 ref" href="#70s" title='s' data-ref="70s">s</a>,<a class="local col1 ref" href="#71fmt" title='fmt' data-ref="71fmt">fmt</a>,<a class="local col2 ref" href="#72ap" title='ap' data-ref="72ap">ap</a>);</td></tr>
+<tr><th id="431">431</th><td>    <span class="macro" title="__builtin_va_end(ap)" data-ref="_M/va_end">va_end</span>(<a class="local col2 ref" href="#72ap" title='ap' data-ref="72ap">ap</a>);</td></tr>
+<tr><th id="432">432</th><td>    <b>return</b> <a class="local col3 ref" href="#73t" title='t' data-ref="73t">t</a>;</td></tr>
+<tr><th id="433">433</th><td>}</td></tr>
+<tr><th id="434">434</th><td></td></tr>
+<tr><th id="435">435</th><td><i>/* This function is similar to sdscatprintf, but much faster as it does</i></td></tr>
+<tr><th id="436">436</th><td><i> * not rely on sprintf() family functions implemented by the libc that</i></td></tr>
+<tr><th id="437">437</th><td><i> * are often very slow. Moreover directly handling the sds string as</i></td></tr>
+<tr><th id="438">438</th><td><i> * new data is concatenated provides a performance improvement.</i></td></tr>
+<tr><th id="439">439</th><td><i> *</i></td></tr>
+<tr><th id="440">440</th><td><i> * However this function only handles an incompatible subset of printf-alike</i></td></tr>
+<tr><th id="441">441</th><td><i> * format specifiers:</i></td></tr>
+<tr><th id="442">442</th><td><i> *</i></td></tr>
+<tr><th id="443">443</th><td><i> * %s - C String</i></td></tr>
+<tr><th id="444">444</th><td><i> * %S - SDS string</i></td></tr>
+<tr><th id="445">445</th><td><i> * %i - signed int</i></td></tr>
+<tr><th id="446">446</th><td><i> * %I - 64 bit signed integer (long long, int64_t)</i></td></tr>
+<tr><th id="447">447</th><td><i> * %u - unsigned int</i></td></tr>
+<tr><th id="448">448</th><td><i> * %U - 64 bit unsigned integer (unsigned long long, uint64_t)</i></td></tr>
+<tr><th id="449">449</th><td><i> * %% - Verbatim "%" character.</i></td></tr>
+<tr><th id="450">450</th><td><i> */</i></td></tr>
+<tr><th id="451">451</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatfmt" title='sdscatfmt' data-ref="sdscatfmt">sdscatfmt</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col4 decl" id="74s" title='s' data-type='sds' data-ref="74s">s</dfn>, <em>char</em> <em>const</em> *<dfn class="local col5 decl" id="75fmt" title='fmt' data-type='const char *' data-ref="75fmt">fmt</dfn>, ...) {</td></tr>
+<tr><th id="452">452</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col6 decl" id="76sh" title='sh' data-type='struct sdshdr *' data-ref="76sh">sh</dfn> = (<em>void</em>*) (<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="453">453</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="77initlen" title='initlen' data-type='size_t' data-ref="77initlen">initlen</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>);</td></tr>
+<tr><th id="454">454</th><td>    <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="78f" title='f' data-type='const char *' data-ref="78f">f</dfn> = <a class="local col5 ref" href="#75fmt" title='fmt' data-ref="75fmt">fmt</a>;</td></tr>
+<tr><th id="455">455</th><td>    <em>int</em> <dfn class="local col9 decl" id="79i" title='i' data-type='int' data-ref="79i">i</dfn>;</td></tr>
+<tr><th id="456">456</th><td>    <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col0 decl" id="80ap" title='ap' data-type='va_list' data-ref="80ap">ap</dfn>;</td></tr>
+<tr><th id="457">457</th><td></td></tr>
+<tr><th id="458">458</th><td>    <span class="macro" title="__builtin_va_start(ap, fmt)" data-ref="_M/va_start">va_start</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<a class="local col5 ref" href="#75fmt" title='fmt' data-ref="75fmt">fmt</a>);</td></tr>
+<tr><th id="459">459</th><td>    <a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a> = <a class="local col5 ref" href="#75fmt" title='fmt' data-ref="75fmt">fmt</a>;    <i>/* Next format specifier byte to process. */</i></td></tr>
+<tr><th id="460">460</th><td>    <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a> = <a class="local col7 ref" href="#77initlen" title='initlen' data-ref="77initlen">initlen</a>; <i>/* Position of the next byte to write to dest str. */</i></td></tr>
+<tr><th id="461">461</th><td>    <b>while</b>(*<a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>) {</td></tr>
+<tr><th id="462">462</th><td>        <em>char</em> <dfn class="local col1 decl" id="81next" title='next' data-type='char' data-ref="81next">next</dfn>, *<dfn class="local col2 decl" id="82str" title='str' data-type='char *' data-ref="82str">str</dfn>;</td></tr>
+<tr><th id="463">463</th><td>        <em>unsigned</em> <em>int</em> <dfn class="local col3 decl" id="83l" title='l' data-type='unsigned int' data-ref="83l">l</dfn>;</td></tr>
+<tr><th id="464">464</th><td>        <em>long</em> <em>long</em> <dfn class="local col4 decl" id="84num" title='num' data-type='long long' data-ref="84num">num</dfn>;</td></tr>
+<tr><th id="465">465</th><td>        <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col5 decl" id="85unum" title='unum' data-type='unsigned long long' data-ref="85unum">unum</dfn>;</td></tr>
+<tr><th id="466">466</th><td></td></tr>
+<tr><th id="467">467</th><td>        <i>/* Make sure there is always space for at least 1 char. */</i></td></tr>
+<tr><th id="468">468</th><td>        <b>if</b> (<a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> == <var>0</var>) {</td></tr>
+<tr><th id="469">469</th><td>            <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>,<var>1</var>);</td></tr>
+<tr><th id="470">470</th><td>            <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a> = (<em>void</em>*) (<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="471">471</th><td>        }</td></tr>
+<tr><th id="472">472</th><td></td></tr>
+<tr><th id="473">473</th><td>        <b>switch</b>(*<a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>) {</td></tr>
+<tr><th id="474">474</th><td>        <b>case</b> <kbd>'%'</kbd>:</td></tr>
+<tr><th id="475">475</th><td>            <a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a> = *(<a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>+<var>1</var>);</td></tr>
+<tr><th id="476">476</th><td>            <a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>++;</td></tr>
+<tr><th id="477">477</th><td>            <b>switch</b>(<a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a>) {</td></tr>
+<tr><th id="478">478</th><td>            <b>case</b> <kbd>'s'</kbd>:</td></tr>
+<tr><th id="479">479</th><td>            <b>case</b> <kbd>'S'</kbd>:</td></tr>
+<tr><th id="480">480</th><td>                <a class="local col2 ref" href="#82str" title='str' data-ref="82str">str</a> = <span class="macro" title="__builtin_va_arg(ap, char*)" data-ref="_M/va_arg">va_arg</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<em>char</em>*);</td></tr>
+<tr><th id="481">481</th><td>                <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a> = (<a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a> == <kbd>'s'</kbd>) ? <a class="ref fn" href="../../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col2 ref" href="#82str" title='str' data-ref="82str">str</a>) : <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col2 ref" href="#82str" title='str' data-ref="82str">str</a>);</td></tr>
+<tr><th id="482">482</th><td>                <b>if</b> (<a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> &lt; <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>) {</td></tr>
+<tr><th id="483">483</th><td>                    <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="484">484</th><td>                    <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a> = (<em>void</em>*) (<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="485">485</th><td>                }</td></tr>
+<tr><th id="486">486</th><td>                <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>+<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>,<a class="local col2 ref" href="#82str" title='str' data-ref="82str">str</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="487">487</th><td>                <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="488">488</th><td>                <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="489">489</th><td>                <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="490">490</th><td>                <b>break</b>;</td></tr>
+<tr><th id="491">491</th><td>            <b>case</b> <kbd>'i'</kbd>:</td></tr>
+<tr><th id="492">492</th><td>            <b>case</b> <kbd>'I'</kbd>:</td></tr>
+<tr><th id="493">493</th><td>                <b>if</b> (<a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a> == <kbd>'i'</kbd>)</td></tr>
+<tr><th id="494">494</th><td>                    <a class="local col4 ref" href="#84num" title='num' data-ref="84num">num</a> = <span class="macro" title="__builtin_va_arg(ap, int)" data-ref="_M/va_arg">va_arg</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<em>int</em>);</td></tr>
+<tr><th id="495">495</th><td>                <b>else</b></td></tr>
+<tr><th id="496">496</th><td>                    <a class="local col4 ref" href="#84num" title='num' data-ref="84num">num</a> = <span class="macro" title="__builtin_va_arg(ap, long long)" data-ref="_M/va_arg">va_arg</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<em>long</em> <em>long</em>);</td></tr>
+<tr><th id="497">497</th><td>                {</td></tr>
+<tr><th id="498">498</th><td>                    <em>char</em> <dfn class="local col6 decl" id="86buf" title='buf' data-type='char [21]' data-ref="86buf">buf</dfn>[<a class="macro" href="#300" title="21" data-ref="_M/SDS_LLSTR_SIZE">SDS_LLSTR_SIZE</a>];</td></tr>
+<tr><th id="499">499</th><td>                    <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a> = <a class="ref fn" href="#sdsll2str" title='sdsll2str' data-ref="sdsll2str">sdsll2str</a>(<a class="local col6 ref" href="#86buf" title='buf' data-ref="86buf">buf</a>,<a class="local col4 ref" href="#84num" title='num' data-ref="84num">num</a>);</td></tr>
+<tr><th id="500">500</th><td>                    <b>if</b> (<a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> &lt; <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>) {</td></tr>
+<tr><th id="501">501</th><td>                        <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="502">502</th><td>                        <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a> = (<em>void</em>*) (<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="503">503</th><td>                    }</td></tr>
+<tr><th id="504">504</th><td>                    <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>+<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>,<a class="local col6 ref" href="#86buf" title='buf' data-ref="86buf">buf</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="505">505</th><td>                    <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="506">506</th><td>                    <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="507">507</th><td>                    <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="508">508</th><td>                }</td></tr>
+<tr><th id="509">509</th><td>                <b>break</b>;</td></tr>
+<tr><th id="510">510</th><td>            <b>case</b> <kbd>'u'</kbd>:</td></tr>
+<tr><th id="511">511</th><td>            <b>case</b> <kbd>'U'</kbd>:</td></tr>
+<tr><th id="512">512</th><td>                <b>if</b> (<a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a> == <kbd>'u'</kbd>)</td></tr>
+<tr><th id="513">513</th><td>                    <a class="local col5 ref" href="#85unum" title='unum' data-ref="85unum">unum</a> = <span class="macro" title="__builtin_va_arg(ap, unsigned int)" data-ref="_M/va_arg">va_arg</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<em>unsigned</em> <em>int</em>);</td></tr>
+<tr><th id="514">514</th><td>                <b>else</b></td></tr>
+<tr><th id="515">515</th><td>                    <a class="local col5 ref" href="#85unum" title='unum' data-ref="85unum">unum</a> = <span class="macro" title="__builtin_va_arg(ap, unsigned long long)" data-ref="_M/va_arg">va_arg</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>,<em>unsigned</em> <em>long</em> <em>long</em>);</td></tr>
+<tr><th id="516">516</th><td>                {</td></tr>
+<tr><th id="517">517</th><td>                    <em>char</em> <dfn class="local col7 decl" id="87buf" title='buf' data-type='char [21]' data-ref="87buf">buf</dfn>[<a class="macro" href="#300" title="21" data-ref="_M/SDS_LLSTR_SIZE">SDS_LLSTR_SIZE</a>];</td></tr>
+<tr><th id="518">518</th><td>                    <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a> = <a class="ref fn" href="#sdsull2str" title='sdsull2str' data-ref="sdsull2str">sdsull2str</a>(<a class="local col7 ref" href="#87buf" title='buf' data-ref="87buf">buf</a>,<a class="local col5 ref" href="#85unum" title='unum' data-ref="85unum">unum</a>);</td></tr>
+<tr><th id="519">519</th><td>                    <b>if</b> (<a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> &lt; <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>) {</td></tr>
+<tr><th id="520">520</th><td>                        <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a> = <a class="ref fn" href="#sdsMakeRoomFor" title='sdsMakeRoomFor' data-ref="sdsMakeRoomFor">sdsMakeRoomFor</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="521">521</th><td>                        <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a> = (<em>void</em>*) (<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="522">522</th><td>                    }</td></tr>
+<tr><th id="523">523</th><td>                    <a class="ref fn" href="../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>+<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>,<a class="local col7 ref" href="#87buf" title='buf' data-ref="87buf">buf</a>,<a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>);</td></tr>
+<tr><th id="524">524</th><td>                    <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="525">525</th><td>                    <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="526">526</th><td>                    <a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a> += <a class="local col3 ref" href="#83l" title='l' data-ref="83l">l</a>;</td></tr>
+<tr><th id="527">527</th><td>                }</td></tr>
+<tr><th id="528">528</th><td>                <b>break</b>;</td></tr>
+<tr><th id="529">529</th><td>            <b>default</b>: <i>/* Handle %% and generally %&lt;unknown&gt;. */</i></td></tr>
+<tr><th id="530">530</th><td>                <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>[<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>++] = <a class="local col1 ref" href="#81next" title='next' data-ref="81next">next</a>;</td></tr>
+<tr><th id="531">531</th><td>                <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <var>1</var>;</td></tr>
+<tr><th id="532">532</th><td>                <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <var>1</var>;</td></tr>
+<tr><th id="533">533</th><td>                <b>break</b>;</td></tr>
+<tr><th id="534">534</th><td>            }</td></tr>
+<tr><th id="535">535</th><td>            <b>break</b>;</td></tr>
+<tr><th id="536">536</th><td>        <b>default</b>:</td></tr>
+<tr><th id="537">537</th><td>            <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>[<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>++] = *<a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>;</td></tr>
+<tr><th id="538">538</th><td>            <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> += <var>1</var>;</td></tr>
+<tr><th id="539">539</th><td>            <a class="local col6 ref" href="#76sh" title='sh' data-ref="76sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> -= <var>1</var>;</td></tr>
+<tr><th id="540">540</th><td>            <b>break</b>;</td></tr>
+<tr><th id="541">541</th><td>        }</td></tr>
+<tr><th id="542">542</th><td>        <a class="local col8 ref" href="#78f" title='f' data-ref="78f">f</a>++;</td></tr>
+<tr><th id="543">543</th><td>    }</td></tr>
+<tr><th id="544">544</th><td>    <span class="macro" title="__builtin_va_end(ap)" data-ref="_M/va_end">va_end</span>(<a class="local col0 ref" href="#80ap" title='ap' data-ref="80ap">ap</a>);</td></tr>
+<tr><th id="545">545</th><td></td></tr>
+<tr><th id="546">546</th><td>    <i>/* Add null-term */</i></td></tr>
+<tr><th id="547">547</th><td>    <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>[<a class="local col9 ref" href="#79i" title='i' data-ref="79i">i</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="548">548</th><td>    <b>return</b> <a class="local col4 ref" href="#74s" title='s' data-ref="74s">s</a>;</td></tr>
+<tr><th id="549">549</th><td>}</td></tr>
+<tr><th id="550">550</th><td></td></tr>
+<tr><th id="551">551</th><td><i>/* Remove the part of the string from left and from right composed just of</i></td></tr>
+<tr><th id="552">552</th><td><i> * contiguous characters found in 'cset', that is a null terminted C string.</i></td></tr>
+<tr><th id="553">553</th><td><i> *</i></td></tr>
+<tr><th id="554">554</th><td><i> * After the call, the modified sds string is no longer valid and all the</i></td></tr>
+<tr><th id="555">555</th><td><i> * references must be substituted with the new pointer returned by the call.</i></td></tr>
+<tr><th id="556">556</th><td><i> *</i></td></tr>
+<tr><th id="557">557</th><td><i> * Example:</i></td></tr>
+<tr><th id="558">558</th><td><i> *</i></td></tr>
+<tr><th id="559">559</th><td><i> * s = sdsnew("AA...AA.a.aa.aHelloWorld     :::");</i></td></tr>
+<tr><th id="560">560</th><td><i> * s = sdstrim(s,"A. :");</i></td></tr>
+<tr><th id="561">561</th><td><i> * printf("%s\n", s);</i></td></tr>
+<tr><th id="562">562</th><td><i> *</i></td></tr>
+<tr><th id="563">563</th><td><i> * Output will be just "Hello World".</i></td></tr>
+<tr><th id="564">564</th><td><i> */</i></td></tr>
+<tr><th id="565">565</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdstrim" title='sdstrim' data-ref="sdstrim">sdstrim</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col8 decl" id="88s" title='s' data-type='sds' data-ref="88s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="89cset" title='cset' data-type='const char *' data-ref="89cset">cset</dfn>) {</td></tr>
+<tr><th id="566">566</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col0 decl" id="90sh" title='sh' data-type='struct sdshdr *' data-ref="90sh">sh</dfn> = (<em>void</em>*) (<a class="local col8 ref" href="#88s" title='s' data-ref="88s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="567">567</th><td>    <em>char</em> *<dfn class="local col1 decl" id="91start" title='start' data-type='char *' data-ref="91start">start</dfn>, *<dfn class="local col2 decl" id="92end" title='end' data-type='char *' data-ref="92end">end</dfn>, *<dfn class="local col3 decl" id="93sp" title='sp' data-type='char *' data-ref="93sp">sp</dfn>, *<dfn class="local col4 decl" id="94ep" title='ep' data-type='char *' data-ref="94ep">ep</dfn>;</td></tr>
+<tr><th id="568">568</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="95len" title='len' data-type='size_t' data-ref="95len">len</dfn>;</td></tr>
+<tr><th id="569">569</th><td></td></tr>
+<tr><th id="570">570</th><td>    <a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a> = <a class="local col1 ref" href="#91start" title='start' data-ref="91start">start</a> = <a class="local col8 ref" href="#88s" title='s' data-ref="88s">s</a>;</td></tr>
+<tr><th id="571">571</th><td>    <a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a> = <a class="local col2 ref" href="#92end" title='end' data-ref="92end">end</a> = <a class="local col8 ref" href="#88s" title='s' data-ref="88s">s</a>+<a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col8 ref" href="#88s" title='s' data-ref="88s">s</a>)-<var>1</var>;</td></tr>
+<tr><th id="572">572</th><td>    <b>while</b>(<a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a> &lt;= <a class="local col2 ref" href="#92end" title='end' data-ref="92end">end</a> &amp;&amp; <a class="ref fn" href="../../../include/string.h.html#strchr" title='strchr' data-ref="strchr">strchr</a>(<a class="local col9 ref" href="#89cset" title='cset' data-ref="89cset">cset</a>, *<a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a>)) <a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a>++;</td></tr>
+<tr><th id="573">573</th><td>    <b>while</b>(<a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a> &gt; <a class="local col1 ref" href="#91start" title='start' data-ref="91start">start</a> &amp;&amp; <a class="ref fn" href="../../../include/string.h.html#strchr" title='strchr' data-ref="strchr">strchr</a>(<a class="local col9 ref" href="#89cset" title='cset' data-ref="89cset">cset</a>, *<a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a>)) <a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a>--;</td></tr>
+<tr><th id="574">574</th><td>    <a class="local col5 ref" href="#95len" title='len' data-ref="95len">len</a> = (<a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a> &gt; <a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a>) ? <var>0</var> : ((<a class="local col4 ref" href="#94ep" title='ep' data-ref="94ep">ep</a>-<a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a>)+<var>1</var>);</td></tr>
+<tr><th id="575">575</th><td>    <b>if</b> (<a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a> != <a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a>) <a class="ref fn" href="../../../include/string.h.html#memmove" title='memmove' data-ref="memmove">memmove</a>(<a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>, <a class="local col3 ref" href="#93sp" title='sp' data-ref="93sp">sp</a>, <a class="local col5 ref" href="#95len" title='len' data-ref="95len">len</a>);</td></tr>
+<tr><th id="576">576</th><td>    <a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>[<a class="local col5 ref" href="#95len" title='len' data-ref="95len">len</a>] = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="577">577</th><td>    <a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>+(<a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>-<a class="local col5 ref" href="#95len" title='len' data-ref="95len">len</a>);</td></tr>
+<tr><th id="578">578</th><td>    <a class="local col0 ref" href="#90sh" title='sh' data-ref="90sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col5 ref" href="#95len" title='len' data-ref="95len">len</a>;</td></tr>
+<tr><th id="579">579</th><td>    <b>return</b> <a class="local col8 ref" href="#88s" title='s' data-ref="88s">s</a>;</td></tr>
+<tr><th id="580">580</th><td>}</td></tr>
+<tr><th id="581">581</th><td></td></tr>
+<tr><th id="582">582</th><td><i>/* Turn the string into a smaller (or equal) string containing only the</i></td></tr>
+<tr><th id="583">583</th><td><i> * substring specified by the 'start' and 'end' indexes.</i></td></tr>
+<tr><th id="584">584</th><td><i> *</i></td></tr>
+<tr><th id="585">585</th><td><i> * start and end can be negative, where -1 means the last character of the</i></td></tr>
+<tr><th id="586">586</th><td><i> * string, -2 the penultimate character, and so forth.</i></td></tr>
+<tr><th id="587">587</th><td><i> *</i></td></tr>
+<tr><th id="588">588</th><td><i> * The interval is inclusive, so the start and end characters will be part</i></td></tr>
+<tr><th id="589">589</th><td><i> * of the resulting string.</i></td></tr>
+<tr><th id="590">590</th><td><i> *</i></td></tr>
+<tr><th id="591">591</th><td><i> * The string is modified in-place.</i></td></tr>
+<tr><th id="592">592</th><td><i> *</i></td></tr>
+<tr><th id="593">593</th><td><i> * Example:</i></td></tr>
+<tr><th id="594">594</th><td><i> *</i></td></tr>
+<tr><th id="595">595</th><td><i> * s = sdsnew("Hello World");</i></td></tr>
+<tr><th id="596">596</th><td><i> * sdsrange(s,1,-1); =&gt; "ello World"</i></td></tr>
+<tr><th id="597">597</th><td><i> */</i></td></tr>
+<tr><th id="598">598</th><td><em>void</em> <dfn class="decl def fn" id="sdsrange" title='sdsrange' data-ref="sdsrange">sdsrange</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col6 decl" id="96s" title='s' data-type='sds' data-ref="96s">s</dfn>, <em>int</em> <dfn class="local col7 decl" id="97start" title='start' data-type='int' data-ref="97start">start</dfn>, <em>int</em> <dfn class="local col8 decl" id="98end" title='end' data-type='int' data-ref="98end">end</dfn>) {</td></tr>
+<tr><th id="599">599</th><td>    <b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a> *<dfn class="local col9 decl" id="99sh" title='sh' data-type='struct sdshdr *' data-ref="99sh">sh</dfn> = (<em>void</em>*) (<a class="local col6 ref" href="#96s" title='s' data-ref="96s">s</a>-(<b>sizeof</b>(<b>struct</b> <a class="type" href="sds.h.html#sdshdr" title='sdshdr' data-ref="sdshdr">sdshdr</a>)));</td></tr>
+<tr><th id="600">600</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="100newlen" title='newlen' data-type='size_t' data-ref="100newlen">newlen</dfn>, <dfn class="local col1 decl" id="101len" title='len' data-type='size_t' data-ref="101len">len</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col6 ref" href="#96s" title='s' data-ref="96s">s</a>);</td></tr>
+<tr><th id="601">601</th><td></td></tr>
+<tr><th id="602">602</th><td>    <b>if</b> (<a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a> == <var>0</var>) <b>return</b>;</td></tr>
+<tr><th id="603">603</th><td>    <b>if</b> (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="604">604</th><td>        <a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> = <a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a>+<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a>;</td></tr>
+<tr><th id="605">605</th><td>        <b>if</b> (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &lt; <var>0</var>) <a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> = <var>0</var>;</td></tr>
+<tr><th id="606">606</th><td>    }</td></tr>
+<tr><th id="607">607</th><td>    <b>if</b> (<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> &lt; <var>0</var>) {</td></tr>
+<tr><th id="608">608</th><td>        <a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> = <a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a>+<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a>;</td></tr>
+<tr><th id="609">609</th><td>        <b>if</b> (<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> &lt; <var>0</var>) <a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> = <var>0</var>;</td></tr>
+<tr><th id="610">610</th><td>    }</td></tr>
+<tr><th id="611">611</th><td>    <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a> = (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &gt; <a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a>) ? <var>0</var> : (<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a>-<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a>)+<var>1</var>;</td></tr>
+<tr><th id="612">612</th><td>    <b>if</b> (<a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a> != <var>0</var>) {</td></tr>
+<tr><th id="613">613</th><td>        <b>if</b> (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &gt;= (<em>signed</em>)<a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a>) {</td></tr>
+<tr><th id="614">614</th><td>            <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a> = <var>0</var>;</td></tr>
+<tr><th id="615">615</th><td>        } <b>else</b> <b>if</b> (<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> &gt;= (<em>signed</em>)<a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a>) {</td></tr>
+<tr><th id="616">616</th><td>            <a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a> = <a class="local col1 ref" href="#101len" title='len' data-ref="101len">len</a>-<var>1</var>;</td></tr>
+<tr><th id="617">617</th><td>            <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a> = (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &gt; <a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a>) ? <var>0</var> : (<a class="local col8 ref" href="#98end" title='end' data-ref="98end">end</a>-<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a>)+<var>1</var>;</td></tr>
+<tr><th id="618">618</th><td>        }</td></tr>
+<tr><th id="619">619</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="620">620</th><td>        <a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> = <var>0</var>;</td></tr>
+<tr><th id="621">621</th><td>    }</td></tr>
+<tr><th id="622">622</th><td>    <b>if</b> (<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a> &amp;&amp; <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a>) <a class="ref fn" href="../../../include/string.h.html#memmove" title='memmove' data-ref="memmove">memmove</a>(<a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>, <a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>+<a class="local col7 ref" href="#97start" title='start' data-ref="97start">start</a>, <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a>);</td></tr>
+<tr><th id="623">623</th><td>    <a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::buf" title='sdshdr::buf' data-ref="sdshdr::buf">buf</a>[<a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a>] = <var>0</var>;</td></tr>
+<tr><th id="624">624</th><td>    <a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a> = <a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::free" title='sdshdr::free' data-ref="sdshdr::free">free</a>+(<a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a>-<a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a>);</td></tr>
+<tr><th id="625">625</th><td>    <a class="local col9 ref" href="#99sh" title='sh' data-ref="99sh">sh</a>-&gt;<a class="ref field" href="sds.h.html#sdshdr::len" title='sdshdr::len' data-ref="sdshdr::len">len</a> = <a class="local col0 ref" href="#100newlen" title='newlen' data-ref="100newlen">newlen</a>;</td></tr>
+<tr><th id="626">626</th><td>}</td></tr>
+<tr><th id="627">627</th><td></td></tr>
+<tr><th id="628">628</th><td><i>/* Apply tolower() to every character of the sds string 's'. */</i></td></tr>
+<tr><th id="629">629</th><td><em>void</em> <dfn class="decl def fn" id="sdstolower" title='sdstolower' data-ref="sdstolower">sdstolower</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col2 decl" id="102s" title='s' data-type='sds' data-ref="102s">s</dfn>) {</td></tr>
+<tr><th id="630">630</th><td>    <em>int</em> <dfn class="local col3 decl" id="103len" title='len' data-type='int' data-ref="103len">len</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col2 ref" href="#102s" title='s' data-ref="102s">s</a>), <dfn class="local col4 decl" id="104j" title='j' data-type='int' data-ref="104j">j</dfn>;</td></tr>
+<tr><th id="631">631</th><td></td></tr>
+<tr><th id="632">632</th><td>    <b>for</b> (<a class="local col4 ref" href="#104j" title='j' data-ref="104j">j</a> = <var>0</var>; <a class="local col4 ref" href="#104j" title='j' data-ref="104j">j</a> &lt; <a class="local col3 ref" href="#103len" title='len' data-ref="103len">len</a>; <a class="local col4 ref" href="#104j" title='j' data-ref="104j">j</a>++) <a class="local col2 ref" href="#102s" title='s' data-ref="102s">s</a>[<a class="local col4 ref" href="#104j" title='j' data-ref="104j">j</a>] = <a class="ref fn" href="../../../include/ctype.h.html#tolower" title='tolower' data-ref="tolower">tolower</a>(<a class="local col2 ref" href="#102s" title='s' data-ref="102s">s</a>[<a class="local col4 ref" href="#104j" title='j' data-ref="104j">j</a>]);</td></tr>
+<tr><th id="633">633</th><td>}</td></tr>
+<tr><th id="634">634</th><td></td></tr>
+<tr><th id="635">635</th><td><i>/* Apply toupper() to every character of the sds string 's'. */</i></td></tr>
+<tr><th id="636">636</th><td><em>void</em> <dfn class="decl def fn" id="sdstoupper" title='sdstoupper' data-ref="sdstoupper">sdstoupper</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col5 decl" id="105s" title='s' data-type='sds' data-ref="105s">s</dfn>) {</td></tr>
+<tr><th id="637">637</th><td>    <em>int</em> <dfn class="local col6 decl" id="106len" title='len' data-type='int' data-ref="106len">len</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col5 ref" href="#105s" title='s' data-ref="105s">s</a>), <dfn class="local col7 decl" id="107j" title='j' data-type='int' data-ref="107j">j</dfn>;</td></tr>
+<tr><th id="638">638</th><td></td></tr>
+<tr><th id="639">639</th><td>    <b>for</b> (<a class="local col7 ref" href="#107j" title='j' data-ref="107j">j</a> = <var>0</var>; <a class="local col7 ref" href="#107j" title='j' data-ref="107j">j</a> &lt; <a class="local col6 ref" href="#106len" title='len' data-ref="106len">len</a>; <a class="local col7 ref" href="#107j" title='j' data-ref="107j">j</a>++) <a class="local col5 ref" href="#105s" title='s' data-ref="105s">s</a>[<a class="local col7 ref" href="#107j" title='j' data-ref="107j">j</a>] = <a class="ref fn" href="../../../include/ctype.h.html#toupper" title='toupper' data-ref="toupper">toupper</a>(<a class="local col5 ref" href="#105s" title='s' data-ref="105s">s</a>[<a class="local col7 ref" href="#107j" title='j' data-ref="107j">j</a>]);</td></tr>
+<tr><th id="640">640</th><td>}</td></tr>
+<tr><th id="641">641</th><td></td></tr>
+<tr><th id="642">642</th><td><i>/* Compare two sds strings s1 and s2 with memcmp().</i></td></tr>
+<tr><th id="643">643</th><td><i> *</i></td></tr>
+<tr><th id="644">644</th><td><i> * Return value:</i></td></tr>
+<tr><th id="645">645</th><td><i> *</i></td></tr>
+<tr><th id="646">646</th><td><i> *     1 if s1 &gt; s2.</i></td></tr>
+<tr><th id="647">647</th><td><i> *    -1 if s1 &lt; s2.</i></td></tr>
+<tr><th id="648">648</th><td><i> *     0 if s1 and s2 are exactly the same binary string.</i></td></tr>
+<tr><th id="649">649</th><td><i> *</i></td></tr>
+<tr><th id="650">650</th><td><i> * If two strings share exactly the same prefix, but one of the two has</i></td></tr>
+<tr><th id="651">651</th><td><i> * additional characters, the longer string is considered to be greater than</i></td></tr>
+<tr><th id="652">652</th><td><i> * the smaller one. */</i></td></tr>
+<tr><th id="653">653</th><td><em>int</em> <dfn class="decl def fn" id="sdscmp" title='sdscmp' data-ref="sdscmp">sdscmp</dfn>(<em>const</em> <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col8 decl" id="108s1" title='s1' data-type='const sds' data-ref="108s1">s1</dfn>, <em>const</em> <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col9 decl" id="109s2" title='s2' data-type='const sds' data-ref="109s2">s2</dfn>) {</td></tr>
+<tr><th id="654">654</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="110l1" title='l1' data-type='size_t' data-ref="110l1">l1</dfn>, <dfn class="local col1 decl" id="111l2" title='l2' data-type='size_t' data-ref="111l2">l2</dfn>, <dfn class="local col2 decl" id="112minlen" title='minlen' data-type='size_t' data-ref="112minlen">minlen</dfn>;</td></tr>
+<tr><th id="655">655</th><td>    <em>int</em> <dfn class="local col3 decl" id="113cmp" title='cmp' data-type='int' data-ref="113cmp">cmp</dfn>;</td></tr>
+<tr><th id="656">656</th><td></td></tr>
+<tr><th id="657">657</th><td>    <a class="local col0 ref" href="#110l1" title='l1' data-ref="110l1">l1</a> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col8 ref" href="#108s1" title='s1' data-ref="108s1">s1</a>);</td></tr>
+<tr><th id="658">658</th><td>    <a class="local col1 ref" href="#111l2" title='l2' data-ref="111l2">l2</a> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col9 ref" href="#109s2" title='s2' data-ref="109s2">s2</a>);</td></tr>
+<tr><th id="659">659</th><td>    <a class="local col2 ref" href="#112minlen" title='minlen' data-ref="112minlen">minlen</a> = (<a class="local col0 ref" href="#110l1" title='l1' data-ref="110l1">l1</a> &lt; <a class="local col1 ref" href="#111l2" title='l2' data-ref="111l2">l2</a>) ? <a class="local col0 ref" href="#110l1" title='l1' data-ref="110l1">l1</a> : <a class="local col1 ref" href="#111l2" title='l2' data-ref="111l2">l2</a>;</td></tr>
+<tr><th id="660">660</th><td>    <a class="local col3 ref" href="#113cmp" title='cmp' data-ref="113cmp">cmp</a> = <a class="ref fn" href="../../../include/string.h.html#memcmp" title='memcmp' data-ref="memcmp">memcmp</a>(<a class="local col8 ref" href="#108s1" title='s1' data-ref="108s1">s1</a>,<a class="local col9 ref" href="#109s2" title='s2' data-ref="109s2">s2</a>,<a class="local col2 ref" href="#112minlen" title='minlen' data-ref="112minlen">minlen</a>);</td></tr>
+<tr><th id="661">661</th><td>    <b>if</b> (<a class="local col3 ref" href="#113cmp" title='cmp' data-ref="113cmp">cmp</a> == <var>0</var>) <b>return</b> <a class="local col0 ref" href="#110l1" title='l1' data-ref="110l1">l1</a>-<a class="local col1 ref" href="#111l2" title='l2' data-ref="111l2">l2</a>;</td></tr>
+<tr><th id="662">662</th><td>    <b>return</b> <a class="local col3 ref" href="#113cmp" title='cmp' data-ref="113cmp">cmp</a>;</td></tr>
+<tr><th id="663">663</th><td>}</td></tr>
+<tr><th id="664">664</th><td></td></tr>
+<tr><th id="665">665</th><td><i>/* Split 's' with separator in 'sep'. An array</i></td></tr>
+<tr><th id="666">666</th><td><i> * of sds strings is returned. *count will be set</i></td></tr>
+<tr><th id="667">667</th><td><i> * by reference to the number of tokens returned.</i></td></tr>
+<tr><th id="668">668</th><td><i> *</i></td></tr>
+<tr><th id="669">669</th><td><i> * On out of memory, zero length string, zero length</i></td></tr>
+<tr><th id="670">670</th><td><i> * separator, NULL is returned.</i></td></tr>
+<tr><th id="671">671</th><td><i> *</i></td></tr>
+<tr><th id="672">672</th><td><i> * Note that 'sep' is able to split a string using</i></td></tr>
+<tr><th id="673">673</th><td><i> * a multi-character separator. For example</i></td></tr>
+<tr><th id="674">674</th><td><i> * sdssplit("foo_-_bar","_-_"); will return two</i></td></tr>
+<tr><th id="675">675</th><td><i> * elements "foo" and "bar".</i></td></tr>
+<tr><th id="676">676</th><td><i> *</i></td></tr>
+<tr><th id="677">677</th><td><i> * This version of the function is binary-safe but</i></td></tr>
+<tr><th id="678">678</th><td><i> * requires length arguments. sdssplit() is just the</i></td></tr>
+<tr><th id="679">679</th><td><i> * same function but for zero-terminated strings.</i></td></tr>
+<tr><th id="680">680</th><td><i> */</i></td></tr>
+<tr><th id="681">681</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> *<dfn class="decl def fn" id="sdssplitlen" title='sdssplitlen' data-ref="sdssplitlen">sdssplitlen</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="114s" title='s' data-type='const char *' data-ref="114s">s</dfn>, <em>int</em> <dfn class="local col5 decl" id="115len" title='len' data-type='int' data-ref="115len">len</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="116sep" title='sep' data-type='const char *' data-ref="116sep">sep</dfn>, <em>int</em> <dfn class="local col7 decl" id="117seplen" title='seplen' data-type='int' data-ref="117seplen">seplen</dfn>, <em>int</em> *<dfn class="local col8 decl" id="118count" title='count' data-type='int *' data-ref="118count">count</dfn>) {</td></tr>
+<tr><th id="682">682</th><td>    <em>int</em> <dfn class="local col9 decl" id="119elements" title='elements' data-type='int' data-ref="119elements">elements</dfn> = <var>0</var>, <dfn class="local col0 decl" id="120slots" title='slots' data-type='int' data-ref="120slots">slots</dfn> = <var>5</var>, <dfn class="local col1 decl" id="121start" title='start' data-type='int' data-ref="121start">start</dfn> = <var>0</var>, <dfn class="local col2 decl" id="122j" title='j' data-type='int' data-ref="122j">j</dfn>;</td></tr>
+<tr><th id="683">683</th><td>    <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> *<dfn class="local col3 decl" id="123tokens" title='tokens' data-type='sds *' data-ref="123tokens">tokens</dfn>;</td></tr>
+<tr><th id="684">684</th><td></td></tr>
+<tr><th id="685">685</th><td>    <b>if</b> (<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a> &lt; <var>1</var> || <a class="local col5 ref" href="#115len" title='len' data-ref="115len">len</a> &lt; <var>0</var>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="686">686</th><td></td></tr>
+<tr><th id="687">687</th><td>    <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a> = <a class="macro" href="zmalloc.h.html#7" title="malloc" data-ref="_M/zmalloc">zmalloc</a>(<b>sizeof</b>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a>)*<a class="local col0 ref" href="#120slots" title='slots' data-ref="120slots">slots</a>);</td></tr>
+<tr><th id="688">688</th><td>    <b>if</b> (<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="689">689</th><td></td></tr>
+<tr><th id="690">690</th><td>    <b>if</b> (<a class="local col5 ref" href="#115len" title='len' data-ref="115len">len</a> == <var>0</var>) {</td></tr>
+<tr><th id="691">691</th><td>        *<a class="local col8 ref" href="#118count" title='count' data-ref="118count">count</a> = <var>0</var>;</td></tr>
+<tr><th id="692">692</th><td>        <b>return</b> <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>;</td></tr>
+<tr><th id="693">693</th><td>    }</td></tr>
+<tr><th id="694">694</th><td>    <b>for</b> (<a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a> = <var>0</var>; <a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a> &lt; (<a class="local col5 ref" href="#115len" title='len' data-ref="115len">len</a>-(<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a>-<var>1</var>)); <a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>++) {</td></tr>
+<tr><th id="695">695</th><td>        <i>/* make sure there is room for the next element and the final one */</i></td></tr>
+<tr><th id="696">696</th><td>        <b>if</b> (<a class="local col0 ref" href="#120slots" title='slots' data-ref="120slots">slots</a> &lt; <a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>+<var>2</var>) {</td></tr>
+<tr><th id="697">697</th><td>            <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> *<dfn class="local col4 decl" id="124newtokens" title='newtokens' data-type='sds *' data-ref="124newtokens">newtokens</dfn>;</td></tr>
+<tr><th id="698">698</th><td></td></tr>
+<tr><th id="699">699</th><td>            <a class="local col0 ref" href="#120slots" title='slots' data-ref="120slots">slots</a> *= <var>2</var>;</td></tr>
+<tr><th id="700">700</th><td>            <a class="local col4 ref" href="#124newtokens" title='newtokens' data-ref="124newtokens">newtokens</a> = <a class="macro" href="zmalloc.h.html#8" title="realloc" data-ref="_M/zrealloc">zrealloc</a>(<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>,<b>sizeof</b>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a>)*<a class="local col0 ref" href="#120slots" title='slots' data-ref="120slots">slots</a>);</td></tr>
+<tr><th id="701">701</th><td>            <b>if</b> (<a class="local col4 ref" href="#124newtokens" title='newtokens' data-ref="124newtokens">newtokens</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>goto</b> <a class="lbl" href="#125cleanup" data-ref="125cleanup">cleanup</a>;</td></tr>
+<tr><th id="702">702</th><td>            <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a> = <a class="local col4 ref" href="#124newtokens" title='newtokens' data-ref="124newtokens">newtokens</a>;</td></tr>
+<tr><th id="703">703</th><td>        }</td></tr>
+<tr><th id="704">704</th><td>        <i>/* search the separator */</i></td></tr>
+<tr><th id="705">705</th><td>        <b>if</b> ((<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a> == <var>1</var> &amp;&amp; *(<a class="local col4 ref" href="#114s" title='s' data-ref="114s">s</a>+<a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>) == <a class="local col6 ref" href="#116sep" title='sep' data-ref="116sep">sep</a>[<var>0</var>]) || (<a class="ref fn" href="../../../include/string.h.html#memcmp" title='memcmp' data-ref="memcmp">memcmp</a>(<a class="local col4 ref" href="#114s" title='s' data-ref="114s">s</a>+<a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>,<a class="local col6 ref" href="#116sep" title='sep' data-ref="116sep">sep</a>,<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a>) == <var>0</var>)) {</td></tr>
+<tr><th id="706">706</th><td>            <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>[<a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>] = <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<a class="local col4 ref" href="#114s" title='s' data-ref="114s">s</a>+<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>,<a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>-<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>);</td></tr>
+<tr><th id="707">707</th><td>            <b>if</b> (<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>[<a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>] == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>goto</b> <a class="lbl" href="#125cleanup" data-ref="125cleanup">cleanup</a>;</td></tr>
+<tr><th id="708">708</th><td>            <a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>++;</td></tr>
+<tr><th id="709">709</th><td>            <a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a> = <a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>+<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a>;</td></tr>
+<tr><th id="710">710</th><td>            <a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a> = <a class="local col2 ref" href="#122j" title='j' data-ref="122j">j</a>+<a class="local col7 ref" href="#117seplen" title='seplen' data-ref="117seplen">seplen</a>-<var>1</var>; <i>/* skip the separator */</i></td></tr>
+<tr><th id="711">711</th><td>        }</td></tr>
+<tr><th id="712">712</th><td>    }</td></tr>
+<tr><th id="713">713</th><td>    <i>/* Add the final element. We are sure there is room in the tokens array. */</i></td></tr>
+<tr><th id="714">714</th><td>    <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>[<a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>] = <a class="ref fn" href="#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<a class="local col4 ref" href="#114s" title='s' data-ref="114s">s</a>+<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>,<a class="local col5 ref" href="#115len" title='len' data-ref="115len">len</a>-<a class="local col1 ref" href="#121start" title='start' data-ref="121start">start</a>);</td></tr>
+<tr><th id="715">715</th><td>    <b>if</b> (<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>[<a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>] == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>goto</b> <a class="lbl" href="#125cleanup" data-ref="125cleanup">cleanup</a>;</td></tr>
+<tr><th id="716">716</th><td>    <a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>++;</td></tr>
+<tr><th id="717">717</th><td>    *<a class="local col8 ref" href="#118count" title='count' data-ref="118count">count</a> = <a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>;</td></tr>
+<tr><th id="718">718</th><td>    <b>return</b> <a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>;</td></tr>
+<tr><th id="719">719</th><td></td></tr>
+<tr><th id="720">720</th><td><dfn class="lbl" id="125cleanup" data-ref="125cleanup">cleanup</dfn>:</td></tr>
+<tr><th id="721">721</th><td>    {</td></tr>
+<tr><th id="722">722</th><td>        <em>int</em> <dfn class="local col6 decl" id="126i" title='i' data-type='int' data-ref="126i">i</dfn>;</td></tr>
+<tr><th id="723">723</th><td>        <b>for</b> (<a class="local col6 ref" href="#126i" title='i' data-ref="126i">i</a> = <var>0</var>; <a class="local col6 ref" href="#126i" title='i' data-ref="126i">i</a> &lt; <a class="local col9 ref" href="#119elements" title='elements' data-ref="119elements">elements</a>; <a class="local col6 ref" href="#126i" title='i' data-ref="126i">i</a>++) <a class="ref fn" href="#sdsfree" title='sdsfree' data-ref="sdsfree">sdsfree</a>(<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>[<a class="local col6 ref" href="#126i" title='i' data-ref="126i">i</a>]);</td></tr>
+<tr><th id="724">724</th><td>        <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col3 ref" href="#123tokens" title='tokens' data-ref="123tokens">tokens</a>);</td></tr>
+<tr><th id="725">725</th><td>        *<a class="local col8 ref" href="#118count" title='count' data-ref="118count">count</a> = <var>0</var>;</td></tr>
+<tr><th id="726">726</th><td>        <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="727">727</th><td>    }</td></tr>
+<tr><th id="728">728</th><td>}</td></tr>
+<tr><th id="729">729</th><td></td></tr>
+<tr><th id="730">730</th><td><i>/* Free the result returned by sdssplitlen(), or do nothing if 'tokens' is NULL. */</i></td></tr>
+<tr><th id="731">731</th><td><em>void</em> <dfn class="decl def fn" id="sdsfreesplitres" title='sdsfreesplitres' data-ref="sdsfreesplitres">sdsfreesplitres</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> *<dfn class="local col7 decl" id="127tokens" title='tokens' data-type='sds *' data-ref="127tokens">tokens</dfn>, <em>int</em> <dfn class="local col8 decl" id="128count" title='count' data-type='int' data-ref="128count">count</dfn>) {</td></tr>
+<tr><th id="732">732</th><td>    <b>if</b> (!<a class="local col7 ref" href="#127tokens" title='tokens' data-ref="127tokens">tokens</a>) <b>return</b>;</td></tr>
+<tr><th id="733">733</th><td>    <b>while</b>(<a class="local col8 ref" href="#128count" title='count' data-ref="128count">count</a>--)</td></tr>
+<tr><th id="734">734</th><td>        <a class="ref fn" href="#sdsfree" title='sdsfree' data-ref="sdsfree">sdsfree</a>(<a class="local col7 ref" href="#127tokens" title='tokens' data-ref="127tokens">tokens</a>[<a class="local col8 ref" href="#128count" title='count' data-ref="128count">count</a>]);</td></tr>
+<tr><th id="735">735</th><td>    <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col7 ref" href="#127tokens" title='tokens' data-ref="127tokens">tokens</a>);</td></tr>
+<tr><th id="736">736</th><td>}</td></tr>
+<tr><th id="737">737</th><td></td></tr>
+<tr><th id="738">738</th><td><i>/* Append to the sds string "s" an escaped string representation where</i></td></tr>
+<tr><th id="739">739</th><td><i> * all the non-printable characters (tested with isprint()) are turned into</i></td></tr>
+<tr><th id="740">740</th><td><i> * escapes in the form "\n\r\a...." or "\x&lt;hex-number&gt;".</i></td></tr>
+<tr><th id="741">741</th><td><i> *</i></td></tr>
+<tr><th id="742">742</th><td><i> * After the call, the modified sds string is no longer valid and all the</i></td></tr>
+<tr><th id="743">743</th><td><i> * references must be substituted with the new pointer returned by the call. */</i></td></tr>
+<tr><th id="744">744</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdscatrepr" title='sdscatrepr' data-ref="sdscatrepr">sdscatrepr</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col9 decl" id="129s" title='s' data-type='sds' data-ref="129s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="130p" title='p' data-type='const char *' data-ref="130p">p</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="131len" title='len' data-type='size_t' data-ref="131len">len</dfn>) {</td></tr>
+<tr><th id="745">745</th><td>    <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\""</q>,<var>1</var>);</td></tr>
+<tr><th id="746">746</th><td>    <b>while</b>(<a class="local col1 ref" href="#131len" title='len' data-ref="131len">len</a>--) {</td></tr>
+<tr><th id="747">747</th><td>        <b>switch</b>(*<a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>) {</td></tr>
+<tr><th id="748">748</th><td>        <b>case</b> <kbd>'\\'</kbd>:</td></tr>
+<tr><th id="749">749</th><td>        <b>case</b> <kbd>'"'</kbd>:</td></tr>
+<tr><th id="750">750</th><td>            <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatprintf" title='sdscatprintf' data-ref="sdscatprintf">sdscatprintf</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\%c"</q>,*<a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>);</td></tr>
+<tr><th id="751">751</th><td>            <b>break</b>;</td></tr>
+<tr><th id="752">752</th><td>        <b>case</b> <kbd>'\n'</kbd>: <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\n"</q>,<var>2</var>); <b>break</b>;</td></tr>
+<tr><th id="753">753</th><td>        <b>case</b> <kbd>'\r'</kbd>: <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\r"</q>,<var>2</var>); <b>break</b>;</td></tr>
+<tr><th id="754">754</th><td>        <b>case</b> <kbd>'\t'</kbd>: <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\t"</q>,<var>2</var>); <b>break</b>;</td></tr>
+<tr><th id="755">755</th><td>        <b>case</b> <kbd>'\a'</kbd>: <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\a"</q>,<var>2</var>); <b>break</b>;</td></tr>
+<tr><th id="756">756</th><td>        <b>case</b> <kbd>'\b'</kbd>: <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\b"</q>,<var>2</var>); <b>break</b>;</td></tr>
+<tr><th id="757">757</th><td>        <b>default</b>:</td></tr>
+<tr><th id="758">758</th><td>            <b>if</b> (<a class="macro" href="../../../include/ctype.h.html#203" title="((*__ctype_b_loc ())[(int) ((*p))] &amp; (unsigned short int) _ISprint)" data-ref="_M/isprint">isprint</a>(*<a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>))</td></tr>
+<tr><th id="759">759</th><td>                <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatprintf" title='sdscatprintf' data-ref="sdscatprintf">sdscatprintf</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"%c"</q>,*<a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>);</td></tr>
+<tr><th id="760">760</th><td>            <b>else</b></td></tr>
+<tr><th id="761">761</th><td>                <a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a> = <a class="ref fn" href="#sdscatprintf" title='sdscatprintf' data-ref="sdscatprintf">sdscatprintf</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\\x%02x"</q>,(<em>unsigned</em> <em>char</em>)*<a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>);</td></tr>
+<tr><th id="762">762</th><td>            <b>break</b>;</td></tr>
+<tr><th id="763">763</th><td>        }</td></tr>
+<tr><th id="764">764</th><td>        <a class="local col0 ref" href="#130p" title='p' data-ref="130p">p</a>++;</td></tr>
+<tr><th id="765">765</th><td>    }</td></tr>
+<tr><th id="766">766</th><td>    <b>return</b> <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col9 ref" href="#129s" title='s' data-ref="129s">s</a>,<q>"\""</q>,<var>1</var>);</td></tr>
+<tr><th id="767">767</th><td>}</td></tr>
+<tr><th id="768">768</th><td></td></tr>
+<tr><th id="769">769</th><td><i>/* Helper function for sdssplitargs() that returns non zero if 'c'</i></td></tr>
+<tr><th id="770">770</th><td><i> * is a valid hex digit. */</i></td></tr>
+<tr><th id="771">771</th><td><em>int</em> <dfn class="decl def fn" id="is_hex_digit" title='is_hex_digit' data-ref="is_hex_digit">is_hex_digit</dfn>(<em>char</em> <dfn class="local col2 decl" id="132c" title='c' data-type='char' data-ref="132c">c</dfn>) {</td></tr>
+<tr><th id="772">772</th><td>    <b>return</b> (<a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &gt;= <kbd>'0'</kbd> &amp;&amp; <a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &lt;= <kbd>'9'</kbd>) || (<a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &gt;= <kbd>'a'</kbd> &amp;&amp; <a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &lt;= <kbd>'f'</kbd>) ||</td></tr>
+<tr><th id="773">773</th><td>           (<a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &gt;= <kbd>'A'</kbd> &amp;&amp; <a class="local col2 ref" href="#132c" title='c' data-ref="132c">c</a> &lt;= <kbd>'F'</kbd>);</td></tr>
+<tr><th id="774">774</th><td>}</td></tr>
+<tr><th id="775">775</th><td></td></tr>
+<tr><th id="776">776</th><td><i>/* Helper function for sdssplitargs() that converts a hex digit into an</i></td></tr>
+<tr><th id="777">777</th><td><i> * integer from 0 to 15 */</i></td></tr>
+<tr><th id="778">778</th><td><em>int</em> <dfn class="decl def fn" id="hex_digit_to_int" title='hex_digit_to_int' data-ref="hex_digit_to_int">hex_digit_to_int</dfn>(<em>char</em> <dfn class="local col3 decl" id="133c" title='c' data-type='char' data-ref="133c">c</dfn>) {</td></tr>
+<tr><th id="779">779</th><td>    <b>switch</b>(<a class="local col3 ref" href="#133c" title='c' data-ref="133c">c</a>) {</td></tr>
+<tr><th id="780">780</th><td>    <b>case</b> <kbd>'0'</kbd>: <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="781">781</th><td>    <b>case</b> <kbd>'1'</kbd>: <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="782">782</th><td>    <b>case</b> <kbd>'2'</kbd>: <b>return</b> <var>2</var>;</td></tr>
+<tr><th id="783">783</th><td>    <b>case</b> <kbd>'3'</kbd>: <b>return</b> <var>3</var>;</td></tr>
+<tr><th id="784">784</th><td>    <b>case</b> <kbd>'4'</kbd>: <b>return</b> <var>4</var>;</td></tr>
+<tr><th id="785">785</th><td>    <b>case</b> <kbd>'5'</kbd>: <b>return</b> <var>5</var>;</td></tr>
+<tr><th id="786">786</th><td>    <b>case</b> <kbd>'6'</kbd>: <b>return</b> <var>6</var>;</td></tr>
+<tr><th id="787">787</th><td>    <b>case</b> <kbd>'7'</kbd>: <b>return</b> <var>7</var>;</td></tr>
+<tr><th id="788">788</th><td>    <b>case</b> <kbd>'8'</kbd>: <b>return</b> <var>8</var>;</td></tr>
+<tr><th id="789">789</th><td>    <b>case</b> <kbd>'9'</kbd>: <b>return</b> <var>9</var>;</td></tr>
+<tr><th id="790">790</th><td>    <b>case</b> <kbd>'a'</kbd>: <b>case</b> <kbd>'A'</kbd>: <b>return</b> <var>10</var>;</td></tr>
+<tr><th id="791">791</th><td>    <b>case</b> <kbd>'b'</kbd>: <b>case</b> <kbd>'B'</kbd>: <b>return</b> <var>11</var>;</td></tr>
+<tr><th id="792">792</th><td>    <b>case</b> <kbd>'c'</kbd>: <b>case</b> <kbd>'C'</kbd>: <b>return</b> <var>12</var>;</td></tr>
+<tr><th id="793">793</th><td>    <b>case</b> <kbd>'d'</kbd>: <b>case</b> <kbd>'D'</kbd>: <b>return</b> <var>13</var>;</td></tr>
+<tr><th id="794">794</th><td>    <b>case</b> <kbd>'e'</kbd>: <b>case</b> <kbd>'E'</kbd>: <b>return</b> <var>14</var>;</td></tr>
+<tr><th id="795">795</th><td>    <b>case</b> <kbd>'f'</kbd>: <b>case</b> <kbd>'F'</kbd>: <b>return</b> <var>15</var>;</td></tr>
+<tr><th id="796">796</th><td>    <b>default</b>: <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="797">797</th><td>    }</td></tr>
+<tr><th id="798">798</th><td>}</td></tr>
+<tr><th id="799">799</th><td></td></tr>
+<tr><th id="800">800</th><td><i>/* Split a line into arguments, where every argument can be in the</i></td></tr>
+<tr><th id="801">801</th><td><i> * following programming-language REPL-alike form:</i></td></tr>
+<tr><th id="802">802</th><td><i> *</i></td></tr>
+<tr><th id="803">803</th><td><i> * foo bar "newline are supported\n" and "\xff\x00otherstuff"</i></td></tr>
+<tr><th id="804">804</th><td><i> *</i></td></tr>
+<tr><th id="805">805</th><td><i> * The number of arguments is stored into *argc, and an array</i></td></tr>
+<tr><th id="806">806</th><td><i> * of sds is returned.</i></td></tr>
+<tr><th id="807">807</th><td><i> *</i></td></tr>
+<tr><th id="808">808</th><td><i> * The caller should free the resulting array of sds strings with</i></td></tr>
+<tr><th id="809">809</th><td><i> * sdsfreesplitres().</i></td></tr>
+<tr><th id="810">810</th><td><i> *</i></td></tr>
+<tr><th id="811">811</th><td><i> * Note that sdscatrepr() is able to convert back a string into</i></td></tr>
+<tr><th id="812">812</th><td><i> * a quoted string in the same format sdssplitargs() is able to parse.</i></td></tr>
+<tr><th id="813">813</th><td><i> *</i></td></tr>
+<tr><th id="814">814</th><td><i> * The function returns the allocated tokens on success, even when the</i></td></tr>
+<tr><th id="815">815</th><td><i> * input string is empty, or NULL if the input contains unbalanced</i></td></tr>
+<tr><th id="816">816</th><td><i> * quotes or closed quotes followed by non space characters</i></td></tr>
+<tr><th id="817">817</th><td><i> * as in: "foo"bar or "foo'</i></td></tr>
+<tr><th id="818">818</th><td><i> */</i></td></tr>
+<tr><th id="819">819</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> *<dfn class="decl def fn" id="sdssplitargs" title='sdssplitargs' data-ref="sdssplitargs">sdssplitargs</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="134line" title='line' data-type='const char *' data-ref="134line">line</dfn>, <em>int</em> *<dfn class="local col5 decl" id="135argc" title='argc' data-type='int *' data-ref="135argc">argc</dfn>) {</td></tr>
+<tr><th id="820">820</th><td>    <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="136p" title='p' data-type='const char *' data-ref="136p">p</dfn> = <a class="local col4 ref" href="#134line" title='line' data-ref="134line">line</a>;</td></tr>
+<tr><th id="821">821</th><td>    <em>char</em> *<dfn class="local col7 decl" id="137current" title='current' data-type='char *' data-ref="137current">current</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="822">822</th><td>    <em>char</em> **<dfn class="local col8 decl" id="138vector" title='vector' data-type='char **' data-ref="138vector">vector</dfn> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="823">823</th><td></td></tr>
+<tr><th id="824">824</th><td>    *<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a> = <var>0</var>;</td></tr>
+<tr><th id="825">825</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="826">826</th><td>        <i>/* skip blanks */</i></td></tr>
+<tr><th id="827">827</th><td>        <b>while</b>(*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> &amp;&amp; <a class="macro" href="../../../include/ctype.h.html#205" title="((*__ctype_b_loc ())[(int) ((*p))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a>(*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>)) <a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>++;</td></tr>
+<tr><th id="828">828</th><td>        <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) {</td></tr>
+<tr><th id="829">829</th><td>            <i>/* get a token */</i></td></tr>
+<tr><th id="830">830</th><td>            <em>int</em> <dfn class="local col9 decl" id="139inq" title='inq' data-type='int' data-ref="139inq">inq</dfn>=<var>0</var>;  <i>/* set to 1 if we are in "quotes" */</i></td></tr>
+<tr><th id="831">831</th><td>            <em>int</em> <dfn class="local col0 decl" id="140insq" title='insq' data-type='int' data-ref="140insq">insq</dfn>=<var>0</var>; <i>/* set to 1 if we are in 'single quotes' */</i></td></tr>
+<tr><th id="832">832</th><td>            <em>int</em> <dfn class="local col1 decl" id="141done" title='done' data-type='int' data-ref="141done">done</dfn>=<var>0</var>;</td></tr>
+<tr><th id="833">833</th><td></td></tr>
+<tr><th id="834">834</th><td>            <b>if</b> (<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdsempty" title='sdsempty' data-ref="sdsempty">sdsempty</a>();</td></tr>
+<tr><th id="835">835</th><td>            <b>while</b>(!<a class="local col1 ref" href="#141done" title='done' data-ref="141done">done</a>) {</td></tr>
+<tr><th id="836">836</th><td>                <b>if</b> (<a class="local col9 ref" href="#139inq" title='inq' data-ref="139inq">inq</a>) {</td></tr>
+<tr><th id="837">837</th><td>                    <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> == <kbd>'\\'</kbd> &amp;&amp; *(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>) == <kbd>'x'</kbd> &amp;&amp;</td></tr>
+<tr><th id="838">838</th><td>                                             <a class="ref fn" href="#is_hex_digit" title='is_hex_digit' data-ref="is_hex_digit">is_hex_digit</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>2</var>)) &amp;&amp;</td></tr>
+<tr><th id="839">839</th><td>                                             <a class="ref fn" href="#is_hex_digit" title='is_hex_digit' data-ref="is_hex_digit">is_hex_digit</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>3</var>)))</td></tr>
+<tr><th id="840">840</th><td>                    {</td></tr>
+<tr><th id="841">841</th><td>                        <em>unsigned</em> <em>char</em> <dfn class="local col2 decl" id="142byte" title='byte' data-type='unsigned char' data-ref="142byte">byte</dfn>;</td></tr>
+<tr><th id="842">842</th><td></td></tr>
+<tr><th id="843">843</th><td>                        <a class="local col2 ref" href="#142byte" title='byte' data-ref="142byte">byte</a> = (<a class="ref fn" href="#hex_digit_to_int" title='hex_digit_to_int' data-ref="hex_digit_to_int">hex_digit_to_int</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>2</var>))*<var>16</var>)+</td></tr>
+<tr><th id="844">844</th><td>                                <a class="ref fn" href="#hex_digit_to_int" title='hex_digit_to_int' data-ref="hex_digit_to_int">hex_digit_to_int</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>3</var>));</td></tr>
+<tr><th id="845">845</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,(<em>char</em>*)&amp;<a class="local col2 ref" href="#142byte" title='byte' data-ref="142byte">byte</a>,<var>1</var>);</td></tr>
+<tr><th id="846">846</th><td>                        <a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> += <var>3</var>;</td></tr>
+<tr><th id="847">847</th><td>                    } <b>else</b> <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> == <kbd>'\\'</kbd> &amp;&amp; *(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>)) {</td></tr>
+<tr><th id="848">848</th><td>                        <em>char</em> <dfn class="local col3 decl" id="143c" title='c' data-type='char' data-ref="143c">c</dfn>;</td></tr>
+<tr><th id="849">849</th><td></td></tr>
+<tr><th id="850">850</th><td>                        <a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>++;</td></tr>
+<tr><th id="851">851</th><td>                        <b>switch</b>(*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) {</td></tr>
+<tr><th id="852">852</th><td>                        <b>case</b> <kbd>'n'</kbd>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = <kbd>'\n'</kbd>; <b>break</b>;</td></tr>
+<tr><th id="853">853</th><td>                        <b>case</b> <kbd>'r'</kbd>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = <kbd>'\r'</kbd>; <b>break</b>;</td></tr>
+<tr><th id="854">854</th><td>                        <b>case</b> <kbd>'t'</kbd>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = <kbd>'\t'</kbd>; <b>break</b>;</td></tr>
+<tr><th id="855">855</th><td>                        <b>case</b> <kbd>'b'</kbd>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = <kbd>'\b'</kbd>; <b>break</b>;</td></tr>
+<tr><th id="856">856</th><td>                        <b>case</b> <kbd>'a'</kbd>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = <kbd>'\a'</kbd>; <b>break</b>;</td></tr>
+<tr><th id="857">857</th><td>                        <b>default</b>: <a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a> = *<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>; <b>break</b>;</td></tr>
+<tr><th id="858">858</th><td>                        }</td></tr>
+<tr><th id="859">859</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,&amp;<a class="local col3 ref" href="#143c" title='c' data-ref="143c">c</a>,<var>1</var>);</td></tr>
+<tr><th id="860">860</th><td>                    } <b>else</b> <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> == <kbd>'"'</kbd>) {</td></tr>
+<tr><th id="861">861</th><td>                        <i>/* closing quote must be followed by a space or</i></td></tr>
+<tr><th id="862">862</th><td><i>                         * nothing at all. */</i></td></tr>
+<tr><th id="863">863</th><td>                        <b>if</b> (*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>) &amp;&amp; !<a class="macro" href="../../../include/ctype.h.html#205" title="((*__ctype_b_loc ())[(int) ((*(p+1)))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>))) <b>goto</b> <a class="lbl" href="#144err" data-ref="144err">err</a>;</td></tr>
+<tr><th id="864">864</th><td>                        <a class="local col1 ref" href="#141done" title='done' data-ref="141done">done</a>=<var>1</var>;</td></tr>
+<tr><th id="865">865</th><td>                    } <b>else</b> <b>if</b> (!*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) {</td></tr>
+<tr><th id="866">866</th><td>                        <i>/* unterminated quotes */</i></td></tr>
+<tr><th id="867">867</th><td>                        <b>goto</b> <a class="lbl" href="#144err" data-ref="144err">err</a>;</td></tr>
+<tr><th id="868">868</th><td>                    } <b>else</b> {</td></tr>
+<tr><th id="869">869</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>,<var>1</var>);</td></tr>
+<tr><th id="870">870</th><td>                    }</td></tr>
+<tr><th id="871">871</th><td>                } <b>else</b> <b>if</b> (<a class="local col0 ref" href="#140insq" title='insq' data-ref="140insq">insq</a>) {</td></tr>
+<tr><th id="872">872</th><td>                    <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> == <kbd>'\\'</kbd> &amp;&amp; *(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>) == <kbd>'\''</kbd>) {</td></tr>
+<tr><th id="873">873</th><td>                        <a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>++;</td></tr>
+<tr><th id="874">874</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,<q>"'"</q>,<var>1</var>);</td></tr>
+<tr><th id="875">875</th><td>                    } <b>else</b> <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a> == <kbd>'\''</kbd>) {</td></tr>
+<tr><th id="876">876</th><td>                        <i>/* closing quote must be followed by a space or</i></td></tr>
+<tr><th id="877">877</th><td><i>                         * nothing at all. */</i></td></tr>
+<tr><th id="878">878</th><td>                        <b>if</b> (*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>) &amp;&amp; !<a class="macro" href="../../../include/ctype.h.html#205" title="((*__ctype_b_loc ())[(int) ((*(p+1)))] &amp; (unsigned short int) _ISspace)" data-ref="_M/isspace">isspace</a>(*(<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>+<var>1</var>))) <b>goto</b> <a class="lbl" href="#144err" data-ref="144err">err</a>;</td></tr>
+<tr><th id="879">879</th><td>                        <a class="local col1 ref" href="#141done" title='done' data-ref="141done">done</a>=<var>1</var>;</td></tr>
+<tr><th id="880">880</th><td>                    } <b>else</b> <b>if</b> (!*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) {</td></tr>
+<tr><th id="881">881</th><td>                        <i>/* unterminated quotes */</i></td></tr>
+<tr><th id="882">882</th><td>                        <b>goto</b> <a class="lbl" href="#144err" data-ref="144err">err</a>;</td></tr>
+<tr><th id="883">883</th><td>                    } <b>else</b> {</td></tr>
+<tr><th id="884">884</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>,<var>1</var>);</td></tr>
+<tr><th id="885">885</th><td>                    }</td></tr>
+<tr><th id="886">886</th><td>                } <b>else</b> {</td></tr>
+<tr><th id="887">887</th><td>                    <b>switch</b>(*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) {</td></tr>
+<tr><th id="888">888</th><td>                    <b>case</b> <kbd>' '</kbd>:</td></tr>
+<tr><th id="889">889</th><td>                    <b>case</b> <kbd>'\n'</kbd>:</td></tr>
+<tr><th id="890">890</th><td>                    <b>case</b> <kbd>'\r'</kbd>:</td></tr>
+<tr><th id="891">891</th><td>                    <b>case</b> <kbd>'\t'</kbd>:</td></tr>
+<tr><th id="892">892</th><td>                    <b>case</b> <kbd>'\0'</kbd>:</td></tr>
+<tr><th id="893">893</th><td>                        <a class="local col1 ref" href="#141done" title='done' data-ref="141done">done</a>=<var>1</var>;</td></tr>
+<tr><th id="894">894</th><td>                        <b>break</b>;</td></tr>
+<tr><th id="895">895</th><td>                    <b>case</b> <kbd>'"'</kbd>:</td></tr>
+<tr><th id="896">896</th><td>                        <a class="local col9 ref" href="#139inq" title='inq' data-ref="139inq">inq</a>=<var>1</var>;</td></tr>
+<tr><th id="897">897</th><td>                        <b>break</b>;</td></tr>
+<tr><th id="898">898</th><td>                    <b>case</b> <kbd>'\''</kbd>:</td></tr>
+<tr><th id="899">899</th><td>                        <a class="local col0 ref" href="#140insq" title='insq' data-ref="140insq">insq</a>=<var>1</var>;</td></tr>
+<tr><th id="900">900</th><td>                        <b>break</b>;</td></tr>
+<tr><th id="901">901</th><td>                    <b>default</b>:</td></tr>
+<tr><th id="902">902</th><td>                        <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <a class="ref fn" href="#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>,<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>,<var>1</var>);</td></tr>
+<tr><th id="903">903</th><td>                        <b>break</b>;</td></tr>
+<tr><th id="904">904</th><td>                    }</td></tr>
+<tr><th id="905">905</th><td>                }</td></tr>
+<tr><th id="906">906</th><td>                <b>if</b> (*<a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>) <a class="local col6 ref" href="#136p" title='p' data-ref="136p">p</a>++;</td></tr>
+<tr><th id="907">907</th><td>            }</td></tr>
+<tr><th id="908">908</th><td>            <i>/* add the token to the vector */</i></td></tr>
+<tr><th id="909">909</th><td>            <a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a> = <a class="macro" href="zmalloc.h.html#8" title="realloc" data-ref="_M/zrealloc">zrealloc</a>(<a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a>,((*<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a>)+<var>1</var>)*<b>sizeof</b>(<em>char</em>*));</td></tr>
+<tr><th id="910">910</th><td>            <a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a>[*<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a>] = <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>;</td></tr>
+<tr><th id="911">911</th><td>            (*<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a>)++;</td></tr>
+<tr><th id="912">912</th><td>            <a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="913">913</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="914">914</th><td>            <i>/* Even on empty input string return something not NULL. */</i></td></tr>
+<tr><th id="915">915</th><td>            <b>if</b> (<a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a> = <a class="macro" href="zmalloc.h.html#7" title="malloc" data-ref="_M/zmalloc">zmalloc</a>(<b>sizeof</b>(<em>void</em>*));</td></tr>
+<tr><th id="916">916</th><td>            <b>return</b> <a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a>;</td></tr>
+<tr><th id="917">917</th><td>        }</td></tr>
+<tr><th id="918">918</th><td>    }</td></tr>
+<tr><th id="919">919</th><td></td></tr>
+<tr><th id="920">920</th><td><dfn class="lbl" id="144err" data-ref="144err">err</dfn>:</td></tr>
+<tr><th id="921">921</th><td>    <b>while</b>((*<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a>)--)</td></tr>
+<tr><th id="922">922</th><td>        <a class="ref fn" href="#sdsfree" title='sdsfree' data-ref="sdsfree">sdsfree</a>(<a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a>[*<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a>]);</td></tr>
+<tr><th id="923">923</th><td>    <a class="macro" href="zmalloc.h.html#10" title="free" data-ref="_M/zfree">zfree</a>(<a class="local col8 ref" href="#138vector" title='vector' data-ref="138vector">vector</a>);</td></tr>
+<tr><th id="924">924</th><td>    <b>if</b> (<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>) <a class="ref fn" href="#sdsfree" title='sdsfree' data-ref="sdsfree">sdsfree</a>(<a class="local col7 ref" href="#137current" title='current' data-ref="137current">current</a>);</td></tr>
+<tr><th id="925">925</th><td>    *<a class="local col5 ref" href="#135argc" title='argc' data-ref="135argc">argc</a> = <var>0</var>;</td></tr>
+<tr><th id="926">926</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="927">927</th><td>}</td></tr>
+<tr><th id="928">928</th><td></td></tr>
+<tr><th id="929">929</th><td><i>/* Modify the string substituting all the occurrences of the set of</i></td></tr>
+<tr><th id="930">930</th><td><i> * characters specified in the 'from' string to the corresponding character</i></td></tr>
+<tr><th id="931">931</th><td><i> * in the 'to' array.</i></td></tr>
+<tr><th id="932">932</th><td><i> *</i></td></tr>
+<tr><th id="933">933</th><td><i> * For instance: sdsmapchars(mystring, "ho", "01", 2)</i></td></tr>
+<tr><th id="934">934</th><td><i> * will have the effect of turning the string "hello" into "0ell1".</i></td></tr>
+<tr><th id="935">935</th><td><i> *</i></td></tr>
+<tr><th id="936">936</th><td><i> * The function returns the sds string pointer, that is always the same</i></td></tr>
+<tr><th id="937">937</th><td><i> * as the input pointer since no resize is needed. */</i></td></tr>
+<tr><th id="938">938</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsmapchars" title='sdsmapchars' data-ref="sdsmapchars">sdsmapchars</dfn>(<a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col5 decl" id="145s" title='s' data-type='sds' data-ref="145s">s</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="146from" title='from' data-type='const char *' data-ref="146from">from</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="147to" title='to' data-type='const char *' data-ref="147to">to</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="148setlen" title='setlen' data-type='size_t' data-ref="148setlen">setlen</dfn>) {</td></tr>
+<tr><th id="939">939</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="149j" title='j' data-type='size_t' data-ref="149j">j</dfn>, <dfn class="local col0 decl" id="150i" title='i' data-type='size_t' data-ref="150i">i</dfn>, <dfn class="local col1 decl" id="151l" title='l' data-type='size_t' data-ref="151l">l</dfn> = <a class="ref fn" href="sds.h.html#sdslen" title='sdslen' data-ref="sdslen">sdslen</a>(<a class="local col5 ref" href="#145s" title='s' data-ref="145s">s</a>);</td></tr>
+<tr><th id="940">940</th><td></td></tr>
+<tr><th id="941">941</th><td>    <b>for</b> (<a class="local col9 ref" href="#149j" title='j' data-ref="149j">j</a> = <var>0</var>; <a class="local col9 ref" href="#149j" title='j' data-ref="149j">j</a> &lt; <a class="local col1 ref" href="#151l" title='l' data-ref="151l">l</a>; <a class="local col9 ref" href="#149j" title='j' data-ref="149j">j</a>++) {</td></tr>
+<tr><th id="942">942</th><td>        <b>for</b> (<a class="local col0 ref" href="#150i" title='i' data-ref="150i">i</a> = <var>0</var>; <a class="local col0 ref" href="#150i" title='i' data-ref="150i">i</a> &lt; <a class="local col8 ref" href="#148setlen" title='setlen' data-ref="148setlen">setlen</a>; <a class="local col0 ref" href="#150i" title='i' data-ref="150i">i</a>++) {</td></tr>
+<tr><th id="943">943</th><td>            <b>if</b> (<a class="local col5 ref" href="#145s" title='s' data-ref="145s">s</a>[<a class="local col9 ref" href="#149j" title='j' data-ref="149j">j</a>] == <a class="local col6 ref" href="#146from" title='from' data-ref="146from">from</a>[<a class="local col0 ref" href="#150i" title='i' data-ref="150i">i</a>]) {</td></tr>
+<tr><th id="944">944</th><td>                <a class="local col5 ref" href="#145s" title='s' data-ref="145s">s</a>[<a class="local col9 ref" href="#149j" title='j' data-ref="149j">j</a>] = <a class="local col7 ref" href="#147to" title='to' data-ref="147to">to</a>[<a class="local col0 ref" href="#150i" title='i' data-ref="150i">i</a>];</td></tr>
+<tr><th id="945">945</th><td>                <b>break</b>;</td></tr>
+<tr><th id="946">946</th><td>            }</td></tr>
+<tr><th id="947">947</th><td>        }</td></tr>
+<tr><th id="948">948</th><td>    }</td></tr>
+<tr><th id="949">949</th><td>    <b>return</b> <a class="local col5 ref" href="#145s" title='s' data-ref="145s">s</a>;</td></tr>
+<tr><th id="950">950</th><td>}</td></tr>
+<tr><th id="951">951</th><td></td></tr>
+<tr><th id="952">952</th><td><i>/* Join an array of C strings using the specified separator (also a C string).</i></td></tr>
+<tr><th id="953">953</th><td><i> * Returns the result as an sds string. */</i></td></tr>
+<tr><th id="954">954</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="sdsjoin" title='sdsjoin' data-ref="sdsjoin">sdsjoin</dfn>(<em>char</em> **<dfn class="local col2 decl" id="152argv" title='argv' data-type='char **' data-ref="152argv">argv</dfn>, <em>int</em> <dfn class="local col3 decl" id="153argc" title='argc' data-type='int' data-ref="153argc">argc</dfn>, <em>char</em> *<dfn class="local col4 decl" id="154sep" title='sep' data-type='char *' data-ref="154sep">sep</dfn>) {</td></tr>
+<tr><th id="955">955</th><td>    <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col5 decl" id="155join" title='join' data-type='sds' data-ref="155join">join</dfn> = <a class="ref fn" href="#sdsempty" title='sdsempty' data-ref="sdsempty">sdsempty</a>();</td></tr>
+<tr><th id="956">956</th><td>    <em>int</em> <dfn class="local col6 decl" id="156j" title='j' data-type='int' data-ref="156j">j</dfn>;</td></tr>
+<tr><th id="957">957</th><td></td></tr>
+<tr><th id="958">958</th><td>    <b>for</b> (<a class="local col6 ref" href="#156j" title='j' data-ref="156j">j</a> = <var>0</var>; <a class="local col6 ref" href="#156j" title='j' data-ref="156j">j</a> &lt; <a class="local col3 ref" href="#153argc" title='argc' data-ref="153argc">argc</a>; <a class="local col6 ref" href="#156j" title='j' data-ref="156j">j</a>++) {</td></tr>
+<tr><th id="959">959</th><td>        <a class="local col5 ref" href="#155join" title='join' data-ref="155join">join</a> = <a class="ref fn" href="#sdscat" title='sdscat' data-ref="sdscat">sdscat</a>(<a class="local col5 ref" href="#155join" title='join' data-ref="155join">join</a>, <a class="local col2 ref" href="#152argv" title='argv' data-ref="152argv">argv</a>[<a class="local col6 ref" href="#156j" title='j' data-ref="156j">j</a>]);</td></tr>
+<tr><th id="960">960</th><td>        <b>if</b> (<a class="local col6 ref" href="#156j" title='j' data-ref="156j">j</a> != <a class="local col3 ref" href="#153argc" title='argc' data-ref="153argc">argc</a>-<var>1</var>) <a class="local col5 ref" href="#155join" title='join' data-ref="155join">join</a> = <a class="ref fn" href="#sdscat" title='sdscat' data-ref="sdscat">sdscat</a>(<a class="local col5 ref" href="#155join" title='join' data-ref="155join">join</a>,<a class="local col4 ref" href="#154sep" title='sep' data-ref="154sep">sep</a>);</td></tr>
+<tr><th id="961">961</th><td>    }</td></tr>
+<tr><th id="962">962</th><td>    <b>return</b> <a class="local col5 ref" href="#155join" title='join' data-ref="155join">join</a>;</td></tr>
+<tr><th id="963">963</th><td>}</td></tr>
+<tr><th id="964">964</th><td></td></tr>
+<tr><th id="965">965</th><td><u>#<span data-ppcond="965">ifdef</span> <span class="macro" data-ref="_M/SDS_TEST_MAIN">SDS_TEST_MAIN</span></u></td></tr>
+<tr><th id="966">966</th><td><u>#include &lt;stdio.h&gt;</u></td></tr>
+<tr><th id="967">967</th><td><u>#include "testhelp.h"</u></td></tr>
+<tr><th id="968">968</th><td><u>#include "limits.h"</u></td></tr>
+<tr><th id="969">969</th><td></td></tr>
+<tr><th id="970">970</th><td><em>int</em> main(<em>void</em>) {</td></tr>
+<tr><th id="971">971</th><td>    {</td></tr>
+<tr><th id="972">972</th><td>        <b>struct</b> sdshdr *sh;</td></tr>
+<tr><th id="973">973</th><td>        sds x = sdsnew(<q>"foo"</q>), y;</td></tr>
+<tr><th id="974">974</th><td></td></tr>
+<tr><th id="975">975</th><td>        test_cond(<q>"Create a string and obtain the length"</q>,</td></tr>
+<tr><th id="976">976</th><td>            sdslen(x) == <var>3</var> &amp;&amp; memcmp(x,<q>"foo\0"</q>,<var>4</var>) == <var>0</var>)</td></tr>
+<tr><th id="977">977</th><td></td></tr>
+<tr><th id="978">978</th><td>        sdsfree(x);</td></tr>
+<tr><th id="979">979</th><td>        x = sdsnewlen(<q>"foo"</q>,<var>2</var>);</td></tr>
+<tr><th id="980">980</th><td>        test_cond(<q>"Create a string with specified length"</q>,</td></tr>
+<tr><th id="981">981</th><td>            sdslen(x) == <var>2</var> &amp;&amp; memcmp(x,<q>"fo\0"</q>,<var>3</var>) == <var>0</var>)</td></tr>
+<tr><th id="982">982</th><td></td></tr>
+<tr><th id="983">983</th><td>        x = sdscat(x,<q>"bar"</q>);</td></tr>
+<tr><th id="984">984</th><td>        test_cond(<q>"Strings concatenation"</q>,</td></tr>
+<tr><th id="985">985</th><td>            sdslen(x) == <var>5</var> &amp;&amp; memcmp(x,<q>"fobar\0"</q>,<var>6</var>) == <var>0</var>);</td></tr>
+<tr><th id="986">986</th><td></td></tr>
+<tr><th id="987">987</th><td>        x = sdscpy(x,<q>"a"</q>);</td></tr>
+<tr><th id="988">988</th><td>        test_cond(<q>"sdscpy() against an originally longer string"</q>,</td></tr>
+<tr><th id="989">989</th><td>            sdslen(x) == <var>1</var> &amp;&amp; memcmp(x,<q>"a\0"</q>,<var>2</var>) == <var>0</var>)</td></tr>
+<tr><th id="990">990</th><td></td></tr>
+<tr><th id="991">991</th><td>        x = sdscpy(x,<q>"xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk"</q>);</td></tr>
+<tr><th id="992">992</th><td>        test_cond(<q>"sdscpy() against an originally shorter string"</q>,</td></tr>
+<tr><th id="993">993</th><td>            sdslen(x) == <var>33</var> &amp;&amp;</td></tr>
+<tr><th id="994">994</th><td>            memcmp(x,<q>"xyzxxxxxxxxxxyyyyyyyyyykkkkkkkkkk\0"</q>,<var>33</var>) == <var>0</var>)</td></tr>
+<tr><th id="995">995</th><td></td></tr>
+<tr><th id="996">996</th><td>        sdsfree(x);</td></tr>
+<tr><th id="997">997</th><td>        x = sdscatprintf(sdsempty(),<q>"%d"</q>,<var>123</var>);</td></tr>
+<tr><th id="998">998</th><td>        test_cond(<q>"sdscatprintf() seems working in the base case"</q>,</td></tr>
+<tr><th id="999">999</th><td>            sdslen(x) == <var>3</var> &amp;&amp; memcmp(x,<q>"123\0"</q>,<var>4</var>) == <var>0</var>)</td></tr>
+<tr><th id="1000">1000</th><td></td></tr>
+<tr><th id="1001">1001</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1002">1002</th><td>        x = sdsnew(<q>"--"</q>);</td></tr>
+<tr><th id="1003">1003</th><td>        x = sdscatfmt(x, <q>"Hello %s World %I,%I--"</q>, <q>"Hi!"</q>, LLONG_MIN,LLONG_MAX);</td></tr>
+<tr><th id="1004">1004</th><td>        test_cond(<q>"sdscatfmt() seems working in the base case"</q>,</td></tr>
+<tr><th id="1005">1005</th><td>            sdslen(x) == <var>60</var> &amp;&amp;</td></tr>
+<tr><th id="1006">1006</th><td>            memcmp(x,<q>"--Hello Hi! World -9223372036854775808,"</q></td></tr>
+<tr><th id="1007">1007</th><td>                     <q>"9223372036854775807--"</q>,<var>60</var>) == <var>0</var>)</td></tr>
+<tr><th id="1008">1008</th><td></td></tr>
+<tr><th id="1009">1009</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1010">1010</th><td>        x = sdsnew(<q>"--"</q>);</td></tr>
+<tr><th id="1011">1011</th><td>        x = sdscatfmt(x, <q>"%u,%U--"</q>, UINT_MAX, ULLONG_MAX);</td></tr>
+<tr><th id="1012">1012</th><td>        test_cond(<q>"sdscatfmt() seems working with unsigned numbers"</q>,</td></tr>
+<tr><th id="1013">1013</th><td>            sdslen(x) == <var>35</var> &amp;&amp;</td></tr>
+<tr><th id="1014">1014</th><td>            memcmp(x,<q>"--4294967295,18446744073709551615--"</q>,<var>35</var>) == <var>0</var>)</td></tr>
+<tr><th id="1015">1015</th><td></td></tr>
+<tr><th id="1016">1016</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1017">1017</th><td>        x = sdsnew(<q>"xxciaoyyy"</q>);</td></tr>
+<tr><th id="1018">1018</th><td>        sdstrim(x,<q>"xy"</q>);</td></tr>
+<tr><th id="1019">1019</th><td>        test_cond(<q>"sdstrim() correctly trims characters"</q>,</td></tr>
+<tr><th id="1020">1020</th><td>            sdslen(x) == <var>4</var> &amp;&amp; memcmp(x,<q>"ciao\0"</q>,<var>5</var>) == <var>0</var>)</td></tr>
+<tr><th id="1021">1021</th><td></td></tr>
+<tr><th id="1022">1022</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1023">1023</th><td>        sdsrange(y,<var>1</var>,<var>1</var>);</td></tr>
+<tr><th id="1024">1024</th><td>        test_cond(<q>"sdsrange(...,1,1)"</q>,</td></tr>
+<tr><th id="1025">1025</th><td>            sdslen(y) == <var>1</var> &amp;&amp; memcmp(y,<q>"i\0"</q>,<var>2</var>) == <var>0</var>)</td></tr>
+<tr><th id="1026">1026</th><td></td></tr>
+<tr><th id="1027">1027</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1028">1028</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1029">1029</th><td>        sdsrange(y,<var>1</var>,-<var>1</var>);</td></tr>
+<tr><th id="1030">1030</th><td>        test_cond(<q>"sdsrange(...,1,-1)"</q>,</td></tr>
+<tr><th id="1031">1031</th><td>            sdslen(y) == <var>3</var> &amp;&amp; memcmp(y,<q>"iao\0"</q>,<var>4</var>) == <var>0</var>)</td></tr>
+<tr><th id="1032">1032</th><td></td></tr>
+<tr><th id="1033">1033</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1034">1034</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1035">1035</th><td>        sdsrange(y,-<var>2</var>,-<var>1</var>);</td></tr>
+<tr><th id="1036">1036</th><td>        test_cond(<q>"sdsrange(...,-2,-1)"</q>,</td></tr>
+<tr><th id="1037">1037</th><td>            sdslen(y) == <var>2</var> &amp;&amp; memcmp(y,<q>"ao\0"</q>,<var>3</var>) == <var>0</var>)</td></tr>
+<tr><th id="1038">1038</th><td></td></tr>
+<tr><th id="1039">1039</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1040">1040</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1041">1041</th><td>        sdsrange(y,<var>2</var>,<var>1</var>);</td></tr>
+<tr><th id="1042">1042</th><td>        test_cond(<q>"sdsrange(...,2,1)"</q>,</td></tr>
+<tr><th id="1043">1043</th><td>            sdslen(y) == <var>0</var> &amp;&amp; memcmp(y,<q>"\0"</q>,<var>1</var>) == <var>0</var>)</td></tr>
+<tr><th id="1044">1044</th><td></td></tr>
+<tr><th id="1045">1045</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1046">1046</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1047">1047</th><td>        sdsrange(y,<var>1</var>,<var>100</var>);</td></tr>
+<tr><th id="1048">1048</th><td>        test_cond(<q>"sdsrange(...,1,100)"</q>,</td></tr>
+<tr><th id="1049">1049</th><td>            sdslen(y) == <var>3</var> &amp;&amp; memcmp(y,<q>"iao\0"</q>,<var>4</var>) == <var>0</var>)</td></tr>
+<tr><th id="1050">1050</th><td></td></tr>
+<tr><th id="1051">1051</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1052">1052</th><td>        y = sdsdup(x);</td></tr>
+<tr><th id="1053">1053</th><td>        sdsrange(y,<var>100</var>,<var>100</var>);</td></tr>
+<tr><th id="1054">1054</th><td>        test_cond(<q>"sdsrange(...,100,100)"</q>,</td></tr>
+<tr><th id="1055">1055</th><td>            sdslen(y) == <var>0</var> &amp;&amp; memcmp(y,<q>"\0"</q>,<var>1</var>) == <var>0</var>)</td></tr>
+<tr><th id="1056">1056</th><td></td></tr>
+<tr><th id="1057">1057</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1058">1058</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1059">1059</th><td>        x = sdsnew(<q>"foo"</q>);</td></tr>
+<tr><th id="1060">1060</th><td>        y = sdsnew(<q>"foa"</q>);</td></tr>
+<tr><th id="1061">1061</th><td>        test_cond(<q>"sdscmp(foo,foa)"</q>, sdscmp(x,y) &gt; <var>0</var>)</td></tr>
+<tr><th id="1062">1062</th><td></td></tr>
+<tr><th id="1063">1063</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1064">1064</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1065">1065</th><td>        x = sdsnew(<q>"bar"</q>);</td></tr>
+<tr><th id="1066">1066</th><td>        y = sdsnew(<q>"bar"</q>);</td></tr>
+<tr><th id="1067">1067</th><td>        test_cond(<q>"sdscmp(bar,bar)"</q>, sdscmp(x,y) == <var>0</var>)</td></tr>
+<tr><th id="1068">1068</th><td></td></tr>
+<tr><th id="1069">1069</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1070">1070</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1071">1071</th><td>        x = sdsnew(<q>"aar"</q>);</td></tr>
+<tr><th id="1072">1072</th><td>        y = sdsnew(<q>"bar"</q>);</td></tr>
+<tr><th id="1073">1073</th><td>        test_cond(<q>"sdscmp(bar,bar)"</q>, sdscmp(x,y) &lt; <var>0</var>)</td></tr>
+<tr><th id="1074">1074</th><td></td></tr>
+<tr><th id="1075">1075</th><td>        sdsfree(y);</td></tr>
+<tr><th id="1076">1076</th><td>        sdsfree(x);</td></tr>
+<tr><th id="1077">1077</th><td>        x = sdsnewlen(<q>"\a\n\0foo\r"</q>,<var>7</var>);</td></tr>
+<tr><th id="1078">1078</th><td>        y = sdscatrepr(sdsempty(),x,sdslen(x));</td></tr>
+<tr><th id="1079">1079</th><td>        test_cond(<q>"sdscatrepr(...data...)"</q>,</td></tr>
+<tr><th id="1080">1080</th><td>            memcmp(y,<q>"\"\\a\\n\\x00foo\\r\""</q>,<var>15</var>) == <var>0</var>)</td></tr>
+<tr><th id="1081">1081</th><td></td></tr>
+<tr><th id="1082">1082</th><td>        {</td></tr>
+<tr><th id="1083">1083</th><td>            <em>int</em> oldfree;</td></tr>
+<tr><th id="1084">1084</th><td></td></tr>
+<tr><th id="1085">1085</th><td>            sdsfree(x);</td></tr>
+<tr><th id="1086">1086</th><td>            x = sdsnew(<q>"0"</q>);</td></tr>
+<tr><th id="1087">1087</th><td>            sh = (<em>void</em>*) (x-(<b>sizeof</b>(<b>struct</b> sdshdr)));</td></tr>
+<tr><th id="1088">1088</th><td>            test_cond(<q>"sdsnew() free/len buffers"</q>, sh-&gt;len == <var>1</var> &amp;&amp; sh-&gt;free == <var>0</var>);</td></tr>
+<tr><th id="1089">1089</th><td>            x = sdsMakeRoomFor(x,<var>1</var>);</td></tr>
+<tr><th id="1090">1090</th><td>            sh = (<em>void</em>*) (x-(<b>sizeof</b>(<b>struct</b> sdshdr)));</td></tr>
+<tr><th id="1091">1091</th><td>            test_cond(<q>"sdsMakeRoomFor()"</q>, sh-&gt;len == <var>1</var> &amp;&amp; sh-&gt;free &gt; <var>0</var>);</td></tr>
+<tr><th id="1092">1092</th><td>            oldfree = sh-&gt;free;</td></tr>
+<tr><th id="1093">1093</th><td>            x[<var>1</var>] = <kbd>'1'</kbd>;</td></tr>
+<tr><th id="1094">1094</th><td>            sdsIncrLen(x,<var>1</var>);</td></tr>
+<tr><th id="1095">1095</th><td>            test_cond(<q>"sdsIncrLen() -- content"</q>, x[<var>0</var>] == <kbd>'0'</kbd> &amp;&amp; x[<var>1</var>] == <kbd>'1'</kbd>);</td></tr>
+<tr><th id="1096">1096</th><td>            test_cond(<q>"sdsIncrLen() -- len"</q>, sh-&gt;len == <var>2</var>);</td></tr>
+<tr><th id="1097">1097</th><td>            test_cond(<q>"sdsIncrLen() -- free"</q>, sh-&gt;free == oldfree-<var>1</var>);</td></tr>
+<tr><th id="1098">1098</th><td>        }</td></tr>
+<tr><th id="1099">1099</th><td>    }</td></tr>
+<tr><th id="1100">1100</th><td>    test_report()</td></tr>
+<tr><th id="1101">1101</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="1102">1102</th><td>}</td></tr>
+<tr><th id="1103">1103</th><td><u>#<span data-ppcond="965">endif</span></u></td></tr>
+<tr><th id="1104">1104</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

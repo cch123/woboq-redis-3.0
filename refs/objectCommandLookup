@@ -1,0 +1,4 @@
+<def f='redis/src/object.c' l='704' ll='709' type='robj * objectCommandLookup(redisClient * c, robj * key)'/>
+<use f='redis/src/object.c' l='712' u='c' c='objectCommandLookupOrReply'/>
+<doc f='redis/src/object.c' l='702'>/* This is a helper function for the OBJECT command. We need to lookup keys
+ * without any modification of LRU or other parameters. */</doc>

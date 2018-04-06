@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lua.h' l='136' type='int lua_isstring(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='267' ll='270' macro='1' type='int lua_isstring(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='84' u='c' c='luaB_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='306' u='c' c='generic_reader'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='565' u='c' c='luaB_auxwrap'/>
+<use f='redis/deps/lua/src/ldblib.c' l='336' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/loadlib.c' l='476' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='638' u='c' c='add_value'/>
+<use f='redis/deps/lua/src/ltablib.c' l='137' u='c' c='addfield'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='902' type='char *'/>
+<offset>20096</offset>
+<doc f='redis/src/redis.h' l='901'>/* Assert &amp; bug reporting */</doc>
+<use f='redis/src/debug.c' l='395' u='w' c='_redisAssert'/>
+<use f='redis/src/debug.c' l='815' u='r' c='sigsegvHandler'/>
+<use f='redis/src/redis.c' l='1546' u='w' c='initServerConfig'/>

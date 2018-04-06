@@ -1,0 +1,2 @@
+<dec f='redis/src/zmalloc.h' l='35'/>
+<doc f='redis/src/zmalloc.h' l='34'>/* Double expansion needed for stringification of macro values. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='55' type='int linenoiseHistorySetMaxLen(int len)'/>
+<def f='redis/deps/linenoise/linenoise.c' l='1043' ll='1069' type='int linenoiseHistorySetMaxLen(int len)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='1039'>/* Set the maximum length for the history. This function can be called even
+ * if there is already some history, the function will make sure to retain
+ * just the latest &apos;len&apos; elements if the new history length value is smaller
+ * than the amount of items already inside the history. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/src/ae.h' l='65' type='aeFileProc *'/>
+<use f='redis/src/ae.c' l='148' u='w' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='415' u='r' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='416' u='r' c='aeProcessEvents'/>
+<offset>128</offset>

@@ -1,0 +1,25 @@
+<dec f='redis/src/redis.h' l='845' type='unsigned int'/>
+<offset>17824</offset>
+<doc f='redis/src/redis.h' l='844'>/* Limits */</doc>
+<doc f='redis/src/redis.h' l='845'>/* Max number of simultaneous clients */</doc>
+<use f='redis/src/config.c' l='223' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='224' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='642' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='647' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='650' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='651' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='652' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='656' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='659' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='662' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1068' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1829' u='r' c='rewriteConfig'/>
+<use f='redis/src/networking.c' l='597' u='r' c='acceptCommonHandler'/>
+<use f='redis/src/redis.c' l='1451' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1562' u='r' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1568' u='w' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1600' u='r' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1601' u='w' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1602' u='r' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1622' u='r' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1772' u='r' c='initServer'/>

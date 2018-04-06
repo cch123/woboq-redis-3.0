@@ -1,0 +1,7 @@
+<dec f='redis/src/rdb.h' l='108' type='off_t rdbSavedObjectLen(robj * o)'/>
+<use f='redis/src/debug.c' l='303' u='c' c='debugCommand'/>
+<def f='redis/src/rdb.c' l='602' ll='606' type='off_t rdbSavedObjectLen(robj * o)'/>
+<doc f='redis/src/rdb.c' l='598'>/* Return the length the object will have on disk if saved with
+ * the rdbSaveObject() function. Currently we use a trick to get
+ * this length with very little changes to the code. In the future
+ * we could switch to a faster solution. */</doc>

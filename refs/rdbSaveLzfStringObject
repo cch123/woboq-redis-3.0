@@ -1,0 +1,2 @@
+<def f='redis/src/rdb.c' l='212' ll='247' type='int rdbSaveLzfStringObject(rio * rdb, unsigned char * s, size_t len)'/>
+<use f='redis/src/rdb.c' l='286' u='c' c='rdbSaveRawString'/>

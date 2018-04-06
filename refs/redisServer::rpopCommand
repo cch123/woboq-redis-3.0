@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='695' type='struct redisCommand *'/>
+<offset>6720</offset>
+<use f='redis/src/redis.c' l='1536' u='w' c='initServerConfig'/>
+<use f='redis/src/t_list.c' l='898' u='r' c='serveClientBlockedOnList'/>
+<use f='redis/src/t_list.c' l='915' u='r' c='serveClientBlockedOnList'/>

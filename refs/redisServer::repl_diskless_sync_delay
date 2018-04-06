@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='813' type='int'/>
+<offset>16064</offset>
+<doc f='redis/src/redis.h' l='813'>/* Delay to start a diskless repl BGSAVE. */</doc>
+<use f='redis/src/config.c' l='278' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='279' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='938' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1077' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1824' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1503' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='561' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='2083' u='r' c='replicationCron'/>

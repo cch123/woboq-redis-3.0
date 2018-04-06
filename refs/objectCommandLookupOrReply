@@ -1,0 +1,4 @@
+<def f='redis/src/object.c' l='711' ll='716' type='robj * objectCommandLookupOrReply(redisClient * c, robj * key, robj * reply)'/>
+<use f='redis/src/object.c' l='724' u='c' c='objectCommand'/>
+<use f='redis/src/object.c' l='728' u='c' c='objectCommand'/>
+<use f='redis/src/object.c' l='732' u='c' c='objectCommand'/>

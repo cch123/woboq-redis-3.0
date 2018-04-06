@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='156' type='2'/>
+<use f='redis/deps/lua/src/lcode.c' l='339' u='r' c='code_label'/>
+<use f='redis/deps/lua/src/lcode.c' l='351' u='r' c='discharge2reg'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='156'>/*	A B C	R(A) := (Bool)B; if (C) pc++			*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='374' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='415' c='luaV_execute'/>

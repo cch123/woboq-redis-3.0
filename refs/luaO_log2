@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='369' type='int luaO_log2(unsigned int x)'/>
+<def f='redis/deps/lua/src/lobject.c' l='54' ll='69' type='int luaO_log2(unsigned int x)'/>
+<use f='redis/deps/lua/src/ltable.c' l='214' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='280' macro='1' u='c'/>

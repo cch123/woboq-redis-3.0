@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='46' type='int'/>
+<offset>1088</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='45'>/* Special flags.  */</doc>
+<use f='redis/src/debug.c' l='865' u='w' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='940' u='w' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='962' u='w' c='disableWatchdog'/>
+<use f='redis/src/redis.c' l='3501' u='w' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3508' u='w' c='setupSignalHandlers'/>

@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='373' ll='380' type='dictType'/>
+<use f='redis/src/sentinel.c' l='3242' u='a' c='sentinelGetLeader'/>
+<doc f='redis/src/sentinel.c' l='369'>/* Instance runid (sds) -&gt; votes (long casted to void*)
+ *
+ * This is useful into sentinelGetObjectiveLeader() function in order to
+ * count the votes and understand who is the leader. */</doc>

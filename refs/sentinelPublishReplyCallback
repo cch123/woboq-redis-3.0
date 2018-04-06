@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='2091' ll='2104' type='void sentinelPublishReplyCallback(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='2273' u='r' c='sentinelSendHello'/>
+<doc f='redis/src/sentinel.c' l='2089'>/* This is called when we get the reply about the PUBLISH command we send
+ * to the master to advertise this sentinel. */</doc>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lundump.h' l='17' type='void luaU_header(char * h)'/>
+<use f='redis/deps/lua/src/ldump.c' l='146' u='c' c='DumpHeader'/>
+<use f='redis/deps/lua/src/lundump.c' l='187' u='c' c='LoadHeader'/>
+<def f='redis/deps/lua/src/lundump.c' l='214' ll='227' type='void luaU_header(char * h)'/>
+<doc f='redis/deps/lua/src/lundump.c' l='211'>/*
+* make header
+*/</doc>

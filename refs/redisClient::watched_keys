@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='552' type='list *'/>
+<use f='redis/src/aof.c' l='572' u='w' c='createFakeClient'/>
+<use f='redis/src/aof.c' l='591' u='r' c='freeFakeClient'/>
+<offset>2816</offset>
+<doc f='redis/src/redis.h' l='552'>/* Keys WATCHED for MULTI/EXEC CAS */</doc>
+<use f='redis/src/multi.c' l='209' u='r' c='watchForKey'/>
+<use f='redis/src/multi.c' l='228' u='r' c='watchForKey'/>
+<use f='redis/src/multi.c' l='237' u='r' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='238' u='r' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='253' u='r' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='292' u='r' c='touchWatchedKeysOnFlush'/>
+<use f='redis/src/networking.c' l='120' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='722' u='r' c='freeClient'/>

@@ -1,0 +1,10 @@
+<def f='redis/deps/hiredis/sds.c' l='771' ll='774' type='int is_hex_digit(char c)'/>
+<use f='redis/deps/hiredis/sds.c' l='838' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='839' u='c' c='sdssplitargs'/>
+<doc f='redis/deps/hiredis/sds.c' l='769'>/* Helper function for sdssplitargs() that returns non zero if &apos;c&apos;
+ * is a valid hex digit. */</doc>
+<def f='redis/src/sds.c' l='771' ll='774' type='int is_hex_digit(char c)'/>
+<use f='redis/src/sds.c' l='838' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='839' u='c' c='sdssplitargs'/>
+<doc f='redis/src/sds.c' l='769'>/* Helper function for sdssplitargs() that returns non zero if &apos;c&apos;
+ * is a valid hex digit. */</doc>

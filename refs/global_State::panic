@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='88' type='lua_CFunction'/>
+<use f='redis/deps/lua/src/lapi.c' l='133' u='r' c='lua_atpanic'/>
+<use f='redis/deps/lua/src/lapi.c' l='134' u='w' c='lua_atpanic'/>
+<offset>1216</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='88'>/* to be called in unprotected errors */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='101' u='r' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='104' u='r' c='luaD_throw'/>
+<use f='redis/deps/lua/src/lstate.c' l='168' u='w' c='lua_newstate'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1060' type='char * getClientTypeName(int class)'/>
+<use f='redis/src/config.c' l='1185' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1621' u='c' c='rewriteConfigClientoutputbufferlimitOption'/>
+<def f='redis/src/networking.c' l='1603' ll='1610' type='char * getClientTypeName(int class)'/>

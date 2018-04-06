@@ -1,0 +1,3 @@
+<dec f='redis/src/rdb.h' l='86'/>
+<doc f='redis/src/rdb.h' l='85'>/* Test if a type is an object type. */</doc>
+<use f='redis/src/rdb.c' l='474' u='c'/>

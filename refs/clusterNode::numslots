@@ -1,0 +1,19 @@
+<dec f='redis/src/cluster.h' l='87' type='int'/>
+<use f='redis/src/cluster.c' l='656' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1183' u='r' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1196' u='r' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1499' u='r' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1915' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2238' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2460' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2713' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2918' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3164' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3321' u='w' c='clusterNodeSetSlotBit'/>
+<use f='redis/src/cluster.c' l='3329' u='w' c='clusterNodeClearSlotBit'/>
+<use f='redis/src/cluster.c' l='3443' u='r' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3564' u='r' c='clusterSetMaster'/>
+<use f='redis/src/cluster.c' l='3751' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4130' u='r' c='clusterCommand'/>
+<offset>16896</offset>
+<doc f='redis/src/cluster.h' l='87'>/* Number of slots handled by this node */</doc>

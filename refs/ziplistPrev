@@ -1,0 +1,11 @@
+<dec f='redis/src/ziplist.h' l='38' type='unsigned char * ziplistPrev(unsigned char * zl, unsigned char * p)'/>
+<use f='redis/src/t_list.c' l='157' u='c' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='255' u='c' c='listTypeDelete'/>
+<use f='redis/src/t_zset.c' l='724' u='c' c='zzlPrev'/>
+<use f='redis/src/t_zset.c' l='726' u='c' c='zzlPrev'/>
+<use f='redis/src/t_zset.c' l='814' u='c' c='zzlLastInRange'/>
+<use f='redis/src/t_zset.c' l='816' u='c' c='zzlLastInRange'/>
+<use f='redis/src/t_zset.c' l='905' u='c' c='zzlLastInLexRange'/>
+<use f='redis/src/t_zset.c' l='907' u='c' c='zzlLastInLexRange'/>
+<def f='redis/src/ziplist.c' l='724' ll='740' type='unsigned char * ziplistPrev(unsigned char * zl, unsigned char * p)'/>
+<doc f='redis/src/ziplist.c' l='723'>/* Return pointer to previous entry in ziplist. */</doc>

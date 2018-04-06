@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lmem.h' l='29'/>
+<use f='redis/deps/lua/src/lfunc.c' l='45' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='67' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='116' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='359' u='c'/>

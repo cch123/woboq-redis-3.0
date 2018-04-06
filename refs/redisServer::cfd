@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='676' type='int [16]'/>
+<offset>2976</offset>
+<doc f='redis/src/redis.h' l='676'>/* Cluster bus listening socket */</doc>
+<use f='redis/src/cluster.c' l='448' u='r' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='455' u='r' c='clusterInit'/>
+<use f='redis/src/redis.c' l='2317' u='r' c='closeListeningSockets'/>

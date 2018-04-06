@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1192' type='void aofRewriteBufferReset()'/>
+<def f='redis/src/aof.c' l='69' ll='75' type='void aofRewriteBufferReset()'/>
+<use f='redis/src/aof.c' l='224' u='c' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='1498' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/aof.c' l='66'>/* This function free the old AOF rewrite buffer if needed, and initialize
+ * a fresh new one. It tests for server.aof_rewrite_buf_blocks equal to NULL
+ * so can be used for the first initialization as well. */</doc>
+<use f='redis/src/redis.c' l='1817' u='c' c='initServer'/>

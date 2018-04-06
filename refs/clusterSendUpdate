@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.c' l='71' type='void clusterSendUpdate(clusterLink * link, clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='1842' u='c' c='clusterProcessPacket'/>
+<def f='redis/src/cluster.c' l='2373' ll='2383' type='void clusterSendUpdate(clusterLink * link, clusterNode * node)'/>
+<doc f='redis/src/cluster.c' l='2370'>/* Send an UPDATE message to the specified link carrying the specified &apos;node&apos;
+ * slots configuration. The node name, slots bitmap, and configEpoch info
+ * are included. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/latency.h' l='59' type='uint32_t'/>
+<offset>128</offset>
+<doc f='redis/src/latency.h' l='59'>/* Mean absolute deviation. */</doc>
+<use f='redis/src/latency.c' l='168' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='212' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='269' u='r' c='createLatencyReport'/>

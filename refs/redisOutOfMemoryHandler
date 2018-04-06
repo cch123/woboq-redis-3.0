@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3548' ll='3552' type='void redisOutOfMemoryHandler(size_t allocation_size)'/>
+<use f='redis/src/redis.c' l='3579' u='r' c='main'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1256' type='robj * setTypeCreate(robj * value)'/>
+<doc f='redis/src/redis.h' l='1255'>/* Set data type */</doc>
+<def f='redis/src/t_set.c' l='41' ll='45' type='robj * setTypeCreate(robj * value)'/>
+<use f='redis/src/t_set.c' l='256' u='c' c='saddCommand'/>
+<use f='redis/src/t_set.c' l='346' u='c' c='smoveCommand'/>
+<doc f='redis/src/t_set.c' l='38'>/* Factory method to return a set that *can* hold &quot;value&quot;. When the object has
+ * an integer-encodable value, an intset will be returned. Otherwise a regular
+ * hash table. */</doc>

@@ -1,0 +1,17 @@
+<dec f='include/ctype.h' l='53' type='8192'/>
+<doc f='include/ctype.h' l='53'>/* Whitespace.  */</doc>
+<use f='redis/deps/hiredis/sds.c' l='827' macro='1' u='r'/>
+<use f='redis/deps/hiredis/sds.c' l='863' macro='1' u='r'/>
+<use f='redis/deps/hiredis/sds.c' l='878' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='69' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='413' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='97' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='234' macro='1' u='r'/>
+<use f='redis/src/db.c' l='404' macro='1' u='r'/>
+<use f='redis/src/object.c' l='553' macro='1' u='r'/>
+<use f='redis/src/object.c' l='595' macro='1' u='r'/>
+<use f='redis/src/object.c' l='633' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='322' macro='1' u='r'/>
+<use f='redis/src/sds.c' l='827' macro='1' u='r'/>
+<use f='redis/src/sds.c' l='863' macro='1' u='r'/>
+<use f='redis/src/sds.c' l='878' macro='1' u='r'/>

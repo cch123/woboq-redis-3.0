@@ -1,0 +1,19 @@
+<dec f='redis/deps/lua/src/lobject.h' l='282' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:279:5)'/>
+<offset>0</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='279'>/* double linked list (when open) */</doc>
+<use f='redis/deps/lua/src/lfunc.c' l='73' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='76' u='m' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='m' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='m' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='m' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lstate.c' l='160' u='m' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='161' u='m' c='lua_newstate'/>

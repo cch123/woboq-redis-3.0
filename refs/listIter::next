@@ -1,0 +1,9 @@
+<dec f='redis/src/adlist.h' l='43' type='listNode *'/>
+<use f='redis/src/adlist.c' l='184' u='w' c='listGetIterator'/>
+<use f='redis/src/adlist.c' l='186' u='w' c='listGetIterator'/>
+<use f='redis/src/adlist.c' l='198' u='w' c='listRewind'/>
+<use f='redis/src/adlist.c' l='203' u='w' c='listRewindTail'/>
+<use f='redis/src/adlist.c' l='223' u='r' c='listNext'/>
+<use f='redis/src/adlist.c' l='227' u='w' c='listNext'/>
+<use f='redis/src/adlist.c' l='229' u='w' c='listNext'/>
+<offset>0</offset>

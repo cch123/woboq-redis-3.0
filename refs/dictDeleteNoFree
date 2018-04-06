@@ -1,0 +1,2 @@
+<dec f='redis/src/dict.h' l='157' type='int dictDeleteNoFree(dict * d, const void * key)'/>
+<def f='redis/src/dict.c' l='450' ll='452' type='int dictDeleteNoFree(dict * ht, const void * key)'/>

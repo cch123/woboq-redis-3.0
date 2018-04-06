@@ -1,0 +1,18 @@
+<def f='redis/src/config.c' l='1452' ll='1458' type='void rewriteConfigYesNoOption(struct rewriteConfigState * state, char * option, int value, int defvalue)'/>
+<use f='redis/src/config.c' l='1788' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1804' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1809' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1810' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1811' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1816' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1817' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1822' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1823' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1840' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1847' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1851' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1853' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1869' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1872' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1873' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1451'>/* Rewrite a yes/no option. */</doc>

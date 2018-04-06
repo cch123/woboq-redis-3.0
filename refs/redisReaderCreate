@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='143' type='redisReader * redisReaderCreate()'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='142'>/* Public API for the protocol parser. */</doc>
+<def f='redis/deps/hiredis/hiredis.c' l='556' ll='575' type='redisReader * redisReaderCreate()'/>
+<use f='redis/deps/hiredis/hiredis.c' l='999' u='c' c='redisContextInit'/>
+<use f='redis/src/redis-cli.c' l='1405' u='c' c='pipeMode'/>

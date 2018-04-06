@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='708' type='long long'/>
+<offset>7488</offset>
+<doc f='redis/src/redis.h' l='708'>/* Number of full resyncs with slaves. */</doc>
+<use f='redis/src/redis.c' l='1731' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2845' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='516' u='w' c='syncCommand'/>

@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='75' type='void luaL_unref(lua_State * L, int t, int ref)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='504' ll='512' macro='1' type='void luaL_unref(lua_State * L, int t, int ref)'/>

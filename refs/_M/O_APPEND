@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl-linux.h' l='59'/>
+<use f='redis/src/aof.c' l='237' u='c'/>
+<use f='redis/src/aof.c' l='1379' u='c'/>
+<use f='redis/src/debug.c' l='667' u='c'/>
+<use f='redis/src/redis.c' l='366' u='c'/>
+<use f='redis/src/redis.c' l='1858' u='c'/>

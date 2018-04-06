@@ -1,0 +1,2 @@
+<use f='redis/src/setproctitle.c' l='182' u='r' c='spt_init'/>
+<use f='redis/src/setproctitle.c' l='185' u='w' c='spt_init'/>

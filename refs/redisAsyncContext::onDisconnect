@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/async.h' l='87' type='redisDisconnectCallback *'/>
+<use f='redis/deps/hiredis/async.c' l='131' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='208' u='r' c='redisAsyncSetDisconnectCallback'/>
+<use f='redis/deps/hiredis/async.c' l='209' u='w' c='redisAsyncSetDisconnectCallback'/>
+<use f='redis/deps/hiredis/async.c' l='296' u='r' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='298' u='r' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='300' u='r' c='__redisAsyncFree'/>
+<offset>1856</offset>
+<doc f='redis/deps/hiredis/async.h' l='85'>/* Called when either the connection is terminated due to an error or per
+     * user request. The status is set accordingly (REDIS_OK, REDIS_ERR). */</doc>

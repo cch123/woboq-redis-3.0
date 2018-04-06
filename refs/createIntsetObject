@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1130' type='robj * createIntsetObject()'/>
+<def f='redis/src/object.c' l='205' ll='210' type='robj * createIntsetObject()'/>
+<use f='redis/src/rdb.c' l='874' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_set.c' l='43' u='c' c='setTypeCreate'/>
+<use f='redis/src/t_set.c' l='636' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='795' u='c' c='sunionDiffGenericCommand'/>

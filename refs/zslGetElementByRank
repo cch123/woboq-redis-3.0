@@ -1,0 +1,7 @@
+<dec f='redis/src/sort.c' l='36' type='zskiplistNode * zslGetElementByRank(zskiplist * zsl, unsigned long rank)'/>
+<use f='redis/src/sort.c' l='386' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='390' u='c' c='sortCommand'/>
+<def f='redis/src/t_zset.c' l='410' ll='427' type='zskiplistNode * zslGetElementByRank(zskiplist * zsl, unsigned long rank)'/>
+<use f='redis/src/t_zset.c' l='2174' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2178' u='c' c='zrangeGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='409'>/* Finds an element by its rank. The rank argument needs to be 1-based. */</doc>

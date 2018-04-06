@@ -1,0 +1,6 @@
+<def f='redis/src/t_list.c' l='295' ll='321' type='void pushGenericCommand(redisClient * c, int where)'/>
+<use f='redis/src/t_list.c' l='324' u='c' c='lpushCommand'/>
+<use f='redis/src/t_list.c' l='328' u='c' c='rpushCommand'/>
+<doc f='redis/src/t_list.c' l='291'>/*-----------------------------------------------------------------------------
+ * List Commands
+ *----------------------------------------------------------------------------*/</doc>

@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1058' type='int getClientType(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1442' u='c' c='clientCommand'/>
+<def f='redis/src/networking.c' l='1588' ll='1594' type='int getClientType(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1622' u='c' c='checkClientOutputBufferLimits'/>
+<doc f='redis/src/networking.c' l='1580'>/* Get the class of a client, used in order to enforce limits to different
+ * classes of clients.
+ *
+ * The function will return one of the following:
+ * REDIS_CLIENT_TYPE_NORMAL -&gt; Normal client
+ * REDIS_CLIENT_TYPE_SLAVE  -&gt; Slave or client executing MONITOR command
+ * REDIS_CLIENT_TYPE_PUBSUB -&gt; Client subscribed to Pub/Sub channels
+ */</doc>

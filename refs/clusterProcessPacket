@@ -1,0 +1,11 @@
+<def f='redis/src/cluster.c' l='1529' ll='1961' type='int clusterProcessPacket(clusterLink * link)'/>
+<use f='redis/src/cluster.c' l='2050' u='c' c='clusterReadHandler'/>
+<doc f='redis/src/cluster.c' l='1520'>/* When this function is called, there is a packet to process starting
+ * at node-&gt;rcvbuf. Releasing the buffer is up to the caller, so this
+ * function should just handle the higher level stuff of processing the
+ * packet, modifying the cluster state if needed.
+ *
+ * The function returns 1 if the link is still valid after the packet
+ * was processed, otherwise 0 if the link was freed since the packet
+ * processing lead to some inconsistency error (for instance a PONG
+ * received from the wrong sender ID). */</doc>

@@ -1,0 +1,28 @@
+<dec f='redis/src/redis.h' l='1319' type='void dbAdd(redisDb * db, robj * key, robj * val)'/>
+<use f='redis/src/bitops.c' l='235' u='c' c='setbitCommand'/>
+<use f='redis/src/cluster.c' l='4429' u='c' c='restoreCommand'/>
+<def f='redis/src/db.c' l='93' ll='100' type='void dbAdd(redisDb * db, robj * key, robj * val)'/>
+<use f='redis/src/db.c' l='122' u='c' c='setKey'/>
+<use f='redis/src/db.c' l='688' u='c' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='753' u='c' c='moveCommand'/>
+<doc f='redis/src/db.c' l='89'>/* Add the key to the DB. It&apos;s up to the caller to increment the reference
+ * counter of the value if needed.
+ *
+ * The program is aborted if the key already exists. */</doc>
+<use f='redis/src/debug.c' l='347' u='c' c='debugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1165' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1315' u='c' c='pfmergeCommand'/>
+<use f='redis/src/rdb.c' l='1210' u='c' c='rdbLoad'/>
+<use f='redis/src/t_hash.c' l='400' u='c' c='hashTypeLookupWriteOrCreate'/>
+<use f='redis/src/t_list.c' l='308' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='706' u='c' c='rpoplpushHandlePush'/>
+<use f='redis/src/t_set.c' l='257' u='c' c='saddCommand'/>
+<use f='redis/src/t_set.c' l='347' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='706' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='877' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_string.c' l='198' u='c' c='setrangeCommand'/>
+<use f='redis/src/t_string.c' l='352' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_string.c' l='404' u='c' c='incrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='427' u='c' c='appendCommand'/>
+<use f='redis/src/t_zset.c' l='1208' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2068' u='c' c='zunionInterGenericCommand'/>

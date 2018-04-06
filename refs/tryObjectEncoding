@@ -1,0 +1,33 @@
+<dec f='redis/src/redis.h' l='1122' type='robj * tryObjectEncoding(robj * o)'/>
+<use f='redis/src/debug.c' l='263' u='c' c='debugCommand'/>
+<def f='redis/src/object.c' l='364' ll='441' type='robj * tryObjectEncoding(robj * o)'/>
+<doc f='redis/src/object.c' l='363'>/* Try to encode a string object in order to save space */</doc>
+<use f='redis/src/rdb.c' l='829' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='858' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='881' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='918' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='987' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='988' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='58' u='c' c='hashTypeTryObjectEncoding'/>
+<use f='redis/src/t_hash.c' l='59' u='c' c='hashTypeTryObjectEncoding'/>
+<use f='redis/src/t_hash.c' l='428' u='c' c='hashTypeConvertZiplist'/>
+<use f='redis/src/t_hash.c' l='430' u='c' c='hashTypeConvertZiplist'/>
+<use f='redis/src/t_list.c' l='305' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='386' u='c' c='lpushxCommand'/>
+<use f='redis/src/t_list.c' l='391' u='c' c='rpushxCommand'/>
+<use f='redis/src/t_list.c' l='396' u='c' c='linsertCommand'/>
+<use f='redis/src/t_list.c' l='455' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='644' u='c' c='lremCommand'/>
+<use f='redis/src/t_set.c' l='266' u='c' c='saddCommand'/>
+<use f='redis/src/t_set.c' l='309' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='364' u='c' c='sismemberCommand'/>
+<use f='redis/src/t_string.c' l='126' u='c' c='setCommand'/>
+<use f='redis/src/t_string.c' l='131' u='c' c='setnxCommand'/>
+<use f='redis/src/t_string.c' l='136' u='c' c='setexCommand'/>
+<use f='redis/src/t_string.c' l='141' u='c' c='psetexCommand'/>
+<use f='redis/src/t_string.c' l='166' u='c' c='getsetCommand'/>
+<use f='redis/src/t_string.c' l='309' u='c' c='msetGenericCommand'/>
+<use f='redis/src/t_string.c' l='426' u='c' c='appendCommand'/>
+<use f='redis/src/t_zset.c' l='1256' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2765' u='c' c='zscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2822' u='c' c='zrankGenericCommand'/>

@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lstring.h' l='28' type='TString * luaS_newlstr(lua_State * L, const char * str, size_t l)'/>
+<use f='redis/deps/lua/src/lapi.c' l='448' u='c' c='lua_pushlstring'/>
+<use f='redis/deps/lua/src/lapi.c' l='550' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='664' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='999' u='c' c='lua_concat'/>
+<use f='redis/deps/lua/src/ldo.c' l='54' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='58' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='225' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='411' macro='1' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='67' macro='1' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='119' u='c' c='luaX_newstring'/>
+<use f='redis/deps/lua/src/lobject.c' l='105' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='117' u='c' c='luaO_pushvfstring'/>
+<use f='redis/deps/lua/src/lparser.c' l='387' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='79' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lstring.c' l='75' ll='93' type='TString * luaS_newlstr(lua_State * L, const char * str, size_t l)'/>
+<use f='redis/deps/lua/src/ltm.c' l='40' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='86' u='c' c='LoadString'/>
+<use f='redis/deps/lua/src/lundump.c' l='208' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='54' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='309' u='c' c='luaV_concat'/>

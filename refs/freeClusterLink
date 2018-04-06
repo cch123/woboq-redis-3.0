@@ -1,0 +1,9 @@
+<def f='redis/src/cluster.c' l='552' ll='563' type='void freeClusterLink(clusterLink * link)'/>
+<use f='redis/src/cluster.c' l='833' u='c' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='1391' u='c' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1711' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1970' u='c' c='handleLinkIOError'/>
+<use f='redis/src/cluster.c' l='3183' u='c' c='clusterCron'/>
+<doc f='redis/src/cluster.c' l='549'>/* Free a cluster link, but does not free the associated node of course.
+ * This function will just make sure that the original node associated
+ * with this link will have the &apos;link&apos; field set to NULL. */</doc>

@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='276'/>
+<use f='redis/src/cluster.c' l='2723' u='c'/>
+<use f='redis/src/redis.c' l='2259' u='c'/>
+<use f='redis/src/redis.c' l='2882' u='c'/>
+<use f='redis/src/redis.c' l='2900' u='c'/>
+<use f='redis/src/replication.c' l='469' u='c'/>
+<use f='redis/src/replication.c' l='1025' u='c'/>
+<use f='redis/src/replication.c' l='1552' u='c'/>
+<use f='redis/src/replication.c' l='1657' u='c'/>
+<use f='redis/src/replication.c' l='1958' u='c'/>

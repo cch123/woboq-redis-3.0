@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='165' type='9'/>
+<use f='redis/deps/lua/src/lcode.c' l='491' u='r' c='luaK_storevar'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='165'>/*	A B C	R(A)[RK(B)] := RK(C)				*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='459' u='r' c='recfield'/>
+<use f='redis/deps/lua/src/lvm.c' l='457' c='luaV_execute'/>

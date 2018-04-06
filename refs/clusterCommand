@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1511' type='void clusterCommand(redisClient * c)'/>
+<def f='redis/src/cluster.c' l='3800' ll='4296' type='void clusterCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='261' u='r'/>
+<use f='redis/src/redis.c' l='261' u='r'/>
+<use f='redis/src/redis.c' l='261' u='r'/>
+<use f='redis/src/redis.c' l='261' u='r'/>

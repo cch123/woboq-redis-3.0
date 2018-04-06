@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='571' type='robj *'/>
+<offset>1152</offset>
+<use f='redis/src/db.c' l='728' u='r' c='moveCommand'/>
+<use f='redis/src/redis.c' l='1331' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_list.c' l='465' u='r' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='479' u='r' c='lsetCommand'/>

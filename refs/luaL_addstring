@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='148' type='void luaL_addstring(luaL_Buffer * B, const char * s)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='348' u='c' c='luaL_gsub'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='351' u='c' c='luaL_gsub'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='442' ll='444' macro='1' type='void luaL_addstring(luaL_Buffer * B, const char * s)'/>

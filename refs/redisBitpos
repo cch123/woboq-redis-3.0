@@ -1,0 +1,9 @@
+<def f='redis/src/bitops.c' l='122' ll='200' type='long redisBitpos(void * s, unsigned long count, int bit)'/>
+<use f='redis/src/bitops.c' l='584' u='c' c='bitposCommand'/>
+<doc f='redis/src/bitops.c' l='115'>/* Return the position of the first bit set to one (if &apos;bit&apos; is 1) or
+ * zero (if &apos;bit&apos; is 0) in the bitmap starting at &apos;s&apos; and long &apos;count&apos; bytes.
+ *
+ * The function is guaranteed to return a value &gt;= 0 if &apos;bit&apos; is 0 since if
+ * no zero bit is found, it returns count*8 assuming the string is zero
+ * padded on the right. However if &apos;bit&apos; is 1 it is possible that there is
+ * not a single set bit in the bitmap. In this special case -1 is returned. */</doc>

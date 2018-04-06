@@ -1,0 +1,4 @@
+<dec f='include/libio.h' l='247' type='char *'/>
+<offset>64</offset>
+<doc f='include/libio.h' l='246'>/* Note:  Tk uses the _IO_read_ptr and _IO_read_end fields directly. */</doc>
+<doc f='include/libio.h' l='247'>/* Current read pointer */</doc>

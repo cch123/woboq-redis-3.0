@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1242' type='void redisLogFromHandler(int level, const char * msg)'/>
+<use f='redis/src/debug.c' l='906' u='c' c='watchdogSignalHandler'/>
+<use f='redis/src/debug.c' l='912' u='c' c='watchdogSignalHandler'/>
+<def f='redis/src/redis.c' l='358' ll='378' type='void redisLogFromHandler(int level, const char * msg)'/>
+<use f='redis/src/redis.c' l='3484' u='c' c='sigShutdownHandler'/>
+<use f='redis/src/redis.c' l='3491' u='c' c='sigShutdownHandler'/>
+<doc f='redis/src/redis.c' l='352'>/* Log a fixed message without printf-alike capabilities, in a way that is
+ * safe to call from a signal handler.
+ *
+ * We actually use this only for signals that are not fatal from the point
+ * of view of Redis. Signals that are going to kill the server anyway and
+ * where we need printf-alike features are served by redisLog(). */</doc>

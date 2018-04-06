@@ -1,0 +1,5 @@
+<def f='redis/src/replication.c' l='1404' ll='1413' type='void undoConnectWithMaster()'/>
+<use f='redis/src/replication.c' l='1429' u='c' c='cancelReplicationHandshake'/>
+<use f='redis/src/replication.c' l='1946' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='1402'>/* This function can be called when a non blocking connection is currently
+ * in progress to undo it. */</doc>

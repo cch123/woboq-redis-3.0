@@ -1,0 +1,8 @@
+<dec f='redis/src/rdb.h' l='106' type='int rdbSave(char * filename)'/>
+<use f='redis/src/db.c' l='274' u='c' c='flushallCommand'/>
+<use f='redis/src/debug.c' l='266' u='c' c='debugCommand'/>
+<def f='redis/src/rdb.c' l='719' ll='762' type='int rdbSave(char * filename)'/>
+<use f='redis/src/rdb.c' l='780' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1529' u='c' c='saveCommand'/>
+<doc f='redis/src/rdb.c' l='718'>/* Save the DB on disk. Return REDIS_ERR on error, REDIS_OK on success. */</doc>
+<use f='redis/src/redis.c' l='2358' u='c' c='prepareForShutdown'/>

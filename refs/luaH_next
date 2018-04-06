@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/ltable.h' l='30' type='int luaH_next(lua_State * L, Table * t, StkId key)'/>
+<use f='redis/deps/lua/src/lapi.c' l='979' u='c' c='lua_next'/>
+<def f='redis/deps/lua/src/ltable.c' l='162' ll='179' type='int luaH_next(lua_State * L, Table * t, StkId key)'/>

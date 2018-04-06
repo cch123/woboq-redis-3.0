@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='104' type='int rdbSaveToSlavesSockets()'/>
+<def f='redis/src/rdb.c' l='1388' ll='1522' type='int rdbSaveToSlavesSockets()'/>
+<doc f='redis/src/rdb.c' l='1386'>/* Spawn an RDB child that writes the RDB to the sockets of the slaves
+ * that are currently in REDIS_REPL_WAIT_BGSAVE_START state. */</doc>
+<use f='redis/src/replication.c' l='452' u='c' c='startBgsaveForReplication'/>

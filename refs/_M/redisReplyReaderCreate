@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='149'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='148'>/* Backwards compatibility, can be removed on big version bump. */</doc>

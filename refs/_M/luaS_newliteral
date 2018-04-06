@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lstring.h' l='21'/>
+<use f='redis/deps/lua/src/ldo.c' l='54' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='58' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='225' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='79' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='208' u='c'/>

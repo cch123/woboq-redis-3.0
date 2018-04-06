@@ -1,0 +1,28 @@
+<dec f='include/stdlib.h' l='466' type='void * malloc(size_t __size)'/>
+<use f='redis/deps/hiredis/dict.c' l='74' u='c' c='dictCreate'/>
+<use f='redis/deps/hiredis/dict.c' l='145' u='c' c='dictAdd'/>
+<use f='redis/deps/hiredis/dict.c' l='259' u='c' c='dictGetIterator'/>
+<use f='redis/deps/hiredis/async.c' l='71' u='c' c='callbackValDup'/>
+<use f='redis/deps/hiredis/async.c' l='220' u='c' c='__redisPushCallback'/>
+<doc f='include/stdlib.h' l='465'>/* Allocate SIZE bytes of memory.  */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='105' u='c' c='createStringObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='878' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='953' u='c' c='redisFormatCommandArgv'/>
+<use f='redis/deps/hiredis/sds.c' l='55' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='381' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='397' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='687' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='915' macro='1' u='c'/>
+<use f='redis/deps/linenoise/linenoise.c' l='418' u='c' c='linenoiseAddCompletion'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1017' u='c' c='linenoiseHistoryAdd'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1050' u='c' c='linenoiseHistorySetMaxLen'/>
+<use f='redis/deps/lua/src/fpconv.c' l='127' u='c' c='fpconv_strtod'/>
+<use f='redis/deps/lua/src/strbuf.c' l='61' u='c' c='strbuf_init'/>
+<use f='redis/deps/lua/src/strbuf.c' l='72' u='c' c='strbuf_new'/>
+<dec f='redis/src/redis.h' l='1539' type='void * malloc(size_t size)'/>
+<use f='redis/src/memtest.c' l='213' u='c' c='memtest_test'/>
+<use f='redis/src/redis-cli.c' l='223' u='c' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='227' u='c' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='669' u='c' c='cliSendCommand'/>
+<use f='redis/src/redis-cli.c' l='1846' u='c' c='getInfoField'/>
+<use f='redis/src/zmalloc.c' l='125' u='c' c='zmalloc'/>

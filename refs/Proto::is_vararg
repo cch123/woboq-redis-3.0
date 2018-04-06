@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lobject.h' l='251' type='lu_byte'/>
+<offset>912</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='278' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='279' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='280' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='464' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='465' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldo.c' l='216' u='r' c='adjust_varargs'/>
+<use f='redis/deps/lua/src/ldo.c' l='279' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldump.c' l='136' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/lfunc.c' l='129' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='389' u='w' c='luaY_parser'/>
+<use f='redis/deps/lua/src/lparser.c' l='548' u='w' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='561' u='w' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='563' u='w' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='568' u='r' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='571' u='r' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='754' u='r' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='756' u='w' c='simpleexp'/>
+<use f='redis/deps/lua/src/lundump.c' l='172' u='w' c='LoadFunction'/>

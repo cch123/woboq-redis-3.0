@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='461' type='long long'/>
+<offset>448</offset>
+<doc f='redis/src/redis.h' l='461'>/* Average TTL, just for stats */</doc>
+<use f='redis/src/redis.c' l='815' u='w' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='852' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='852' u='w' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='854' u='w' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='854' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='1807' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='3028' u='r' c='genRedisInfoString'/>

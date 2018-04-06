@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/ltable.h' l='29' type='void luaH_free(lua_State * L, Table * t)'/>
+<use f='redis/deps/lua/src/lgc.c' l='383' u='c' c='freeobj'/>
+<def f='redis/deps/lua/src/ltable.c' l='374' ll='379' type='void luaH_free(lua_State * L, Table * t)'/>

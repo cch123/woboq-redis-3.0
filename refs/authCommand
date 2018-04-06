@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1377' type='void authCommand(redisClient * c)'/>
+<doc f='redis/src/redis.h' l='1376'>/* Commands prototypes */</doc>
+<use f='redis/src/redis.c' l='226' u='r'/>
+<use f='redis/src/redis.c' l='226' u='r'/>
+<use f='redis/src/redis.c' l='226' u='r'/>
+<use f='redis/src/redis.c' l='226' u='r'/>
+<use f='redis/src/redis.c' l='2154' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2277' u='r' c='processCommand'/>
+<def f='redis/src/redis.c' l='2423' ll='2433' type='void authCommand(redisClient * c)'/>

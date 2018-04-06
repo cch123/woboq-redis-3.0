@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1411' type='void rpushCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='141' u='r'/>
+<use f='redis/src/redis.c' l='141' u='r'/>
+<use f='redis/src/redis.c' l='141' u='r'/>
+<use f='redis/src/redis.c' l='141' u='r'/>
+<def f='redis/src/t_list.c' l='327' ll='329' type='void rpushCommand(redisClient * c)'/>

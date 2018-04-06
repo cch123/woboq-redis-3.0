@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lua.h' l='333' type='int lua_getstack(lua_State * L, int level, lua_Debug * ar)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='45' u='c' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='75' u='c' c='luaL_where'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='123' u='c' c='getfunc'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='497' u='c' c='costatus'/>
+<use f='redis/deps/lua/src/ldblib.c' l='105' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='149' u='c' c='db_getlocal'/>
+<use f='redis/deps/lua/src/ldblib.c' l='169' u='c' c='db_setlocal'/>
+<use f='redis/deps/lua/src/ldblib.c' l='339' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldblib.c' l='342' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldblib.c' l='346' u='c' c='db_errorfb'/>
+<def f='redis/deps/lua/src/ldebug.c' l='84' ll='104' macro='1' type='int lua_getstack(lua_State * L, int level, lua_Debug * ar)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='509' u='c' c='setfenv'/>
+<use f='redis/src/scripting.c' l='162' u='c' c='luaPushError'/>

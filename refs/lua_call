@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lua.h' l='201' type='void lua_call(lua_State * L, int nargs, int nresults)'/>
+<def f='redis/deps/lua/src/lapi.c' l='776' ll='785' macro='1' type='void lua_call(lua_State * L, int nargs, int nresults)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='224' u='c' c='luaL_callmeta'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='39' u='c' c='luaB_print'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='301' u='c' c='generic_reader'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='329' u='c' c='luaB_dofile'/>
+<use f='redis/deps/lua/src/ldblib.c' l='220' u='c' c='hookf'/>
+<use f='redis/deps/lua/src/linit.c' l='35' u='c' c='luaL_openlibs'/>
+<use f='redis/deps/lua/src/loadlib.c' l='473' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='484' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='524' u='c' c='dooptions'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='625' u='c' c='add_value'/>
+<use f='redis/deps/lua/src/ltablib.c' l='30' u='c' c='foreachi'/>
+<use f='redis/deps/lua/src/ltablib.c' l='47' u='c' c='foreach'/>
+<use f='redis/deps/lua/src/ltablib.c' l='184' u='c' c='sort_comp'/>
+<use f='redis/src/scripting.c' l='198' u='c' c='luaSortArray'/>
+<use f='redis/src/scripting.c' l='571' u='c' c='luaLoadLib'/>

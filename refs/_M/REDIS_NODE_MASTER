@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='48'/>
+<use f='redis/src/cluster.c' l='183' u='c'/>
+<use f='redis/src/cluster.c' l='424' u='c'/>
+<use f='redis/src/cluster.c' l='1411' u='c'/>
+<use f='redis/src/cluster.c' l='1699' u='c'/>
+<use f='redis/src/cluster.c' l='1760' u='c'/>
+<use f='redis/src/cluster.c' l='3567' u='c'/>
+<use f='redis/src/cluster.c' l='3591' u='c'/>
+<doc f='redis/src/cluster.h' l='47'>/* Cluster node flags and macros. */</doc>

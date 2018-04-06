@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='191' type='unsigned char [2048]'/>
+<use f='redis/src/cluster.c' l='1956' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2381' u='r' c='clusterSendUpdate'/>
+<offset>384</offset>
+<doc f='redis/src/cluster.h' l='191'>/* Slots bitmap. */</doc>

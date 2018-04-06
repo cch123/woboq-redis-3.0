@@ -1,0 +1,30 @@
+<dec f='redis/src/redis.h' l='1317' type='robj * lookupKeyReadOrReply(redisClient * c, robj * key, robj * reply)'/>
+<use f='redis/src/bitops.c' l='271' u='c' c='getbitCommand'/>
+<use f='redis/src/bitops.c' l='469' u='c' c='bitcountCommand'/>
+<def f='redis/src/db.c' l='77' ll='81' type='robj * lookupKeyReadOrReply(redisClient * c, robj * key, robj * reply)'/>
+<use f='redis/src/t_hash.c' l='628' u='c' c='hgetCommand'/>
+<use f='redis/src/t_hash.c' l='682' u='c' c='hlenCommand'/>
+<use f='redis/src/t_hash.c' l='718' u='c' c='genericHgetallCommand'/>
+<use f='redis/src/t_hash.c' l='757' u='c' c='hexistsCommand'/>
+<use f='redis/src/t_hash.c' l='768' u='c' c='hscanCommand'/>
+<use f='redis/src/t_list.c' l='337' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='407' u='c' c='llenCommand'/>
+<use f='redis/src/t_list.c' l='413' u='c' c='lindexCommand'/>
+<use f='redis/src/t_list.c' l='532' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_set.c' l='361' u='c' c='sismemberCommand'/>
+<use f='redis/src/t_set.c' l='374' u='c' c='scardCommand'/>
+<use f='redis/src/t_set.c' l='441' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='567' u='c' c='srandmemberCommand'/>
+<use f='redis/src/t_set.c' l='916' u='c' c='sscanCommand'/>
+<use f='redis/src/t_string.c' l='148' u='c' c='getGenericCommand'/>
+<use f='redis/src/t_string.c' l='242' u='c' c='getrangeCommand'/>
+<use f='redis/src/t_string.c' l='454' u='c' c='strlenCommand'/>
+<use f='redis/src/t_zset.c' l='2111' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2249' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2410' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2487' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2597' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2742' u='c' c='zcardCommand'/>
+<use f='redis/src/t_zset.c' l='2753' u='c' c='zscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2785' u='c' c='zrankGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2853' u='c' c='zscanCommand'/>

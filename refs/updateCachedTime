@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1251' type='void updateCachedTime()'/>
+<use f='redis/src/rdb.c' l='1121' u='c' c='rdbLoadProgressCallback'/>
+<def f='redis/src/redis.c' l='1043' ll='1046' type='void updateCachedTime()'/>
+<use f='redis/src/redis.c' l='1078' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1833' u='c' c='initServer'/>
+<doc f='redis/src/redis.c' l='1039'>/* We take a cached value of the unix time in the global state because with
+ * virtual memory and aging there is to store the current time in objects at
+ * every object access, and accuracy is not needed. To access a global var is
+ * a lot faster than calling time(NULL) */</doc>

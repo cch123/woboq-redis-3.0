@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/zmalloc.h' l='7'/>
+<use f='redis/deps/hiredis/sds.c' l='55' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='381' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='397' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='687' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='915' u='c'/>

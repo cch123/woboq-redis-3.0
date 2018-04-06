@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='673' type='int [16]'/>
+<offset>2400</offset>
+<doc f='redis/src/redis.h' l='673'>/* TCP socket file descriptors */</doc>
+<use f='redis/src/redis.c' l='1777' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1845' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2314' u='r' c='closeListeningSockets'/>

@@ -1,0 +1,9 @@
+<def f='redis/src/hyperloglog.c' l='1124' ll='1152' type='int isHLLObjectOrReply(redisClient * c, robj * o)'/>
+<use f='redis/src/hyperloglog.c' l='1168' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1217' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1242' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1298' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1466' u='c' c='pfdebugCommand'/>
+<doc f='redis/src/hyperloglog.c' l='1121'>/* Check if the object is a String with a valid HLL representation.
+ * Return REDIS_OK if this is true, otherwise reply to the client
+ * with an error and return REDIS_ERR. */</doc>

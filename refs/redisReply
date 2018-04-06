@@ -1,0 +1,9 @@
+<def f='redis/deps/hiredis/hiredis.h' l='98' ll='105'/>
+<size>48</size>
+<doc f='redis/deps/hiredis/hiredis.h' l='97'>/* This is the reply object returned by redisCommand() */</doc>
+<mbr r='redisReply::type' o='0' t='int'/>
+<mbr r='redisReply::integer' o='64' t='long long'/>
+<mbr r='redisReply::len' o='128' t='int'/>
+<mbr r='redisReply::str' o='192' t='char *'/>
+<mbr r='redisReply::elements' o='256' t='size_t'/>
+<mbr r='redisReply::element' o='320' t='struct redisReply **'/>

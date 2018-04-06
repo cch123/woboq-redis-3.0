@@ -1,0 +1,30 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='100'/>
+<doc f='redis/deps/lua/src/lauxlib.h' l='94'>/*
+** ===============================================================
+** some useful macros
+** ===============================================================
+*/</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='66' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='107' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='122' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='368' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='439' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='512' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='546' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='578' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='39' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='353' u='c'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='192' u='c'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='199' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='132' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='654' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='210' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='229' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='711' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1259' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1323' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='247' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='303' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='336' u='c'/>
+<use f='redis/src/scripting.c' l='1128' u='c'/>
+<use f='redis/src/scripting.c' l='1135' u='c'/>

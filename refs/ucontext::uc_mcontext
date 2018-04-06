@@ -1,0 +1,23 @@
+<dec f='include/x86_64-linux-gnu/sys/ucontext.h' l='138' type='mcontext_t'/>
+<offset>320</offset>
+<use f='redis/src/debug.c' l='506' u='m' c='getMcontextEip'/>
+<use f='redis/src/debug.c' l='629' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='630' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='631' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='632' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='633' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='634' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='635' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='636' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='637' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='638' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='639' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='640' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='641' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='642' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='643' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='644' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='645' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='646' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='647' u='m' c='logRegisters'/>
+<use f='redis/src/debug.c' l='649' u='m' c='logRegisters'/>

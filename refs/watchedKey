@@ -1,0 +1,5 @@
+<def f='redis/src/multi.c' l='196' ll='199'/>
+<size>16</size>
+<doc f='redis/src/multi.c' l='193'>/* In the client-&gt;watched_keys list we need to use watchedKey structures
+ * as in order to identify a key in Redis we need both the key name and the
+ * DB */</doc>

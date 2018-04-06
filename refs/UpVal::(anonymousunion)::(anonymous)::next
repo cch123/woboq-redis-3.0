@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lobject.h' l='281' type='struct UpVal *'/>
+<offset>64</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='w' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='74' u='r' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='r' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='76' u='w' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='r' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='w' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='r' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='r' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lgc.c' l='517' u='r' c='remarkupvals'/>
+<use f='redis/deps/lua/src/lstate.c' l='161' u='w' c='lua_newstate'/>

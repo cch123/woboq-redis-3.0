@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lobject.h' l='238' type='TString **'/>
+<use f='redis/deps/lua/src/lapi.c' l='1052' u='r' c='aux_upvalue'/>
+<offset>448</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='238'>/* upvalue names */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='529' u='r' c='getobjname'/>
+<use f='redis/deps/lua/src/ldebug.c' l='529' u='r' c='getobjname'/>
+<use f='redis/deps/lua/src/ldump.c' l='126' u='r' c='DumpDebug'/>
+<use f='redis/deps/lua/src/lfunc.c' l='127' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='147' u='r' c='luaF_freeproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='209' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='210' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='195' u='w' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='195' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='197' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='198' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='372' u='w' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='372' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='155' u='w' c='LoadDebug'/>
+<use f='redis/deps/lua/src/lundump.c' l='157' u='r' c='LoadDebug'/>
+<use f='redis/deps/lua/src/lundump.c' l='158' u='r' c='LoadDebug'/>

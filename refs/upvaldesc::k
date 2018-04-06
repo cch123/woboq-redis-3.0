@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lparser.h' l='49' type='lu_byte'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lparser.c' l='188' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='201' u='w' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='322' u='r' c='pushclosure'/>

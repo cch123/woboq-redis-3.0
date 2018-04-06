@@ -1,0 +1,4 @@
+<dec f='redis/src/sentinel.c' l='335' type='void sentinelScheduleScriptExecution(char * path)'/>
+<use f='redis/src/sentinel.c' l='581' u='c' c='sentinelEvent'/>
+<def f='redis/src/sentinel.c' l='615' ll='659' type='void sentinelScheduleScriptExecution(char * path)'/>
+<use f='redis/src/sentinel.c' l='868' u='c' c='sentinelCallClientReconfScript'/>

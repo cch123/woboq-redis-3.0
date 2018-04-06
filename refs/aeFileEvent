@@ -1,0 +1,7 @@
+<def f='redis/src/ae.h' l='62' ll='67'/>
+<size>32</size>
+<doc f='redis/src/ae.h' l='61'>/* File event structure */</doc>
+<mbr r='aeFileEvent::mask' o='0' t='int'/>
+<mbr r='aeFileEvent::rfileProc' o='64' t='aeFileProc *'/>
+<mbr r='aeFileEvent::wfileProc' o='128' t='aeFileProc *'/>
+<mbr r='aeFileEvent::clientData' o='192' t='void *'/>

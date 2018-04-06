@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lzio.h' l='60' type='void *'/>
+<offset>192</offset>
+<doc f='redis/deps/lua/src/lzio.h' l='60'>/* additional data */</doc>
+<use f='redis/deps/lua/src/lzio.c' l='26' u='r' c='luaZ_fill'/>
+<use f='redis/deps/lua/src/lzio.c' l='51' u='w' c='luaZ_init'/>

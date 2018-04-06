@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='932' ll='935'/>
+<size>16</size>
+<mbr r='redisFunctionSym::name' o='0' t='char *'/>
+<mbr r='redisFunctionSym::pointer' o='64' t='unsigned long'/>

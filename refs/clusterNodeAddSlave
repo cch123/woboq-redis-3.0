@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.c' l='61' type='int clusterNodeAddSlave(clusterNode * master, clusterNode * slave)'/>
+<use f='redis/src/cluster.c' l='212' u='c' c='clusterLoadConfig'/>
+<def f='redis/src/cluster.c' l='785' ll='796' type='int clusterNodeAddSlave(clusterNode * master, clusterNode * slave)'/>
+<use f='redis/src/cluster.c' l='1775' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='3575' u='c' c='clusterSetMaster'/>

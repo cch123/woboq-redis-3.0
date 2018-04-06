@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='277'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='34' u='c'/>
+<use f='redis/src/scripting.c' l='181' u='c'/>
+<use f='redis/src/scripting.c' l='196' u='c'/>
+<use f='redis/src/scripting.c' l='706' u='c'/>
+<use f='redis/src/scripting.c' l='978' u='c'/>
+<use f='redis/src/scripting.c' l='981' u='c'/>
+<use f='redis/src/scripting.c' l='999' u='c'/>

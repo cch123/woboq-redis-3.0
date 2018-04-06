@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1456' type='void debugCommand(redisClient * c)'/>
+<def f='redis/src/debug.c' l='255' ll='386' type='void debugCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='251' u='r'/>
+<use f='redis/src/redis.c' l='251' u='r'/>
+<use f='redis/src/redis.c' l='251' u='r'/>
+<use f='redis/src/redis.c' l='251' u='r'/>

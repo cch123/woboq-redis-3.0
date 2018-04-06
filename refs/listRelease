@@ -1,0 +1,22 @@
+<dec f='redis/src/adlist.h' l='74' type='void listRelease(list * list)'/>
+<def f='redis/src/adlist.c' l='58' ll='72' type='void listRelease(list * list)'/>
+<use f='redis/src/adlist.c' l='260' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='267' u='c' c='listDup'/>
+<doc f='redis/src/adlist.c' l='55'>/* Free the whole list.
+ *
+ * This function can&apos;t fail. */</doc>
+<use f='redis/src/aof.c' l='71' u='c' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='590' u='c' c='freeFakeClient'/>
+<use f='redis/src/aof.c' l='591' u='c' c='freeFakeClient'/>
+<use f='redis/src/cluster.c' l='834' u='c' c='freeClusterNode'/>
+<use f='redis/src/db.c' l='597' u='c' c='scanGenericCommand'/>
+<use f='redis/src/networking.c' l='576' u='c' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='722' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='728' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='737' u='c' c='freeClient'/>
+<use f='redis/src/object.c' l='246' u='c' c='freeListObject'/>
+<use f='redis/src/redis.c' l='423' u='c' c='dictListDestructor'/>
+<use f='redis/src/replication.c' l='1753' u='c' c='replicationScriptCacheFlush'/>
+<use f='redis/src/sort.c' l='284' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='562' u='c' c='sortCommand'/>
+<use f='redis/src/t_list.c' l='1023' u='c' c='handleClientsBlockedOnLists'/>

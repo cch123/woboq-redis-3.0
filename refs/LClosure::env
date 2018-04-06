@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='293' type='struct Table *'/>
+<offset>192</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='37' u='w' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lvm.c' l='435' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='446' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='729' u='r' c='luaV_execute'/>

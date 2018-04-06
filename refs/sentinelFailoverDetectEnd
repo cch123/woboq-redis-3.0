@@ -1,0 +1,2 @@
+<def f='redis/src/sentinel.c' l='3608' ll='3669' type='void sentinelFailoverDetectEnd(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3729' u='c' c='sentinelFailoverReconfNextSlave'/>

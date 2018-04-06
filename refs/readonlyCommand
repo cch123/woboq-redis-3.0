@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1515' type='void readonlyCommand(redisClient * c)'/>
+<def f='redis/src/cluster.c' l='4731' ll='4738' type='void readonlyCommand(redisClient * c)'/>
+<doc f='redis/src/cluster.c' l='4728'>/* The READONLY command is used by clients to enter the read-only mode.
+ * In this mode slaves will not redirect clients as long as clients access
+ * with read-only commands to keys that are served by the slave&apos;s master. */</doc>
+<use f='redis/src/redis.c' l='266' u='r'/>
+<use f='redis/src/redis.c' l='266' u='r'/>
+<use f='redis/src/redis.c' l='266' u='r'/>
+<use f='redis/src/redis.c' l='266' u='r'/>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lstate.h' l='110' type='CallInfo *'/>
+<offset>576</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='110'>/* points after end of ci array*/</doc>
+<use f='redis/deps/lua/src/ldo.c' l='157' u='w' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='261' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='261' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/lstate.c' l='47' u='w' c='stack_init'/>

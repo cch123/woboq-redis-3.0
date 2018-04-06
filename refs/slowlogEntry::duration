@@ -1,0 +1,5 @@
+<dec f='redis/src/slowlog.h' l='38' type='long long'/>
+<offset>192</offset>
+<doc f='redis/src/slowlog.h' l='38'>/* Time spent by the query, in nanoseconds. */</doc>
+<use f='redis/src/slowlog.c' l='82' u='w' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='158' u='r' c='slowlogCommand'/>

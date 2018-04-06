@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/ltable.h' l='31' type='int luaH_getn(Table * t)'/>
+<use f='redis/deps/lua/src/lapi.c' l='366' u='c' c='lua_objlen'/>
+<def f='redis/deps/lua/src/ltable.c' l='560' ll='576' type='int luaH_getn(Table * t)'/>
+<doc f='redis/deps/lua/src/ltable.c' l='556'>/*
+** Try to find a boundary in table `t&apos;. A `boundary&apos; is an integer index
+** such that t[i] is non-nil and t[i+1] is nil (and 0 if t[1] is nil).
+*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='518' u='c' c='luaV_execute'/>

@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='669' type='char *[16]'/>
+<offset>1216</offset>
+<doc f='redis/src/redis.h' l='669'>/* Addresses we should bind to */</doc>
+<use f='redis/src/cluster.c' l='3064' macro='1' u='r'/>
+<use f='redis/src/cluster.c' l='4490' macro='1' u='r'/>
+<use f='redis/src/config.c' l='142' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1226' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1640' u='r' c='rewriteConfigBindOption'/>
+<use f='redis/src/redis.c' l='1673' u='w' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1675' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1694' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1696' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1700' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1706' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1706' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='3562' u='r' c='redisSetProcTitle'/>
+<use f='redis/src/replication.c' l='1381' macro='1' u='r'/>
+<use f='redis/src/sentinel.c' l='1711' macro='1' u='r'/>
+<use f='redis/src/sentinel.c' l='1733' macro='1' u='r'/>

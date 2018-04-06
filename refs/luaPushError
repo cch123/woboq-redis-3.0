@@ -1,0 +1,17 @@
+<def f='redis/src/scripting.c' l='155' ll='171' type='void luaPushError(lua_State * lua, char * error)'/>
+<use f='redis/src/scripting.c' l='228' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='235' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='290' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='306' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='309' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='316' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='325' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='332' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='338' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='351' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='369' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='471' u='c' c='luaRedisSha1hexCommand'/>
+<use f='redis/src/scripting.c' l='490' u='c' c='luaRedisReturnSingleFieldTable'/>
+<use f='redis/src/scripting.c' l='515' u='c' c='luaLogCommand'/>
+<use f='redis/src/scripting.c' l='518' u='c' c='luaLogCommand'/>
+<use f='redis/src/scripting.c' l='523' u='c' c='luaLogCommand'/>

@@ -1,0 +1,5 @@
+<def f='redis/src/pubsub.c' l='150' ll='174' type='int pubsubUnsubscribePattern(redisClient * c, robj * pattern, int notify)'/>
+<use f='redis/src/pubsub.c' l='211' u='c' c='pubsubUnsubscribeAllPatterns'/>
+<use f='redis/src/pubsub.c' l='312' u='c' c='punsubscribeCommand'/>
+<doc f='redis/src/pubsub.c' l='148'>/* Unsubscribe a client from a channel. Returns 1 if the operation succeeded, or
+ * 0 if the client was not subscribed to the specified channel. */</doc>

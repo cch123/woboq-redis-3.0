@@ -1,0 +1,3 @@
+<dec f='redis/src/zipmap.h' l='38' type='unsigned char * zipmapNew()'/>
+<def f='redis/src/zipmap.c' l='96' ll='102' type='unsigned char * zipmapNew()'/>
+<doc f='redis/src/zipmap.c' l='95'>/* Create a new empty zipmap. */</doc>

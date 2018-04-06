@@ -1,0 +1,4 @@
+<def f='redis/src/scripting.c' l='464' ll='479' type='int luaRedisSha1hexCommand(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='691' u='r' c='scriptingInit'/>
+<doc f='redis/src/scripting.c' l='462'>/* This adds redis.sha1hex(string) to Lua scripts using the same hashing
+ * function used for sha1ing lua scripts. */</doc>

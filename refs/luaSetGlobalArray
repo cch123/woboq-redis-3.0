@@ -1,0 +1,5 @@
+<def f='redis/src/scripting.c' l='868' ll='877' type='void luaSetGlobalArray(lua_State * lua, char * var, robj ** elev, int elec)'/>
+<use f='redis/src/scripting.c' l='1005' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1006' u='c' c='evalGenericCommand'/>
+<doc f='redis/src/scripting.c' l='866'>/* Set an array of Redis String Objects as a Lua array (table) stored into a
+ * global variable. */</doc>

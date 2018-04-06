@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1163' type='void refreshGoodSlavesCount()'/>
+<use f='redis/src/config.c' l='947' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='952' u='c' c='configSetCommand'/>
+<use f='redis/src/networking.c' l='771' u='c' c='freeClient'/>
+<use f='redis/src/replication.c' l='421' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='671' u='c' c='putSlaveOnline'/>
+<def f='redis/src/replication.c' l='1683' ll='1700' type='void refreshGoodSlavesCount()'/>
+<use f='redis/src/replication.c' l='2103' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='1680'>/* This function counts the number of slaves with lag &lt;= min-slaves-max-lag.
+ * If the option is active, the server will prevent writes if there are not
+ * enough connected slaves with the specified lag (or less). */</doc>

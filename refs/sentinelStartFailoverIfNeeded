@@ -1,0 +1,13 @@
+<def f='redis/src/sentinel.c' l='3387' ll='3415' type='int sentinelStartFailoverIfNeeded(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3821' u='c' c='sentinelHandleRedisInstance'/>
+<doc f='redis/src/sentinel.c' l='3376'>/* This function checks if there are the conditions to start the failover,
+ * that is:
+ *
+ * 1) Master must be in ODOWN condition.
+ * 2) No failover already in progress.
+ * 3) No failover already attempted recently.
+ *
+ * We still don&apos;t know if we&apos;ll win the election so it is possible that we
+ * start the failover but that we&apos;ll not be able to act.
+ *
+ * Return non-zero if a failover was started. */</doc>

@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='570' type='robj *'/>
+<offset>896</offset>
+<use f='redis/src/object.c' l='347' u='r' c='checkType'/>
+<use f='redis/src/redis.c' l='1323' u='w' c='createSharedObjects'/>
+<use f='redis/src/sort.c' l='207' u='r' c='sortCommand'/>
+<use f='redis/src/t_hash.c' l='403' u='r' c='hashTypeLookupWriteOrCreate'/>
+<use f='redis/src/t_hash.c' l='642' u='r' c='hmgetCommand'/>
+<use f='redis/src/t_list.c' l='300' u='r' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='1040' u='r' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1111' u='r' c='brpoplpushCommand'/>
+<use f='redis/src/t_set.c' l='260' u='r' c='saddCommand'/>
+<use f='redis/src/t_string.c' l='152' u='r' c='getGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1211' u='r' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1879' u='r' c='zunionInterGenericCommand'/>

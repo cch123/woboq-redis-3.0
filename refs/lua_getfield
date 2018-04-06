@@ -1,0 +1,33 @@
+<dec f='redis/deps/lua/src/lua.h' l='178' type='void lua_getfield(lua_State * L, int idx, const char * k)'/>
+<def f='redis/deps/lua/src/lapi.c' l='544' ll='554' macro='1' type='void lua_getfield(lua_State * L, int idx, const char * k)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='113' u='c' c='luaL_newmetatable'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='128' u='c' c='luaL_checkudata'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='248' u='c' c='luaL_openlib'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='34' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='61' u='c' c='io_type'/>
+<use f='redis/deps/lua/src/liolib.c' l='89' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='129' u='c' c='aux_close'/>
+<use f='redis/deps/lua/src/liolib.c' l='550' u='c' c='luaopen_io'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='258' u='c' c='luaopen_math'/>
+<use f='redis/deps/lua/src/loadlib.c' l='272' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='355' u='c' c='findfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='437' u='c' c='loader_preload'/>
+<use f='redis/deps/lua/src/loadlib.c' l='440' u='c' c='loader_preload'/>
+<use f='redis/deps/lua/src/loadlib.c' l='455' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='456' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='463' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='487' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='547' u='c' c='ll_module'/>
+<use f='redis/deps/lua/src/loadlib.c' l='548' u='c' c='ll_module'/>
+<use f='redis/deps/lua/src/loadlib.c' l='558' u='c' c='ll_module'/>
+<use f='redis/deps/lua/src/loslib.c' l='102' u='c' c='getboolfield'/>
+<use f='redis/deps/lua/src/loslib.c' l='111' u='c' c='getfield'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='865' u='c' c='luaopen_string'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1396' u='c' c='lua_cjson_safe_new'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='922' u='c' c='luaopen_cmsgpack_safe'/>
+<use f='redis/src/scripting.c' l='181' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='196' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='706' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='978' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='981' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='999' macro='1' u='c'/>

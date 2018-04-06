@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='761' type='int'/>
+<use f='redis/src/aof.c' l='107' u='r' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='112' u='r' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='163' u='r' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='164' u='r' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='1226' u='w' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1244' u='r' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1245' u='r' c='aofClosePipes'/>
+<offset>13760</offset>
+<doc f='redis/src/redis.h' l='760'>/* AOF pipes used to communicate between parent and child during rewrite. */</doc>

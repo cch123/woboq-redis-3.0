@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='45'/>
+<use f='redis/deps/lua/src/strbuf.c' l='49' u='c'/>

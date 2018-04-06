@@ -1,0 +1,2 @@
+<def f='redis/deps/lua/src/strbuf.h' l='134' ll='138' type='void strbuf_append_mem_unsafe(strbuf_t * s, const char * c, int len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='871' u='c' c='json_append_unicode_escape'/>

@@ -1,0 +1,7 @@
+<def f='redis/src/config.c' l='1314' ll='1369' type='struct rewriteConfigState * rewriteConfigReadOldFile(char * path)'/>
+<use f='redis/src/config.c' l='1783' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1309'>/* Read the old file, split it into lines to populate a newly created
+ * config rewrite state, and return it to the caller.
+ *
+ * If it is impossible to read the old file, NULL is returned.
+ * If the old file does not exist at all, an empty state is returned. */</doc>

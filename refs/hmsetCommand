@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1487' type='void hmsetCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='197' u='r'/>
+<use f='redis/src/redis.c' l='197' u='r'/>
+<use f='redis/src/redis.c' l='197' u='r'/>
+<use f='redis/src/redis.c' l='197' u='r'/>
+<def f='redis/src/t_hash.c' l='495' ll='514' type='void hmsetCommand(redisClient * c)'/>

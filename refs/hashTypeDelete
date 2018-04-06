@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1275' type='int hashTypeDelete(robj * o, robj * key)'/>
+<def f='redis/src/t_hash.c' l='224' ll='259' type='int hashTypeDelete(robj * o, robj * field)'/>
+<use f='redis/src/t_hash.c' l='660' u='c' c='hdelCommand'/>
+<doc f='redis/src/t_hash.c' l='222'>/* Delete an element from a hash.
+ * Return 1 on deleted and 0 on not found. */</doc>

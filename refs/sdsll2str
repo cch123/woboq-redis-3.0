@@ -1,0 +1,6 @@
+<def f='redis/deps/hiredis/sds.c' l='301' ll='330' type='int sdsll2str(char * s, long long value)'/>
+<use f='redis/deps/hiredis/sds.c' l='367' u='c' c='sdsfromlonglong'/>
+<use f='redis/deps/hiredis/sds.c' l='499' u='c' c='sdscatfmt'/>
+<def f='redis/src/sds.c' l='301' ll='330' type='int sdsll2str(char * s, long long value)'/>
+<use f='redis/src/sds.c' l='367' u='c' c='sdsfromlonglong'/>
+<use f='redis/src/sds.c' l='499' u='c' c='sdscatfmt'/>

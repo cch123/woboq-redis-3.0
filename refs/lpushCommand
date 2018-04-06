@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1410' type='void lpushCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='142' u='r'/>
+<use f='redis/src/redis.c' l='142' u='r'/>
+<use f='redis/src/redis.c' l='142' u='r'/>
+<use f='redis/src/redis.c' l='142' u='r'/>
+<def f='redis/src/t_list.c' l='323' ll='325' type='void lpushCommand(redisClient * c)'/>

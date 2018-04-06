@@ -1,0 +1,5 @@
+<def f='redis/src/aof.c' l='200' ll='202' type='void aof_background_fsync(int fd)'/>
+<use f='redis/src/aof.c' l='430' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1461' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/aof.c' l='198'>/* Starts a background task that performs fsync() against the specified
+ * file descriptor (the one of the AOF file) in another thread. */</doc>

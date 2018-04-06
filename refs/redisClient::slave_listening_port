@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='547' type='int'/>
+<offset>2144</offset>
+<doc f='redis/src/redis.h' l='547'>/* As configured with: SLAVECONF listening-port */</doc>
+<use f='redis/src/networking.c' l='107' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='2958' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='58' u='r' c='replicationGetSlaveName'/>
+<use f='redis/src/replication.c' l='59' u='r' c='replicationGetSlaveName'/>
+<use f='redis/src/replication.c' l='615' u='w' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='1534' u='r' c='roleCommand'/>

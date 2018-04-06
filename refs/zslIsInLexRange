@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='563' ll='578' type='int zslIsInLexRange(zskiplist * zsl, zlexrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='587' u='c' c='zslFirstInLexRange'/>
+<use f='redis/src/t_zset.c' l='613' u='c' c='zslLastInLexRange'/>
+<doc f='redis/src/t_zset.c' l='562'>/* Returns if there is a part of the zset is in the lex range. */</doc>

@@ -1,0 +1,33 @@
+<dec f='redis/src/cluster.c' l='78' type='int clusterBumpConfigEpochWithoutConsensus()'/>
+<def f='redis/src/cluster.c' l='966' ll='983' type='int clusterBumpConfigEpochWithoutConsensus()'/>
+<use f='redis/src/cluster.c' l='3973' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4217' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='937'>/* If this node epoch is zero or is not already the greatest across the
+ * cluster (from the POV of the local configuration), this function will:
+ *
+ * 1) Generate a new config epoch increment the current epoch.
+ * 2) Assign the new epoch to this node, WITHOUT any consensus.
+ * 3) Persist the configuration on disk before sending packets with the
+ *    new configuration.
+ *
+ * If the new config epoch is generated and assigend, REDIS_OK is returned,
+ * otherwise REDIS_ERR is returned (since the node has already the greatest
+ * configuration around) and no operation is performed.
+ *
+ * Important note: this function violates the principle that config epochs
+ * should be generated with consensus and should be unique across the cluster.
+ * However Redis Cluster uses this auto-generated new config epochs in two
+ * cases:
+ *
+ * 1) When slots are closed after importing. Otherwise resharding would be
+ *    too exansive.
+ * 2) When CLUSTER FAILOVER is called with options that force a slave to
+ *    failover its master even if there is not master majority able to
+ *    create a new configuration epoch.
+ *
+ * Redis Cluster does not explode using this function, even in the case of
+ * a collision between this node and another node, generating the same
+ * configuration epoch unilaterally, because the config epoch conflict
+ * resolution algorithm will eventually move colliding nodes to different
+ * config epochs. However usign this function may violate the &quot;last failover
+ * wins&quot; rule, so should only be used with care. */</doc>

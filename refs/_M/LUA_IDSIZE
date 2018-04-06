@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='210'/>
+<use f='redis/deps/lua/src/lua.h' l='356' u='c'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='205'>/*
+@@ LUA_IDSIZE gives the maximum size for the description of the source
+@* of a function in debug information.
+** CHANGE it if you want a different size.
+*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='163' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='172' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='610' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='612' u='c'/>

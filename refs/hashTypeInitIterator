@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1277' type='hashTypeIterator * hashTypeInitIterator(robj * subject)'/>
+<use f='redis/src/aof.c' l='977' u='c' c='rewriteHashObject'/>
+<use f='redis/src/debug.c' l='228' u='c' c='computeDatasetDigest'/>
+<def f='redis/src/t_hash.c' l='276' ll='291' type='hashTypeIterator * hashTypeInitIterator(robj * subject)'/>
+<use f='redis/src/t_hash.c' l='421' u='c' c='hashTypeConvertZiplist'/>
+<use f='redis/src/t_hash.c' l='727' u='c' c='genericHgetallCommand'/>

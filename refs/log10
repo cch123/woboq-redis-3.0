@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='112' type='double log10(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='120' u='c' c='math_log10'/>

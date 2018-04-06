@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1401' type='void dbsizeCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='607' ll='609' type='void dbsizeCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='225' u='r'/>
+<use f='redis/src/redis.c' l='225' u='r'/>
+<use f='redis/src/redis.c' l='225' u='r'/>
+<use f='redis/src/redis.c' l='225' u='r'/>

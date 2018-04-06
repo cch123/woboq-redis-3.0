@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1387' type='void existsCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='296' ll='303' type='void existsCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='132' u='r'/>
+<use f='redis/src/redis.c' l='132' u='r'/>
+<use f='redis/src/redis.c' l='132' u='r'/>
+<use f='redis/src/redis.c' l='132' u='r'/>

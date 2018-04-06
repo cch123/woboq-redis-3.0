@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lstate.h' l='29'/>
+<doc f='redis/deps/lua/src/lstate.h' l='28'>/* extra stack space to handle TM calls and some other extras */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='143' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='250' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='49' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='50' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='52' u='c'/>

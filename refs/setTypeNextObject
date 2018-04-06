@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='1263' type='robj * setTypeNextObject(setTypeIterator * si)'/>
+<use f='redis/src/debug.c' l='167' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/sort.c' l='359' u='c' c='sortCommand'/>
+<def f='redis/src/t_set.c' l='164' ll='181' type='robj * setTypeNextObject(setTypeIterator * si)'/>
+<use f='redis/src/t_set.c' l='804' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='820' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='846' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='866' u='c' c='sunionDiffGenericCommand'/>
+<doc f='redis/src/t_set.c' l='157'>/* The not copy on write friendly version but easy to use version
+ * of setTypeNext() is setTypeNextObject(), returning new objects
+ * or incrementing the ref count of returned objects. So if you don&apos;t
+ * retain a pointer to this object you should call decrRefCount() against it.
+ *
+ * This function is the way to go for write operations where COW is not
+ * an issue as the result will be anyway of incrementing the ref count. */</doc>

@@ -1,0 +1,18 @@
+<dec f='redis/deps/lua/src/lstate.h' l='121' type='TValue'/>
+<use f='redis/deps/lua/src/lapi.c' l='67' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='81' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='629' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='750' macro='1' u='a'/>
+<offset>960</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='121'>/* table of globals */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='500' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='259' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='259' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='259' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='508' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='508' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='508' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='74' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='101' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='124' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='124' macro='1' u='a'/>

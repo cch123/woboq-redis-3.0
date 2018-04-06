@@ -1,0 +1,5 @@
+<def f='redis/src/t_list.c' l='775' ll='806' type='void blockForKeys(redisClient * c, robj ** keys, int numkeys, mstime_t timeout, robj * target)'/>
+<use f='redis/src/t_list.c' l='1081' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1107' u='c' c='brpoplpushCommand'/>
+<doc f='redis/src/t_list.c' l='773'>/* Set a client in blocking mode for the specified key, with the specified
+ * timeout */</doc>

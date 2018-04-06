@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.h' l='42' type='sds'/>
+<use f='redis/src/cluster.c' l='542' u='w' c='createClusterLink'/>
+<use f='redis/src/cluster.c' l='557' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='1982' u='r' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='1982' u='r' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='1989' u='r' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='1990' u='r' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='2066' u='r' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='2070' u='w' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='2070' u='r' c='clusterSendMessage'/>
+<offset>128</offset>
+<doc f='redis/src/cluster.h' l='42'>/* Packet send buffer */</doc>

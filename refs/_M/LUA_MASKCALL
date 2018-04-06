@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='321'/>
+<doc f='redis/deps/lua/src/lua.h' l='318'>/*
+** Event masks
+*/</doc>
+<use f='redis/deps/lua/src/ldblib.c' l='227' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='237' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='300' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='317' u='c'/>

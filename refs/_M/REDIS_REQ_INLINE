@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='260'/>
+<doc f='redis/src/redis.h' l='259'>/* Client request types */</doc>
+<use f='redis/src/networking.c' l='1144' u='c'/>
+<use f='redis/src/networking.c' l='1148' u='c'/>

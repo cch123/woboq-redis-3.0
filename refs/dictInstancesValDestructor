@@ -1,0 +1,3 @@
+<def f='redis/src/sentinel.c' l='351' ll='354' type='void dictInstancesValDestructor(void * privdata, void * obj)'/>
+<use f='redis/src/sentinel.c' l='366' u='r'/>
+<use f='redis/src/sentinel.c' l='366' u='r'/>

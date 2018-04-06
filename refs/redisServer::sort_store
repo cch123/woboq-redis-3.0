@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='858' type='int'/>
+<offset>18272</offset>
+<use f='redis/src/sort.c' l='167' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='177' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='472' u='w' c='sortCommand'/>

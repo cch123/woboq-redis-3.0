@@ -1,0 +1,28 @@
+<def f='redis/deps/lua/src/lobject.h' l='231' ll='253'/>
+<size>120</size>
+<doc f='redis/deps/lua/src/lobject.h' l='228'>/*
+** Function Prototypes
+*/</doc>
+<mbr r='Proto::next' o='0' t='GCObject *'/>
+<mbr r='Proto::tt' o='64' t='lu_byte'/>
+<mbr r='Proto::marked' o='72' t='lu_byte'/>
+<mbr r='Proto::k' o='128' t='TValue *'/>
+<mbr r='Proto::code' o='192' t='Instruction *'/>
+<mbr r='Proto::p' o='256' t='struct Proto **'/>
+<mbr r='Proto::lineinfo' o='320' t='int *'/>
+<mbr r='Proto::locvars' o='384' t='struct LocVar *'/>
+<mbr r='Proto::upvalues' o='448' t='TString **'/>
+<mbr r='Proto::source' o='512' t='TString *'/>
+<mbr r='Proto::sizeupvalues' o='576' t='int'/>
+<mbr r='Proto::sizek' o='608' t='int'/>
+<mbr r='Proto::sizecode' o='640' t='int'/>
+<mbr r='Proto::sizelineinfo' o='672' t='int'/>
+<mbr r='Proto::sizep' o='704' t='int'/>
+<mbr r='Proto::sizelocvars' o='736' t='int'/>
+<mbr r='Proto::linedefined' o='768' t='int'/>
+<mbr r='Proto::lastlinedefined' o='800' t='int'/>
+<mbr r='Proto::gclist' o='832' t='GCObject *'/>
+<mbr r='Proto::nups' o='896' t='lu_byte'/>
+<mbr r='Proto::numparams' o='904' t='lu_byte'/>
+<mbr r='Proto::is_vararg' o='912' t='lu_byte'/>
+<mbr r='Proto::maxstacksize' o='920' t='lu_byte'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='881' type='int'/>
+<offset>19360</offset>
+<doc f='redis/src/redis.h' l='881'>/* Slave max data age for failover. */</doc>
+<use f='redis/src/cluster.c' l='2740' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2743' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/config.c' l='465' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='466' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='969' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1076' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1856' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1472' u='w' c='initServerConfig'/>

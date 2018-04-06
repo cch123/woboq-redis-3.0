@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='662' type='int'/>
+<offset>704</offset>
+<doc f='redis/src/redis.h' l='662'>/* 32 or 64 depending on sizeof(long) */</doc>
+<use f='redis/src/redis.c' l='1404' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1870' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2659' u='r' c='genRedisInfoString'/>

@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lgc.h' l='80'/>
+<use f='redis/deps/lua/src/lapi.c' l='143' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='352' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='447' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='466' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='477' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='489' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='580' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='994' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='1028' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='219' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='380' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='497' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='123' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='465' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='537' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='740' u='c'/>

@@ -1,0 +1,5 @@
+<def f='redis/deps/lua/src/lstate.h' l='38' ll='42'/>
+<size>16</size>
+<mbr r='stringtable::hash' o='0' t='GCObject **'/>
+<mbr r='stringtable::nuse' o='64' t='lu_int32'/>
+<mbr r='stringtable::size' o='96' t='int'/>

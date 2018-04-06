@@ -1,0 +1,7 @@
+<def f='redis/src/latency.c' l='159' ll='213' type='void analyzeLatencyForEvent(char * event, struct latencyStats * ls)'/>
+<use f='redis/src/latency.c' l='262' u='c' c='createLatencyReport'/>
+<doc f='redis/src/latency.c' l='154'>/* Analyze the samples avaialble for a given event and return a structure
+ * populate with different metrics, average, MAD, min, max, and so forth.
+ * Check latency.h definition of struct latenctStat for more info.
+ * If the specified event has no elements the structure is populate with
+ * zero values. */</doc>

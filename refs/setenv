@@ -1,0 +1,4 @@
+<dec f='include/stdlib.h' l='584' type='int setenv(const char * __name, const char * __value, int __replace)'/>
+<doc f='include/stdlib.h' l='582'>/* Set NAME to VALUE in the environment.
+   If REPLACE is nonzero, overwrite an existing value.  */</doc>
+<use f='redis/src/setproctitle.c' l='115' u='c' c='spt_copyenv'/>

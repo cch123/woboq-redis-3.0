@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='906' type='int'/>
+<offset>20288</offset>
+<doc f='redis/src/redis.h' l='906'>/* Software watchdog period in ms. 0 = off */</doc>
+<use f='redis/src/config.c' l='1069' u='r' c='configGetCommand'/>
+<use f='redis/src/debug.c' l='934' u='r' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='950' u='w' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='956' u='r' c='disableWatchdog'/>
+<use f='redis/src/debug.c' l='965' u='w' c='disableWatchdog'/>
+<use f='redis/src/redis.c' l='1075' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1075' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1550' u='w' c='initServerConfig'/>

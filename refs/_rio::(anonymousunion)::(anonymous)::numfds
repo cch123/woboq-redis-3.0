@@ -1,0 +1,5 @@
+<dec f='redis/src/rio.h' l='80' type='int'/>
+<offset>128</offset>
+<use f='redis/src/rio.c' l='194' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='223' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='274' u='w' c='rioInitWithFdset'/>

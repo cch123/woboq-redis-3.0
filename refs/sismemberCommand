@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1426' type='void sismemberCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='161' u='r'/>
+<use f='redis/src/redis.c' l='161' u='r'/>
+<use f='redis/src/redis.c' l='161' u='r'/>
+<use f='redis/src/redis.c' l='161' u='r'/>
+<def f='redis/src/t_set.c' l='358' ll='369' type='void sismemberCommand(redisClient * c)'/>

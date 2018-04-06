@@ -1,0 +1,23 @@
+<dec f='redis/src/redis.h' l='1036' type='void addReplyBulkCBuffer(redisClient * c, void * p, size_t len)'/>
+<use f='redis/src/cluster.c' l='3833' u='c' c='clusterCommand'/>
+<use f='redis/src/hyperloglog.c' l='1523' u='c' c='pfdebugCommand'/>
+<use f='redis/src/latency.c' l='599' u='c' c='latencyCommand'/>
+<def f='redis/src/networking.c' l='548' ll='552' type='void addReplyBulkCBuffer(redisClient * c, void * p, size_t len)'/>
+<use f='redis/src/networking.c' l='559' u='c' c='addReplyBulkCString'/>
+<use f='redis/src/networking.c' l='569' u='c' c='addReplyBulkLongLong'/>
+<use f='redis/src/networking.c' l='1378' u='c' c='clientCommand'/>
+<doc f='redis/src/networking.c' l='547'>/* Add a C buffer as bulk reply */</doc>
+<use f='redis/src/redis.c' l='2447' u='c' c='pingCommand'/>
+<use f='redis/src/redis.c' l='2449' u='c' c='pingCommand'/>
+<use f='redis/src/replication.c' l='1522' u='c' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1543' u='c' c='roleCommand'/>
+<use f='redis/src/scripting.c' l='807' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='1184' u='c' c='scriptCommand'/>
+<use f='redis/src/sentinel.c' l='2859' u='c' c='sentinelRoleCommand'/>
+<use f='redis/src/t_hash.c' l='604' u='c' c='addHashFieldToReply'/>
+<use f='redis/src/t_hash.c' l='696' u='c' c='addHashIteratorCursorToReply'/>
+<use f='redis/src/t_list.c' l='561' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_string.c' l='265' u='c' c='getrangeCommand'/>
+<use f='redis/src/t_zset.c' l='2153' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2309' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2660' u='c' c='genericZrangebylexCommand'/>

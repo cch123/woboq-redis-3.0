@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1088' type='int listTypeEqual(listTypeEntry * entry, robj * o)'/>
+<def f='redis/src/t_list.c' l='232' ll='242' type='int listTypeEqual(listTypeEntry * entry, robj * o)'/>
+<use f='redis/src/t_list.c' l='351' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='668' u='c' c='lremCommand'/>
+<doc f='redis/src/t_list.c' l='231'>/* Compare the given object with the entry at the current position. */</doc>

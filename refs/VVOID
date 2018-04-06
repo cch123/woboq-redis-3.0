@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lparser.h' l='20' type='0'/>
+<doc f='redis/deps/lua/src/lparser.h' l='20'>/* no value */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='266' u='r' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='465' u='r' c='closelistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='467' u='r' c='closelistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='483' u='r' c='lastlistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='507' u='r' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='620' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='647' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='1190' u='r' c='localstat'/>

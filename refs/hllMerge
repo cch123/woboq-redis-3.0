@@ -1,0 +1,11 @@
+<def f='redis/src/hyperloglog.c' l='1044' ll='1083' type='int hllMerge(uint8_t * max, robj * hll)'/>
+<use f='redis/src/hyperloglog.c' l='1221' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1302' u='c' c='pfmergeCommand'/>
+<doc f='redis/src/hyperloglog.c' l='1036'>/* Merge by computing MAX(registers[i],hll[i]) the HyperLogLog &apos;hll&apos;
+ * with an array of uint8_t HLL_REGISTERS registers pointed by &apos;max&apos;.
+ *
+ * The hll object must be already validated via isHLLObjectOrReply()
+ * or in some other way.
+ *
+ * If the HyperLogLog is sparse and is found to be invalid, REDIS_ERR
+ * is returned, otherwise the function always succeeds. */</doc>

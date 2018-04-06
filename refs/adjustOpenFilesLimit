@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1249' type='void adjustOpenFilesLimit()'/>
+<use f='redis/src/config.c' l='649' u='c' c='configSetCommand'/>
+<def f='redis/src/redis.c' l='1561' ll='1631' type='void adjustOpenFilesLimit()'/>
+<use f='redis/src/redis.c' l='1771' u='c' c='initServer'/>
+<doc f='redis/src/redis.c' l='1553'>/* This function will try to raise the max number of open files accordingly to
+ * the configured max number of clients. It also reserves a number of file
+ * descriptors (REDIS_MIN_RESERVED_FDS) for extra operations of
+ * persistence, listening sockets, log files and so forth.
+ *
+ * If it will not be possible to set the limit accordingly to the configured
+ * max number of clients, the function will do the reverse setting
+ * server.maxclients to the value that we can actually handle. */</doc>

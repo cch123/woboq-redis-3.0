@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='157' type='3'/>
+<use f='redis/deps/lua/src/lcode.c' l='44' u='r' c='luaK_nil'/>
+<use f='redis/deps/lua/src/lcode.c' l='55' u='r' c='luaK_nil'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='157'>/*	A B	R(A) := ... := R(B) := nil			*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='382' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='420' c='luaV_execute'/>

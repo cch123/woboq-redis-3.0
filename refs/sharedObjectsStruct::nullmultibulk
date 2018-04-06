@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='569' type='robj *'/>
+<offset>704</offset>
+<use f='redis/src/blocked.c' l='152' u='r' c='replyToBlockedClientTimedOut'/>
+<use f='redis/src/multi.c' l='134' u='r' c='execCommand'/>
+<use f='redis/src/redis.c' l='1318' u='w' c='createSharedObjects'/>
+<use f='redis/src/sentinel.c' l='2696' u='r' c='sentinelCommand'/>
+<use f='redis/src/t_list.c' l='1076' u='r' c='blockingPopGenericCommand'/>

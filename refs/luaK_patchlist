@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lcode.h' l='66' type='void luaK_patchlist(FuncState * fs, int list, int target)'/>
+<def f='redis/deps/lua/src/lcode.c' l='169' ll='176' type='void luaK_patchlist(FuncState * fs, int list, int target)'/>
+<use f='redis/deps/lua/src/lparser.c' l='1003' u='c' c='whilestat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1024' u='c' c='repeatstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1030' u='c' c='repeatstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1063' u='c' c='forbody'/>

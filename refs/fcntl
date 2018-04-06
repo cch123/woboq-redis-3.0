@@ -1,0 +1,10 @@
+<dec f='include/fcntl.h' l='146' type='int fcntl(int __fd, int __cmd)'/>
+<use f='redis/deps/hiredis/net.c' l='105' u='c' c='redisSetBlocking'/>
+<use f='redis/deps/hiredis/net.c' l='116' u='c' c='redisSetBlocking'/>
+<doc f='include/fcntl.h' l='141'>/* Do the file control operation described by CMD on FD.
+   The remaining arguments are interpreted depending on CMD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='redis/src/anet.c' l='67' u='c' c='anetSetBlock'/>
+<use f='redis/src/anet.c' l='77' u='c' c='anetSetBlock'/>

@@ -1,0 +1,6 @@
+<def f='redis/src/slowlog.c' l='91' ll='99' type='void slowlogFreeEntry(void * septr)'/>
+<use f='redis/src/slowlog.c' l='106' u='r' c='slowlogInit'/>
+<doc f='redis/src/slowlog.c' l='87'>/* Free a slow log entry. The argument is void so that the prototype of this
+ * function matches the one of the &apos;free&apos; method of adlist.c.
+ *
+ * This function will take care to release all the retained object. */</doc>

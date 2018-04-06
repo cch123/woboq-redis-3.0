@@ -1,0 +1,6 @@
+evalGetKeys|evalGetKeys
+evictionPoolAlloc|evictionPoolAlloc
+evictionPoolPopulate|evictionPoolPopulate
+evalCommand|evalCommand
+evalGenericCommand|evalGenericCommand
+evalShaCommand|evalShaCommand

@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/llex.h' l='66' type='char'/>
+<offset>704</offset>
+<doc f='redis/deps/lua/src/llex.h' l='66'>/* locale decimal point */</doc>
+<use f='redis/deps/lua/src/llex.c' l='141' u='w' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='182' u='r' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='183' u='w' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='184' u='r' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='187' u='r' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='204' u='r' c='read_numeral'/>

@@ -1,0 +1,4 @@
+<dec f='include/stdio.h' l='433' type='int sscanf(const char *restrict __s, const char *restrict __format)'/>
+<dec f='include/stdio.h' l='448' type='int sscanf(const char *restrict __s, const char *restrict __format)'/>
+<doc f='include/stdio.h' l='432'>/* Read formatted input from S.  */</doc>
+<use f='redis/src/rdb.c' l='425' u='c' c='rdbLoadDoubleValue'/>

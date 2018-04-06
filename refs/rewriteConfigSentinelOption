@@ -1,0 +1,10 @@
+<dec f='redis/src/config.c' l='1252' type='void rewriteConfigSentinelOption(struct rewriteConfigState * state)'/>
+<use f='redis/src/config.c' l='1874' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1250'>/* Sentinel config rewriting is implemented inside sentinel.c by
+ * rewriteConfigSentinelOption(). */</doc>
+<def f='redis/src/sentinel.c' l='1453' ll='1588' type='void rewriteConfigSentinelOption(struct rewriteConfigState * state)'/>
+<doc f='redis/src/sentinel.c' l='1448'>/* Implements CONFIG REWRITE for &quot;sentinel&quot; option.
+ * This is used not just to rewrite the configuration given by the user
+ * (the configured masters) but also in order to retain the state of
+ * Sentinel across restarts: config epoch of masters, associated slaves
+ * and sentinel instances, and so forth. */</doc>

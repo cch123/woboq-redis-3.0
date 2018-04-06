@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='119'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='118'>/* this bit 1 means constant (0 means register) */</doc>

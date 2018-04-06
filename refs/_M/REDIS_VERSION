@@ -1,0 +1,9 @@
+<dec f='redis/src/version.h' l='1'/>
+<use f='redis/src/debug.c' l='813' u='c'/>
+<use f='redis/src/redis-cli.c' l='204' u='c'/>
+<use f='redis/src/redis.c' l='2653' u='c'/>
+<use f='redis/src/redis.c' l='3406' u='c'/>
+<use f='redis/src/redis.c' l='3444' u='c'/>
+<use f='redis/src/redis.c' l='3453' u='c'/>
+<use f='redis/src/redis.c' l='3657' u='c'/>
+<use f='redis/src/release.c' l='49' u='c'/>

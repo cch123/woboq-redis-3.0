@@ -1,0 +1,2 @@
+<dec f='include/stdio.h' l='121'/>
+<use f='redis/deps/lua/src/liolib.c' l='459' u='c'/>

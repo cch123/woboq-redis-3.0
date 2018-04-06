@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='87'/>
+<doc f='redis/deps/lua/src/lua.h' l='86'>/* minimum Lua stack available to a C function */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='193' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='194' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='310' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='314' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='344' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='57' u='c'/>

@@ -1,0 +1,15 @@
+<dec f='redis/src/anet.h' l='64' type='int anetNonBlock(char * err, int fd)'/>
+<def f='redis/src/anet.c' l='84' ll='86' type='int anetNonBlock(char * err, int fd)'/>
+<use f='redis/src/anet.c' l='290' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='365' u='c' c='anetUnixGenericConnect'/>
+<use f='redis/src/aof.c' l='1137' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1222' u='c' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1223' u='c' c='aofCreatePipes'/>
+<use f='redis/src/cluster.c' l='587' u='c' c='clusterAcceptHandler'/>
+<use f='redis/src/networking.c' l='72' u='c' c='createClient'/>
+<use f='redis/src/rdb.c' l='1361' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/redis-cli.c' l='1415' u='c' c='pipeMode'/>
+<use f='redis/src/redis.c' l='1681' u='c' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1687' u='c' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1710' u='c' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1789' u='c' c='initServer'/>

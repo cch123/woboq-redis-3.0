@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='891' type='int'/>
+<offset>19840</offset>
+<doc f='redis/src/redis.h' l='891'>/* True if a write command was called during the
+                             execution of the current script. */</doc>
+<use f='redis/src/scripting.c' l='347' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='357' u='w' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='943' u='w' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1190' u='r' c='scriptCommand'/>

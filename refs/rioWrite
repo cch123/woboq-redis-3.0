@@ -1,0 +1,17 @@
+<def f='redis/src/rio.h' l='93' ll='104' type='size_t rioWrite(rio * r, const void * buf, size_t len)'/>
+<use f='redis/src/aof.c' l='1057' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1079' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1097' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1153' u='c' c='rewriteAppendOnlyFile'/>
+<doc f='redis/src/rio.h' l='89'>/* The following functions are our interface with the stream. They&apos;ll call the
+ * actual implementation of read / write / tell, and will update the checksum
+ * if needed. */</doc>
+<use f='redis/src/rdb.c' l='44' u='c' c='rdbWriteRaw'/>
+<use f='redis/src/rdb.c' l='683' u='c' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='705' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/rdb.c' l='706' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/rdb.c' l='707' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/rdb.c' l='709' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/rio.c' l='320' u='c' c='rioWriteBulkCount'/>
+<use f='redis/src/rio.c' l='329' u='c' c='rioWriteBulkString'/>
+<use f='redis/src/rio.c' l='330' u='c' c='rioWriteBulkString'/>

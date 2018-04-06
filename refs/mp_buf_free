@@ -1,0 +1,2 @@
+<def f='redis/deps/lua/src/lua_cmsgpack.c' l='132' ll='135' type='void mp_buf_free(mp_buf * buf)'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='533' u='c' c='mp_pack'/>

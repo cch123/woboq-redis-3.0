@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3121' ll='3184' type='void evictionPoolPopulate(dict * sampledict, dict * keydict, struct evictionPoolEntry * pool)'/>
+<use f='redis/src/redis.c' l='3257' u='c' c='freeMemoryIfNeeded'/>

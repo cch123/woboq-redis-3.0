@@ -1,0 +1,14 @@
+<def f='redis/src/cluster.c' l='1430' ll='1518' type='void clusterUpdateSlotsConfigWith(clusterNode * sender, uint64_t senderConfigEpoch, unsigned char * slots)'/>
+<use f='redis/src/cluster.c' l='1808' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1955' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='1419'>/* This function is called when we receive a master configuration via a
+ * PING, PONG or UPDATE packet. What we receive is a node, a configEpoch of the
+ * node, and the set of slots claimed under this configEpoch.
+ *
+ * What we do is to rebind the slots with newer configuration compared to our
+ * local configuration, and if needed, we turn ourself into a replica of the
+ * node (see the function comments for more info).
+ *
+ * The &apos;sender&apos; is the node for which we received a configuration update.
+ * Sometimes it is not actually the &quot;Sender&quot; of the information, like in the case
+ * we receive the info via an UPDATE packet. */</doc>

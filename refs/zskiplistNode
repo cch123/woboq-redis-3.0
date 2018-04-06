@@ -1,0 +1,7 @@
+<def f='redis/src/redis.h' l='583' ll='591'/>
+<size>24</size>
+<doc f='redis/src/redis.h' l='582'>/* ZSETs use a specialized version of Skiplists */</doc>
+<mbr r='zskiplistNode::obj' o='0' t='robj *'/>
+<mbr r='zskiplistNode::score' o='64' t='double'/>
+<mbr r='zskiplistNode::backward' o='128' t='struct zskiplistNode *'/>
+<mbr r='zskiplistNode::level' o='192' t='struct zskiplistLevel []'/>

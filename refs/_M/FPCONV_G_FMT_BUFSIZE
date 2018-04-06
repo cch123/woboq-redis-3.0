@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/fpconv.h' l='7'/>
+<use f='redis/deps/lua/src/fpconv.c' l='108' u='c'/>
+<use f='redis/deps/lua/src/fpconv.c' l='125' u='c'/>
+<use f='redis/deps/lua/src/fpconv.c' l='146' u='c'/>
+<use f='redis/deps/lua/src/fpconv.c' l='176' u='c'/>
+<use f='redis/deps/lua/src/fpconv.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/fpconv.c' l='188' u='c'/>
+<doc f='redis/deps/lua/src/fpconv.h' l='3'>/* Buffer required to store the largest string representation of a double.
+ *
+ * Longest double printed with %.14g is 21 characters long:
+ * -1.7976931348623e+308 */</doc>
+<use f='redis/deps/lua/src/lua_cjson.c' l='613' u='c'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='221'/>
+<dec f='redis/src/rdb.h' l='65'/>
+<doc f='redis/src/redis.h' l='218'>/* When a length of a string object stored on disk has the first two bits
+ * set, the remaining two bits specify a special encoding for the object
+ * accordingly to the following defines: */</doc>
+<doc f='redis/src/rdb.h' l='62'>/* When a length of a string object stored on disk has the first two bits
+ * set, the remaining two bits specify a special encoding for the object
+ * accordingly to the following defines: */</doc>
+<use f='redis/src/rdb.c' l='143' u='c'/>
+<use f='redis/src/rdb.c' l='170' u='c'/>
+<use f='redis/src/rdb.c' l='341' u='c'/>

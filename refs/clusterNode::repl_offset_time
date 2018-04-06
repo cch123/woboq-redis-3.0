@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='95' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='667' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1598' u='w' c='clusterProcessPacket'/>
+<offset>17344</offset>
+<doc f='redis/src/cluster.h' l='95'>/* Unix time we received offset for this node */</doc>

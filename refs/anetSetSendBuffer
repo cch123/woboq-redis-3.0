@@ -1,0 +1,1 @@
+<def f='redis/src/anet.c' l='162' ll='170' type='int anetSetSendBuffer(char * err, int fd, int buffsize)'/>

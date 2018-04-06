@@ -1,0 +1,30 @@
+<dec f='redis/src/cluster.h' l='44' type='struct clusterNode *'/>
+<use f='redis/src/cluster.c' l='544' u='w' c='createClusterLink'/>
+<use f='redis/src/cluster.c' l='559' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='560' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='1292' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1292' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1617' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1673' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1674' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1675' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1689' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1695' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1697' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1698' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1699' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1701' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1708' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1709' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1710' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1727' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1728' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1729' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1737' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1738' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1741' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1742' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2211' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2212' u='r' c='clusterSendPing'/>
+<offset>256</offset>
+<doc f='redis/src/cluster.h' l='44'>/* Node related to this link if any, or NULL */</doc>

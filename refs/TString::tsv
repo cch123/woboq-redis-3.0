@@ -1,0 +1,35 @@
+<dec f='redis/deps/lua/src/lobject.h' l='206' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:201:3)'/>
+<use f='redis/deps/lua/src/lapi.c' l='356' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='364' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='370' macro='1' u='a'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/ldump.c' l='70' u='m' c='DumpString'/>
+<use f='redis/deps/lua/src/lgc.c' l='40' u='m' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='40' u='m' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='40' u='m' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='40' u='m' c='iscleared'/>
+<use f='redis/deps/lua/src/lgc.c' l='391' macro='1' u='a'/>
+<use f='redis/deps/lua/src/llex.c' l='68' macro='1' u='m'/>
+<use f='redis/deps/lua/src/llex.c' l='70' u='m' c='luaX_init'/>
+<use f='redis/deps/lua/src/llex.c' l='430' u='m' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='431' u='m' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='60' u='m' c='anchor_token'/>
+<use f='redis/deps/lua/src/lstate.c' l='79' macro='1' u='m'/>
+<use f='redis/deps/lua/src/lstring.c' l='36' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstring.c' l='57' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='58' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='59' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='60' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='61' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='66' u='m' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='86' u='m' c='luaS_newlstr'/>
+<use f='redis/deps/lua/src/ltable.c' l='52' u='m' c='mainposition'/>
+<use f='redis/deps/lua/src/ltable.c' l='52' u='m' c='luaH_getstr'/>
+<use f='redis/deps/lua/src/ltm.c' l='41' macro='1' u='m'/>
+<use f='redis/deps/lua/src/lvm.c' l='205' u='m' c='l_strcmp'/>
+<use f='redis/deps/lua/src/lvm.c' l='207' u='m' c='l_strcmp'/>
+<use f='redis/deps/lua/src/lvm.c' l='289' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lvm.c' l='293' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lvm.c' l='298' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lvm.c' l='305' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lvm.c' l='522' macro='1' u='a'/>

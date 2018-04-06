@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='840' type='unsigned int'/>
+<offset>17664</offset>
+<doc f='redis/src/redis.h' l='840'>/* Max number of elements. */</doc>
+<use f='redis/src/replication.c' l='1735' u='w' c='replicationScriptCacheInit'/>
+<use f='redis/src/replication.c' l='1764' u='r' c='replicationScriptCacheAdd'/>

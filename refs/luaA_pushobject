@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lapi.h' l='14' type='void luaA_pushobject(lua_State * L, const TValue * o)'/>
+<def f='redis/deps/lua/src/lapi.c' l='89' ll='92' type='void luaA_pushobject(lua_State * L, const TValue * o)'/>
+<use f='redis/deps/lua/src/ldebug.c' l='132' u='c' c='lua_getlocal'/>

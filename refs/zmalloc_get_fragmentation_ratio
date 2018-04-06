@@ -1,0 +1,4 @@
+<dec f='redis/src/zmalloc.h' l='76' type='float zmalloc_get_fragmentation_ratio(size_t rss)'/>
+<use f='redis/src/redis.c' l='2722' u='c' c='genRedisInfoString'/>
+<def f='redis/src/zmalloc.c' l='327' ll='329' type='float zmalloc_get_fragmentation_ratio(size_t rss)'/>
+<doc f='redis/src/zmalloc.c' l='326'>/* Fragmentation = RSS / allocated-bytes */</doc>

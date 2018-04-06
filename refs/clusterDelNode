@@ -1,0 +1,17 @@
+<dec f='redis/src/cluster.c' l='75' type='void clusterDelNode(clusterNode * delnode)'/>
+<use f='redis/src/cluster.c' l='507' u='c' c='clusterReset'/>
+<def f='redis/src/cluster.c' l='859' ll='886' type='void clusterDelNode(clusterNode * delnode)'/>
+<use f='redis/src/cluster.c' l='1689' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='3054' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='4100' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='848'>/* Remove a node from the cluster. The functio performs the high level
+ * cleanup, calling freeClusterNode() for the low level cleanup.
+ * Here we do the following:
+ *
+ * 1) Mark all the slots handled by it as unassigned.
+ * 2) Remove all the failure reports sent by this node and referenced by
+ *    other nodes.
+ * 3) Free the node with freeClusterNode() that will in turn remove it
+ *    from the hash table and from the list of slaves of its master, if
+ *    it is a slave node.
+ */</doc>

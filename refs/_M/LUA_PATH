@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='69'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='62'>/*
+@@ LUA_PATH and LUA_CPATH are the names of the environment variables that
+@* Lua check to set its paths.
+@@ LUA_INIT is the name of the environment variable that Lua
+@* checks for initialization code.
+** CHANGE them if you want different names.
+*/</doc>
+<use f='redis/deps/lua/src/loadlib.c' l='649' u='c'/>

@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='817' type='int'/>
+<offset>16256</offset>
+<doc f='redis/src/redis.h' l='817'>/* Port of master */</doc>
+<use f='redis/src/config.c' l='255' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1210' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1582' u='r' c='rewriteConfigSlaveofOption'/>
+<use f='redis/src/redis.c' l='1492' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2881' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1381' u='r' c='connectWithMaster'/>
+<use f='redis/src/replication.c' l='1440' u='w' c='replicationSetMaster'/>
+<use f='redis/src/replication.c' l='1497' u='r' c='slaveofCommand'/>
+<use f='redis/src/replication.c' l='1506' u='r' c='slaveofCommand'/>
+<use f='redis/src/replication.c' l='1545' u='r' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1968' u='r' c='replicationCron'/>

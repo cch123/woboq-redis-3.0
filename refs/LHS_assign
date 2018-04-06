@@ -1,0 +1,6 @@
+<def f='redis/deps/lua/src/lparser.c' l='896' ll='899'/>
+<size>32</size>
+<doc f='redis/deps/lua/src/lparser.c' l='892'>/*
+** structure to chain all variables in the left-hand side of an
+** assignment
+*/</doc>

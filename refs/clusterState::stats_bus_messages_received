@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='136' type='long long'/>
+<use f='redis/src/cluster.c' l='410' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1537' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='4034' u='r' c='clusterCommand'/>
+<offset>3146880</offset>
+<doc f='redis/src/cluster.h' l='136'>/* Num of msg rcvd via cluster bus.*/</doc>

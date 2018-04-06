@@ -1,0 +1,8 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='57' type='int linenoiseHistoryLoad(const char * filename)'/>
+<def f='redis/deps/linenoise/linenoise.c' l='1089' ll='1105' type='int linenoiseHistoryLoad(const char * filename)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='1084'>/* Load the history from the specified file. If the file does not exist
+ * zero is returned and no operation is performed.
+ *
+ * If the file exists and the operation succeeded 0 is returned, otherwise
+ * on error -1 is returned. */</doc>
+<use f='redis/src/redis-cli.c' l='980' u='c' c='repl'/>

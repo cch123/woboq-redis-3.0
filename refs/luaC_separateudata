@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lgc.h' l='99' type='size_t luaC_separateudata(lua_State * L, int all)'/>
+<def f='redis/deps/lua/src/lgc.c' l='128' ll='155' type='size_t luaC_separateudata(lua_State * L, int all)'/>
+<use f='redis/deps/lua/src/lgc.c' l='543' u='c' c='atomic'/>
+<doc f='redis/deps/lua/src/lgc.c' l='127'>/* move `dead&apos; udata that need finalization to list `tmudata&apos; */</doc>
+<use f='redis/deps/lua/src/lstate.c' l='203' u='c' c='lua_close'/>

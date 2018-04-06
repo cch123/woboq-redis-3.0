@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='661' type='char *'/>
+<offset>640</offset>
+<doc f='redis/src/redis.h' l='661'>/* PID file path */</doc>
+<use f='redis/src/config.c' l='386' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='387' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1027' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1027' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1789' u='r' c='rewriteConfig'/>
+<use f='redis/src/debug.c' l='860' u='r' c='sigsegvHandler'/>
+<use f='redis/src/redis.c' l='1442' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2370' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='3380' u='r' c='createPidFile'/>

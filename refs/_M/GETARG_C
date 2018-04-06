@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='92'/>
+<use f='redis/deps/lua/src/lcode.c' l='138' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='333' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='356' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='378' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='523' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='533' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='417' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='463' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='536' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='572' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='579' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='588' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='687' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='699' u='c'/>

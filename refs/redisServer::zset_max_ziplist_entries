@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='865' type='size_t'/>
+<offset>18624</offset>
+<use f='redis/src/config.c' l='406' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='815' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1049' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1866' u='r' c='rewriteConfig'/>
+<use f='redis/src/rdb.c' l='931' u='r' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1063' u='r' c='rdbLoadObject'/>
+<use f='redis/src/redis.c' l='1461' u='w' c='initServerConfig'/>
+<use f='redis/src/t_zset.c' l='1201' u='r' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1244' u='r' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2064' u='r' c='zunionInterGenericCommand'/>

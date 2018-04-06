@@ -1,0 +1,10 @@
+<def f='redis/src/sentinel.c' l='360' ll='367' type='dictType'/>
+<use f='redis/src/sentinel.c' l='427' u='a' c='initSentinel'/>
+<use f='redis/src/sentinel.c' l='968' u='a' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='972' u='a' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1168' u='a' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='1171' u='a' c='sentinelResetMaster'/>
+<doc f='redis/src/sentinel.c' l='356'>/* Instance name (sds) -&gt; instance (sentinelRedisInstance pointer)
+ *
+ * also used for: sentinelRedisInstance-&gt;sentinels dictionary that maps
+ * sentinels ip:port to last seen time in Pub/Sub hello message. */</doc>

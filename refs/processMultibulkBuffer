@@ -1,0 +1,2 @@
+<def f='redis/src/networking.c' l='987' ll='1123' type='int processMultibulkBuffer(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1151' u='c' c='processInputBuffer'/>

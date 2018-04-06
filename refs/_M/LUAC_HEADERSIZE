@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lundump.h' l='34'/>
+<doc f='redis/deps/lua/src/lundump.h' l='33'>/* size of header of binary files */</doc>
+<use f='redis/deps/lua/src/ldump.c' l='145' u='c'/>
+<use f='redis/deps/lua/src/ldump.c' l='147' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='186' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='188' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='189' u='c'/>

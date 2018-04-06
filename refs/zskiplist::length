@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='595' type='unsigned long'/>
+<offset>128</offset>
+<use f='redis/src/db.c' l='1202' u='r' c='countKeysInSlot'/>
+<use f='redis/src/db.c' l='1210' u='r' c='countKeysInSlot'/>
+<use f='redis/src/t_zset.c' l='71' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='138' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='162' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='184' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='1086' u='r' c='zsetLength'/>
+<use f='redis/src/t_zset.c' l='1633' u='r' c='zuiLength'/>
+<use f='redis/src/t_zset.c' l='2062' u='r' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2064' u='r' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2456' u='r' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2464' u='r' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2534' u='r' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2542' u='r' c='zlexcountCommand'/>

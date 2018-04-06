@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1085' type='int listTypeNext(listTypeIterator * li, listTypeEntry * entry)'/>
+<use f='redis/src/debug.c' l='158' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/sort.c' l='349' u='c' c='sortCommand'/>
+<def f='redis/src/t_list.c' l='146' ll='173' type='int listTypeNext(listTypeIterator * li, listTypeEntry * entry)'/>
+<use f='redis/src/t_list.c' l='280' u='c' c='listTypeConvert'/>
+<use f='redis/src/t_list.c' l='350' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='667' u='c' c='lremCommand'/>
+<doc f='redis/src/t_list.c' l='143'>/* Stores pointer to current the entry in the provided entry structure
+ * and advances the position of the iterator. Returns 1 when the current
+ * entry is in fact an entry, 0 otherwise. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1428' type='void spopCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='163' u='r'/>
+<use f='redis/src/redis.c' l='163' u='r'/>
+<use f='redis/src/redis.c' l='163' u='r'/>
+<use f='redis/src/redis.c' l='163' u='r'/>
+<def f='redis/src/t_set.c' l='380' ll='411' type='void spopCommand(redisClient * c)'/>

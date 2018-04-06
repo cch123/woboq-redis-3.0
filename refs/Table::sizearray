@@ -1,0 +1,22 @@
+<dec f='redis/deps/lua/src/lobject.h' l='347' type='int'/>
+<offset>448</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='347'>/* size of `array&apos; array */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='179' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='287' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='354' u='r' c='cleartable'/>
+<use f='redis/deps/lua/src/ltable.c' l='141' u='r' c='findindex'/>
+<use f='redis/deps/lua/src/ltable.c' l='152' u='r' c='findindex'/>
+<use f='redis/deps/lua/src/ltable.c' l='164' u='r' c='luaH_next'/>
+<use f='redis/deps/lua/src/ltable.c' l='171' u='r' c='luaH_next'/>
+<use f='redis/deps/lua/src/ltable.c' l='230' u='r' c='numusearray'/>
+<use f='redis/deps/lua/src/ltable.c' l='231' u='r' c='numusearray'/>
+<use f='redis/deps/lua/src/ltable.c' l='265' u='r' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='266' u='r' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='268' u='w' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='299' u='r' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='307' u='w' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='365' u='w' c='luaH_new'/>
+<use f='redis/deps/lua/src/ltable.c' l='377' u='r' c='luaH_free'/>
+<use f='redis/deps/lua/src/ltable.c' l='437' u='r' c='luaH_getnum'/>
+<use f='redis/deps/lua/src/ltable.c' l='561' u='r' c='luaH_getn'/>
+<use f='redis/deps/lua/src/lvm.c' l='710' u='r' c='luaV_execute'/>

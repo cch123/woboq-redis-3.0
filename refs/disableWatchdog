@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1552' type='void disableWatchdog()'/>
+<use f='redis/src/config.c' l='914' u='c' c='configSetCommand'/>
+<def f='redis/src/debug.c' l='954' ll='966' type='void disableWatchdog()'/>
+<doc f='redis/src/debug.c' l='953'>/* Disable the software watchdog. */</doc>

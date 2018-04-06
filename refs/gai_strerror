@@ -1,0 +1,8 @@
+<dec f='include/netdb.h' l='671' type='const char * gai_strerror(int __ecode)'/>
+<use f='redis/deps/hiredis/net.c' l='277' u='c' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='293' u='c' c='_redisContextConnectTcp'/>
+<doc f='include/netdb.h' l='670'>/* Convert error return from getaddrinfo() to a string.  */</doc>
+<use f='redis/src/anet.c' l='215' u='c' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='280' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='297' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='458' u='c' c='_anetTcpServer'/>

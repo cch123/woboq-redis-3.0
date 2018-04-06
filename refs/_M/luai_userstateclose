@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='724'/>
+<use f='redis/deps/lua/src/lstate.c' l='211' u='c'/>

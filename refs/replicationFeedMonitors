@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1155' type='void replicationFeedMonitors(redisClient * c, list * monitors, int dictid, robj ** argv, int argc)'/>
+<use f='redis/src/multi.c' l='181' u='c' c='execCommand'/>
+<use f='redis/src/redis.c' l='2045' u='c' c='call'/>
+<def f='redis/src/replication.c' l='261' ll='298' type='void replicationFeedMonitors(redisClient * c, list * monitors, int dictid, robj ** argv, int argc)'/>

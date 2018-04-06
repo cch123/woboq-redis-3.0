@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='292' ll='321' type='unsigned long zslDeleteRangeByScore(zskiplist * zsl, zrangespec * range, dict * dict)'/>
+<use f='redis/src/t_zset.c' l='1451' u='c' c='zremrangeGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='288'>/* Delete all the elements with score between min and max from the skiplist.
+ * Min and max are inclusive, so a score &gt;= min || score &lt;= max is deleted.
+ * Note that this function takes the reference to the hash table view of the
+ * sorted set, in order to remove the elements from the hash table too. */</doc>

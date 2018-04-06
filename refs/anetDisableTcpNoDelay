@@ -1,0 +1,3 @@
+<dec f='redis/src/anet.h' l='67' type='int anetDisableTcpNoDelay(char * err, int fd)'/>
+<def f='redis/src/anet.c' l='156' ll='159' type='int anetDisableTcpNoDelay(char * err, int fd)'/>
+<use f='redis/src/replication.c' l='575' u='c' c='syncCommand'/>

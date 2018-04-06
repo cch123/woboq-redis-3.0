@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/llex.h' l='75' type='void luaX_lookahead(LexState * ls)'/>
+<def f='redis/deps/lua/src/llex.c' l='459' ll='462' type='void luaX_lookahead(LexState * ls)'/>
+<use f='redis/deps/lua/src/lparser.c' l='516' u='c' c='constructor'/>

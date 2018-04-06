@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lua.h' l='355' type='int'/>
+<offset>416</offset>
+<doc f='redis/deps/lua/src/lua.h' l='355'>/* (S) */</doc>
+<use f='redis/deps/lua/src/ldblib.c' l='125' u='r' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='154' u='w' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='160' u='w' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='170' u='w' c='info_tailcall'/>

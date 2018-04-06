@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lobject.h' l='122'/>
+<use f='redis/deps/lua/src/lapi.c' l='513' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='844' u='c'/>

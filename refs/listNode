@@ -1,0 +1,6 @@
+<def f='redis/src/adlist.h' l='36' ll='40'/>
+<size>24</size>
+<doc f='redis/src/adlist.h' l='34'>/* Node, List, and Iterator are the only data structures used currently. */</doc>
+<mbr r='listNode::prev' o='0' t='struct listNode *'/>
+<mbr r='listNode::next' o='64' t='struct listNode *'/>
+<mbr r='listNode::value' o='128' t='void *'/>

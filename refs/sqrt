@@ -1,0 +1,3 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='156' type='double sqrt(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='105' u='c' c='math_sqrt'/>
+<use f='redis/src/hyperloglog.c' l='1397' u='c' c='pfselftestCommand'/>

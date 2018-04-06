@@ -1,0 +1,2 @@
+<dec f='include/asm-generic/errno.h' l='86'/>
+<use f='redis/src/redis-cli.c' l='569' u='c'/>

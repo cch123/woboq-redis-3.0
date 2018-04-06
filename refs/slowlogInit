@@ -1,0 +1,6 @@
+<dec f='redis/src/slowlog.h' l='43' type='void slowlogInit()'/>
+<use f='redis/src/redis.c' l='1879' u='c' c='initServer'/>
+<doc f='redis/src/slowlog.h' l='42'>/* Exported API */</doc>
+<def f='redis/src/slowlog.c' l='103' ll='107' type='void slowlogInit()'/>
+<doc f='redis/src/slowlog.c' l='101'>/* Initialize the slow log. This function should be called a single time
+ * at server startup. */</doc>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='157'/>
+<doc f='redis/src/redis.h' l='154'>/* When configuring the Redis eventloop, we setup it so that the total number
+ * of file descriptors we can handle are server.maxclients + RESERVED_FDS + FDSET_INCR
+ * that is our safety margin. */</doc>
+<use f='redis/src/config.c' l='656' u='c'/>
+<use f='redis/src/config.c' l='659' u='c'/>
+<use f='redis/src/redis.c' l='1772' u='c'/>

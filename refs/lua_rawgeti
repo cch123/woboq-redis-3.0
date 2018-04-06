@@ -1,0 +1,30 @@
+<dec f='redis/deps/lua/src/lua.h' l='180' type='void lua_rawgeti(lua_State * L, int idx, int n)'/>
+<def f='redis/deps/lua/src/lapi.c' l='567' ll='575' macro='1' type='void lua_rawgeti(lua_State * L, int idx, int n)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='488' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='492' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='507' u='c' c='luaL_unref'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='252' u='c' c='ipairsaux'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='351' u='c' c='luaB_unpack'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='353' u='c' c='luaB_unpack'/>
+<use f='redis/deps/lua/src/liolib.c' l='136' u='c' c='io_close'/>
+<use f='redis/deps/lua/src/liolib.c' l='192' u='c' c='getiofile'/>
+<use f='redis/deps/lua/src/liolib.c' l='216' u='c' c='g_iofile'/>
+<use f='redis/deps/lua/src/liolib.c' l='251' u='c' c='io_lines'/>
+<use f='redis/deps/lua/src/loadlib.c' l='468' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/ltablib.c' l='29' u='c' c='foreachi'/>
+<use f='redis/deps/lua/src/ltablib.c' l='103' u='c' c='tinsert'/>
+<use f='redis/deps/lua/src/ltablib.c' l='124' u='c' c='tremove'/>
+<use f='redis/deps/lua/src/ltablib.c' l='126' u='c' c='tremove'/>
+<use f='redis/deps/lua/src/ltablib.c' l='136' u='c' c='addfield'/>
+<use f='redis/deps/lua/src/ltablib.c' l='197' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='198' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='205' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='206' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='211' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='218' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='220' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='226' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='231' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='241' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/ltablib.c' l='242' u='c' c='auxsort'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='580' u='c' c='json_append_array'/>

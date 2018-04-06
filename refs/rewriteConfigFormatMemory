@@ -1,0 +1,6 @@
+<def f='redis/src/config.c' l='1424' ll='1438' type='int rewriteConfigFormatMemory(char * buf, size_t len, long long bytes)'/>
+<use f='redis/src/config.c' l='1446' u='c' c='rewriteConfigBytesOption'/>
+<use f='redis/src/config.c' l='1615' u='c' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1617' u='c' c='rewriteConfigClientoutputbufferlimitOption'/>
+<doc f='redis/src/config.c' l='1422'>/* Write the long long &apos;bytes&apos; value as a string in a way that is parsable
+ * inside redis.conf. If possible uses the GB, MB, KB notation. */</doc>

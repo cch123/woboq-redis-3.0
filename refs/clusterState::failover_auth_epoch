@@ -1,0 +1,8 @@
+<dec f='redis/src/cluster.h' l='119' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='406' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1916' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2818' u='w' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2837' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2838' u='r' c='clusterHandleSlaveFailover'/>
+<offset>3146304</offset>
+<doc f='redis/src/cluster.h' l='119'>/* Epoch of the current election. */</doc>

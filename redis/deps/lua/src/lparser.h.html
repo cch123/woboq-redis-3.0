@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lparser.h source code [redis/deps/lua/src/lparser.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="FuncState,expdesc,upvaldesc "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lparser.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lparser.h.html'>lparser.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lparser.h,v 1.57.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Lua Parser</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/lparser_h">lparser_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/lparser_h" data-ref="_M/lparser_h">lparser_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="llimits.h.html">"llimits.h"</a></u></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="12">12</th><td><u>#include <a href="lzio.h.html">"lzio.h"</a></u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><i>/*</i></td></tr>
+<tr><th id="16">16</th><td><i>** Expression descriptor</i></td></tr>
+<tr><th id="17">17</th><td><i>*/</i></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><b>typedef</b> <b>enum</b> {</td></tr>
+<tr><th id="20">20</th><td>  <dfn class="enum" id="VVOID" title='VVOID' data-ref="VVOID">VVOID</dfn>,	<i>/* no value */</i></td></tr>
+<tr><th id="21">21</th><td>  <dfn class="enum" id="VNIL" title='VNIL' data-ref="VNIL">VNIL</dfn>,</td></tr>
+<tr><th id="22">22</th><td>  <dfn class="enum" id="VTRUE" title='VTRUE' data-ref="VTRUE">VTRUE</dfn>,</td></tr>
+<tr><th id="23">23</th><td>  <dfn class="enum" id="VFALSE" title='VFALSE' data-ref="VFALSE">VFALSE</dfn>,</td></tr>
+<tr><th id="24">24</th><td>  <dfn class="enum" id="VK" title='VK' data-ref="VK">VK</dfn>,		<i>/* info = index of constant in `k' */</i></td></tr>
+<tr><th id="25">25</th><td>  <dfn class="enum" id="VKNUM" title='VKNUM' data-ref="VKNUM">VKNUM</dfn>,	<i>/* nval = numerical value */</i></td></tr>
+<tr><th id="26">26</th><td>  <dfn class="enum" id="VLOCAL" title='VLOCAL' data-ref="VLOCAL">VLOCAL</dfn>,	<i>/* info = local register */</i></td></tr>
+<tr><th id="27">27</th><td>  <dfn class="enum" id="VUPVAL" title='VUPVAL' data-ref="VUPVAL">VUPVAL</dfn>,       <i>/* info = index of upvalue in `upvalues' */</i></td></tr>
+<tr><th id="28">28</th><td>  <dfn class="enum" id="VGLOBAL" title='VGLOBAL' data-ref="VGLOBAL">VGLOBAL</dfn>,	<i>/* info = index of table; aux = index of global name in `k' */</i></td></tr>
+<tr><th id="29">29</th><td>  <dfn class="enum" id="VINDEXED" title='VINDEXED' data-ref="VINDEXED">VINDEXED</dfn>,	<i>/* info = table register; aux = index register (or `k') */</i></td></tr>
+<tr><th id="30">30</th><td>  <dfn class="enum" id="VJMP" title='VJMP' data-ref="VJMP">VJMP</dfn>,		<i>/* info = instruction pc */</i></td></tr>
+<tr><th id="31">31</th><td>  <dfn class="enum" id="VRELOCABLE" title='VRELOCABLE' data-ref="VRELOCABLE">VRELOCABLE</dfn>,	<i>/* info = instruction pc */</i></td></tr>
+<tr><th id="32">32</th><td>  <dfn class="enum" id="VNONRELOC" title='VNONRELOC' data-ref="VNONRELOC">VNONRELOC</dfn>,	<i>/* info = result register */</i></td></tr>
+<tr><th id="33">33</th><td>  <dfn class="enum" id="VCALL" title='VCALL' data-ref="VCALL">VCALL</dfn>,	<i>/* info = instruction pc */</i></td></tr>
+<tr><th id="34">34</th><td>  <dfn class="enum" id="VVARARG" title='VVARARG' data-ref="VVARARG">VVARARG</dfn>	<i>/* info = instruction pc */</i></td></tr>
+<tr><th id="35">35</th><td>} <dfn class="typedef" id="expkind" title='expkind' data-type='enum expkind' data-ref="expkind">expkind</dfn>;</td></tr>
+<tr><th id="36">36</th><td></td></tr>
+<tr><th id="37">37</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="expdesc" title='expdesc' data-ref="expdesc"><a class="type" href="#expdesc" title='expdesc' data-ref="expdesc">expdesc</a></dfn> {</td></tr>
+<tr><th id="38">38</th><td>  <a class="typedef" href="#expkind" title='expkind' data-type='enum expkind' data-ref="expkind">expkind</a> <dfn class="decl field" id="expdesc::k" title='expdesc::k' data-ref="expdesc::k">k</dfn>;</td></tr>
+<tr><th id="39">39</th><td>  <b>union</b> {</td></tr>
+<tr><th id="40">40</th><td>    <b>struct</b> { <em>int</em> <dfn class="decl field" id="expdesc::(anonymousunion)::(anonymous)::info" title='expdesc::(anonymous union)::(anonymous struct)::info' data-ref="expdesc::(anonymousunion)::(anonymous)::info">info</dfn>, <dfn class="decl field" id="expdesc::(anonymousunion)::(anonymous)::aux" title='expdesc::(anonymous union)::(anonymous struct)::aux' data-ref="expdesc::(anonymousunion)::(anonymous)::aux">aux</dfn>; } <dfn class="decl field" id="expdesc::(anonymous)::s" title='expdesc::(anonymous union)::s' data-ref="expdesc::(anonymous)::s">s</dfn>;</td></tr>
+<tr><th id="41">41</th><td>    <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="decl field" id="expdesc::(anonymous)::nval" title='expdesc::(anonymous union)::nval' data-ref="expdesc::(anonymous)::nval">nval</dfn>;</td></tr>
+<tr><th id="42">42</th><td>  } <dfn class="decl field" id="expdesc::u" title='expdesc::u' data-ref="expdesc::u">u</dfn>;</td></tr>
+<tr><th id="43">43</th><td>  <em>int</em> <dfn class="decl field" id="expdesc::t" title='expdesc::t' data-ref="expdesc::t">t</dfn>;  <i>/* patch list of `exit when true' */</i></td></tr>
+<tr><th id="44">44</th><td>  <em>int</em> <dfn class="decl field" id="expdesc::f" title='expdesc::f' data-ref="expdesc::f">f</dfn>;  <i>/* patch list of `exit when false' */</i></td></tr>
+<tr><th id="45">45</th><td>} <dfn class="typedef" id="expdesc" title='expdesc' data-type='struct expdesc' data-ref="expdesc">expdesc</dfn>;</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="upvaldesc" title='upvaldesc' data-ref="upvaldesc"><a class="type" href="#upvaldesc" title='upvaldesc' data-ref="upvaldesc">upvaldesc</a></dfn> {</td></tr>
+<tr><th id="49">49</th><td>  <a class="typedef" href="llimits.h.html#lu_byte" title='lu_byte' data-type='unsigned char' data-ref="lu_byte">lu_byte</a> <dfn class="decl field" id="upvaldesc::k" title='upvaldesc::k' data-ref="upvaldesc::k">k</dfn>;</td></tr>
+<tr><th id="50">50</th><td>  <a class="typedef" href="llimits.h.html#lu_byte" title='lu_byte' data-type='unsigned char' data-ref="lu_byte">lu_byte</a> <dfn class="decl field" id="upvaldesc::info" title='upvaldesc::info' data-ref="upvaldesc::info">info</dfn>;</td></tr>
+<tr><th id="51">51</th><td>} <dfn class="typedef" id="upvaldesc" title='upvaldesc' data-type='struct upvaldesc' data-ref="upvaldesc">upvaldesc</dfn>;</td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><b>struct</b> <dfn class="type" id="BlockCnt" title='BlockCnt' data-ref="BlockCnt">BlockCnt</dfn>;  <i>/* defined in lparser.c */</i></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><i>/* state needed to generate code for a given function */</i></td></tr>
+<tr><th id="58">58</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="FuncState" title='FuncState' data-ref="FuncState"><a class="type" href="#FuncState" title='FuncState' data-ref="FuncState">FuncState</a></dfn> {</td></tr>
+<tr><th id="59">59</th><td>  <a class="typedef" href="lobject.h.html#Proto" title='Proto' data-type='struct Proto' data-ref="Proto">Proto</a> *<dfn class="decl field" id="FuncState::f" title='FuncState::f' data-ref="FuncState::f">f</dfn>;  <i>/* current function header */</i></td></tr>
+<tr><th id="60">60</th><td>  <a class="typedef" href="lobject.h.html#Table" title='Table' data-type='struct Table' data-ref="Table">Table</a> *<dfn class="decl field" id="FuncState::h" title='FuncState::h' data-ref="FuncState::h">h</dfn>;  <i>/* table to find (and reuse) elements in `k' */</i></td></tr>
+<tr><th id="61">61</th><td>  <b>struct</b> <a class="type" href="#FuncState" title='FuncState' data-ref="FuncState">FuncState</a> *<dfn class="decl field" id="FuncState::prev" title='FuncState::prev' data-ref="FuncState::prev">prev</dfn>;  <i>/* enclosing function */</i></td></tr>
+<tr><th id="62">62</th><td>  <b>struct</b> <a class="type" href="llex.h.html#LexState" title='LexState' data-ref="LexState">LexState</a> *<dfn class="decl field" id="FuncState::ls" title='FuncState::ls' data-ref="FuncState::ls">ls</dfn>;  <i>/* lexical state */</i></td></tr>
+<tr><th id="63">63</th><td>  <b>struct</b> <a class="type" href="lstate.h.html#lua_State" title='lua_State' data-ref="lua_State">lua_State</a> *<dfn class="decl field" id="FuncState::L" title='FuncState::L' data-ref="FuncState::L">L</dfn>;  <i>/* copy of the Lua state */</i></td></tr>
+<tr><th id="64">64</th><td>  <b>struct</b> <a class="type" href="#BlockCnt" title='BlockCnt' data-ref="BlockCnt">BlockCnt</a> *<dfn class="decl field" id="FuncState::bl" title='FuncState::bl' data-ref="FuncState::bl">bl</dfn>;  <i>/* chain of current blocks */</i></td></tr>
+<tr><th id="65">65</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::pc" title='FuncState::pc' data-ref="FuncState::pc">pc</dfn>;  <i>/* next position to code (equivalent to `ncode') */</i></td></tr>
+<tr><th id="66">66</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::lasttarget" title='FuncState::lasttarget' data-ref="FuncState::lasttarget">lasttarget</dfn>;   <i>/* `pc' of last `jump target' */</i></td></tr>
+<tr><th id="67">67</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::jpc" title='FuncState::jpc' data-ref="FuncState::jpc">jpc</dfn>;  <i>/* list of pending jumps to `pc' */</i></td></tr>
+<tr><th id="68">68</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::freereg" title='FuncState::freereg' data-ref="FuncState::freereg">freereg</dfn>;  <i>/* first free register */</i></td></tr>
+<tr><th id="69">69</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::nk" title='FuncState::nk' data-ref="FuncState::nk">nk</dfn>;  <i>/* number of elements in `k' */</i></td></tr>
+<tr><th id="70">70</th><td>  <em>int</em> <dfn class="decl field" id="FuncState::np" title='FuncState::np' data-ref="FuncState::np">np</dfn>;  <i>/* number of elements in `p' */</i></td></tr>
+<tr><th id="71">71</th><td>  <em>short</em> <dfn class="decl field" id="FuncState::nlocvars" title='FuncState::nlocvars' data-ref="FuncState::nlocvars">nlocvars</dfn>;  <i>/* number of elements in `locvars' */</i></td></tr>
+<tr><th id="72">72</th><td>  <a class="typedef" href="llimits.h.html#lu_byte" title='lu_byte' data-type='unsigned char' data-ref="lu_byte">lu_byte</a> <dfn class="decl field" id="FuncState::nactvar" title='FuncState::nactvar' data-ref="FuncState::nactvar">nactvar</dfn>;  <i>/* number of active local variables */</i></td></tr>
+<tr><th id="73">73</th><td>  <a class="typedef" href="#upvaldesc" title='upvaldesc' data-type='struct upvaldesc' data-ref="upvaldesc">upvaldesc</a> <dfn class="decl field" id="FuncState::upvalues" title='FuncState::upvalues' data-ref="FuncState::upvalues">upvalues</dfn>[<a class="macro" href="luaconf.h.html#482" title="60" data-ref="_M/LUAI_MAXUPVALUES">LUAI_MAXUPVALUES</a>];  <i>/* upvalues */</i></td></tr>
+<tr><th id="74">74</th><td>  <em>unsigned</em> <em>short</em> <dfn class="decl field" id="FuncState::actvar" title='FuncState::actvar' data-ref="FuncState::actvar">actvar</dfn>[<a class="macro" href="luaconf.h.html#475" title="200" data-ref="_M/LUAI_MAXVARS">LUAI_MAXVARS</a>];  <i>/* declared-variable stack */</i></td></tr>
+<tr><th id="75">75</th><td>} <dfn class="typedef" id="FuncState" title='FuncState' data-type='struct FuncState' data-ref="FuncState">FuncState</dfn>;</td></tr>
+<tr><th id="76">76</th><td></td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <a class="typedef" href="lobject.h.html#Proto" title='Proto' data-type='struct Proto' data-ref="Proto">Proto</a> *<dfn class="decl fn" id="luaY_parser" title='luaY_parser' data-ref="luaY_parser">luaY_parser</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="18L" title='L' data-type='lua_State *' data-ref="18L">L</dfn>, <a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col9 decl" id="19z" title='z' data-type='ZIO *' data-ref="19z">z</dfn>, <a class="typedef" href="lzio.h.html#Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</a> *<dfn class="local col0 decl" id="20buff" title='buff' data-type='Mbuffer *' data-ref="20buff">buff</dfn>,</td></tr>
+<tr><th id="79">79</th><td>                                            <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="21name" title='name' data-type='const char *' data-ref="21name">name</dfn>);</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lcode.c.html'>redis/deps/lua/src/lcode.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

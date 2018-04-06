@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1547' type='void bugReportStart()'/>
+<use f='redis/src/debug.c' l='391' u='c' c='_redisAssert'/>
+<use f='redis/src/debug.c' l='406' u='c' c='_redisAssertPrintClientInfo'/>
+<use f='redis/src/debug.c' l='452' u='c' c='_redisAssertPrintObject'/>
+<use f='redis/src/debug.c' l='464' u='c' c='_redisPanic'/>
+<def f='redis/src/debug.c' l='475' ll='481' type='void bugReportStart()'/>
+<use f='redis/src/debug.c' l='811' u='c' c='sigsegvHandler'/>

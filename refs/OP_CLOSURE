@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='205' type='36'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='205'>/*	A Bx	R(A) := closure(KPROTO[Bx], R(A), ... ,R(A+n))	*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='450' c='symbexec'/>
+<use f='redis/deps/lua/src/lparser.c' l='320' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lvm.c' l='723' c='luaV_execute'/>

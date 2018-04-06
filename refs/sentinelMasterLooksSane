@@ -1,0 +1,8 @@
+<def f='redis/src/sentinel.c' l='1775' ll='1781' type='int sentinelMasterLooksSane(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='1965' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1988' u='c' c='sentinelRefreshInstanceInfo'/>
+<doc f='redis/src/sentinel.c' l='1770'>/* Return true if master looks &quot;sane&quot;, that is:
+ * 1) It is actually a master in the current configuration.
+ * 2) It reports itself as a master.
+ * 3) It is not SDOWN or ODOWN.
+ * 4) We obtained last INFO no more than two times the INFO period time ago. */</doc>

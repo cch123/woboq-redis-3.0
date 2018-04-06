@@ -1,0 +1,4 @@
+<dec f='redis/src/ae.h' l='83' type='int'/>
+<use f='redis/src/ae_epoll.c' l='129' u='w' c='aeApiPoll'/>
+<use f='redis/src/ae.c' l='403' u='r' c='aeProcessEvents'/>
+<offset>32</offset>

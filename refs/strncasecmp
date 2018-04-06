@@ -1,0 +1,9 @@
+<dec f='include/string.h' l='533' type='int strncasecmp(const char * __s1, const char * __s2, size_t __n)'/>
+<use f='redis/deps/hiredis/async.c' l='594' u='c' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='605' u='c' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='613' u='c' c='__redisAsyncCommand'/>
+<doc f='include/string.h' l='532'>/* Compare no more than N chars of S1 and S2, ignoring case.  */</doc>
+<use f='redis/deps/lua/src/lua_cjson.c' l='986' u='c' c='json_is_invalid_number'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='988' u='c' c='json_is_invalid_number'/>
+<use f='redis/src/redis-cli.c' l='320' u='c' c='completionCallback'/>
+<use f='redis/src/redis-cli.c' l='332' u='c' c='completionCallback'/>

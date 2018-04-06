@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='21' type='Proto * luaF_newproto(lua_State * L)'/>
+<def f='redis/deps/lua/src/lfunc.c' l='115' ll='138' type='Proto * luaF_newproto(lua_State * L)'/>
+<use f='redis/deps/lua/src/lparser.c' l='330' u='c' c='open_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='165' u='c' c='LoadFunction'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='807' type='time_t'/>
+<offset>15872</offset>
+<doc f='redis/src/redis.h' l='807'>/* We have no slaves since that time.
+                                       Only valid if server.slaves len is 0. */</doc>
+<use f='redis/src/networking.c' l='770' u='w' c='freeClient'/>
+<use f='redis/src/redis.c' l='1514' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='2039' u='r' c='replicationCron'/>

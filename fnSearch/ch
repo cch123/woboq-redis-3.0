@@ -1,0 +1,4 @@
+checkClientOutputBufferLimits|checkClientOutputBufferLimits
+checkType|checkType
+checkForSentinelMode|checkForSentinelMode
+checkTcpBacklogSettings|checkTcpBacklogSettings

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='546' type='char [41]'/>
+<offset>1792</offset>
+<doc f='redis/src/redis.h' l='546'>/* master run id if this is a master */</doc>
+<use f='redis/src/replication.c' l='1027' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1139' u='r' c='slaveTryPartialResynchronization'/>

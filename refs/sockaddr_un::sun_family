@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/un.h' l='31' macro='1' type='sa_family_t'/>
+<use f='redis/deps/hiredis/net.c' l='365' u='w' c='redisContextConnectUnix'/>
+<offset>0</offset>
+<use f='redis/src/anet.c' l='362' u='w' c='anetUnixGenericConnect'/>
+<use f='redis/src/anet.c' l='501' u='w' c='anetUnixServer'/>

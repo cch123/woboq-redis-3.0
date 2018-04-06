@@ -1,0 +1,4 @@
+<def f='redis/src/redis.c' l='575' ll='582' type='dictType'/>
+<use f='redis/src/redis.c' l='1529' u='a' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1530' u='a' c='initServerConfig'/>
+<doc f='redis/src/redis.c' l='574'>/* Command table. sds string -&gt; command struct pointer. */</doc>

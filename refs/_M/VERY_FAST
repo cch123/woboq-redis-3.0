@@ -1,0 +1,5 @@
+<dec f='redis/src/lzfP.h' l='64'/>
+<use f='redis/src/lzf_c.c' l='52' u='c'/>
+<use f='redis/src/lzf_c.c' l='232' u='c'/>
+<use f='redis/src/lzf_c.c' l='234' u='c'/>
+<use f='redis/src/lzf_c.c' l='243' u='c'/>

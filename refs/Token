@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/llex.h' l='49' ll='52'/>
+<size>16</size>
+<mbr r='Token::token' o='0' t='int'/>
+<mbr r='Token::seminfo' o='64' t='SemInfo'/>

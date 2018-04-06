@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.h' l='86' type='unsigned char [2048]'/>
+<use f='redis/src/cluster.c' l='655' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='655' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1799' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2119' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2381' u='r' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2381' u='r' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='3319' u='r' c='clusterNodeSetSlotBit'/>
+<use f='redis/src/cluster.c' l='3320' u='r' c='clusterNodeSetSlotBit'/>
+<use f='redis/src/cluster.c' l='3327' u='r' c='clusterNodeClearSlotBit'/>
+<use f='redis/src/cluster.c' l='3328' u='r' c='clusterNodeClearSlotBit'/>
+<use f='redis/src/cluster.c' l='3335' u='r' c='clusterNodeGetSlotBit'/>
+<offset>512</offset>
+<doc f='redis/src/cluster.h' l='86'>/* slots handled by this node */</doc>

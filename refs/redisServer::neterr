@@ -1,0 +1,21 @@
+<dec f='redis/src/redis.h' l='684' type='char [256]'/>
+<offset>3968</offset>
+<doc f='redis/src/redis.h' l='684'>/* Error buffer for anet.c */</doc>
+<use f='redis/src/cluster.c' l='580' u='r' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='584' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='3063' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3075' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='4489' u='r' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4494' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4497' u='r' c='migrateGetSocket'/>
+<use f='redis/src/networking.c' l='620' u='r' c='acceptTcpHandler'/>
+<use f='redis/src/networking.c' l='624' c='acceptTcpHandler'/>
+<use f='redis/src/networking.c' l='639' u='r' c='acceptUnixHandler'/>
+<use f='redis/src/networking.c' l='643' c='acceptUnixHandler'/>
+<use f='redis/src/redis.c' l='1678' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1684' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1696' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1700' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1707' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1783' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1786' c='initServer'/>

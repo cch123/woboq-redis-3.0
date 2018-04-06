@@ -1,0 +1,3 @@
+<def f='redis/src/sentinel.c' l='2977' ll='3037' type='void sentinelCheckSubjectivelyDown(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='3811' u='c' c='sentinelHandleRedisInstance'/>
+<doc f='redis/src/sentinel.c' l='2976'>/* Is this instance down from our point of view? */</doc>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='714' type='unsigned long'/>
+<offset>7872</offset>
+<doc f='redis/src/redis.h' l='714'>/* SLOWLOG max number of items logged */</doc>
+<use f='redis/src/config.c' l='485' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='830' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1060' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1859' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1540' u='w' c='initServerConfig'/>
+<use f='redis/src/slowlog.c' l='118' u='r' c='slowlogPushEntryIfNeeded'/>

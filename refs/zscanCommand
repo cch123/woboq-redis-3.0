@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1494' type='void zscanCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='193' u='r'/>
+<use f='redis/src/redis.c' l='193' u='r'/>
+<use f='redis/src/redis.c' l='193' u='r'/>
+<use f='redis/src/redis.c' l='193' u='r'/>
+<def f='redis/src/t_zset.c' l='2848' ll='2856' type='void zscanCommand(redisClient * c)'/>

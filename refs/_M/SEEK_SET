@@ -1,0 +1,7 @@
+<dec f='include/stdio.h' l='140'/>
+<doc f='include/stdio.h' l='138'>/* The possibilities for the third argument to `fseek&apos;.
+   These values should not be changed.  */</doc>
+<dec f='include/unistd.h' l='314'/>
+<dec f='include/fcntl.h' l='136'/>
+<use f='redis/deps/lua/src/liolib.c' l='443' u='c'/>
+<use f='redis/src/replication.c' l='706' u='c'/>

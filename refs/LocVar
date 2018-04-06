@@ -1,0 +1,5 @@
+<def f='redis/deps/lua/src/lobject.h' l='262' ll='266'/>
+<size>16</size>
+<mbr r='LocVar::varname' o='0' t='TString *'/>
+<mbr r='LocVar::startpc' o='64' t='int'/>
+<mbr r='LocVar::endpc' o='96' t='int'/>

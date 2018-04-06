@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lobject.h' l='249' type='lu_byte'/>
+<offset>896</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='249'>/* number of upvalues */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='281' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='389' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='453' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldo.c' l='500' u='r' c='f_parser'/>
+<use f='redis/deps/lua/src/ldo.c' l='502' u='r' c='f_parser'/>
+<use f='redis/deps/lua/src/ldump.c' l='134' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/lfunc.c' l='126' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='187' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='194' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='195' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='198' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='201' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='202' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='203' u='w' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='321' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='372' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='372' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='373' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='170' u='w' c='LoadFunction'/>
+<use f='redis/deps/lua/src/lvm.c' l='728' u='r' c='luaV_execute'/>

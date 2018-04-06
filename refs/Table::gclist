@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='346' type='GCObject *'/>
+<offset>384</offset>
+<use f='redis/deps/lua/src/lgc.c' l='96' u='w' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='173' u='w' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='284' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='373' u='r' c='cleartable'/>
+<use f='redis/deps/lua/src/lgc.c' l='680' u='w' c='luaC_barrierback'/>

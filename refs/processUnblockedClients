@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1364' type='void processUnblockedClients()'/>
+<doc f='redis/src/redis.h' l='1363'>/* Blocked clients */</doc>
+<def f='redis/src/blocked.c' l='109' ll='127' type='void processUnblockedClients()'/>
+<doc f='redis/src/blocked.c' l='106'>/* This function is called in the beforeSleep() function of the event loop
+ * in order to process the pending input buffer of clients that were
+ * unblocked after a blocking operation. */</doc>
+<use f='redis/src/redis.c' l='1299' u='c' c='beforeSleep'/>

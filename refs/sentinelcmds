@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='390' ll='402' type='struct redisCommand [11]'/>
+<use f='redis/src/sentinel.c' l='417' u='r' c='initSentinel'/>
+<use f='redis/src/sentinel.c' l='417' u='r' c='initSentinel'/>
+<use f='redis/src/sentinel.c' l='419' u='r' c='initSentinel'/>

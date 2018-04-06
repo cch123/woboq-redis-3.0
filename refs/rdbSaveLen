@@ -1,0 +1,14 @@
+<dec f='redis/src/rdb.h' l='98' type='int rdbSaveLen(rio * rdb, uint32_t len)'/>
+<def f='redis/src/rdb.c' l='82' ll='106' type='int rdbSaveLen(rio * rdb, uint32_t len)'/>
+<use f='redis/src/rdb.c' l='232' u='c' c='rdbSaveLzfStringObject'/>
+<use f='redis/src/rdb.c' l='235' u='c' c='rdbSaveLzfStringObject'/>
+<use f='redis/src/rdb.c' l='293' u='c' c='rdbSaveRawString'/>
+<use f='redis/src/rdb.c' l='313' u='c' c='rdbSaveLongLongAsStringObject'/>
+<use f='redis/src/rdb.c' l='498' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='517' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='546' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='574' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='660' u='c' c='rdbSaveRio'/>
+<doc f='redis/src/rdb.c' l='79'>/* Saves an encoded length. The first two bits in the first byte are used to
+ * hold the encoding type. See the REDIS_RDB_* definitions for more information
+ * on the types of encoding. */</doc>

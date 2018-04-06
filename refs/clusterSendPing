@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.c' l='54' type='void clusterSendPing(clusterLink * link, int type)'/>
+<use f='redis/src/cluster.c' l='1664' u='c' c='clusterProcessPacket'/>
+<def f='redis/src/cluster.c' l='2157' ll='2273' type='void clusterSendPing(clusterLink * link, int type)'/>
+<use f='redis/src/cluster.c' l='2307' u='c' c='clusterBroadcastPong'/>
+<use f='redis/src/cluster.c' l='3090' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3133' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3194' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3205' u='c' c='clusterCron'/>
+<doc f='redis/src/cluster.c' l='2155'>/* Send a PING or PONG packet to the specified node, making sure to add enough
+ * gossip informations. */</doc>

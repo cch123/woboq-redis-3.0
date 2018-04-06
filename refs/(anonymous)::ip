@@ -1,0 +1,8 @@
+<dec f='redis/src/cluster.h' l='168' type='char [46]'/>
+<use f='redis/src/cluster.c' l='1302' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1335' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1337' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1350' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='2257' u='r' c='clusterSendPing'/>
+<offset>384</offset>
+<doc f='redis/src/cluster.h' l='168'>/* IP address last time it was seen */</doc>

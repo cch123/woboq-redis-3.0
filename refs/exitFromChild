@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1016' type='void exitFromChild(int retcode)'/>
+<use f='redis/src/aof.c' l='1291' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1293' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/rdb.c' l='790' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1498' u='c' c='rdbSaveToSlavesSockets'/>
+<def f='redis/src/redis.c' l='400' ll='406' type='void exitFromChild(int retcode)'/>
+<doc f='redis/src/redis.c' l='396'>/* After an RDB dump or AOF rewrite we exit from children using _exit() instead of
+ * exit(), because the latter may interact with the same file objects used by
+ * the parent process. However if we are testing the coverage normal exit() is
+ * used in order to obtain the right coverage information. */</doc>

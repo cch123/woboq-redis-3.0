@@ -1,0 +1,32 @@
+<def f='redis/src/config.c' l='1483' ll='1488' type='void rewriteConfigNumericalOption(struct rewriteConfigState * state, char * option, long long value, long long defvalue)'/>
+<use f='redis/src/config.c' l='1790' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1791' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1795' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1796' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1808' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1818' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1819' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1824' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1825' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1826' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1827' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1829' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1839' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1848' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1850' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1854' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1855' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1856' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1857' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1858' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1859' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1861' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1862' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1863' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1864' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1865' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1866' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1867' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1868' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1871' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1482'>/* Rewrite a numerical (long long range) option. */</doc>

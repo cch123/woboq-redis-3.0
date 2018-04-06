@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>rand.c source code [redis/src/rand.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/rand.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='rand.c.html'>rand.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Pseudo random number generation functions derived from the drand48()</i></td></tr>
+<tr><th id="2">2</th><td><i> * function obtained from pysam source code.</i></td></tr>
+<tr><th id="3">3</th><td><i> *</i></td></tr>
+<tr><th id="4">4</th><td><i> * This functions are used in order to replace the default math.random()</i></td></tr>
+<tr><th id="5">5</th><td><i> * Lua implementation with something having exactly the same behavior</i></td></tr>
+<tr><th id="6">6</th><td><i> * across different systems (by default Lua uses libc's rand() that is not</i></td></tr>
+<tr><th id="7">7</th><td><i> * required to implement a specific PRNG generating the same sequence</i></td></tr>
+<tr><th id="8">8</th><td><i> * in different systems if seeded with the same integer).</i></td></tr>
+<tr><th id="9">9</th><td><i> *</i></td></tr>
+<tr><th id="10">10</th><td><i> * The original code appears to be under the public domain.</i></td></tr>
+<tr><th id="11">11</th><td><i> * I modified it removing the non needed functions and all the</i></td></tr>
+<tr><th id="12">12</th><td><i> * 1960-style C coding stuff...</i></td></tr>
+<tr><th id="13">13</th><td><i> *</i></td></tr>
+<tr><th id="14">14</th><td><i> * ----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="15">15</th><td><i> *</i></td></tr>
+<tr><th id="16">16</th><td><i> * Copyright (c) 2010-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="17">17</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="18">18</th><td><i> *</i></td></tr>
+<tr><th id="19">19</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="20">20</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="21">21</th><td><i> *</i></td></tr>
+<tr><th id="22">22</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="23">23</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="24">24</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="25">25</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="26">26</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="27">27</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="28">28</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="29">29</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="30">30</th><td><i> *</i></td></tr>
+<tr><th id="31">31</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="32">32</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="33">33</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="34">34</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="35">35</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="36">36</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="37">37</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="38">38</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="39">39</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="40">40</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="41">41</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="42">42</th><td><i> */</i></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><u>#include &lt;stdint.h&gt;</u></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/N" data-ref="_M/N">N</dfn>	16</u></td></tr>
+<tr><th id="47">47</th><td><u>#define <dfn class="macro" id="_M/MASK" data-ref="_M/MASK">MASK</dfn>	((1 &lt;&lt; (N - 1)) + (1 &lt;&lt; (N - 1)) - 1)</u></td></tr>
+<tr><th id="48">48</th><td><u>#define <dfn class="macro" id="_M/LOW" data-ref="_M/LOW">LOW</dfn>(x)	((unsigned)(x) &amp; MASK)</u></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/HIGH" data-ref="_M/HIGH">HIGH</dfn>(x)	LOW((x) &gt;&gt; N)</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/MUL" data-ref="_M/MUL">MUL</dfn>(x, y, z)	{ <a class="typedef" href="../../include/stdint.h.html#int32_t" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a> <dfn class="local col7 decl" id="7l" title='l' data-type='int32_t' data-ref="7l"><dfn class="local col8 decl" id="8l" title='l' data-type='int32_t' data-ref="8l"><dfn class="local col9 decl" id="9l" title='l' data-type='int32_t' data-ref="9l">l</dfn></dfn></dfn> = (long)(x) * (long)(y); \</u></td></tr>
+<tr><th id="51">51</th><td><u>		(z)[0] = LOW(<a class="local col7 ref" href="#83" title='l' data-ref="7l"><a class="local col8 ref" href="#86" title='l' data-ref="8l"><a class="local col9 ref" href="#88" title='l' data-ref="9l">l</a></a></a>); (z)[1] = HIGH(<a class="local col7 ref" href="#83" title='l' data-ref="7l"><a class="local col8 ref" href="#86" title='l' data-ref="8l"><a class="local col9 ref" href="#88" title='l' data-ref="9l">l</a></a></a>); }</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/CARRY" data-ref="_M/CARRY">CARRY</dfn>(x, y)	((<a class="typedef" href="../../include/stdint.h.html#int32_t" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>)(x) + (long)(y) &gt; MASK)</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/ADDEQU" data-ref="_M/ADDEQU">ADDEQU</dfn>(x, y, z)	(z = CARRY(x, (y)), x = LOW(x + (y)))</u></td></tr>
+<tr><th id="54">54</th><td><u>#define <dfn class="macro" id="_M/X0" data-ref="_M/X0">X0</dfn>	0x330E</u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/X1" data-ref="_M/X1">X1</dfn>	0xABCD</u></td></tr>
+<tr><th id="56">56</th><td><u>#define <dfn class="macro" id="_M/X2" data-ref="_M/X2">X2</dfn>	0x1234</u></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/A0" data-ref="_M/A0">A0</dfn>	0xE66D</u></td></tr>
+<tr><th id="58">58</th><td><u>#define <dfn class="macro" id="_M/A1" data-ref="_M/A1">A1</dfn>	0xDEEC</u></td></tr>
+<tr><th id="59">59</th><td><u>#define <dfn class="macro" id="_M/A2" data-ref="_M/A2">A2</dfn>	0x5</u></td></tr>
+<tr><th id="60">60</th><td><u>#define <dfn class="macro" id="_M/C" data-ref="_M/C">C</dfn>	0xB</u></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/SET3" data-ref="_M/SET3">SET3</dfn>(x, x0, x1, x2)	((x)[0] = (x0), (x)[1] = (x1), (x)[2] = (x2))</u></td></tr>
+<tr><th id="62">62</th><td><u>#define <dfn class="macro" id="_M/SETLOW" data-ref="_M/SETLOW">SETLOW</dfn>(x, y, n) SET3(x, LOW((y)[n]), LOW((y)[(n)+1]), LOW((y)[(n)+2]))</u></td></tr>
+<tr><th id="63">63</th><td><u>#define <dfn class="macro" id="_M/SEED" data-ref="_M/SEED">SEED</dfn>(x0, x1, x2) (SET3(<a class="tu ref" href="#x" title='x' data-use='w' data-ref="x">x</a>, x0, x1, x2), SET3(<a class="tu ref" href="#a" title='a' data-use='w' data-ref="a">a</a>, A0, A1, A2), <a class="tu ref" href="#c" title='c' data-use='w' data-ref="c">c</a> = C)</u></td></tr>
+<tr><th id="64">64</th><td><u>#define <dfn class="macro" id="_M/REST" data-ref="_M/REST">REST</dfn>(v)	for (i = 0; i &lt; 3; i++) { xsubi[i] = x[i]; x[i] = temp[i]; } \</u></td></tr>
+<tr><th id="65">65</th><td><u>		return (v);</u></td></tr>
+<tr><th id="66">66</th><td><u>#define <dfn class="macro" id="_M/HI_BIT" data-ref="_M/HI_BIT">HI_BIT</dfn>	(1L &lt;&lt; (2 * N - 1))</u></td></tr>
+<tr><th id="67">67</th><td></td></tr>
+<tr><th id="68">68</th><td><em>static</em> <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="tu decl def" id="x" title='x' data-type='uint32_t [3]' data-ref="x">x</dfn>[<var>3</var>] = { <a class="macro" href="#54" title="0x330E" data-ref="_M/X0">X0</a>, <a class="macro" href="#55" title="0xABCD" data-ref="_M/X1">X1</a>, <a class="macro" href="#56" title="0x1234" data-ref="_M/X2">X2</a> }, <dfn class="tu decl def" id="a" title='a' data-type='uint32_t [3]' data-ref="a">a</dfn>[<var>3</var>] = { <a class="macro" href="#57" title="0xE66D" data-ref="_M/A0">A0</a>, <a class="macro" href="#58" title="0xDEEC" data-ref="_M/A1">A1</a>, <a class="macro" href="#59" title="0x5" data-ref="_M/A2">A2</a> }, <dfn class="tu decl def" id="c" title='c' data-type='uint32_t' data-ref="c">c</dfn> = <a class="macro" href="#60" title="0xB" data-ref="_M/C">C</a>;</td></tr>
+<tr><th id="69">69</th><td><em>static</em> <em>void</em> <a class="tu decl fn" href="#next" title='next' data-type='void next()' data-ref="next">next</a>(<em>void</em>);</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><a class="typedef" href="../../include/stdint.h.html#int32_t" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a> <dfn class="decl def fn" id="redisLrand48" title='redisLrand48' data-ref="redisLrand48">redisLrand48</dfn>() {</td></tr>
+<tr><th id="72">72</th><td>    <a class="tu ref fn" href="#next" title='next' data-use='c' data-ref="next">next</a>();</td></tr>
+<tr><th id="73">73</th><td>    <b>return</b> (((<a class="typedef" href="../../include/stdint.h.html#int32_t" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>)<a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>2</var>] &lt;&lt; (<a class="macro" href="#46" title="16" data-ref="_M/N">N</a> - <var>1</var>)) + (<a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>1</var>] &gt;&gt; <var>1</var>));</td></tr>
+<tr><th id="74">74</th><td>}</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><em>void</em> <dfn class="decl def fn" id="redisSrand48" title='redisSrand48' data-ref="redisSrand48">redisSrand48</dfn>(<a class="typedef" href="../../include/stdint.h.html#int32_t" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a> <dfn class="local col1 decl" id="1seedval" title='seedval' data-type='int32_t' data-ref="1seedval">seedval</dfn>) {</td></tr>
+<tr><th id="77">77</th><td>    <a class="macro" href="#63" title="(((x)[0] = (0x330E), (x)[1] = (((unsigned)(seedval) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))), (x)[2] = (((unsigned)((seedval) &gt;&gt; 16) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)))), ((a)[0] = (0xE66D), (a)[1] = (0xDEEC), (a)[2] = (0x5)), c = 0xB)" data-ref="_M/SEED">SEED</a>(<a class="macro" href="#54" title="0x330E" data-ref="_M/X0">X0</a>, <a class="macro" href="#48" title="((unsigned)(seedval) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/LOW">LOW</a>(<a class="local col1 ref" href="#1seedval" title='seedval' data-ref="1seedval">seedval</a>), <a class="macro" href="#49" title="((unsigned)((seedval) &gt;&gt; 16) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/HIGH">HIGH</a>(<a class="local col1 ref" href="#1seedval" title='seedval' data-ref="1seedval">seedval</a>));</td></tr>
+<tr><th id="78">78</th><td>}</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><em>static</em> <em>void</em> <dfn class="tu decl def fn" id="next" title='next' data-type='void next()' data-ref="next">next</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="81">81</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col2 decl" id="2p" title='p' data-type='uint32_t [2]' data-ref="2p">p</dfn>[<var>2</var>], <dfn class="local col3 decl" id="3q" title='q' data-type='uint32_t [2]' data-ref="3q">q</dfn>[<var>2</var>], <dfn class="local col4 decl" id="4r" title='r' data-type='uint32_t [2]' data-ref="4r">r</dfn>[<var>2</var>], <dfn class="local col5 decl" id="5carry0" title='carry0' data-type='uint32_t' data-ref="5carry0">carry0</dfn>, <dfn class="local col6 decl" id="6carry1" title='carry1' data-type='uint32_t' data-ref="6carry1">carry1</dfn>;</td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td>    <a class="macro" href="#50" title="{ int32_t l = (long)(a[0]) * (long)(x[0]); (p)[0] = ((unsigned)(l) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); (p)[1] = ((unsigned)((l) &gt;&gt; 16) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); }" data-ref="_M/MUL">MUL</a>(<a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>0</var>], <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>0</var>], <a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>);</td></tr>
+<tr><th id="84">84</th><td>    <a class="macro" href="#53" title="(carry0 = ((int32_t)(p[0]) + (long)((c)) &gt; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)), p[0] = ((unsigned)(p[0] + (c)) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)))" data-ref="_M/ADDEQU">ADDEQU</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>0</var>], <a class="tu ref" href="#c" title='c' data-use='r' data-ref="c">c</a>, <a class="local col5 ref" href="#5carry0" title='carry0' data-ref="5carry0">carry0</a>);</td></tr>
+<tr><th id="85">85</th><td>    <a class="macro" href="#53" title="(carry1 = ((int32_t)(p[1]) + (long)((carry0)) &gt; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)), p[1] = ((unsigned)(p[1] + (carry0)) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)))" data-ref="_M/ADDEQU">ADDEQU</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>1</var>], <a class="local col5 ref" href="#5carry0" title='carry0' data-ref="5carry0">carry0</a>, <a class="local col6 ref" href="#6carry1" title='carry1' data-ref="6carry1">carry1</a>);</td></tr>
+<tr><th id="86">86</th><td>    <a class="macro" href="#50" title="{ int32_t l = (long)(a[0]) * (long)(x[1]); (q)[0] = ((unsigned)(l) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); (q)[1] = ((unsigned)((l) &gt;&gt; 16) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); }" data-ref="_M/MUL">MUL</a>(<a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>0</var>], <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>1</var>], <a class="local col3 ref" href="#3q" title='q' data-ref="3q">q</a>);</td></tr>
+<tr><th id="87">87</th><td>    <a class="macro" href="#53" title="(carry0 = ((int32_t)(p[1]) + (long)((q[0])) &gt; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)), p[1] = ((unsigned)(p[1] + (q[0])) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)))" data-ref="_M/ADDEQU">ADDEQU</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>1</var>], <a class="local col3 ref" href="#3q" title='q' data-ref="3q">q</a>[<var>0</var>], <a class="local col5 ref" href="#5carry0" title='carry0' data-ref="5carry0">carry0</a>);</td></tr>
+<tr><th id="88">88</th><td>    <a class="macro" href="#50" title="{ int32_t l = (long)(a[1]) * (long)(x[0]); (r)[0] = ((unsigned)(l) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); (r)[1] = ((unsigned)((l) &gt;&gt; 16) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)); }" data-ref="_M/MUL">MUL</a>(<a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>1</var>], <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>0</var>], <a class="local col4 ref" href="#4r" title='r' data-ref="4r">r</a>);</td></tr>
+<tr><th id="89">89</th><td>    <a class="tu ref" href="#x" title='x' data-use='w' data-ref="x">x</a>[<var>2</var>] = <a class="macro" href="#48" title="((unsigned)(carry0 + carry1 + ((int32_t)(p[1]) + (long)(r[0]) &gt; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1)) + q[1] + r[1] + a[0] * x[2] + a[1] * x[1] + a[2] * x[0]) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/LOW">LOW</a>(<a class="local col5 ref" href="#5carry0" title='carry0' data-ref="5carry0">carry0</a> + <a class="local col6 ref" href="#6carry1" title='carry1' data-ref="6carry1">carry1</a> + <a class="macro" href="#52" title="((int32_t)(p[1]) + (long)(r[0]) &gt; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/CARRY">CARRY</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>1</var>], <a class="local col4 ref" href="#4r" title='r' data-ref="4r">r</a>[<var>0</var>]) + <a class="local col3 ref" href="#3q" title='q' data-ref="3q">q</a>[<var>1</var>] + <a class="local col4 ref" href="#4r" title='r' data-ref="4r">r</a>[<var>1</var>] +</td></tr>
+<tr><th id="90">90</th><td>            <a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>0</var>] * <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>2</var>] + <a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>1</var>] * <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>1</var>] + <a class="tu ref" href="#a" title='a' data-use='r' data-ref="a">a</a>[<var>2</var>] * <a class="tu ref" href="#x" title='x' data-use='r' data-ref="x">x</a>[<var>0</var>]);</td></tr>
+<tr><th id="91">91</th><td>    <a class="tu ref" href="#x" title='x' data-use='w' data-ref="x">x</a>[<var>1</var>] = <a class="macro" href="#48" title="((unsigned)(p[1] + r[0]) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/LOW">LOW</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>1</var>] + <a class="local col4 ref" href="#4r" title='r' data-ref="4r">r</a>[<var>0</var>]);</td></tr>
+<tr><th id="92">92</th><td>    <a class="tu ref" href="#x" title='x' data-use='w' data-ref="x">x</a>[<var>0</var>] = <a class="macro" href="#48" title="((unsigned)(p[0]) &amp; ((1 &lt;&lt; (16 - 1)) + (1 &lt;&lt; (16 - 1)) - 1))" data-ref="_M/LOW">LOW</a>(<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>[<var>0</var>]);</td></tr>
+<tr><th id="93">93</th><td>}</td></tr>
+<tr><th id="94">94</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

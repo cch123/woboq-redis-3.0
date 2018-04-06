@@ -1,0 +1,5 @@
+<dec f='redis/src/zipmap.h' l='39' type='unsigned char * zipmapSet(unsigned char * zm, unsigned char * key, unsigned int klen, unsigned char * val, unsigned int vlen, int * update)'/>
+<def f='redis/src/zipmap.c' l='211' ll='277' type='unsigned char * zipmapSet(unsigned char * zm, unsigned char * key, unsigned int klen, unsigned char * val, unsigned int vlen, int * update)'/>
+<doc f='redis/src/zipmap.c' l='208'>/* Set key to value, creating the key if it does not already exist.
+ * If &apos;update&apos; is not NULL, *update is set to 1 if the key was
+ * already preset, otherwise to 0. */</doc>

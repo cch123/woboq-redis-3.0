@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='664' type='char [41]'/>
+<offset>768</offset>
+<doc f='redis/src/redis.h' l='664'>/* ID always different at every exec. */</doc>
+<use f='redis/src/redis.c' l='1400' u='r' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1403' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2667' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='366' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='371' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='432' c='masterTryPartialResynchronization'/>
+<use f='redis/src/sentinel.c' l='440' c='sentinelIsRunning'/>
+<use f='redis/src/sentinel.c' l='1695' c='sentinelSetClientName'/>
+<use f='redis/src/sentinel.c' l='2224' u='r' c='sentinelReceiveHelloMessages'/>
+<use f='redis/src/sentinel.c' l='2267' c='sentinelSendHello'/>
+<use f='redis/src/sentinel.c' l='3162' c='sentinelAskMasterStateToOtherSentinels'/>
+<use f='redis/src/sentinel.c' l='3194' u='r' c='sentinelVoteLeader'/>
+<use f='redis/src/sentinel.c' l='3275' u='r' c='sentinelGetLeader'/>
+<use f='redis/src/sentinel.c' l='3527' u='r' c='sentinelFailoverWaitStart'/>

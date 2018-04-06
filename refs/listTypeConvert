@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1090' type='void listTypeConvert(robj * subject, int enc)'/>
+<use f='redis/src/rdb.c' l='850' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1052' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_list.c' l='43' u='c' c='listTypeTryConversion'/>
+<use f='redis/src/t_list.c' l='56' u='c' c='listTypePush'/>
+<def f='redis/src/t_list.c' l='269' ll='289' type='void listTypeConvert(robj * subject, int enc)'/>
+<use f='redis/src/t_list.c' l='363' u='c' c='pushxGenericCommand'/>

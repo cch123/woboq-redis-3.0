@@ -1,0 +1,14 @@
+<dec f='redis/deps/hiredis/dict.h' l='65' type='unsigned long'/>
+<use f='redis/deps/hiredis/dict.c' l='69' u='w' c='_dictReset'/>
+<use f='redis/deps/hiredis/dict.c' l='94' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='105' u='w' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='105' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='106' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='121' u='w' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='126' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='152' u='w' c='dictAdd'/>
+<use f='redis/deps/hiredis/dict.c' l='203' u='w' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='217' u='r' c='_dictClear'/>
+<use f='redis/deps/hiredis/dict.c' l='226' u='w' c='_dictClear'/>
+<use f='redis/deps/hiredis/dict.c' l='300' u='r' c='_dictExpandIfNeeded'/>
+<offset>256</offset>

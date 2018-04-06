@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='85'/>
+<use f='redis/deps/lua/src/lcode.c' l='136' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='286' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='364' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='520' u='c'/>

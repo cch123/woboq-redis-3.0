@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='258'/>
+<use f='redis/deps/lua/src/ldebug.c' l='464' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='389' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='563' u='c'/>

@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lparser.h' l='69' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='239' u='r' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='240' u='r' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='243' u='r' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='245' u='w' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='451' u='r' c='luaK_exp2RK'/>
+<offset>512</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='69'>/* number of elements in `k&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='340' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='366' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='366' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='367' u='r' c='close_func'/>

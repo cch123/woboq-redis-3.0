@@ -1,0 +1,9 @@
+<dec f='include/netinet/in.h' l='51'/>
+<use f='redis/deps/hiredis/net.c' l='143' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='150' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='156' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='168' u='c'/>
+<use f='redis/src/anet.c' l='112' u='c'/>
+<use f='redis/src/anet.c' l='122' u='c'/>
+<use f='redis/src/anet.c' l='130' u='c'/>
+<use f='redis/src/anet.c' l='143' u='c'/>

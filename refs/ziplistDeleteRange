@@ -1,0 +1,6 @@
+<dec f='redis/src/ziplist.h' l='42' type='unsigned char * ziplistDeleteRange(unsigned char * zl, unsigned int index, unsigned int num)'/>
+<use f='redis/src/t_list.c' l='616' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='617' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_zset.c' l='1073' u='c' c='zzlDeleteRangeByRank'/>
+<def f='redis/src/ziplist.c' l='786' ll='789' type='unsigned char * ziplistDeleteRange(unsigned char * zl, unsigned int index, unsigned int num)'/>
+<doc f='redis/src/ziplist.c' l='785'>/* Delete a range of entries from the ziplist. */</doc>

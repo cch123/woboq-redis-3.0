@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1477' type='void blpopCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='150' u='r'/>
+<use f='redis/src/redis.c' l='150' u='r'/>
+<use f='redis/src/redis.c' l='150' u='r'/>
+<use f='redis/src/redis.c' l='150' u='r'/>
+<use f='redis/src/t_list.c' l='985' u='r' c='handleClientsBlockedOnLists'/>
+<def f='redis/src/t_list.c' l='1084' ll='1086' type='void blpopCommand(redisClient * c)'/>

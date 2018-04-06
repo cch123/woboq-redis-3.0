@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/sds.h' l='98' type='sds sdsRemoveFreeSpace(sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='155' ll='162' type='sds sdsRemoveFreeSpace(sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='149'>/* Reallocate the sds string so that it has no free space at the end. The
+ * contained string remains not altered, but next concatenation operations
+ * will require a reallocation.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<dec f='redis/src/sds.h' l='98' type='sds sdsRemoveFreeSpace(sds s)'/>
+<use f='redis/src/object.c' l='436' u='c' c='tryObjectEncoding'/>
+<use f='redis/src/redis.c' l='956' u='c' c='clientsCronResizeQueryBuffer'/>
+<def f='redis/src/sds.c' l='155' ll='162' type='sds sdsRemoveFreeSpace(sds s)'/>
+<doc f='redis/src/sds.c' l='149'>/* Reallocate the sds string so that it has no free space at the end. The
+ * contained string remains not altered, but next concatenation operations
+ * will require a reallocation.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>

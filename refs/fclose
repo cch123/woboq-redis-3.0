@@ -1,0 +1,37 @@
+<dec f='include/stdio.h' l='237' type='int fclose(FILE * __stream)'/>
+<doc f='include/stdio.h' l='233'>/* Close STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='1080' u='c' c='linenoiseHistorySave'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1103' u='c' c='linenoiseHistoryLoad'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='583' u='c' c='luaL_loadfile'/>
+<use f='redis/deps/lua/src/liolib.c' l='121' u='c' c='io_fclose'/>
+<use f='redis/deps/lua/src/loadlib.c' l='335' u='c' c='readable'/>
+<use f='redis/src/aof.c' l='609' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='703' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1052' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1159' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1172' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='110' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='265' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='281' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/config.c' l='192' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='594' u='c' c='loadServerConfig'/>
+<use f='redis/src/config.c' l='1367' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/debug.c' l='798' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/latency.c' l='70' u='c' c='THPIsEnabled'/>
+<use f='redis/src/latency.c' l='73' u='c' c='THPIsEnabled'/>
+<use f='redis/src/rdb.c' l='742' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='758' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='1146' u='c' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1153' u='c' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1231' u='c' c='rdbLoad'/>
+<use f='redis/src/redis-cli.c' l='1070' u='c' c='evalMode'/>
+<use f='redis/src/redis.c' l='332' u='c' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='1646' u='c' c='checkTcpBacklogSettings'/>
+<use f='redis/src/redis.c' l='3360' u='c' c='linuxOvercommitMemoryValue'/>
+<use f='redis/src/redis.c' l='3363' u='c' c='linuxOvercommitMemoryValue'/>
+<use f='redis/src/redis.c' l='3383' u='c' c='createPidFile'/>
+<use f='redis/src/util.c' l='461' u='c' c='getRandomHexChars'/>
+<use f='redis/src/zmalloc.c' l='354' u='c' c='zmalloc_get_smap_bytes_by_field'/>

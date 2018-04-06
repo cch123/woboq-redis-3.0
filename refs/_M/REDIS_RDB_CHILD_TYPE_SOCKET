@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='373'/>
+<use f='redis/src/rdb.c' l='1368' u='c'/>
+<use f='redis/src/rdb.c' l='1377' u='c'/>
+<use f='redis/src/rdb.c' l='1516' u='c'/>
+<use f='redis/src/replication.c' l='548' u='c'/>
+<use f='redis/src/replication.c' l='766' u='c'/>
+<use f='redis/src/replication.c' l='2005' u='c'/>

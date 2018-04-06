@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='297' type='lua_CFunction'/>
+<use f='redis/deps/lua/src/lapi.c' l='381' u='r' c='lua_tocfunction'/>
+<use f='redis/deps/lua/src/lapi.c' l='492' u='w' c='lua_pushcclosure'/>
+<use f='redis/deps/lua/src/lapi.c' l='841' u='w' c='f_Ccall'/>
+<offset>256</offset>
+<use f='redis/deps/lua/src/ldo.c' l='320' u='r' c='luaD_precall'/>

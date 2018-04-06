@@ -1,0 +1,13 @@
+<def f='redis/src/redis.c' l='716' ll='732' type='int activeExpireCycleTryExpire(redisDb * db, dictEntry * de, long long now)'/>
+<use f='redis/src/redis.c' l='842' u='c' c='activeExpireCycle'/>
+<doc f='redis/src/redis.c' l='705'>/* Helper function for the activeExpireCycle() function.
+ * This function will try to expire the key that is stored in the hash table
+ * entry &apos;de&apos; of the &apos;expires&apos; hash table of a Redis database.
+ *
+ * If the key is found to be expired, it is removed from the database and
+ * 1 is returned. Otherwise no operation is performed and 0 is returned.
+ *
+ * When a key is expired, server.stat_expiredkeys is incremented.
+ *
+ * The parameter &apos;now&apos; is the current time in milliseconds as is passed
+ * to the function to avoid too many gettimeofday() syscalls. */</doc>

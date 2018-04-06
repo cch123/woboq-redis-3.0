@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldo.c' l='46' type='jmp_buf'/>
+<use f='redis/deps/lua/src/ldo.c' l='97' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='116' macro='1' u='r'/>
+<offset>64</offset>

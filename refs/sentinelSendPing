@@ -1,0 +1,9 @@
+<dec f='redis/src/sentinel.c' l='342' type='int sentinelSendPing(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='1728' u='c' c='sentinelReconnectInstance'/>
+<def f='redis/src/sentinel.c' l='2317' ll='2330' type='int sentinelSendPing(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='2378' u='c' c='sentinelSendPeriodicCommands'/>
+<doc f='redis/src/sentinel.c' l='2312'>/* Send a PING to the specified instance and refresh the last_ping_time
+ * if it is zero (that is, if we received a pong for the previous ping).
+ *
+ * On error zero is returned, and we can&apos;t consider the PING command
+ * queued in the connection. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/dict.h' l='110'/>
+<dec f='redis/src/dict.h' l='145'/>
+<use f='redis/src/redis.c' l='654' u='c'/>
+<use f='redis/src/redis.c' l='818' u='c'/>
+<use f='redis/src/redis.c' l='1121' u='c'/>

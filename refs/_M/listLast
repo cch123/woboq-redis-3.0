@@ -1,0 +1,12 @@
+<dec f='redis/src/adlist.h' l='59'/>
+<use f='redis/src/aof.c' l='124' u='c'/>
+<use f='redis/src/networking.c' l='190' u='c'/>
+<use f='redis/src/networking.c' l='231' u='c'/>
+<use f='redis/src/networking.c' l='265' u='c'/>
+<use f='redis/src/networking.c' l='295' u='c'/>
+<use f='redis/src/networking.c' l='429' u='c'/>
+<use f='redis/src/replication.c' l='1766' u='c'/>
+<use f='redis/src/slowlog.c' l='119' u='c'/>
+<use f='redis/src/slowlog.c' l='125' u='c'/>
+<use f='redis/src/t_list.c' l='99' u='c'/>
+<use f='redis/src/t_list.c' l='625' u='c'/>

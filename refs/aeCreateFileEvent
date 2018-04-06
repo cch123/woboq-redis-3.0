@@ -1,0 +1,21 @@
+<dec f='redis/src/ae.h' l='104' type='int aeCreateFileEvent(aeEventLoop * eventLoop, int fd, int mask, aeFileProc * proc, void * clientData)'/>
+<def f='redis/src/ae.c' l='135' ll='153' type='int aeCreateFileEvent(aeEventLoop * eventLoop, int fd, int mask, aeFileProc * proc, void * clientData)'/>
+<use f='redis/src/aof.c' l='164' u='c' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='1224' u='c' c='aofCreatePipes'/>
+<use f='redis/src/cluster.c' l='455' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='599' u='c' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='2067' u='c' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='3081' u='c' c='clusterCron'/>
+<use f='redis/src/networking.c' l='76' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='172' u='c' c='prepareClientToWrite'/>
+<use f='redis/src/redis.c' l='1845' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1852' u='c' c='initServer'/>
+<use f='redis/src/replication.c' l='665' u='c' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='797' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1352' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1388' u='c' c='connectWithMaster'/>
+<use f='redis/src/replication.c' l='1661' u='c' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1670' u='c' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/scripting.c' l='1034' u='c' c='evalGenericCommand'/>
+<use f='redis/src/sentinel.c' l='256' u='c' c='redisAeAddRead'/>
+<use f='redis/src/sentinel.c' l='274' u='c' c='redisAeAddWrite'/>

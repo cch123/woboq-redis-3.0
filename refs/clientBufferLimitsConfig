@@ -1,0 +1,5 @@
+<def f='redis/src/redis.h' l='604' ll='608'/>
+<size>24</size>
+<mbr r='clientBufferLimitsConfig::hard_limit_bytes' o='0' t='unsigned long long'/>
+<mbr r='clientBufferLimitsConfig::soft_limit_bytes' o='64' t='unsigned long long'/>
+<mbr r='clientBufferLimitsConfig::soft_limit_seconds' o='128' t='time_t'/>

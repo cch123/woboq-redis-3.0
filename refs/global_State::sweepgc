@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lstate.h' l='76' type='GCObject **'/>
+<offset>384</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='76'>/* position of sweep in `rootgc&apos; */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='550' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='583' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='583' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='584' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='640' u='w' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lstate.c' l='172' u='w' c='lua_newstate'/>

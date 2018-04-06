@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='570' type='robj *'/>
+<offset>832</offset>
+<use f='redis/src/redis.c' l='1319' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_hash.c' l='718' u='r' c='genericHgetallCommand'/>
+<use f='redis/src/t_list.c' l='532' u='r' c='lrangeCommand'/>
+<use f='redis/src/t_list.c' l='544' u='r' c='lrangeCommand'/>
+<use f='redis/src/t_set.c' l='441' u='r' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='447' u='r' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='612' u='r' c='sinterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2111' u='r' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2123' u='r' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2249' u='r' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2269' u='r' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2337' u='r' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2597' u='r' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2620' u='r' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2684' u='r' c='genericZrangebylexCommand'/>

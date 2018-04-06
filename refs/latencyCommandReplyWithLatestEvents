@@ -1,0 +1,4 @@
+<def f='redis/src/latency.c' l='495' ll='513' type='void latencyCommandReplyWithLatestEvents(redisClient * c)'/>
+<use f='redis/src/latency.c' l='594' u='c' c='latencyCommand'/>
+<doc f='redis/src/latency.c' l='493'>/* latencyCommand() helper to produce the reply for the LATEST subcommand,
+ * listing the last latency sample for every event type registered so far. */</doc>

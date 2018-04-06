@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>hiredis.h source code [redis/deps/hiredis/hiredis.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="redisContext,redisReadTask,redisReader,redisReply,redisReplyObjectFunctions "/>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/hiredis/hiredis.h'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>redis</a>/<a href='..'>deps</a>/<a href='./'>hiredis</a>/<a href='hiredis.h.html'>hiredis.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2009-2011, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * Copyright (c) 2010-2011, Pieter Noordhuis &lt;pcnoordhuis at gmail dot com&gt;</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="6">6</th><td><i> *</i></td></tr>
+<tr><th id="7">7</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="8">8</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="9">9</th><td><i> *</i></td></tr>
+<tr><th id="10">10</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="11">11</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="12">12</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="13">13</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="14">14</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="15">15</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="16">16</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="17">17</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="18">18</th><td><i> *</i></td></tr>
+<tr><th id="19">19</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="20">20</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="21">21</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="22">22</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="23">23</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="24">24</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="25">25</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="26">26</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="27">27</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="28">28</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="29">29</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="30">30</th><td><i> */</i></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#<span data-ppcond="32">ifndef</span> <span class="macro" data-ref="_M/__HIREDIS_H">__HIREDIS_H</span></u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/__HIREDIS_H" data-ref="_M/__HIREDIS_H">__HIREDIS_H</dfn></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="../../../include/stdio.h.html">&lt;stdio.h&gt;</a> /* for size_t */</u></td></tr>
+<tr><th id="35">35</th><td><u>#include &lt;stdarg.h&gt; /* for va_list */</u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="../../../include/x86_64-linux-gnu/sys/time.h.html">&lt;sys/time.h&gt;</a> /* for struct timeval */</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#define <dfn class="macro" id="_M/HIREDIS_MAJOR" data-ref="_M/HIREDIS_MAJOR">HIREDIS_MAJOR</dfn> 0</u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/HIREDIS_MINOR" data-ref="_M/HIREDIS_MINOR">HIREDIS_MINOR</dfn> 11</u></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/HIREDIS_PATCH" data-ref="_M/HIREDIS_PATCH">HIREDIS_PATCH</dfn> 0</u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR" data-ref="_M/REDIS_ERR">REDIS_ERR</dfn> -1</u></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/REDIS_OK" data-ref="_M/REDIS_OK">REDIS_OK</dfn> 0</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* When an error occurs, the err flag in a context is set to hold the type of</i></td></tr>
+<tr><th id="46">46</th><td><i> * error that occured. REDIS_ERR_IO means there was an I/O error and you</i></td></tr>
+<tr><th id="47">47</th><td><i> * should use the "errno" variable to find out what is wrong.</i></td></tr>
+<tr><th id="48">48</th><td><i> * For other values, the "errstr" field will hold a description. */</i></td></tr>
+<tr><th id="49">49</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR_IO" data-ref="_M/REDIS_ERR_IO">REDIS_ERR_IO</dfn> 1 /* Error in read or write */</u></td></tr>
+<tr><th id="50">50</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR_EOF" data-ref="_M/REDIS_ERR_EOF">REDIS_ERR_EOF</dfn> 3 /* End of file */</u></td></tr>
+<tr><th id="51">51</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR_PROTOCOL" data-ref="_M/REDIS_ERR_PROTOCOL">REDIS_ERR_PROTOCOL</dfn> 4 /* Protocol error */</u></td></tr>
+<tr><th id="52">52</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR_OOM" data-ref="_M/REDIS_ERR_OOM">REDIS_ERR_OOM</dfn> 5 /* Out of memory */</u></td></tr>
+<tr><th id="53">53</th><td><u>#define <dfn class="macro" id="_M/REDIS_ERR_OTHER" data-ref="_M/REDIS_ERR_OTHER">REDIS_ERR_OTHER</dfn> 2 /* Everything else... */</u></td></tr>
+<tr><th id="54">54</th><td></td></tr>
+<tr><th id="55">55</th><td><i>/* Connection type can be blocking or non-blocking and is set in the</i></td></tr>
+<tr><th id="56">56</th><td><i> * least significant bit of the flags field in redisContext. */</i></td></tr>
+<tr><th id="57">57</th><td><u>#define <dfn class="macro" id="_M/REDIS_BLOCK" data-ref="_M/REDIS_BLOCK">REDIS_BLOCK</dfn> 0x1</u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><i>/* Connection may be disconnected before being free'd. The second bit</i></td></tr>
+<tr><th id="60">60</th><td><i> * in the flags field is set when the context is connected. */</i></td></tr>
+<tr><th id="61">61</th><td><u>#define <dfn class="macro" id="_M/REDIS_CONNECTED" data-ref="_M/REDIS_CONNECTED">REDIS_CONNECTED</dfn> 0x2</u></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/* The async API might try to disconnect cleanly and flush the output</i></td></tr>
+<tr><th id="64">64</th><td><i> * buffer and read all subsequent replies before disconnecting.</i></td></tr>
+<tr><th id="65">65</th><td><i> * This flag means no new commands can come in and the connection</i></td></tr>
+<tr><th id="66">66</th><td><i> * should be terminated once all replies have been read. */</i></td></tr>
+<tr><th id="67">67</th><td><u>#define <dfn class="macro" id="_M/REDIS_DISCONNECTING" data-ref="_M/REDIS_DISCONNECTING">REDIS_DISCONNECTING</dfn> 0x4</u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+<tr><th id="69">69</th><td><i>/* Flag specific to the async API which means that the context should be clean</i></td></tr>
+<tr><th id="70">70</th><td><i> * up as soon as possible. */</i></td></tr>
+<tr><th id="71">71</th><td><u>#define <dfn class="macro" id="_M/REDIS_FREEING" data-ref="_M/REDIS_FREEING">REDIS_FREEING</dfn> 0x8</u></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* Flag that is set when an async callback is executed. */</i></td></tr>
+<tr><th id="74">74</th><td><u>#define <dfn class="macro" id="_M/REDIS_IN_CALLBACK" data-ref="_M/REDIS_IN_CALLBACK">REDIS_IN_CALLBACK</dfn> 0x10</u></td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/* Flag that is set when the async context has one or more subscriptions. */</i></td></tr>
+<tr><th id="77">77</th><td><u>#define <dfn class="macro" id="_M/REDIS_SUBSCRIBED" data-ref="_M/REDIS_SUBSCRIBED">REDIS_SUBSCRIBED</dfn> 0x20</u></td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>/* Flag that is set when monitor mode is active */</i></td></tr>
+<tr><th id="80">80</th><td><u>#define <dfn class="macro" id="_M/REDIS_MONITORING" data-ref="_M/REDIS_MONITORING">REDIS_MONITORING</dfn> 0x40</u></td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_STRING" data-ref="_M/REDIS_REPLY_STRING">REDIS_REPLY_STRING</dfn> 1</u></td></tr>
+<tr><th id="83">83</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_ARRAY" data-ref="_M/REDIS_REPLY_ARRAY">REDIS_REPLY_ARRAY</dfn> 2</u></td></tr>
+<tr><th id="84">84</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_INTEGER" data-ref="_M/REDIS_REPLY_INTEGER">REDIS_REPLY_INTEGER</dfn> 3</u></td></tr>
+<tr><th id="85">85</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_NIL" data-ref="_M/REDIS_REPLY_NIL">REDIS_REPLY_NIL</dfn> 4</u></td></tr>
+<tr><th id="86">86</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_STATUS" data-ref="_M/REDIS_REPLY_STATUS">REDIS_REPLY_STATUS</dfn> 5</u></td></tr>
+<tr><th id="87">87</th><td><u>#define <dfn class="macro" id="_M/REDIS_REPLY_ERROR" data-ref="_M/REDIS_REPLY_ERROR">REDIS_REPLY_ERROR</dfn> 6</u></td></tr>
+<tr><th id="88">88</th><td></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/REDIS_READER_MAX_BUF" data-ref="_M/REDIS_READER_MAX_BUF">REDIS_READER_MAX_BUF</dfn> (1024*16)  /* Default max unused reader buffer. */</u></td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><u>#define <dfn class="macro" id="_M/REDIS_KEEPALIVE_INTERVAL" data-ref="_M/REDIS_KEEPALIVE_INTERVAL">REDIS_KEEPALIVE_INTERVAL</dfn> 15 /* seconds */</u></td></tr>
+<tr><th id="92">92</th><td></td></tr>
+<tr><th id="93">93</th><td><u>#<span data-ppcond="93">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="94">94</th><td><b>extern</b> <q>"C"</q> {</td></tr>
+<tr><th id="95">95</th><td><u>#<span data-ppcond="93">endif</span></u></td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><i>/* This is the reply object returned by redisCommand() */</i></td></tr>
+<tr><th id="98">98</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisReply" title='redisReply' data-ref="redisReply"><a class="type" href="#redisReply" title='redisReply' data-ref="redisReply">redisReply</a></dfn> {</td></tr>
+<tr><th id="99">99</th><td>    <em>int</em> <dfn class="decl field" id="redisReply::type" title='redisReply::type' data-ref="redisReply::type">type</dfn>; <i>/* REDIS_REPLY_* */</i></td></tr>
+<tr><th id="100">100</th><td>    <em>long</em> <em>long</em> <dfn class="decl field" id="redisReply::integer" title='redisReply::integer' data-ref="redisReply::integer">integer</dfn>; <i>/* The integer when type is REDIS_REPLY_INTEGER */</i></td></tr>
+<tr><th id="101">101</th><td>    <em>int</em> <dfn class="decl field" id="redisReply::len" title='redisReply::len' data-ref="redisReply::len">len</dfn>; <i>/* Length of string */</i></td></tr>
+<tr><th id="102">102</th><td>    <em>char</em> *<dfn class="decl field" id="redisReply::str" title='redisReply::str' data-ref="redisReply::str">str</dfn>; <i>/* Used for both REDIS_REPLY_ERROR and REDIS_REPLY_STRING */</i></td></tr>
+<tr><th id="103">103</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="redisReply::elements" title='redisReply::elements' data-ref="redisReply::elements">elements</dfn>; <i>/* number of elements, for REDIS_REPLY_ARRAY */</i></td></tr>
+<tr><th id="104">104</th><td>    <b>struct</b> <a class="type" href="#redisReply" title='redisReply' data-ref="redisReply">redisReply</a> **<dfn class="decl field" id="redisReply::element" title='redisReply::element' data-ref="redisReply::element">element</dfn>; <i>/* elements vector for REDIS_REPLY_ARRAY */</i></td></tr>
+<tr><th id="105">105</th><td>} <dfn class="typedef" id="redisReply" title='redisReply' data-type='struct redisReply' data-ref="redisReply">redisReply</dfn>;</td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisReadTask" title='redisReadTask' data-ref="redisReadTask"><a class="type" href="#redisReadTask" title='redisReadTask' data-ref="redisReadTask">redisReadTask</a></dfn> {</td></tr>
+<tr><th id="108">108</th><td>    <em>int</em> <dfn class="decl field" id="redisReadTask::type" title='redisReadTask::type' data-ref="redisReadTask::type">type</dfn>;</td></tr>
+<tr><th id="109">109</th><td>    <em>int</em> <dfn class="decl field" id="redisReadTask::elements" title='redisReadTask::elements' data-ref="redisReadTask::elements">elements</dfn>; <i>/* number of elements in multibulk container */</i></td></tr>
+<tr><th id="110">110</th><td>    <em>int</em> <dfn class="decl field" id="redisReadTask::idx" title='redisReadTask::idx' data-ref="redisReadTask::idx">idx</dfn>; <i>/* index in parent (array) object */</i></td></tr>
+<tr><th id="111">111</th><td>    <em>void</em> *<dfn class="decl field" id="redisReadTask::obj" title='redisReadTask::obj' data-ref="redisReadTask::obj">obj</dfn>; <i>/* holds user-generated value for a read task */</i></td></tr>
+<tr><th id="112">112</th><td>    <b>struct</b> <a class="type" href="#redisReadTask" title='redisReadTask' data-ref="redisReadTask">redisReadTask</a> *<dfn class="decl field" id="redisReadTask::parent" title='redisReadTask::parent' data-ref="redisReadTask::parent">parent</dfn>; <i>/* parent task */</i></td></tr>
+<tr><th id="113">113</th><td>    <em>void</em> *<dfn class="decl field" id="redisReadTask::privdata" title='redisReadTask::privdata' data-ref="redisReadTask::privdata">privdata</dfn>; <i>/* user-settable arbitrary field */</i></td></tr>
+<tr><th id="114">114</th><td>} <dfn class="typedef" id="redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</dfn>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisReplyObjectFunctions" title='redisReplyObjectFunctions' data-ref="redisReplyObjectFunctions"><a class="type" href="#redisReplyObjectFunctions" title='redisReplyObjectFunctions' data-ref="redisReplyObjectFunctions">redisReplyObjectFunctions</a></dfn> {</td></tr>
+<tr><th id="117">117</th><td>    <em>void</em> *(*<dfn class="decl field" id="redisReplyObjectFunctions::createString" title='redisReplyObjectFunctions::createString' data-ref="redisReplyObjectFunctions::createString">createString</dfn>)(<em>const</em> <a class="typedef" href="#redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</a>*, <em>char</em>*, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span>);</td></tr>
+<tr><th id="118">118</th><td>    <em>void</em> *(*<dfn class="decl field" id="redisReplyObjectFunctions::createArray" title='redisReplyObjectFunctions::createArray' data-ref="redisReplyObjectFunctions::createArray">createArray</dfn>)(<em>const</em> <a class="typedef" href="#redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</a>*, <em>int</em>);</td></tr>
+<tr><th id="119">119</th><td>    <em>void</em> *(*<dfn class="decl field" id="redisReplyObjectFunctions::createInteger" title='redisReplyObjectFunctions::createInteger' data-ref="redisReplyObjectFunctions::createInteger">createInteger</dfn>)(<em>const</em> <a class="typedef" href="#redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</a>*, <em>long</em> <em>long</em>);</td></tr>
+<tr><th id="120">120</th><td>    <em>void</em> *(*<dfn class="decl field" id="redisReplyObjectFunctions::createNil" title='redisReplyObjectFunctions::createNil' data-ref="redisReplyObjectFunctions::createNil">createNil</dfn>)(<em>const</em> <a class="typedef" href="#redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</a>*);</td></tr>
+<tr><th id="121">121</th><td>    <em>void</em> (*<dfn class="decl field" id="redisReplyObjectFunctions::freeObject" title='redisReplyObjectFunctions::freeObject' data-ref="redisReplyObjectFunctions::freeObject">freeObject</dfn>)(<em>void</em>*);</td></tr>
+<tr><th id="122">122</th><td>} <dfn class="typedef" id="redisReplyObjectFunctions" title='redisReplyObjectFunctions' data-type='struct redisReplyObjectFunctions' data-ref="redisReplyObjectFunctions">redisReplyObjectFunctions</dfn>;</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><i>/* State for the protocol parser */</i></td></tr>
+<tr><th id="125">125</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisReader" title='redisReader' data-ref="redisReader"><a class="type" href="#redisReader" title='redisReader' data-ref="redisReader">redisReader</a></dfn> {</td></tr>
+<tr><th id="126">126</th><td>    <em>int</em> <dfn class="decl field" id="redisReader::err" title='redisReader::err' data-ref="redisReader::err">err</dfn>; <i>/* Error flags, 0 when there is no error */</i></td></tr>
+<tr><th id="127">127</th><td>    <em>char</em> <dfn class="decl field" id="redisReader::errstr" title='redisReader::errstr' data-ref="redisReader::errstr">errstr</dfn>[<var>128</var>]; <i>/* String representation of error when applicable */</i></td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>    <em>char</em> *<dfn class="decl field" id="redisReader::buf" title='redisReader::buf' data-ref="redisReader::buf">buf</dfn>; <i>/* Read buffer */</i></td></tr>
+<tr><th id="130">130</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="redisReader::pos" title='redisReader::pos' data-ref="redisReader::pos">pos</dfn>; <i>/* Buffer cursor */</i></td></tr>
+<tr><th id="131">131</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="redisReader::len" title='redisReader::len' data-ref="redisReader::len">len</dfn>; <i>/* Buffer length */</i></td></tr>
+<tr><th id="132">132</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="redisReader::maxbuf" title='redisReader::maxbuf' data-ref="redisReader::maxbuf">maxbuf</dfn>; <i>/* Max length of unused buffer */</i></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td>    <a class="typedef" href="#redisReadTask" title='redisReadTask' data-type='struct redisReadTask' data-ref="redisReadTask">redisReadTask</a> <dfn class="decl field" id="redisReader::rstack" title='redisReader::rstack' data-ref="redisReader::rstack">rstack</dfn>[<var>9</var>];</td></tr>
+<tr><th id="135">135</th><td>    <em>int</em> <dfn class="decl field" id="redisReader::ridx" title='redisReader::ridx' data-ref="redisReader::ridx">ridx</dfn>; <i>/* Index of current read task */</i></td></tr>
+<tr><th id="136">136</th><td>    <em>void</em> *<dfn class="decl field" id="redisReader::reply" title='redisReader::reply' data-ref="redisReader::reply">reply</dfn>; <i>/* Temporary reply pointer */</i></td></tr>
+<tr><th id="137">137</th><td></td></tr>
+<tr><th id="138">138</th><td>    <a class="typedef" href="#redisReplyObjectFunctions" title='redisReplyObjectFunctions' data-type='struct redisReplyObjectFunctions' data-ref="redisReplyObjectFunctions">redisReplyObjectFunctions</a> *<dfn class="decl field" id="redisReader::fn" title='redisReader::fn' data-ref="redisReader::fn">fn</dfn>;</td></tr>
+<tr><th id="139">139</th><td>    <em>void</em> *<dfn class="decl field" id="redisReader::privdata" title='redisReader::privdata' data-ref="redisReader::privdata">privdata</dfn>;</td></tr>
+<tr><th id="140">140</th><td>} <dfn class="typedef" id="redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</dfn>;</td></tr>
+<tr><th id="141">141</th><td></td></tr>
+<tr><th id="142">142</th><td><i>/* Public API for the protocol parser. */</i></td></tr>
+<tr><th id="143">143</th><td><a class="typedef" href="#redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</a> *<dfn class="decl fn" id="redisReaderCreate" title='redisReaderCreate' data-ref="redisReaderCreate">redisReaderCreate</dfn>(<em>void</em>);</td></tr>
+<tr><th id="144">144</th><td><em>void</em> <dfn class="decl fn" id="redisReaderFree" title='redisReaderFree' data-ref="redisReaderFree">redisReaderFree</dfn>(<a class="typedef" href="#redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</a> *<dfn class="local col1 decl" id="551r" title='r' data-type='redisReader *' data-ref="551r">r</dfn>);</td></tr>
+<tr><th id="145">145</th><td><em>int</em> <dfn class="decl fn" id="redisReaderFeed" title='redisReaderFeed' data-ref="redisReaderFeed">redisReaderFeed</dfn>(<a class="typedef" href="#redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</a> *<dfn class="local col2 decl" id="552r" title='r' data-type='redisReader *' data-ref="552r">r</dfn>, <em>const</em> <em>char</em> *<dfn class="local col3 decl" id="553buf" title='buf' data-type='const char *' data-ref="553buf">buf</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="554len" title='len' data-type='size_t' data-ref="554len">len</dfn>);</td></tr>
+<tr><th id="146">146</th><td><em>int</em> <dfn class="decl fn" id="redisReaderGetReply" title='redisReaderGetReply' data-ref="redisReaderGetReply">redisReaderGetReply</dfn>(<a class="typedef" href="#redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</a> *<dfn class="local col5 decl" id="555r" title='r' data-type='redisReader *' data-ref="555r">r</dfn>, <em>void</em> **<dfn class="local col6 decl" id="556reply" title='reply' data-type='void **' data-ref="556reply">reply</dfn>);</td></tr>
+<tr><th id="147">147</th><td></td></tr>
+<tr><th id="148">148</th><td><i>/* Backwards compatibility, can be removed on big version bump. */</i></td></tr>
+<tr><th id="149">149</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderCreate" data-ref="_M/redisReplyReaderCreate">redisReplyReaderCreate</dfn> redisReaderCreate</u></td></tr>
+<tr><th id="150">150</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderFree" data-ref="_M/redisReplyReaderFree">redisReplyReaderFree</dfn> redisReaderFree</u></td></tr>
+<tr><th id="151">151</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderFeed" data-ref="_M/redisReplyReaderFeed">redisReplyReaderFeed</dfn> redisReaderFeed</u></td></tr>
+<tr><th id="152">152</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderGetReply" data-ref="_M/redisReplyReaderGetReply">redisReplyReaderGetReply</dfn> redisReaderGetReply</u></td></tr>
+<tr><th id="153">153</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderSetPrivdata" data-ref="_M/redisReplyReaderSetPrivdata">redisReplyReaderSetPrivdata</dfn>(_r, _p) (int)(((redisReader*)(_r))-&gt;privdata = (_p))</u></td></tr>
+<tr><th id="154">154</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderGetObject" data-ref="_M/redisReplyReaderGetObject">redisReplyReaderGetObject</dfn>(_r) (((redisReader*)(_r))-&gt;reply)</u></td></tr>
+<tr><th id="155">155</th><td><u>#define <dfn class="macro" id="_M/redisReplyReaderGetError" data-ref="_M/redisReplyReaderGetError">redisReplyReaderGetError</dfn>(_r) (((redisReader*)(_r))-&gt;errstr)</u></td></tr>
+<tr><th id="156">156</th><td></td></tr>
+<tr><th id="157">157</th><td><i>/* Function to free the reply objects hiredis returns by default. */</i></td></tr>
+<tr><th id="158">158</th><td><em>void</em> <dfn class="decl fn" id="freeReplyObject" title='freeReplyObject' data-ref="freeReplyObject">freeReplyObject</dfn>(<em>void</em> *<dfn class="local col7 decl" id="557reply" title='reply' data-type='void *' data-ref="557reply">reply</dfn>);</td></tr>
+<tr><th id="159">159</th><td></td></tr>
+<tr><th id="160">160</th><td><i>/* Functions to format a command according to the protocol. */</i></td></tr>
+<tr><th id="161">161</th><td><em>int</em> <dfn class="decl fn" id="redisvFormatCommand" title='redisvFormatCommand' data-ref="redisvFormatCommand">redisvFormatCommand</dfn>(<em>char</em> **<dfn class="local col8 decl" id="558target" title='target' data-type='char **' data-ref="558target">target</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="559format" title='format' data-type='const char *' data-ref="559format">format</dfn>, <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col0 decl" id="560ap" title='ap' data-type='struct __va_list_tag *' data-ref="560ap">ap</dfn>);</td></tr>
+<tr><th id="162">162</th><td><em>int</em> <dfn class="decl fn" id="redisFormatCommand" title='redisFormatCommand' data-ref="redisFormatCommand">redisFormatCommand</dfn>(<em>char</em> **<dfn class="local col1 decl" id="561target" title='target' data-type='char **' data-ref="561target">target</dfn>, <em>const</em> <em>char</em> *<dfn class="local col2 decl" id="562format" title='format' data-type='const char *' data-ref="562format">format</dfn>, ...);</td></tr>
+<tr><th id="163">163</th><td><em>int</em> <dfn class="decl fn" id="redisFormatCommandArgv" title='redisFormatCommandArgv' data-ref="redisFormatCommandArgv">redisFormatCommandArgv</dfn>(<em>char</em> **<dfn class="local col3 decl" id="563target" title='target' data-type='char **' data-ref="563target">target</dfn>, <em>int</em> <dfn class="local col4 decl" id="564argc" title='argc' data-type='int' data-ref="564argc">argc</dfn>, <em>const</em> <em>char</em> **<dfn class="local col5 decl" id="565argv" title='argv' data-type='const char **' data-ref="565argv">argv</dfn>, <em>const</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> *<dfn class="local col6 decl" id="566argvlen" title='argvlen' data-type='const size_t *' data-ref="566argvlen">argvlen</dfn>);</td></tr>
+<tr><th id="164">164</th><td></td></tr>
+<tr><th id="165">165</th><td><i>/* Context for a connection to Redis */</i></td></tr>
+<tr><th id="166">166</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="redisContext" title='redisContext' data-ref="redisContext"><a class="type" href="#redisContext" title='redisContext' data-ref="redisContext">redisContext</a></dfn> {</td></tr>
+<tr><th id="167">167</th><td>    <em>int</em> <dfn class="decl field" id="redisContext::err" title='redisContext::err' data-ref="redisContext::err">err</dfn>; <i>/* Error flags, 0 when there is no error */</i></td></tr>
+<tr><th id="168">168</th><td>    <em>char</em> <dfn class="decl field" id="redisContext::errstr" title='redisContext::errstr' data-ref="redisContext::errstr">errstr</dfn>[<var>128</var>]; <i>/* String representation of error when applicable */</i></td></tr>
+<tr><th id="169">169</th><td>    <em>int</em> <dfn class="decl field" id="redisContext::fd" title='redisContext::fd' data-ref="redisContext::fd">fd</dfn>;</td></tr>
+<tr><th id="170">170</th><td>    <em>int</em> <dfn class="decl field" id="redisContext::flags" title='redisContext::flags' data-ref="redisContext::flags">flags</dfn>;</td></tr>
+<tr><th id="171">171</th><td>    <em>char</em> *<dfn class="decl field" id="redisContext::obuf" title='redisContext::obuf' data-ref="redisContext::obuf">obuf</dfn>; <i>/* Write buffer */</i></td></tr>
+<tr><th id="172">172</th><td>    <a class="typedef" href="#redisReader" title='redisReader' data-type='struct redisReader' data-ref="redisReader">redisReader</a> *<dfn class="decl field" id="redisContext::reader" title='redisContext::reader' data-ref="redisContext::reader">reader</dfn>; <i>/* Protocol reader */</i></td></tr>
+<tr><th id="173">173</th><td>} <dfn class="typedef" id="redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</dfn>;</td></tr>
+<tr><th id="174">174</th><td></td></tr>
+<tr><th id="175">175</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnect" title='redisConnect' data-ref="redisConnect">redisConnect</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="567ip" title='ip' data-type='const char *' data-ref="567ip">ip</dfn>, <em>int</em> <dfn class="local col8 decl" id="568port" title='port' data-type='int' data-ref="568port">port</dfn>);</td></tr>
+<tr><th id="176">176</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectWithTimeout" title='redisConnectWithTimeout' data-ref="redisConnectWithTimeout">redisConnectWithTimeout</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="569ip" title='ip' data-type='const char *' data-ref="569ip">ip</dfn>, <em>int</em> <dfn class="local col0 decl" id="570port" title='port' data-type='int' data-ref="570port">port</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../../../include/x86_64-linux-gnu/bits/time.h.html#timeval" title='timeval' data-ref="timeval">timeval</a> <dfn class="local col1 decl" id="571tv" title='tv' data-type='const struct timeval' data-ref="571tv">tv</dfn>);</td></tr>
+<tr><th id="177">177</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectNonBlock" title='redisConnectNonBlock' data-ref="redisConnectNonBlock">redisConnectNonBlock</dfn>(<em>const</em> <em>char</em> *<dfn class="local col2 decl" id="572ip" title='ip' data-type='const char *' data-ref="572ip">ip</dfn>, <em>int</em> <dfn class="local col3 decl" id="573port" title='port' data-type='int' data-ref="573port">port</dfn>);</td></tr>
+<tr><th id="178">178</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectBindNonBlock" title='redisConnectBindNonBlock' data-ref="redisConnectBindNonBlock">redisConnectBindNonBlock</dfn>(<em>const</em> <em>char</em> *<dfn class="local col4 decl" id="574ip" title='ip' data-type='const char *' data-ref="574ip">ip</dfn>, <em>int</em> <dfn class="local col5 decl" id="575port" title='port' data-type='int' data-ref="575port">port</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="576source_addr" title='source_addr' data-type='const char *' data-ref="576source_addr">source_addr</dfn>);</td></tr>
+<tr><th id="179">179</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectUnix" title='redisConnectUnix' data-ref="redisConnectUnix">redisConnectUnix</dfn>(<em>const</em> <em>char</em> *<dfn class="local col7 decl" id="577path" title='path' data-type='const char *' data-ref="577path">path</dfn>);</td></tr>
+<tr><th id="180">180</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectUnixWithTimeout" title='redisConnectUnixWithTimeout' data-ref="redisConnectUnixWithTimeout">redisConnectUnixWithTimeout</dfn>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="578path" title='path' data-type='const char *' data-ref="578path">path</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../../../include/x86_64-linux-gnu/bits/time.h.html#timeval" title='timeval' data-ref="timeval">timeval</a> <dfn class="local col9 decl" id="579tv" title='tv' data-type='const struct timeval' data-ref="579tv">tv</dfn>);</td></tr>
+<tr><th id="181">181</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectUnixNonBlock" title='redisConnectUnixNonBlock' data-ref="redisConnectUnixNonBlock">redisConnectUnixNonBlock</dfn>(<em>const</em> <em>char</em> *<dfn class="local col0 decl" id="580path" title='path' data-type='const char *' data-ref="580path">path</dfn>);</td></tr>
+<tr><th id="182">182</th><td><a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="decl fn" id="redisConnectFd" title='redisConnectFd' data-ref="redisConnectFd">redisConnectFd</dfn>(<em>int</em> <dfn class="local col1 decl" id="581fd" title='fd' data-type='int' data-ref="581fd">fd</dfn>);</td></tr>
+<tr><th id="183">183</th><td><em>int</em> <dfn class="decl fn" id="redisSetTimeout" title='redisSetTimeout' data-ref="redisSetTimeout">redisSetTimeout</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col2 decl" id="582c" title='c' data-type='redisContext *' data-ref="582c">c</dfn>, <em>const</em> <b>struct</b> <a class="type" href="../../../include/x86_64-linux-gnu/bits/time.h.html#timeval" title='timeval' data-ref="timeval">timeval</a> <dfn class="local col3 decl" id="583tv" title='tv' data-type='const struct timeval' data-ref="583tv">tv</dfn>);</td></tr>
+<tr><th id="184">184</th><td><em>int</em> <dfn class="decl fn" id="redisEnableKeepAlive" title='redisEnableKeepAlive' data-ref="redisEnableKeepAlive">redisEnableKeepAlive</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col4 decl" id="584c" title='c' data-type='redisContext *' data-ref="584c">c</dfn>);</td></tr>
+<tr><th id="185">185</th><td><em>void</em> <dfn class="decl fn" id="redisFree" title='redisFree' data-ref="redisFree">redisFree</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col5 decl" id="585c" title='c' data-type='redisContext *' data-ref="585c">c</dfn>);</td></tr>
+<tr><th id="186">186</th><td><em>int</em> <dfn class="decl fn" id="redisFreeKeepFd" title='redisFreeKeepFd' data-ref="redisFreeKeepFd">redisFreeKeepFd</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col6 decl" id="586c" title='c' data-type='redisContext *' data-ref="586c">c</dfn>);</td></tr>
+<tr><th id="187">187</th><td><em>int</em> <dfn class="decl fn" id="redisBufferRead" title='redisBufferRead' data-ref="redisBufferRead">redisBufferRead</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col7 decl" id="587c" title='c' data-type='redisContext *' data-ref="587c">c</dfn>);</td></tr>
+<tr><th id="188">188</th><td><em>int</em> <dfn class="decl fn" id="redisBufferWrite" title='redisBufferWrite' data-ref="redisBufferWrite">redisBufferWrite</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col8 decl" id="588c" title='c' data-type='redisContext *' data-ref="588c">c</dfn>, <em>int</em> *<dfn class="local col9 decl" id="589done" title='done' data-type='int *' data-ref="589done">done</dfn>);</td></tr>
+<tr><th id="189">189</th><td></td></tr>
+<tr><th id="190">190</th><td><i>/* In a blocking context, this function first checks if there are unconsumed</i></td></tr>
+<tr><th id="191">191</th><td><i> * replies to return and returns one if so. Otherwise, it flushes the output</i></td></tr>
+<tr><th id="192">192</th><td><i> * buffer to the socket and reads until it has a reply. In a non-blocking</i></td></tr>
+<tr><th id="193">193</th><td><i> * context, it will return unconsumed replies until there are no more. */</i></td></tr>
+<tr><th id="194">194</th><td><em>int</em> <dfn class="decl fn" id="redisGetReply" title='redisGetReply' data-ref="redisGetReply">redisGetReply</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col0 decl" id="590c" title='c' data-type='redisContext *' data-ref="590c">c</dfn>, <em>void</em> **<dfn class="local col1 decl" id="591reply" title='reply' data-type='void **' data-ref="591reply">reply</dfn>);</td></tr>
+<tr><th id="195">195</th><td><em>int</em> <dfn class="decl fn" id="redisGetReplyFromReader" title='redisGetReplyFromReader' data-ref="redisGetReplyFromReader">redisGetReplyFromReader</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col2 decl" id="592c" title='c' data-type='redisContext *' data-ref="592c">c</dfn>, <em>void</em> **<dfn class="local col3 decl" id="593reply" title='reply' data-type='void **' data-ref="593reply">reply</dfn>);</td></tr>
+<tr><th id="196">196</th><td></td></tr>
+<tr><th id="197">197</th><td><i>/* Write a formatted command to the output buffer. Use these functions in blocking mode</i></td></tr>
+<tr><th id="198">198</th><td><i> * to get a pipeline of commands. */</i></td></tr>
+<tr><th id="199">199</th><td><em>int</em> <dfn class="decl fn" id="redisAppendFormattedCommand" title='redisAppendFormattedCommand' data-ref="redisAppendFormattedCommand">redisAppendFormattedCommand</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col4 decl" id="594c" title='c' data-type='redisContext *' data-ref="594c">c</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="595cmd" title='cmd' data-type='const char *' data-ref="595cmd">cmd</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="596len" title='len' data-type='size_t' data-ref="596len">len</dfn>);</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><i>/* Write a command to the output buffer. Use these functions in blocking mode</i></td></tr>
+<tr><th id="202">202</th><td><i> * to get a pipeline of commands. */</i></td></tr>
+<tr><th id="203">203</th><td><em>int</em> <dfn class="decl fn" id="redisvAppendCommand" title='redisvAppendCommand' data-ref="redisvAppendCommand">redisvAppendCommand</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col7 decl" id="597c" title='c' data-type='redisContext *' data-ref="597c">c</dfn>, <em>const</em> <em>char</em> *<dfn class="local col8 decl" id="598format" title='format' data-type='const char *' data-ref="598format">format</dfn>, <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col9 decl" id="599ap" title='ap' data-type='struct __va_list_tag *' data-ref="599ap">ap</dfn>);</td></tr>
+<tr><th id="204">204</th><td><em>int</em> <dfn class="decl fn" id="redisAppendCommand" title='redisAppendCommand' data-ref="redisAppendCommand">redisAppendCommand</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col0 decl" id="600c" title='c' data-type='redisContext *' data-ref="600c">c</dfn>, <em>const</em> <em>char</em> *<dfn class="local col1 decl" id="601format" title='format' data-type='const char *' data-ref="601format">format</dfn>, ...);</td></tr>
+<tr><th id="205">205</th><td><em>int</em> <dfn class="decl fn" id="redisAppendCommandArgv" title='redisAppendCommandArgv' data-ref="redisAppendCommandArgv">redisAppendCommandArgv</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col2 decl" id="602c" title='c' data-type='redisContext *' data-ref="602c">c</dfn>, <em>int</em> <dfn class="local col3 decl" id="603argc" title='argc' data-type='int' data-ref="603argc">argc</dfn>, <em>const</em> <em>char</em> **<dfn class="local col4 decl" id="604argv" title='argv' data-type='const char **' data-ref="604argv">argv</dfn>, <em>const</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> *<dfn class="local col5 decl" id="605argvlen" title='argvlen' data-type='const size_t *' data-ref="605argvlen">argvlen</dfn>);</td></tr>
+<tr><th id="206">206</th><td></td></tr>
+<tr><th id="207">207</th><td><i>/* Issue a command to Redis. In a blocking context, it is identical to calling</i></td></tr>
+<tr><th id="208">208</th><td><i> * redisAppendCommand, followed by redisGetReply. The function will return</i></td></tr>
+<tr><th id="209">209</th><td><i> * NULL if there was an error in performing the request, otherwise it will</i></td></tr>
+<tr><th id="210">210</th><td><i> * return the reply. In a non-blocking context, it is identical to calling</i></td></tr>
+<tr><th id="211">211</th><td><i> * only redisAppendCommand and will always return NULL. */</i></td></tr>
+<tr><th id="212">212</th><td><em>void</em> *<dfn class="decl fn" id="redisvCommand" title='redisvCommand' data-ref="redisvCommand">redisvCommand</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col6 decl" id="606c" title='c' data-type='redisContext *' data-ref="606c">c</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="607format" title='format' data-type='const char *' data-ref="607format">format</dfn>, <span class='typedef' title='va_list' data-type='__gnuc_va_list' data-ref="va_list">va_list</span> <dfn class="local col8 decl" id="608ap" title='ap' data-type='struct __va_list_tag *' data-ref="608ap">ap</dfn>);</td></tr>
+<tr><th id="213">213</th><td><em>void</em> *<dfn class="decl fn" id="redisCommand" title='redisCommand' data-ref="redisCommand">redisCommand</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col9 decl" id="609c" title='c' data-type='redisContext *' data-ref="609c">c</dfn>, <em>const</em> <em>char</em> *<dfn class="local col0 decl" id="610format" title='format' data-type='const char *' data-ref="610format">format</dfn>, ...);</td></tr>
+<tr><th id="214">214</th><td><em>void</em> *<dfn class="decl fn" id="redisCommandArgv" title='redisCommandArgv' data-ref="redisCommandArgv">redisCommandArgv</dfn>(<a class="typedef" href="#redisContext" title='redisContext' data-type='struct redisContext' data-ref="redisContext">redisContext</a> *<dfn class="local col1 decl" id="611c" title='c' data-type='redisContext *' data-ref="611c">c</dfn>, <em>int</em> <dfn class="local col2 decl" id="612argc" title='argc' data-type='int' data-ref="612argc">argc</dfn>, <em>const</em> <em>char</em> **<dfn class="local col3 decl" id="613argv" title='argv' data-type='const char **' data-ref="613argv">argv</dfn>, <em>const</em> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> *<dfn class="local col4 decl" id="614argvlen" title='argvlen' data-type='const size_t *' data-ref="614argvlen">argvlen</dfn>);</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td><u>#<span data-ppcond="216">ifdef</span> <span class="macro" data-ref="_M/__cplusplus">__cplusplus</span></u></td></tr>
+<tr><th id="217">217</th><td>}</td></tr>
+<tr><th id="218">218</th><td><u>#<span data-ppcond="216">endif</span></u></td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td><u>#<span data-ppcond="32">endif</span></u></td></tr>
+<tr><th id="221">221</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='async.c.html'>redis/deps/hiredis/async.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

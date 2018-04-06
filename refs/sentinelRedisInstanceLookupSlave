@@ -1,0 +1,3 @@
+<def f='redis/src/sentinel.c' l='1029' ll='1042' type='sentinelRedisInstance * sentinelRedisInstanceLookupSlave(sentinelRedisInstance * ri, char * ip, int port)'/>
+<use f='redis/src/sentinel.c' l='1842' u='c' c='sentinelRefreshInstanceInfo'/>
+<doc f='redis/src/sentinel.c' l='1028'>/* Lookup a slave in a master Redis instance, by ip and port. */</doc>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='143'/>
+<use f='redis/deps/lua/src/lua.h' l='103' u='c'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='138'>/*
+@@ LUA_INTEGER is the integral type used by lua_pushinteger/lua_tointeger.
+** CHANGE that if ptrdiff_t is not adequate on your machine. (On most
+** machines, ptrdiff_t gives a good choice between int or long.)
+*/</doc>

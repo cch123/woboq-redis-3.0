@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='232'/>
+<doc f='redis/src/redis.h' l='231'>/* Client flags */</doc>
+<use f='redis/src/networking.c' l='707' u='c'/>
+<use f='redis/src/networking.c' l='757' u='c'/>
+<use f='redis/src/networking.c' l='769' u='c'/>
+<use f='redis/src/networking.c' l='949' u='c'/>
+<use f='redis/src/networking.c' l='1129' u='c'/>
+<use f='redis/src/networking.c' l='1309' u='c'/>
+<use f='redis/src/networking.c' l='1589' u='c'/>
+<use f='redis/src/networking.c' l='1735' u='c'/>
+<use f='redis/src/redis.c' l='910' u='c'/>
+<use f='redis/src/redis.c' l='3051' u='c'/>
+<use f='redis/src/redis.c' l='3053' u='c'/>
+<use f='redis/src/replication.c' l='399' u='c'/>
+<use f='redis/src/replication.c' l='465' u='c'/>
+<use f='redis/src/replication.c' l='577' u='c'/>
+<use f='redis/src/replication.c' l='622' u='c'/>

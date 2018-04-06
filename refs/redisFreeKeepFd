@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='186' type='int redisFreeKeepFd(redisContext * c)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1013' ll='1018' type='int redisFreeKeepFd(redisContext * c)'/>

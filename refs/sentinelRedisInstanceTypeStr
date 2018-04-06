@@ -1,0 +1,5 @@
+<dec f='redis/src/sentinel.c' l='331' type='const char * sentinelRedisInstanceTypeStr(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='543' u='c' c='sentinelEvent'/>
+<use f='redis/src/sentinel.c' l='548' u='c' c='sentinelEvent'/>
+<def f='redis/src/sentinel.c' l='1045' ll='1050' type='const char * sentinelRedisInstanceTypeStr(sentinelRedisInstance * ri)'/>
+<doc f='redis/src/sentinel.c' l='1044'>/* Return the name of the type of the instance as a string. */</doc>

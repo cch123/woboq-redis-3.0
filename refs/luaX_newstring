@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/llex.h' l='73' type='TString * luaX_newstring(LexState * ls, const char * str, size_t l)'/>
+<def f='redis/deps/lua/src/llex.c' l='117' ll='126' type='TString * luaX_newstring(LexState * ls, const char * str, size_t l)'/>
+<use f='redis/deps/lua/src/llex.c' l='273' u='c' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='329' u='c' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='428' u='c' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='60' u='c' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='body'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='forlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='forlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='157' u='c' c='forlist'/>

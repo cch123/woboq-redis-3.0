@@ -1,0 +1,41 @@
+<dec f='redis/deps/hiredis/sds.h' l='85' type='sds * sdssplitlen(const char * s, int len, const char * sep, int seplen, int * count)'/>
+<def f='redis/deps/hiredis/sds.c' l='681' ll='728' type='sds * sdssplitlen(const char * s, int len, const char * sep, int seplen, int * count)'/>
+<doc f='redis/deps/hiredis/sds.c' l='665'>/* Split &apos;s&apos; with separator in &apos;sep&apos;. An array
+ * of sds strings is returned. *count will be set
+ * by reference to the number of tokens returned.
+ *
+ * On out of memory, zero length string, zero length
+ * separator, NULL is returned.
+ *
+ * Note that &apos;sep&apos; is able to split a string using
+ * a multi-character separator. For example
+ * sdssplit(&quot;foo_-_bar&quot;,&quot;_-_&quot;); will return two
+ * elements &quot;foo&quot; and &quot;bar&quot;.
+ *
+ * This version of the function is binary-safe but
+ * requires length arguments. sdssplit() is just the
+ * same function but for zero-terminated strings.
+ */</doc>
+<dec f='redis/src/sds.h' l='85' type='sds * sdssplitlen(const char * s, int len, const char * sep, int seplen, int * count)'/>
+<use f='redis/src/config.c' l='88' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='746' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='848' u='c' c='configSetCommand'/>
+<def f='redis/src/sds.c' l='681' ll='728' type='sds * sdssplitlen(const char * s, int len, const char * sep, int seplen, int * count)'/>
+<doc f='redis/src/sds.c' l='665'>/* Split &apos;s&apos; with separator in &apos;sep&apos;. An array
+ * of sds strings is returned. *count will be set
+ * by reference to the number of tokens returned.
+ *
+ * On out of memory, zero length string, zero length
+ * separator, NULL is returned.
+ *
+ * Note that &apos;sep&apos; is able to split a string using
+ * a multi-character separator. For example
+ * sdssplit(&quot;foo_-_bar&quot;,&quot;_-_&quot;); will return two
+ * elements &quot;foo&quot; and &quot;bar&quot;.
+ *
+ * This version of the function is binary-safe but
+ * requires length arguments. sdssplit() is just the
+ * same function but for zero-terminated strings.
+ */</doc>
+<use f='redis/src/sentinel.c' l='1794' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2117' u='c' c='sentinelProcessHelloMessage'/>

@@ -1,0 +1,12 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='131' type='size_t'/>
+<offset>1216</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='131'>/* Buffer length */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='198' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='251' u='r' c='readBytes'/>
+<use f='redis/deps/hiredis/hiredis.c' l='320' u='r' c='readLine'/>
+<use f='redis/deps/hiredis/hiredis.c' l='398' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='414' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='595' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='611' u='w' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='627' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='655' u='w' c='redisReaderGetReply'/>

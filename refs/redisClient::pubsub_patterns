@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='554' type='list *'/>
+<offset>2944</offset>
+<doc f='redis/src/redis.h' l='554'>/* patterns a client is interested in (SUBSCRIBE) */</doc>
+<use f='redis/src/networking.c' l='122' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='124' u='r' c='createClient'/>
+<use f='redis/src/networking.c' l='125' u='r' c='createClient'/>
+<use f='redis/src/networking.c' l='728' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1343' u='r' c='catClientInfoString'/>
+<use f='redis/src/pubsub.c' l='53' u='r' c='clientSubscriptionsCount'/>
+<use f='redis/src/pubsub.c' l='119' u='r' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='130' u='r' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='133' u='r' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='156' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='158' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='170' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='194' u='r' c='pubsubUnsubscribeAllChannels'/>
+<use f='redis/src/pubsub.c' l='207' u='r' c='pubsubUnsubscribeAllPatterns'/>
+<use f='redis/src/pubsub.c' l='219' u='r' c='pubsubUnsubscribeAllPatterns'/>

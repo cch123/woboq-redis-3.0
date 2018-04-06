@@ -1,0 +1,11 @@
+<dec f='redis/src/adlist.h' l='84' type='listNode * listIndex(list * list, long index)'/>
+<def f='redis/src/adlist.c' l='313' ll='325' type='listNode * listIndex(list * list, long index)'/>
+<doc f='redis/src/adlist.c' l='308'>/* Return the element at the specified zero-based index
+ * where 0 is the head, 1 is the element next to head
+ * and so on. Negative integers are used in order to count
+ * from the tail, -1 is the last element, -2 the penultimate
+ * and so on. If the index is out of range NULL is returned. */</doc>
+<use f='redis/src/t_list.c' l='131' u='c' c='listTypeInitIterator'/>
+<use f='redis/src/t_list.c' l='439' u='c' c='lindexCommand'/>
+<use f='redis/src/t_list.c' l='477' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='573' u='c' c='lrangeCommand'/>

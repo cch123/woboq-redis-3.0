@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/async.h' l='53' type='redisCallback *'/>
+<use f='redis/deps/hiredis/async.c' l='133' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='135' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='230' u='r' c='__redisPushCallback'/>
+<use f='redis/deps/hiredis/async.c' l='231' u='w' c='__redisPushCallback'/>
+<use f='redis/deps/hiredis/async.c' l='239' u='r' c='__redisShiftCallback'/>
+<use f='redis/deps/hiredis/async.c' l='241' u='w' c='__redisShiftCallback'/>
+<use f='redis/deps/hiredis/async.c' l='349' u='r' c='redisAsyncDisconnect'/>
+<offset>0</offset>

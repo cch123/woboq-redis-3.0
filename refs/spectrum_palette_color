@@ -1,0 +1,2 @@
+<def f='redis/src/redis-cli.c' l='69' type='int [19]'/>
+<use f='redis/src/redis-cli.c' l='2208' u='r' c='main'/>

@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='451' ll='455' type='void _redisAssertPrintObject(robj * o)'/>
+<use f='redis/src/debug.c' l='459' u='c' c='_redisAssertWithInfo'/>

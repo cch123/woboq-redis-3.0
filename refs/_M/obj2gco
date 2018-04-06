@@ -1,0 +1,19 @@
+<dec f='redis/deps/lua/src/lstate.h' l='162'/>
+<doc f='redis/deps/lua/src/lstate.h' l='161'>/* macro to convert any Lua object into a GCObject */</doc>
+<use f='redis/deps/lua/src/lfunc.c' l='25' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='35' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='46' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='61' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='62' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='72' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='100' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='117' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='174' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='519' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='676' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='696' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='121' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='170' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='67' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='108' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='360' u='c'/>

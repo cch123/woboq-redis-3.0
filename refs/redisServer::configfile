@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='651' type='char *'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='651'>/* Absolute config file path, or NULL */</doc>
+<use f='redis/src/config.c' l='1884' u='r' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1909' u='r' c='configCommand'/>
+<use f='redis/src/config.c' l='1913' u='r' c='configCommand'/>
+<use f='redis/src/redis.c' l='1401' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2673' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2673' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3642' u='w' c='main'/>
+<use f='redis/src/sentinel.c' l='442' u='r' c='sentinelIsRunning'/>
+<use f='redis/src/sentinel.c' l='446' u='r' c='sentinelIsRunning'/>
+<use f='redis/src/sentinel.c' l='449' u='r' c='sentinelIsRunning'/>
+<use f='redis/src/sentinel.c' l='1603' u='r' c='sentinelFlushConfig'/>
+<use f='redis/src/sentinel.c' l='1607' u='r' c='sentinelFlushConfig'/>

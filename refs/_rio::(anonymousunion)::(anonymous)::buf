@@ -1,0 +1,10 @@
+<dec f='redis/src/rio.h' l='82' type='sds'/>
+<offset>256</offset>
+<use f='redis/src/rio.c' l='178' u='w' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='178' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='180' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='184' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='185' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='229' u='r' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='276' u='w' c='rioInitWithFdset'/>
+<use f='redis/src/rio.c' l='282' u='r' c='rioFreeFdset'/>

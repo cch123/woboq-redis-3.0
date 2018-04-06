@@ -1,0 +1,7 @@
+<def f='redis/deps/lua/src/lobject.h' l='199' ll='207'/>
+<size>24</size>
+<doc f='redis/deps/lua/src/lobject.h' l='196'>/*
+** String headers for string table
+*/</doc>
+<mbr r='TString::dummy' o='0' t='L_Umaxalign'/>
+<mbr r='TString::tsv' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:201:3)'/>

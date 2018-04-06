@@ -1,0 +1,3 @@
+<def f='redis/src/rdb.c' l='303' ll='319' type='int rdbSaveLongLongAsStringObject(rio * rdb, long long value)'/>
+<use f='redis/src/rdb.c' l='326' u='c' c='rdbSaveStringObject'/>
+<doc f='redis/src/rdb.c' l='302'>/* Save a long long value as either an encoded string or a string. */</doc>

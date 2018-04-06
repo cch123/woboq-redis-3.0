@@ -1,0 +1,5 @@
+<dec f='redis/src/latency.h' l='66' type='int THPIsEnabled()'/>
+<def f='redis/src/latency.c' l='64' ll='75' type='int THPIsEnabled()'/>
+<doc f='redis/src/latency.c' l='62'>/* Returns 1 if Transparent Huge Pages support is enabled in the kernel.
+ * Otherwise (or if we are unable to check) 0 is returned. */</doc>
+<use f='redis/src/redis.c' l='3372' u='c' c='linuxMemoryWarnings'/>

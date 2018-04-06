@@ -1,0 +1,17 @@
+<dec f='redis/src/sentinel.c' l='338' type='int sentinelSendSlaveOf(sentinelRedisInstance * ri, char * host, int port)'/>
+<use f='redis/src/sentinel.c' l='1969' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1992' u='c' c='sentinelRefreshInstanceInfo'/>
+<def f='redis/src/sentinel.c' l='3306' ll='3360' type='int sentinelSendSlaveOf(sentinelRedisInstance * ri, char * host, int port)'/>
+<use f='redis/src/sentinel.c' l='3589' u='c' c='sentinelFailoverSendSlaveOfNoOne'/>
+<use f='redis/src/sentinel.c' l='3659' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3716' u='c' c='sentinelFailoverReconfNextSlave'/>
+<doc f='redis/src/sentinel.c' l='3296'>/* Send SLAVEOF to the specified instance, always followed by a
+ * CONFIG REWRITE command in order to store the new configuration on disk
+ * when possible (that is, if the Redis instance is recent enough to support
+ * config rewriting, and if the server was started with a configuration file).
+ *
+ * If Host is NULL the function sends &quot;SLAVEOF NO ONE&quot;.
+ *
+ * The command returns REDIS_OK if the SLAVEOF command was accepted for
+ * (later) delivery otherwise REDIS_ERR. The command replies are just
+ * discarded. */</doc>

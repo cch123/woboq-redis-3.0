@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='605' type='unsigned long long'/>
+<offset>0</offset>
+<use f='redis/src/config.c' l='504' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='886' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1186' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1606' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1607' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1616' u='r' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/networking.c' l='1623' u='r' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/networking.c' l='1624' u='r' c='checkClientOutputBufferLimits'/>

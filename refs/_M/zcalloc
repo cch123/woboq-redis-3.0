@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/zmalloc.h' l='9'/>
+<use f='redis/deps/hiredis/sds.c' l='57' u='c'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='885' type='lua_State *'/>
+<offset>19456</offset>
+<doc f='redis/src/redis.h' l='884'>/* Scripting */</doc>
+<doc f='redis/src/redis.h' l='885'>/* The Lua interpreter. We use just one for all clients */</doc>
+<use f='redis/src/redis.c' l='2721' u='r' c='genRedisInfoString'/>
+<use f='redis/src/scripting.c' l='764' u='w' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='771' u='r' c='scriptingRelease'/>
+<use f='redis/src/scripting.c' l='925' u='r' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1178' u='r' c='scriptCommand'/>

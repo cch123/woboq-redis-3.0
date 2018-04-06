@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/sys/socket.h' l='113' type='int socket(int __domain, int __type, int __protocol)'/>
+<use f='redis/deps/hiredis/net.c' l='86' u='c' c='redisCreateSocket'/>
+<use f='redis/deps/hiredis/net.c' l='282' u='c' c='_redisContextConnectTcp'/>
+<doc f='include/x86_64-linux-gnu/sys/socket.h' l='110'>/* Create a new socket of type TYPE in domain DOMAIN, using
+   protocol PROTOCOL.  If PROTOCOL is zero, one is chosen automatically.
+   Returns a file descriptor for the new socket, or -1 for errors.  */</doc>
+<use f='redis/src/anet.c' l='251' u='c' c='anetCreateSocket'/>
+<use f='redis/src/anet.c' l='287' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='462' u='c' c='_anetTcpServer'/>

@@ -1,0 +1,21 @@
+<dec f='redis/src/rio.h' l='67' type='sds'/>
+<offset>0</offset>
+<use f='redis/src/cluster.c' l='4324' u='w' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4324' u='r' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4327' u='r' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4328' u='r' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4330' u='w' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4330' u='r' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4373' u='r' c='dumpCommand'/>
+<use f='redis/src/cluster.c' l='4631' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4632' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4633' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4643' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4691' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4695' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4703' u='r' c='migrateCommand'/>
+<use f='redis/src/rio.c' l='62' u='w' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='62' u='r' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='69' u='r' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='71' u='r' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='102' u='w' c='rioInitWithBuffer'/>

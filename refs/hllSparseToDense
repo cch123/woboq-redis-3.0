@@ -1,0 +1,11 @@
+<def f='redis/src/hyperloglog.c' l='568' ll='620' type='int hllSparseToDense(robj * o)'/>
+<use f='redis/src/hyperloglog.c' l='869' u='c' c='hllSparseAdd'/>
+<use f='redis/src/hyperloglog.c' l='1324' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1475' u='c' c='pfdebugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1539' u='c' c='pfdebugCommand'/>
+<doc f='redis/src/hyperloglog.c' l='562'>/* Convert the HLL with sparse representation given as input in its dense
+ * representation. Both representations are represented by SDS strings, and
+ * the input representation is freed as a side effect.
+ *
+ * The function returns REDIS_OK if the sparse representation was valid,
+ * otherwise REDIS_ERR is returned if the representation was corrupted. */</doc>

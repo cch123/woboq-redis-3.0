@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='355'/>
+<doc f='redis/deps/lua/src/lobject.h' l='352'>/*
+** `module&apos; operation for hashing (size is always a power of 2)
+*/</doc>
+<use f='redis/deps/lua/src/lstring.c' l='37' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='65' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='82' u='c'/>

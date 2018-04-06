@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='85' type='const char * luaL_gsub(lua_State * L, const char * s, const char * p, const char * r)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='340' ll='354' macro='1' type='const char * luaL_gsub(lua_State * L, const char * s, const char * p, const char * r)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='354' u='c' c='findfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='362' u='c' c='findfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='395' u='c' c='mkfuncname'/>
+<use f='redis/deps/lua/src/loadlib.c' l='599' u='c' c='setpath'/>
+<use f='redis/deps/lua/src/loadlib.c' l='601' u='c' c='setpath'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1213' type='int zslDelete(zskiplist * zsl, double score, robj * obj)'/>
+<use f='redis/src/db.c' l='1141' u='c' c='slotToKeyDel'/>
+<def f='redis/src/t_zset.c' l='188' ll='210' type='int zslDelete(zskiplist * zsl, double score, robj * obj)'/>
+<use f='redis/src/t_zset.c' l='1276' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1351' u='c' c='zremCommand'/>
+<doc f='redis/src/t_zset.c' l='187'>/* Delete an element with matching score/object from the skiplist. */</doc>

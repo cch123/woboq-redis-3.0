@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lparser.h' l='61' type='struct FuncState *'/>
+<offset>128</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='61'>/* enclosing function */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='238' u='r' c='singlevaraux'/>
+<use f='redis/deps/lua/src/lparser.c' l='332' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='376' u='r' c='close_func'/>

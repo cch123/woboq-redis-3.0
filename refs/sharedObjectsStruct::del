@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='574' type='robj *'/>
+<offset>2368</offset>
+<use f='redis/src/db.c' l='809' u='r' c='propagateExpire'/>
+<use f='redis/src/redis.c' l='1375' u='w' c='createSharedObjects'/>

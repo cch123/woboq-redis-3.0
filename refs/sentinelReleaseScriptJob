@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='606' ll='612' type='void sentinelReleaseScriptJob(sentinelScriptJob * sj)'/>
+<use f='redis/src/sentinel.c' l='653' u='c' c='sentinelScheduleScriptExecution'/>
+<use f='redis/src/sentinel.c' l='782' u='c' c='sentinelCollectTerminatedScripts'/>
+<doc f='redis/src/sentinel.c' l='605'>/* Release a script job structure and all the associated data. */</doc>

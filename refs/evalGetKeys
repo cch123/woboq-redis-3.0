@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1341' type='int * evalGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<def f='redis/src/db.c' l='1058' ll='1077' type='int * evalGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<doc f='redis/src/db.c' l='1055'>/* Helper function to extract keys from the following commands:
+ * EVAL &lt;script&gt; &lt;num-keys&gt; &lt;key&gt; &lt;key&gt; ... &lt;key&gt; [more stuff]
+ * EVALSHA &lt;script&gt; &lt;num-keys&gt; &lt;key&gt; &lt;key&gt; ... &lt;key&gt; [more stuff] */</doc>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>
+<use f='redis/src/redis.c' l='272' u='r'/>

@@ -1,0 +1,68 @@
+<dec f='redis/deps/hiredis/sds.h' l='57' type='sds sdsnewlen(const void * init, size_t initlen)'/>
+<use f='redis/deps/hiredis/async.c' l='376' u='c' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='599' u='c' c='__redisAsyncCommand'/>
+<def f='redis/deps/hiredis/sds.c' l='51' ll='66' type='sds sdsnewlen(const void * init, size_t initlen)'/>
+<use f='redis/deps/hiredis/sds.c' l='71' u='c' c='sdsempty'/>
+<use f='redis/deps/hiredis/sds.c' l='77' u='c' c='sdsnew'/>
+<use f='redis/deps/hiredis/sds.c' l='82' u='c' c='sdsdup'/>
+<use f='redis/deps/hiredis/sds.c' l='369' u='c' c='sdsfromlonglong'/>
+<use f='redis/deps/hiredis/sds.c' l='706' u='c' c='sdssplitlen'/>
+<use f='redis/deps/hiredis/sds.c' l='714' u='c' c='sdssplitlen'/>
+<doc f='redis/deps/hiredis/sds.c' l='39'>/* Create a new sds string with the content specified by the &apos;init&apos; pointer
+ * and &apos;initlen&apos;.
+ * If NULL is used for &apos;init&apos; the string is initialized with zero bytes.
+ *
+ * The string is always null-termined (all the sds strings are, always) so
+ * even if you create an sds string with:
+ *
+ * mystring = sdsnewlen(&quot;abc&quot;,3&quot;);
+ *
+ * You can print the string with printf() as there is an implicit \0 at the
+ * end of the string. However the string is binary safe and can contain
+ * \0 characters in the middle, as the length is stored in the sds header. */</doc>
+<dec f='redis/src/sds.h' l='57' type='sds sdsnewlen(const void * init, size_t initlen)'/>
+<use f='redis/src/aof.c' l='662' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/bitops.c' l='355' u='c' c='bitopCommand'/>
+<use f='redis/src/cluster.c' l='522' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='828' u='c' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='844' u='c' c='clusterAddNode'/>
+<use f='redis/src/cluster.c' l='890' u='c' c='clusterLookupNode'/>
+<use f='redis/src/cluster.c' l='905' u='c' c='clusterRenameNode'/>
+<use f='redis/src/cluster.c' l='1096' u='c' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1113' u='c' c='clusterBlacklistExists'/>
+<use f='redis/src/debug.c' l='376' u='c' c='debugCommand'/>
+<use f='redis/src/hyperloglog.c' l='581' u='c' c='hllSparseToDense'/>
+<use f='redis/src/hyperloglog.c' l='1102' u='c' c='createHLLObject'/>
+<use f='redis/src/hyperloglog.c' l='1353' u='c' c='pfselftestCommand'/>
+<use f='redis/src/networking.c' l='937' u='c' c='processInlineBuffer'/>
+<use f='redis/src/notify.c' l='108' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='120' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/object.c' l='54' u='c' c='createRawStringObject'/>
+<use f='redis/src/rdb.c' l='257' u='c' c='rdbLoadLzfStringObject'/>
+<use f='redis/src/redis-cli.c' l='333' u='c' c='completionCallback'/>
+<use f='redis/src/replication.c' l='345' u='c' c='addReplyReplicationBacklog'/>
+<use f='redis/src/scripting.c' l='390' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='917' u='c' c='luaCreateFunction'/>
+<use f='redis/src/scripting.c' l='1176' u='c' c='scriptCommand'/>
+<def f='redis/src/sds.c' l='51' ll='66' type='sds sdsnewlen(const void * init, size_t initlen)'/>
+<use f='redis/src/sds.c' l='71' u='c' c='sdsempty'/>
+<use f='redis/src/sds.c' l='77' u='c' c='sdsnew'/>
+<use f='redis/src/sds.c' l='82' u='c' c='sdsdup'/>
+<use f='redis/src/sds.c' l='369' u='c' c='sdsfromlonglong'/>
+<use f='redis/src/sds.c' l='706' u='c' c='sdssplitlen'/>
+<use f='redis/src/sds.c' l='714' u='c' c='sdssplitlen'/>
+<doc f='redis/src/sds.c' l='39'>/* Create a new sds string with the content specified by the &apos;init&apos; pointer
+ * and &apos;initlen&apos;.
+ * If NULL is used for &apos;init&apos; the string is initialized with zero bytes.
+ *
+ * The string is always null-termined (all the sds strings are, always) so
+ * even if you create an sds string with:
+ *
+ * mystring = sdsnewlen(&quot;abc&quot;,3);
+ *
+ * You can print the string with printf() as there is an implicit \0 at the
+ * end of the string. However the string is binary safe and can contain
+ * \0 characters in the middle, as the length is stored in the sds header. */</doc>
+<use f='redis/src/sentinel.c' l='1802' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1807' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/slowlog.c' l='69' u='c' c='slowlogCreateEntry'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='77' type='struct clusterNode *'/>
+<use f='redis/src/cluster.c' l='694' u='r' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='702' u='w' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='750' u='r' c='clusterNodeDelFailureReport'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='77'>/* Node reporting the failure condition. */</doc>

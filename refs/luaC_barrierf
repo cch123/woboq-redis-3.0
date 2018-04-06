@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lgc.h' l='106' type='void luaC_barrierf(lua_State * L, GCObject * o, GCObject * v)'/>
+<use f='redis/deps/lua/src/lapi.c' l='216' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='221' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='720' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='756' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='1082' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='244' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lgc.c' l='661' ll='671' type='void luaC_barrierf(lua_State * L, GCObject * o, GCObject * v)'/>
+<use f='redis/deps/lua/src/lgc.c' l='702' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='151' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='199' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='319' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='454' macro='1' u='c'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='82'/>
+<use f='redis/src/redis.h' l='577' u='c'/>
+<use f='redis/src/object.c' l='97' u='c'/>
+<use f='redis/src/object.c' l='398' u='c'/>
+<use f='redis/src/redis.c' l='1379' u='c'/>
+<use f='redis/src/t_string.c' l='342' u='c'/>

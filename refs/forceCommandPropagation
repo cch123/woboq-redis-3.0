@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1233' type='void forceCommandPropagation(redisClient * c, int flags)'/>
+<use f='redis/src/pubsub.c' l='322' u='c' c='publishCommand'/>
+<def f='redis/src/redis.c' l='2029' ll='2032' type='void forceCommandPropagation(redisClient * c, int flags)'/>
+<doc f='redis/src/redis.c' l='2026'>/* It is possible to call the function forceCommandPropagation() inside a
+ * Redis command implementation in order to to force the propagation of a
+ * specific command execution into AOF / Replication. */</doc>
+<use f='redis/src/scripting.c' l='1089' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1186' u='c' c='scriptCommand'/>

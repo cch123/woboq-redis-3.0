@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/async.h' l='82' type='void (*)(void *)'/>
+<use f='redis/deps/hiredis/async.c' l='128' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='57' u='r' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='57' u='r' c='__redisAsyncFree'/>
+<offset>320</offset>
+<use f='redis/src/sentinel.c' l='314' u='w' c='redisAeAttach'/>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lua.h' l='143' type='int lua_rawequal(lua_State * L, int idx1, int idx2)'/>
+<def f='redis/deps/lua/src/lapi.c' l='279' ll='284' macro='1' type='int lua_rawequal(lua_State * L, int index1, int index2)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='129' u='c' c='luaL_checkudata'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='164' u='c' c='luaB_rawequal'/>
+<use f='redis/deps/lua/src/liolib.c' l='62' u='c' c='io_type'/>

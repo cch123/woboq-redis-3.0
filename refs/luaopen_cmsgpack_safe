@@ -1,0 +1,1 @@
+<def f='redis/deps/lua/src/lua_cmsgpack.c' l='915' ll='934' macro='1' type='int luaopen_cmsgpack_safe(lua_State * L)'/>

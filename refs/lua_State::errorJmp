@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lstate.h' l='125' type='struct lua_longjmp *'/>
+<offset>1344</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='125'>/* current error recover point */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='90' u='w' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='95' u='r' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='96' u='r' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='97' u='r' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='114' u='r' c='luaD_rawrunprotected'/>
+<use f='redis/deps/lua/src/ldo.c' l='115' u='w' c='luaD_rawrunprotected'/>
+<use f='redis/deps/lua/src/ldo.c' l='119' u='w' c='luaD_rawrunprotected'/>
+<use f='redis/deps/lua/src/lstate.c' l='88' u='w' c='preinit_state'/>

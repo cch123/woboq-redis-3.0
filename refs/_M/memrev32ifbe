@@ -1,0 +1,11 @@
+<dec f='redis/src/endianconv.h' l='50'/>
+<use f='redis/src/intset.c' l='66' u='c'/>
+<use f='redis/src/intset.c' l='89' u='c'/>
+<use f='redis/src/ziplist.c' l='262' u='c'/>
+<use f='redis/src/ziplist.c' l='274' u='c'/>
+<use f='redis/src/ziplist.c' l='357' u='c'/>
+<use f='redis/src/ziplist.c' l='362' u='c'/>
+<use f='redis/src/ziplist.c' l='387' u='c'/>
+<use f='redis/src/ziplist.c' l='392' u='c'/>
+<use f='redis/src/zipmap.c' l='110' u='c'/>
+<use f='redis/src/zipmap.c' l='126' u='c'/>

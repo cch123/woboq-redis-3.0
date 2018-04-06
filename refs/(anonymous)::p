@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lobject.h' l='61' type='void *'/>
+<use f='redis/deps/lua/src/lapi.c' l='389' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='513' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lapi.c' l='844' macro='1' u='w'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lobject.c' l='82' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='82' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='109' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='262' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='262' macro='1' u='r'/>

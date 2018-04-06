@@ -1,0 +1,3 @@
+<def f='redis/src/pubsub.c' l='127' ll='146' type='int pubsubSubscribePattern(redisClient * c, robj * pattern)'/>
+<use f='redis/src/pubsub.c' l='301' u='c' c='psubscribeCommand'/>
+<doc f='redis/src/pubsub.c' l='126'>/* Subscribe a client to a pattern. Returns 1 if the operation succeeded, or 0 if the client was already subscribed to that pattern. */</doc>

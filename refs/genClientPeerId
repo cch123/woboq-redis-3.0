@@ -1,0 +1,15 @@
+<def f='redis/src/networking.c' l='1272' ll='1286' type='int genClientPeerId(redisClient * client, char * peerid, size_t peerid_len)'/>
+<use f='redis/src/networking.c' l='1296' u='c' c='getClientPeerId'/>
+<doc f='redis/src/networking.c' l='1259'>/* A Redis &quot;Peer ID&quot; is a colon separated ip:port pair.
+ * For IPv4 it&apos;s in the form x.y.z.k:port, example: &quot;127.0.0.1:1234&quot;.
+ * For IPv6 addresses we use [] around the IP part, like in &quot;[::1]:1234&quot;.
+ * For Unix sockets we use path:0, like in &quot;/tmp/redis:0&quot;.
+ *
+ * A Peer ID always fits inside a buffer of REDIS_PEER_ID_LEN bytes, including
+ * the null term.
+ *
+ * The function returns REDIS_OK on succcess, and REDIS_ERR on failure.
+ *
+ * On failure the function still populates &apos;peerid&apos; with the &quot;?:0&quot; string
+ * in case you want to relax error checking or need to display something
+ * anyway (see anetPeerToString implementation for more info). */</doc>

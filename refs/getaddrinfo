@@ -1,0 +1,13 @@
+<dec f='include/netdb.h' l='662' type='int getaddrinfo(const char *restrict __name, const char *restrict __service, const struct addrinfo *restrict __req, struct addrinfo **restrict __pai)'/>
+<use f='redis/deps/hiredis/net.c' l='274' u='c' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='276' u='c' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='291' u='c' c='_redisContextConnectTcp'/>
+<doc f='include/netdb.h' l='657'>/* Translate name of a service location and/or a service name to set of
+   socket addresses.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/src/anet.c' l='214' u='c' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='279' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='295' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='457' u='c' c='_anetTcpServer'/>

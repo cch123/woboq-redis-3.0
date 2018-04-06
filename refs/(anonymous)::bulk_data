@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='185' type='unsigned char [8]'/>
+<use f='redis/src/cluster.c' l='1899' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1901' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2342' u='r' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2343' u='r' c='clusterSendPublish'/>
+<offset>64</offset>
+<doc f='redis/src/cluster.h' l='182'>/* We can&apos;t reclare bulk_data as bulk_data[] since this structure is
+     * nested. The 8 bytes are removed from the count during the message
+     * length computation. */</doc>

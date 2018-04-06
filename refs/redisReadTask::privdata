@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='113' type='void *'/>
+<offset>256</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='113'>/* user-settable arbitrary field */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='493' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='637' u='w' c='redisReaderGetReply'/>

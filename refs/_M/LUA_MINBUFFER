@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/llimits.h' l='105'/>
+<use f='redis/deps/lua/src/lgc.c' l='438' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='76' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='76' u='c'/>

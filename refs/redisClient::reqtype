@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='525' type='int'/>
+<offset>704</offset>
+<use f='redis/src/networking.c' l='92' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='904' u='w' c='resetClient'/>
+<use f='redis/src/networking.c' l='1140' u='r' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1142' u='w' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1144' u='w' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1148' u='r' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1150' u='r' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1182' u='r' c='readQueryFromClient'/>

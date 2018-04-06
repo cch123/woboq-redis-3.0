@@ -1,0 +1,21 @@
+<def f='redis/src/sentinel.c' l='3873' ll='3883' type='void sentinelCheckTiltCondition()'/>
+<use f='redis/src/sentinel.c' l='3886' u='c' c='sentinelTimer'/>
+<doc f='redis/src/sentinel.c' l='3854'>/* This function checks if we need to enter the TITL mode.
+ *
+ * The TILT mode is entered if we detect that between two invocations of the
+ * timer interrupt, a negative amount of time, or too much time has passed.
+ * Note that we expect that more or less just 100 milliseconds will pass
+ * if everything is fine. However we&apos;ll see a negative number or a
+ * difference bigger than SENTINEL_TILT_TRIGGER milliseconds if one of the
+ * following conditions happen:
+ *
+ * 1) The Sentiel process for some time is blocked, for every kind of
+ * random reason: the load is huge, the computer was frozen for some time
+ * in I/O or alike, the process was stopped by a signal. Everything.
+ * 2) The system clock was altered significantly.
+ *
+ * Under both this conditions we&apos;ll see everything as timed out and failing
+ * without good reasons. Instead we enter the TILT mode and wait
+ * for SENTINEL_TILT_PERIOD to elapse before starting to act again.
+ *
+ * During TILT time we still collect information, we just do not act. */</doc>

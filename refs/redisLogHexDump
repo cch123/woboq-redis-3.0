@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1554' type='void redisLogHexDump(int level, char * descr, void * value, size_t len)'/>
+<def f='redis/src/debug.c' l='874' ll='894' type='void redisLogHexDump(int level, char * descr, void * value, size_t len)'/>
+<doc f='redis/src/debug.c' l='872'>/* ==================== Logging functions for debugging ===================== */</doc>
+<use f='redis/src/t_hash.c' l='433' u='c' c='hashTypeConvertZiplist'/>

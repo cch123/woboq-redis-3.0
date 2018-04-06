@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1285' type='robj * hashTypeCurrentObject(hashTypeIterator * hi, int what)'/>
+<use f='redis/src/debug.c' l='233' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='236' u='c' c='computeDatasetDigest'/>
+<def f='redis/src/t_hash.c' l='373' ll='394' type='robj * hashTypeCurrentObject(hashTypeIterator * hi, int what)'/>
+<use f='redis/src/t_hash.c' l='427' u='c' c='hashTypeConvertZiplist'/>
+<use f='redis/src/t_hash.c' l='429' u='c' c='hashTypeConvertZiplist'/>
+<doc f='redis/src/t_hash.c' l='370'>/* A non copy-on-write friendly but higher level version of hashTypeCurrent*()
+ * that returns an object with incremented refcount (or a new object). It is up
+ * to the caller to decrRefCount() the object if no reference is retained. */</doc>

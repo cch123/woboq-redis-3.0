@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1386' type='void delCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='280' ll='294' type='void delCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='131' u='r'/>
+<use f='redis/src/redis.c' l='131' u='r'/>
+<use f='redis/src/redis.c' l='131' u='r'/>
+<use f='redis/src/redis.c' l='131' u='r'/>

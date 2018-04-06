@@ -1,0 +1,8 @@
+<def f='redis/deps/lua/src/lobject.h' l='49' ll='51'/>
+<size>16</size>
+<doc f='redis/deps/lua/src/lobject.h' l='46'>/*
+** Common header in struct form
+*/</doc>
+<mbr r='GCheader::next' o='0' t='GCObject *'/>
+<mbr r='GCheader::tt' o='64' t='lu_byte'/>
+<mbr r='GCheader::marked' o='72' t='lu_byte'/>

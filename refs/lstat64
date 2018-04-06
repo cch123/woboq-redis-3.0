@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='266' type='int lstat(const char *restrict __file, struct stat *restrict __buf)'/>
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='275' type='int lstat64(const char *restrict __file, struct stat64 *restrict __buf)'/>

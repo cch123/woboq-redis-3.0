@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1455' type='void roleCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='250' u='r'/>
+<use f='redis/src/redis.c' l='250' u='r'/>
+<use f='redis/src/redis.c' l='250' u='r'/>
+<use f='redis/src/redis.c' l='250' u='r'/>
+<def f='redis/src/replication.c' l='1514' ll='1558' type='void roleCommand(redisClient * c)'/>
+<doc f='redis/src/replication.c' l='1511'>/* ROLE command: provide information about the role of the instance
+ * (master or slave) and additional information related to replication
+ * in an easy to process format. */</doc>

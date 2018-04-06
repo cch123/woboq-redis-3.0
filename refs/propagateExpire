@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1310' type='void propagateExpire(redisDb * db, robj * key)'/>
+<def f='redis/src/db.c' l='806' ll='820' type='void propagateExpire(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='852' u='c' c='expireIfNeeded'/>
+<doc f='redis/src/db.c' l='798'>/* Propagate expires into slaves and the AOF file.
+ * When a key expires in the master, a DEL operation for this key is sent
+ * to all the slaves and the AOF file if enabled.
+ *
+ * This way the key expiry is centralized in one place, and since both
+ * AOF and the master-&gt;slave link guarantee operation ordering, everything
+ * will be consistent even if we allow write operations against expiring
+ * keys. */</doc>
+<use f='redis/src/redis.c' l='722' u='c' c='activeExpireCycleTryExpire'/>
+<use f='redis/src/redis.c' l='3310' u='c' c='freeMemoryIfNeeded'/>

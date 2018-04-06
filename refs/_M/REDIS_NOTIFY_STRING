@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='380'/>
+<use f='redis/src/bitops.c' l='255' u='c'/>
+<use f='redis/src/bitops.c' l='451' u='c'/>
+<use f='redis/src/hyperloglog.c' l='1187' u='c'/>
+<use f='redis/src/hyperloglog.c' l='1340' u='c'/>
+<use f='redis/src/notify.c' l='48' u='c'/>
+<use f='redis/src/notify.c' l='75' u='c'/>
+<use f='redis/src/t_string.c' l='87' u='c'/>
+<use f='redis/src/t_string.c' l='168' u='c'/>
+<use f='redis/src/t_string.c' l='225' u='c'/>
+<use f='redis/src/t_string.c' l='311' u='c'/>
+<use f='redis/src/t_string.c' l='356' u='c'/>
+<use f='redis/src/t_string.c' l='406' u='c'/>
+<use f='redis/src/t_string.c' l='447' u='c'/>

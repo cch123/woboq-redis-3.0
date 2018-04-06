@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='143' type='struct UpVal'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/ldo.c' l='131' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ldo.c' l='131' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lfunc.c' l='58' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lfunc.c' l='99' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='84' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='382' macro='1' u='a'/>

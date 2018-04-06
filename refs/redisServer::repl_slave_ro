@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='831' type='int'/>
+<offset>16928</offset>
+<doc f='redis/src/redis.h' l='831'>/* Slave is read only? */</doc>
+<use f='redis/src/config.c' l='303' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='787' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1087' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1817' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1499' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2238' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2909' u='r' c='genRedisInfoString'/>
+<use f='redis/src/scripting.c' l='328' u='r' c='luaRedisGenericCommand'/>

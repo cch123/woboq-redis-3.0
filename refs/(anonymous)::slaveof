@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.h' l='234' type='char [40]'/>
+<use f='redis/src/cluster.c' l='1748' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1749' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1755' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2120' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2122' u='r' c='clusterBuildMessageHdr'/>
+<offset>17024</offset>

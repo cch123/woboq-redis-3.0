@@ -1,0 +1,5 @@
+<def f='redis/src/rdb.c' l='166' ll='191' type='robj * rdbLoadIntegerObject(rio * rdb, int enctype, int encode)'/>
+<use f='redis/src/rdb.c' l='344' u='c' c='rdbGenericLoadStringObject'/>
+<doc f='redis/src/rdb.c' l='163'>/* Loads an integer-encoded object with the specified encoding type &quot;enctype&quot;.
+ * If the &quot;encode&quot; argument is set the function may return an integer-encoded
+ * string object, otherwise it always returns a raw string object. */</doc>

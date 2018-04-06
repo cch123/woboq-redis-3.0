@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='323'/>
+<use f='redis/deps/lua/src/ldblib.c' l='229' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='239' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='68' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='392' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='393' u='c'/>

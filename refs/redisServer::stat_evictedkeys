@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='701' type='long long'/>
+<offset>7040</offset>
+<doc f='redis/src/redis.h' l='701'>/* Number of evicted keys (maxmemory) */</doc>
+<use f='redis/src/redis.c' l='1725' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2849' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3327' u='w' c='freeMemoryIfNeeded'/>

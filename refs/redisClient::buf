@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='559' type='char [16384]'/>
+<offset>3104</offset>
+<use f='redis/src/networking.c' l='205' u='r' c='_addReplyToBuffer'/>
+<use f='redis/src/networking.c' l='216' u='r' c='_addReplyToBuffer'/>
+<use f='redis/src/networking.c' l='337' u='r' c='addReply'/>
+<use f='redis/src/networking.c' l='578' u='r' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='578' u='r' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='826' u='r' c='sendReplyToClient'/>
+<use f='redis/src/scripting.c' l='386' u='w' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='387' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='390' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='407' u='r' c='luaRedisGenericCommand'/>

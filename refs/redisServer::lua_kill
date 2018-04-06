@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='897' type='int'/>
+<offset>19936</offset>
+<doc f='redis/src/redis.h' l='897'>/* Kill the script if true. */</doc>
+<use f='redis/src/scripting.c' l='561' u='r' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='1017' u='w' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1193' u='w' c='scriptCommand'/>

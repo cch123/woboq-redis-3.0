@@ -1,0 +1,12 @@
+<dec f='redis/src/sentinel.c' l='330' type='void sentinelKillLink(sentinelRedisInstance * ri, redisAsyncContext * c)'/>
+<use f='redis/src/sentinel.c' l='1008' u='c' c='releaseSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1009' u='c' c='releaseSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1173' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='1174' u='c' c='sentinelResetMaster'/>
+<def f='redis/src/sentinel.c' l='1620' ll='1629' type='void sentinelKillLink(sentinelRedisInstance * ri, redisAsyncContext * c)'/>
+<use f='redis/src/sentinel.c' l='1715' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1737' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1757' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='2997' u='c' c='sentinelCheckSubjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3009' u='c' c='sentinelCheckSubjectivelyDown'/>
+<doc f='redis/src/sentinel.c' l='1619'>/* Completely disconnect a hiredis link from an instance. */</doc>

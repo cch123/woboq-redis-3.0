@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1015' type='uint64_t crc64(uint64_t crc, const unsigned char * s, uint64_t l)'/>
+<use f='redis/src/cluster.c' l='4327' u='c' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4351' u='c' c='verifyDumpPayload'/>
+<def f='redis/src/crc64.c' l='173' ll='181' type='uint64_t crc64(uint64_t crc, const unsigned char * s, uint64_t l)'/>
+<dec f='redis/src/crc64.h' l='6' type='uint64_t crc64(uint64_t crc, const unsigned char * s, uint64_t l)'/>
+<use f='redis/src/debug.c' l='767' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='783' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='793' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/release.c' l='51' u='c' c='redisBuildId'/>
+<use f='redis/src/rio.c' l='290' u='c' c='rioGenericUpdateChecksum'/>

@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/lua.h' l='150' type='size_t lua_objlen(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='361' ll='376' macro='1' type='size_t lua_objlen(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='414' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='416' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='496' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='346' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='302' u='c' c='read_line'/>
+<use f='redis/deps/lua/src/liolib.c' l='330' u='c' c='read_chars'/>
+<use f='redis/deps/lua/src/ltablib.c' l='24' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='73' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='91' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='119' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='151' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='257' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='380' u='c' c='mp_encode_lua_table_as_array'/>
+<use f='redis/src/scripting.c' l='807' macro='1' u='c'/>

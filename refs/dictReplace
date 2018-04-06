@@ -1,0 +1,16 @@
+<dec f='redis/deps/hiredis/dict.h' l='118' type='int dictReplace(dict * ht, void * key, void * val)'/>
+<def f='redis/deps/hiredis/dict.c' l='160' ll='179' type='int dictReplace(dict * ht, void * key, void * val)'/>
+<use f='redis/deps/hiredis/async.c' l='601' u='c' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='603' u='c' c='__redisAsyncCommand'/>
+<doc f='redis/deps/hiredis/dict.c' l='156'>/* Add an element, discarding the old if the key already exists.
+ * Return 1 if the key was added from scratch, 0 if there was already an
+ * element with such key and dictReplace() just performed a value update
+ * operation. */</doc>
+<dec f='redis/src/dict.h' l='154' type='int dictReplace(dict * d, void * key, void * val)'/>
+<use f='redis/src/db.c' l='111' u='c' c='dbOverwrite'/>
+<def f='redis/src/dict.c' l='375' ll='394' type='int dictReplace(dict * d, void * key, void * val)'/>
+<doc f='redis/src/dict.c' l='371'>/* Add an element, discarding the old if the key already exists.
+ * Return 1 if the key was added from scratch, 0 if there was already an
+ * element with such key and dictReplace() just performed a value update
+ * operation. */</doc>
+<use f='redis/src/t_hash.c' l='210' u='c' c='hashTypeSet'/>

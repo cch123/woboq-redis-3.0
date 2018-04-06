@@ -1,0 +1,49 @@
+<dec f='redis/deps/hiredis/dict.h' l='122' type='dictIterator * dictGetIterator(dict * ht)'/>
+<def f='redis/deps/hiredis/dict.c' l='258' ll='266' type='dictIterator * dictGetIterator(dict * ht)'/>
+<use f='redis/deps/hiredis/async.c' l='279' u='c' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='285' u='c' c='__redisAsyncFree'/>
+<dec f='redis/src/dict.h' l='162' type='dictIterator * dictGetIterator(dict * d)'/>
+<use f='redis/src/aof.c' l='848' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='914' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/cluster.c' l='4982' u='c' c='clusterRedirectBlockedClientIfNeeded'/>
+<use f='redis/src/config.c' l='1686' u='c' c='rewriteConfigRemoveOrphaned'/>
+<use f='redis/src/debug.c' l='127' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='207' u='c' c='computeDatasetDigest'/>
+<def f='redis/src/dict.c' l='555' ll='566' type='dictIterator * dictGetIterator(dict * d)'/>
+<use f='redis/src/dict.c' l='569' u='c' c='dictGetSafeIterator'/>
+<use f='redis/src/latency.c' l='500' u='c' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/pubsub.c' l='333' u='c' c='pubsubCommand'/>
+<use f='redis/src/rdb.c' l='514' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='543' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='571' u='c' c='rdbSaveObject'/>
+<use f='redis/src/redis.c' l='2529' u='c' c='commandCommand'/>
+<use f='redis/src/sentinel.c' l='595' u='c' c='sentinelGenerateInitialMonitorEvents'/>
+<use f='redis/src/sentinel.c' l='1101' u='c' c='getSentinelRedisInstanceByAddrAndRunID'/>
+<use f='redis/src/sentinel.c' l='1133' u='c' c='sentinelAddFlagsToDictOfRedisInstances'/>
+<use f='redis/src/sentinel.c' l='1147' u='c' c='sentinelDelFlagsToDictOfRedisInstances'/>
+<use f='redis/src/sentinel.c' l='1204' u='c' c='sentinelResetMastersByPattern'/>
+<use f='redis/src/sentinel.c' l='1238' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1324' u='c' c='sentinelPropagateDownAfterPeriod'/>
+<use f='redis/src/sentinel.c' l='1459' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1533' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1555' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='2592' u='c' c='addReplyDictOfRedisInstances'/>
+<use f='redis/src/sentinel.c' l='2828' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sentinel.c' l='2862' u='c' c='sentinelRoleCommand'/>
+<use f='redis/src/sentinel.c' l='3054' u='c' c='sentinelCheckObjectivelyDown'/>
+<use f='redis/src/sentinel.c' l='3129' u='c' c='sentinelAskMasterStateToOtherSentinels'/>
+<use f='redis/src/sentinel.c' l='3247' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/sentinel.c' l='3258' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/sentinel.c' l='3490' u='c' c='sentinelSelectSlave'/>
+<use f='redis/src/sentinel.c' l='3621' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3651' u='c' c='sentinelFailoverDetectEnd'/>
+<use f='redis/src/sentinel.c' l='3678' u='c' c='sentinelFailoverReconfNextSlave'/>
+<use f='redis/src/sentinel.c' l='3687' u='c' c='sentinelFailoverReconfNextSlave'/>
+<use f='redis/src/sentinel.c' l='3836' u='c' c='sentinelHandleDictOfRedisInstances'/>
+<use f='redis/src/sort.c' l='412' u='c' c='sortCommand'/>
+<use f='redis/src/t_hash.c' l='285' u='c' c='hashTypeInitIterator'/>
+<use f='redis/src/t_list.c' l='816' u='c' c='unblockClientWaitingData'/>
+<use f='redis/src/t_set.c' l='119' u='c' c='setTypeInitIterator'/>
+<use f='redis/src/t_set.c' l='546' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_zset.c' l='1563' u='c' c='zuiInitIterator'/>
+<use f='redis/src/t_zset.c' l='2034' u='c' c='zunionInterGenericCommand'/>

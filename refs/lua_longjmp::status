@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/ldo.c' l='47' type='volatile int'/>
+<use f='redis/deps/lua/src/ldo.c' l='96' u='w' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='113' u='w' c='luaD_rawrunprotected'/>
+<use f='redis/deps/lua/src/ldo.c' l='120' u='r' c='luaD_rawrunprotected'/>
+<offset>1664</offset>
+<doc f='redis/deps/lua/src/ldo.c' l='47'>/* error code */</doc>

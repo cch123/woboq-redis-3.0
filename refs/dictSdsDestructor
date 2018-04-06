@@ -1,0 +1,20 @@
+<dec f='redis/src/config.c' l='1247' type='void dictSdsDestructor(void * privdata, void * val)'/>
+<use f='redis/src/config.c' l='1259'/>
+<use f='redis/src/config.c' l='1259'/>
+<use f='redis/src/config.c' l='1268'/>
+<use f='redis/src/config.c' l='1268'/>
+<def f='redis/src/redis.c' l='456' ll='461' type='void dictSdsDestructor(void * privdata, void * val)'/>
+<use f='redis/src/redis.c' l='550'/>
+<use f='redis/src/redis.c' l='550'/>
+<use f='redis/src/redis.c' l='560'/>
+<use f='redis/src/redis.c' l='560'/>
+<use f='redis/src/redis.c' l='580'/>
+<use f='redis/src/redis.c' l='580'/>
+<use f='redis/src/redis.c' l='613'/>
+<use f='redis/src/redis.c' l='613'/>
+<use f='redis/src/redis.c' l='625'/>
+<use f='redis/src/redis.c' l='625'/>
+<use f='redis/src/redis.c' l='635'/>
+<use f='redis/src/redis.c' l='635'/>
+<use f='redis/src/redis.c' l='647'/>
+<use f='redis/src/redis.c' l='647'/>

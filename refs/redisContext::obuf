@@ -1,0 +1,17 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='171' type='char *'/>
+<use f='redis/deps/hiredis/async.c' l='410' u='r' c='redisProcessCallbacks'/>
+<offset>1152</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='171'>/* Write buffer */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='998' u='w' c='redisContextInit'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1006' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1007' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1178' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1179' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1179' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1188' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1189' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1190' u='w' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1192' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1196' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1250' u='r' c='__redisAppendCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1256' u='w' c='__redisAppendCommand'/>

@@ -1,0 +1,30 @@
+<dec f='redis/deps/hiredis/dict.h' l='66' type='void *'/>
+<use f='redis/deps/hiredis/dict.c' l='83' u='w' c='_dictInit'/>
+<use f='redis/deps/hiredis/dict.c' l='97' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='150' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='151' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='176' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='177' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='193' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='200' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='201' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='223' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='224' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='251' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='332' macro='1' u='r'/>
+<offset>320</offset>
+<dec f='redis/src/dict.h' l='78' type='void *'/>
+<offset>64</offset>
+<use f='redis/src/dict.c' l='184' u='w' c='_dictInit'/>
+<use f='redis/src/dict.c' l='327' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='367' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='391' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='392' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='424' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='431' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='432' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='462' u='r' c='_dictClear'/>
+<use f='redis/src/dict.c' l='467' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='468' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='501' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='978' macro='1' u='r'/>

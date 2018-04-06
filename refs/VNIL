@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.h' l='21' type='1'/>
+<use f='redis/deps/lua/src/lcode.c' l='346' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='450' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='452' u='r' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='567' c='luaK_goiffalse'/>
+<use f='redis/deps/lua/src/lcode.c' l='589' c='codenot'/>
+<use f='redis/deps/lua/src/lparser.c' l='741' u='r' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='969' u='r' c='cond'/>

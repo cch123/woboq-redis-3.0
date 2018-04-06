@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.h' l='60' type='Table *'/>
+<use f='redis/deps/lua/src/lcode.c' l='231' u='r' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='275' u='r' c='nilK'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='60'>/* table to find (and reuse) elements in `k&apos; */</doc>
+<use f='redis/deps/lua/src/llex.c' l='120' u='r' c='luaX_newstring'/>
+<use f='redis/deps/lua/src/lparser.c' l='347' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='349' u='r' c='open_func'/>

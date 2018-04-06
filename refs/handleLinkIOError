@@ -1,0 +1,10 @@
+<def f='redis/src/cluster.c' l='1969' ll='1971' type='void handleLinkIOError(clusterLink * link)'/>
+<use f='redis/src/cluster.c' l='1986' u='c' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='2024' u='c' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2039' u='c' c='clusterReadHandler'/>
+<doc f='redis/src/cluster.c' l='1963'>/* This function is called when we detect the link with this node is lost.
+   We set the node as no longer connected. The Cluster Cron will detect
+   this connection and will try to get it connected again.
+
+   Instead if the node is a temporary node used to accept a query, we
+   completely free the node on error. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='82' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='652' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='3053' u='r' c='clusterCron'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='82'>/* Node object creation time. */</doc>

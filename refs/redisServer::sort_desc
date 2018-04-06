@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='855' type='int'/>
+<offset>18176</offset>
+<doc f='redis/src/redis.h' l='853'>/* Sort parameters - qsort_r() is only available under BSD so we
+     * have to take this state global, in order to pass it to sortCompare() */</doc>
+<use f='redis/src/sort.c' l='184' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='469' u='w' c='sortCommand'/>

@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lmem.h' l='26'/>
+<use f='redis/deps/lua/src/lfunc.c' l='142' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='143' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='144' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='145' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='146' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='147' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='62' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='63' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='111' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='44' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='323' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='376' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='377' u='c'/>

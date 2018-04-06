@@ -1,0 +1,4 @@
+<dec f='redis/src/bio.h' l='32' type='void bioCreateBackgroundJob(int type, void * arg1, void * arg2, void * arg3)'/>
+<use f='redis/src/aof.c' l='201' u='c' c='aof_background_fsync'/>
+<use f='redis/src/aof.c' l='1480' u='c' c='backgroundRewriteDoneHandler'/>
+<def f='redis/src/bio.c' l='126' ll='138' type='void bioCreateBackgroundJob(int type, void * arg1, void * arg2, void * arg3)'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1346' type='unsigned short crc16(const char * buf, int len)'/>
+<use f='redis/src/cluster.c' l='620' u='c' c='keyHashSlot'/>
+<use f='redis/src/cluster.c' l='627' u='c' c='keyHashSlot'/>
+<use f='redis/src/cluster.c' l='631' u='c' c='keyHashSlot'/>
+<def f='redis/src/crc16.c' l='82' ll='88' type='unsigned short crc16(const char * buf, int len)'/>

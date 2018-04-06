@@ -1,0 +1,6 @@
+<dec f='redis/src/rdb.h' l='107' type='int rdbSaveObject(rio * rdb, robj * o)'/>
+<use f='redis/src/cluster.c' l='4312' u='c' c='createDumpPayload'/>
+<def f='redis/src/rdb.c' l='479' ll='596' type='int rdbSaveObject(rio * rdb, robj * o)'/>
+<use f='redis/src/rdb.c' l='603' u='c' c='rdbSavedObjectLen'/>
+<use f='redis/src/rdb.c' l='626' u='c' c='rdbSaveKeyValuePair'/>
+<doc f='redis/src/rdb.c' l='478'>/* Save a Redis object. Returns -1 on error, number of bytes written on success. */</doc>

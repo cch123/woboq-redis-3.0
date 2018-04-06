@@ -1,0 +1,4 @@
+<dec f='redis/src/anet.h' l='55' type='int anetRead(int fd, char * buf, int count)'/>
+<def f='redis/src/anet.c' l='392' ll='403' type='int anetRead(int fd, char * buf, int count)'/>
+<doc f='redis/src/anet.c' l='390'>/* Like read(2) but make sure &apos;count&apos; is read before to return
+ * (unless error or EOF condition is encountered) */</doc>

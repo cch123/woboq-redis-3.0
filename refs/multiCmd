@@ -1,0 +1,6 @@
+<def f='redis/src/redis.h' l='465' ll='469'/>
+<size>24</size>
+<doc f='redis/src/redis.h' l='464'>/* Client MULTI/EXEC state */</doc>
+<mbr r='multiCmd::argv' o='0' t='robj **'/>
+<mbr r='multiCmd::argc' o='64' t='int'/>
+<mbr r='multiCmd::cmd' o='128' t='struct redisCommand *'/>

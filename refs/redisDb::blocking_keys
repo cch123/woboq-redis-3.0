@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='456' type='dict *'/>
+<offset>128</offset>
+<doc f='redis/src/redis.h' l='456'>/* Keys with clients waiting for data (BLPOP) */</doc>
+<use f='redis/src/redis.c' l='1802' u='w' c='initServer'/>
+<use f='redis/src/t_list.c' l='791' u='r' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='797' u='r' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='822' u='r' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='827' u='r' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='850' u='r' c='signalListAsReady'/>
+<use f='redis/src/t_list.c' l='975' u='r' c='handleClientsBlockedOnLists'/>

@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='167' ll='185' type='void zslDeleteNode(zskiplist * zsl, zskiplistNode * x, zskiplistNode ** update)'/>
+<use f='redis/src/t_zset.c' l='205' u='c' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='314' u='c' c='zslDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='343' u='c' c='zslDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='372' u='c' c='zslDeleteRangeByRank'/>
+<doc f='redis/src/t_zset.c' l='166'>/* Internal function used by zslDelete, zslDeleteByScore and zslDeleteByRank */</doc>

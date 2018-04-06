@@ -1,0 +1,15 @@
+<dec f='redis/src/cluster.c' l='50' type='clusterNode * createClusterNode(char * nodename, int flags)'/>
+<use f='redis/src/cluster.c' l='164' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='208' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='240' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='424' u='c' c='clusterInit'/>
+<def f='redis/src/cluster.c' l='645' ll='671' type='clusterNode * createClusterNode(char * nodename, int flags)'/>
+<use f='redis/src/cluster.c' l='1278' u='c' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1650' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='638'>/* Create a new cluster node, with the specified flags.
+ * If &quot;nodename&quot; is NULL this is considered a first handshake and a random
+ * node name is assigned to this node (it will be fixed later when we&apos;ll
+ * receive the first pong).
+ *
+ * The node is created and returned to the user, but it is not automatically
+ * added to the nodes hash table. */</doc>

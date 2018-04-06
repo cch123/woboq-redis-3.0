@@ -1,0 +1,23 @@
+<dec f='redis/src/intset.h' l='37' type='uint32_t'/>
+<offset>32</offset>
+<use f='redis/src/intset.c' l='100' u='w' c='intsetNew'/>
+<use f='redis/src/intset.c' l='116' u='r' c='intsetSearch'/>
+<use f='redis/src/intset.c' l='120' u='r' c='intsetSearch'/>
+<use f='redis/src/intset.c' l='126' u='r' c='intsetSearch'/>
+<use f='redis/src/intset.c' l='127' u='r' c='intsetSearch'/>
+<use f='redis/src/intset.c' l='160' u='r' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='165' u='r' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='177' u='r' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='178' u='w' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='178' u='r' c='intsetUpgradeAndAdd'/>
+<use f='redis/src/intset.c' l='184' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='224' u='r' c='intsetAdd'/>
+<use f='redis/src/intset.c' l='225' u='r' c='intsetAdd'/>
+<use f='redis/src/intset.c' l='229' u='w' c='intsetAdd'/>
+<use f='redis/src/intset.c' l='229' u='r' c='intsetAdd'/>
+<use f='redis/src/intset.c' l='240' u='r' c='intsetRemove'/>
+<use f='redis/src/intset.c' l='248' u='w' c='intsetRemove'/>
+<use f='redis/src/intset.c' l='261' u='r' c='intsetRandom'/>
+<use f='redis/src/intset.c' l='267' u='r' c='intsetGet'/>
+<use f='redis/src/intset.c' l='276' u='r' c='intsetLen'/>
+<use f='redis/src/intset.c' l='281' u='r' c='intsetBlobLen'/>

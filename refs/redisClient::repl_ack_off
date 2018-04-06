@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='544' type='long long'/>
+<offset>1664</offset>
+<doc f='redis/src/redis.h' l='544'>/* replication ack offset, if this is a slave */</doc>
+<use f='redis/src/networking.c' l='105' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='2959' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='625' u='r' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='626' u='w' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='1535' u='r' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1832' u='r' c='replicationCountAcksByOffset'/>

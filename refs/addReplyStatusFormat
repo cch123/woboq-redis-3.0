@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1071' type='void addReplyStatusFormat(redisClient * c, const char * fmt)'/>
+<use f='redis/src/debug.c' l='298' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='320' u='c' c='debugCommand'/>
+<def f='redis/src/networking.c' l='412' ll='419' type='void addReplyStatusFormat(redisClient * c, const char * fmt)'/>

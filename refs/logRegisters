@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='528' ll='655' type='void logRegisters(ucontext_t * uc)'/>
+<use f='redis/src/debug.c' l='838' u='c' c='sigsegvHandler'/>

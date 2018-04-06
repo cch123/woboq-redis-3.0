@@ -1,0 +1,12 @@
+<dec f='redis/src/ae.h' l='89' type='int'/>
+<use f='redis/src/ae_epoll.c' l='43' u='r' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='114' u='r' c='aeApiPoll'/>
+<use f='redis/src/ae.c' l='71' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='96' u='r' c='aeGetSetSize'/>
+<use f='redis/src/ae.c' l='109' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='115' u='w' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='138' u='r' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='157' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='174' u='r' c='aeGetFileEvents'/>
+<offset>32</offset>
+<doc f='redis/src/ae.h' l='89'>/* max number of file descriptors tracked */</doc>

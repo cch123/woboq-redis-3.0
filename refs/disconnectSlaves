@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1062' type='void disconnectSlaves()'/>
+<def f='redis/src/networking.c' l='662' ll='667' type='void disconnectSlaves()'/>
+<use f='redis/src/networking.c' l='680' u='c' c='replicationHandleMasterDisconnection'/>
+<doc f='redis/src/networking.c' l='659'>/* Close all the slaves connections. This is useful in chained replication
+ * when we resync with our own master and want to force all our slaves to
+ * resync with us as well. */</doc>
+<use f='redis/src/replication.c' l='1443' u='c' c='replicationSetMaster'/>

@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='106' type='double ldexp(double __x, int __exponent)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='147' u='c' c='math_ldexp'/>

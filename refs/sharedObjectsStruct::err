@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='568' type='robj *'/>
+<use f='redis/src/aof.c' l='1332' u='r' c='bgrewriteaofCommand'/>
+<offset>128</offset>
+<use f='redis/src/debug.c' l='267' u='r' c='debugCommand'/>
+<use f='redis/src/debug.c' l='280' u='r' c='debugCommand'/>
+<use f='redis/src/rdb.c' l='1532' u='r' c='saveCommand'/>
+<use f='redis/src/rdb.c' l='1544' u='r' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='1312' u='w' c='createSharedObjects'/>

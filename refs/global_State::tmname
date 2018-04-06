@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lstate.h' l='93' type='TString *[17]'/>
+<offset>2368</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='93'>/* array with tag-method names */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='136' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltm.c' l='40' u='w' c='luaT_init'/>
+<use f='redis/deps/lua/src/ltm.c' l='41' u='r' c='luaT_init'/>
+<use f='redis/deps/lua/src/ltm.c' l='73' u='r' c='luaT_gettmbyobj'/>
+<use f='redis/deps/lua/src/lvm.c' l='116' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='178' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='182' macro='1' u='r'/>

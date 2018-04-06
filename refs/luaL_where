@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='68' type='void luaL_where(lua_State * L, int lvl)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='73' ll='83' macro='1' type='void luaL_where(lua_State * L, int level)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='89' u='c' c='luaL_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='85' u='c' c='luaB_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='566' u='c' c='luaB_auxwrap'/>

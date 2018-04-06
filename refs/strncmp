@@ -1,0 +1,18 @@
+<dec f='include/string.h' l='143' type='int strncmp(const char * __s1, const char * __s2, size_t __n)'/>
+<doc f='include/string.h' l='142'>/* Compare N characters of S1 and S2.  */</doc>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1064' u='c' c='json_next_token'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1069' u='c' c='json_next_token'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1074' u='c' c='json_next_token'/>
+<use f='redis/src/redis-cli.c' l='586' u='c' c='cliReadReply'/>
+<use f='redis/src/replication.c' l='911' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1151' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1184' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1197' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1278' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1279' u='c' c='syncWithMaster'/>
+<use f='redis/src/sentinel.c' l='1804' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2065' u='c' c='sentinelPingReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2066' u='c' c='sentinelPingReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2067' u='c' c='sentinelPingReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2074' u='c' c='sentinelPingReplyCallback'/>
+<use f='redis/src/zmalloc.c' l='346' u='c' c='zmalloc_get_smap_bytes_by_field'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1017' type='size_t redisPopcount(void * s, long count)'/>
+<def f='redis/src/bitops.c' l='61' ll='113' type='size_t redisPopcount(void * s, long count)'/>
+<use f='redis/src/bitops.c' l='511' u='c' c='bitcountCommand'/>
+<doc f='redis/src/bitops.c' l='58'>/* Count number of bits set in the binary array pointed by &apos;s&apos; and long
+ * &apos;count&apos; bytes. The implementation of this function is required to
+ * work with a input string length up to 512 MB. */</doc>

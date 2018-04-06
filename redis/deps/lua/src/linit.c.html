@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>linit.c source code [redis/deps/lua/src/linit.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/linit.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='linit.c.html'>linit.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: linit.c,v 1.14.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Initialization of libraries for lua.c</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/linit_c" data-ref="_M/linit_c">linit_c</dfn></u></td></tr>
+<tr><th id="9">9</th><td><u>#define <dfn class="macro" id="_M/LUA_LIB" data-ref="_M/LUA_LIB">LUA_LIB</dfn></u></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lua.h.html">"lua.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="lualib.h.html">"lualib.h"</a></u></td></tr>
+<tr><th id="14">14</th><td><u>#include <a href="lauxlib.h.html">"lauxlib.h"</a></u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td></td></tr>
+<tr><th id="17">17</th><td><em>static</em> <em>const</em> <a class="typedef" href="lauxlib.h.html#luaL_Reg" title='luaL_Reg' data-type='struct luaL_Reg' data-ref="luaL_Reg">luaL_Reg</a> <dfn class="tu decl def" id="lualibs" title='lualibs' data-type='const luaL_Reg [9]' data-ref="lualibs">lualibs</dfn>[] = {</td></tr>
+<tr><th id="18">18</th><td>  {<q>""</q>, <a class="ref fn" href="lualib.h.html#luaopen_base" title='luaopen_base' data-ref="luaopen_base">luaopen_base</a>},</td></tr>
+<tr><th id="19">19</th><td>  {<a class="macro" href="lualib.h.html#39" title="&quot;package&quot;" data-ref="_M/LUA_LOADLIBNAME">LUA_LOADLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_package" title='luaopen_package' data-ref="luaopen_package">luaopen_package</a>},</td></tr>
+<tr><th id="20">20</th><td>  {<a class="macro" href="lualib.h.html#21" title="&quot;table&quot;" data-ref="_M/LUA_TABLIBNAME">LUA_TABLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_table" title='luaopen_table' data-ref="luaopen_table">luaopen_table</a>},</td></tr>
+<tr><th id="21">21</th><td>  {<a class="macro" href="lualib.h.html#24" title="&quot;io&quot;" data-ref="_M/LUA_IOLIBNAME">LUA_IOLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_io" title='luaopen_io' data-ref="luaopen_io">luaopen_io</a>},</td></tr>
+<tr><th id="22">22</th><td>  {<a class="macro" href="lualib.h.html#27" title="&quot;os&quot;" data-ref="_M/LUA_OSLIBNAME">LUA_OSLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_os" title='luaopen_os' data-ref="luaopen_os">luaopen_os</a>},</td></tr>
+<tr><th id="23">23</th><td>  {<a class="macro" href="lualib.h.html#30" title="&quot;string&quot;" data-ref="_M/LUA_STRLIBNAME">LUA_STRLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_string" title='luaopen_string' data-ref="luaopen_string">luaopen_string</a>},</td></tr>
+<tr><th id="24">24</th><td>  {<a class="macro" href="lualib.h.html#33" title="&quot;math&quot;" data-ref="_M/LUA_MATHLIBNAME">LUA_MATHLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_math" title='luaopen_math' data-ref="luaopen_math">luaopen_math</a>},</td></tr>
+<tr><th id="25">25</th><td>  {<a class="macro" href="lualib.h.html#36" title="&quot;debug&quot;" data-ref="_M/LUA_DBLIBNAME">LUA_DBLIBNAME</a>, <a class="ref fn" href="lualib.h.html#luaopen_debug" title='luaopen_debug' data-ref="luaopen_debug">luaopen_debug</a>},</td></tr>
+<tr><th id="26">26</th><td>  {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="27">27</th><td>};</td></tr>
+<tr><th id="28">28</th><td></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><a class="macro" href="luaconf.h.html#169" title="extern" data-ref="_M/LUALIB_API">LUALIB_API</a> <em>void</em> <dfn class="decl def fn" id="luaL_openlibs" title='luaL_openlibs' data-ref="luaL_openlibs">luaL_openlibs</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="1L" title='L' data-type='lua_State *' data-ref="1L">L</dfn>) {</td></tr>
+<tr><th id="31">31</th><td>  <em>const</em> <a class="typedef" href="lauxlib.h.html#luaL_Reg" title='luaL_Reg' data-type='struct luaL_Reg' data-ref="luaL_Reg">luaL_Reg</a> *<dfn class="local col2 decl" id="2lib" title='lib' data-type='const luaL_Reg *' data-ref="2lib">lib</dfn> = <a class="tu ref" href="#lualibs" title='lualibs' data-use='r' data-ref="lualibs">lualibs</a>;</td></tr>
+<tr><th id="32">32</th><td>  <b>for</b> (; <a class="local col2 ref" href="#2lib" title='lib' data-ref="2lib">lib</a>-&gt;<a class="ref field" href="lauxlib.h.html#luaL_Reg::func" title='luaL_Reg::func' data-ref="luaL_Reg::func">func</a>; <a class="local col2 ref" href="#2lib" title='lib' data-ref="2lib">lib</a>++) {</td></tr>
+<tr><th id="33">33</th><td>    <a class="macro" href="lua.h.html#260" title="lua_pushcclosure(L, (lib-&gt;func), 0)" data-ref="_M/lua_pushcfunction">lua_pushcfunction</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <a class="local col2 ref" href="#2lib" title='lib' data-ref="2lib">lib</a>-&gt;<a class="ref field" href="lauxlib.h.html#luaL_Reg::func" title='luaL_Reg::func' data-ref="luaL_Reg::func">func</a>);</td></tr>
+<tr><th id="34">34</th><td>    <a class="ref fn" href="lua.h.html#lua_pushstring" title='lua_pushstring' data-ref="lua_pushstring">lua_pushstring</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <a class="local col2 ref" href="#2lib" title='lib' data-ref="2lib">lib</a>-&gt;<a class="ref field" href="lauxlib.h.html#luaL_Reg::name" title='luaL_Reg::name' data-ref="luaL_Reg::name">name</a>);</td></tr>
+<tr><th id="35">35</th><td>    <a class="ref fn" href="lua.h.html#lua_call" title='lua_call' data-ref="lua_call">lua_call</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <var>1</var>, <var>0</var>);</td></tr>
+<tr><th id="36">36</th><td>  }</td></tr>
+<tr><th id="37">37</th><td>}</td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

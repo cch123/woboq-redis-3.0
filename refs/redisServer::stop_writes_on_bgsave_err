@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='785' type='int'/>
+<offset>14848</offset>
+<doc f='redis/src/redis.h' l='785'>/* Don&apos;t allow writes if can&apos;t BGSAVE */</doc>
+<use f='redis/src/config.c' l='509' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='895' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1089' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1809' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1448' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2204' u='r' c='processCommand'/>
+<use f='redis/src/scripting.c' l='334' u='r' c='luaRedisGenericCommand'/>

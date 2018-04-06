@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='665' type='int'/>
+<offset>1120</offset>
+<doc f='redis/src/redis.h' l='665'>/* True if this instance is a Sentinel. */</doc>
+<use f='redis/src/config.c' l='536' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1874' u='r' c='rewriteConfig'/>
+<use f='redis/src/db.c' l='657' u='r' c='shutdownCommand'/>
+<use f='redis/src/redis.c' l='320' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='1132' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1248' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='2375' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2623' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3438' u='r' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3558' u='r' c='redisSetProcTitle'/>
+<use f='redis/src/redis.c' l='3583' u='w' c='main'/>
+<use f='redis/src/redis.c' l='3589' u='r' c='main'/>
+<use f='redis/src/redis.c' l='3635' u='r' c='main'/>
+<use f='redis/src/redis.c' l='3647' u='r' c='main'/>
+<use f='redis/src/redis.c' l='3655' u='r' c='main'/>

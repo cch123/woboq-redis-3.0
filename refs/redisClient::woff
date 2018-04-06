@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='551' type='long long'/>
+<offset>2752</offset>
+<doc f='redis/src/redis.h' l='551'>/* Last write global replication offset. */</doc>
+<use f='redis/src/networking.c' l='119' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='2300' u='w' c='processCommand'/>
+<use f='redis/src/replication.c' l='1842' u='r' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1851' u='r' c='waitCommand'/>

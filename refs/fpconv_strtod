@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/fpconv.h' l='19' type='double fpconv_strtod(const char * , char ** )'/>
+<def f='redis/deps/lua/src/fpconv.c' l='106' ll='150' type='double fpconv_strtod(const char * nptr, char ** endptr)'/>
+<doc f='redis/deps/lua/src/fpconv.c' l='104'>/* Similar to strtod(), but must be passed the current locale&apos;s decimal point
+ * character. Guaranteed to be called at the start of any valid number in a string */</doc>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1001' u='c' c='json_next_number_token'/>

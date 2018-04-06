@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1291' type='void freePubsubPattern(void * p)'/>
+<def f='redis/src/pubsub.c' l='36' ll='41' type='void freePubsubPattern(void * p)'/>
+<doc f='redis/src/pubsub.c' l='32'>/*-----------------------------------------------------------------------------
+ * Pubsub low level API
+ *----------------------------------------------------------------------------*/</doc>
+<use f='redis/src/redis.c' l='1811' u='r' c='initServer'/>

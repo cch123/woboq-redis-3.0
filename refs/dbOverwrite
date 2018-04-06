@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1320' type='void dbOverwrite(redisDb * db, robj * key, robj * val)'/>
+<def f='redis/src/db.c' l='107' ll='112' type='void dbOverwrite(redisDb * db, robj * key, robj * val)'/>
+<use f='redis/src/db.c' l='124' u='c' c='setKey'/>
+<use f='redis/src/db.c' l='207' u='c' c='dbUnshareStringValue'/>
+<doc f='redis/src/db.c' l='102'>/* Overwrite an existing key with a new value. Incrementing the reference
+ * count of the new value is up to the caller.
+ * This function does not modify the expire time of the existing key.
+ *
+ * The program is aborted if the key was not already present. */</doc>
+<use f='redis/src/t_string.c' l='350' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_string.c' l='402' u='c' c='incrbyfloatCommand'/>

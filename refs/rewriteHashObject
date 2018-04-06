@@ -1,0 +1,4 @@
+<def f='redis/src/aof.c' l='973' ll='997' type='int rewriteHashObject(rio * r, robj * key, robj * o)'/>
+<use f='redis/src/aof.c' l='1090' u='c' c='rewriteAppendOnlyFile'/>
+<doc f='redis/src/aof.c' l='971'>/* Emit the commands needed to rebuild a hash object.
+ * The function returns 0 on error, 1 on success. */</doc>

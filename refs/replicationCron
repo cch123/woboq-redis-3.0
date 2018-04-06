@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1157' type='void replicationCron()'/>
+<use f='redis/src/redis.c' l='1239' u='c' c='serverCron'/>
+<def f='redis/src/replication.c' l='1938' ll='2104' type='void replicationCron()'/>
+<doc f='redis/src/replication.c' l='1937'>/* Replication cron function, called 1 time per second. */</doc>

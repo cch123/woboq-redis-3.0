@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='707' type='long long'/>
+<offset>7424</offset>
+<doc f='redis/src/redis.h' l='707'>/* Clients rejected because of maxclients */</doc>
+<use f='redis/src/networking.c' l='604' u='w' c='acceptCommonHandler'/>
+<use f='redis/src/redis.c' l='1730' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2844' u='r' c='genRedisInfoString'/>

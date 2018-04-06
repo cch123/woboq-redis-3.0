@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='1115' type='void freeHashObject(robj * o)'/>
+<def f='redis/src/object.c' l='286' ll='298' type='void freeHashObject(robj * o)'/>
+<use f='redis/src/object.c' l='312' u='c' c='decrRefCount'/>

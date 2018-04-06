@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='573' type='robj *'/>
+<offset>1984</offset>
+<use f='redis/src/pubsub.c' l='243' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/redis.c' l='1369' u='w' c='createSharedObjects'/>

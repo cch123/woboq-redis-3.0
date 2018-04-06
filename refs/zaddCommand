@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1459' type='void zaddCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='173' u='r'/>
+<use f='redis/src/redis.c' l='173' u='r'/>
+<use f='redis/src/redis.c' l='173' u='r'/>
+<use f='redis/src/redis.c' l='173' u='r'/>
+<def f='redis/src/t_zset.c' l='1309' ll='1311' type='void zaddCommand(redisClient * c)'/>

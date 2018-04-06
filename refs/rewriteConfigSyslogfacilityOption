@@ -1,0 +1,3 @@
+<def f='redis/src/config.c' l='1525' ll='1539' type='void rewriteConfigSyslogfacilityOption(struct rewriteConfigState * state)'/>
+<use f='redis/src/config.c' l='1806' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1524'>/* Rewrite the syslog-facility option. */</doc>

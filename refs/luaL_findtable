@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='88' type='const char * luaL_findtable(lua_State * L, int idx, const char * fname, int szhint)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='247' u='c' c='luaL_openlib'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='252' u='c' c='luaL_openlib'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='357' ll='381' macro='1' type='const char * luaL_findtable(lua_State * L, int idx, const char * fname, int szhint)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='552' u='c' c='ll_module'/>
+<use f='redis/deps/lua/src/loadlib.c' l='656' u='c' c='luaopen_package'/>

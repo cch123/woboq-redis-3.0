@@ -1,0 +1,7 @@
+<def f='redis/src/redis.c' l='597' ll='604' type='dictType'/>
+<use f='redis/src/redis.c' l='1802' u='a' c='initServer'/>
+<use f='redis/src/redis.c' l='1804' u='a' c='initServer'/>
+<use f='redis/src/redis.c' l='1809' u='a' c='initServer'/>
+<doc f='redis/src/redis.c' l='594'>/* Keylist hash table type has unencoded redis objects as keys and
+ * lists as values. It&apos;s used for blocking operations (BLPOP) and to
+ * map swapped keys to a list of clients waiting for this keys to be loaded. */</doc>

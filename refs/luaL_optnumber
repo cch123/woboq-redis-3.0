@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='55' type='lua_Number luaL_optnumber(lua_State * L, int nArg, lua_Number def)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='184' ll='186' macro='1' type='lua_Number luaL_optnumber(lua_State * L, int narg, lua_Number def)'/>
+<use f='redis/deps/lua/src/loslib.c' l='197' u='c' c='os_difftime'/>

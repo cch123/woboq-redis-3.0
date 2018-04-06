@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.c' l='58' type='int clusterNodeGetSlotBit(clusterNode * n, int slot)'/>
+<use f='redis/src/cluster.c' l='2658' u='c' c='clusterFailoverReplaceYourMaster'/>
+<def f='redis/src/cluster.c' l='3334' ll='3336' type='int clusterNodeGetSlotBit(clusterNode * n, int slot)'/>
+<use f='redis/src/cluster.c' l='3367' u='c' c='clusterDelNodeSlots'/>
+<use f='redis/src/cluster.c' l='3651' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3756' u='c' c='clusterReplyMultiBulkSlots'/>
+<doc f='redis/src/cluster.c' l='3333'>/* Return the slot bit from the cluster node structure. */</doc>

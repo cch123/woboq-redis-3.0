@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lparser.h' l='43' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='31' u='r' c='isnumeral'/>
+<use f='redis/deps/lua/src/lcode.c' l='393' u='a' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='27' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='398' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='406' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='408' u='w' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='27' u='r' c='luaK_exp2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='27' u='r' c='luaK_exp2val'/>
+<use f='redis/deps/lua/src/lcode.c' l='558' u='r' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='559' u='w' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='580' u='a' c='luaK_goiffalse'/>
+<use f='redis/deps/lua/src/lcode.c' l='615' u='r' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='615' u='w' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='617' u='r' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='691' u='w' c='luaK_prefix'/>
+<use f='redis/deps/lua/src/lcode.c' l='749' u='a' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='749' u='r' c='luaK_posfix'/>
+<offset>128</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='43'>/* patch list of `exit when true&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='127' u='w' c='init_exp'/>

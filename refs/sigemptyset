@@ -1,0 +1,8 @@
+<dec f='include/signal.h' l='213' type='int sigemptyset(sigset_t * __set)'/>
+<doc f='include/signal.h' l='212'>/* Clear all signals from SET.  */</doc>
+<use f='redis/src/bio.c' l='153' u='c' c='bioProcessBackgroundJobs'/>
+<use f='redis/src/debug.c' l='864' u='c' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='939' u='c' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='961' u='c' c='disableWatchdog'/>
+<use f='redis/src/redis.c' l='3500' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3507' u='c' c='setupSignalHandlers'/>

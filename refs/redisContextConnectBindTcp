@@ -1,0 +1,3 @@
+<dec f='redis/deps/hiredis/net.h' l='45' type='int redisContextConnectBindTcp(redisContext * c, const char * addr, int port, const struct timeval * timeout, const char * source_addr)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1063' u='c' c='redisConnectBindNonBlock'/>
+<def f='redis/deps/hiredis/net.c' l='350' ll='354' type='int redisContextConnectBindTcp(redisContext * c, const char * addr, int port, const struct timeval * timeout, const char * source_addr)'/>

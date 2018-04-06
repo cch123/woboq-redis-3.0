@@ -1,0 +1,31 @@
+<dec f='redis/src/redis.h' l='745' type='pid_t'/>
+<use f='redis/src/aof.c' l='216' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='220' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='221' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='225' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='226' u='w' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='320' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='416' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='541' u='r' c='feedAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1273' u='r' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1310' u='w' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1324' u='r' c='bgrewriteaofCommand'/>
+<use f='redis/src/aof.c' l='1378' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1499' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1500' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13024</offset>
+<doc f='redis/src/redis.h' l='745'>/* PID if rewriting process */</doc>
+<use f='redis/src/db.c' l='52' u='r' c='lookupKey'/>
+<use f='redis/src/rdb.c' l='1539' u='r' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='697' u='r' c='updateDictResizePolicy'/>
+<use f='redis/src/redis.c' l='1006' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1150' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1157' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1169' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1203' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1815' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2340' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2349' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2755' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2758' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='2067' u='r' c='replicationCron'/>

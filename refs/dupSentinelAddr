@@ -1,0 +1,3 @@
+<def f='redis/src/sentinel.c' l='484' ll='491' type='sentinelAddr * dupSentinelAddr(sentinelAddr * src)'/>
+<use f='redis/src/sentinel.c' l='2181' u='c' c='sentinelProcessHelloMessage'/>
+<doc f='redis/src/sentinel.c' l='483'>/* Return a duplicate of the source address. */</doc>

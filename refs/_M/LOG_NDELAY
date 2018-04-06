@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/sys/syslog.h' l='165'/>
+<use f='redis/src/redis.c' l='1753' u='c'/>

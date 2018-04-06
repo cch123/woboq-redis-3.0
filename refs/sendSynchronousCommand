@@ -1,0 +1,10 @@
+<def f='redis/src/replication.c' l='1065' ll='1097' type='char * sendSynchronousCommand(int fd)'/>
+<use f='redis/src/replication.c' l='1149' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1291' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1304' u='c' c='syncWithMaster'/>
+<doc f='redis/src/replication.c' l='1059'>/* Send a synchronous command to the master. Used to send AUTH and
+ * REPLCONF commands before starting the replication with SYNC.
+ *
+ * The command returns an sds string representing the result of the
+ * operation. On error the first byte is a &quot;-&quot;.
+ */</doc>

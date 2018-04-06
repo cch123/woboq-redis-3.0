@@ -1,0 +1,11 @@
+<dec f='include/unistd.h' l='959' type='int fsync(int __fd)'/>
+<doc f='include/unistd.h' l='955'>/* Make all changes done to FD actually appear on disk.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='redis/src/aof.c' l='1114' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1158' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='326' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/rdb.c' l='741' u='c' c='rdbSave'/>
+<use f='redis/src/redis-cli.c' l='1391' u='c' c='getRDB'/>
+<use f='redis/src/sentinel.c' l='1608' u='c' c='sentinelFlushConfig'/>

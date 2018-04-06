@@ -1,0 +1,16 @@
+<def f='redis/src/t_zset.c' l='481' ll='508' type='int zslParseLexRangeItem(robj * item, robj ** dest, int * ex)'/>
+<use f='redis/src/t_zset.c' l='522' u='c' c='zslParseLexRange'/>
+<use f='redis/src/t_zset.c' l='523' u='c' c='zslParseLexRange'/>
+<doc f='redis/src/t_zset.c' l='468'>/* Parse max or min argument of ZRANGEBYLEX.
+  * (foo means foo (open interval)
+  * [foo means foo (closed interval)
+  * - means the min string possible
+  * + means the max string possible
+  *
+  * If the string is valid the *dest pointer is set to the redis object
+  * that will be used for the comparision, and ex will be set to 0 or 1
+  * respectively if the item is exclusive or inclusive. REDIS_OK will be
+  * returned.
+  *
+  * If the string is not a valid range REDIS_ERR is returned, and the value
+  * of *dest and *ex is undefined. */</doc>

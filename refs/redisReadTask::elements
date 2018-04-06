@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='109' type='int'/>
+<offset>32</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='109'>/* number of elements in multibulk container */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='342' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='346' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='348' u='w' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='485' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='489' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='633' u='w' c='redisReaderGetReply'/>

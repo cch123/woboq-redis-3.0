@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lobject.h' l='280' type='struct UpVal *'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='73' u='w' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='75' u='w' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='w' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='84' u='r' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='85' u='r' c='unlinkupval'/>
+<use f='redis/deps/lua/src/lstate.c' l='160' u='w' c='lua_newstate'/>

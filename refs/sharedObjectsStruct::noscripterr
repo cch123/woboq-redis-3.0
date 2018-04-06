@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='571' type='robj *'/>
+<offset>1216</offset>
+<use f='redis/src/redis.c' l='1333' u='w' c='createSharedObjects'/>
+<use f='redis/src/scripting.c' l='989' u='r' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1104' u='r' c='evalShaCommand'/>

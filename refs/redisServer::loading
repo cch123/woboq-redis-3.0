@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='688' type='int'/>
+<offset>6144</offset>
+<doc f='redis/src/redis.h' l='687'>/* RDB / AOF loading information */</doc>
+<doc f='redis/src/redis.h' l='688'>/* We are loading data from disk if true */</doc>
+<use f='redis/src/cluster.c' l='577' u='r' c='clusterAcceptHandler'/>
+<use f='redis/src/db.c' l='657' u='r' c='shutdownCommand'/>
+<use f='redis/src/db.c' l='829' u='r' c='expireIfNeeded'/>
+<use f='redis/src/db.c' l='891' u='r' c='expireGenericCommand'/>
+<use f='redis/src/multi.c' l='180' u='r' c='execCommand'/>
+<use f='redis/src/rdb.c' l='1088' u='w' c='startLoading'/>
+<use f='redis/src/rdb.c' l='1107' u='w' c='stopLoading'/>
+<use f='redis/src/redis.c' l='1419' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2042' u='r' c='call'/>
+<use f='redis/src/redis.c' l='2060' u='r' c='call'/>
+<use f='redis/src/redis.c' l='2270' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2746' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2781' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3487' u='r' c='sigShutdownHandler'/>
+<use f='redis/src/scripting.c' l='329' u='r' c='luaRedisGenericCommand'/>

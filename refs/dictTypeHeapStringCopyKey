@@ -1,0 +1,2 @@
+<dec f='redis/src/dict.h' l='181' type='dictType'/>
+<doc f='redis/src/dict.h' l='180'>/* Hash table types */</doc>

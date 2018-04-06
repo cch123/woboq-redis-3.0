@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lstring.h' l='26' type='void luaS_resize(lua_State * L, int newsize)'/>
+<use f='redis/deps/lua/src/lgc.c' l='436' u='c' c='checkSizes'/>
+<use f='redis/deps/lua/src/lstate.c' l='76' u='c' c='f_luaopen'/>
+<def f='redis/deps/lua/src/lstring.c' l='22' ll='47' type='void luaS_resize(lua_State * L, int newsize)'/>
+<use f='redis/deps/lua/src/lstring.c' l='70' u='c' c='newlstr'/>

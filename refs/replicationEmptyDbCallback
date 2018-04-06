@@ -1,0 +1,4 @@
+<def f='redis/src/replication.c' l='854' ll='857' type='void replicationEmptyDbCallback(void * privdata)'/>
+<use f='redis/src/replication.c' l='1007' u='r' c='readSyncBulkPayload'/>
+<doc f='redis/src/replication.c' l='852'>/* Callback used by emptyDb() while flushing away old data to load
+ * the new dataset received by the master. */</doc>

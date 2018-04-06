@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='63' type='void luaK_setoneret(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='292' ll='301' type='void luaK_setoneret(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='329' u='c' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lparser.c' l='955' u='c' c='assignment'/>

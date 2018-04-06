@@ -1,0 +1,9 @@
+<dec f='redis/src/endianconv.h' l='51'/>
+<use f='redis/src/cluster.c' l='4329' u='c'/>
+<use f='redis/src/cluster.c' l='4352' u='c'/>
+<use f='redis/src/intset.c' l='62' u='c'/>
+<use f='redis/src/intset.c' l='86' u='c'/>
+<use f='redis/src/rdb.c' l='682' u='c'/>
+<use f='redis/src/rdb.c' l='1222' u='c'/>
+<use f='redis/src/ziplist.c' l='366' u='c'/>
+<use f='redis/src/ziplist.c' l='396' u='c'/>

@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='1082' type='unsigned long listTypeLength(robj * subject)'/>
+<use f='redis/src/aof.c' l='771' u='c' c='rewriteListObject'/>
+<use f='redis/src/debug.c' l='439' u='c' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/sort.c' l='310' u='c' c='sortCommand'/>
+<def f='redis/src/t_list.c' l='112' ll='120' type='unsigned long listTypeLength(robj * subject)'/>
+<use f='redis/src/t_list.c' l='313' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='382' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='409' u='c' c='llenCommand'/>
+<use f='redis/src/t_list.c' l='507' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='534' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_list.c' l='595' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='633' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='681' u='c' c='lremCommand'/>
+<use f='redis/src/t_list.c' l='720' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='741' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='1013' u='c' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='1043' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1055' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1115' u='c' c='brpoplpushCommand'/>

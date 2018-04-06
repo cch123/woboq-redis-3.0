@@ -1,0 +1,22 @@
+<dec f='redis/src/redis.h' l='799' type='char *'/>
+<offset>15488</offset>
+<doc f='redis/src/redis.h' l='799'>/* Replication backlog for partial syncs */</doc>
+<use f='redis/src/redis.c' l='1508' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2970' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='72' u='r' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='73' u='w' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='100' u='r' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='106' u='r' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='107' u='w' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='117' u='r' c='freeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='118' u='w' c='freeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='135' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='175' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='178' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='198' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='213' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='345' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='382' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='429' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='580' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='2037' u='r' c='replicationCron'/>

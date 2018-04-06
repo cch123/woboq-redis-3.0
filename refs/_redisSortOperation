@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='945' ll='948'/>
+<size>16</size>
+<mbr r='_redisSortOperation::type' o='0' t='int'/>
+<mbr r='_redisSortOperation::pattern' o='64' t='robj *'/>

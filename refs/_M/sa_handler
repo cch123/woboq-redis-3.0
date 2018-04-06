@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='36'/>
+<use f='redis/src/debug.c' l='866' u='c'/>
+<use f='redis/src/debug.c' l='963' u='c'/>
+<use f='redis/src/redis.c' l='3502' u='c'/>

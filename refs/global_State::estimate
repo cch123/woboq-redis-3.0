@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lstate.h' l='84' type='lu_mem'/>
+<offset>1024</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='84'>/* an estimate of number of bytes actually in use */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='552' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='578' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='589' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='595' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='596' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='r' c='luaC_fullgc'/>

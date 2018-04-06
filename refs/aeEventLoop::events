@@ -1,0 +1,19 @@
+<dec f='redis/src/ae.h' l='92' type='aeFileEvent *'/>
+<use f='redis/src/ae_epoll.c' l='78' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='82' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='94' u='r' c='aeApiDelEvent'/>
+<use f='redis/src/ae.c' l='68' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='70' u='r' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='82' u='r' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='87' u='r' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='113' u='w' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='113' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='120' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='126' u='r' c='aeDeleteEventLoop'/>
+<use f='redis/src/ae.c' l='142' u='r' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='158' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='168' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='175' u='r' c='aeGetFileEvents'/>
+<use f='redis/src/ae.c' l='402' u='r' c='aeProcessEvents'/>
+<offset>192</offset>
+<doc f='redis/src/ae.h' l='92'>/* Registered events */</doc>

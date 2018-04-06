@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1419' type='void lrangeCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='154' u='r'/>
+<use f='redis/src/redis.c' l='154' u='r'/>
+<use f='redis/src/redis.c' l='154' u='r'/>
+<use f='redis/src/redis.c' l='154' u='r'/>
+<def f='redis/src/t_list.c' l='525' ll='582' type='void lrangeCommand(redisClient * c)'/>

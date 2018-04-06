@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='381'/>
+<use f='redis/src/notify.c' l='49' u='c'/>
+<use f='redis/src/notify.c' l='76' u='c'/>
+<use f='redis/src/sort.c' l='545' u='c'/>
+<use f='redis/src/t_list.c' l='318' u='c'/>
+<use f='redis/src/t_list.c' l='365' u='c'/>
+<use f='redis/src/t_list.c' l='378' u='c'/>
+<use f='redis/src/t_list.c' l='473' u='c'/>
+<use f='redis/src/t_list.c' l='486' u='c'/>
+<use f='redis/src/t_list.c' l='506' u='c'/>
+<use f='redis/src/t_list.c' l='632' u='c'/>
+<use f='redis/src/t_list.c' l='710' u='c'/>
+<use f='redis/src/t_list.c' l='740' u='c'/>
+<use f='redis/src/t_list.c' l='1053' u='c'/>

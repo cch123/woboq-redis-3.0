@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='1031' type='void acceptTcpHandler(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<def f='redis/src/networking.c' l='612' ll='630' type='void acceptTcpHandler(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/redis.c' l='1846' u='r' c='initServer'/>

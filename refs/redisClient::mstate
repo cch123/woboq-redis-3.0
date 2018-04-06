@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='548' type='multiState'/>
+<offset>2176</offset>
+<doc f='redis/src/redis.h' l='548'>/* MULTI/EXEC state */</doc>
+<use f='redis/src/cluster.c' l='4792' u='a' c='getNodeByQuery'/>
+<use f='redis/src/multi.c' l='36' u='m' c='initClientMultiState'/>
+<use f='redis/src/multi.c' l='37' u='m' c='initClientMultiState'/>
+<use f='redis/src/multi.c' l='44' u='m' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='46' u='m' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='52' u='m' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='60' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='60' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='61' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='62' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='62' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='69' u='m' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='144' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='145' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='146' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='147' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='148' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='162' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='163' u='m' c='execCommand'/>
+<use f='redis/src/multi.c' l='164' u='m' c='execCommand'/>
+<use f='redis/src/networking.c' l='1344' u='m' c='catClientInfoString'/>

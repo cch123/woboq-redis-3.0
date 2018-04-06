@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lparser.h' l='26' type='6'/>
+<use f='redis/deps/lua/src/lcode.c' l='306' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='474' c='luaK_storevar'/>
+<doc f='redis/deps/lua/src/lparser.h' l='26'>/* info = local register */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='232' u='r' c='singlevaraux'/>
+<use f='redis/deps/lua/src/lparser.c' l='235' u='r' c='singlevaraux'/>
+<use f='redis/deps/lua/src/lparser.c' l='322' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='933' u='r' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='939' u='r' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='1169' u='r' c='localfunc'/>

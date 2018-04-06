@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='830' type='int'/>
+<offset>16896</offset>
+<doc f='redis/src/redis.h' l='830'>/* Serve stale data when link is down? */</doc>
+<use f='redis/src/config.c' l='299' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='782' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1085' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1816' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1498' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2260' u='r' c='processCommand'/>

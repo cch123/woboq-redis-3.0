@@ -1,0 +1,10 @@
+<dec f='include/netdb.h' l='571' type='int'/>
+<use f='redis/deps/hiredis/net.c' l='267' u='w' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='282' u='r' c='_redisContextConnectTcp'/>
+<offset>64</offset>
+<doc f='include/netdb.h' l='571'>/* Socket type.  */</doc>
+<use f='redis/src/anet.c' l='212' u='w' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='277' u='w' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='287' u='r' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='454' u='w' c='_anetTcpServer'/>
+<use f='redis/src/anet.c' l='462' u='r' c='_anetTcpServer'/>

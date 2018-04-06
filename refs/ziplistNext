@@ -1,0 +1,41 @@
+<dec f='redis/src/ziplist.h' l='37' type='unsigned char * ziplistNext(unsigned char * zl, unsigned char * p)'/>
+<use f='redis/src/aof.c' l='794' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='887' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/db.c' l='530' u='c' c='scanGenericCommand'/>
+<use f='redis/src/debug.c' l='185' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/t_hash.c' l='83' u='c' c='hashTypeGetFromZiplist'/>
+<use f='redis/src/t_hash.c' l='185' u='c' c='hashTypeSet'/>
+<use f='redis/src/t_hash.c' l='319' u='c' c='hashTypeNext'/>
+<use f='redis/src/t_hash.c' l='324' u='c' c='hashTypeNext'/>
+<use f='redis/src/t_list.c' l='155' u='c' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='206' u='c' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='565' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_zset.c' l='705' u='c' c='zzlNext'/>
+<use f='redis/src/t_zset.c' l='707' u='c' c='zzlNext'/>
+<use f='redis/src/t_zset.c' l='773' u='c' c='zzlFirstInRange'/>
+<use f='redis/src/t_zset.c' l='785' u='c' c='zzlFirstInRange'/>
+<use f='redis/src/t_zset.c' l='801' u='c' c='zzlLastInRange'/>
+<use f='redis/src/t_zset.c' l='879' u='c' c='zzlFirstInLexRange'/>
+<use f='redis/src/t_zset.c' l='881' u='c' c='zzlFirstInLexRange'/>
+<use f='redis/src/t_zset.c' l='920' u='c' c='zzlFind'/>
+<use f='redis/src/t_zset.c' l='931' u='c' c='zzlFind'/>
+<use f='redis/src/t_zset.c' l='967' u='c' c='zzlInsertAt'/>
+<use f='redis/src/t_zset.c' l='982' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='1001' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='1024' u='c' c='zzlDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='1052' u='c' c='zzlDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='1116' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1574' u='c' c='zuiInitIterator'/>
+<use f='redis/src/t_zset.c' l='2145' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2275' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2428' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2509' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2627' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2797' u='c' c='zrankGenericCommand'/>
+<def f='redis/src/ziplist.c' l='705' ll='721' type='unsigned char * ziplistNext(unsigned char * zl, unsigned char * p)'/>
+<doc f='redis/src/ziplist.c' l='699'>/* Return pointer to next entry in ziplist.
+ *
+ * zl is the pointer to the ziplist
+ * p is the pointer to the current element
+ *
+ * The element after &apos;p&apos; is returned, otherwise NULL if we are at the end. */</doc>

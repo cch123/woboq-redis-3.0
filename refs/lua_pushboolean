@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lua.h' l='169' type='void lua_pushboolean(lua_State * L, int b)'/>
+<def f='redis/deps/lua/src/lapi.c' l='503' ll='508' macro='1' type='void lua_pushboolean(lua_State * L, int b)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='164' u='c' c='luaB_rawequal'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='208' u='c' c='luaB_collectgarbage'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='378' u='c' c='luaB_pcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='390' u='c' c='luaB_xpcall'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='429' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='549' u='c' c='luaB_coresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='554' u='c' c='luaB_coresume'/>
+<use f='redis/deps/lua/src/ldblib.c' l='42' u='c' c='db_setmetatable'/>
+<use f='redis/deps/lua/src/liolib.c' l='33' u='c' c='pushresult'/>
+<use f='redis/deps/lua/src/liolib.c' l='236' u='c' c='aux_lines'/>
+<use f='redis/deps/lua/src/loadlib.c' l='489' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loslib.c' l='26' u='c' c='os_pushresult'/>
+<use f='redis/deps/lua/src/loslib.c' l='96' u='c' c='setboolfield'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='257' u='c' c='json_enum_option'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1235' u='c' c='json_process_value'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='661' u='c' c='mp_decode_to_lua_type'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='665' u='c' c='mp_decode_to_lua_type'/>
+<use f='redis/src/scripting.c' l='107' u='c' c='redisProtocolToLuaType_Bulk'/>
+<use f='redis/src/scripting.c' l='143' u='c' c='redisProtocolToLuaType_MultiBulk'/>

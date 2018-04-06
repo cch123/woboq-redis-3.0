@@ -1,0 +1,5 @@
+<dec f='include/termios.h' l='70' type='int tcsetattr(int __fd, int __optional_actions, const struct termios * __termios_p)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='241' u='c' c='enableRawMode'/>
+<use f='redis/deps/linenoise/linenoise.c' l='252' u='c' c='disableRawMode'/>
+<doc f='include/termios.h' l='68'>/* Set the state of FD to *TERMIOS_P.
+   Values for OPTIONAL_ACTIONS (TCSA*) are in &lt;bits/termios.h&gt;.  */</doc>

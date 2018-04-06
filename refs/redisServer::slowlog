@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='711' type='list *'/>
+<offset>7680</offset>
+<doc f='redis/src/redis.h' l='711'>/* SLOWLOG list of commands */</doc>
+<use f='redis/src/slowlog.c' l='104' u='w' c='slowlogInit'/>
+<use f='redis/src/slowlog.c' l='106' u='r' c='slowlogInit'/>
+<use f='redis/src/slowlog.c' l='115' u='r' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/slowlog.c' l='118' u='r' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/slowlog.c' l='119' u='r' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/slowlog.c' l='119' u='r' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/slowlog.c' l='124' u='r' c='slowlogReset'/>
+<use f='redis/src/slowlog.c' l='125' u='r' c='slowlogReset'/>
+<use f='redis/src/slowlog.c' l='125' u='r' c='slowlogReset'/>
+<use f='redis/src/slowlog.c' l='135' u='r' c='slowlogCommand'/>
+<use f='redis/src/slowlog.c' l='149' u='r' c='slowlogCommand'/>

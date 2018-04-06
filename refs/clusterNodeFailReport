@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.h' l='76' ll='79'/>
+<size>16</size>
+<doc f='redis/src/cluster.h' l='75'>/* This structure represent elements of node-&gt;fail_reports. */</doc>
+<mbr r='clusterNodeFailReport::node' o='0' t='struct clusterNode *'/>
+<mbr r='clusterNodeFailReport::time' o='64' t='mstime_t'/>

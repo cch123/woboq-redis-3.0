@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='101'/>
+<use f='redis/deps/lua/src/lcode.c' l='86' u='c'/>

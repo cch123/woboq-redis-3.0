@@ -1,0 +1,17 @@
+<def f='redis/src/networking.c' l='40' ll='42' type='size_t zmalloc_size_sds(sds s)'/>
+<use f='redis/src/networking.c' l='49' u='c' c='getStringObjectSdsUsedMemory'/>
+<use f='redis/src/networking.c' l='238' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='241' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='263' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='271' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='274' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='278' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='301' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='304' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='443' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='449' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='452' u='c' c='setDeferredMultiBulkLength'/>
+<doc f='redis/src/networking.c' l='36'>/* To evaluate the output buffer size of a client we need to get size of
+ * allocated objects, however we can&apos;t used zmalloc_size() directly on sds
+ * strings because of the trick they use to work (the header is before the
+ * returned pointer), so we use this helper function. */</doc>

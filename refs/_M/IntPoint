@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/llimits.h' l='42'/>
+<doc f='redis/deps/lua/src/llimits.h' l='37'>/*
+** conversion of pointer to integer
+** this is for hashing only; there is no problem if the integer
+** cannot hold the whole pointer value
+*/</doc>

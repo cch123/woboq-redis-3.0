@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='203' type='clusterMsgDataFail'/>
+<use f='redis/src/cluster.c' l='1869' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1875' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1885' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2366' u='m' c='clusterSendFail'/>
+<offset>0</offset>

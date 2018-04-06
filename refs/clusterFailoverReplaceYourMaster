@@ -1,0 +1,9 @@
+<def f='redis/src/cluster.c' l='2646' ll='2674' type='void clusterFailoverReplaceYourMaster()'/>
+<use f='redis/src/cluster.c' l='2845' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='4218' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='2640'>/* This function implements the final part of automatic and manual failovers,
+ * where the slave grabs its master&apos;s hash slots, and propagates the new
+ * configuration.
+ *
+ * Note that it&apos;s up to the caller to be sure that the node got a new
+ * configuration epoch already. */</doc>

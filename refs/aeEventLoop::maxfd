@@ -1,0 +1,12 @@
+<dec f='redis/src/ae.h' l='88' type='int'/>
+<use f='redis/src/ae.c' l='76' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='110' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='119' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='150' u='r' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='151' u='w' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='163' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='167' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='169' u='w' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='363' u='r' c='aeProcessEvents'/>
+<offset>0</offset>
+<doc f='redis/src/ae.h' l='88'>/* highest file descriptor currently registered */</doc>

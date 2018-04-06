@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1066' type='int processEventsWhileBlocked()'/>
+<use f='redis/src/aof.c' l='636' u='c' c='loadAppendOnlyFile'/>
+<def f='redis/src/networking.c' l='1755' ll='1764' type='int processEventsWhileBlocked()'/>
+<doc f='redis/src/networking.c' l='1743'>/* This function is called by Redis in order to process a few events from
+ * time to time while blocked into some not interruptible operation.
+ * This allows to reply to clients with the -LOADING error while loading the
+ * data set at startup or after a full resynchronization with the master
+ * and so forth.
+ *
+ * It calls the event loop in order to process a few events. Specifically we
+ * try to call the event loop for times as long as we receive acknowledge that
+ * some event was processed, in order to go forward with the accept, read,
+ * write, close sequence needed to serve a client.
+ *
+ * The function returns the total number of events processed. */</doc>
+<use f='redis/src/rdb.c' l='1125' u='c' c='rdbLoadProgressCallback'/>
+<use f='redis/src/scripting.c' l='560' u='c' c='luaMaskCountHook'/>

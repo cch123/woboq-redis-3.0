@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lcode.h' l='54' type='int luaK_exp2anyreg(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='422' ll='433' type='int luaK_exp2anyreg(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='438' u='c' c='luaK_exp2val'/>
+<use f='redis/deps/lua/src/lcode.c' l='468' u='c' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='480' u='c' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='485' u='c' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='505' u='c' c='luaK_self'/>
+<use f='redis/deps/lua/src/lcode.c' l='695' u='c' c='luaK_prefix'/>
+<use f='redis/deps/lua/src/lcode.c' l='701' u='c' c='luaK_prefix'/>
+<use f='redis/deps/lua/src/lparser.c' l='411' u='c' c='field'/>
+<use f='redis/deps/lua/src/lparser.c' l='703' u='c' c='primaryexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='1259' u='c' c='retstat'/>

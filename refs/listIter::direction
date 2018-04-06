@@ -1,0 +1,6 @@
+<dec f='redis/src/adlist.h' l='44' type='int'/>
+<use f='redis/src/adlist.c' l='187' u='w' c='listGetIterator'/>
+<use f='redis/src/adlist.c' l='199' u='w' c='listRewind'/>
+<use f='redis/src/adlist.c' l='204' u='w' c='listRewindTail'/>
+<use f='redis/src/adlist.c' l='226' u='r' c='listNext'/>
+<offset>64</offset>

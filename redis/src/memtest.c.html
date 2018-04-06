@@ -1,0 +1,301 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>memtest.c source code [redis/src/memtest.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/memtest.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='memtest.c.html'>memtest.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2009-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="6">6</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="9">9</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="11">11</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="12">12</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="13">13</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="14">14</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="15">15</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="18">18</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="19">19</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="20">20</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="21">21</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="22">22</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="23">23</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="24">24</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="25">25</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="26">26</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="27">27</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="28">28</th><td><i> */</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="../../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include &lt;limits.h&gt;</u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="../../include/errno.h.html">&lt;errno.h&gt;</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="../../include/termios.h.html">&lt;termios.h&gt;</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="../../include/x86_64-linux-gnu/sys/ioctl.h.html">&lt;sys/ioctl.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="38">if</span> defined(<span class="macro" data-ref="_M/__sun">__sun</span>)</u></td></tr>
+<tr><th id="39">39</th><td><u>#include &lt;stropts.h&gt;</u></td></tr>
+<tr><th id="40">40</th><td><u>#<span data-ppcond="38">endif</span></u></td></tr>
+<tr><th id="41">41</th><td><u>#include <a href="config.h.html">"config.h"</a></u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#<span data-ppcond="43">if</span> (<span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> == 4294967295UL)</u></td></tr>
+<tr><th id="44">44</th><td><u>#define MEMTEST_32BIT</u></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="43">elif</span> (<span class="macro" title="(9223372036854775807L *2UL+1UL)" data-ref="_M/ULONG_MAX">ULONG_MAX</span> == 18446744073709551615ULL)</u></td></tr>
+<tr><th id="46">46</th><td><u>#define <dfn class="macro" id="_M/MEMTEST_64BIT" data-ref="_M/MEMTEST_64BIT">MEMTEST_64BIT</dfn></u></td></tr>
+<tr><th id="47">47</th><td><u>#<span data-ppcond="43">else</span></u></td></tr>
+<tr><th id="48">48</th><td><u>#error "ULONG_MAX value not supported."</u></td></tr>
+<tr><th id="49">49</th><td><u>#<span data-ppcond="43">endif</span></u></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><u>#<span data-ppcond="51">ifdef</span> <span class="macro" data-ref="_M/MEMTEST_32BIT">MEMTEST_32BIT</span></u></td></tr>
+<tr><th id="52">52</th><td><u>#define ULONG_ONEZERO 0xaaaaaaaaUL</u></td></tr>
+<tr><th id="53">53</th><td><u>#define ULONG_ZEROONE 0x55555555UL</u></td></tr>
+<tr><th id="54">54</th><td><u>#<span data-ppcond="51">else</span></u></td></tr>
+<tr><th id="55">55</th><td><u>#define <dfn class="macro" id="_M/ULONG_ONEZERO" data-ref="_M/ULONG_ONEZERO">ULONG_ONEZERO</dfn> 0xaaaaaaaaaaaaaaaaUL</u></td></tr>
+<tr><th id="56">56</th><td><u>#define <dfn class="macro" id="_M/ULONG_ZEROONE" data-ref="_M/ULONG_ZEROONE">ULONG_ZEROONE</dfn> 0x5555555555555555UL</u></td></tr>
+<tr><th id="57">57</th><td><u>#<span data-ppcond="51">endif</span></u></td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td><em>static</em> <b>struct</b> <a class="type" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize" title='winsize' data-ref="winsize">winsize</a> <dfn class="tu decl def" id="ws" title='ws' data-type='struct winsize' data-ref="ws">ws</dfn>;</td></tr>
+<tr><th id="60">60</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl def" id="progress_printed" title='progress_printed' data-ref="progress_printed">progress_printed</dfn>; <i>/* Printed chars in screen-wide progress bar. */</i></td></tr>
+<tr><th id="61">61</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl def" id="progress_full" title='progress_full' data-ref="progress_full">progress_full</dfn>; <i>/* How many chars to write to fill the progress bar. */</i></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><em>void</em> <dfn class="decl def fn" id="memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</dfn>(<em>char</em> *<dfn class="local col1 decl" id="1title" title='title' data-type='char *' data-ref="1title">title</dfn>, <em>int</em> <dfn class="local col2 decl" id="2pass" title='pass' data-type='int' data-ref="2pass">pass</dfn>) {</td></tr>
+<tr><th id="64">64</th><td>    <em>int</em> <dfn class="local col3 decl" id="3j" title='j' data-type='int' data-ref="3j">j</dfn>;</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\x1b[H\x1b[2J"</q>);    <i>/* Cursor home, clear screen. */</i></td></tr>
+<tr><th id="67">67</th><td>    <i>/* Fill with dots. */</i></td></tr>
+<tr><th id="68">68</th><td>    <b>for</b> (<a class="local col3 ref" href="#3j" title='j' data-ref="3j">j</a> = <var>0</var>; <a class="local col3 ref" href="#3j" title='j' data-ref="3j">j</a> &lt; <a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_col" title='winsize::ws_col' data-ref="winsize::ws_col">ws_col</a>*(<a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_row" title='winsize::ws_row' data-ref="winsize::ws_row">ws_row</a>-<var>2</var>); <a class="local col3 ref" href="#3j" title='j' data-ref="3j">j</a>++) <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"."</q>);</td></tr>
+<tr><th id="69">69</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Please keep the test running several minutes per GB of memory.\n"</q>);</td></tr>
+<tr><th id="70">70</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Also check http://www.memtest86.com/ and http://pyropus.ca/software/memtester/"</q>);</td></tr>
+<tr><th id="71">71</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\x1b[H\x1b[2K"</q>);          <i>/* Cursor home, clear current line.  */</i></td></tr>
+<tr><th id="72">72</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"%s [%d]\n"</q>, <a class="local col1 ref" href="#1title" title='title' data-ref="1title">title</a>, <a class="local col2 ref" href="#2pass" title='pass' data-ref="2pass">pass</a>); <i>/* Print title. */</i></td></tr>
+<tr><th id="73">73</th><td>    <a class="ref" href="#progress_printed" title='progress_printed' data-ref="progress_printed">progress_printed</a> = <var>0</var>;</td></tr>
+<tr><th id="74">74</th><td>    <a class="ref" href="#progress_full" title='progress_full' data-ref="progress_full">progress_full</a> = <a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_col" title='winsize::ws_col' data-ref="winsize::ws_col">ws_col</a>*(<a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_row" title='winsize::ws_row' data-ref="winsize::ws_row">ws_row</a>-<var>3</var>);</td></tr>
+<tr><th id="75">75</th><td>    <a class="ref fn" href="../../include/stdio.h.html#fflush" title='fflush' data-ref="fflush">fflush</a>(<a class="macro" href="../../include/stdio.h.html#173" title="stdout" data-ref="_M/stdout">stdout</a>);</td></tr>
+<tr><th id="76">76</th><td>}</td></tr>
+<tr><th id="77">77</th><td></td></tr>
+<tr><th id="78">78</th><td><em>void</em> <dfn class="decl def fn" id="memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="79">79</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\x1b[H\x1b[2J"</q>);    <i>/* Cursor home, clear screen. */</i></td></tr>
+<tr><th id="80">80</th><td>}</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><em>void</em> <dfn class="decl def fn" id="memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</dfn>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="4curr" title='curr' data-type='size_t' data-ref="4curr">curr</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="5size" title='size' data-type='size_t' data-ref="5size">size</dfn>, <em>char</em> <dfn class="local col6 decl" id="6c" title='c' data-type='char' data-ref="6c">c</dfn>) {</td></tr>
+<tr><th id="83">83</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="7chars" title='chars' data-type='size_t' data-ref="7chars">chars</dfn> = ((<em>unsigned</em> <em>long</em> <em>long</em>)<a class="local col4 ref" href="#4curr" title='curr' data-ref="4curr">curr</a>*<a class="ref" href="#progress_full" title='progress_full' data-ref="progress_full">progress_full</a>)/<a class="local col5 ref" href="#5size" title='size' data-ref="5size">size</a>, <dfn class="local col8 decl" id="8j" title='j' data-type='size_t' data-ref="8j">j</dfn>;</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td>    <b>for</b> (<a class="local col8 ref" href="#8j" title='j' data-ref="8j">j</a> = <var>0</var>; <a class="local col8 ref" href="#8j" title='j' data-ref="8j">j</a> &lt; <a class="local col7 ref" href="#7chars" title='chars' data-ref="7chars">chars</a>-<a class="ref" href="#progress_printed" title='progress_printed' data-ref="progress_printed">progress_printed</a>; <a class="local col8 ref" href="#8j" title='j' data-ref="8j">j</a>++) <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"%c"</q>,<a class="local col6 ref" href="#6c" title='c' data-ref="6c">c</a>);</td></tr>
+<tr><th id="86">86</th><td>    <a class="ref" href="#progress_printed" title='progress_printed' data-ref="progress_printed">progress_printed</a> = <a class="local col7 ref" href="#7chars" title='chars' data-ref="7chars">chars</a>;</td></tr>
+<tr><th id="87">87</th><td>    <a class="ref fn" href="../../include/stdio.h.html#fflush" title='fflush' data-ref="fflush">fflush</a>(<a class="macro" href="../../include/stdio.h.html#173" title="stdout" data-ref="_M/stdout">stdout</a>);</td></tr>
+<tr><th id="88">88</th><td>}</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td><i>/* Test that addressing is fine. Every location is populated with its own</i></td></tr>
+<tr><th id="91">91</th><td><i> * address, and finally verified. This test is very fast but may detect</i></td></tr>
+<tr><th id="92">92</th><td><i> * ASAP big issues with the memory subsystem. */</i></td></tr>
+<tr><th id="93">93</th><td><em>void</em> <dfn class="decl def fn" id="memtest_addressing" title='memtest_addressing' data-ref="memtest_addressing">memtest_addressing</dfn>(<em>unsigned</em> <em>long</em> *<dfn class="local col9 decl" id="9l" title='l' data-type='unsigned long *' data-ref="9l">l</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="10bytes" title='bytes' data-type='size_t' data-ref="10bytes">bytes</dfn>) {</td></tr>
+<tr><th id="94">94</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col1 decl" id="11words" title='words' data-type='unsigned long' data-ref="11words">words</dfn> = <a class="local col0 ref" href="#10bytes" title='bytes' data-ref="10bytes">bytes</a>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>);</td></tr>
+<tr><th id="95">95</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col2 decl" id="12j" title='j' data-type='unsigned long' data-ref="12j">j</dfn>, *<dfn class="local col3 decl" id="13p" title='p' data-type='unsigned long *' data-ref="13p">p</dfn>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <i>/* Fill */</i></td></tr>
+<tr><th id="98">98</th><td>    <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a> = <a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>;</td></tr>
+<tr><th id="99">99</th><td>    <b>for</b> (<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> = <var>0</var>; <a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> &lt; <a class="local col1 ref" href="#11words" title='words' data-ref="11words">words</a>; <a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a>++) {</td></tr>
+<tr><th id="100">100</th><td>        *<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a> = (<em>unsigned</em> <em>long</em>)<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>;</td></tr>
+<tr><th id="101">101</th><td>        <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>++;</td></tr>
+<tr><th id="102">102</th><td>        <b>if</b> ((<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> &amp; <var>0xffff</var>) == <var>0</var>) <a class="ref fn" href="#memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</a>(<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a>,<a class="local col1 ref" href="#11words" title='words' data-ref="11words">words</a>*<var>2</var>,<kbd>'A'</kbd>);</td></tr>
+<tr><th id="103">103</th><td>    }</td></tr>
+<tr><th id="104">104</th><td>    <i>/* Test */</i></td></tr>
+<tr><th id="105">105</th><td>    <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a> = <a class="local col9 ref" href="#9l" title='l' data-ref="9l">l</a>;</td></tr>
+<tr><th id="106">106</th><td>    <b>for</b> (<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> = <var>0</var>; <a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> &lt; <a class="local col1 ref" href="#11words" title='words' data-ref="11words">words</a>; <a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a>++) {</td></tr>
+<tr><th id="107">107</th><td>        <b>if</b> (*<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a> != (<em>unsigned</em> <em>long</em>)<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>) {</td></tr>
+<tr><th id="108">108</th><td>            <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\n*** MEMORY ADDRESSING ERROR: %p contains %lu\n"</q>,</td></tr>
+<tr><th id="109">109</th><td>                (<em>void</em>*) <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>, *<a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>);</td></tr>
+<tr><th id="110">110</th><td>            <a class="ref fn" href="../../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>1</var>);</td></tr>
+<tr><th id="111">111</th><td>        }</td></tr>
+<tr><th id="112">112</th><td>        <a class="local col3 ref" href="#13p" title='p' data-ref="13p">p</a>++;</td></tr>
+<tr><th id="113">113</th><td>        <b>if</b> ((<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a> &amp; <var>0xffff</var>) == <var>0</var>) <a class="ref fn" href="#memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</a>(<a class="local col2 ref" href="#12j" title='j' data-ref="12j">j</a>+<a class="local col1 ref" href="#11words" title='words' data-ref="11words">words</a>,<a class="local col1 ref" href="#11words" title='words' data-ref="11words">words</a>*<var>2</var>,<kbd>'A'</kbd>);</td></tr>
+<tr><th id="114">114</th><td>    }</td></tr>
+<tr><th id="115">115</th><td>}</td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><i>/* Fill words stepping a single page at every write, so we continue to</i></td></tr>
+<tr><th id="118">118</th><td><i> * touch all the pages in the smallest amount of time reducing the</i></td></tr>
+<tr><th id="119">119</th><td><i> * effectiveness of caches, and making it hard for the OS to transfer</i></td></tr>
+<tr><th id="120">120</th><td><i> * pages on the swap. */</i></td></tr>
+<tr><th id="121">121</th><td><em>void</em> <dfn class="decl def fn" id="memtest_fill_random" title='memtest_fill_random' data-ref="memtest_fill_random">memtest_fill_random</dfn>(<em>unsigned</em> <em>long</em> *<dfn class="local col4 decl" id="14l" title='l' data-type='unsigned long *' data-ref="14l">l</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="15bytes" title='bytes' data-type='size_t' data-ref="15bytes">bytes</dfn>) {</td></tr>
+<tr><th id="122">122</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col6 decl" id="16step" title='step' data-type='unsigned long' data-ref="16step">step</dfn> = <var>4096</var>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>);</td></tr>
+<tr><th id="123">123</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col7 decl" id="17words" title='words' data-type='unsigned long' data-ref="17words">words</dfn> = <a class="local col5 ref" href="#15bytes" title='bytes' data-ref="15bytes">bytes</a>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>)/<var>2</var>;</td></tr>
+<tr><th id="124">124</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="18iwords" title='iwords' data-type='unsigned long' data-ref="18iwords">iwords</dfn> = <a class="local col7 ref" href="#17words" title='words' data-ref="17words">words</a>/<a class="local col6 ref" href="#16step" title='step' data-ref="16step">step</a>;  <i>/* words per iteration */</i></td></tr>
+<tr><th id="125">125</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col9 decl" id="19off" title='off' data-type='unsigned long' data-ref="19off">off</dfn>, <dfn class="local col0 decl" id="20w" title='w' data-type='unsigned long' data-ref="20w">w</dfn>, *<dfn class="local col1 decl" id="21l1" title='l1' data-type='unsigned long *' data-ref="21l1">l1</dfn>, *<dfn class="local col2 decl" id="22l2" title='l2' data-type='unsigned long *' data-ref="22l2">l2</dfn>;</td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="(((bytes &amp; 4095) == 0) ? (void) (0) : __assert_fail (&quot;(bytes &amp; 4095) == 0&quot;, &quot;/vagrant/data/redis-v3.0.0/src/memtest.c&quot;, 127, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>((<a class="local col5 ref" href="#15bytes" title='bytes' data-ref="15bytes">bytes</a> &amp; <var>4095</var>) == <var>0</var>);</td></tr>
+<tr><th id="128">128</th><td>    <b>for</b> (<a class="local col9 ref" href="#19off" title='off' data-ref="19off">off</a> = <var>0</var>; <a class="local col9 ref" href="#19off" title='off' data-ref="19off">off</a> &lt; <a class="local col6 ref" href="#16step" title='step' data-ref="16step">step</a>; <a class="local col9 ref" href="#19off" title='off' data-ref="19off">off</a>++) {</td></tr>
+<tr><th id="129">129</th><td>        <a class="local col1 ref" href="#21l1" title='l1' data-ref="21l1">l1</a> = <a class="local col4 ref" href="#14l" title='l' data-ref="14l">l</a>+<a class="local col9 ref" href="#19off" title='off' data-ref="19off">off</a>;</td></tr>
+<tr><th id="130">130</th><td>        <a class="local col2 ref" href="#22l2" title='l2' data-ref="22l2">l2</a> = <a class="local col1 ref" href="#21l1" title='l1' data-ref="21l1">l1</a>+<a class="local col7 ref" href="#17words" title='words' data-ref="17words">words</a>;</td></tr>
+<tr><th id="131">131</th><td>        <b>for</b> (<a class="local col0 ref" href="#20w" title='w' data-ref="20w">w</a> = <var>0</var>; <a class="local col0 ref" href="#20w" title='w' data-ref="20w">w</a> &lt; <a class="local col8 ref" href="#18iwords" title='iwords' data-ref="18iwords">iwords</a>; <a class="local col0 ref" href="#20w" title='w' data-ref="20w">w</a>++) {</td></tr>
+<tr><th id="132">132</th><td><u>#<span data-ppcond="132">ifdef</span> <span class="macro" data-ref="_M/MEMTEST_32BIT">MEMTEST_32BIT</span></u></td></tr>
+<tr><th id="133">133</th><td>            *l1 = *l2 = ((<em>unsigned</em> <em>long</em>)     (rand()&amp;<var>0xffff</var>)) |</td></tr>
+<tr><th id="134">134</th><td>                        (((<em>unsigned</em> <em>long</em>)    (rand()&amp;<var>0xffff</var>)) &lt;&lt; <var>16</var>);</td></tr>
+<tr><th id="135">135</th><td><u>#<span data-ppcond="132">else</span></u></td></tr>
+<tr><th id="136">136</th><td>            *<a class="local col1 ref" href="#21l1" title='l1' data-ref="21l1">l1</a> = *<a class="local col2 ref" href="#22l2" title='l2' data-ref="22l2">l2</a> = ((<em>unsigned</em> <em>long</em>)     (<a class="ref fn" href="../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()&amp;<var>0xffff</var>)) |</td></tr>
+<tr><th id="137">137</th><td>                        (((<em>unsigned</em> <em>long</em>)    (<a class="ref fn" href="../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()&amp;<var>0xffff</var>)) &lt;&lt; <var>16</var>) |</td></tr>
+<tr><th id="138">138</th><td>                        (((<em>unsigned</em> <em>long</em>)    (<a class="ref fn" href="../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()&amp;<var>0xffff</var>)) &lt;&lt; <var>32</var>) |</td></tr>
+<tr><th id="139">139</th><td>                        (((<em>unsigned</em> <em>long</em>)    (<a class="ref fn" href="../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()&amp;<var>0xffff</var>)) &lt;&lt; <var>48</var>);</td></tr>
+<tr><th id="140">140</th><td><u>#<span data-ppcond="132">endif</span></u></td></tr>
+<tr><th id="141">141</th><td>            <a class="local col1 ref" href="#21l1" title='l1' data-ref="21l1">l1</a> += <a class="local col6 ref" href="#16step" title='step' data-ref="16step">step</a>;</td></tr>
+<tr><th id="142">142</th><td>            <a class="local col2 ref" href="#22l2" title='l2' data-ref="22l2">l2</a> += <a class="local col6 ref" href="#16step" title='step' data-ref="16step">step</a>;</td></tr>
+<tr><th id="143">143</th><td>            <b>if</b> ((<a class="local col0 ref" href="#20w" title='w' data-ref="20w">w</a> &amp; <var>0xffff</var>) == <var>0</var>)</td></tr>
+<tr><th id="144">144</th><td>                <a class="ref fn" href="#memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</a>(<a class="local col0 ref" href="#20w" title='w' data-ref="20w">w</a>+<a class="local col8 ref" href="#18iwords" title='iwords' data-ref="18iwords">iwords</a>*<a class="local col9 ref" href="#19off" title='off' data-ref="19off">off</a>,<a class="local col7 ref" href="#17words" title='words' data-ref="17words">words</a>,<kbd>'R'</kbd>);</td></tr>
+<tr><th id="145">145</th><td>        }</td></tr>
+<tr><th id="146">146</th><td>    }</td></tr>
+<tr><th id="147">147</th><td>}</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/* Like memtest_fill_random() but uses the two specified values to fill</i></td></tr>
+<tr><th id="150">150</th><td><i> * memory, in an alternated way (v1|v2|v1|v2|...) */</i></td></tr>
+<tr><th id="151">151</th><td><em>void</em> <dfn class="decl def fn" id="memtest_fill_value" title='memtest_fill_value' data-ref="memtest_fill_value">memtest_fill_value</dfn>(<em>unsigned</em> <em>long</em> *<dfn class="local col3 decl" id="23l" title='l' data-type='unsigned long *' data-ref="23l">l</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="24bytes" title='bytes' data-type='size_t' data-ref="24bytes">bytes</dfn>, <em>unsigned</em> <em>long</em> <dfn class="local col5 decl" id="25v1" title='v1' data-type='unsigned long' data-ref="25v1">v1</dfn>,</td></tr>
+<tr><th id="152">152</th><td>                        <em>unsigned</em> <em>long</em> <dfn class="local col6 decl" id="26v2" title='v2' data-type='unsigned long' data-ref="26v2">v2</dfn>, <em>char</em> <dfn class="local col7 decl" id="27sym" title='sym' data-type='char' data-ref="27sym">sym</dfn>)</td></tr>
+<tr><th id="153">153</th><td>{</td></tr>
+<tr><th id="154">154</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="28step" title='step' data-type='unsigned long' data-ref="28step">step</dfn> = <var>4096</var>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>);</td></tr>
+<tr><th id="155">155</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col9 decl" id="29words" title='words' data-type='unsigned long' data-ref="29words">words</dfn> = <a class="local col4 ref" href="#24bytes" title='bytes' data-ref="24bytes">bytes</a>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>)/<var>2</var>;</td></tr>
+<tr><th id="156">156</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col0 decl" id="30iwords" title='iwords' data-type='unsigned long' data-ref="30iwords">iwords</dfn> = <a class="local col9 ref" href="#29words" title='words' data-ref="29words">words</a>/<a class="local col8 ref" href="#28step" title='step' data-ref="28step">step</a>;  <i>/* words per iteration */</i></td></tr>
+<tr><th id="157">157</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col1 decl" id="31off" title='off' data-type='unsigned long' data-ref="31off">off</dfn>, <dfn class="local col2 decl" id="32w" title='w' data-type='unsigned long' data-ref="32w">w</dfn>, *<dfn class="local col3 decl" id="33l1" title='l1' data-type='unsigned long *' data-ref="33l1">l1</dfn>, *<dfn class="local col4 decl" id="34l2" title='l2' data-type='unsigned long *' data-ref="34l2">l2</dfn>, <dfn class="local col5 decl" id="35v" title='v' data-type='unsigned long' data-ref="35v">v</dfn>;</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="(((bytes &amp; 4095) == 0) ? (void) (0) : __assert_fail (&quot;(bytes &amp; 4095) == 0&quot;, &quot;/vagrant/data/redis-v3.0.0/src/memtest.c&quot;, 159, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>((<a class="local col4 ref" href="#24bytes" title='bytes' data-ref="24bytes">bytes</a> &amp; <var>4095</var>) == <var>0</var>);</td></tr>
+<tr><th id="160">160</th><td>    <b>for</b> (<a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a> = <var>0</var>; <a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a> &lt; <a class="local col8 ref" href="#28step" title='step' data-ref="28step">step</a>; <a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a>++) {</td></tr>
+<tr><th id="161">161</th><td>        <a class="local col3 ref" href="#33l1" title='l1' data-ref="33l1">l1</a> = <a class="local col3 ref" href="#23l" title='l' data-ref="23l">l</a>+<a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a>;</td></tr>
+<tr><th id="162">162</th><td>        <a class="local col4 ref" href="#34l2" title='l2' data-ref="34l2">l2</a> = <a class="local col3 ref" href="#33l1" title='l1' data-ref="33l1">l1</a>+<a class="local col9 ref" href="#29words" title='words' data-ref="29words">words</a>;</td></tr>
+<tr><th id="163">163</th><td>        <a class="local col5 ref" href="#35v" title='v' data-ref="35v">v</a> = (<a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a> &amp; <var>1</var>) ? <a class="local col6 ref" href="#26v2" title='v2' data-ref="26v2">v2</a> : <a class="local col5 ref" href="#25v1" title='v1' data-ref="25v1">v1</a>;</td></tr>
+<tr><th id="164">164</th><td>        <b>for</b> (<a class="local col2 ref" href="#32w" title='w' data-ref="32w">w</a> = <var>0</var>; <a class="local col2 ref" href="#32w" title='w' data-ref="32w">w</a> &lt; <a class="local col0 ref" href="#30iwords" title='iwords' data-ref="30iwords">iwords</a>; <a class="local col2 ref" href="#32w" title='w' data-ref="32w">w</a>++) {</td></tr>
+<tr><th id="165">165</th><td><u>#<span data-ppcond="165">ifdef</span> <span class="macro" data-ref="_M/MEMTEST_32BIT">MEMTEST_32BIT</span></u></td></tr>
+<tr><th id="166">166</th><td>            *l1 = *l2 = ((<em>unsigned</em> <em>long</em>)     v) |</td></tr>
+<tr><th id="167">167</th><td>                        (((<em>unsigned</em> <em>long</em>)    v) &lt;&lt; <var>16</var>);</td></tr>
+<tr><th id="168">168</th><td><u>#<span data-ppcond="165">else</span></u></td></tr>
+<tr><th id="169">169</th><td>            *<a class="local col3 ref" href="#33l1" title='l1' data-ref="33l1">l1</a> = *<a class="local col4 ref" href="#34l2" title='l2' data-ref="34l2">l2</a> = ((<em>unsigned</em> <em>long</em>)     <a class="local col5 ref" href="#35v" title='v' data-ref="35v">v</a>) |</td></tr>
+<tr><th id="170">170</th><td>                        (((<em>unsigned</em> <em>long</em>)    <a class="local col5 ref" href="#35v" title='v' data-ref="35v">v</a>) &lt;&lt; <var>16</var>) |</td></tr>
+<tr><th id="171">171</th><td>                        (((<em>unsigned</em> <em>long</em>)    <a class="local col5 ref" href="#35v" title='v' data-ref="35v">v</a>) &lt;&lt; <var>32</var>) |</td></tr>
+<tr><th id="172">172</th><td>                        (((<em>unsigned</em> <em>long</em>)    <a class="local col5 ref" href="#35v" title='v' data-ref="35v">v</a>) &lt;&lt; <var>48</var>);</td></tr>
+<tr><th id="173">173</th><td><u>#<span data-ppcond="165">endif</span></u></td></tr>
+<tr><th id="174">174</th><td>            <a class="local col3 ref" href="#33l1" title='l1' data-ref="33l1">l1</a> += <a class="local col8 ref" href="#28step" title='step' data-ref="28step">step</a>;</td></tr>
+<tr><th id="175">175</th><td>            <a class="local col4 ref" href="#34l2" title='l2' data-ref="34l2">l2</a> += <a class="local col8 ref" href="#28step" title='step' data-ref="28step">step</a>;</td></tr>
+<tr><th id="176">176</th><td>            <b>if</b> ((<a class="local col2 ref" href="#32w" title='w' data-ref="32w">w</a> &amp; <var>0xffff</var>) == <var>0</var>)</td></tr>
+<tr><th id="177">177</th><td>                <a class="ref fn" href="#memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</a>(<a class="local col2 ref" href="#32w" title='w' data-ref="32w">w</a>+<a class="local col0 ref" href="#30iwords" title='iwords' data-ref="30iwords">iwords</a>*<a class="local col1 ref" href="#31off" title='off' data-ref="31off">off</a>,<a class="local col9 ref" href="#29words" title='words' data-ref="29words">words</a>,<a class="local col7 ref" href="#27sym" title='sym' data-ref="27sym">sym</a>);</td></tr>
+<tr><th id="178">178</th><td>        }</td></tr>
+<tr><th id="179">179</th><td>    }</td></tr>
+<tr><th id="180">180</th><td>}</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>void</em> <dfn class="decl def fn" id="memtest_compare" title='memtest_compare' data-ref="memtest_compare">memtest_compare</dfn>(<em>unsigned</em> <em>long</em> *<dfn class="local col6 decl" id="36l" title='l' data-type='unsigned long *' data-ref="36l">l</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="37bytes" title='bytes' data-type='size_t' data-ref="37bytes">bytes</dfn>) {</td></tr>
+<tr><th id="183">183</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="38words" title='words' data-type='unsigned long' data-ref="38words">words</dfn> = <a class="local col7 ref" href="#37bytes" title='bytes' data-ref="37bytes">bytes</a>/<b>sizeof</b>(<em>unsigned</em> <em>long</em>)/<var>2</var>;</td></tr>
+<tr><th id="184">184</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col9 decl" id="39w" title='w' data-type='unsigned long' data-ref="39w">w</dfn>, *<dfn class="local col0 decl" id="40l1" title='l1' data-type='unsigned long *' data-ref="40l1">l1</dfn>, *<dfn class="local col1 decl" id="41l2" title='l2' data-type='unsigned long *' data-ref="41l2">l2</dfn>;</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td>    <a class="macro" href="../../include/assert.h.html#88" title="(((bytes &amp; 4095) == 0) ? (void) (0) : __assert_fail (&quot;(bytes &amp; 4095) == 0&quot;, &quot;/vagrant/data/redis-v3.0.0/src/memtest.c&quot;, 186, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>((<a class="local col7 ref" href="#37bytes" title='bytes' data-ref="37bytes">bytes</a> &amp; <var>4095</var>) == <var>0</var>);</td></tr>
+<tr><th id="187">187</th><td>    <a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a> = <a class="local col6 ref" href="#36l" title='l' data-ref="36l">l</a>;</td></tr>
+<tr><th id="188">188</th><td>    <a class="local col1 ref" href="#41l2" title='l2' data-ref="41l2">l2</a> = <a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a>+<a class="local col8 ref" href="#38words" title='words' data-ref="38words">words</a>;</td></tr>
+<tr><th id="189">189</th><td>    <b>for</b> (<a class="local col9 ref" href="#39w" title='w' data-ref="39w">w</a> = <var>0</var>; <a class="local col9 ref" href="#39w" title='w' data-ref="39w">w</a> &lt; <a class="local col8 ref" href="#38words" title='words' data-ref="38words">words</a>; <a class="local col9 ref" href="#39w" title='w' data-ref="39w">w</a>++) {</td></tr>
+<tr><th id="190">190</th><td>        <b>if</b> (*<a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a> != *<a class="local col1 ref" href="#41l2" title='l2' data-ref="41l2">l2</a>) {</td></tr>
+<tr><th id="191">191</th><td>            <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\n*** MEMORY ERROR DETECTED: %p != %p (%lu vs %lu)\n"</q>,</td></tr>
+<tr><th id="192">192</th><td>                (<em>void</em>*)<a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a>, (<em>void</em>*)<a class="local col1 ref" href="#41l2" title='l2' data-ref="41l2">l2</a>, *<a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a>, *<a class="local col1 ref" href="#41l2" title='l2' data-ref="41l2">l2</a>);</td></tr>
+<tr><th id="193">193</th><td>            <a class="ref fn" href="../../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>1</var>);</td></tr>
+<tr><th id="194">194</th><td>        }</td></tr>
+<tr><th id="195">195</th><td>        <a class="local col0 ref" href="#40l1" title='l1' data-ref="40l1">l1</a> ++;</td></tr>
+<tr><th id="196">196</th><td>        <a class="local col1 ref" href="#41l2" title='l2' data-ref="41l2">l2</a> ++;</td></tr>
+<tr><th id="197">197</th><td>        <b>if</b> ((<a class="local col9 ref" href="#39w" title='w' data-ref="39w">w</a> &amp; <var>0xffff</var>) == <var>0</var>) <a class="ref fn" href="#memtest_progress_step" title='memtest_progress_step' data-ref="memtest_progress_step">memtest_progress_step</a>(<a class="local col9 ref" href="#39w" title='w' data-ref="39w">w</a>,<a class="local col8 ref" href="#38words" title='words' data-ref="38words">words</a>,<kbd>'='</kbd>);</td></tr>
+<tr><th id="198">198</th><td>    }</td></tr>
+<tr><th id="199">199</th><td>}</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><em>void</em> <dfn class="decl def fn" id="memtest_compare_times" title='memtest_compare_times' data-ref="memtest_compare_times">memtest_compare_times</dfn>(<em>unsigned</em> <em>long</em> *<dfn class="local col2 decl" id="42m" title='m' data-type='unsigned long *' data-ref="42m">m</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="43bytes" title='bytes' data-type='size_t' data-ref="43bytes">bytes</dfn>, <em>int</em> <dfn class="local col4 decl" id="44pass" title='pass' data-type='int' data-ref="44pass">pass</dfn>, <em>int</em> <dfn class="local col5 decl" id="45times" title='times' data-type='int' data-ref="45times">times</dfn>) {</td></tr>
+<tr><th id="202">202</th><td>    <em>int</em> <dfn class="local col6 decl" id="46j" title='j' data-type='int' data-ref="46j">j</dfn>;</td></tr>
+<tr><th id="203">203</th><td></td></tr>
+<tr><th id="204">204</th><td>    <b>for</b> (<a class="local col6 ref" href="#46j" title='j' data-ref="46j">j</a> = <var>0</var>; <a class="local col6 ref" href="#46j" title='j' data-ref="46j">j</a> &lt; <a class="local col5 ref" href="#45times" title='times' data-ref="45times">times</a>; <a class="local col6 ref" href="#46j" title='j' data-ref="46j">j</a>++) {</td></tr>
+<tr><th id="205">205</th><td>        <a class="ref fn" href="#memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</a>(<q>"Compare"</q>,<a class="local col4 ref" href="#44pass" title='pass' data-ref="44pass">pass</a>);</td></tr>
+<tr><th id="206">206</th><td>        <a class="ref fn" href="#memtest_compare" title='memtest_compare' data-ref="memtest_compare">memtest_compare</a>(<a class="local col2 ref" href="#42m" title='m' data-ref="42m">m</a>,<a class="local col3 ref" href="#43bytes" title='bytes' data-ref="43bytes">bytes</a>);</td></tr>
+<tr><th id="207">207</th><td>        <a class="ref fn" href="#memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</a>();</td></tr>
+<tr><th id="208">208</th><td>    }</td></tr>
+<tr><th id="209">209</th><td>}</td></tr>
+<tr><th id="210">210</th><td></td></tr>
+<tr><th id="211">211</th><td><em>void</em> <dfn class="decl def fn" id="memtest_test" title='memtest_test' data-ref="memtest_test">memtest_test</dfn>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="47megabytes" title='megabytes' data-type='size_t' data-ref="47megabytes">megabytes</dfn>, <em>int</em> <dfn class="local col8 decl" id="48passes" title='passes' data-type='int' data-ref="48passes">passes</dfn>) {</td></tr>
+<tr><th id="212">212</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col9 decl" id="49bytes" title='bytes' data-type='size_t' data-ref="49bytes">bytes</dfn> = <a class="local col7 ref" href="#47megabytes" title='megabytes' data-ref="47megabytes">megabytes</a>*<var>1024</var>*<var>1024</var>;</td></tr>
+<tr><th id="213">213</th><td>    <em>unsigned</em> <em>long</em> *<dfn class="local col0 decl" id="50m" title='m' data-type='unsigned long *' data-ref="50m">m</dfn> = <a class="ref fn" href="../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>);</td></tr>
+<tr><th id="214">214</th><td>    <em>int</em> <dfn class="local col1 decl" id="51pass" title='pass' data-type='int' data-ref="51pass">pass</dfn> = <var>0</var>;</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>    <b>if</b> (<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="217">217</th><td>        <a class="ref fn" href="../../include/stdio.h.html#fprintf" title='fprintf' data-ref="fprintf">fprintf</a>(<a class="macro" href="../../include/stdio.h.html#174" title="stderr" data-ref="_M/stderr">stderr</a>,<q>"Unable to allocate %zu megabytes: %s"</q>,</td></tr>
+<tr><th id="218">218</th><td>            <a class="local col7 ref" href="#47megabytes" title='megabytes' data-ref="47megabytes">megabytes</a>, <a class="ref fn" href="../../include/string.h.html#strerror" title='strerror' data-ref="strerror">strerror</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a>));</td></tr>
+<tr><th id="219">219</th><td>        <a class="ref fn" href="../../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>1</var>);</td></tr>
+<tr><th id="220">220</th><td>    }</td></tr>
+<tr><th id="221">221</th><td>    <b>while</b> (<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a> != <a class="local col8 ref" href="#48passes" title='passes' data-ref="48passes">passes</a>) {</td></tr>
+<tr><th id="222">222</th><td>        <a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>++;</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td>        <a class="ref fn" href="#memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</a>(<q>"Addressing test"</q>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>);</td></tr>
+<tr><th id="225">225</th><td>        <a class="ref fn" href="#memtest_addressing" title='memtest_addressing' data-ref="memtest_addressing">memtest_addressing</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>);</td></tr>
+<tr><th id="226">226</th><td>        <a class="ref fn" href="#memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</a>();</td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td>        <a class="ref fn" href="#memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</a>(<q>"Random fill"</q>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>);</td></tr>
+<tr><th id="229">229</th><td>        <a class="ref fn" href="#memtest_fill_random" title='memtest_fill_random' data-ref="memtest_fill_random">memtest_fill_random</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>);</td></tr>
+<tr><th id="230">230</th><td>        <a class="ref fn" href="#memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</a>();</td></tr>
+<tr><th id="231">231</th><td>        <a class="ref fn" href="#memtest_compare_times" title='memtest_compare_times' data-ref="memtest_compare_times">memtest_compare_times</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>,<var>4</var>);</td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td>        <a class="ref fn" href="#memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</a>(<q>"Solid fill"</q>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>);</td></tr>
+<tr><th id="234">234</th><td>        <a class="ref fn" href="#memtest_fill_value" title='memtest_fill_value' data-ref="memtest_fill_value">memtest_fill_value</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>,<var>0</var>,(<em>unsigned</em> <em>long</em>)-<var>1</var>,<kbd>'S'</kbd>);</td></tr>
+<tr><th id="235">235</th><td>        <a class="ref fn" href="#memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</a>();</td></tr>
+<tr><th id="236">236</th><td>        <a class="ref fn" href="#memtest_compare_times" title='memtest_compare_times' data-ref="memtest_compare_times">memtest_compare_times</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>,<var>4</var>);</td></tr>
+<tr><th id="237">237</th><td></td></tr>
+<tr><th id="238">238</th><td>        <a class="ref fn" href="#memtest_progress_start" title='memtest_progress_start' data-ref="memtest_progress_start">memtest_progress_start</a>(<q>"Checkerboard fill"</q>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>);</td></tr>
+<tr><th id="239">239</th><td>        <a class="ref fn" href="#memtest_fill_value" title='memtest_fill_value' data-ref="memtest_fill_value">memtest_fill_value</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>,<a class="macro" href="#55" title="0xaaaaaaaaaaaaaaaaUL" data-ref="_M/ULONG_ONEZERO">ULONG_ONEZERO</a>,<a class="macro" href="#56" title="0x5555555555555555UL" data-ref="_M/ULONG_ZEROONE">ULONG_ZEROONE</a>,<kbd>'C'</kbd>);</td></tr>
+<tr><th id="240">240</th><td>        <a class="ref fn" href="#memtest_progress_end" title='memtest_progress_end' data-ref="memtest_progress_end">memtest_progress_end</a>();</td></tr>
+<tr><th id="241">241</th><td>        <a class="ref fn" href="#memtest_compare_times" title='memtest_compare_times' data-ref="memtest_compare_times">memtest_compare_times</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>,<a class="local col9 ref" href="#49bytes" title='bytes' data-ref="49bytes">bytes</a>,<a class="local col1 ref" href="#51pass" title='pass' data-ref="51pass">pass</a>,<var>4</var>);</td></tr>
+<tr><th id="242">242</th><td>    }</td></tr>
+<tr><th id="243">243</th><td>    <a class="ref fn" href="../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col0 ref" href="#50m" title='m' data-ref="50m">m</a>);</td></tr>
+<tr><th id="244">244</th><td>}</td></tr>
+<tr><th id="245">245</th><td></td></tr>
+<tr><th id="246">246</th><td><em>void</em> <dfn class="decl def fn" id="memtest_non_destructive_invert" title='memtest_non_destructive_invert' data-ref="memtest_non_destructive_invert">memtest_non_destructive_invert</dfn>(<em>void</em> *<dfn class="local col2 decl" id="52addr" title='addr' data-type='void *' data-ref="52addr">addr</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="53size" title='size' data-type='size_t' data-ref="53size">size</dfn>) {</td></tr>
+<tr><th id="247">247</th><td>    <em>volatile</em> <em>unsigned</em> <em>long</em> *<dfn class="local col4 decl" id="54p" title='p' data-type='volatile unsigned long *' data-ref="54p">p</dfn> = <a class="local col2 ref" href="#52addr" title='addr' data-ref="52addr">addr</a>;</td></tr>
+<tr><th id="248">248</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col5 decl" id="55words" title='words' data-type='size_t' data-ref="55words">words</dfn> = <a class="local col3 ref" href="#53size" title='size' data-ref="53size">size</a> / <b>sizeof</b>(<em>unsigned</em> <em>long</em>);</td></tr>
+<tr><th id="249">249</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="56j" title='j' data-type='size_t' data-ref="56j">j</dfn>;</td></tr>
+<tr><th id="250">250</th><td></td></tr>
+<tr><th id="251">251</th><td>    <i>/* Invert */</i></td></tr>
+<tr><th id="252">252</th><td>    <b>for</b> (<a class="local col6 ref" href="#56j" title='j' data-ref="56j">j</a> = <var>0</var>; <a class="local col6 ref" href="#56j" title='j' data-ref="56j">j</a> &lt; <a class="local col5 ref" href="#55words" title='words' data-ref="55words">words</a>; <a class="local col6 ref" href="#56j" title='j' data-ref="56j">j</a>++)</td></tr>
+<tr><th id="253">253</th><td>        <a class="local col4 ref" href="#54p" title='p' data-ref="54p">p</a>[<a class="local col6 ref" href="#56j" title='j' data-ref="56j">j</a>] = ~<a class="local col4 ref" href="#54p" title='p' data-ref="54p">p</a>[<a class="local col6 ref" href="#56j" title='j' data-ref="56j">j</a>];</td></tr>
+<tr><th id="254">254</th><td>}</td></tr>
+<tr><th id="255">255</th><td></td></tr>
+<tr><th id="256">256</th><td><em>void</em> <dfn class="decl def fn" id="memtest_non_destructive_swap" title='memtest_non_destructive_swap' data-ref="memtest_non_destructive_swap">memtest_non_destructive_swap</dfn>(<em>void</em> *<dfn class="local col7 decl" id="57addr" title='addr' data-type='void *' data-ref="57addr">addr</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="58size" title='size' data-type='size_t' data-ref="58size">size</dfn>) {</td></tr>
+<tr><th id="257">257</th><td>    <em>volatile</em> <em>unsigned</em> <em>long</em> *<dfn class="local col9 decl" id="59p" title='p' data-type='volatile unsigned long *' data-ref="59p">p</dfn> = <a class="local col7 ref" href="#57addr" title='addr' data-ref="57addr">addr</a>;</td></tr>
+<tr><th id="258">258</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="60words" title='words' data-type='size_t' data-ref="60words">words</dfn> = <a class="local col8 ref" href="#58size" title='size' data-ref="58size">size</a> / <b>sizeof</b>(<em>unsigned</em> <em>long</em>);</td></tr>
+<tr><th id="259">259</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="61j" title='j' data-type='size_t' data-ref="61j">j</dfn>;</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td>    <i>/* Swap */</i></td></tr>
+<tr><th id="262">262</th><td>    <b>for</b> (<a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a> = <var>0</var>; <a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a> &lt; <a class="local col0 ref" href="#60words" title='words' data-ref="60words">words</a>; <a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a> += <var>2</var>) {</td></tr>
+<tr><th id="263">263</th><td>        <em>unsigned</em> <em>long</em> <dfn class="local col2 decl" id="62a" title='a' data-type='unsigned long' data-ref="62a">a</dfn>, <dfn class="local col3 decl" id="63b" title='b' data-type='unsigned long' data-ref="63b">b</dfn>;</td></tr>
+<tr><th id="264">264</th><td></td></tr>
+<tr><th id="265">265</th><td>        <a class="local col2 ref" href="#62a" title='a' data-ref="62a">a</a> = <a class="local col9 ref" href="#59p" title='p' data-ref="59p">p</a>[<a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a>];</td></tr>
+<tr><th id="266">266</th><td>        <a class="local col3 ref" href="#63b" title='b' data-ref="63b">b</a> = <a class="local col9 ref" href="#59p" title='p' data-ref="59p">p</a>[<a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a>+<var>1</var>];</td></tr>
+<tr><th id="267">267</th><td>        <a class="local col9 ref" href="#59p" title='p' data-ref="59p">p</a>[<a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a>] = <a class="local col3 ref" href="#63b" title='b' data-ref="63b">b</a>;</td></tr>
+<tr><th id="268">268</th><td>        <a class="local col9 ref" href="#59p" title='p' data-ref="59p">p</a>[<a class="local col1 ref" href="#61j" title='j' data-ref="61j">j</a>+<var>1</var>] = <a class="local col2 ref" href="#62a" title='a' data-ref="62a">a</a>;</td></tr>
+<tr><th id="269">269</th><td>    }</td></tr>
+<tr><th id="270">270</th><td>}</td></tr>
+<tr><th id="271">271</th><td></td></tr>
+<tr><th id="272">272</th><td><em>void</em> <dfn class="decl def fn" id="memtest" title='memtest' data-ref="memtest">memtest</dfn>(<span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="64megabytes" title='megabytes' data-type='size_t' data-ref="64megabytes">megabytes</dfn>, <em>int</em> <dfn class="local col5 decl" id="65passes" title='passes' data-type='int' data-ref="65passes">passes</dfn>) {</td></tr>
+<tr><th id="273">273</th><td>    <b>if</b> (<a class="ref fn" href="../../include/x86_64-linux-gnu/sys/ioctl.h.html#ioctl" title='ioctl' data-ref="ioctl">ioctl</a>(<var>1</var>, <a class="macro" href="../../include/asm-generic/ioctls.h.html#37" title="0x5413" data-ref="_M/TIOCGWINSZ">TIOCGWINSZ</a>, &amp;<a class="tu ref" href="#ws" title='ws' data-use='a' data-ref="ws">ws</a>) == -<var>1</var>) {</td></tr>
+<tr><th id="274">274</th><td>        <a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_col" title='winsize::ws_col' data-ref="winsize::ws_col">ws_col</a> = <var>80</var>;</td></tr>
+<tr><th id="275">275</th><td>        <a class="tu ref" href="#ws" title='ws' data-use='m' data-ref="ws">ws</a>.<a class="ref field" href="../../include/x86_64-linux-gnu/bits/ioctl-types.h.html#winsize::ws_row" title='winsize::ws_row' data-ref="winsize::ws_row">ws_row</a> = <var>20</var>;</td></tr>
+<tr><th id="276">276</th><td>    }</td></tr>
+<tr><th id="277">277</th><td>    <a class="ref fn" href="#memtest_test" title='memtest_test' data-ref="memtest_test">memtest_test</a>(<a class="local col4 ref" href="#64megabytes" title='megabytes' data-ref="64megabytes">megabytes</a>,<a class="local col5 ref" href="#65passes" title='passes' data-ref="65passes">passes</a>);</td></tr>
+<tr><th id="278">278</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"\nYour memory passed this test.\n"</q>);</td></tr>
+<tr><th id="279">279</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"Please if you are still in doubt use the following two tools:\n"</q>);</td></tr>
+<tr><th id="280">280</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"1) memtest86: http://www.memtest86.com/\n"</q>);</td></tr>
+<tr><th id="281">281</th><td>    <a class="ref fn" href="../../include/stdio.h.html#printf" title='printf' data-ref="printf">printf</a>(<q>"2) memtester: http://pyropus.ca/software/memtester/\n"</q>);</td></tr>
+<tr><th id="282">282</th><td>    <a class="ref fn" href="../../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>0</var>);</td></tr>
+<tr><th id="283">283</th><td>}</td></tr>
+<tr><th id="284">284</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='793' type='char *'/>
+<offset>15232</offset>
+<doc f='redis/src/redis.h' l='793'>/* Syslog ident */</doc>
+<use f='redis/src/config.c' l='199' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='199' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='200' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1805' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1422' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1753' u='r' c='initServer'/>

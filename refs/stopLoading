@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1178' type='void stopLoading()'/>
+<use f='redis/src/aof.c' l='706' u='c' c='loadAppendOnlyFile'/>
+<def f='redis/src/rdb.c' l='1106' ll='1108' type='void stopLoading()'/>
+<use f='redis/src/rdb.c' l='1232' u='c' c='rdbLoad'/>
+<doc f='redis/src/rdb.c' l='1105'>/* Loading finished */</doc>

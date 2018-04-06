@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='342' type='int lua_gethookmask(lua_State * L)'/>
+<use f='redis/deps/lua/src/ldblib.c' l='286' u='c' c='db_gethook'/>
+<def f='redis/deps/lua/src/ldebug.c' l='74' ll='76' macro='1' type='int lua_gethookmask(lua_State * L)'/>

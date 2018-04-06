@@ -1,0 +1,58 @@
+<dec f='redis/src/redis.h' l='1328' type='void signalModifiedKey(redisDb * db, robj * key)'/>
+<use f='redis/src/bitops.c' l='254' u='c' c='setbitCommand'/>
+<use f='redis/src/bitops.c' l='454' u='c' c='bitopCommand'/>
+<use f='redis/src/cluster.c' l='4431' u='c' c='restoreCommand'/>
+<use f='redis/src/cluster.c' l='4680' u='c' c='migrateCommand'/>
+<use f='redis/src/db.c' l='128' u='c' c='setKey'/>
+<def f='redis/src/db.c' l='241' ll='243' type='void signalModifiedKey(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='286' u='c' c='delCommand'/>
+<use f='redis/src/db.c' l='691' u='c' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='692' u='c' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='901' u='c' c='expireGenericCommand'/>
+<use f='redis/src/db.c' l='908' u='c' c='expireGenericCommand'/>
+<doc f='redis/src/db.c' l='232'>/*-----------------------------------------------------------------------------
+ * Hooks for key space changes.
+ *
+ * Every time a key in the database is modified the function
+ * signalModifiedKey() is called.
+ *
+ * Every time a DB is flushed the function signalFlushDb() is called.
+ *----------------------------------------------------------------------------*/</doc>
+<use f='redis/src/hyperloglog.c' l='1186' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1277' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1337' u='c' c='pfmergeCommand'/>
+<use f='redis/src/sort.c' l='549' u='c' c='sortCommand'/>
+<use f='redis/src/t_hash.c' l='473' u='c' c='hsetCommand'/>
+<use f='redis/src/t_hash.c' l='489' u='c' c='hsetnxCommand'/>
+<use f='redis/src/t_hash.c' l='511' u='c' c='hmsetCommand'/>
+<use f='redis/src/t_hash.c' l='545' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_hash.c' l='572' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_hash.c' l='670' u='c' c='hdelCommand'/>
+<use f='redis/src/t_list.c' l='317' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='364' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='377' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='472' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='485' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='512' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='637' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='683' u='c' c='lremCommand'/>
+<use f='redis/src/t_list.c' l='708' u='c' c='rpoplpushHandlePush'/>
+<use f='redis/src/t_list.c' l='746' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='1060' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_set.c' l='270' u='c' c='saddCommand'/>
+<use f='redis/src/t_set.c' l='295' u='c' c='sremCommand'/>
+<use f='redis/src/t_set.c' l='340' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='341' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='409' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='607' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='717' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='889' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_string.c' l='224' u='c' c='setrangeCommand'/>
+<use f='redis/src/t_string.c' l='355' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_string.c' l='405' u='c' c='incrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='446' u='c' c='appendCommand'/>
+<use f='redis/src/t_zset.c' l='1303' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1371' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1469' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2058' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2070' u='c' c='zunionInterGenericCommand'/>

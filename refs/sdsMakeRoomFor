@@ -1,0 +1,37 @@
+<dec f='redis/deps/hiredis/sds.h' l='96' type='sds sdsMakeRoomFor(sds s, size_t addlen)'/>
+<doc f='redis/deps/hiredis/sds.h' l='95'>/* Low level functions exposed to the user API */</doc>
+<def f='redis/deps/hiredis/sds.c' l='129' ll='147' type='sds sdsMakeRoomFor(sds s, size_t addlen)'/>
+<use f='redis/deps/hiredis/sds.c' l='222' u='c' c='sdsgrowzero'/>
+<use f='redis/deps/hiredis/sds.c' l='243' u='c' c='sdscatlen'/>
+<use f='redis/deps/hiredis/sds.c' l='276' u='c' c='sdscpylen'/>
+<use f='redis/deps/hiredis/sds.c' l='469' u='c' c='sdscatfmt'/>
+<use f='redis/deps/hiredis/sds.c' l='483' u='c' c='sdscatfmt'/>
+<use f='redis/deps/hiredis/sds.c' l='501' u='c' c='sdscatfmt'/>
+<use f='redis/deps/hiredis/sds.c' l='520' u='c' c='sdscatfmt'/>
+<doc f='redis/deps/hiredis/sds.c' l='123'>/* Enlarge the free space at the end of the sds string so that the caller
+ * is sure that after calling this function can overwrite up to addlen
+ * bytes after the end of the string, plus one more byte for nul term.
+ *
+ * Note: this does not change the *length* of the sds string as returned
+ * by sdslen(), but only the free buffer space we have. */</doc>
+<dec f='redis/src/sds.h' l='96' type='sds sdsMakeRoomFor(sds s, size_t addlen)'/>
+<doc f='redis/src/sds.h' l='95'>/* Low level functions exposed to the user API */</doc>
+<use f='redis/src/hyperloglog.c' l='656' u='c' c='hllSparseAdd'/>
+<use f='redis/src/networking.c' l='1081' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1103' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1192' u='c' c='readQueryFromClient'/>
+<use f='redis/src/networking.c' l='1360' u='c' c='getAllClientsInfoString'/>
+<def f='redis/src/sds.c' l='129' ll='147' type='sds sdsMakeRoomFor(sds s, size_t addlen)'/>
+<use f='redis/src/sds.c' l='222' u='c' c='sdsgrowzero'/>
+<use f='redis/src/sds.c' l='243' u='c' c='sdscatlen'/>
+<use f='redis/src/sds.c' l='276' u='c' c='sdscpylen'/>
+<use f='redis/src/sds.c' l='469' u='c' c='sdscatfmt'/>
+<use f='redis/src/sds.c' l='483' u='c' c='sdscatfmt'/>
+<use f='redis/src/sds.c' l='501' u='c' c='sdscatfmt'/>
+<use f='redis/src/sds.c' l='520' u='c' c='sdscatfmt'/>
+<doc f='redis/src/sds.c' l='123'>/* Enlarge the free space at the end of the sds string so that the caller
+ * is sure that after calling this function can overwrite up to addlen
+ * bytes after the end of the string, plus one more byte for nul term.
+ *
+ * Note: this does not change the *length* of the sds string as returned
+ * by sdslen(), but only the free buffer space we have. */</doc>

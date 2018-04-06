@@ -1,0 +1,12 @@
+<dec f='include/stdlib.h' l='214' type='unsigned long long strtoull(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<use f='redis/src/cluster.c' l='144' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='147' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='220' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/redis-cli.c' l='1316' u='c' c='sendSync'/>
+<use f='redis/src/redis-cli.c' l='1999' u='c' c='scanMode'/>
+<use f='redis/src/sentinel.c' l='1393' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1400' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1410' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1898' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2130' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2131' u='c' c='sentinelProcessHelloMessage'/>

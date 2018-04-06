@@ -1,0 +1,8 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='53' type='char * linenoise(const char * prompt)'/>
+<def f='redis/deps/linenoise/linenoise.c' l='960' ll='981' type='char * linenoise(const char * prompt)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='955'>/* The high level function that is the main API of the linenoise library.
+ * This function checks if the terminal has basic capabilities, just checking
+ * for a blacklist of stupid terminals, and later either calls the line
+ * editing function or uses dummy fgets() so that you will be able to type
+ * something even in the most desperate of the conditions. */</doc>
+<use f='redis/src/redis-cli.c' l='985' u='c' c='repl'/>

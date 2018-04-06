@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='515' ll='526' type='void logStackContent(void ** sp)'/>
+<use f='redis/src/debug.c' l='649' u='c' c='logRegisters'/>

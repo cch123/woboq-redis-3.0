@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.h' l='100' type='list *'/>
+<use f='redis/src/cluster.c' l='665' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='669' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='684' u='r' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='714' u='r' c='clusterNodeCleanupFailureReports'/>
+<use f='redis/src/cluster.c' l='741' u='r' c='clusterNodeDelFailureReport'/>
+<use f='redis/src/cluster.c' l='765' u='r' c='clusterNodeFailureReportsCount'/>
+<use f='redis/src/cluster.c' l='834' u='r' c='freeClusterNode'/>
+<offset>17984</offset>
+<doc f='redis/src/cluster.h' l='100'>/* List of nodes signaling this as failing */</doc>

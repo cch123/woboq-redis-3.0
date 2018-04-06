@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3432' ll='3463' type='void redisAsciiArt()'/>
+<use f='redis/src/redis.c' l='3653' u='c' c='main'/>

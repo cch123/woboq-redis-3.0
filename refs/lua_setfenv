@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='195' type='int lua_setfenv(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='734' ll='760' macro='1' type='int lua_setfenv(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='151' u='c' c='luaB_setfenv'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='154' u='c' c='luaB_setfenv'/>
+<use f='redis/deps/lua/src/ldblib.c' l='57' u='c' c='db_setfenv'/>
+<use f='redis/deps/lua/src/liolib.c' l='525' u='c' c='createstdfile'/>
+<use f='redis/deps/lua/src/liolib.c' l='552' u='c' c='luaopen_io'/>
+<use f='redis/deps/lua/src/loadlib.c' l='514' u='c' c='setfenv'/>

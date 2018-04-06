@@ -1,0 +1,43 @@
+<dec f='redis/src/adlist.h' l='78' type='void listDelNode(list * list, listNode * node)'/>
+<def f='redis/src/adlist.c' l='159' ll='172' type='void listDelNode(list * list, listNode * node)'/>
+<doc f='redis/src/adlist.c' l='155'>/* Remove the specified node from the specified list.
+ * It&apos;s up to the caller to free the private value of the node.
+ *
+ * This function can&apos;t fail. */</doc>
+<use f='redis/src/aof.c' l='118' u='c' c='aofChildWriteDiffData'/>
+<use f='redis/src/bio.c' l='187' u='c' c='bioProcessBackgroundJobs'/>
+<use f='redis/src/blocked.c' l='117' u='c' c='processUnblockedClients'/>
+<use f='redis/src/cluster.c' l='725' u='c' c='clusterNodeCleanupFailureReports'/>
+<use f='redis/src/cluster.c' l='755' u='c' c='clusterNodeDelFailureReport'/>
+<use f='redis/src/config.c' l='1406' u='c' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1706' u='c' c='rewriteConfigRemoveOrphaned'/>
+<use f='redis/src/db.c' l='565' u='c' c='scanGenericCommand'/>
+<use f='redis/src/db.c' l='577' u='c' c='scanGenericCommand'/>
+<use f='redis/src/db.c' l='592' u='c' c='scanGenericCommand'/>
+<use f='redis/src/multi.c' l='248' u='c' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='253' u='c' c='unwatchAllKeys'/>
+<use f='redis/src/networking.c' l='453' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='744' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='752' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='765' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='783' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='812' u='c' c='freeClientsInAsyncFreeQueue'/>
+<use f='redis/src/networking.c' l='843' u='c' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='855' u='c' c='sendReplyToClient'/>
+<use f='redis/src/pubsub.c' l='105' u='c' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='158' u='c' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='162' u='c' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/replication.c' l='1606' u='c' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1771' u='c' c='replicationScriptCacheAdd'/>
+<use f='redis/src/replication.c' l='1877' u='c' c='unblockClientWaitingReplicas'/>
+<use f='redis/src/scripting.c' l='396' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/sentinel.c' l='652' u='c' c='sentinelScheduleScriptExecution'/>
+<use f='redis/src/sentinel.c' l='781' u='c' c='sentinelCollectTerminatedScripts'/>
+<use f='redis/src/slowlog.c' l='119' u='c' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/slowlog.c' l='125' u='c' c='slowlogReset'/>
+<use f='redis/src/t_list.c' l='104' u='c' c='listTypePop'/>
+<use f='redis/src/t_list.c' l='262' u='c' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='622' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='626' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='824' u='c' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='1021' u='c' c='handleClientsBlockedOnLists'/>

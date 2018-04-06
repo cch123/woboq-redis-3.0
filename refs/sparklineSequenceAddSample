@@ -1,0 +1,4 @@
+<dec f='redis/src/sparkline.h' l='51' type='void sparklineSequenceAddSample(struct sequence * seq, double value, char * label)'/>
+<use f='redis/src/latency.c' l='546' u='c' c='latencyCommandGenSparkeline'/>
+<def f='redis/src/sparkline.c' l='65' ll='78' type='void sparklineSequenceAddSample(struct sequence * seq, double value, char * label)'/>
+<doc f='redis/src/sparkline.c' l='64'>/* Add a new sample into a sequence. */</doc>

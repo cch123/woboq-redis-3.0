@@ -1,0 +1,8 @@
+<dec f='redis/src/config.c' l='1276' type='int'/>
+<use f='redis/src/config.c' l='1284' u='r' c='rewriteConfigAppendLine'/>
+<use f='redis/src/config.c' l='1285' u='w' c='rewriteConfigAppendLine'/>
+<use f='redis/src/config.c' l='1324' u='w' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1655' u='r' c='rewriteConfigGetContentFromState'/>
+<use f='redis/src/config.c' l='1671' u='r' c='rewriteConfigReleaseState'/>
+<offset>128</offset>
+<doc f='redis/src/config.c' l='1276'>/* Number of lines in current config */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/src/dict.h' l='51' type='uint64_t'/>
+<offset>0</offset>
+<use f='redis/src/cluster.c' l='1085' macro='1' u='r'/>
+<use f='redis/src/cluster.c' l='1105' macro='1' u='w'/>
+<use f='redis/src/sentinel.c' l='3214' macro='1' u='r'/>
+<use f='redis/src/sentinel.c' l='3215' macro='1' u='w'/>
+<use f='redis/src/sentinel.c' l='3220' macro='1' u='w'/>
+<use f='redis/src/sentinel.c' l='3260' macro='1' u='r'/>

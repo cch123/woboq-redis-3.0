@@ -1,0 +1,7 @@
+<dec f='include/asm-generic/errno.h' l='97'/>
+<use f='redis/deps/hiredis/async.c' l='486' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='201' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='315' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='368' u='c'/>
+<use f='redis/src/anet.c' l='315' u='c'/>
+<use f='redis/src/anet.c' l='369' u='c'/>

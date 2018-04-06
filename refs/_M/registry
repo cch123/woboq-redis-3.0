@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lstate.h' l='25'/>
+<use f='redis/deps/lua/src/lapi.c' l='61' u='c'/>
+<doc f='redis/deps/lua/src/lstate.h' l='24'>/* registry */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='509' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='75' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='166' u='c'/>

@@ -1,0 +1,10 @@
+<def f='redis/deps/hiredis/dict.h' l='45' ll='49'/>
+<size>24</size>
+<mbr r='dictEntry::key' o='0' t='void *'/>
+<mbr r='dictEntry::val' o='64' t='void *'/>
+<mbr r='dictEntry::next' o='128' t='struct dictEntry *'/>
+<def f='redis/src/dict.h' l='47' ll='56'/>
+<size>24</size>
+<mbr r='dictEntry::key' o='0' t='void *'/>
+<mbr r='dictEntry::v' o='64' t='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/dict.h:49:5)'/>
+<mbr r='dictEntry::next' o='128' t='struct dictEntry *'/>

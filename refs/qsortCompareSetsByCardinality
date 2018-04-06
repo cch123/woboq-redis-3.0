@@ -1,0 +1,2 @@
+<def f='redis/src/t_set.c' l='578' ll='580' type='int qsortCompareSetsByCardinality(const void * s1, const void * s2)'/>
+<use f='redis/src/t_set.c' l='624' u='r' c='sinterGenericCommand'/>

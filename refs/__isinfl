@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='192' macro='1' type='int __isinfl(long double __value)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='596' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='607' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='368' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='441' macro='1' u='c'/>
+<use f='redis/src/networking.c' l='463' macro='1' u='c'/>
+<use f='redis/src/object.c' l='122' macro='1' u='c'/>
+<use f='redis/src/t_string.c' l='396' macro='1' u='c'/>
+<use f='redis/src/util.c' l='406' macro='1' u='c'/>

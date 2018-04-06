@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1485' type='void hsetnxCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='195' u='r'/>
+<use f='redis/src/redis.c' l='195' u='r'/>
+<use f='redis/src/redis.c' l='195' u='r'/>
+<use f='redis/src/redis.c' l='195' u='r'/>
+<def f='redis/src/t_hash.c' l='478' ll='493' type='void hsetnxCommand(redisClient * c)'/>

@@ -1,0 +1,2 @@
+<def f='redis/src/replication.c' l='1126' ll='1209' type='int slaveTryPartialResynchronization(int fd)'/>
+<use f='redis/src/replication.c' l='1320' u='c' c='syncWithMaster'/>

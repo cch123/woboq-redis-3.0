@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1548' type='void redisLogObjectDebugInfo(robj * o)'/>
+<def f='redis/src/debug.c' l='427' ll='449' type='void redisLogObjectDebugInfo(robj * o)'/>
+<use f='redis/src/debug.c' l='454' u='c' c='_redisAssertPrintObject'/>
+<use f='redis/src/debug.c' l='716' u='c' c='logCurrentClient'/>

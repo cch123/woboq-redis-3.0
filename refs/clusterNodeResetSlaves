@@ -1,0 +1,2 @@
+<def f='redis/src/cluster.c' l='798' ll='802' type='void clusterNodeResetSlaves(clusterNode * n)'/>
+<use f='redis/src/cluster.c' l='1764' u='c' c='clusterProcessPacket'/>

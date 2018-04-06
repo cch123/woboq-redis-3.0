@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='248' type='GCObject *'/>
+<offset>832</offset>
+<use f='redis/deps/lua/src/lgc.c' l='106' u='w' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='309' u='r' c='propagatemark'/>

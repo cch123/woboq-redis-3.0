@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1261' type='void setTypeReleaseIterator(setTypeIterator * si)'/>
+<use f='redis/src/debug.c' l='171' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/sort.c' l='365' u='c' c='sortCommand'/>
+<def f='redis/src/t_set.c' l='128' ll='132' type='void setTypeReleaseIterator(setTypeIterator * si)'/>
+<use f='redis/src/t_set.c' l='240' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_set.c' l='503' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='699' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='808' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='833' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='854' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='870' u='c' c='sunionDiffGenericCommand'/>

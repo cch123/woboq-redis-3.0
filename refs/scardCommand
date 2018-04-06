@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1427' type='void scardCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='162' u='r'/>
+<use f='redis/src/redis.c' l='162' u='r'/>
+<use f='redis/src/redis.c' l='162' u='r'/>
+<use f='redis/src/redis.c' l='162' u='r'/>
+<def f='redis/src/t_set.c' l='371' ll='378' type='void scardCommand(redisClient * c)'/>

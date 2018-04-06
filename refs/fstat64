@@ -1,0 +1,9 @@
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='219' type='int fstat(int __fd, struct stat * __buf)'/>
+<dec f='include/x86_64-linux-gnu/sys/stat.h' l='229' type='int fstat64(int __fd, struct stat64 * __buf)'/>
+<use f='redis/src/aof.c' l='607' macro='1' u='c'/>
+<use f='redis/src/aof.c' l='1352' macro='1' u='c'/>
+<use f='redis/src/cluster.c' l='109' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='317' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/config.c' l='1734' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/rdb.c' l='1091' u='c' c='startLoading'/>
+<use f='redis/src/replication.c' l='785' macro='1' u='c'/>

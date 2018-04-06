@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='111' type='void *'/>
+<offset>128</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='111'>/* holds user-generated value for a read task */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='122' u='r' c='createStringObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='147' u='r' c='createArrayObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='164' u='r' c='createIntegerObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='179' u='r' c='createNilObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='486' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='491' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='635' u='w' c='redisReaderGetReply'/>

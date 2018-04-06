@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='999' type='dictType'/>
+<use f='redis/src/cluster.c' l='400' u='a' c='clusterInit'/>
+<def f='redis/src/redis.c' l='608' ll='615' type='dictType'/>
+<doc f='redis/src/redis.c' l='606'>/* Cluster nodes hash table, mapping nodes addresses 1.2.3.4:6379 to
+ * clusterNode structures. */</doc>

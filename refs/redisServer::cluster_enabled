@@ -1,0 +1,35 @@
+<dec f='redis/src/redis.h' l='876' type='int'/>
+<offset>19104</offset>
+<doc f='redis/src/redis.h' l='875'>/* Cluster */</doc>
+<doc f='redis/src/redis.h' l='876'>/* Is cluster enabled? */</doc>
+<use f='redis/src/cluster.c' l='3801' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4618' u='r' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4720' u='r' c='askingCommand'/>
+<use f='redis/src/cluster.c' l='4732' u='r' c='readonlyCommand'/>
+<use f='redis/src/config.c' l='436' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='550' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1577' u='r' c='rewriteConfigSlaveofOption'/>
+<use f='redis/src/config.c' l='1851' u='r' c='rewriteConfig'/>
+<use f='redis/src/db.c' l='99' u='r' c='dbAdd'/>
+<use f='redis/src/db.c' l='167' u='r' c='dbDelete'/>
+<use f='redis/src/db.c' l='221' u='r' c='emptyDb'/>
+<use f='redis/src/db.c' l='258' u='r' c='flushdbCommand'/>
+<use f='redis/src/db.c' l='312' u='r' c='selectCommand'/>
+<use f='redis/src/db.c' l='715' u='r' c='moveCommand'/>
+<use f='redis/src/pubsub.c' l='319' u='r' c='publishCommand'/>
+<use f='redis/src/redis.c' l='929' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='1243' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1270' u='r' c='beforeSleep'/>
+<use f='redis/src/redis.c' l='1469' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1876' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2165' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2316' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2622' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3013' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3437' u='r' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3557' u='r' c='redisSetProcTitle'/>
+<use f='redis/src/redis.c' l='3663' u='r' c='main'/>
+<use f='redis/src/replication.c' l='1476' u='r' c='slaveofCommand'/>
+<use f='redis/src/scripting.c' l='362' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/sort.c' l='256' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='264' u='r' c='sortCommand'/>

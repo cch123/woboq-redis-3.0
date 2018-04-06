@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lvm.h' l='27' type='const TValue * luaV_tonumber(const TValue * obj, TValue * n)'/>
+<use f='redis/deps/lua/src/lapi.c' l='263' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='316' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='326' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='590' u='c' c='luaG_aritherror'/>
+<def f='redis/deps/lua/src/lvm.c' l='35' ll='44' type='const TValue * luaV_tonumber(const TValue * obj, TValue * n)'/>
+<use f='redis/deps/lua/src/lvm.c' l='321' u='c' c='Arith'/>
+<use f='redis/deps/lua/src/lvm.c' l='322' u='c' c='Arith'/>
+<use f='redis/deps/lua/src/lvm.c' l='671' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='673' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='675' macro='1' u='c'/>

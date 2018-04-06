@@ -1,0 +1,9 @@
+<dec f='redis/src/rio.h' l='72' type='FILE *'/>
+<offset>0</offset>
+<use f='redis/src/rio.c' l='112' u='r' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='118' u='r' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='119' u='r' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='127' u='r' c='rioFileRead'/>
+<use f='redis/src/rio.c' l='132' u='r' c='rioFileTell'/>
+<use f='redis/src/rio.c' l='138' u='r' c='rioFileFlush'/>
+<use f='redis/src/rio.c' l='155' u='w' c='rioInitWithFile'/>

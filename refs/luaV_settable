@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lvm.h' l='31' type='void luaV_settable(lua_State * L, const TValue * t, TValue * key, StkId val)'/>
+<use f='redis/deps/lua/src/lapi.c' l='651' u='c' c='lua_settable'/>
+<use f='redis/deps/lua/src/lapi.c' l='665' u='c' c='lua_setfield'/>
+<def f='redis/deps/lua/src/lvm.c' l='134' ll='162' type='void luaV_settable(lua_State * L, const TValue * t, TValue * key, StkId val)'/>
+<use f='redis/deps/lua/src/lvm.c' l='448' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='458' u='c' c='luaV_execute'/>

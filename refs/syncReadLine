@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1151' type='ssize_t syncReadLine(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<use f='redis/src/cluster.c' l='4661' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4663' u='c' c='migrateCommand'/>
+<use f='redis/src/replication.c' l='878' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1091' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1263' u='c' c='syncWithMaster'/>
+<def f='redis/src/syncio.c' l='125' ll='145' type='ssize_t syncReadLine(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<doc f='redis/src/syncio.c' l='120'>/* Read a line making sure that every char will not require more than &apos;timeout&apos;
+ * milliseconds to be read.
+ *
+ * On success the number of bytes read is returned, otherwise -1.
+ * On success the string is always correctly terminated with a 0 byte. */</doc>

@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='344' ll='349' type='void clusterSaveConfigOrDie(int do_fsync)'/>
+<use f='redis/src/cluster.c' l='430' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1040' u='c' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='2666' u='c' c='clusterFailoverReplaceYourMaster'/>
+<use f='redis/src/cluster.c' l='3279' u='c' c='clusterBeforeSleep'/>
+<use f='redis/src/cluster.c' l='3552' u='c' c='verifyClusterConfigWithData'/>

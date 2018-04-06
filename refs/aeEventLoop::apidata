@@ -1,0 +1,9 @@
+<dec f='redis/src/ae.h' l='96' type='void *'/>
+<use f='redis/src/ae_epoll.c' l='54' u='w' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='59' u='r' c='aeApiResize'/>
+<use f='redis/src/ae_epoll.c' l='66' u='r' c='aeApiFree'/>
+<use f='redis/src/ae_epoll.c' l='74' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='92' u='r' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='111' u='r' c='aeApiPoll'/>
+<offset>448</offset>
+<doc f='redis/src/ae.h' l='96'>/* This is used for polling API specific data */</doc>

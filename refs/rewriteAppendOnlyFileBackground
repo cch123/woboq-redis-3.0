@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='1187' type='int rewriteAppendOnlyFileBackground()'/>
+<use f='redis/src/aof.c' l='243' u='c' c='startAppendOnly'/>
+<def f='redis/src/aof.c' l='1269' ll='1321' type='int rewriteAppendOnlyFileBackground()'/>
+<use f='redis/src/aof.c' l='1329' u='c' c='bgrewriteaofCommand'/>
+<doc f='redis/src/aof.c' l='1257'>/* This is how rewriting of the append only file in background works:
+ *
+ * 1) The user calls BGREWRITEAOF
+ * 2) Redis calls this function, that forks():
+ *    2a) the child rewrite the append only file in a temp file.
+ *    2b) the parent accumulates differences in server.aof_rewrite_buf.
+ * 3) When the child finished &apos;2a&apos; exists.
+ * 4) The parent will trap the exit code, if it&apos;s OK, will append the
+ *    data accumulated into server.aof_rewrite_buf into the temp file, and
+ *    finally will rename(2) the temp file in the actual file name.
+ *    The the new file is reopened as the new append only file. Profit!
+ */</doc>
+<use f='redis/src/redis.c' l='1153' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1212' u='c' c='serverCron'/>

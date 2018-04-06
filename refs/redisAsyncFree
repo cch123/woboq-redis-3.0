@@ -1,0 +1,7 @@
+<dec f='redis/deps/hiredis/async.h' l='110' type='void redisAsyncFree(redisAsyncContext * ac)'/>
+<def f='redis/deps/hiredis/async.c' l='312' ll='317' type='void redisAsyncFree(redisAsyncContext * ac)'/>
+<doc f='redis/deps/hiredis/async.c' l='308'>/* Free the async context. When this function is called from a callback,
+ * control needs to be returned to redisProcessCallbacks() before actual
+ * free&apos;ing. To do so, a flag is set on the context which is picked up by
+ * redisProcessCallbacks(). Otherwise, the context is immediately free&apos;d. */</doc>
+<use f='redis/src/sentinel.c' l='1628' u='c' c='sentinelKillLink'/>

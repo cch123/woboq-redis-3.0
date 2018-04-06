@@ -1,0 +1,36 @@
+<dec f='redis/src/redis.h' l='1325' type='robj * dbUnshareStringValue(redisDb * db, robj * key, robj * o)'/>
+<use f='redis/src/bitops.c' l='238' u='c' c='setbitCommand'/>
+<def f='redis/src/db.c' l='201' ll='210' type='robj * dbUnshareStringValue(redisDb * db, robj * key, robj * o)'/>
+<doc f='redis/src/db.c' l='174'>/* Prepare the string object stored at &apos;key&apos; to be modified destructively
+ * to implement commands like SETBIT or APPEND.
+ *
+ * An object is usually ready to be modified unless one of the two conditions
+ * are true:
+ *
+ * 1) The object &apos;o&apos; is shared (refcount &gt; 1), we don&apos;t want to affect
+ *    other users.
+ * 2) The object encoding is not &quot;RAW&quot;.
+ *
+ * If the object is found in one of the above conditions (or both) by the
+ * function, an unshared / not-encoded copy of the string object is stored
+ * at &apos;key&apos; in the specified &apos;db&apos;. Otherwise the object &apos;o&apos; itself is
+ * returned.
+ *
+ * USAGE:
+ *
+ * The object &apos;o&apos; is what the caller already obtained by looking up &apos;key&apos;
+ * in &apos;db&apos;, the usage pattern looks like this:
+ *
+ * o = lookupKeyWrite(db,key);
+ * if (checkType(c,o,REDIS_STRING)) return;
+ * o = dbUnshareStringValue(db,key,o);
+ *
+ * At this point the caller is ready to modify the object, for example
+ * using an sdscat() call to append some data, or anything else.
+ */</doc>
+<use f='redis/src/hyperloglog.c' l='1169' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1243' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1320' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1467' u='c' c='pfdebugCommand'/>
+<use f='redis/src/t_string.c' l='218' u='c' c='setrangeCommand'/>
+<use f='redis/src/t_string.c' l='442' u='c' c='appendCommand'/>

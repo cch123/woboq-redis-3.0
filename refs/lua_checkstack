@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='126' type='int lua_checkstack(lua_State * L, int sz)'/>
+<def f='redis/deps/lua/src/lapi.c' l='95' ll='107' macro='1' type='int lua_checkstack(lua_State * L, int size)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='141' u='c' c='luaL_checkstack'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='349' u='c' c='luaB_unpack'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='520' u='c' c='auxresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='531' u='c' c='auxresume'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='549' u='c' c='json_check_encode_depth'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1126' u='c' c='json_decode_descend'/>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>sha1.h source code [redis/src/sha1.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/sha1.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='sha1.h.html'>sha1.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* ================ sha1.h ================ */</i></td></tr>
+<tr><th id="2">2</th><td><i>/*</i></td></tr>
+<tr><th id="3">3</th><td><i>SHA-1 in C</i></td></tr>
+<tr><th id="4">4</th><td><i>By Steve Reid &lt;steve@edmweb.com&gt;</i></td></tr>
+<tr><th id="5">5</th><td><i>100% Public Domain</i></td></tr>
+<tr><th id="6">6</th><td><i>*/</i></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><b>typedef</b> <b>struct</b> {</td></tr>
+<tr><th id="9">9</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#202" title='u_int32_t' data-type='unsigned int' data-ref="u_int32_t">u_int32_t</a> <dfn class="decl field" id="(anonymous)::state" title='(anonymous struct)::state' data-ref="(anonymous)::state">state</dfn>[<var>5</var>];</td></tr>
+<tr><th id="10">10</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#202" title='u_int32_t' data-type='unsigned int' data-ref="u_int32_t">u_int32_t</a> <dfn class="decl field" id="(anonymous)::count" title='(anonymous struct)::count' data-ref="(anonymous)::count">count</dfn>[<var>2</var>];</td></tr>
+<tr><th id="11">11</th><td>    <em>unsigned</em> <em>char</em> <dfn class="decl field" id="(anonymous)::buffer" title='(anonymous struct)::buffer' data-ref="(anonymous)::buffer">buffer</dfn>[<var>64</var>];</td></tr>
+<tr><th id="12">12</th><td>} <dfn class="typedef" id="SHA1_CTX" title='SHA1_CTX' data-type='struct SHA1_CTX' data-ref="SHA1_CTX">SHA1_CTX</dfn>;</td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><em>void</em> <dfn class="decl fn" id="SHA1Transform" title='SHA1Transform' data-ref="SHA1Transform">SHA1Transform</dfn>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#202" title='u_int32_t' data-type='unsigned int' data-ref="u_int32_t">u_int32_t</a> <dfn class="local col1 decl" id="1state" title='state' data-type='u_int32_t *' data-ref="1state">state</dfn>[<var>5</var>], <em>const</em> <em>unsigned</em> <em>char</em> <dfn class="local col2 decl" id="2buffer" title='buffer' data-type='const unsigned char *' data-ref="2buffer">buffer</dfn>[<var>64</var>]);</td></tr>
+<tr><th id="15">15</th><td><em>void</em> <dfn class="decl fn" id="SHA1Init" title='SHA1Init' data-ref="SHA1Init">SHA1Init</dfn>(<a class="typedef" href="#SHA1_CTX" title='SHA1_CTX' data-type='struct SHA1_CTX' data-ref="SHA1_CTX">SHA1_CTX</a>* <dfn class="local col3 decl" id="3context" title='context' data-type='SHA1_CTX *' data-ref="3context">context</dfn>);</td></tr>
+<tr><th id="16">16</th><td><em>void</em> <dfn class="decl fn" id="SHA1Update" title='SHA1Update' data-ref="SHA1Update">SHA1Update</dfn>(<a class="typedef" href="#SHA1_CTX" title='SHA1_CTX' data-type='struct SHA1_CTX' data-ref="SHA1_CTX">SHA1_CTX</a>* <dfn class="local col4 decl" id="4context" title='context' data-type='SHA1_CTX *' data-ref="4context">context</dfn>, <em>const</em> <em>unsigned</em> <em>char</em>* <dfn class="local col5 decl" id="5data" title='data' data-type='const unsigned char *' data-ref="5data">data</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#202" title='u_int32_t' data-type='unsigned int' data-ref="u_int32_t">u_int32_t</a> <dfn class="local col6 decl" id="6len" title='len' data-type='u_int32_t' data-ref="6len">len</dfn>);</td></tr>
+<tr><th id="17">17</th><td><em>void</em> <dfn class="decl fn" id="SHA1Final" title='SHA1Final' data-ref="SHA1Final">SHA1Final</dfn>(<em>unsigned</em> <em>char</em> <dfn class="local col7 decl" id="7digest" title='digest' data-type='unsigned char *' data-ref="7digest">digest</dfn>[<var>20</var>], <a class="typedef" href="#SHA1_CTX" title='SHA1_CTX' data-type='struct SHA1_CTX' data-ref="SHA1_CTX">SHA1_CTX</a>* <dfn class="local col8 decl" id="8context" title='context' data-type='SHA1_CTX *' data-ref="8context">context</dfn>);</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='debug.c.html'>redis/src/debug.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

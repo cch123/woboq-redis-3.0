@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='120' type='lua_Hook'/>
+<offset>896</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='61' u='w' c='lua_sethook'/>
+<use f='redis/deps/lua/src/ldebug.c' l='70' u='r' c='lua_gethook'/>
+<use f='redis/deps/lua/src/ldo.c' l='182' u='r' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/lstate.c' l='89' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='127' u='w' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/lstate.c' l='127' u='r' c='luaE_newthread'/>

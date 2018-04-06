@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='70' type='lua_Alloc'/>
+<use f='redis/deps/lua/src/lapi.c' l='1011' u='r' c='lua_getallocf'/>
+<use f='redis/deps/lua/src/lapi.c' l='1020' u='w' c='lua_setallocf'/>
+<offset>128</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='70'>/* function to reallocate memory */</doc>
+<use f='redis/deps/lua/src/lmem.c' l='79' u='r' c='luaM_realloc_'/>
+<use f='redis/deps/lua/src/lstate.c' l='115' u='r' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='157' u='w' c='lua_newstate'/>

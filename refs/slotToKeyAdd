@@ -1,0 +1,6 @@
+<dec f='redis/src/db.c' l='36' type='void slotToKeyAdd(robj * key)'/>
+<use f='redis/src/db.c' l='99' u='c' c='dbAdd'/>
+<def f='redis/src/db.c' l='1131' ll='1136' type='void slotToKeyAdd(robj * key)'/>
+<doc f='redis/src/db.c' l='1128'>/* Slot to Key API. This is used by Redis Cluster in order to obtain in
+ * a fast way a key that belongs to a specified hash slot. This is useful
+ * while rehashing the cluster. */</doc>

@@ -1,0 +1,2 @@
+<dec f='include/locale.h' l='39'/>
+<use f='redis/deps/lua/src/loslib.c' l='205' u='c'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='100' type='int rdbSaveObjectType(rio * rdb, robj * o)'/>
+<use f='redis/src/cluster.c' l='4311' u='c' c='createDumpPayload'/>
+<def f='redis/src/rdb.c' l='431' ll='467' type='int rdbSaveObjectType(rio * rdb, robj * o)'/>
+<use f='redis/src/rdb.c' l='624' u='c' c='rdbSaveKeyValuePair'/>
+<doc f='redis/src/rdb.c' l='430'>/* Save the object type of object &quot;o&quot;. */</doc>

@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/ltm.h' l='50' type='const TValue * luaT_gettmbyobj(lua_State * L, const TValue * o, TMS event)'/>
+<use f='redis/deps/lua/src/ldo.c' l='245' u='c' c='tryfuncTM'/>
+<def f='redis/deps/lua/src/ltm.c' l='61' ll='74' type='const TValue * luaT_gettmbyobj(lua_State * L, const TValue * o, TMS event)'/>
+<use f='redis/deps/lua/src/lvm.c' l='122' u='c' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='151' u='c' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='167' u='c' c='call_binTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='169' u='c' c='call_binTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='192' u='c' c='call_orderTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='195' u='c' c='call_orderTM'/>

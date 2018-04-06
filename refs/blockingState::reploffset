@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='493' type='long long'/>
+<offset>256</offset>
+<doc f='redis/src/redis.h' l='493'>/* Replication offset to reach. */</doc>
+<use f='redis/src/blocked.c' l='154' u='r' c='replyToBlockedClientTimedOut'/>
+<use f='redis/src/networking.c' l='118' u='w' c='createClient'/>
+<use f='redis/src/replication.c' l='1860' u='w' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1897' u='r' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1903' u='r' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1906' u='r' c='processClientsWaitingReplicas'/>

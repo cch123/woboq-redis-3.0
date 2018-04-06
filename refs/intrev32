@@ -1,0 +1,2 @@
+<dec f='redis/src/endianconv.h' l='43' type='uint32_t intrev32(uint32_t v)'/>
+<def f='redis/src/endianconv.c' l='94' ll='97' type='uint32_t intrev32(uint32_t v)'/>

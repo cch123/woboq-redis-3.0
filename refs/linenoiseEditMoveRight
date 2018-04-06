@@ -1,0 +1,4 @@
+<def f='redis/deps/linenoise/linenoise.c' l='629' ll='634' type='void linenoiseEditMoveRight(struct linenoiseState * l)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='806' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='842' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='628'>/* Move cursor on the right. */</doc>

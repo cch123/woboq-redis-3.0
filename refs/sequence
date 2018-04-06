@@ -1,0 +1,7 @@
+<def f='redis/src/sparkline.h' l='39' ll='44'/>
+<size>32</size>
+<mbr r='sequence::length' o='0' t='int'/>
+<mbr r='sequence::labels' o='32' t='int'/>
+<mbr r='sequence::samples' o='64' t='struct sample *'/>
+<mbr r='sequence::min' o='128' t='double'/>
+<mbr r='sequence::max' o='192' t='double'/>

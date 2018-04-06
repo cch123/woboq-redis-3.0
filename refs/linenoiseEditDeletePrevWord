@@ -1,0 +1,4 @@
+<def f='redis/deps/linenoise/linenoise.c' l='702' ll='714' type='void linenoiseEditDeletePrevWord(struct linenoiseState * l)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='893' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='700'>/* Delete the previosu word, maintaining the cursor at the start of the
+ * current word. */</doc>

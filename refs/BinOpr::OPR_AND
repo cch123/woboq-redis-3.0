@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='31' type='13'/>
+<use f='redis/deps/lua/src/lcode.c' l='712' c='luaK_infix'/>
+<use f='redis/deps/lua/src/lcode.c' l='739' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lparser.c' l='803' u='r' c='getbinopr'/>

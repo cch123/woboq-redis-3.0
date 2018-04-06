@@ -1,0 +1,2 @@
+<def f='redis/src/scripting.c' l='501' ll='503' type='int luaRedisErrorReplyCommand(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='696' u='r' c='scriptingInit'/>

@@ -1,0 +1,6 @@
+<def f='redis/deps/hiredis/sds.c' l='333' ll='359' type='int sdsull2str(char * s, unsigned long long v)'/>
+<use f='redis/deps/hiredis/sds.c' l='518' u='c' c='sdscatfmt'/>
+<doc f='redis/deps/hiredis/sds.c' l='332'>/* Identical sdsll2str(), but for unsigned long long type. */</doc>
+<def f='redis/src/sds.c' l='333' ll='359' type='int sdsull2str(char * s, unsigned long long v)'/>
+<use f='redis/src/sds.c' l='518' u='c' c='sdscatfmt'/>
+<doc f='redis/src/sds.c' l='332'>/* Identical sdsll2str(), but for unsigned long long type. */</doc>

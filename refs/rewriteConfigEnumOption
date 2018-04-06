@@ -1,0 +1,7 @@
+<def f='redis/src/config.c' l='1501' ll='1522' type='void rewriteConfigEnumOption(struct rewriteConfigState * state, char * option, int value)'/>
+<use f='redis/src/config.c' l='1797' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1831' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1842' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1498'>/* Rewrite an enumeration option, after the &quot;value&quot; every enum/value pair
+ * is specified, terminated by NULL. After NULL the default value is
+ * specified. See how the function is used for more information. */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lgc.h' l='104' type='void luaC_link(lua_State * L, GCObject * o, lu_byte tt)'/>
+<use f='redis/deps/lua/src/lfunc.c' l='25' u='c' c='luaF_newCclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='35' u='c' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='46' u='c' c='luaF_newupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='117' u='c' c='luaF_newproto'/>
+<def f='redis/deps/lua/src/lgc.c' l='685' ll='691' type='void luaC_link(lua_State * L, GCObject * o, lu_byte tt)'/>
+<use f='redis/deps/lua/src/lstate.c' l='121' u='c' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/ltable.c' l='360' u='c' c='luaH_new'/>

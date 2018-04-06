@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/dict.h' l='64' type='unsigned long'/>
+<use f='redis/deps/hiredis/dict.c' l='68' u='w' c='_dictReset'/>
+<use f='redis/deps/hiredis/dict.c' l='99' u='w' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='118' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='188' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='248' u='r' c='dictFind'/>
+<use f='redis/deps/hiredis/dict.c' l='328' u='r' c='_dictKeyIndex'/>
+<offset>192</offset>

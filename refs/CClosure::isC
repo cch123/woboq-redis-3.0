@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lobject.h' l='292' type='lu_byte'/>
+<use f='redis/deps/lua/src/lapi.c' l='256' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='381' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='881' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='1043' u='r' c='aux_upvalue'/>
+<offset>80</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='37' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='90' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='108' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='151' u='r' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='178' u='r' c='collectvalidlines'/>
+<use f='redis/deps/lua/src/ldebug.c' l='499' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='609' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='335' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='395' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lfunc.c' l='26' u='w' c='luaF_newCclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='153' u='r' c='luaF_freeclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='226' u='r' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='294' u='r' c='propagatemark'/>

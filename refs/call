@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1230' type='void call(redisClient * c, int flags)'/>
+<use f='redis/src/multi.c' l='159' u='c' c='execCommand'/>
+<def f='redis/src/redis.c' l='2035' ll='2116' type='void call(redisClient * c, int flags)'/>
+<use f='redis/src/redis.c' l='2299' u='c' c='processCommand'/>
+<doc f='redis/src/redis.c' l='2034'>/* Call() is the core of Redis execution of a command */</doc>
+<use f='redis/src/scripting.c' l='377' u='c' c='luaRedisGenericCommand'/>

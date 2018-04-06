@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='272'/>
+<use f='redis/src/config.c' l='256' u='c'/>
+<use f='redis/src/networking.c' l='673' u='c'/>
+<use f='redis/src/replication.c' l='831' u='c'/>
+<use f='redis/src/replication.c' l='1373' u='c'/>
+<use f='redis/src/replication.c' l='1412' u='c'/>
+<use f='redis/src/replication.c' l='1447' u='c'/>
+<use f='redis/src/replication.c' l='1548' u='c'/>
+<use f='redis/src/replication.c' l='1966' u='c'/>

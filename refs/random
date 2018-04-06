@@ -1,0 +1,9 @@
+<dec f='include/stdlib.h' l='321' type='long random()'/>
+<doc f='include/stdlib.h' l='320'>/* Return a random long integer between 0 and RAND_MAX inclusive.  */</doc>
+<use f='redis/src/cluster.c' l='2756' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/dict.c' l='635' u='c' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='643' u='c' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='658' u='c' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='709' u='c' c='dictGetSomeKeys'/>
+<use f='redis/src/dict.c' l='732' u='c' c='dictGetSomeKeys'/>
+<use f='redis/src/t_zset.c' l='105' u='c' c='zslRandomLevel'/>

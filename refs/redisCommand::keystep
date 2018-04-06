@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='928' type='int'/>
+<offset>448</offset>
+<doc f='redis/src/redis.h' l='928'>/* The step between first and last key */</doc>
+<use f='redis/src/db.c' l='994' u='r' c='getKeysUsingCommandTable'/>
+<use f='redis/src/redis.c' l='2518' u='r' c='addReplyCommand'/>

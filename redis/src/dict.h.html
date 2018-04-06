@@ -1,0 +1,204 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dict.h source code [redis/src/dict.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="dict,dictEntry,dictIterator,dictType,dictht "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/dict.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='dict.h.html'>dict.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Hash Tables Implementation.</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * This file implements in-memory hash tables with insert/del/replace/find/</i></td></tr>
+<tr><th id="4">4</th><td><i> * get-random-element operations. Hash tables will auto-resize if needed</i></td></tr>
+<tr><th id="5">5</th><td><i> * tables of power of two in size are used, collisions are handled by</i></td></tr>
+<tr><th id="6">6</th><td><i> * chaining. See the source code for more information... :)</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Copyright (c) 2006-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="9">9</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="12">12</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="13">13</th><td><i> *</i></td></tr>
+<tr><th id="14">14</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="15">15</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="16">16</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="17">17</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="18">18</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="19">19</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="20">20</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="21">21</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="24">24</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="25">25</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="26">26</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="27">27</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="28">28</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="29">29</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="30">30</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="31">31</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="32">32</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="33">33</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="34">34</th><td><i> */</i></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#include &lt;stdint.h&gt;</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><u>#<span data-ppcond="38">ifndef</span> <span class="macro" data-ref="_M/__DICT_H">__DICT_H</span></u></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/__DICT_H" data-ref="_M/__DICT_H">__DICT_H</dfn></u></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/DICT_OK" data-ref="_M/DICT_OK">DICT_OK</dfn> 0</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/DICT_ERR" data-ref="_M/DICT_ERR">DICT_ERR</dfn> 1</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i>/* Unused arguments generate annoying warnings... */</i></td></tr>
+<tr><th id="45">45</th><td><u>#define <dfn class="macro" id="_M/DICT_NOTUSED" data-ref="_M/DICT_NOTUSED">DICT_NOTUSED</dfn>(V) ((void) V)</u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="dictEntry" title='dictEntry' data-ref="dictEntry"><a class="type" href="#dictEntry" title='dictEntry' data-ref="dictEntry">dictEntry</a></dfn> {</td></tr>
+<tr><th id="48">48</th><td>    <em>void</em> *<dfn class="decl field" id="dictEntry::key" title='dictEntry::key' data-ref="dictEntry::key">key</dfn>;</td></tr>
+<tr><th id="49">49</th><td>    <b>union</b> {</td></tr>
+<tr><th id="50">50</th><td>        <em>void</em> *<dfn class="decl field" id="dictEntry::(anonymous)::val" title='dictEntry::(anonymous union)::val' data-ref="dictEntry::(anonymous)::val">val</dfn>;</td></tr>
+<tr><th id="51">51</th><td>        <a class="typedef" href="../../include/stdint.h.html#uint64_t" title='uint64_t' data-type='unsigned long' data-ref="uint64_t">uint64_t</a> <dfn class="decl field" id="dictEntry::(anonymous)::u64" title='dictEntry::(anonymous union)::u64' data-ref="dictEntry::(anonymous)::u64">u64</dfn>;</td></tr>
+<tr><th id="52">52</th><td>        <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="decl field" id="dictEntry::(anonymous)::s64" title='dictEntry::(anonymous union)::s64' data-ref="dictEntry::(anonymous)::s64">s64</dfn>;</td></tr>
+<tr><th id="53">53</th><td>        <em>double</em> <dfn class="decl field" id="dictEntry::(anonymous)::d" title='dictEntry::(anonymous union)::d' data-ref="dictEntry::(anonymous)::d">d</dfn>;</td></tr>
+<tr><th id="54">54</th><td>    } <dfn class="decl field" id="dictEntry::v" title='dictEntry::v' data-ref="dictEntry::v">v</dfn>;</td></tr>
+<tr><th id="55">55</th><td>    <b>struct</b> <a class="type" href="#dictEntry" title='dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl field" id="dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</dfn>;</td></tr>
+<tr><th id="56">56</th><td>} <dfn class="typedef" id="dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</dfn>;</td></tr>
+<tr><th id="57">57</th><td></td></tr>
+<tr><th id="58">58</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="dictType" title='dictType' data-ref="dictType"><a class="type" href="#dictType" title='dictType' data-ref="dictType">dictType</a></dfn> {</td></tr>
+<tr><th id="59">59</th><td>    <em>unsigned</em> <em>int</em> (*<dfn class="decl field" id="dictType::hashFunction" title='dictType::hashFunction' data-ref="dictType::hashFunction">hashFunction</dfn>)(<em>const</em> <em>void</em> *<dfn class="local col5 decl" id="395key" title='key' data-type='const void *' data-ref="395key">key</dfn>);</td></tr>
+<tr><th id="60">60</th><td>    <em>void</em> *(*<dfn class="decl field" id="dictType::keyDup" title='dictType::keyDup' data-ref="dictType::keyDup">keyDup</dfn>)(<em>void</em> *<dfn class="local col6 decl" id="396privdata" title='privdata' data-type='void *' data-ref="396privdata">privdata</dfn>, <em>const</em> <em>void</em> *<dfn class="local col7 decl" id="397key" title='key' data-type='const void *' data-ref="397key">key</dfn>);</td></tr>
+<tr><th id="61">61</th><td>    <em>void</em> *(*<dfn class="decl field" id="dictType::valDup" title='dictType::valDup' data-ref="dictType::valDup">valDup</dfn>)(<em>void</em> *<dfn class="local col8 decl" id="398privdata" title='privdata' data-type='void *' data-ref="398privdata">privdata</dfn>, <em>const</em> <em>void</em> *<dfn class="local col9 decl" id="399obj" title='obj' data-type='const void *' data-ref="399obj">obj</dfn>);</td></tr>
+<tr><th id="62">62</th><td>    <em>int</em> (*<dfn class="decl field" id="dictType::keyCompare" title='dictType::keyCompare' data-ref="dictType::keyCompare">keyCompare</dfn>)(<em>void</em> *<dfn class="local col0 decl" id="400privdata" title='privdata' data-type='void *' data-ref="400privdata">privdata</dfn>, <em>const</em> <em>void</em> *<dfn class="local col1 decl" id="401key1" title='key1' data-type='const void *' data-ref="401key1">key1</dfn>, <em>const</em> <em>void</em> *<dfn class="local col2 decl" id="402key2" title='key2' data-type='const void *' data-ref="402key2">key2</dfn>);</td></tr>
+<tr><th id="63">63</th><td>    <em>void</em> (*<dfn class="decl field" id="dictType::keyDestructor" title='dictType::keyDestructor' data-ref="dictType::keyDestructor">keyDestructor</dfn>)(<em>void</em> *<dfn class="local col3 decl" id="403privdata" title='privdata' data-type='void *' data-ref="403privdata">privdata</dfn>, <em>void</em> *<dfn class="local col4 decl" id="404key" title='key' data-type='void *' data-ref="404key">key</dfn>);</td></tr>
+<tr><th id="64">64</th><td>    <em>void</em> (*<dfn class="decl field" id="dictType::valDestructor" title='dictType::valDestructor' data-ref="dictType::valDestructor">valDestructor</dfn>)(<em>void</em> *<dfn class="local col5 decl" id="405privdata" title='privdata' data-type='void *' data-ref="405privdata">privdata</dfn>, <em>void</em> *<dfn class="local col6 decl" id="406obj" title='obj' data-type='void *' data-ref="406obj">obj</dfn>);</td></tr>
+<tr><th id="65">65</th><td>} <dfn class="typedef" id="dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</dfn>;</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><i>/* This is our hash table structure. Every dictionary has two of this as we</i></td></tr>
+<tr><th id="68">68</th><td><i> * implement incremental rehashing, for the old to the new table. */</i></td></tr>
+<tr><th id="69">69</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="dictht" title='dictht' data-ref="dictht"><a class="type" href="#dictht" title='dictht' data-ref="dictht">dictht</a></dfn> {</td></tr>
+<tr><th id="70">70</th><td>    <a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> **<dfn class="decl field" id="dictht::table" title='dictht::table' data-ref="dictht::table">table</dfn>;</td></tr>
+<tr><th id="71">71</th><td>    <em>unsigned</em> <em>long</em> <dfn class="decl field" id="dictht::size" title='dictht::size' data-ref="dictht::size">size</dfn>;</td></tr>
+<tr><th id="72">72</th><td>    <em>unsigned</em> <em>long</em> <dfn class="decl field" id="dictht::sizemask" title='dictht::sizemask' data-ref="dictht::sizemask">sizemask</dfn>;</td></tr>
+<tr><th id="73">73</th><td>    <em>unsigned</em> <em>long</em> <dfn class="decl field" id="dictht::used" title='dictht::used' data-ref="dictht::used">used</dfn>;</td></tr>
+<tr><th id="74">74</th><td>} <dfn class="typedef" id="dictht" title='dictht' data-type='struct dictht' data-ref="dictht">dictht</dfn>;</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="dict" title='dict' data-ref="dict"><a class="type" href="#dict" title='dict' data-ref="dict">dict</a></dfn> {</td></tr>
+<tr><th id="77">77</th><td>    <a class="typedef" href="#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> *<dfn class="decl field" id="dict::type" title='dict::type' data-ref="dict::type">type</dfn>;</td></tr>
+<tr><th id="78">78</th><td>    <em>void</em> *<dfn class="decl field" id="dict::privdata" title='dict::privdata' data-ref="dict::privdata">privdata</dfn>;</td></tr>
+<tr><th id="79">79</th><td>    <a class="typedef" href="#dictht" title='dictht' data-type='struct dictht' data-ref="dictht">dictht</a> <dfn class="decl field" id="dict::ht" title='dict::ht' data-ref="dict::ht">ht</dfn>[<var>2</var>];</td></tr>
+<tr><th id="80">80</th><td>    <em>long</em> <dfn class="decl field" id="dict::rehashidx" title='dict::rehashidx' data-ref="dict::rehashidx">rehashidx</dfn>; <i>/* rehashing not in progress if rehashidx == -1 */</i></td></tr>
+<tr><th id="81">81</th><td>    <em>int</em> <dfn class="decl field" id="dict::iterators" title='dict::iterators' data-ref="dict::iterators">iterators</dfn>; <i>/* number of iterators currently running */</i></td></tr>
+<tr><th id="82">82</th><td>} <dfn class="typedef" id="dict" title='dict' data-type='struct dict' data-ref="dict">dict</dfn>;</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td><i>/* If safe is set to 1 this is a safe iterator, that means, you can call</i></td></tr>
+<tr><th id="85">85</th><td><i> * dictAdd, dictFind, and other functions against the dictionary even while</i></td></tr>
+<tr><th id="86">86</th><td><i> * iterating. Otherwise it is a non safe iterator, and only dictNext()</i></td></tr>
+<tr><th id="87">87</th><td><i> * should be called while iterating. */</i></td></tr>
+<tr><th id="88">88</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="dictIterator" title='dictIterator' data-ref="dictIterator"><a class="type" href="#dictIterator" title='dictIterator' data-ref="dictIterator">dictIterator</a></dfn> {</td></tr>
+<tr><th id="89">89</th><td>    <a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="decl field" id="dictIterator::d" title='dictIterator::d' data-ref="dictIterator::d">d</dfn>;</td></tr>
+<tr><th id="90">90</th><td>    <em>long</em> <dfn class="decl field" id="dictIterator::index" title='dictIterator::index' data-ref="dictIterator::index">index</dfn>;</td></tr>
+<tr><th id="91">91</th><td>    <em>int</em> <dfn class="decl field" id="dictIterator::table" title='dictIterator::table' data-ref="dictIterator::table">table</dfn>, <dfn class="decl field" id="dictIterator::safe" title='dictIterator::safe' data-ref="dictIterator::safe">safe</dfn>;</td></tr>
+<tr><th id="92">92</th><td>    <a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl field" id="dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</dfn>, *<dfn class="decl field" id="dictIterator::nextEntry" title='dictIterator::nextEntry' data-ref="dictIterator::nextEntry">nextEntry</dfn>;</td></tr>
+<tr><th id="93">93</th><td>    <i>/* unsafe iterator fingerprint for misuse detection. */</i></td></tr>
+<tr><th id="94">94</th><td>    <em>long</em> <em>long</em> <dfn class="decl field" id="dictIterator::fingerprint" title='dictIterator::fingerprint' data-ref="dictIterator::fingerprint">fingerprint</dfn>;</td></tr>
+<tr><th id="95">95</th><td>} <dfn class="typedef" id="dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</dfn>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td><b>typedef</b> <em>void</em> (<dfn class="typedef" id="dictScanFunction" title='dictScanFunction' data-type='void (void *, const dictEntry *)' data-ref="dictScanFunction">dictScanFunction</dfn>)(<em>void</em> *<dfn class="local col7 decl" id="407privdata" title='privdata' data-type='void *' data-ref="407privdata">privdata</dfn>, <em>const</em> <a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col8 decl" id="408de" title='de' data-type='const dictEntry *' data-ref="408de">de</dfn>);</td></tr>
+<tr><th id="98">98</th><td></td></tr>
+<tr><th id="99">99</th><td><i>/* This is the initial size of every hash table */</i></td></tr>
+<tr><th id="100">100</th><td><u>#define <dfn class="macro" id="_M/DICT_HT_INITIAL_SIZE" data-ref="_M/DICT_HT_INITIAL_SIZE">DICT_HT_INITIAL_SIZE</dfn>     4</u></td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td><i>/* ------------------------------- Macros ------------------------------------*/</i></td></tr>
+<tr><th id="103">103</th><td><u>#define <dfn class="macro" id="_M/dictFreeVal" data-ref="_M/dictFreeVal">dictFreeVal</dfn>(d, entry) \</u></td></tr>
+<tr><th id="104">104</th><td><u>    if ((d)-&gt;type-&gt;valDestructor) \</u></td></tr>
+<tr><th id="105">105</th><td><u>        (d)-&gt;type-&gt;valDestructor((d)-&gt;privdata, (entry)-&gt;v.val)</u></td></tr>
+<tr><th id="106">106</th><td></td></tr>
+<tr><th id="107">107</th><td><u>#define <dfn class="macro" id="_M/dictSetVal" data-ref="_M/dictSetVal">dictSetVal</dfn>(d, entry, _val_) do { \</u></td></tr>
+<tr><th id="108">108</th><td><u>    if ((d)-&gt;type-&gt;valDup) \</u></td></tr>
+<tr><th id="109">109</th><td><u>        entry-&gt;v.val = (d)-&gt;type-&gt;valDup((d)-&gt;privdata, _val_); \</u></td></tr>
+<tr><th id="110">110</th><td><u>    else \</u></td></tr>
+<tr><th id="111">111</th><td><u>        entry-&gt;v.val = (_val_); \</u></td></tr>
+<tr><th id="112">112</th><td><u>} while(0)</u></td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><u>#define <dfn class="macro" id="_M/dictSetSignedIntegerVal" data-ref="_M/dictSetSignedIntegerVal">dictSetSignedIntegerVal</dfn>(entry, _val_) \</u></td></tr>
+<tr><th id="115">115</th><td><u>    do { entry-&gt;v.s64 = _val_; } while(0)</u></td></tr>
+<tr><th id="116">116</th><td></td></tr>
+<tr><th id="117">117</th><td><u>#define <dfn class="macro" id="_M/dictSetUnsignedIntegerVal" data-ref="_M/dictSetUnsignedIntegerVal">dictSetUnsignedIntegerVal</dfn>(entry, _val_) \</u></td></tr>
+<tr><th id="118">118</th><td><u>    do { entry-&gt;v.u64 = _val_; } while(0)</u></td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><u>#define <dfn class="macro" id="_M/dictSetDoubleVal" data-ref="_M/dictSetDoubleVal">dictSetDoubleVal</dfn>(entry, _val_) \</u></td></tr>
+<tr><th id="121">121</th><td><u>    do { entry-&gt;v.d = _val_; } while(0)</u></td></tr>
+<tr><th id="122">122</th><td></td></tr>
+<tr><th id="123">123</th><td><u>#define <dfn class="macro" id="_M/dictFreeKey" data-ref="_M/dictFreeKey">dictFreeKey</dfn>(d, entry) \</u></td></tr>
+<tr><th id="124">124</th><td><u>    if ((d)-&gt;type-&gt;keyDestructor) \</u></td></tr>
+<tr><th id="125">125</th><td><u>        (d)-&gt;type-&gt;keyDestructor((d)-&gt;privdata, (entry)-&gt;key)</u></td></tr>
+<tr><th id="126">126</th><td></td></tr>
+<tr><th id="127">127</th><td><u>#define <dfn class="macro" id="_M/dictSetKey" data-ref="_M/dictSetKey">dictSetKey</dfn>(d, entry, _key_) do { \</u></td></tr>
+<tr><th id="128">128</th><td><u>    if ((d)-&gt;type-&gt;keyDup) \</u></td></tr>
+<tr><th id="129">129</th><td><u>        entry-&gt;key = (d)-&gt;type-&gt;keyDup((d)-&gt;privdata, _key_); \</u></td></tr>
+<tr><th id="130">130</th><td><u>    else \</u></td></tr>
+<tr><th id="131">131</th><td><u>        entry-&gt;key = (_key_); \</u></td></tr>
+<tr><th id="132">132</th><td><u>} while(0)</u></td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><u>#define <dfn class="macro" id="_M/dictCompareKeys" data-ref="_M/dictCompareKeys">dictCompareKeys</dfn>(d, key1, key2) \</u></td></tr>
+<tr><th id="135">135</th><td><u>    (((d)-&gt;type-&gt;keyCompare) ? \</u></td></tr>
+<tr><th id="136">136</th><td><u>        (d)-&gt;type-&gt;keyCompare((d)-&gt;privdata, key1, key2) : \</u></td></tr>
+<tr><th id="137">137</th><td><u>        (key1) == (key2))</u></td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><u>#define <dfn class="macro" id="_M/dictHashKey" data-ref="_M/dictHashKey">dictHashKey</dfn>(d, key) (d)-&gt;type-&gt;hashFunction(key)</u></td></tr>
+<tr><th id="140">140</th><td><u>#define <dfn class="macro" id="_M/dictGetKey" data-ref="_M/dictGetKey">dictGetKey</dfn>(he) ((he)-&gt;key)</u></td></tr>
+<tr><th id="141">141</th><td><u>#define <dfn class="macro" id="_M/dictGetVal" data-ref="_M/dictGetVal">dictGetVal</dfn>(he) ((he)-&gt;v.val)</u></td></tr>
+<tr><th id="142">142</th><td><u>#define <dfn class="macro" id="_M/dictGetSignedIntegerVal" data-ref="_M/dictGetSignedIntegerVal">dictGetSignedIntegerVal</dfn>(he) ((he)-&gt;v.s64)</u></td></tr>
+<tr><th id="143">143</th><td><u>#define <dfn class="macro" id="_M/dictGetUnsignedIntegerVal" data-ref="_M/dictGetUnsignedIntegerVal">dictGetUnsignedIntegerVal</dfn>(he) ((he)-&gt;v.u64)</u></td></tr>
+<tr><th id="144">144</th><td><u>#define <dfn class="macro" id="_M/dictGetDoubleVal" data-ref="_M/dictGetDoubleVal">dictGetDoubleVal</dfn>(he) ((he)-&gt;v.d)</u></td></tr>
+<tr><th id="145">145</th><td><u>#define <dfn class="macro" id="_M/dictSlots" data-ref="_M/dictSlots">dictSlots</dfn>(d) ((d)-&gt;ht[0].size+(d)-&gt;ht[1].size)</u></td></tr>
+<tr><th id="146">146</th><td><u>#define <dfn class="macro" id="_M/dictSize" data-ref="_M/dictSize">dictSize</dfn>(d) ((d)-&gt;ht[0].used+(d)-&gt;ht[1].used)</u></td></tr>
+<tr><th id="147">147</th><td><u>#define <dfn class="macro" id="_M/dictIsRehashing" data-ref="_M/dictIsRehashing">dictIsRehashing</dfn>(d) ((d)-&gt;rehashidx != -1)</u></td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td><i>/* API */</i></td></tr>
+<tr><th id="150">150</th><td><a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="decl fn" id="dictCreate" title='dictCreate' data-ref="dictCreate">dictCreate</dfn>(<a class="typedef" href="#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> *<dfn class="local col9 decl" id="409type" title='type' data-type='dictType *' data-ref="409type">type</dfn>, <em>void</em> *<dfn class="local col0 decl" id="410privDataPtr" title='privDataPtr' data-type='void *' data-ref="410privDataPtr">privDataPtr</dfn>);</td></tr>
+<tr><th id="151">151</th><td><em>int</em> <dfn class="decl fn" id="dictExpand" title='dictExpand' data-ref="dictExpand">dictExpand</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col1 decl" id="411d" title='d' data-type='dict *' data-ref="411d">d</dfn>, <em>unsigned</em> <em>long</em> <dfn class="local col2 decl" id="412size" title='size' data-type='unsigned long' data-ref="412size">size</dfn>);</td></tr>
+<tr><th id="152">152</th><td><em>int</em> <dfn class="decl fn" id="dictAdd" title='dictAdd' data-ref="dictAdd">dictAdd</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="413d" title='d' data-type='dict *' data-ref="413d">d</dfn>, <em>void</em> *<dfn class="local col4 decl" id="414key" title='key' data-type='void *' data-ref="414key">key</dfn>, <em>void</em> *<dfn class="local col5 decl" id="415val" title='val' data-type='void *' data-ref="415val">val</dfn>);</td></tr>
+<tr><th id="153">153</th><td><a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl fn" id="dictAddRaw" title='dictAddRaw' data-ref="dictAddRaw">dictAddRaw</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col6 decl" id="416d" title='d' data-type='dict *' data-ref="416d">d</dfn>, <em>void</em> *<dfn class="local col7 decl" id="417key" title='key' data-type='void *' data-ref="417key">key</dfn>);</td></tr>
+<tr><th id="154">154</th><td><em>int</em> <dfn class="decl fn" id="dictReplace" title='dictReplace' data-ref="dictReplace">dictReplace</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col8 decl" id="418d" title='d' data-type='dict *' data-ref="418d">d</dfn>, <em>void</em> *<dfn class="local col9 decl" id="419key" title='key' data-type='void *' data-ref="419key">key</dfn>, <em>void</em> *<dfn class="local col0 decl" id="420val" title='val' data-type='void *' data-ref="420val">val</dfn>);</td></tr>
+<tr><th id="155">155</th><td><a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl fn" id="dictReplaceRaw" title='dictReplaceRaw' data-ref="dictReplaceRaw">dictReplaceRaw</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col1 decl" id="421d" title='d' data-type='dict *' data-ref="421d">d</dfn>, <em>void</em> *<dfn class="local col2 decl" id="422key" title='key' data-type='void *' data-ref="422key">key</dfn>);</td></tr>
+<tr><th id="156">156</th><td><em>int</em> <dfn class="decl fn" id="dictDelete" title='dictDelete' data-ref="dictDelete">dictDelete</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="423d" title='d' data-type='dict *' data-ref="423d">d</dfn>, <em>const</em> <em>void</em> *<dfn class="local col4 decl" id="424key" title='key' data-type='const void *' data-ref="424key">key</dfn>);</td></tr>
+<tr><th id="157">157</th><td><em>int</em> <dfn class="decl fn" id="dictDeleteNoFree" title='dictDeleteNoFree' data-ref="dictDeleteNoFree">dictDeleteNoFree</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col5 decl" id="425d" title='d' data-type='dict *' data-ref="425d">d</dfn>, <em>const</em> <em>void</em> *<dfn class="local col6 decl" id="426key" title='key' data-type='const void *' data-ref="426key">key</dfn>);</td></tr>
+<tr><th id="158">158</th><td><em>void</em> <dfn class="decl fn" id="dictRelease" title='dictRelease' data-ref="dictRelease">dictRelease</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col7 decl" id="427d" title='d' data-type='dict *' data-ref="427d">d</dfn>);</td></tr>
+<tr><th id="159">159</th><td><a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> * <dfn class="decl fn" id="dictFind" title='dictFind' data-ref="dictFind">dictFind</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col8 decl" id="428d" title='d' data-type='dict *' data-ref="428d">d</dfn>, <em>const</em> <em>void</em> *<dfn class="local col9 decl" id="429key" title='key' data-type='const void *' data-ref="429key">key</dfn>);</td></tr>
+<tr><th id="160">160</th><td><em>void</em> *<dfn class="decl fn" id="dictFetchValue" title='dictFetchValue' data-ref="dictFetchValue">dictFetchValue</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="430d" title='d' data-type='dict *' data-ref="430d">d</dfn>, <em>const</em> <em>void</em> *<dfn class="local col1 decl" id="431key" title='key' data-type='const void *' data-ref="431key">key</dfn>);</td></tr>
+<tr><th id="161">161</th><td><em>int</em> <dfn class="decl fn" id="dictResize" title='dictResize' data-ref="dictResize">dictResize</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col2 decl" id="432d" title='d' data-type='dict *' data-ref="432d">d</dfn>);</td></tr>
+<tr><th id="162">162</th><td><a class="typedef" href="#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="decl fn" id="dictGetIterator" title='dictGetIterator' data-ref="dictGetIterator">dictGetIterator</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="433d" title='d' data-type='dict *' data-ref="433d">d</dfn>);</td></tr>
+<tr><th id="163">163</th><td><a class="typedef" href="#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="decl fn" id="dictGetSafeIterator" title='dictGetSafeIterator' data-ref="dictGetSafeIterator">dictGetSafeIterator</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col4 decl" id="434d" title='d' data-type='dict *' data-ref="434d">d</dfn>);</td></tr>
+<tr><th id="164">164</th><td><a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl fn" id="dictNext" title='dictNext' data-ref="dictNext">dictNext</dfn>(<a class="typedef" href="#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="local col5 decl" id="435iter" title='iter' data-type='dictIterator *' data-ref="435iter">iter</dfn>);</td></tr>
+<tr><th id="165">165</th><td><em>void</em> <dfn class="decl fn" id="dictReleaseIterator" title='dictReleaseIterator' data-ref="dictReleaseIterator">dictReleaseIterator</dfn>(<a class="typedef" href="#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="local col6 decl" id="436iter" title='iter' data-type='dictIterator *' data-ref="436iter">iter</dfn>);</td></tr>
+<tr><th id="166">166</th><td><a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl fn" id="dictGetRandomKey" title='dictGetRandomKey' data-ref="dictGetRandomKey">dictGetRandomKey</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col7 decl" id="437d" title='d' data-type='dict *' data-ref="437d">d</dfn>);</td></tr>
+<tr><th id="167">167</th><td><em>unsigned</em> <em>int</em> <dfn class="decl fn" id="dictGetSomeKeys" title='dictGetSomeKeys' data-ref="dictGetSomeKeys">dictGetSomeKeys</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col8 decl" id="438d" title='d' data-type='dict *' data-ref="438d">d</dfn>, <a class="typedef" href="#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> **<dfn class="local col9 decl" id="439des" title='des' data-type='dictEntry **' data-ref="439des">des</dfn>, <em>unsigned</em> <em>int</em> <dfn class="local col0 decl" id="440count" title='count' data-type='unsigned int' data-ref="440count">count</dfn>);</td></tr>
+<tr><th id="168">168</th><td><em>void</em> <dfn class="decl fn" id="dictPrintStats" title='dictPrintStats' data-ref="dictPrintStats">dictPrintStats</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col1 decl" id="441d" title='d' data-type='dict *' data-ref="441d">d</dfn>);</td></tr>
+<tr><th id="169">169</th><td><em>unsigned</em> <em>int</em> <dfn class="decl fn" id="dictGenHashFunction" title='dictGenHashFunction' data-ref="dictGenHashFunction">dictGenHashFunction</dfn>(<em>const</em> <em>void</em> *<dfn class="local col2 decl" id="442key" title='key' data-type='const void *' data-ref="442key">key</dfn>, <em>int</em> <dfn class="local col3 decl" id="443len" title='len' data-type='int' data-ref="443len">len</dfn>);</td></tr>
+<tr><th id="170">170</th><td><em>unsigned</em> <em>int</em> <dfn class="decl fn" id="dictGenCaseHashFunction" title='dictGenCaseHashFunction' data-ref="dictGenCaseHashFunction">dictGenCaseHashFunction</dfn>(<em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col4 decl" id="444buf" title='buf' data-type='const unsigned char *' data-ref="444buf">buf</dfn>, <em>int</em> <dfn class="local col5 decl" id="445len" title='len' data-type='int' data-ref="445len">len</dfn>);</td></tr>
+<tr><th id="171">171</th><td><em>void</em> <dfn class="decl fn" id="dictEmpty" title='dictEmpty' data-ref="dictEmpty">dictEmpty</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col6 decl" id="446d" title='d' data-type='dict *' data-ref="446d">d</dfn>, <em>void</em>(<dfn class="local col7 decl" id="447callback" title='callback' data-type='void (*)(void *)' data-ref="447callback">callback</dfn>)(<em>void</em>*));</td></tr>
+<tr><th id="172">172</th><td><em>void</em> <dfn class="decl fn" id="dictEnableResize" title='dictEnableResize' data-ref="dictEnableResize">dictEnableResize</dfn>(<em>void</em>);</td></tr>
+<tr><th id="173">173</th><td><em>void</em> <dfn class="decl fn" id="dictDisableResize" title='dictDisableResize' data-ref="dictDisableResize">dictDisableResize</dfn>(<em>void</em>);</td></tr>
+<tr><th id="174">174</th><td><em>int</em> <dfn class="decl fn" id="dictRehash" title='dictRehash' data-ref="dictRehash">dictRehash</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col8 decl" id="448d" title='d' data-type='dict *' data-ref="448d">d</dfn>, <em>int</em> <dfn class="local col9 decl" id="449n" title='n' data-type='int' data-ref="449n">n</dfn>);</td></tr>
+<tr><th id="175">175</th><td><em>int</em> <dfn class="decl fn" id="dictRehashMilliseconds" title='dictRehashMilliseconds' data-ref="dictRehashMilliseconds">dictRehashMilliseconds</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="450d" title='d' data-type='dict *' data-ref="450d">d</dfn>, <em>int</em> <dfn class="local col1 decl" id="451ms" title='ms' data-type='int' data-ref="451ms">ms</dfn>);</td></tr>
+<tr><th id="176">176</th><td><em>void</em> <dfn class="decl fn" id="dictSetHashFunctionSeed" title='dictSetHashFunctionSeed' data-ref="dictSetHashFunctionSeed">dictSetHashFunctionSeed</dfn>(<em>unsigned</em> <em>int</em> <dfn class="local col2 decl" id="452initval" title='initval' data-type='unsigned int' data-ref="452initval">initval</dfn>);</td></tr>
+<tr><th id="177">177</th><td><em>unsigned</em> <em>int</em> <dfn class="decl fn" id="dictGetHashFunctionSeed" title='dictGetHashFunctionSeed' data-ref="dictGetHashFunctionSeed">dictGetHashFunctionSeed</dfn>(<em>void</em>);</td></tr>
+<tr><th id="178">178</th><td><em>unsigned</em> <em>long</em> <dfn class="decl fn" id="dictScan" title='dictScan' data-ref="dictScan">dictScan</dfn>(<a class="typedef" href="#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="453d" title='d' data-type='dict *' data-ref="453d">d</dfn>, <em>unsigned</em> <em>long</em> <dfn class="local col4 decl" id="454v" title='v' data-type='unsigned long' data-ref="454v">v</dfn>, <a class="typedef" href="#dictScanFunction" title='dictScanFunction' data-type='void (void *, const dictEntry *)' data-ref="dictScanFunction">dictScanFunction</a> *<dfn class="local col5 decl" id="455fn" title='fn' data-type='dictScanFunction *' data-ref="455fn">fn</dfn>, <em>void</em> *<dfn class="local col6 decl" id="456privdata" title='privdata' data-type='void *' data-ref="456privdata">privdata</dfn>);</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td><i>/* Hash table types */</i></td></tr>
+<tr><th id="181">181</th><td><b>extern</b> <a class="typedef" href="#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> <dfn class="decl" id="dictTypeHeapStringCopyKey" title='dictTypeHeapStringCopyKey' data-ref="dictTypeHeapStringCopyKey">dictTypeHeapStringCopyKey</dfn>;</td></tr>
+<tr><th id="182">182</th><td><b>extern</b> <a class="typedef" href="#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> <dfn class="decl" id="dictTypeHeapStrings" title='dictTypeHeapStrings' data-ref="dictTypeHeapStrings">dictTypeHeapStrings</dfn>;</td></tr>
+<tr><th id="183">183</th><td><b>extern</b> <a class="typedef" href="#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> <dfn class="decl" id="dictTypeHeapStringCopyKeyValue" title='dictTypeHeapStringCopyKeyValue' data-ref="dictTypeHeapStringCopyKeyValue">dictTypeHeapStringCopyKeyValue</dfn>;</td></tr>
+<tr><th id="184">184</th><td></td></tr>
+<tr><th id="185">185</th><td><u>#<span data-ppcond="38">endif</span> /* __DICT_H */</u></td></tr>
+<tr><th id="186">186</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='aof.c.html'>redis/src/aof.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

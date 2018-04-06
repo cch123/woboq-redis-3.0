@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='195' type='int __finite(double __value)'/>
+<use f='redis/src/rdb.c' l='385' macro='1' u='c'/>

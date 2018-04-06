@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lobject.h' l='342' type='struct Table *'/>
+<use f='redis/deps/lua/src/lapi.c' l='595' u='r' c='lua_getmetatable'/>
+<use f='redis/deps/lua/src/lapi.c' l='712' u='w' c='lua_setmetatable'/>
+<offset>128</offset>
+<use f='redis/deps/lua/src/lgc.c' l='163' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='164' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='164' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/ltable.c' l='361' u='w' c='luaH_new'/>
+<use f='redis/deps/lua/src/ltm.c' l='65' u='r' c='luaT_gettmbyobj'/>
+<use f='redis/deps/lua/src/lvm.c' l='116' u='r' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='116' u='r' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='116' u='r' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='271' u='r' c='luaV_equalval'/>
+<use f='redis/deps/lua/src/lvm.c' l='271' u='r' c='luaV_equalval'/>

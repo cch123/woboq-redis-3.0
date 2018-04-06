@@ -1,0 +1,29 @@
+<dec f='redis/src/redis.h' l='529' type='unsigned long'/>
+<use f='redis/src/aof.c' l='570' u='w' c='createFakeClient'/>
+<offset>896</offset>
+<doc f='redis/src/redis.h' l='529'>/* Tot bytes of objects in reply list */</doc>
+<use f='redis/src/networking.c' l='109' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='229' u='w' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='238' u='w' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='241' u='w' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='245' u='w' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='263' u='w' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='271' u='w' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='274' u='w' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='278' u='w' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='293' u='w' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='301' u='w' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='304' u='w' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='309' u='w' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='443' u='w' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='449' u='w' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='450' u='w' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='452' u='w' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='580' u='w' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='580' u='r' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='844' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='857' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='1577' u='r' c='getClientOutputBufferMemoryUsage'/>
+<use f='redis/src/networking.c' l='1660' u='r' c='asyncCloseClientOnOutputBufferLimitReached'/>
+<use f='redis/src/networking.c' l='1661' u='r' c='asyncCloseClientOnOutputBufferLimitReached'/>
+<use f='redis/src/scripting.c' l='408' u='w' c='luaRedisGenericCommand'/>

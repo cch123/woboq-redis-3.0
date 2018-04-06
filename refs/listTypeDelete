@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1089' type='void listTypeDelete(listTypeEntry * entry)'/>
+<def f='redis/src/t_list.c' l='245' ll='267' type='void listTypeDelete(listTypeEntry * entry)'/>
+<use f='redis/src/t_list.c' l='669' u='c' c='lremCommand'/>
+<doc f='redis/src/t_list.c' l='244'>/* Delete the element pointed to. */</doc>

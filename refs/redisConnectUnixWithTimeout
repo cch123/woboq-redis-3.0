@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='180' type='redisContext * redisConnectUnixWithTimeout(const char * path, const struct timeval tv)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1079' ll='1089' type='redisContext * redisConnectUnixWithTimeout(const char * path, const struct timeval tv)'/>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/dict.h' l='79'/>
+<use f='redis/deps/hiredis/dict.c' l='177' u='c'/>
+<use f='redis/deps/hiredis/dict.c' l='201' u='c'/>
+<use f='redis/deps/hiredis/dict.c' l='224' u='c'/>
+<doc f='redis/deps/hiredis/dict.h' l='78'>/* ------------------------------- Macros ------------------------------------*/</doc>

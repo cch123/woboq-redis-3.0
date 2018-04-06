@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='93' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='190' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='661' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1165' u='w' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='1197' u='r' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1877' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2617' u='r' c='clusterLogCantFailover'/>
+<offset>17216</offset>
+<doc f='redis/src/cluster.h' l='93'>/* Unix time when FAIL flag was set */</doc>

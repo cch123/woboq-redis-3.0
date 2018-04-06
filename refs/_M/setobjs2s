@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lobject.h' l='172'/>
+<use f='redis/deps/lua/src/lapi.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='197' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='198' u='c'/>
+<doc f='redis/deps/lua/src/lobject.h' l='171'>/* from stack to (same) stack */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='143' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='622' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='623' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='63' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='232' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='251' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='356' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='91' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='408' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='470' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='538' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='580' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='622' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='683' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='684' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='685' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='691' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='756' u='c'/>

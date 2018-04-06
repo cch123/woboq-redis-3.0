@@ -1,0 +1,10 @@
+<def f='redis/src/networking.c' l='370' ll='374' type='void addReplyString(redisClient * c, char * s, size_t len)'/>
+<use f='redis/src/networking.c' l='377' u='c' c='addReplyErrorLength'/>
+<use f='redis/src/networking.c' l='378' u='c' c='addReplyErrorLength'/>
+<use f='redis/src/networking.c' l='379' u='c' c='addReplyErrorLength'/>
+<use f='redis/src/networking.c' l='403' u='c' c='addReplyStatusLength'/>
+<use f='redis/src/networking.c' l='404' u='c' c='addReplyStatusLength'/>
+<use f='redis/src/networking.c' l='405' u='c' c='addReplyStatusLength'/>
+<use f='redis/src/networking.c' l='470' u='c' c='addReplyDouble'/>
+<use f='redis/src/networking.c' l='495' u='c' c='addReplyLongLongWithPrefix'/>
+<use f='redis/src/networking.c' l='550' u='c' c='addReplyBulkCBuffer'/>

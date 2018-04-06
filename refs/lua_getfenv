@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lua.h' l='184' type='void lua_getfenv(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='616' ll='637' macro='1' type='void lua_getfenv(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='138' u='c' c='luaB_getfenv'/>
+<use f='redis/deps/lua/src/ldblib.c' l='49' u='c' c='db_getfenv'/>
+<use f='redis/deps/lua/src/liolib.c' l='128' u='c' c='aux_close'/>

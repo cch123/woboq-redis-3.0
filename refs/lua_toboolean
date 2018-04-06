@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/lua.h' l='148' type='int lua_toboolean(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='337' ll='340' macro='1' type='int lua_toboolean(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='336' u='c' c='luaB_assert'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='408' u='c' c='luaB_tostring'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='424' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='436' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/liolib.c' l='401' u='c' c='io_readline'/>
+<use f='redis/deps/lua/src/loadlib.c' l='457' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loslib.c' l='103' u='c' c='getboolfield'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='502' u='c' c='str_find_aux'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='634' u='c' c='add_value'/>
+<use f='redis/deps/lua/src/ltablib.c' l='185' u='c' c='sort_comp'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='251' u='c' c='json_enum_option'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='673' u='c' c='json_append_data'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='348' u='c' c='mp_encode_lua_bool'/>
+<use f='redis/src/scripting.c' l='810' u='c' c='luaReplyToRedisReply'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='658' type='int'/>
+<offset>480</offset>
+<doc f='redis/src/redis.h' l='658'>/* SHUTDOWN needed ASAP */</doc>
+<use f='redis/src/redis.c' l='1110' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1113' u='w' c='serverCron'/>
+<use f='redis/src/redis.c' l='1464' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='3483' u='r' c='sigShutdownHandler'/>
+<use f='redis/src/redis.c' l='3492' u='w' c='sigShutdownHandler'/>

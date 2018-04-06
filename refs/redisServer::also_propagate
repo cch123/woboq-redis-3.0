@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='789' type='redisOpArray'/>
+<offset>14976</offset>
+<doc f='redis/src/redis.h' l='788'>/* Propagation of commands in AOF / replication */</doc>
+<doc f='redis/src/redis.h' l='789'>/* Additional command to propagate. */</doc>
+<use f='redis/src/redis.c' l='2023' u='a' c='alsoPropagate'/>
+<use f='redis/src/redis.c' l='2050' u='a' c='call'/>
+<use f='redis/src/redis.c' l='2105' u='m' c='call'/>
+<use f='redis/src/redis.c' l='2109' u='m' c='call'/>
+<use f='redis/src/redis.c' l='2110' u='m' c='call'/>
+<use f='redis/src/redis.c' l='2113' u='a' c='call'/>

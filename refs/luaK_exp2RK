@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lcode.h' l='57' type='int luaK_exp2RK(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='444' ll='469' type='int luaK_exp2RK(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='490' u='c' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='509' u='c' c='luaK_self'/>
+<use f='redis/deps/lua/src/lcode.c' l='622' u='c' c='luaK_indexed'/>
+<use f='redis/deps/lua/src/lcode.c' l='657' u='c' c='codearith'/>
+<use f='redis/deps/lua/src/lcode.c' l='658' u='c' c='codearith'/>
+<use f='redis/deps/lua/src/lcode.c' l='675' u='c' c='codecomp'/>
+<use f='redis/deps/lua/src/lcode.c' l='676' u='c' c='codecomp'/>
+<use f='redis/deps/lua/src/lcode.c' l='726' u='c' c='luaK_infix'/>
+<use f='redis/deps/lua/src/lcode.c' l='730' u='c' c='luaK_infix'/>
+<use f='redis/deps/lua/src/lparser.c' l='457' u='c' c='recfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='459' u='c' c='recfield'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1407' type='void moveCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='709' ll='760' type='void moveCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='216' u='r'/>
+<use f='redis/src/redis.c' l='216' u='r'/>
+<use f='redis/src/redis.c' l='216' u='r'/>
+<use f='redis/src/redis.c' l='216' u='r'/>

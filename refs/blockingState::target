@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='488' type='robj *'/>
+<offset>128</offset>
+<doc f='redis/src/redis.h' l='488'>/* The key that should receive the element,
+                             * for BRPOPLPUSH. */</doc>
+<use f='redis/src/networking.c' l='116' u='w' c='createClient'/>
+<use f='redis/src/t_list.c' l='781' u='w' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='833' u='r' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='834' u='r' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='835' u='w' c='unblockClientWaitingData'/>
+<use f='redis/src/t_list.c' l='983' u='r' c='handleClientsBlockedOnLists'/>

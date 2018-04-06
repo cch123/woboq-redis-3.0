@@ -1,0 +1,25 @@
+<dec f='redis/src/adlist.h' l='37' type='struct listNode *'/>
+<use f='redis/src/adlist.c' l='89' u='w' c='listAddNodeHead'/>
+<use f='redis/src/adlist.c' l='91' u='w' c='listAddNodeHead'/>
+<use f='redis/src/adlist.c' l='93' u='w' c='listAddNodeHead'/>
+<use f='redis/src/adlist.c' l='115' u='w' c='listAddNodeTail'/>
+<use f='redis/src/adlist.c' l='117' u='w' c='listAddNodeTail'/>
+<use f='redis/src/adlist.c' l='133' u='w' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='140' u='w' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='140' u='r' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='145' u='r' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='146' u='r' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='149' u='w' c='listInsertNode'/>
+<use f='redis/src/adlist.c' l='161' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='162' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='166' u='w' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='166' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='168' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='229' u='r' c='listNext'/>
+<use f='redis/src/adlist.c' l='319' u='r' c='listIndex'/>
+<use f='redis/src/adlist.c' l='334' u='r' c='listRotate'/>
+<use f='redis/src/adlist.c' l='337' u='w' c='listRotate'/>
+<use f='redis/src/adlist.c' l='338' u='w' c='listRotate'/>
+<offset>0</offset>
+<use f='redis/src/t_list.c' l='166' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='261' u='r' c='listTypeDelete'/>

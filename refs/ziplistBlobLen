@@ -1,0 +1,7 @@
+<dec f='redis/src/ziplist.h' l='46' type='size_t ziplistBlobLen(unsigned char * zl)'/>
+<use f='redis/src/rdb.c' l='489' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='537' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='565' u='c' c='rdbSaveObject'/>
+<use f='redis/src/t_hash.c' l='434' u='c' c='hashTypeConvertZiplist'/>
+<def f='redis/src/ziplist.c' l='898' ll='900' type='size_t ziplistBlobLen(unsigned char * zl)'/>
+<doc f='redis/src/ziplist.c' l='897'>/* Return ziplist blob size in bytes. */</doc>

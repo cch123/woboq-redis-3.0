@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='366'/>
+<doc f='redis/src/redis.h' l='365'>/* Command propagation flags, see propagate() function */</doc>
+<use f='redis/src/redis.c' l='2088' u='c'/>
+<use f='redis/src/redis.c' l='2094' u='c'/>

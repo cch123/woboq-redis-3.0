@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='120' type='void *(*)(const redisReadTask *)'/>
+<offset>192</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='406' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='407' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='461' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='462' u='r' c='processMultiBulkItem'/>

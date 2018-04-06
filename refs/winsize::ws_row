@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/ioctl-types.h' l='29' type='unsigned short'/>
+<offset>0</offset>
+<use f='redis/src/memtest.c' l='68' u='r' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='74' u='r' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='275' u='w' c='memtest'/>

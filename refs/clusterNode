@@ -1,0 +1,21 @@
+<def f='redis/src/cluster.h' l='81' ll='101'/>
+<size>2256</size>
+<mbr r='clusterNode::ctime' o='0' t='mstime_t'/>
+<mbr r='clusterNode::name' o='64' t='char [40]'/>
+<mbr r='clusterNode::flags' o='384' t='int'/>
+<mbr r='clusterNode::configEpoch' o='448' t='uint64_t'/>
+<mbr r='clusterNode::slots' o='512' t='unsigned char [2048]'/>
+<mbr r='clusterNode::numslots' o='16896' t='int'/>
+<mbr r='clusterNode::numslaves' o='16928' t='int'/>
+<mbr r='clusterNode::slaves' o='16960' t='struct clusterNode **'/>
+<mbr r='clusterNode::slaveof' o='17024' t='struct clusterNode *'/>
+<mbr r='clusterNode::ping_sent' o='17088' t='mstime_t'/>
+<mbr r='clusterNode::pong_received' o='17152' t='mstime_t'/>
+<mbr r='clusterNode::fail_time' o='17216' t='mstime_t'/>
+<mbr r='clusterNode::voted_time' o='17280' t='mstime_t'/>
+<mbr r='clusterNode::repl_offset_time' o='17344' t='mstime_t'/>
+<mbr r='clusterNode::repl_offset' o='17408' t='long long'/>
+<mbr r='clusterNode::ip' o='17472' t='char [46]'/>
+<mbr r='clusterNode::port' o='17856' t='int'/>
+<mbr r='clusterNode::link' o='17920' t='clusterLink *'/>
+<mbr r='clusterNode::fail_reports' o='17984' t='list *'/>

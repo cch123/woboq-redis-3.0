@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1164' type='void replicationScriptCacheInit()'/>
+<use f='redis/src/redis.c' l='1877' u='c' c='initServer'/>
+<def f='redis/src/replication.c' l='1734' ll='1738' type='void replicationScriptCacheInit()'/>
+<doc f='redis/src/replication.c' l='1733'>/* Initialize the script cache, only called at startup. */</doc>

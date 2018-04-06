@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='44' type='void luaL_register(lua_State * L, const char * libname, const luaL_Reg * l)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='229' ll='232' macro='1' type='void luaL_register(lua_State * L, const char * libname, const luaL_Reg * l)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='631' u='c' c='base_open'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='650' u='c' c='luaopen_base'/>
+<use f='redis/deps/lua/src/ldblib.c' l='395' u='c' c='luaopen_debug'/>
+<use f='redis/deps/lua/src/liolib.c' l='514' u='c' c='createmeta'/>
+<use f='redis/deps/lua/src/liolib.c' l='543' u='c' c='luaopen_io'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='252' u='c' c='luaopen_math'/>
+<use f='redis/deps/lua/src/loadlib.c' l='634' u='c' c='luaopen_package'/>
+<use f='redis/deps/lua/src/loadlib.c' l='662' u='c' c='luaopen_package'/>
+<use f='redis/deps/lua/src/loslib.c' l='240' u='c' c='luaopen_os'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='863' u='c' c='luaopen_string'/>
+<use f='redis/deps/lua/src/ltablib.c' l='284' u='c' c='luaopen_table'/>
+<use f='redis/deps/lua/src/lua_bit.c' l='183' u='c' c='luaopen_bit'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='394' u='c' c='luaopen_struct'/>

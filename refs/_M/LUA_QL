@@ -1,0 +1,32 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='201'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='197'>/*
+@@ LUA_QL describes how error messages quote program elements.
+** CHANGE it if you want a different appearance.
+*/</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='42' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='43' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='156' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='58' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='358' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='439' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='465' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='512' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='566' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='755' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1123' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1123' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='206' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='213' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='388' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='389' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='585' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='586' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='815' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='816' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='156' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='83' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='109' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='139' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='672' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='674' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='676' u='c'/>

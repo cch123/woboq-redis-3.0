@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='2554' ll='2728' type='void genericZrangebylexCommand(redisClient * c, int reverse)'/>
+<use f='redis/src/t_zset.c' l='2731' u='c' c='zrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2735' u='c' c='zrevrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='2553'>/* This command implements ZRANGEBYLEX, ZREVRANGEBYLEX. */</doc>

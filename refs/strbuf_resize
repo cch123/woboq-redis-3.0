@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='61' type='void strbuf_resize(strbuf_t * s, int len)'/>
+<use f='redis/deps/lua/src/strbuf.h' l='98' u='c' c='strbuf_ensure_empty_length'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='60'>/* Management */</doc>
+<def f='redis/deps/lua/src/strbuf.c' l='164' ll='180' type='void strbuf_resize(strbuf_t * s, int len)'/>
+<use f='redis/deps/lua/src/strbuf.c' l='190' u='c' c='strbuf_append_string'/>
+<use f='redis/deps/lua/src/strbuf.c' l='244' u='c' c='strbuf_append_fmt_retry'/>
+<doc f='redis/deps/lua/src/strbuf.c' l='162'>/* Ensure strbuf can handle a string length bytes long (ignoring NULL
+ * optional termination). */</doc>

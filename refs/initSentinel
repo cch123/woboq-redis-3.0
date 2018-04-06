@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1355' type='void initSentinel()'/>
+<use f='redis/src/redis.c' l='3591' u='c' c='main'/>
+<def f='redis/src/sentinel.c' l='411' ll='435' type='void initSentinel()'/>
+<doc f='redis/src/sentinel.c' l='410'>/* Perform the Sentinel mode initialization. */</doc>

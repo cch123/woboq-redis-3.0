@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='51' type='int luaK_stringK(FuncState * fs, TString * s)'/>
+<def f='redis/deps/lua/src/lcode.c' l='250' ll='254' type='int luaK_stringK(FuncState * fs, TString * s)'/>
+<use f='redis/deps/lua/src/lparser.c' l='134' u='c' c='codestring'/>
+<use f='redis/deps/lua/src/lparser.c' l='252' u='c' c='singlevar'/>

@@ -1,0 +1,7 @@
+<def f='redis/deps/lua/src/lauxlib.c' l='522' ll='526'/>
+<size>8208</size>
+<doc f='redis/deps/lua/src/lauxlib.c' l='516'>/*
+** {======================================================
+** Load functions
+** =======================================================
+*/</doc>

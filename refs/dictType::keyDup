@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/dict.h' l='53' type='void *(*)(void *, const void *)'/>
+<use f='redis/deps/hiredis/dict.c' l='150' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='150' macro='1' u='r'/>
+<offset>64</offset>
+<dec f='redis/src/dict.h' l='60' type='void *(*)(void *, const void *)'/>
+<offset>64</offset>
+<use f='redis/src/dict.c' l='367' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='367' macro='1' u='r'/>

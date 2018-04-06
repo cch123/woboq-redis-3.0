@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='1012' type='long long ustime()'/>
+<use f='redis/src/aof.c' l='1275' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1297' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1368' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1483' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/redis.h' l='1011'>/* Utils */</doc>
+<use f='redis/src/rdb.c' l='773' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='793' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1433' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1502' u='c' c='rdbSaveToSlavesSockets'/>
+<def f='redis/src/redis.c' l='381' ll='389' type='long long ustime()'/>
+<use f='redis/src/redis.c' l='393' u='c' c='mstime'/>
+<use f='redis/src/redis.c' l='765' u='c' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='862' u='c' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='2052' u='c' c='call'/>
+<use f='redis/src/redis.c' l='2054' u='c' c='call'/>
+<use f='redis/src/redis.c' l='3533' u='c' c='loadDataFromDisk'/>
+<use f='redis/src/redis.c' l='3536' u='c' c='loadDataFromDisk'/>
+<use f='redis/src/redis.c' l='3540' u='c' c='loadDataFromDisk'/>
+<doc f='redis/src/redis.c' l='380'>/* Return the UNIX time in microseconds */</doc>

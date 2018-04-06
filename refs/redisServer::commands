@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='654' type='dict *'/>
+<offset>256</offset>
+<doc f='redis/src/redis.h' l='654'>/* Command table */</doc>
+<use f='redis/src/config.c' l='422' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='429' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/redis.c' l='1529' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1915' u='r' c='populateCommandTable'/>
+<use f='redis/src/redis.c' l='1975' u='r' c='lookupCommand'/>
+<use f='redis/src/redis.c' l='1982' u='r' c='lookupCommandByCString'/>
+<use f='redis/src/redis.c' l='1995' u='r' c='lookupCommandOrOriginal'/>
+<use f='redis/src/redis.c' l='2528' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2528' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2529' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2538' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2541' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2541' u='r' c='commandCommand'/>
+<use f='redis/src/sentinel.c' l='416' u='r' c='initSentinel'/>
+<use f='redis/src/sentinel.c' l='421' u='r' c='initSentinel'/>

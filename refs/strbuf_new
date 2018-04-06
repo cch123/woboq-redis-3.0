@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='52' type='strbuf_t * strbuf_new(int len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1277' u='c' c='json_decode'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='51'>/* Initialise */</doc>
+<def f='redis/deps/lua/src/strbuf.c' l='68' ll='82' type='strbuf_t * strbuf_new(int len)'/>

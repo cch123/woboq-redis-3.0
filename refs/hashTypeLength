@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1276' type='unsigned long hashTypeLength(robj * o)'/>
+<use f='redis/src/aof.c' l='975' u='c' c='rewriteHashObject'/>
+<use f='redis/src/debug.c' l='443' u='c' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/rdb.c' l='1041' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1069' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='207' u='c' c='hashTypeSet'/>
+<def f='redis/src/t_hash.c' l='262' ll='274' type='unsigned long hashTypeLength(robj * o)'/>
+<use f='redis/src/t_hash.c' l='662' u='c' c='hdelCommand'/>
+<use f='redis/src/t_hash.c' l='685' u='c' c='hlenCommand'/>
+<use f='redis/src/t_hash.c' l='724' u='c' c='genericHgetallCommand'/>
+<doc f='redis/src/t_hash.c' l='261'>/* Return the number of elements in a hash. */</doc>

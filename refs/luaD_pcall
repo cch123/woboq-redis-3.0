@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/ldo.h' l='44' type='int luaD_pcall(lua_State * L, Pfunc func, void * u, ptrdiff_t oldtop, ptrdiff_t ef)'/>
+<use f='redis/deps/lua/src/lapi.c' l='821' u='c' c='lua_pcall'/>
+<use f='redis/deps/lua/src/lapi.c' l='856' u='c' c='lua_cpcall'/>
+<def f='redis/deps/lua/src/ldo.c' l='456' ll='478' type='int luaD_pcall(lua_State * L, Pfunc func, void * u, ptrdiff_t old_top, ptrdiff_t ef)'/>
+<use f='redis/deps/lua/src/ldo.c' l='514' u='c' c='luaD_protectedparser'/>

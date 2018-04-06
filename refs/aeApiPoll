@@ -1,0 +1,2 @@
+<def f='redis/src/ae_epoll.c' l='110' ll='133' type='int aeApiPoll(aeEventLoop * eventLoop, struct timeval * tvp)'/>
+<use f='redis/src/ae.c' l='400' u='c' c='aeProcessEvents'/>

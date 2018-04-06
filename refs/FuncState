@@ -1,0 +1,19 @@
+<def f='redis/deps/lua/src/lparser.h' l='58' ll='75'/>
+<size>600</size>
+<doc f='redis/deps/lua/src/lparser.h' l='57'>/* state needed to generate code for a given function */</doc>
+<mbr r='FuncState::f' o='0' t='Proto *'/>
+<mbr r='FuncState::h' o='64' t='Table *'/>
+<mbr r='FuncState::prev' o='128' t='struct FuncState *'/>
+<mbr r='FuncState::ls' o='192' t='struct LexState *'/>
+<mbr r='FuncState::L' o='256' t='struct lua_State *'/>
+<mbr r='FuncState::bl' o='320' t='struct BlockCnt *'/>
+<mbr r='FuncState::pc' o='384' t='int'/>
+<mbr r='FuncState::lasttarget' o='416' t='int'/>
+<mbr r='FuncState::jpc' o='448' t='int'/>
+<mbr r='FuncState::freereg' o='480' t='int'/>
+<mbr r='FuncState::nk' o='512' t='int'/>
+<mbr r='FuncState::np' o='544' t='int'/>
+<mbr r='FuncState::nlocvars' o='576' t='short'/>
+<mbr r='FuncState::nactvar' o='592' t='lu_byte'/>
+<mbr r='FuncState::upvalues' o='600' t='upvaldesc [60]'/>
+<mbr r='FuncState::actvar' o='1568' t='unsigned short [200]'/>

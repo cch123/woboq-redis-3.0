@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lgc.h' l='107' type='void luaC_barrierback(lua_State * L, Table * t)'/>
+<use f='redis/deps/lua/src/lapi.c' l='678' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='691' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='714' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lgc.c' l='674' ll='682' type='void luaC_barrierback(lua_State * L, Table * t)'/>
+<use f='redis/deps/lua/src/ltable.c' l='426' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='146' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='715' macro='1' u='c'/>

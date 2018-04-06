@@ -1,0 +1,5 @@
+<def f='redis/src/redis-cli.c' l='2108' ll='2126' type='unsigned long compute_something_fast()'/>
+<use f='redis/src/redis-cli.c' l='2144' u='c' c='intrinsicLatencyMode'/>
+<doc f='redis/src/redis-cli.c' l='2105'>/* This is just some computation the compiler can&apos;t optimize out.
+ * Should run in less than 100-200 microseconds even using very
+ * slow hardware. Runs in less than 10 microseconds in modern HW. */</doc>

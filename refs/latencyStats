@@ -1,0 +1,10 @@
+<def f='redis/src/latency.h' l='54' ll='62'/>
+<size>32</size>
+<doc f='redis/src/latency.h' l='53'>/* Latency statistics structure. */</doc>
+<mbr r='latencyStats::all_time_high' o='0' t='uint32_t'/>
+<mbr r='latencyStats::avg' o='32' t='uint32_t'/>
+<mbr r='latencyStats::min' o='64' t='uint32_t'/>
+<mbr r='latencyStats::max' o='96' t='uint32_t'/>
+<mbr r='latencyStats::mad' o='128' t='uint32_t'/>
+<mbr r='latencyStats::samples' o='160' t='uint32_t'/>
+<mbr r='latencyStats::period' o='192' t='time_t'/>

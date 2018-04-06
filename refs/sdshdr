@@ -1,0 +1,10 @@
+<def f='redis/deps/hiredis/sds.h' l='41' ll='45'/>
+<size>8</size>
+<mbr r='sdshdr::len' o='0' t='unsigned int'/>
+<mbr r='sdshdr::free' o='32' t='unsigned int'/>
+<mbr r='sdshdr::buf' o='64' t='char []'/>
+<def f='redis/src/sds.h' l='41' ll='45'/>
+<size>8</size>
+<mbr r='sdshdr::len' o='0' t='unsigned int'/>
+<mbr r='sdshdr::free' o='32' t='unsigned int'/>
+<mbr r='sdshdr::buf' o='64' t='char []'/>

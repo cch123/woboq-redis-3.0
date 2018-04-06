@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='147'/>
+<doc f='redis/src/redis.h' l='146'>/* Protocol and I/O related defines */</doc>
+<use f='redis/src/redis.c' l='1417' u='c'/>

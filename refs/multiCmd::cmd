@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='468' type='struct redisCommand *'/>
+<offset>128</offset>
+<use f='redis/src/cluster.c' l='4802' u='w' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4812' u='r' c='getNodeByQuery'/>
+<use f='redis/src/multi.c' l='63' u='w' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='148' u='r' c='execCommand'/>
+<use f='redis/src/multi.c' l='164' u='w' c='execCommand'/>

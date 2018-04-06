@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='862' type='size_t'/>
+<offset>18432</offset>
+<use f='redis/src/config.c' l='400' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='806' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1043' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1863' u='r' c='rewriteConfig'/>
+<use f='redis/src/rdb.c' l='835' u='r' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1051' u='r' c='rdbLoadObject'/>
+<use f='redis/src/redis.c' l='1458' u='w' c='initServerConfig'/>
+<use f='redis/src/t_list.c' l='55' u='r' c='listTypePush'/>
+<use f='redis/src/t_list.c' l='362' u='r' c='pushxGenericCommand'/>

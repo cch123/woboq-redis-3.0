@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1332' type='unsigned int delKeysInSlot(unsigned int hashslot)'/>
+<use f='redis/src/cluster.c' l='1516' u='c' c='clusterUpdateSlotsConfigWith'/>
+<def f='redis/src/db.c' l='1167' ll='1185' type='unsigned int delKeysInSlot(unsigned int hashslot)'/>
+<doc f='redis/src/db.c' l='1165'>/* Remove all the keys in the specified hash slot.
+ * The number of removed items is returned. */</doc>

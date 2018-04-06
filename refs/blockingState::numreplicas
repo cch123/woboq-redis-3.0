@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='492' type='int'/>
+<offset>192</offset>
+<doc f='redis/src/redis.h' l='491'>/* REDIS_BLOCK_WAIT */</doc>
+<doc f='redis/src/redis.h' l='492'>/* Number of replicas we are waiting for ACK. */</doc>
+<use f='redis/src/networking.c' l='117' u='w' c='createClient'/>
+<use f='redis/src/replication.c' l='1861' u='w' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1898' u='r' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1905' u='r' c='processClientsWaitingReplicas'/>

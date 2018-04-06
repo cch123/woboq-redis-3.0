@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1212' type='unsigned char * zzlInsert(unsigned char * zl, robj * ele, double score)'/>
+<def f='redis/src/t_zset.c' l='976' ll='1010' type='unsigned char * zzlInsert(unsigned char * zl, robj * ele, double score)'/>
+<use f='redis/src/t_zset.c' l='1236' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1243' u='c' c='zaddGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='974'>/* Insert (element,score) pair in ziplist. This function assumes the element is
+ * not yet present in the list. */</doc>

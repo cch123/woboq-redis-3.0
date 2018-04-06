@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='727' type='int'/>
+<offset>11776</offset>
+<doc f='redis/src/redis.h' l='726'>/* Configuration */</doc>
+<doc f='redis/src/redis.h' l='727'>/* Loglevel in redis.conf */</doc>
+<use f='redis/src/config.c' l='170' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='171' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='172' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='173' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='836' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='838' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='840' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='842' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1168' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1797' u='r' c='rewriteConfig'/>
+<use f='redis/src/networking.c' l='977' u='r' c='setProtocolError'/>
+<use f='redis/src/redis.c' l='304' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='343' u='r' c='redisLog'/>
+<use f='redis/src/redis.c' l='363' u='r' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='1413' u='w' c='initServerConfig'/>
+<use f='redis/src/sentinel.c' l='564' u='r' c='sentinelEvent'/>

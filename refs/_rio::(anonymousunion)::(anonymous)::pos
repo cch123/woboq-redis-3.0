@@ -1,0 +1,12 @@
+<dec f='redis/src/rio.h' l='68' type='off_t'/>
+<dec f='redis/src/rio.h' l='81' type='off_t'/>
+<offset>192</offset>
+<use f='redis/src/rio.c' l='63' u='w' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='69' u='r' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='71' u='r' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='72' u='w' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='78' u='r' c='rioBufferTell'/>
+<use f='redis/src/rio.c' l='103' u='w' c='rioInitWithBuffer'/>
+<use f='redis/src/rio.c' l='226' u='w' c='rioFdsetWrite'/>
+<use f='redis/src/rio.c' l='243' u='r' c='rioFdsetTell'/>
+<use f='redis/src/rio.c' l='275' u='w' c='rioInitWithFdset'/>

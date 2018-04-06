@@ -1,0 +1,5 @@
+<dec f='redis/src/sentinel.c' l='322' type='void sentinelLinkEstablishedCallback(const redisAsyncContext * c, int status)'/>
+<def f='redis/src/sentinel.c' l='1653' ll='1663' type='void sentinelLinkEstablishedCallback(const redisAsyncContext * c, int status)'/>
+<use f='redis/src/sentinel.c' l='1721' u='r' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1745' u='r' c='sentinelReconnectInstance'/>
+<doc f='redis/src/sentinel.c' l='320'>/* ============================= Prototypes ================================= */</doc>

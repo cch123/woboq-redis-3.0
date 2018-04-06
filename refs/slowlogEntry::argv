@@ -1,0 +1,9 @@
+<dec f='redis/src/slowlog.h' l='35' type='robj **'/>
+<offset>0</offset>
+<use f='redis/src/slowlog.c' l='54' u='w' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='60' u='r' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='74' u='r' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='76' u='r' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='96' u='r' c='slowlogFreeEntry'/>
+<use f='redis/src/slowlog.c' l='97' u='r' c='slowlogFreeEntry'/>
+<use f='redis/src/slowlog.c' l='161' u='r' c='slowlogCommand'/>

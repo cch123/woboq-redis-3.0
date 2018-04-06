@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='255'/>
+<use f='redis/src/aof.c' l='565' u='c'/>
+<doc f='redis/src/redis.h' l='253'>/* Client block type (btype field in client structure)
+ * if REDIS_BLOCKED flag is set. */</doc>
+<use f='redis/src/blocked.c' l='143' u='c'/>
+<use f='redis/src/networking.c' l='113' u='c'/>

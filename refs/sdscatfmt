@@ -1,0 +1,37 @@
+<dec f='redis/deps/hiredis/sds.h' l='79' type='sds sdscatfmt(sds s, const char * fmt)'/>
+<def f='redis/deps/hiredis/sds.c' l='451' ll='549' type='sds sdscatfmt(sds s, const char * fmt)'/>
+<doc f='redis/deps/hiredis/sds.c' l='435'>/* This function is similar to sdscatprintf, but much faster as it does
+ * not rely on sprintf() family functions implemented by the libc that
+ * are often very slow. Moreover directly handling the sds string as
+ * new data is concatenated provides a performance improvement.
+ *
+ * However this function only handles an incompatible subset of printf-alike
+ * format specifiers:
+ *
+ * %s - C String
+ * %S - SDS string
+ * %i - signed int
+ * %I - 64 bit signed integer (long long, int64_t)
+ * %u - unsigned int
+ * %U - 64 bit unsigned integer (unsigned long long, uint64_t)
+ * %% - Verbatim &quot;%&quot; character.
+ */</doc>
+<dec f='redis/src/sds.h' l='79' type='sds sdscatfmt(sds s, const char * fmt)'/>
+<use f='redis/src/networking.c' l='1332' u='c' c='catClientInfoString'/>
+<def f='redis/src/sds.c' l='451' ll='549' type='sds sdscatfmt(sds s, const char * fmt)'/>
+<doc f='redis/src/sds.c' l='435'>/* This function is similar to sdscatprintf, but much faster as it does
+ * not rely on sprintf() family functions implemented by the libc that
+ * are often very slow. Moreover directly handling the sds string as
+ * new data is concatenated provides a performance improvement.
+ *
+ * However this function only handles an incompatible subset of printf-alike
+ * format specifiers:
+ *
+ * %s - C String
+ * %S - SDS string
+ * %i - signed int
+ * %I - 64 bit signed integer (long long, int64_t)
+ * %u - unsigned int
+ * %U - 64 bit unsigned integer (unsigned long long, uint64_t)
+ * %% - Verbatim &quot;%&quot; character.
+ */</doc>

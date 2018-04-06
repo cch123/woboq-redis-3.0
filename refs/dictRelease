@@ -1,0 +1,24 @@
+<dec f='redis/deps/hiredis/dict.h' l='120' type='void dictRelease(dict * ht)'/>
+<def f='redis/deps/hiredis/dict.c' l='238' ll='241' type='void dictRelease(dict * ht)'/>
+<use f='redis/deps/hiredis/async.c' l='283' u='c' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='289' u='c' c='__redisAsyncFree'/>
+<doc f='redis/deps/hiredis/dict.c' l='237'>/* Clear &amp; Release the hash table */</doc>
+<dec f='redis/src/dict.h' l='158' type='void dictRelease(dict * d)'/>
+<use f='redis/src/config.c' l='1672' u='c' c='rewriteConfigReleaseState'/>
+<use f='redis/src/config.c' l='1673' u='c' c='rewriteConfigReleaseState'/>
+<def f='redis/src/dict.c' l='482' ll='487' type='void dictRelease(dict * d)'/>
+<doc f='redis/src/dict.c' l='481'>/* Clear &amp; Release the hash table */</doc>
+<use f='redis/src/networking.c' l='718' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='727' u='c' c='freeClient'/>
+<use f='redis/src/object.c' l='259' u='c' c='freeSetObject'/>
+<use f='redis/src/object.c' l='274' u='c' c='freeZsetObject'/>
+<use f='redis/src/object.c' l='289' u='c' c='freeHashObject'/>
+<use f='redis/src/scripting.c' l='770' u='c' c='scriptingRelease'/>
+<use f='redis/src/sentinel.c' l='1004' u='c' c='releaseSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1005' u='c' c='releaseSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1167' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='1170' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='3292' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/t_set.c' l='550' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_zset.c' l='1146' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='2052' u='c' c='zunionInterGenericCommand'/>

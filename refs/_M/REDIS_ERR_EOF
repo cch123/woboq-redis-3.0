@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='50'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1151' u='c'/>
+<use f='redis/src/redis-cli.c' l='571' u='c'/>
+<use f='redis/src/redis-cli.c' l='724' u='c'/>
+<use f='redis/src/redis-cli.c' l='738' u='c'/>

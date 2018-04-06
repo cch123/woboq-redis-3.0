@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/llex.h' l='32' type='286'/>
+<use f='redis/deps/lua/src/llex.c' l='92' c='txtToken'/>
+<use f='redis/deps/lua/src/llex.c' l='287' u='r' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='314' u='r' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='366' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='369' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='394' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='58' u='r' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='632' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='716' c='primaryexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='736' c='simpleexp'/>

@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lobject.h' l='235' type='struct Proto **'/>
+<offset>256</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='235'>/* functions defined inside the function */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='453' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldump.c' l='108' u='r' c='DumpConstants'/>
+<use f='redis/deps/lua/src/lfunc.c' l='120' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='143' u='r' c='luaF_freeproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='213' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='214' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='214' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='315' u='w' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='315' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='317' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='318' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='w' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='131' u='w' c='LoadConstants'/>
+<use f='redis/deps/lua/src/lundump.c' l='133' u='r' c='LoadConstants'/>
+<use f='redis/deps/lua/src/lundump.c' l='134' u='r' c='LoadConstants'/>
+<use f='redis/deps/lua/src/lvm.c' l='727' u='r' c='luaV_execute'/>

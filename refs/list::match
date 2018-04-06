@@ -1,0 +1,9 @@
+<dec f='redis/src/adlist.h' l='52' type='int (*)(void *, void *)'/>
+<use f='redis/src/adlist.c' l='51' u='w' c='listCreate'/>
+<use f='redis/src/adlist.c' l='252' u='w' c='listDup'/>
+<use f='redis/src/adlist.c' l='252' u='r' c='listDup'/>
+<use f='redis/src/adlist.c' l='292' u='r' c='listSearchKey'/>
+<use f='redis/src/adlist.c' l='293' u='r' c='listSearchKey'/>
+<offset>256</offset>
+<use f='redis/src/networking.c' l='125' macro='1' u='w'/>
+<use f='redis/src/redis.c' l='1812' macro='1' u='w'/>

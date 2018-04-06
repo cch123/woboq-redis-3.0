@@ -1,0 +1,12 @@
+<dec f='redis/src/rio.h' l='133' type='size_t rioWriteBulkLongLong(rio * r, long long l)'/>
+<use f='redis/src/aof.c' l='760' u='c' c='rioWriteBulkObject'/>
+<use f='redis/src/aof.c' l='792' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='843' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='906' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='957' u='c' c='rioWriteHashIteratorCursor'/>
+<use f='redis/src/aof.c' l='1058' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1099' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='4608' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4626' u='c' c='migrateCommand'/>
+<def f='redis/src/rio.c' l='335' ll='341' type='size_t rioWriteBulkLongLong(rio * r, long long l)'/>
+<doc f='redis/src/rio.c' l='334'>/* Write a long long value in format: &quot;$&lt;count&gt;\r\n&lt;payload&gt;\r\n&quot;. */</doc>

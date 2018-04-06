@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lzio.h' l='26' type='size_t'/>
+<offset>64</offset>
+<use f='redis/deps/lua/src/llex.c' l='53' u='r' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='60' u='w' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='172' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='263' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='274' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='330' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='335' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='350' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='353' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='429' macro='1' u='r'/>

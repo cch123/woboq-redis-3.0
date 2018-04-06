@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/llex.h' l='65' type='TString *'/>
+<offset>640</offset>
+<doc f='redis/deps/lua/src/llex.h' l='65'>/* current source name */</doc>
+<use f='redis/deps/lua/src/llex.c' l='104' u='r' c='luaX_lexerror'/>
+<use f='redis/deps/lua/src/llex.c' l='148' u='w' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/lparser.c' l='345' u='r' c='open_func'/>

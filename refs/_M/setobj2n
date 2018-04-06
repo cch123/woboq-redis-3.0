@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='183'/>
+<use f='redis/deps/lua/src/lapi.c' l='495' u='c'/>
+<doc f='redis/deps/lua/src/lobject.h' l='182'>/* to new object */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='223' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='124' u='c'/>

@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lualib.h' l='39'/>
+<use f='redis/deps/lua/src/linit.c' l='19' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='634' u='c'/>

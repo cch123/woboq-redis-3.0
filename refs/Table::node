@@ -1,0 +1,27 @@
+<dec f='redis/deps/lua/src/lobject.h' l='344' type='Node *'/>
+<offset>256</offset>
+<use f='redis/deps/lua/src/lgc.c' l='185' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='366' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='88' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='91' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='105' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='107' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='109' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='111' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='150' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='172' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='173' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='174' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='252' u='r' c='numusehash'/>
+<use f='redis/deps/lua/src/ltable.c' l='275' u='w' c='setnodevector'/>
+<use f='redis/deps/lua/src/ltable.c' l='284' u='w' c='setnodevector'/>
+<use f='redis/deps/lua/src/ltable.c' l='286' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='293' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='301' u='r' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='328' u='r' c='luaH_resizearray'/>
+<use f='redis/deps/lua/src/ltable.c' l='367' u='w' c='luaH_new'/>
+<use f='redis/deps/lua/src/ltable.c' l='375' u='r' c='luaH_free'/>
+<use f='redis/deps/lua/src/ltable.c' l='376' u='r' c='luaH_free'/>
+<use f='redis/deps/lua/src/ltable.c' l='383' u='r' c='getfreepos'/>
+<use f='redis/deps/lua/src/ltable.c' l='456' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='573' u='r' c='luaH_getn'/>

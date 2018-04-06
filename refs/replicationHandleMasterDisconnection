@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1158' type='void replicationHandleMasterDisconnection()'/>
+<def f='redis/src/networking.c' l='671' ll='681' type='void replicationHandleMasterDisconnection()'/>
+<use f='redis/src/networking.c' l='776' u='c' c='freeClient'/>
+<doc f='redis/src/networking.c' l='669'>/* This function is called when the slave lose the connection with the
+ * master into an unexpected way. */</doc>
+<use f='redis/src/replication.c' l='1630' u='c' c='replicationCacheMaster'/>

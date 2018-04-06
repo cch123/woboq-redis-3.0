@@ -1,0 +1,73 @@
+<dec f='redis/src/redis.h' l='1296' type='void notifyKeyspaceEvent(int type, char * event, robj * key, int dbid)'/>
+<doc f='redis/src/redis.h' l='1295'>/* Keyspace events notification */</doc>
+<use f='redis/src/bitops.c' l='255' u='c' c='setbitCommand'/>
+<use f='redis/src/bitops.c' l='451' u='c' c='bitopCommand'/>
+<use f='redis/src/bitops.c' l='455' u='c' c='bitopCommand'/>
+<use f='redis/src/db.c' l='287' u='c' c='delCommand'/>
+<use f='redis/src/db.c' l='693' u='c' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='695' u='c' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='853' u='c' c='expireIfNeeded'/>
+<use f='redis/src/db.c' l='902' u='c' c='expireGenericCommand'/>
+<use f='redis/src/db.c' l='909' u='c' c='expireGenericCommand'/>
+<use f='redis/src/hyperloglog.c' l='1187' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1340' u='c' c='pfmergeCommand'/>
+<def f='redis/src/notify.c' l='95' ll='130' type='void notifyKeyspaceEvent(int type, char * event, robj * key, int dbid)'/>
+<doc f='redis/src/notify.c' l='88'>/* The API provided to the rest of the Redis core is a simple function:
+ *
+ * notifyKeyspaceEvent(char *event, robj *key, int dbid);
+ *
+ * &apos;event&apos; is a C string representing the event name.
+ * &apos;key&apos; is a Redis object representing the key name.
+ * &apos;dbid&apos; is the database ID where the key lives.  */</doc>
+<use f='redis/src/redis.c' l='724' u='c' c='activeExpireCycleTryExpire'/>
+<use f='redis/src/redis.c' l='3328' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/sort.c' l='545' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='550' u='c' c='sortCommand'/>
+<use f='redis/src/t_hash.c' l='474' u='c' c='hsetCommand'/>
+<use f='redis/src/t_hash.c' l='490' u='c' c='hsetnxCommand'/>
+<use f='redis/src/t_hash.c' l='512' u='c' c='hmsetCommand'/>
+<use f='redis/src/t_hash.c' l='546' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_hash.c' l='573' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_hash.c' l='671' u='c' c='hdelCommand'/>
+<use f='redis/src/t_hash.c' l='673' u='c' c='hdelCommand'/>
+<use f='redis/src/t_list.c' l='318' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='365' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='378' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='473' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='486' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='506' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='508' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='632' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='635' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='710' u='c' c='rpoplpushHandlePush'/>
+<use f='redis/src/t_list.c' l='740' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='743' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='1053' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1057' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_set.c' l='271' u='c' c='saddCommand'/>
+<use f='redis/src/t_set.c' l='296' u='c' c='sremCommand'/>
+<use f='redis/src/t_set.c' l='298' u='c' c='sremCommand'/>
+<use f='redis/src/t_set.c' l='333' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='338' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='353' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='396' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='407' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='708' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='714' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='879' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_set.c' l='886' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_string.c' l='87' u='c' c='setGenericCommand'/>
+<use f='redis/src/t_string.c' l='88' u='c' c='setGenericCommand'/>
+<use f='redis/src/t_string.c' l='168' u='c' c='getsetCommand'/>
+<use f='redis/src/t_string.c' l='225' u='c' c='setrangeCommand'/>
+<use f='redis/src/t_string.c' l='311' u='c' c='msetGenericCommand'/>
+<use f='redis/src/t_string.c' l='356' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_string.c' l='406' u='c' c='incrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='447' u='c' c='appendCommand'/>
+<use f='redis/src/t_zset.c' l='1304' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1368' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1370' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1470' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1472' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2071' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2079' u='c' c='zunionInterGenericCommand'/>

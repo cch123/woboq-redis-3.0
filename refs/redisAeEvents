@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='230' ll='235'/>
+<size>32</size>
+<doc f='redis/src/sentinel.c' l='225'>/* ======================= hiredis ae.c adapters =============================
+ * Note: this implementation is taken from hiredis/adapters/ae.h, however
+ * we have our modified copy for Sentinel in order to use our allocator
+ * and to have full control over how the adapter works. */</doc>

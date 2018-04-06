@@ -1,0 +1,32 @@
+<dec f='redis/deps/hiredis/dict.h' l='48' type='struct dictEntry *'/>
+<use f='redis/deps/hiredis/dict.c' l='116' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='119' u='w' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='146' u='w' c='dictAdd'/>
+<use f='redis/deps/hiredis/dict.c' l='196' u='w' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='196' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='198' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='207' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='222' u='r' c='_dictClear'/>
+<use f='redis/deps/hiredis/dict.c' l='253' u='r' c='dictFind'/>
+<use f='redis/deps/hiredis/dict.c' l='281' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='334' u='r' c='_dictKeyIndex'/>
+<offset>128</offset>
+<dec f='redis/src/dict.h' l='55' type='struct dictEntry *'/>
+<offset>128</offset>
+<use f='redis/src/dict.c' l='264' u='r' c='dictRehash'/>
+<use f='redis/src/dict.c' l='267' u='w' c='dictRehash'/>
+<use f='redis/src/dict.c' l='362' u='w' c='dictAddRaw'/>
+<use f='redis/src/dict.c' l='427' u='w' c='dictGenericDelete'/>
+<use f='redis/src/dict.c' l='427' u='r' c='dictGenericDelete'/>
+<use f='redis/src/dict.c' l='429' u='r' c='dictGenericDelete'/>
+<use f='redis/src/dict.c' l='439' u='r' c='dictGenericDelete'/>
+<use f='redis/src/dict.c' l='466' u='r' c='_dictClear'/>
+<use f='redis/src/dict.c' l='503' u='r' c='dictFind'/>
+<use f='redis/src/dict.c' l='603' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='655' u='r' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='660' u='r' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='742' u='r' c='dictGetSomeKeys'/>
+<use f='redis/src/dict.c' l='868' u='r' c='dictScan'/>
+<use f='redis/src/dict.c' l='888' u='r' c='dictScan'/>
+<use f='redis/src/dict.c' l='898' u='r' c='dictScan'/>
+<use f='redis/src/dict.c' l='980' u='r' c='_dictKeyIndex'/>

@@ -1,0 +1,17 @@
+<dec f='redis/src/zmalloc.h' l='73' type='size_t zmalloc_used_memory()'/>
+<use f='redis/src/aof.c' l='1298' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/config.c' l='636' u='c' c='configSetCommand'/>
+<use f='redis/src/networking.c' l='871' u='c' c='sendReplyToClient'/>
+<use f='redis/src/rdb.c' l='794' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1101' u='c' c='loadingProgress'/>
+<use f='redis/src/rdb.c' l='1102' u='c' c='loadingProgress'/>
+<use f='redis/src/rdb.c' l='1503' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='1102' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1103' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1138' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='2694' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3193' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3319' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3325' u='c' c='freeMemoryIfNeeded'/>
+<def f='redis/src/zmalloc.c' l='221' ll='238' type='size_t zmalloc_used_memory()'/>
+<use f='redis/src/zmalloc.c' l='328' u='c' c='zmalloc_get_fragmentation_ratio'/>

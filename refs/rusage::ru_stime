@@ -1,0 +1,7 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='192' type='struct timeval'/>
+<offset>128</offset>
+<doc f='include/x86_64-linux-gnu/bits/resource.h' l='191'>/* Total amount of system time used.  */</doc>
+<use f='redis/src/redis.c' l='2985' u='m' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2985' u='m' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2987' u='m' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2987' u='m' c='genRedisInfoString'/>

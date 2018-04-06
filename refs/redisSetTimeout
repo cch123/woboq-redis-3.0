@@ -1,0 +1,3 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='183' type='int redisSetTimeout(redisContext * c, const struct timeval tv)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1116' ll='1120' type='int redisSetTimeout(redisContext * c, const struct timeval tv)'/>
+<doc f='redis/deps/hiredis/hiredis.c' l='1115'>/* Set read/write timeout on a blocking socket. */</doc>

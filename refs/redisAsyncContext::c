@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/async.h' l='63' type='redisContext'/>
+<use f='redis/deps/hiredis/async.c' l='112' u='a' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='145' u='a' c='__redisAsyncCopyError'/>
+<use f='redis/deps/hiredis/async.c' l='255' u='a' c='__redisRunCallback'/>
+<use f='redis/deps/hiredis/async.c' l='265' u='a' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='313' u='a' c='redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='321' u='a' c='__redisAsyncDisconnect'/>
+<use f='redis/deps/hiredis/async.c' l='347' u='a' c='redisAsyncDisconnect'/>
+<use f='redis/deps/hiredis/async.c' l='354' u='a' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='401' u='a' c='redisProcessCallbacks'/>
+<use f='redis/deps/hiredis/async.c' l='482' u='a' c='__redisAsyncHandleConnect'/>
+<use f='redis/deps/hiredis/async.c' l='504' u='a' c='redisAsyncHandleRead'/>
+<use f='redis/deps/hiredis/async.c' l='525' u='a' c='redisAsyncHandleWrite'/>
+<use f='redis/deps/hiredis/async.c' l='571' u='a' c='__redisAsyncCommand'/>
+<offset>0</offset>
+<doc f='redis/deps/hiredis/async.h' l='62'>/* Hold the regular context, so it can be realloc&apos;ed. */</doc>
+<use f='redis/src/sentinel.c' l='295' u='a' c='redisAeAttach'/>
+<use f='redis/src/sentinel.c' l='2256' u='m' c='sentinelSendHello'/>

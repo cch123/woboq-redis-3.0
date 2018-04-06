@@ -1,0 +1,6 @@
+<dec f='redis/src/ae.h' l='95' type='int'/>
+<use f='redis/src/ae.c' l='75' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='132' u='w' c='aeStop'/>
+<use f='redis/src/ae.c' l='451' u='w' c='aeMain'/>
+<use f='redis/src/ae.c' l='452' u='r' c='aeMain'/>
+<offset>384</offset>

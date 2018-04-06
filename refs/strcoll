@@ -1,0 +1,5 @@
+<dec f='include/string.h' l='147' type='int strcoll(const char * __s1, const char * __s2)'/>
+<doc f='include/string.h' l='146'>/* Compare the collated forms of S1 and S2.  */</doc>
+<use f='redis/deps/lua/src/lvm.c' l='209' u='c' c='l_strcmp'/>
+<use f='redis/src/object.c' l='495' u='c' c='compareStringObjectsWithFlags'/>
+<use f='redis/src/sort.c' l='172' u='c' c='sortCompare'/>

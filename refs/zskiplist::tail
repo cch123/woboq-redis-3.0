@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='594' type='struct zskiplistNode *'/>
+<offset>64</offset>
+<use f='redis/src/sort.c' l='384' u='r' c='sortCommand'/>
+<use f='redis/src/t_zset.c' l='78' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='161' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='180' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='228' u='r' c='zslIsInRange'/>
+<use f='redis/src/t_zset.c' l='571' u='r' c='zslIsInLexRange'/>
+<use f='redis/src/t_zset.c' l='2172' u='r' c='zrangeGenericCommand'/>

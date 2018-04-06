@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='41' type='int'/>
+<offset>224</offset>
+<use f='redis/deps/lua/src/strbuf.c' l='59' u='w' c='strbuf_init'/>
+<use f='redis/deps/lua/src/strbuf.c' l='96' u='r' c='debug_stats'/>
+<use f='redis/deps/lua/src/strbuf.c' l='170' u='r' c='strbuf_resize'/>

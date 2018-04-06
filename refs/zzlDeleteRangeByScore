@@ -1,0 +1,2 @@
+<def f='redis/src/t_zset.c' l='1012' ll='1039' type='unsigned char * zzlDeleteRangeByScore(unsigned char * zl, zrangespec * range, unsigned long * deleted)'/>
+<use f='redis/src/t_zset.c' l='1434' u='c' c='zremrangeGenericCommand'/>

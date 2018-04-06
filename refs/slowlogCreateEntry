@@ -1,0 +1,5 @@
+<def f='redis/src/slowlog.c' l='48' ll='85' type='slowlogEntry * slowlogCreateEntry(robj ** argv, int argc, long long duration)'/>
+<use f='redis/src/slowlog.c' l='115' u='c' c='slowlogPushEntryIfNeeded'/>
+<doc f='redis/src/slowlog.c' l='45'>/* Create a new slowlog entry.
+ * Incrementing the ref count of all the objects retained is up to
+ * this function. */</doc>

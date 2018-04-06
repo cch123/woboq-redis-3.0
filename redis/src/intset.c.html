@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>intset.c source code [redis/src/intset.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/intset.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='intset.c.html'>intset.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2009-2012, Pieter Noordhuis &lt;pcnoordhuis at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * Copyright (c) 2009-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="4">4</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="7">7</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="10">10</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="11">11</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="13">13</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="14">14</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="15">15</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="16">16</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="17">17</th><td><i> *</i></td></tr>
+<tr><th id="18">18</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="19">19</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="20">20</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="21">21</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="22">22</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="23">23</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="24">24</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="25">25</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="26">26</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="27">27</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="28">28</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="29">29</th><td><i> */</i></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="../../include/stdio.h.html">&lt;stdio.h&gt;</a></u></td></tr>
+<tr><th id="32">32</th><td><u>#include <a href="../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="34">34</th><td><u>#include <a href="intset.h.html">"intset.h"</a></u></td></tr>
+<tr><th id="35">35</th><td><u>#include <a href="zmalloc.h.html">"zmalloc.h"</a></u></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="endianconv.h.html">"endianconv.h"</a></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td><i>/* Note that these encodings are ordered, so:</i></td></tr>
+<tr><th id="39">39</th><td><i> * INTSET_ENC_INT16 &lt; INTSET_ENC_INT32 &lt; INTSET_ENC_INT64. */</i></td></tr>
+<tr><th id="40">40</th><td><u>#define <dfn class="macro" id="_M/INTSET_ENC_INT16" data-ref="_M/INTSET_ENC_INT16">INTSET_ENC_INT16</dfn> (sizeof(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>))</u></td></tr>
+<tr><th id="41">41</th><td><u>#define <dfn class="macro" id="_M/INTSET_ENC_INT32" data-ref="_M/INTSET_ENC_INT32">INTSET_ENC_INT32</dfn> (sizeof(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>))</u></td></tr>
+<tr><th id="42">42</th><td><u>#define <dfn class="macro" id="_M/INTSET_ENC_INT64" data-ref="_M/INTSET_ENC_INT64">INTSET_ENC_INT64</dfn> (sizeof(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>))</u></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><i  data-doc="_intsetValueEncoding">/* Return the required encoding for the provided value. */</i></td></tr>
+<tr><th id="45">45</th><td><em>static</em> <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="tu decl def fn" id="_intsetValueEncoding" title='_intsetValueEncoding' data-type='uint8_t _intsetValueEncoding(int64_t v)' data-ref="_intsetValueEncoding">_intsetValueEncoding</dfn>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col1 decl" id="1v" title='v' data-type='int64_t' data-ref="1v">v</dfn>) {</td></tr>
+<tr><th id="46">46</th><td>    <b>if</b> (<a class="local col1 ref" href="#1v" title='v' data-ref="1v">v</a> &lt; <a class="macro" href="../../include/stdint.h.html#157" title="(-2147483647-1)" data-ref="_M/INT32_MIN">INT32_MIN</a> || <a class="local col1 ref" href="#1v" title='v' data-ref="1v">v</a> &gt; <a class="macro" href="../../include/stdint.h.html#162" title="(2147483647)" data-ref="_M/INT32_MAX">INT32_MAX</a>)</td></tr>
+<tr><th id="47">47</th><td>        <b>return</b> <a class="macro" href="#42" title="(sizeof(int64_t))" data-ref="_M/INTSET_ENC_INT64">INTSET_ENC_INT64</a>;</td></tr>
+<tr><th id="48">48</th><td>    <b>else</b> <b>if</b> (<a class="local col1 ref" href="#1v" title='v' data-ref="1v">v</a> &lt; <a class="macro" href="../../include/stdint.h.html#156" title="(-32767-1)" data-ref="_M/INT16_MIN">INT16_MIN</a> || <a class="local col1 ref" href="#1v" title='v' data-ref="1v">v</a> &gt; <a class="macro" href="../../include/stdint.h.html#161" title="(32767)" data-ref="_M/INT16_MAX">INT16_MAX</a>)</td></tr>
+<tr><th id="49">49</th><td>        <b>return</b> <a class="macro" href="#41" title="(sizeof(int32_t))" data-ref="_M/INTSET_ENC_INT32">INTSET_ENC_INT32</a>;</td></tr>
+<tr><th id="50">50</th><td>    <b>else</b></td></tr>
+<tr><th id="51">51</th><td>        <b>return</b> <a class="macro" href="#40" title="(sizeof(int16_t))" data-ref="_M/INTSET_ENC_INT16">INTSET_ENC_INT16</a>;</td></tr>
+<tr><th id="52">52</th><td>}</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i  data-doc="_intsetGetEncoded">/* Return the value at pos, given an encoding. */</i></td></tr>
+<tr><th id="55">55</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="tu decl def fn" id="_intsetGetEncoded" title='_intsetGetEncoded' data-type='int64_t _intsetGetEncoded(intset * is, int pos, uint8_t enc)' data-ref="_intsetGetEncoded">_intsetGetEncoded</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col2 decl" id="2is" title='is' data-type='intset *' data-ref="2is">is</dfn>, <em>int</em> <dfn class="local col3 decl" id="3pos" title='pos' data-type='int' data-ref="3pos">pos</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col4 decl" id="4enc" title='enc' data-type='uint8_t' data-ref="4enc">enc</dfn>) {</td></tr>
+<tr><th id="56">56</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col5 decl" id="5v64" title='v64' data-type='int64_t' data-ref="5v64">v64</dfn>;</td></tr>
+<tr><th id="57">57</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a> <dfn class="local col6 decl" id="6v32" title='v32' data-type='int32_t' data-ref="6v32">v32</dfn>;</td></tr>
+<tr><th id="58">58</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a> <dfn class="local col7 decl" id="7v16" title='v16' data-type='int16_t' data-ref="7v16">v16</dfn>;</td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td>    <b>if</b> (<a class="local col4 ref" href="#4enc" title='enc' data-ref="4enc">enc</a> == <a class="macro" href="#42" title="(sizeof(int64_t))" data-ref="_M/INTSET_ENC_INT64">INTSET_ENC_INT64</a>) {</td></tr>
+<tr><th id="61">61</th><td>        <a class="ref fn" href="../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(&amp;<a class="local col5 ref" href="#5v64" title='v64' data-ref="5v64">v64</a>,((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>*)<a class="local col2 ref" href="#2is" title='is' data-ref="2is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)+<a class="local col3 ref" href="#3pos" title='pos' data-ref="3pos">pos</a>,<b>sizeof</b>(<a class="local col5 ref" href="#5v64" title='v64' data-ref="5v64">v64</a>));</td></tr>
+<tr><th id="62">62</th><td>        <a class="macro" href="endianconv.h.html#51" title="" data-ref="_M/memrev64ifbe">memrev64ifbe</a>(&amp;v64);</td></tr>
+<tr><th id="63">63</th><td>        <b>return</b> <a class="local col5 ref" href="#5v64" title='v64' data-ref="5v64">v64</a>;</td></tr>
+<tr><th id="64">64</th><td>    } <b>else</b> <b>if</b> (<a class="local col4 ref" href="#4enc" title='enc' data-ref="4enc">enc</a> == <a class="macro" href="#41" title="(sizeof(int32_t))" data-ref="_M/INTSET_ENC_INT32">INTSET_ENC_INT32</a>) {</td></tr>
+<tr><th id="65">65</th><td>        <a class="ref fn" href="../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(&amp;<a class="local col6 ref" href="#6v32" title='v32' data-ref="6v32">v32</a>,((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>*)<a class="local col2 ref" href="#2is" title='is' data-ref="2is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)+<a class="local col3 ref" href="#3pos" title='pos' data-ref="3pos">pos</a>,<b>sizeof</b>(<a class="local col6 ref" href="#6v32" title='v32' data-ref="6v32">v32</a>));</td></tr>
+<tr><th id="66">66</th><td>        <a class="macro" href="endianconv.h.html#50" title="" data-ref="_M/memrev32ifbe">memrev32ifbe</a>(&amp;v32);</td></tr>
+<tr><th id="67">67</th><td>        <b>return</b> <a class="local col6 ref" href="#6v32" title='v32' data-ref="6v32">v32</a>;</td></tr>
+<tr><th id="68">68</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="69">69</th><td>        <a class="ref fn" href="../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(&amp;<a class="local col7 ref" href="#7v16" title='v16' data-ref="7v16">v16</a>,((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>*)<a class="local col2 ref" href="#2is" title='is' data-ref="2is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)+<a class="local col3 ref" href="#3pos" title='pos' data-ref="3pos">pos</a>,<b>sizeof</b>(<a class="local col7 ref" href="#7v16" title='v16' data-ref="7v16">v16</a>));</td></tr>
+<tr><th id="70">70</th><td>        <a class="macro" href="endianconv.h.html#49" title="" data-ref="_M/memrev16ifbe">memrev16ifbe</a>(&amp;v16);</td></tr>
+<tr><th id="71">71</th><td>        <b>return</b> <a class="local col7 ref" href="#7v16" title='v16' data-ref="7v16">v16</a>;</td></tr>
+<tr><th id="72">72</th><td>    }</td></tr>
+<tr><th id="73">73</th><td>}</td></tr>
+<tr><th id="74">74</th><td></td></tr>
+<tr><th id="75">75</th><td><i  data-doc="_intsetGet">/* Return the value at pos, using the configured encoding. */</i></td></tr>
+<tr><th id="76">76</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="tu decl def fn" id="_intsetGet" title='_intsetGet' data-type='int64_t _intsetGet(intset * is, int pos)' data-ref="_intsetGet">_intsetGet</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col8 decl" id="8is" title='is' data-type='intset *' data-ref="8is">is</dfn>, <em>int</em> <dfn class="local col9 decl" id="9pos" title='pos' data-type='int' data-ref="9pos">pos</dfn>) {</td></tr>
+<tr><th id="77">77</th><td>    <b>return</b> <a class="tu ref fn" href="#_intsetGetEncoded" title='_intsetGetEncoded' data-use='c' data-ref="_intsetGetEncoded">_intsetGetEncoded</a>(<a class="local col8 ref" href="#8is" title='is' data-ref="8is">is</a>,<a class="local col9 ref" href="#9pos" title='pos' data-ref="9pos">pos</a>,<a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#8is" title='is' data-ref="8is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>));</td></tr>
+<tr><th id="78">78</th><td>}</td></tr>
+<tr><th id="79">79</th><td></td></tr>
+<tr><th id="80">80</th><td><i  data-doc="_intsetSet">/* Set the value at pos, using the configured encoding. */</i></td></tr>
+<tr><th id="81">81</th><td><em>static</em> <em>void</em> <dfn class="tu decl def fn" id="_intsetSet" title='_intsetSet' data-type='void _intsetSet(intset * is, int pos, int64_t value)' data-ref="_intsetSet">_intsetSet</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col0 decl" id="10is" title='is' data-type='intset *' data-ref="10is">is</dfn>, <em>int</em> <dfn class="local col1 decl" id="11pos" title='pos' data-type='int' data-ref="11pos">pos</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col2 decl" id="12value" title='value' data-type='int64_t' data-ref="12value">value</dfn>) {</td></tr>
+<tr><th id="82">82</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col3 decl" id="13encoding" title='encoding' data-type='uint32_t' data-ref="13encoding">encoding</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col0 ref" href="#10is" title='is' data-ref="10is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>);</td></tr>
+<tr><th id="83">83</th><td></td></tr>
+<tr><th id="84">84</th><td>    <b>if</b> (<a class="local col3 ref" href="#13encoding" title='encoding' data-ref="13encoding">encoding</a> == <a class="macro" href="#42" title="(sizeof(int64_t))" data-ref="_M/INTSET_ENC_INT64">INTSET_ENC_INT64</a>) {</td></tr>
+<tr><th id="85">85</th><td>        ((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>*)<a class="local col0 ref" href="#10is" title='is' data-ref="10is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)[<a class="local col1 ref" href="#11pos" title='pos' data-ref="11pos">pos</a>] = <a class="local col2 ref" href="#12value" title='value' data-ref="12value">value</a>;</td></tr>
+<tr><th id="86">86</th><td>        <a class="macro" href="endianconv.h.html#51" title="" data-ref="_M/memrev64ifbe">memrev64ifbe</a>(((int64_t*)is-&gt;contents)+pos);</td></tr>
+<tr><th id="87">87</th><td>    } <b>else</b> <b>if</b> (<a class="local col3 ref" href="#13encoding" title='encoding' data-ref="13encoding">encoding</a> == <a class="macro" href="#41" title="(sizeof(int32_t))" data-ref="_M/INTSET_ENC_INT32">INTSET_ENC_INT32</a>) {</td></tr>
+<tr><th id="88">88</th><td>        ((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>*)<a class="local col0 ref" href="#10is" title='is' data-ref="10is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)[<a class="local col1 ref" href="#11pos" title='pos' data-ref="11pos">pos</a>] = <a class="local col2 ref" href="#12value" title='value' data-ref="12value">value</a>;</td></tr>
+<tr><th id="89">89</th><td>        <a class="macro" href="endianconv.h.html#50" title="" data-ref="_M/memrev32ifbe">memrev32ifbe</a>(((int32_t*)is-&gt;contents)+pos);</td></tr>
+<tr><th id="90">90</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="91">91</th><td>        ((<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>*)<a class="local col0 ref" href="#10is" title='is' data-ref="10is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>)[<a class="local col1 ref" href="#11pos" title='pos' data-ref="11pos">pos</a>] = <a class="local col2 ref" href="#12value" title='value' data-ref="12value">value</a>;</td></tr>
+<tr><th id="92">92</th><td>        <a class="macro" href="endianconv.h.html#49" title="" data-ref="_M/memrev16ifbe">memrev16ifbe</a>(((int16_t*)is-&gt;contents)+pos);</td></tr>
+<tr><th id="93">93</th><td>    }</td></tr>
+<tr><th id="94">94</th><td>}</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><i>/* Create an empty intset. */</i></td></tr>
+<tr><th id="97">97</th><td><a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="decl def fn" id="intsetNew" title='intsetNew' data-ref="intsetNew">intsetNew</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="98">98</th><td>    <a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col4 decl" id="14is" title='is' data-type='intset *' data-ref="14is">is</dfn> = <a class="ref fn" href="zmalloc.h.html#zmalloc" title='zmalloc' data-ref="zmalloc">zmalloc</a>(<b>sizeof</b>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a>));</td></tr>
+<tr><th id="99">99</th><td>    <a class="local col4 ref" href="#14is" title='is' data-ref="14is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a> = <a class="macro" href="endianconv.h.html#53" title="((sizeof(int16_t)))" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="macro" href="#40" title="(sizeof(int16_t))" data-ref="_M/INTSET_ENC_INT16">INTSET_ENC_INT16</a>);</td></tr>
+<tr><th id="100">100</th><td>    <a class="local col4 ref" href="#14is" title='is' data-ref="14is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a> = <var>0</var>;</td></tr>
+<tr><th id="101">101</th><td>    <b>return</b> <a class="local col4 ref" href="#14is" title='is' data-ref="14is">is</a>;</td></tr>
+<tr><th id="102">102</th><td>}</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><i  data-doc="intsetResize">/* Resize the intset */</i></td></tr>
+<tr><th id="105">105</th><td><em>static</em> <a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="tu decl def fn" id="intsetResize" title='intsetResize' data-type='intset * intsetResize(intset * is, uint32_t len)' data-ref="intsetResize">intsetResize</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col5 decl" id="15is" title='is' data-type='intset *' data-ref="15is">is</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col6 decl" id="16len" title='len' data-type='uint32_t' data-ref="16len">len</dfn>) {</td></tr>
+<tr><th id="106">106</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col7 decl" id="17size" title='size' data-type='uint32_t' data-ref="17size">size</dfn> = <a class="local col6 ref" href="#16len" title='len' data-ref="16len">len</a>*<a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#15is" title='is' data-ref="15is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>);</td></tr>
+<tr><th id="107">107</th><td>    <a class="local col5 ref" href="#15is" title='is' data-ref="15is">is</a> = <a class="ref fn" href="zmalloc.h.html#zrealloc" title='zrealloc' data-ref="zrealloc">zrealloc</a>(<a class="local col5 ref" href="#15is" title='is' data-ref="15is">is</a>,<b>sizeof</b>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a>)+<a class="local col7 ref" href="#17size" title='size' data-ref="17size">size</a>);</td></tr>
+<tr><th id="108">108</th><td>    <b>return</b> <a class="local col5 ref" href="#15is" title='is' data-ref="15is">is</a>;</td></tr>
+<tr><th id="109">109</th><td>}</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td><i  data-doc="intsetSearch">/* Search for the position of "value". Return 1 when the value was found and</i></td></tr>
+<tr><th id="112">112</th><td><i  data-doc="intsetSearch"> * sets "pos" to the position of the value within the intset. Return 0 when</i></td></tr>
+<tr><th id="113">113</th><td><i  data-doc="intsetSearch"> * the value is not present in the intset and sets "pos" to the position</i></td></tr>
+<tr><th id="114">114</th><td><i  data-doc="intsetSearch"> * where "value" can be inserted. */</i></td></tr>
+<tr><th id="115">115</th><td><em>static</em> <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="tu decl def fn" id="intsetSearch" title='intsetSearch' data-type='uint8_t intsetSearch(intset * is, int64_t value, uint32_t * pos)' data-ref="intsetSearch">intsetSearch</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col8 decl" id="18is" title='is' data-type='intset *' data-ref="18is">is</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col9 decl" id="19value" title='value' data-type='int64_t' data-ref="19value">value</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> *<dfn class="local col0 decl" id="20pos" title='pos' data-type='uint32_t *' data-ref="20pos">pos</dfn>) {</td></tr>
+<tr><th id="116">116</th><td>    <em>int</em> <dfn class="local col1 decl" id="21min" title='min' data-type='int' data-ref="21min">min</dfn> = <var>0</var>, <dfn class="local col2 decl" id="22max" title='max' data-type='int' data-ref="22max">max</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)-<var>1</var>, <dfn class="local col3 decl" id="23mid" title='mid' data-type='int' data-ref="23mid">mid</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="117">117</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col4 decl" id="24cur" title='cur' data-type='int64_t' data-ref="24cur">cur</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td>    <i>/* The value can never be found when the set is empty */</i></td></tr>
+<tr><th id="120">120</th><td>    <b>if</b> (<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>) == <var>0</var>) {</td></tr>
+<tr><th id="121">121</th><td>        <b>if</b> (<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a>) *<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a> = <var>0</var>;</td></tr>
+<tr><th id="122">122</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="123">123</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="124">124</th><td>        <i>/* Check for the case where we know we cannot find the value,</i></td></tr>
+<tr><th id="125">125</th><td><i>         * but do know the insert position. */</i></td></tr>
+<tr><th id="126">126</th><td>        <b>if</b> (<a class="local col9 ref" href="#19value" title='value' data-ref="19value">value</a> &gt; <a class="tu ref fn" href="#_intsetGet" title='_intsetGet' data-use='c' data-ref="_intsetGet">_intsetGet</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>,<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)-<var>1</var>)) {</td></tr>
+<tr><th id="127">127</th><td>            <b>if</b> (<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a>) *<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>);</td></tr>
+<tr><th id="128">128</th><td>            <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="129">129</th><td>        } <b>else</b> <b>if</b> (<a class="local col9 ref" href="#19value" title='value' data-ref="19value">value</a> &lt; <a class="tu ref fn" href="#_intsetGet" title='_intsetGet' data-use='c' data-ref="_intsetGet">_intsetGet</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>,<var>0</var>)) {</td></tr>
+<tr><th id="130">130</th><td>            <b>if</b> (<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a>) *<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a> = <var>0</var>;</td></tr>
+<tr><th id="131">131</th><td>            <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="132">132</th><td>        }</td></tr>
+<tr><th id="133">133</th><td>    }</td></tr>
+<tr><th id="134">134</th><td></td></tr>
+<tr><th id="135">135</th><td>    <b>while</b>(<a class="local col2 ref" href="#22max" title='max' data-ref="22max">max</a> &gt;= <a class="local col1 ref" href="#21min" title='min' data-ref="21min">min</a>) {</td></tr>
+<tr><th id="136">136</th><td>        <a class="local col3 ref" href="#23mid" title='mid' data-ref="23mid">mid</a> = ((<em>unsigned</em> <em>int</em>)<a class="local col1 ref" href="#21min" title='min' data-ref="21min">min</a> + (<em>unsigned</em> <em>int</em>)<a class="local col2 ref" href="#22max" title='max' data-ref="22max">max</a>) &gt;&gt; <var>1</var>;</td></tr>
+<tr><th id="137">137</th><td>        <a class="local col4 ref" href="#24cur" title='cur' data-ref="24cur">cur</a> = <a class="tu ref fn" href="#_intsetGet" title='_intsetGet' data-use='c' data-ref="_intsetGet">_intsetGet</a>(<a class="local col8 ref" href="#18is" title='is' data-ref="18is">is</a>,<a class="local col3 ref" href="#23mid" title='mid' data-ref="23mid">mid</a>);</td></tr>
+<tr><th id="138">138</th><td>        <b>if</b> (<a class="local col9 ref" href="#19value" title='value' data-ref="19value">value</a> &gt; <a class="local col4 ref" href="#24cur" title='cur' data-ref="24cur">cur</a>) {</td></tr>
+<tr><th id="139">139</th><td>            <a class="local col1 ref" href="#21min" title='min' data-ref="21min">min</a> = <a class="local col3 ref" href="#23mid" title='mid' data-ref="23mid">mid</a>+<var>1</var>;</td></tr>
+<tr><th id="140">140</th><td>        } <b>else</b> <b>if</b> (<a class="local col9 ref" href="#19value" title='value' data-ref="19value">value</a> &lt; <a class="local col4 ref" href="#24cur" title='cur' data-ref="24cur">cur</a>) {</td></tr>
+<tr><th id="141">141</th><td>            <a class="local col2 ref" href="#22max" title='max' data-ref="22max">max</a> = <a class="local col3 ref" href="#23mid" title='mid' data-ref="23mid">mid</a>-<var>1</var>;</td></tr>
+<tr><th id="142">142</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="143">143</th><td>            <b>break</b>;</td></tr>
+<tr><th id="144">144</th><td>        }</td></tr>
+<tr><th id="145">145</th><td>    }</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+<tr><th id="147">147</th><td>    <b>if</b> (<a class="local col9 ref" href="#19value" title='value' data-ref="19value">value</a> == <a class="local col4 ref" href="#24cur" title='cur' data-ref="24cur">cur</a>) {</td></tr>
+<tr><th id="148">148</th><td>        <b>if</b> (<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a>) *<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a> = <a class="local col3 ref" href="#23mid" title='mid' data-ref="23mid">mid</a>;</td></tr>
+<tr><th id="149">149</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="150">150</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="151">151</th><td>        <b>if</b> (<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a>) *<a class="local col0 ref" href="#20pos" title='pos' data-ref="20pos">pos</a> = <a class="local col1 ref" href="#21min" title='min' data-ref="21min">min</a>;</td></tr>
+<tr><th id="152">152</th><td>        <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="153">153</th><td>    }</td></tr>
+<tr><th id="154">154</th><td>}</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><i  data-doc="intsetUpgradeAndAdd">/* Upgrades the intset to a larger encoding and inserts the given integer. */</i></td></tr>
+<tr><th id="157">157</th><td><em>static</em> <a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="tu decl def fn" id="intsetUpgradeAndAdd" title='intsetUpgradeAndAdd' data-type='intset * intsetUpgradeAndAdd(intset * is, int64_t value)' data-ref="intsetUpgradeAndAdd">intsetUpgradeAndAdd</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col5 decl" id="25is" title='is' data-type='intset *' data-ref="25is">is</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col6 decl" id="26value" title='value' data-type='int64_t' data-ref="26value">value</dfn>) {</td></tr>
+<tr><th id="158">158</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col7 decl" id="27curenc" title='curenc' data-type='uint8_t' data-ref="27curenc">curenc</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>);</td></tr>
+<tr><th id="159">159</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col8 decl" id="28newenc" title='newenc' data-type='uint8_t' data-ref="28newenc">newenc</dfn> = <a class="tu ref fn" href="#_intsetValueEncoding" title='_intsetValueEncoding' data-use='c' data-ref="_intsetValueEncoding">_intsetValueEncoding</a>(<a class="local col6 ref" href="#26value" title='value' data-ref="26value">value</a>);</td></tr>
+<tr><th id="160">160</th><td>    <em>int</em> <dfn class="local col9 decl" id="29length" title='length' data-type='int' data-ref="29length">length</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>);</td></tr>
+<tr><th id="161">161</th><td>    <em>int</em> <dfn class="local col0 decl" id="30prepend" title='prepend' data-type='int' data-ref="30prepend">prepend</dfn> = <a class="local col6 ref" href="#26value" title='value' data-ref="26value">value</a> &lt; <var>0</var> ? <var>1</var> : <var>0</var>;</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td>    <i>/* First set new encoding and resize */</i></td></tr>
+<tr><th id="164">164</th><td>    <a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a> = <a class="macro" href="endianconv.h.html#53" title="(newenc)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#28newenc" title='newenc' data-ref="28newenc">newenc</a>);</td></tr>
+<tr><th id="165">165</th><td>    <a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a> = <a class="tu ref fn" href="#intsetResize" title='intsetResize' data-use='c' data-ref="intsetResize">intsetResize</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>,<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)+<var>1</var>);</td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td>    <i>/* Upgrade back-to-front so we don't overwrite values.</i></td></tr>
+<tr><th id="168">168</th><td><i>     * Note that the "prepend" variable is used to make sure we have an empty</i></td></tr>
+<tr><th id="169">169</th><td><i>     * space at either the beginning or the end of the intset. */</i></td></tr>
+<tr><th id="170">170</th><td>    <b>while</b>(<a class="local col9 ref" href="#29length" title='length' data-ref="29length">length</a>--)</td></tr>
+<tr><th id="171">171</th><td>        <a class="tu ref fn" href="#_intsetSet" title='_intsetSet' data-use='c' data-ref="_intsetSet">_intsetSet</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>,<a class="local col9 ref" href="#29length" title='length' data-ref="29length">length</a>+<a class="local col0 ref" href="#30prepend" title='prepend' data-ref="30prepend">prepend</a>,<a class="tu ref fn" href="#_intsetGetEncoded" title='_intsetGetEncoded' data-use='c' data-ref="_intsetGetEncoded">_intsetGetEncoded</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>,<a class="local col9 ref" href="#29length" title='length' data-ref="29length">length</a>,<a class="local col7 ref" href="#27curenc" title='curenc' data-ref="27curenc">curenc</a>));</td></tr>
+<tr><th id="172">172</th><td></td></tr>
+<tr><th id="173">173</th><td>    <i>/* Set the value at the beginning or the end. */</i></td></tr>
+<tr><th id="174">174</th><td>    <b>if</b> (<a class="local col0 ref" href="#30prepend" title='prepend' data-ref="30prepend">prepend</a>)</td></tr>
+<tr><th id="175">175</th><td>        <a class="tu ref fn" href="#_intsetSet" title='_intsetSet' data-use='c' data-ref="_intsetSet">_intsetSet</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>,<var>0</var>,<a class="local col6 ref" href="#26value" title='value' data-ref="26value">value</a>);</td></tr>
+<tr><th id="176">176</th><td>    <b>else</b></td></tr>
+<tr><th id="177">177</th><td>        <a class="tu ref fn" href="#_intsetSet" title='_intsetSet' data-use='c' data-ref="_intsetSet">_intsetSet</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>,<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>),<a class="local col6 ref" href="#26value" title='value' data-ref="26value">value</a>);</td></tr>
+<tr><th id="178">178</th><td>    <a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a> = <a class="macro" href="endianconv.h.html#53" title="((is-&gt;length)+1)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)+<var>1</var>);</td></tr>
+<tr><th id="179">179</th><td>    <b>return</b> <a class="local col5 ref" href="#25is" title='is' data-ref="25is">is</a>;</td></tr>
+<tr><th id="180">180</th><td>}</td></tr>
+<tr><th id="181">181</th><td></td></tr>
+<tr><th id="182">182</th><td><em>static</em> <em>void</em> <dfn class="tu decl def fn" id="intsetMoveTail" title='intsetMoveTail' data-type='void intsetMoveTail(intset * is, uint32_t from, uint32_t to)' data-ref="intsetMoveTail">intsetMoveTail</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col1 decl" id="31is" title='is' data-type='intset *' data-ref="31is">is</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col2 decl" id="32from" title='from' data-type='uint32_t' data-ref="32from">from</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col3 decl" id="33to" title='to' data-type='uint32_t' data-ref="33to">to</dfn>) {</td></tr>
+<tr><th id="183">183</th><td>    <em>void</em> *<dfn class="local col4 decl" id="34src" title='src' data-type='void *' data-ref="34src">src</dfn>, *<dfn class="local col5 decl" id="35dst" title='dst' data-type='void *' data-ref="35dst">dst</dfn>;</td></tr>
+<tr><th id="184">184</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col6 decl" id="36bytes" title='bytes' data-type='uint32_t' data-ref="36bytes">bytes</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)-<a class="local col2 ref" href="#32from" title='from' data-ref="32from">from</a>;</td></tr>
+<tr><th id="185">185</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col7 decl" id="37encoding" title='encoding' data-type='uint32_t' data-ref="37encoding">encoding</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>);</td></tr>
+<tr><th id="186">186</th><td></td></tr>
+<tr><th id="187">187</th><td>    <b>if</b> (<a class="local col7 ref" href="#37encoding" title='encoding' data-ref="37encoding">encoding</a> == <a class="macro" href="#42" title="(sizeof(int64_t))" data-ref="_M/INTSET_ENC_INT64">INTSET_ENC_INT64</a>) {</td></tr>
+<tr><th id="188">188</th><td>        <a class="local col4 ref" href="#34src" title='src' data-ref="34src">src</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col2 ref" href="#32from" title='from' data-ref="32from">from</a>;</td></tr>
+<tr><th id="189">189</th><td>        <a class="local col5 ref" href="#35dst" title='dst' data-ref="35dst">dst</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col3 ref" href="#33to" title='to' data-ref="33to">to</a>;</td></tr>
+<tr><th id="190">190</th><td>        <a class="local col6 ref" href="#36bytes" title='bytes' data-ref="36bytes">bytes</a> *= <b>sizeof</b>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a>);</td></tr>
+<tr><th id="191">191</th><td>    } <b>else</b> <b>if</b> (<a class="local col7 ref" href="#37encoding" title='encoding' data-ref="37encoding">encoding</a> == <a class="macro" href="#41" title="(sizeof(int32_t))" data-ref="_M/INTSET_ENC_INT32">INTSET_ENC_INT32</a>) {</td></tr>
+<tr><th id="192">192</th><td>        <a class="local col4 ref" href="#34src" title='src' data-ref="34src">src</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col2 ref" href="#32from" title='from' data-ref="32from">from</a>;</td></tr>
+<tr><th id="193">193</th><td>        <a class="local col5 ref" href="#35dst" title='dst' data-ref="35dst">dst</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col3 ref" href="#33to" title='to' data-ref="33to">to</a>;</td></tr>
+<tr><th id="194">194</th><td>        <a class="local col6 ref" href="#36bytes" title='bytes' data-ref="36bytes">bytes</a> *= <b>sizeof</b>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#196" title='int32_t' data-type='int' data-ref="int32_t">int32_t</a>);</td></tr>
+<tr><th id="195">195</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="196">196</th><td>        <a class="local col4 ref" href="#34src" title='src' data-ref="34src">src</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col2 ref" href="#32from" title='from' data-ref="32from">from</a>;</td></tr>
+<tr><th id="197">197</th><td>        <a class="local col5 ref" href="#35dst" title='dst' data-ref="35dst">dst</a> = (<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>*)<a class="local col1 ref" href="#31is" title='is' data-ref="31is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::contents" title='intset::contents' data-ref="intset::contents">contents</a>+<a class="local col3 ref" href="#33to" title='to' data-ref="33to">to</a>;</td></tr>
+<tr><th id="198">198</th><td>        <a class="local col6 ref" href="#36bytes" title='bytes' data-ref="36bytes">bytes</a> *= <b>sizeof</b>(<a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#195" title='int16_t' data-type='short' data-ref="int16_t">int16_t</a>);</td></tr>
+<tr><th id="199">199</th><td>    }</td></tr>
+<tr><th id="200">200</th><td>    <a class="ref fn" href="../../include/string.h.html#memmove" title='memmove' data-ref="memmove">memmove</a>(<a class="local col5 ref" href="#35dst" title='dst' data-ref="35dst">dst</a>,<a class="local col4 ref" href="#34src" title='src' data-ref="34src">src</a>,<a class="local col6 ref" href="#36bytes" title='bytes' data-ref="36bytes">bytes</a>);</td></tr>
+<tr><th id="201">201</th><td>}</td></tr>
+<tr><th id="202">202</th><td></td></tr>
+<tr><th id="203">203</th><td><i>/* Insert an integer in the intset */</i></td></tr>
+<tr><th id="204">204</th><td><a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="decl def fn" id="intsetAdd" title='intsetAdd' data-ref="intsetAdd">intsetAdd</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col8 decl" id="38is" title='is' data-type='intset *' data-ref="38is">is</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col9 decl" id="39value" title='value' data-type='int64_t' data-ref="39value">value</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> *<dfn class="local col0 decl" id="40success" title='success' data-type='uint8_t *' data-ref="40success">success</dfn>) {</td></tr>
+<tr><th id="205">205</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col1 decl" id="41valenc" title='valenc' data-type='uint8_t' data-ref="41valenc">valenc</dfn> = <a class="tu ref fn" href="#_intsetValueEncoding" title='_intsetValueEncoding' data-use='c' data-ref="_intsetValueEncoding">_intsetValueEncoding</a>(<a class="local col9 ref" href="#39value" title='value' data-ref="39value">value</a>);</td></tr>
+<tr><th id="206">206</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col2 decl" id="42pos" title='pos' data-type='uint32_t' data-ref="42pos">pos</dfn>;</td></tr>
+<tr><th id="207">207</th><td>    <b>if</b> (<a class="local col0 ref" href="#40success" title='success' data-ref="40success">success</a>) *<a class="local col0 ref" href="#40success" title='success' data-ref="40success">success</a> = <var>1</var>;</td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td>    <i>/* Upgrade encoding if necessary. If we need to upgrade, we know that</i></td></tr>
+<tr><th id="210">210</th><td><i>     * this value should be either appended (if &gt; 0) or prepended (if &lt; 0),</i></td></tr>
+<tr><th id="211">211</th><td><i>     * because it lies outside the range of existing values. */</i></td></tr>
+<tr><th id="212">212</th><td>    <b>if</b> (<a class="local col1 ref" href="#41valenc" title='valenc' data-ref="41valenc">valenc</a> &gt; <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>)) {</td></tr>
+<tr><th id="213">213</th><td>        <i>/* This always succeeds, so we don't need to curry *success. */</i></td></tr>
+<tr><th id="214">214</th><td>        <b>return</b> <a class="tu ref fn" href="#intsetUpgradeAndAdd" title='intsetUpgradeAndAdd' data-use='c' data-ref="intsetUpgradeAndAdd">intsetUpgradeAndAdd</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>,<a class="local col9 ref" href="#39value" title='value' data-ref="39value">value</a>);</td></tr>
+<tr><th id="215">215</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="216">216</th><td>        <i>/* Abort if the value is already present in the set.</i></td></tr>
+<tr><th id="217">217</th><td><i>         * This call will populate "pos" with the right position to insert</i></td></tr>
+<tr><th id="218">218</th><td><i>         * the value when it cannot be found. */</i></td></tr>
+<tr><th id="219">219</th><td>        <b>if</b> (<a class="tu ref fn" href="#intsetSearch" title='intsetSearch' data-use='c' data-ref="intsetSearch">intsetSearch</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>,<a class="local col9 ref" href="#39value" title='value' data-ref="39value">value</a>,&amp;<a class="local col2 ref" href="#42pos" title='pos' data-ref="42pos">pos</a>)) {</td></tr>
+<tr><th id="220">220</th><td>            <b>if</b> (<a class="local col0 ref" href="#40success" title='success' data-ref="40success">success</a>) *<a class="local col0 ref" href="#40success" title='success' data-ref="40success">success</a> = <var>0</var>;</td></tr>
+<tr><th id="221">221</th><td>            <b>return</b> <a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>;</td></tr>
+<tr><th id="222">222</th><td>        }</td></tr>
+<tr><th id="223">223</th><td></td></tr>
+<tr><th id="224">224</th><td>        <a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a> = <a class="tu ref fn" href="#intsetResize" title='intsetResize' data-use='c' data-ref="intsetResize">intsetResize</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>,<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)+<var>1</var>);</td></tr>
+<tr><th id="225">225</th><td>        <b>if</b> (<a class="local col2 ref" href="#42pos" title='pos' data-ref="42pos">pos</a> &lt; <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)) <a class="tu ref fn" href="#intsetMoveTail" title='intsetMoveTail' data-use='c' data-ref="intsetMoveTail">intsetMoveTail</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>,<a class="local col2 ref" href="#42pos" title='pos' data-ref="42pos">pos</a>,<a class="local col2 ref" href="#42pos" title='pos' data-ref="42pos">pos</a>+<var>1</var>);</td></tr>
+<tr><th id="226">226</th><td>    }</td></tr>
+<tr><th id="227">227</th><td></td></tr>
+<tr><th id="228">228</th><td>    <a class="tu ref fn" href="#_intsetSet" title='_intsetSet' data-use='c' data-ref="_intsetSet">_intsetSet</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>,<a class="local col2 ref" href="#42pos" title='pos' data-ref="42pos">pos</a>,<a class="local col9 ref" href="#39value" title='value' data-ref="39value">value</a>);</td></tr>
+<tr><th id="229">229</th><td>    <a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a> = <a class="macro" href="endianconv.h.html#53" title="((is-&gt;length)+1)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)+<var>1</var>);</td></tr>
+<tr><th id="230">230</th><td>    <b>return</b> <a class="local col8 ref" href="#38is" title='is' data-ref="38is">is</a>;</td></tr>
+<tr><th id="231">231</th><td>}</td></tr>
+<tr><th id="232">232</th><td></td></tr>
+<tr><th id="233">233</th><td><i>/* Delete integer from intset */</i></td></tr>
+<tr><th id="234">234</th><td><a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="decl def fn" id="intsetRemove" title='intsetRemove' data-ref="intsetRemove">intsetRemove</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col3 decl" id="43is" title='is' data-type='intset *' data-ref="43is">is</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col4 decl" id="44value" title='value' data-type='int64_t' data-ref="44value">value</dfn>, <em>int</em> *<dfn class="local col5 decl" id="45success" title='success' data-type='int *' data-ref="45success">success</dfn>) {</td></tr>
+<tr><th id="235">235</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col6 decl" id="46valenc" title='valenc' data-type='uint8_t' data-ref="46valenc">valenc</dfn> = <a class="tu ref fn" href="#_intsetValueEncoding" title='_intsetValueEncoding' data-use='c' data-ref="_intsetValueEncoding">_intsetValueEncoding</a>(<a class="local col4 ref" href="#44value" title='value' data-ref="44value">value</a>);</td></tr>
+<tr><th id="236">236</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col7 decl" id="47pos" title='pos' data-type='uint32_t' data-ref="47pos">pos</dfn>;</td></tr>
+<tr><th id="237">237</th><td>    <b>if</b> (<a class="local col5 ref" href="#45success" title='success' data-ref="45success">success</a>) *<a class="local col5 ref" href="#45success" title='success' data-ref="45success">success</a> = <var>0</var>;</td></tr>
+<tr><th id="238">238</th><td></td></tr>
+<tr><th id="239">239</th><td>    <b>if</b> (<a class="local col6 ref" href="#46valenc" title='valenc' data-ref="46valenc">valenc</a> &lt;= <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>) &amp;&amp; <a class="tu ref fn" href="#intsetSearch" title='intsetSearch' data-use='c' data-ref="intsetSearch">intsetSearch</a>(<a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>,<a class="local col4 ref" href="#44value" title='value' data-ref="44value">value</a>,&amp;<a class="local col7 ref" href="#47pos" title='pos' data-ref="47pos">pos</a>)) {</td></tr>
+<tr><th id="240">240</th><td>        <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col8 decl" id="48len" title='len' data-type='uint32_t' data-ref="48len">len</dfn> = <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>);</td></tr>
+<tr><th id="241">241</th><td></td></tr>
+<tr><th id="242">242</th><td>        <i>/* We know we can delete */</i></td></tr>
+<tr><th id="243">243</th><td>        <b>if</b> (<a class="local col5 ref" href="#45success" title='success' data-ref="45success">success</a>) *<a class="local col5 ref" href="#45success" title='success' data-ref="45success">success</a> = <var>1</var>;</td></tr>
+<tr><th id="244">244</th><td></td></tr>
+<tr><th id="245">245</th><td>        <i>/* Overwrite value with tail and update length */</i></td></tr>
+<tr><th id="246">246</th><td>        <b>if</b> (<a class="local col7 ref" href="#47pos" title='pos' data-ref="47pos">pos</a> &lt; (<a class="local col8 ref" href="#48len" title='len' data-ref="48len">len</a>-<var>1</var>)) <a class="tu ref fn" href="#intsetMoveTail" title='intsetMoveTail' data-use='c' data-ref="intsetMoveTail">intsetMoveTail</a>(<a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>,<a class="local col7 ref" href="#47pos" title='pos' data-ref="47pos">pos</a>+<var>1</var>,<a class="local col7 ref" href="#47pos" title='pos' data-ref="47pos">pos</a>);</td></tr>
+<tr><th id="247">247</th><td>        <a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a> = <a class="tu ref fn" href="#intsetResize" title='intsetResize' data-use='c' data-ref="intsetResize">intsetResize</a>(<a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>,<a class="local col8 ref" href="#48len" title='len' data-ref="48len">len</a>-<var>1</var>);</td></tr>
+<tr><th id="248">248</th><td>        <a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a> = <a class="macro" href="endianconv.h.html#53" title="(len-1)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col8 ref" href="#48len" title='len' data-ref="48len">len</a>-<var>1</var>);</td></tr>
+<tr><th id="249">249</th><td>    }</td></tr>
+<tr><th id="250">250</th><td>    <b>return</b> <a class="local col3 ref" href="#43is" title='is' data-ref="43is">is</a>;</td></tr>
+<tr><th id="251">251</th><td>}</td></tr>
+<tr><th id="252">252</th><td></td></tr>
+<tr><th id="253">253</th><td><i>/* Determine whether a value belongs to this set */</i></td></tr>
+<tr><th id="254">254</th><td><a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="decl def fn" id="intsetFind" title='intsetFind' data-ref="intsetFind">intsetFind</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col9 decl" id="49is" title='is' data-type='intset *' data-ref="49is">is</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="local col0 decl" id="50value" title='value' data-type='int64_t' data-ref="50value">value</dfn>) {</td></tr>
+<tr><th id="255">255</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="local col1 decl" id="51valenc" title='valenc' data-type='uint8_t' data-ref="51valenc">valenc</dfn> = <a class="tu ref fn" href="#_intsetValueEncoding" title='_intsetValueEncoding' data-use='c' data-ref="_intsetValueEncoding">_intsetValueEncoding</a>(<a class="local col0 ref" href="#50value" title='value' data-ref="50value">value</a>);</td></tr>
+<tr><th id="256">256</th><td>    <b>return</b> <a class="local col1 ref" href="#51valenc" title='valenc' data-ref="51valenc">valenc</a> &lt;= <a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col9 ref" href="#49is" title='is' data-ref="49is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>) &amp;&amp; <a class="tu ref fn" href="#intsetSearch" title='intsetSearch' data-use='c' data-ref="intsetSearch">intsetSearch</a>(<a class="local col9 ref" href="#49is" title='is' data-ref="49is">is</a>,<a class="local col0 ref" href="#50value" title='value' data-ref="50value">value</a>,<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="257">257</th><td>}</td></tr>
+<tr><th id="258">258</th><td></td></tr>
+<tr><th id="259">259</th><td><i>/* Return random member */</i></td></tr>
+<tr><th id="260">260</th><td><a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> <dfn class="decl def fn" id="intsetRandom" title='intsetRandom' data-ref="intsetRandom">intsetRandom</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col2 decl" id="52is" title='is' data-type='intset *' data-ref="52is">is</dfn>) {</td></tr>
+<tr><th id="261">261</th><td>    <b>return</b> <a class="tu ref fn" href="#_intsetGet" title='_intsetGet' data-use='c' data-ref="_intsetGet">_intsetGet</a>(<a class="local col2 ref" href="#52is" title='is' data-ref="52is">is</a>,<a class="ref fn" href="../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()%<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col2 ref" href="#52is" title='is' data-ref="52is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>));</td></tr>
+<tr><th id="262">262</th><td>}</td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td><i>/* Sets the value to the value at the given position. When this position is</i></td></tr>
+<tr><th id="265">265</th><td><i> * out of range the function returns 0, when in range it returns 1. */</i></td></tr>
+<tr><th id="266">266</th><td><a class="typedef" href="../../include/stdint.h.html#uint8_t" title='uint8_t' data-type='unsigned char' data-ref="uint8_t">uint8_t</a> <dfn class="decl def fn" id="intsetGet" title='intsetGet' data-ref="intsetGet">intsetGet</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col3 decl" id="53is" title='is' data-type='intset *' data-ref="53is">is</dfn>, <a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="local col4 decl" id="54pos" title='pos' data-type='uint32_t' data-ref="54pos">pos</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#197" title='int64_t' data-type='long' data-ref="int64_t">int64_t</a> *<dfn class="local col5 decl" id="55value" title='value' data-type='int64_t *' data-ref="55value">value</dfn>) {</td></tr>
+<tr><th id="267">267</th><td>    <b>if</b> (<a class="local col4 ref" href="#54pos" title='pos' data-ref="54pos">pos</a> &lt; <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col3 ref" href="#53is" title='is' data-ref="53is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)) {</td></tr>
+<tr><th id="268">268</th><td>        *<a class="local col5 ref" href="#55value" title='value' data-ref="55value">value</a> = <a class="tu ref fn" href="#_intsetGet" title='_intsetGet' data-use='c' data-ref="_intsetGet">_intsetGet</a>(<a class="local col3 ref" href="#53is" title='is' data-ref="53is">is</a>,<a class="local col4 ref" href="#54pos" title='pos' data-ref="54pos">pos</a>);</td></tr>
+<tr><th id="269">269</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="270">270</th><td>    }</td></tr>
+<tr><th id="271">271</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="272">272</th><td>}</td></tr>
+<tr><th id="273">273</th><td></td></tr>
+<tr><th id="274">274</th><td><i>/* Return intset length */</i></td></tr>
+<tr><th id="275">275</th><td><a class="typedef" href="../../include/stdint.h.html#uint32_t" title='uint32_t' data-type='unsigned int' data-ref="uint32_t">uint32_t</a> <dfn class="decl def fn" id="intsetLen" title='intsetLen' data-ref="intsetLen">intsetLen</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col6 decl" id="56is" title='is' data-type='intset *' data-ref="56is">is</dfn>) {</td></tr>
+<tr><th id="276">276</th><td>    <b>return</b> <a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col6 ref" href="#56is" title='is' data-ref="56is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>);</td></tr>
+<tr><th id="277">277</th><td>}</td></tr>
+<tr><th id="278">278</th><td></td></tr>
+<tr><th id="279">279</th><td><i>/* Return intset blob size in bytes. */</i></td></tr>
+<tr><th id="280">280</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl def fn" id="intsetBlobLen" title='intsetBlobLen' data-ref="intsetBlobLen">intsetBlobLen</dfn>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a> *<dfn class="local col7 decl" id="57is" title='is' data-type='intset *' data-ref="57is">is</dfn>) {</td></tr>
+<tr><th id="281">281</th><td>    <b>return</b> <b>sizeof</b>(<a class="typedef" href="intset.h.html#intset" title='intset' data-type='struct intset' data-ref="intset">intset</a>)+<a class="macro" href="endianconv.h.html#53" title="(is-&gt;length)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col7 ref" href="#57is" title='is' data-ref="57is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::length" title='intset::length' data-ref="intset::length">length</a>)*<a class="macro" href="endianconv.h.html#53" title="(is-&gt;encoding)" data-ref="_M/intrev32ifbe">intrev32ifbe</a>(<a class="local col7 ref" href="#57is" title='is' data-ref="57is">is</a>-&gt;<a class="ref field" href="intset.h.html#intset::encoding" title='intset::encoding' data-ref="intset::encoding">encoding</a>);</td></tr>
+<tr><th id="282">282</th><td>}</td></tr>
+<tr><th id="283">283</th><td></td></tr>
+<tr><th id="284">284</th><td><u>#<span data-ppcond="284">ifdef</span> <span class="macro" data-ref="_M/INTSET_TEST_MAIN">INTSET_TEST_MAIN</span></u></td></tr>
+<tr><th id="285">285</th><td><u>#include &lt;sys/time.h&gt;</u></td></tr>
+<tr><th id="286">286</th><td></td></tr>
+<tr><th id="287">287</th><td><em>void</em> intsetRepr(intset *is) {</td></tr>
+<tr><th id="288">288</th><td>    <em>int</em> i;</td></tr>
+<tr><th id="289">289</th><td>    <b>for</b> (i = <var>0</var>; i &lt; intrev32ifbe(is-&gt;length); i++) {</td></tr>
+<tr><th id="290">290</th><td>        printf(<q>"%lld\n"</q>, (uint64_t)_intsetGet(is,i));</td></tr>
+<tr><th id="291">291</th><td>    }</td></tr>
+<tr><th id="292">292</th><td>    printf(<q>"\n"</q>);</td></tr>
+<tr><th id="293">293</th><td>}</td></tr>
+<tr><th id="294">294</th><td></td></tr>
+<tr><th id="295">295</th><td><em>void</em> error(<em>char</em> *err) {</td></tr>
+<tr><th id="296">296</th><td>    printf(<q>"%s\n"</q>, err);</td></tr>
+<tr><th id="297">297</th><td>    exit(<var>1</var>);</td></tr>
+<tr><th id="298">298</th><td>}</td></tr>
+<tr><th id="299">299</th><td></td></tr>
+<tr><th id="300">300</th><td><em>void</em> ok(<em>void</em>) {</td></tr>
+<tr><th id="301">301</th><td>    printf(<q>"OK\n"</q>);</td></tr>
+<tr><th id="302">302</th><td>}</td></tr>
+<tr><th id="303">303</th><td></td></tr>
+<tr><th id="304">304</th><td><em>long</em> <em>long</em> usec(<em>void</em>) {</td></tr>
+<tr><th id="305">305</th><td>    <b>struct</b> timeval tv;</td></tr>
+<tr><th id="306">306</th><td>    gettimeofday(&amp;tv,NULL);</td></tr>
+<tr><th id="307">307</th><td>    <b>return</b> (((<em>long</em> <em>long</em>)tv.tv_sec)*<var>1000000</var>)+tv.tv_usec;</td></tr>
+<tr><th id="308">308</th><td>}</td></tr>
+<tr><th id="309">309</th><td></td></tr>
+<tr><th id="310">310</th><td><u>#define assert(_e) ((_e)?(void)0:(_assert(#_e,__FILE__,__LINE__),exit(1)))</u></td></tr>
+<tr><th id="311">311</th><td><em>void</em> _assert(<em>char</em> *estr, <em>char</em> *file, <em>int</em> line) {</td></tr>
+<tr><th id="312">312</th><td>    printf(<q>"\n\n=== ASSERTION FAILED ===\n"</q>);</td></tr>
+<tr><th id="313">313</th><td>    printf(<q>"==&gt; %s:%d '%s' is not true\n"</q>,file,line,estr);</td></tr>
+<tr><th id="314">314</th><td>}</td></tr>
+<tr><th id="315">315</th><td></td></tr>
+<tr><th id="316">316</th><td>intset *createSet(<em>int</em> bits, <em>int</em> size) {</td></tr>
+<tr><th id="317">317</th><td>    uint64_t mask = (<var>1</var>&lt;&lt;bits)-<var>1</var>;</td></tr>
+<tr><th id="318">318</th><td>    uint64_t i, value;</td></tr>
+<tr><th id="319">319</th><td>    intset *is = intsetNew();</td></tr>
+<tr><th id="320">320</th><td></td></tr>
+<tr><th id="321">321</th><td>    <b>for</b> (i = <var>0</var>; i &lt; size; i++) {</td></tr>
+<tr><th id="322">322</th><td>        <b>if</b> (bits &gt; <var>32</var>) {</td></tr>
+<tr><th id="323">323</th><td>            value = (rand()*rand()) &amp; mask;</td></tr>
+<tr><th id="324">324</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="325">325</th><td>            value = rand() &amp; mask;</td></tr>
+<tr><th id="326">326</th><td>        }</td></tr>
+<tr><th id="327">327</th><td>        is = intsetAdd(is,value,NULL);</td></tr>
+<tr><th id="328">328</th><td>    }</td></tr>
+<tr><th id="329">329</th><td>    <b>return</b> is;</td></tr>
+<tr><th id="330">330</th><td>}</td></tr>
+<tr><th id="331">331</th><td></td></tr>
+<tr><th id="332">332</th><td><em>void</em> checkConsistency(intset *is) {</td></tr>
+<tr><th id="333">333</th><td>    <em>int</em> i;</td></tr>
+<tr><th id="334">334</th><td></td></tr>
+<tr><th id="335">335</th><td>    <b>for</b> (i = <var>0</var>; i &lt; (intrev32ifbe(is-&gt;length)-<var>1</var>); i++) {</td></tr>
+<tr><th id="336">336</th><td>        uint32_t encoding = intrev32ifbe(is-&gt;encoding);</td></tr>
+<tr><th id="337">337</th><td></td></tr>
+<tr><th id="338">338</th><td>        <b>if</b> (encoding == INTSET_ENC_INT16) {</td></tr>
+<tr><th id="339">339</th><td>            int16_t *i16 = (int16_t*)is-&gt;contents;</td></tr>
+<tr><th id="340">340</th><td>            assert(i16[i] &lt; i16[i+<var>1</var>]);</td></tr>
+<tr><th id="341">341</th><td>        } <b>else</b> <b>if</b> (encoding == INTSET_ENC_INT32) {</td></tr>
+<tr><th id="342">342</th><td>            int32_t *i32 = (int32_t*)is-&gt;contents;</td></tr>
+<tr><th id="343">343</th><td>            assert(i32[i] &lt; i32[i+<var>1</var>]);</td></tr>
+<tr><th id="344">344</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="345">345</th><td>            int64_t *i64 = (int64_t*)is-&gt;contents;</td></tr>
+<tr><th id="346">346</th><td>            assert(i64[i] &lt; i64[i+<var>1</var>]);</td></tr>
+<tr><th id="347">347</th><td>        }</td></tr>
+<tr><th id="348">348</th><td>    }</td></tr>
+<tr><th id="349">349</th><td>}</td></tr>
+<tr><th id="350">350</th><td></td></tr>
+<tr><th id="351">351</th><td><em>int</em> main(<em>int</em> argc, <em>char</em> **argv) {</td></tr>
+<tr><th id="352">352</th><td>    uint8_t success;</td></tr>
+<tr><th id="353">353</th><td>    <em>int</em> i;</td></tr>
+<tr><th id="354">354</th><td>    intset *is;</td></tr>
+<tr><th id="355">355</th><td>    sranddev();</td></tr>
+<tr><th id="356">356</th><td></td></tr>
+<tr><th id="357">357</th><td>    printf(<q>"Value encodings: "</q>); {</td></tr>
+<tr><th id="358">358</th><td>        assert(_intsetValueEncoding(-<var>32768</var>) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="359">359</th><td>        assert(_intsetValueEncoding(+<var>32767</var>) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="360">360</th><td>        assert(_intsetValueEncoding(-<var>32769</var>) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="361">361</th><td>        assert(_intsetValueEncoding(+<var>32768</var>) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="362">362</th><td>        assert(_intsetValueEncoding(-<var>2147483648</var>) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="363">363</th><td>        assert(_intsetValueEncoding(+<var>2147483647</var>) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="364">364</th><td>        assert(_intsetValueEncoding(-<var>2147483649</var>) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="365">365</th><td>        assert(_intsetValueEncoding(+<var>2147483648</var>) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="366">366</th><td>        assert(_intsetValueEncoding(-<var>9223372036854775808ull</var>) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="367">367</th><td>        assert(_intsetValueEncoding(+<var>9223372036854775807ull</var>) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="368">368</th><td>        ok();</td></tr>
+<tr><th id="369">369</th><td>    }</td></tr>
+<tr><th id="370">370</th><td></td></tr>
+<tr><th id="371">371</th><td>    printf(<q>"Basic adding: "</q>); {</td></tr>
+<tr><th id="372">372</th><td>        is = intsetNew();</td></tr>
+<tr><th id="373">373</th><td>        is = intsetAdd(is,<var>5</var>,&amp;success); assert(success);</td></tr>
+<tr><th id="374">374</th><td>        is = intsetAdd(is,<var>6</var>,&amp;success); assert(success);</td></tr>
+<tr><th id="375">375</th><td>        is = intsetAdd(is,<var>4</var>,&amp;success); assert(success);</td></tr>
+<tr><th id="376">376</th><td>        is = intsetAdd(is,<var>4</var>,&amp;success); assert(!success);</td></tr>
+<tr><th id="377">377</th><td>        ok();</td></tr>
+<tr><th id="378">378</th><td>    }</td></tr>
+<tr><th id="379">379</th><td></td></tr>
+<tr><th id="380">380</th><td>    printf(<q>"Large number of random adds: "</q>); {</td></tr>
+<tr><th id="381">381</th><td>        <em>int</em> inserts = <var>0</var>;</td></tr>
+<tr><th id="382">382</th><td>        is = intsetNew();</td></tr>
+<tr><th id="383">383</th><td>        <b>for</b> (i = <var>0</var>; i &lt; <var>1024</var>; i++) {</td></tr>
+<tr><th id="384">384</th><td>            is = intsetAdd(is,rand()%<var>0x800</var>,&amp;success);</td></tr>
+<tr><th id="385">385</th><td>            <b>if</b> (success) inserts++;</td></tr>
+<tr><th id="386">386</th><td>        }</td></tr>
+<tr><th id="387">387</th><td>        assert(intrev32ifbe(is-&gt;length) == inserts);</td></tr>
+<tr><th id="388">388</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="389">389</th><td>        ok();</td></tr>
+<tr><th id="390">390</th><td>    }</td></tr>
+<tr><th id="391">391</th><td></td></tr>
+<tr><th id="392">392</th><td>    printf(<q>"Upgrade from int16 to int32: "</q>); {</td></tr>
+<tr><th id="393">393</th><td>        is = intsetNew();</td></tr>
+<tr><th id="394">394</th><td>        is = intsetAdd(is,<var>32</var>,NULL);</td></tr>
+<tr><th id="395">395</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="396">396</th><td>        is = intsetAdd(is,<var>65535</var>,NULL);</td></tr>
+<tr><th id="397">397</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="398">398</th><td>        assert(intsetFind(is,<var>32</var>));</td></tr>
+<tr><th id="399">399</th><td>        assert(intsetFind(is,<var>65535</var>));</td></tr>
+<tr><th id="400">400</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="401">401</th><td></td></tr>
+<tr><th id="402">402</th><td>        is = intsetNew();</td></tr>
+<tr><th id="403">403</th><td>        is = intsetAdd(is,<var>32</var>,NULL);</td></tr>
+<tr><th id="404">404</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="405">405</th><td>        is = intsetAdd(is,-<var>65535</var>,NULL);</td></tr>
+<tr><th id="406">406</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="407">407</th><td>        assert(intsetFind(is,<var>32</var>));</td></tr>
+<tr><th id="408">408</th><td>        assert(intsetFind(is,-<var>65535</var>));</td></tr>
+<tr><th id="409">409</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="410">410</th><td>        ok();</td></tr>
+<tr><th id="411">411</th><td>    }</td></tr>
+<tr><th id="412">412</th><td></td></tr>
+<tr><th id="413">413</th><td>    printf(<q>"Upgrade from int16 to int64: "</q>); {</td></tr>
+<tr><th id="414">414</th><td>        is = intsetNew();</td></tr>
+<tr><th id="415">415</th><td>        is = intsetAdd(is,<var>32</var>,NULL);</td></tr>
+<tr><th id="416">416</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="417">417</th><td>        is = intsetAdd(is,<var>4294967295</var>,NULL);</td></tr>
+<tr><th id="418">418</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="419">419</th><td>        assert(intsetFind(is,<var>32</var>));</td></tr>
+<tr><th id="420">420</th><td>        assert(intsetFind(is,<var>4294967295</var>));</td></tr>
+<tr><th id="421">421</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="422">422</th><td></td></tr>
+<tr><th id="423">423</th><td>        is = intsetNew();</td></tr>
+<tr><th id="424">424</th><td>        is = intsetAdd(is,<var>32</var>,NULL);</td></tr>
+<tr><th id="425">425</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT16);</td></tr>
+<tr><th id="426">426</th><td>        is = intsetAdd(is,-<var>4294967295</var>,NULL);</td></tr>
+<tr><th id="427">427</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="428">428</th><td>        assert(intsetFind(is,<var>32</var>));</td></tr>
+<tr><th id="429">429</th><td>        assert(intsetFind(is,-<var>4294967295</var>));</td></tr>
+<tr><th id="430">430</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="431">431</th><td>        ok();</td></tr>
+<tr><th id="432">432</th><td>    }</td></tr>
+<tr><th id="433">433</th><td></td></tr>
+<tr><th id="434">434</th><td>    printf(<q>"Upgrade from int32 to int64: "</q>); {</td></tr>
+<tr><th id="435">435</th><td>        is = intsetNew();</td></tr>
+<tr><th id="436">436</th><td>        is = intsetAdd(is,<var>65535</var>,NULL);</td></tr>
+<tr><th id="437">437</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="438">438</th><td>        is = intsetAdd(is,<var>4294967295</var>,NULL);</td></tr>
+<tr><th id="439">439</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="440">440</th><td>        assert(intsetFind(is,<var>65535</var>));</td></tr>
+<tr><th id="441">441</th><td>        assert(intsetFind(is,<var>4294967295</var>));</td></tr>
+<tr><th id="442">442</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="443">443</th><td></td></tr>
+<tr><th id="444">444</th><td>        is = intsetNew();</td></tr>
+<tr><th id="445">445</th><td>        is = intsetAdd(is,<var>65535</var>,NULL);</td></tr>
+<tr><th id="446">446</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT32);</td></tr>
+<tr><th id="447">447</th><td>        is = intsetAdd(is,-<var>4294967295</var>,NULL);</td></tr>
+<tr><th id="448">448</th><td>        assert(intrev32ifbe(is-&gt;encoding) == INTSET_ENC_INT64);</td></tr>
+<tr><th id="449">449</th><td>        assert(intsetFind(is,<var>65535</var>));</td></tr>
+<tr><th id="450">450</th><td>        assert(intsetFind(is,-<var>4294967295</var>));</td></tr>
+<tr><th id="451">451</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="452">452</th><td>        ok();</td></tr>
+<tr><th id="453">453</th><td>    }</td></tr>
+<tr><th id="454">454</th><td></td></tr>
+<tr><th id="455">455</th><td>    printf(<q>"Stress lookups: "</q>); {</td></tr>
+<tr><th id="456">456</th><td>        <em>long</em> num = <var>100000</var>, size = <var>10000</var>;</td></tr>
+<tr><th id="457">457</th><td>        <em>int</em> i, bits = <var>20</var>;</td></tr>
+<tr><th id="458">458</th><td>        <em>long</em> <em>long</em> start;</td></tr>
+<tr><th id="459">459</th><td>        is = createSet(bits,size);</td></tr>
+<tr><th id="460">460</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="461">461</th><td></td></tr>
+<tr><th id="462">462</th><td>        start = usec();</td></tr>
+<tr><th id="463">463</th><td>        <b>for</b> (i = <var>0</var>; i &lt; num; i++) intsetSearch(is,rand() % ((<var>1</var>&lt;&lt;bits)-<var>1</var>),NULL);</td></tr>
+<tr><th id="464">464</th><td>        printf(<q>"%ld lookups, %ld element set, %lldusec\n"</q>,num,size,usec()-start);</td></tr>
+<tr><th id="465">465</th><td>    }</td></tr>
+<tr><th id="466">466</th><td></td></tr>
+<tr><th id="467">467</th><td>    printf(<q>"Stress add+delete: "</q>); {</td></tr>
+<tr><th id="468">468</th><td>        <em>int</em> i, v1, v2;</td></tr>
+<tr><th id="469">469</th><td>        is = intsetNew();</td></tr>
+<tr><th id="470">470</th><td>        <b>for</b> (i = <var>0</var>; i &lt; <var>0xffff</var>; i++) {</td></tr>
+<tr><th id="471">471</th><td>            v1 = rand() % <var>0xfff</var>;</td></tr>
+<tr><th id="472">472</th><td>            is = intsetAdd(is,v1,NULL);</td></tr>
+<tr><th id="473">473</th><td>            assert(intsetFind(is,v1));</td></tr>
+<tr><th id="474">474</th><td></td></tr>
+<tr><th id="475">475</th><td>            v2 = rand() % <var>0xfff</var>;</td></tr>
+<tr><th id="476">476</th><td>            is = intsetRemove(is,v2,NULL);</td></tr>
+<tr><th id="477">477</th><td>            assert(!intsetFind(is,v2));</td></tr>
+<tr><th id="478">478</th><td>        }</td></tr>
+<tr><th id="479">479</th><td>        checkConsistency(is);</td></tr>
+<tr><th id="480">480</th><td>        ok();</td></tr>
+<tr><th id="481">481</th><td>    }</td></tr>
+<tr><th id="482">482</th><td>}</td></tr>
+<tr><th id="483">483</th><td><u>#<span data-ppcond="284">endif</span></u></td></tr>
+<tr><th id="484">484</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

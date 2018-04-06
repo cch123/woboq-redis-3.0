@@ -1,0 +1,2 @@
+<def f='redis/src/networking.c' l='60' ll='62' type='int listMatchObjects(void * a, void * b)'/>
+<use f='redis/src/networking.c' l='125' u='r' c='createClient'/>

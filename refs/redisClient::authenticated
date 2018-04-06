@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='536' type='int'/>
+<offset>1248</offset>
+<doc f='redis/src/redis.h' l='536'>/* when requirepass is non-NULL */</doc>
+<use f='redis/src/networking.c' l='101' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='2154' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2427' u='w' c='authCommand'/>
+<use f='redis/src/redis.c' l='2430' u='w' c='authCommand'/>
+<use f='redis/src/replication.c' l='1024' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1655' u='w' c='replicationResurrectCachedMaster'/>

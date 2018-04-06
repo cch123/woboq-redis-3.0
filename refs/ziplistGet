@@ -1,0 +1,25 @@
+<dec f='redis/src/ziplist.h' l='39' type='unsigned int ziplistGet(unsigned char * p, unsigned char ** sval, unsigned int * slen, long long * lval)'/>
+<use f='redis/src/aof.c' l='780' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='891' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/db.c' l='526' u='c' c='scanGenericCommand'/>
+<use f='redis/src/debug.c' l='189' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/t_hash.c' l='91' u='c' c='hashTypeGetFromZiplist'/>
+<use f='redis/src/t_hash.c' l='350' u='c' c='hashTypeCurrentFromZiplist'/>
+<use f='redis/src/t_hash.c' l='353' u='c' c='hashTypeCurrentFromZiplist'/>
+<use f='redis/src/t_list.c' l='84' u='c' c='listTypePop'/>
+<use f='redis/src/t_list.c' l='184' u='c' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='427' u='c' c='lindexCommand'/>
+<use f='redis/src/t_list.c' l='559' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_zset.c' l='643' u='c' c='zzlGetScore'/>
+<use f='redis/src/t_zset.c' l='665' u='c' c='ziplistGetObject'/>
+<use f='redis/src/t_zset.c' l='682' u='c' c='zzlCompareElements'/>
+<use f='redis/src/t_zset.c' l='1121' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1683' u='c' c='zuiNext'/>
+<use f='redis/src/t_zset.c' l='2149' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2303' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2654' u='c' c='genericZrangebylexCommand'/>
+<def f='redis/src/ziplist.c' l='746' ll='763' type='unsigned int ziplistGet(unsigned char * p, unsigned char ** sstr, unsigned int * slen, long long * sval)'/>
+<doc f='redis/src/ziplist.c' l='742'>/* Get entry pointed to by &apos;p&apos; and store in either &apos;*sstr&apos; or &apos;sval&apos; depending
+ * on the encoding of the entry. &apos;*sstr&apos; is always set to NULL to be able
+ * to find out whether the string pointer or the integer value was set.
+ * Return 0 if &apos;p&apos; points to the end of the ziplist, 1 otherwise. */</doc>

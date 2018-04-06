@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='84'/>
+<use f='redis/deps/lua/src/lcode.c' l='45' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='295' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='520' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='325' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='516' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='552' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='549' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='557' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='565' u='c'/>

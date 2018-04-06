@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/ltable.h' l='13'/>
+<use f='redis/deps/lua/src/lgc.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='366' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='88' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='150' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='172' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='173' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='174' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='286' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='293' u='c'/>

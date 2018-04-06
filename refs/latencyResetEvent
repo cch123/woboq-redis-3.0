@@ -1,0 +1,8 @@
+<def f='redis/src/latency.c' l='134' ll='150' type='int latencyResetEvent(char * event_to_reset)'/>
+<use f='redis/src/latency.c' l='604' u='c' c='latencyCommand'/>
+<use f='redis/src/latency.c' l='609' u='c' c='latencyCommand'/>
+<doc f='redis/src/latency.c' l='129'>/* Reset data for the specified event, or all the events data if &apos;event&apos; is
+ * NULL.
+ *
+ * Note: this is O(N) even when event_to_reset is not NULL because makes
+ * the code simpler and we have a small fixed max number of events. */</doc>

@@ -1,0 +1,4 @@
+<def f='redis/src/latency.c' l='39' ll='42' type='int dictStringKeyCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/latency.c' l='54' u='r'/>
+<use f='redis/src/latency.c' l='54' u='r'/>
+<doc f='redis/src/latency.c' l='38'>/* Dictionary type for latency events. */</doc>

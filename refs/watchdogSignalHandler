@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='899' ll='913' type='void watchdogSignalHandler(int sig, siginfo_t * info, void * secret)'/>
+<use f='redis/src/debug.c' l='941' u='r' c='enableWatchdog'/>

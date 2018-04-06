@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='158' type='4'/>
+<use f='redis/deps/lua/src/lcode.c' l='311' u='r' c='luaK_dischargevars'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='158'>/*	A B	R(A) := UpValue[B]				*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='387' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='457' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='527' c='getobjname'/>
+<use f='redis/deps/lua/src/lparser.c' l='322' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lvm.c' l='427' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='732' u='r' c='luaV_execute'/>

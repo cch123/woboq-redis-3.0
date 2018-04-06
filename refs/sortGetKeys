@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1342' type='int * sortGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<def f='redis/src/db.c' l='1086' ll='1126' type='int * sortGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<doc f='redis/src/db.c' l='1079'>/* Helper function to extract keys from the SORT command.
+ *
+ * SORT &lt;sort-key&gt; ... STORE &lt;store-key&gt; ...
+ *
+ * The first argument of SORT is always a key, however a list of options
+ * follow in SQL-alike style. Here we parse just the minimum in order to
+ * correctly identify keys in the &quot;STORE&quot; option. */</doc>
+<use f='redis/src/redis.c' l='243' u='r'/>
+<use f='redis/src/redis.c' l='243' u='r'/>
+<use f='redis/src/redis.c' l='243' u='r'/>
+<use f='redis/src/redis.c' l='243' u='r'/>

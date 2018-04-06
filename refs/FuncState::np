@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lparser.h' l='70' type='int'/>
+<offset>544</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='70'>/* number of elements in `p&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='315' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='318' u='w' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='320' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='341' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='369' u='r' c='close_func'/>

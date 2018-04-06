@@ -1,0 +1,10 @@
+<dec f='redis/src/sparkline.h' l='42' type='struct sample *'/>
+<offset>64</offset>
+<use f='redis/src/sparkline.c' l='60' u='w' c='createSparklineSequence'/>
+<use f='redis/src/sparkline.c' l='73' u='w' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='73' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='74' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='75' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='85' u='r' c='freeSparklineSequence'/>
+<use f='redis/src/sparkline.c' l='86' u='r' c='freeSparklineSequence'/>
+<use f='redis/src/sparkline.c' l='117' u='r' c='sparklineRenderRange'/>

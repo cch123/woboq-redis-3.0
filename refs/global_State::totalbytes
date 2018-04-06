@@ -1,0 +1,38 @@
+<dec f='redis/deps/lua/src/lstate.h' l='83' type='lu_mem'/>
+<use f='redis/deps/lua/src/lapi.c' l='143' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='352' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='447' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='466' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='477' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='489' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='580' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='910' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='919' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='923' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='928' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='929' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='932' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='994' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='1028' macro='1' u='r'/>
+<offset>960</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='83'>/* number of bytes currently allocated */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='219' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='380' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='497' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='463' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='552' u='r' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='573' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='578' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='582' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='589' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='615' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='623' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='626' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/llex.c' l='123' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lmem.c' l='83' u='w' c='luaM_realloc_'/>
+<use f='redis/deps/lua/src/lmem.c' l='83' u='r' c='luaM_realloc_'/>
+<use f='redis/deps/lua/src/lstate.c' l='80' u='r' c='f_luaopen'/>
+<use f='redis/deps/lua/src/lstate.c' l='177' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lvm.c' l='465' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='537' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='740' macro='1' u='r'/>

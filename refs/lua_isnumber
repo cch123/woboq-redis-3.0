@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lua.h' l='135' type='int lua_isnumber(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='260' ll='264' macro='1' type='int lua_isnumber(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='178' u='c' c='luaL_checknumber'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='191' u='c' c='luaL_checkinteger'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='57' u='c' c='luaB_tonumber'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='147' u='c' c='luaB_setfenv'/>
+<use f='redis/deps/lua/src/ldblib.c' l='104' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='328' u='c' c='db_errorfb'/>
+<use f='redis/deps/lua/src/loslib.c' l='112' u='c' c='getfield'/>
+<use f='redis/deps/lua/src/lua_bit.c' l='86' u='c' c='barg'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='332' u='c' c='b_unpack'/>
+<use f='redis/src/scripting.c' l='517' u='c' c='luaLogCommand'/>

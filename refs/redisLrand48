@@ -1,0 +1,3 @@
+<def f='redis/src/rand.c' l='71' ll='74' type='int32_t redisLrand48()'/>
+<dec f='redis/src/rand.h' l='33' type='int32_t redisLrand48()'/>
+<use f='redis/src/scripting.c' l='1119' u='c' c='redis_math_random'/>

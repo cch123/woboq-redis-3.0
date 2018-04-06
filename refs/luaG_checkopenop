@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='31' type='int luaG_checkopenop(Instruction i)'/>
+<def f='redis/deps/lua/src/ldebug.c' l='290' ll='301' type='int luaG_checkopenop(Instruction i)'/>
+<use f='redis/deps/lua/src/ldebug.c' l='288' u='c' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='288' u='c' c='symbexec'/>

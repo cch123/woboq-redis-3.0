@@ -1,0 +1,11 @@
+<def f='redis/src/cluster.c' l='360' ll='389' type='int clusterLockConfig(char * filename)'/>
+<use f='redis/src/cluster.c' l='416' u='c' c='clusterInit'/>
+<doc f='redis/src/cluster.c' l='351'>/* Lock the cluster config using flock(), and leaks the file descritor used to
+ * acquire the lock so that the file will be locked forever.
+ *
+ * This works because we always update nodes.conf with a new version
+ * in-place, reopening the file, and writing to it in place (later adjusting
+ * the length with ftruncate()).
+ *
+ * On success REDIS_OK is returned, otherwise an error is logged and
+ * the function returns REDIS_ERR to signal a lock was not acquired. */</doc>

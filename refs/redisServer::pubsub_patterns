@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='872' type='list *'/>
+<offset>19008</offset>
+<doc f='redis/src/redis.h' l='872'>/* A list of pubsub_patterns */</doc>
+<use f='redis/src/cluster.c' l='1894' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/pubsub.c' l='138' u='r' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='161' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='162' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='250' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='251' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='365' u='r' c='pubsubCommand'/>
+<use f='redis/src/redis.c' l='1810' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='1811' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1812' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2853' u='r' c='genRedisInfoString'/>

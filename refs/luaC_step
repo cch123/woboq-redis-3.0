@@ -1,0 +1,19 @@
+<dec f='redis/deps/lua/src/lgc.h' l='102' type='void luaC_step(lua_State * L)'/>
+<use f='redis/deps/lua/src/lapi.c' l='143' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='352' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='447' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='466' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='477' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='489' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='580' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='933' u='c' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='994' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='1028' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='219' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='380' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='497' macro='1' u='c'/>
+<def f='redis/deps/lua/src/lgc.c' l='610' ll='632' type='void luaC_step(lua_State * L)'/>
+<use f='redis/deps/lua/src/llex.c' l='123' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='465' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='537' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='740' macro='1' u='c'/>

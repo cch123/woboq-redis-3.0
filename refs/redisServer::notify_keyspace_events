@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='873' type='int'/>
+<offset>19072</offset>
+<doc f='redis/src/redis.h' l='873'>/* Events to propagate via Pub/Sub. This is an
+                                   xor of REDIS_NOTIFY... flags. */</doc>
+<use f='redis/src/config.c' l='531' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='924' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1218' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1588' u='r' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<use f='redis/src/config.c' l='1592' u='r' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<use f='redis/src/notify.c' l='102' u='r' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='107' u='r' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='119' u='r' c='notifyKeyspaceEvent'/>
+<use f='redis/src/redis.c' l='1450' u='w' c='initServerConfig'/>

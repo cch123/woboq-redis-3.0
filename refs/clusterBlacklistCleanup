@@ -1,0 +1,9 @@
+<def f='redis/src/cluster.c' l='1079' ll='1091' type='void clusterBlacklistCleanup()'/>
+<use f='redis/src/cluster.c' l='1098' u='c' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1116' u='c' c='clusterBlacklistExists'/>
+<doc f='redis/src/cluster.c' l='1073'>/* Before of the addNode() or Exists() operations we always remove expired
+ * entries from the black list. This is an O(N) operation but it is not a
+ * problem since add / exists operations are called very infrequently and
+ * the hash table is supposed to contain very little elements at max.
+ * However without the cleanup during long uptimes and with some automated
+ * node add/removal procedures, entries could accumulate. */</doc>

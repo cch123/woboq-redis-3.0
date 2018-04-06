@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='16'/>
+<use f='redis/deps/lua/src/ldebug.c' l='49' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='71' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='74' u='c'/>

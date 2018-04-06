@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='132' type='lua_State *'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='402' u='r' c='emptybuffer'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='412' u='r' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='449' u='r' c='luaL_pushresult'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='455' u='r' c='luaL_addvalue'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='473' u='w' c='luaL_buffinit'/>
+<offset>128</offset>

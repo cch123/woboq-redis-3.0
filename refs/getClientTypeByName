@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1059' type='int getClientTypeByName(char * name)'/>
+<use f='redis/src/config.c' l='489' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='863' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='881' u='c' c='configSetCommand'/>
+<use f='redis/src/networking.c' l='1407' u='c' c='clientCommand'/>
+<def f='redis/src/networking.c' l='1596' ll='1601' type='int getClientTypeByName(char * name)'/>

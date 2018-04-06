@@ -1,0 +1,27 @@
+<def f='redis/src/cluster.c' l='2600' ll='2638' type='void clusterLogCantFailover(int reason)'/>
+<use f='redis/src/cluster.c' l='2746' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2805' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2811' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2847' u='c' c='clusterHandleSlaveFailover'/>
+<doc f='redis/src/cluster.c' l='2578'>/* This function is called by clusterHandleSlaveFailover() in order to
+ * let the slave log why it is not able to failover. Sometimes there are
+ * not the conditions, but since the failover function is called again and
+ * again, we can&apos;t log the same things continuously.
+ *
+ * This function works by logging only if a given set of conditions are
+ * true:
+ *
+ * 1) The reason for which the failover can&apos;t be initiated changed.
+ *    The reasons also include a NONE reason we reset the state to
+ *    when the slave finds that its master is fine (no FAIL flag).
+ * 2) Also, the log is emitted again if the master is still down and
+ *    the reason for not failing over is still the same, but more than
+ *    REDIS_CLUSTER_CANT_FAILOVER_RELOG_PERIOD seconds elapsed.
+ * 3) Finally, the function only logs if the slave is down for more than
+ *    five seconds + NODE_TIMEOUT. This way nothing is logged when a
+ *    failover starts in a reasonable time.
+ *
+ * The function is called with the reason why the slave can&apos;t failover
+ * which is one of the integer macros REDIS_CLUSTER_CANT_FAILOVER_*.
+ *
+ * The function is guaranteed to be called only if &apos;myself&apos; is a slave. */</doc>

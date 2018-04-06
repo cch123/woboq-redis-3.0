@@ -1,0 +1,14 @@
+<dec f='redis/src/ae.h' l='93' type='aeFiredEvent *'/>
+<use f='redis/src/ae_epoll.c' l='128' u='r' c='aeApiPoll'/>
+<use f='redis/src/ae_epoll.c' l='129' u='r' c='aeApiPoll'/>
+<use f='redis/src/ae.c' l='69' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='70' u='r' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='88' u='r' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='114' u='w' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='114' u='r' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='127' u='r' c='aeDeleteEventLoop'/>
+<use f='redis/src/ae.c' l='402' u='r' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='403' u='r' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='404' u='r' c='aeProcessEvents'/>
+<offset>256</offset>
+<doc f='redis/src/ae.h' l='93'>/* Fired events */</doc>

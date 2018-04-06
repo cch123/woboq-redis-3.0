@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='178' type='double ceil(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='82' u='c' c='math_ceil'/>
+<use f='redis/src/hyperloglog.c' l='1425' u='c' c='pfselftestCommand'/>
+<use f='redis/src/redis-cli.c' l='1173' u='c' c='showLatencyDistSamples'/>

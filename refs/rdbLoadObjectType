@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='101' type='int rdbLoadObjectType(rio * rdb)'/>
+<use f='redis/src/cluster.c' l='4418' u='c' c='restoreCommand'/>
+<def f='redis/src/rdb.c' l='471' ll='476' type='int rdbLoadObjectType(rio * rdb)'/>
+<doc f='redis/src/rdb.c' l='469'>/* Use rdbLoadType() to load a TYPE in RDB format, but returns -1 if the
+ * type is not specifically a valid Object Type. */</doc>

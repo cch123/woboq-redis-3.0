@@ -1,0 +1,11 @@
+<def f='redis/deps/lua/src/lobject.h' l='302' ll='306'/>
+<size>48</size>
+<mbr r='LClosure::next' o='0' t='GCObject *'/>
+<mbr r='LClosure::tt' o='64' t='lu_byte'/>
+<mbr r='LClosure::marked' o='72' t='lu_byte'/>
+<mbr r='LClosure::isC' o='80' t='lu_byte'/>
+<mbr r='LClosure::nupvalues' o='88' t='lu_byte'/>
+<mbr r='LClosure::gclist' o='128' t='GCObject *'/>
+<mbr r='LClosure::env' o='192' t='struct Table *'/>
+<mbr r='LClosure::p' o='256' t='struct Proto *'/>
+<mbr r='LClosure::upvals' o='320' t='UpVal *[1]'/>

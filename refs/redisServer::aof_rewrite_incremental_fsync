@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='756' type='int'/>
+<use f='redis/src/aof.c' l='1043' u='r' c='rewriteAppendOnlyFile'/>
+<offset>13632</offset>
+<doc f='redis/src/redis.h' l='756'>/* fsync incrementally while rewriting? */</doc>
+<use f='redis/src/config.c' l='371' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='738' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1099' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1872' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1440' u='w' c='initServerConfig'/>

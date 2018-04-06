@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1137' type='int getDoubleFromObjectOrReply(redisClient * c, robj * o, double * target, const char * msg)'/>
+<def f='redis/src/object.c' l='570' ll='582' type='int getDoubleFromObjectOrReply(redisClient * c, robj * o, double * target, const char * msg)'/>
+<use f='redis/src/t_zset.c' l='1194' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1902' u='c' c='zunionInterGenericCommand'/>

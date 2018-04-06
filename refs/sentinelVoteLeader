@@ -1,0 +1,10 @@
+<dec f='redis/src/sentinel.c' l='339' type='char * sentinelVoteLeader(sentinelRedisInstance * master, uint64_t req_epoch, char * req_runid, uint64_t * leader_epoch)'/>
+<use f='redis/src/sentinel.c' l='2673' u='c' c='sentinelCommand'/>
+<def f='redis/src/sentinel.c' l='3175' ll='3200' type='char * sentinelVoteLeader(sentinelRedisInstance * master, uint64_t req_epoch, char * req_runid, uint64_t * leader_epoch)'/>
+<use f='redis/src/sentinel.c' l='3273' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/sentinel.c' l='3275' u='c' c='sentinelGetLeader'/>
+<doc f='redis/src/sentinel.c' l='3170'>/* Vote for the sentinel with &apos;req_runid&apos; or return the old vote if already
+ * voted for the specifed &apos;req_epoch&apos; or one greater.
+ *
+ * If a vote is not available returns NULL, otherwise return the Sentinel
+ * runid and populate the leader_epoch with the epoch of the vote. */</doc>

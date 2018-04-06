@@ -1,0 +1,36 @@
+<dec f='redis/src/dict.h' l='80' type='long'/>
+<offset>640</offset>
+<doc f='redis/src/dict.h' l='80'>/* rehashing not in progress if rehashidx == -1 */</doc>
+<use f='redis/src/dict.c' l='185' u='w' c='_dictInit'/>
+<use f='redis/src/dict.c' l='196' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='211' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='232' u='w' c='dictExpand'/>
+<use f='redis/src/dict.c' l='247' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='254' u='r' c='dictRehash'/>
+<use f='redis/src/dict.c' l='255' u='r' c='dictRehash'/>
+<use f='redis/src/dict.c' l='256' u='w' c='dictRehash'/>
+<use f='redis/src/dict.c' l='259' u='r' c='dictRehash'/>
+<use f='redis/src/dict.c' l='273' u='r' c='dictRehash'/>
+<use f='redis/src/dict.c' l='274' u='w' c='dictRehash'/>
+<use f='redis/src/dict.c' l='282' u='w' c='dictRehash'/>
+<use f='redis/src/dict.c' l='352' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='360' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='416' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='441' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='495' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='505' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='588' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='630' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='631' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='635' u='r' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='637' u='r' c='dictGetRandomKey'/>
+<use f='redis/src/dict.c' l='697' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='703' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='716' u='r' c='dictGetSomeKeys'/>
+<use f='redis/src/dict.c' l='721' u='r' c='dictGetSomeKeys'/>
+<use f='redis/src/dict.c' l='860' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='926' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='982' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='990' u='w' c='dictEmpty'/>
+<use f='redis/src/redis.c' l='678' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='683' macro='1' u='r'/>

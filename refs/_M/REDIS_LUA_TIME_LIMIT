@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='347'/>
+<doc f='redis/src/redis.h' l='346'>/* Scripting */</doc>
+<use f='redis/src/config.c' l='1850' u='c'/>
+<use f='redis/src/redis.c' l='1476' u='c'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1046' type='void * dupClientReplyValue(void * o)'/>
+<use f='redis/src/aof.c' l='575' u='r' c='createFakeClient'/>
+<def f='redis/src/networking.c' l='55' ll='58' type='void * dupClientReplyValue(void * o)'/>
+<use f='redis/src/networking.c' l='112' u='r' c='createClient'/>

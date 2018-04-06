@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1441' type='void lremCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='156' u='r'/>
+<use f='redis/src/redis.c' l='156' u='r'/>
+<use f='redis/src/redis.c' l='156' u='r'/>
+<use f='redis/src/redis.c' l='156' u='r'/>
+<def f='redis/src/t_list.c' l='642' ll='684' type='void lremCommand(redisClient * c)'/>

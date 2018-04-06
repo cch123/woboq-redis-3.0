@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='227'/>
+<use f='redis/src/aof.c' l='207' u='c'/>
+<use f='redis/src/aof.c' l='214' u='c'/>
+<use f='redis/src/aof.c' l='238' u='c'/>
+<use f='redis/src/aof.c' l='620' u='c'/>
+<doc f='redis/src/redis.h' l='226'>/* AOF states */</doc>
+<use f='redis/src/config.c' l='332' u='c'/>
+<use f='redis/src/config.c' l='719' u='c'/>
+<use f='redis/src/config.c' l='721' u='c'/>
+<use f='redis/src/config.c' l='1107' u='c'/>
+<use f='redis/src/config.c' l='1840' u='c'/>
+<use f='redis/src/db.c' l='814' u='c'/>
+<use f='redis/src/redis.c' l='1425' u='c'/>
+<use f='redis/src/redis.c' l='2012' u='c'/>
+<use f='redis/src/redis.c' l='2337' u='c'/>
+<use f='redis/src/redis.c' l='2754' u='c'/>
+<use f='redis/src/redis.c' l='2763' u='c'/>
+<use f='redis/src/redis.c' l='3208' u='c'/>
+<use f='redis/src/replication.c' l='1037' u='c'/>
+<use f='redis/src/replication.c' l='2054' u='c'/>

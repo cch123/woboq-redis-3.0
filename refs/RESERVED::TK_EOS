@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/llex.h' l='32' type='287'/>
+<use f='redis/deps/lua/src/llex.c' l='143' u='r' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='233' u='r' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='283' u='r' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='410' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='450' u='r' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='452' u='r' c='luaX_next'/>
+<use f='redis/deps/lua/src/lparser.c' l='392' u='r' c='luaY_parser'/>
+<use f='redis/deps/lua/src/lparser.c' l='874' c='block_follow'/>

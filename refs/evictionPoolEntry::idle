@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='446' type='unsigned long long'/>
+<offset>0</offset>
+<doc f='redis/src/redis.h' l='446'>/* Object idle time. */</doc>
+<use f='redis/src/redis.c' l='3105' u='w' c='evictionPoolAlloc'/>
+<use f='redis/src/redis.c' l='3156' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3181' u='w' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3271' u='w' c='freeMemoryIfNeeded'/>

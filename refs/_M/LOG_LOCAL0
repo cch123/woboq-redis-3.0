@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/syslog.h' l='107'/>
+<doc f='include/x86_64-linux-gnu/sys/syslog.h' l='106'>/* other codes through 15 reserved for system use */</doc>
+<use f='redis/src/config.c' l='42' u='c'/>
+<use f='redis/src/config.c' l='1527' u='c'/>
+<use f='redis/src/redis.c' l='1423' u='c'/>

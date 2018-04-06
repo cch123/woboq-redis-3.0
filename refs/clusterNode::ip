@@ -1,0 +1,31 @@
+<dec f='redis/src/cluster.h' l='97' type='char [46]'/>
+<use f='redis/src/cluster.c' l='170' u='r' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='663' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='663' u='r' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1220' u='r' c='clusterHandshakeInProgress'/>
+<use f='redis/src/cluster.c' l='1279' u='r' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1279' u='r' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1335' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1386' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1389' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1394' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1399' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1630' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1634' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1636' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1638' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1651' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1709' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2257' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2257' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='3063' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3073' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3106' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3238' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3576' u='r' c='clusterSetMaster'/>
+<use f='redis/src/cluster.c' l='3626' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3778' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3787' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4954' c='clusterRedirectClient'/>
+<offset>17472</offset>
+<doc f='redis/src/cluster.h' l='97'>/* Latest known IP address of this node */</doc>

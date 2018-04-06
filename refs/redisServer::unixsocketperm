@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='672' type='mode_t'/>
+<offset>2368</offset>
+<doc f='redis/src/redis.h' l='672'>/* UNIX socket permission */</doc>
+<use f='redis/src/config.c' l='148' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='149' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1199' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1794' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1409' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1784' u='r' c='initServer'/>

@@ -1,0 +1,20 @@
+<dec f='redis/src/cluster.h' l='123' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='469' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1601' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1930' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2139' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2415' u='r' c='clusterRequestFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2688' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2766' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2789' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2978' u='r' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='2982' u='w' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='2990' u='r' c='manualFailoverCheckTimeout'/>
+<use f='redis/src/cluster.c' l='2990' u='r' c='manualFailoverCheckTimeout'/>
+<use f='redis/src/cluster.c' l='3000' u='r' c='clusterHandleManualFailover'/>
+<use f='redis/src/cluster.c' l='3200' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='4209' u='w' c='clusterCommand'/>
+<offset>3146432</offset>
+<doc f='redis/src/cluster.h' l='122'>/* Manual failover state in common. */</doc>
+<doc f='redis/src/cluster.h' l='123'>/* Manual failover time limit (ms unixtime).
+                                   It is zero if there is no MF in progress. */</doc>

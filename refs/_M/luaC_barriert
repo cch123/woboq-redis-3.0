@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lgc.h' l='89'/>
+<use f='redis/deps/lua/src/lapi.c' l='678' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='691' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='426' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='146' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='715' u='c'/>

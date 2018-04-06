@@ -1,0 +1,20 @@
+<dec f='include/stdio.h' l='169' type='struct _IO_FILE *'/>
+<doc f='include/stdio.h' l='169'>/* Standard output stream.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='923' macro='1' u='r'/>
+<use f='redis/deps/linenoise/linenoise.c' l='968' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='44' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='45' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='48' macro='1' u='r'/>
+<use f='redis/deps/lua/src/liolib.c' l='547' macro='1' u='r'/>
+<use f='redis/src/memtest.c' l='75' macro='1' u='r'/>
+<use f='redis/src/memtest.c' l='87' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='627' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='677' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='709' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='727' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='1127' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='1180' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='2211' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='306' macro='1' u='r'/>
+<use f='redis/src/ziplist.c' l='939' macro='1' u='r'/>
+<use f='redis/src/ziplist.c' l='943' macro='1' u='r'/>

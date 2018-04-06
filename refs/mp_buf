@@ -1,0 +1,7 @@
+<def f='redis/deps/lua/src/lua_cmsgpack.c' l='93' ll='97'/>
+<size>32</size>
+<doc f='redis/deps/lua/src/lua_cmsgpack.c' l='87'>/* ---------------------------- String buffer ----------------------------------
+ * This is a simple implementation of string buffers. The only operation
+ * supported is creating empty buffers and appending bytes to it.
+ * The string buffer uses 2x preallocation on every realloc for O(N) append
+ * behavior.  */</doc>

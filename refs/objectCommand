@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1518' type='void objectCommand(redisClient * c)'/>
+<def f='redis/src/object.c' l='720' ll='738' type='void objectCommand(redisClient * c)'/>
+<doc f='redis/src/object.c' l='718'>/* Object command allows to inspect the internals of an Redis Object.
+ * Usage: OBJECT &lt;refcount|encoding|idletime&gt; &lt;key&gt; */</doc>
+<use f='redis/src/redis.c' l='269' u='r'/>
+<use f='redis/src/redis.c' l='269' u='r'/>
+<use f='redis/src/redis.c' l='269' u='r'/>
+<use f='redis/src/redis.c' l='269' u='r'/>

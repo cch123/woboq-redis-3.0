@@ -1,0 +1,4 @@
+<def f='redis/src/replication.c' l='302' ll='350' type='long long addReplyReplicationBacklog(redisClient * c, long long offset)'/>
+<use f='redis/src/replication.c' l='412' u='c' c='masterTryPartialResynchronization'/>
+<doc f='redis/src/replication.c' l='300'>/* Feed the slave &apos;c&apos; with the replication backlog starting from the
+ * specified &apos;offset&apos; up to the end of the backlog. */</doc>

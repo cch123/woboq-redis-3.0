@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>util.h source code [redis/src/util.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/util.h'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='util.h.html'>util.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2009-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="6">6</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="9">9</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="11">11</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="12">12</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="13">13</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="14">14</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="15">15</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="18">18</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="19">19</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="20">20</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="21">21</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="22">22</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="23">23</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="24">24</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="25">25</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="26">26</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="27">27</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="28">28</th><td><i> */</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#<span data-ppcond="30">ifndef</span> <span class="macro" data-ref="_M/__REDIS_UTIL_H">__REDIS_UTIL_H</span></u></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/__REDIS_UTIL_H" data-ref="_M/__REDIS_UTIL_H">__REDIS_UTIL_H</dfn></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#include <a href="sds.h.html">"sds.h"</a></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>int</em> <dfn class="decl fn" id="stringmatchlen" title='stringmatchlen' data-ref="stringmatchlen">stringmatchlen</dfn>(<em>const</em> <em>char</em> *<dfn class="local col3 decl" id="503p" title='p' data-type='const char *' data-ref="503p">p</dfn>, <em>int</em> <dfn class="local col4 decl" id="504plen" title='plen' data-type='int' data-ref="504plen">plen</dfn>, <em>const</em> <em>char</em> *<dfn class="local col5 decl" id="505s" title='s' data-type='const char *' data-ref="505s">s</dfn>, <em>int</em> <dfn class="local col6 decl" id="506slen" title='slen' data-type='int' data-ref="506slen">slen</dfn>, <em>int</em> <dfn class="local col7 decl" id="507nocase" title='nocase' data-type='int' data-ref="507nocase">nocase</dfn>);</td></tr>
+<tr><th id="36">36</th><td><em>int</em> <dfn class="decl fn" id="stringmatch" title='stringmatch' data-ref="stringmatch">stringmatch</dfn>(<em>const</em> <em>char</em> *<dfn class="local col8 decl" id="508p" title='p' data-type='const char *' data-ref="508p">p</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="509s" title='s' data-type='const char *' data-ref="509s">s</dfn>, <em>int</em> <dfn class="local col0 decl" id="510nocase" title='nocase' data-type='int' data-ref="510nocase">nocase</dfn>);</td></tr>
+<tr><th id="37">37</th><td><em>long</em> <em>long</em> <dfn class="decl fn" id="memtoll" title='memtoll' data-ref="memtoll">memtoll</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="511p" title='p' data-type='const char *' data-ref="511p">p</dfn>, <em>int</em> *<dfn class="local col2 decl" id="512err" title='err' data-type='int *' data-ref="512err">err</dfn>);</td></tr>
+<tr><th id="38">38</th><td><em>int</em> <dfn class="decl fn" id="ll2string" title='ll2string' data-ref="ll2string">ll2string</dfn>(<em>char</em> *<dfn class="local col3 decl" id="513s" title='s' data-type='char *' data-ref="513s">s</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="514len" title='len' data-type='size_t' data-ref="514len">len</dfn>, <em>long</em> <em>long</em> <dfn class="local col5 decl" id="515value" title='value' data-type='long long' data-ref="515value">value</dfn>);</td></tr>
+<tr><th id="39">39</th><td><em>int</em> <dfn class="decl fn" id="string2ll" title='string2ll' data-ref="string2ll">string2ll</dfn>(<em>const</em> <em>char</em> *<dfn class="local col6 decl" id="516s" title='s' data-type='const char *' data-ref="516s">s</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col7 decl" id="517slen" title='slen' data-type='size_t' data-ref="517slen">slen</dfn>, <em>long</em> <em>long</em> *<dfn class="local col8 decl" id="518value" title='value' data-type='long long *' data-ref="518value">value</dfn>);</td></tr>
+<tr><th id="40">40</th><td><em>int</em> <dfn class="decl fn" id="string2l" title='string2l' data-ref="string2l">string2l</dfn>(<em>const</em> <em>char</em> *<dfn class="local col9 decl" id="519s" title='s' data-type='const char *' data-ref="519s">s</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="520slen" title='slen' data-type='size_t' data-ref="520slen">slen</dfn>, <em>long</em> *<dfn class="local col1 decl" id="521value" title='value' data-type='long *' data-ref="521value">value</dfn>);</td></tr>
+<tr><th id="41">41</th><td><em>int</em> <dfn class="decl fn" id="d2string" title='d2string' data-ref="d2string">d2string</dfn>(<em>char</em> *<dfn class="local col2 decl" id="522buf" title='buf' data-type='char *' data-ref="522buf">buf</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="523len" title='len' data-type='size_t' data-ref="523len">len</dfn>, <em>double</em> <dfn class="local col4 decl" id="524value" title='value' data-type='double' data-ref="524value">value</dfn>);</td></tr>
+<tr><th id="42">42</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl fn" id="getAbsolutePath" title='getAbsolutePath' data-ref="getAbsolutePath">getAbsolutePath</dfn>(<em>char</em> *<dfn class="local col5 decl" id="525filename" title='filename' data-type='char *' data-ref="525filename">filename</dfn>);</td></tr>
+<tr><th id="43">43</th><td><em>int</em> <dfn class="decl fn" id="pathIsBaseName" title='pathIsBaseName' data-ref="pathIsBaseName">pathIsBaseName</dfn>(<em>char</em> *<dfn class="local col6 decl" id="526path" title='path' data-type='char *' data-ref="526path">path</dfn>);</td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><u>#<span data-ppcond="30">endif</span></u></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='aof.c.html'>redis/src/aof.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

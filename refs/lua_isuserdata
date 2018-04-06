@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lua.h' l='138' type='int lua_isuserdata(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='273' ll='276' macro='1' type='int lua_isuserdata(lua_State * L, int idx)'/>

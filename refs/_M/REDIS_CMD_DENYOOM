@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='166'/>
+<use f='redis/src/redis.c' l='1899' u='c'/>
+<use f='redis/src/redis.c' l='2195' u='c'/>
+<use f='redis/src/redis.c' l='2499' u='c'/>
+<use f='redis/src/scripting.c' l='348' u='c'/>

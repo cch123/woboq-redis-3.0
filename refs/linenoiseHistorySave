@@ -1,0 +1,5 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='56' type='int linenoiseHistorySave(const char * filename)'/>
+<def f='redis/deps/linenoise/linenoise.c' l='1073' ll='1082' type='int linenoiseHistorySave(const char * filename)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='1071'>/* Save the history in the specified file. On success 0 is returned
+ * otherwise -1 is returned. */</doc>
+<use f='redis/src/redis-cli.c' l='989' u='c' c='repl'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1026' type='void sendReplyToClient(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/networking.c' l='173' u='r' c='prepareClientToWrite'/>
+<def f='redis/src/networking.c' l='816' ll='897' type='void sendReplyToClient(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/networking.c' l='1687' u='c' c='flushSlavesOutputBuffers'/>
+<use f='redis/src/replication.c' l='666' u='r' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='1671' u='r' c='replicationResurrectCachedMaster'/>

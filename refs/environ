@@ -1,0 +1,7 @@
+<dec f='redis/src/sentinel.c' l='41' type='char **'/>
+<use f='redis/src/sentinel.c' l='714' u='r' c='sentinelRunPendingScripts'/>
+<dec f='redis/src/setproctitle.c' l='49' type='char **'/>
+<dec f='redis/src/setproctitle.c' l='100' type='char **'/>
+<use f='redis/src/setproctitle.c' l='104' u='r' c='spt_copyenv'/>
+<use f='redis/src/setproctitle.c' l='124' u='w' c='spt_copyenv'/>
+<use f='redis/src/setproctitle.c' l='149' u='r' c='spt_init'/>

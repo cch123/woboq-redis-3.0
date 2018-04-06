@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='1174' ll='1307' type='void zaddGenericCommand(redisClient * c, int incr)'/>
+<use f='redis/src/t_zset.c' l='1310' u='c' c='zaddCommand'/>
+<use f='redis/src/t_zset.c' l='1314' u='c' c='zincrbyCommand'/>
+<doc f='redis/src/t_zset.c' l='1173'>/* This generic command implements both ZADD and ZINCRBY. */</doc>

@@ -1,0 +1,15 @@
+<def f='redis/deps/hiredis/dict.h' l='60' ll='67'/>
+<size>48</size>
+<mbr r='dict::table' o='0' t='dictEntry **'/>
+<mbr r='dict::type' o='64' t='dictType *'/>
+<mbr r='dict::size' o='128' t='unsigned long'/>
+<mbr r='dict::sizemask' o='192' t='unsigned long'/>
+<mbr r='dict::used' o='256' t='unsigned long'/>
+<mbr r='dict::privdata' o='320' t='void *'/>
+<def f='redis/src/dict.h' l='76' ll='82'/>
+<size>96</size>
+<mbr r='dict::type' o='0' t='dictType *'/>
+<mbr r='dict::privdata' o='64' t='void *'/>
+<mbr r='dict::ht' o='128' t='dictht [2]'/>
+<mbr r='dict::rehashidx' o='640' t='long'/>
+<mbr r='dict::iterators' o='704' t='int'/>

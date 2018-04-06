@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='58' type='8'/>
+<use f='redis/src/ae_epoll.c' l='126' macro='1' u='r'/>

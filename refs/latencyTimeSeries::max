@@ -1,0 +1,10 @@
+<dec f='redis/src/latency.h' l='49' type='uint32_t'/>
+<offset>32</offset>
+<doc f='redis/src/latency.h' l='49'>/* Max latency observed for this event. */</doc>
+<use f='redis/src/latency.c' l='107' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='123' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='123' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='164' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='271' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='510' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='551' u='r' c='latencyCommandGenSparkeline'/>

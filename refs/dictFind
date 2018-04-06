@@ -1,0 +1,51 @@
+<dec f='redis/deps/hiredis/dict.h' l='121' type='dictEntry * dictFind(dict * ht, const void * key)'/>
+<use f='redis/deps/hiredis/dict.c' l='168' u='c' c='dictReplace'/>
+<def f='redis/deps/hiredis/dict.c' l='243' ll='256' type='dictEntry * dictFind(dict * ht, const void * key)'/>
+<use f='redis/deps/hiredis/async.c' l='377' u='c' c='__redisGetSubscribeCallback'/>
+<dec f='redis/src/dict.h' l='159' type='dictEntry * dictFind(dict * d, const void * key)'/>
+<use f='redis/src/cluster.c' l='893' u='c' c='clusterLookupNode'/>
+<use f='redis/src/cluster.c' l='1104' u='c' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1117' u='c' c='clusterBlacklistExists'/>
+<use f='redis/src/config.c' l='1695' u='c' c='rewriteConfigRemoveOrphaned'/>
+<use f='redis/src/db.c' l='45' u='c' c='lookupKey'/>
+<use f='redis/src/db.c' l='108' u='c' c='dbOverwrite'/>
+<use f='redis/src/db.c' l='132' u='c' c='dbExists'/>
+<use f='redis/src/db.c' l='151' u='c' c='dbRandomKey'/>
+<use f='redis/src/db.c' l='769' u='c' c='removeExpire'/>
+<use f='redis/src/db.c' l='777' u='c' c='setExpire'/>
+<use f='redis/src/db.c' l='790' u='c' c='getExpire'/>
+<use f='redis/src/db.c' l='794' u='c' c='getExpire'/>
+<use f='redis/src/db.c' l='964' u='c' c='persistCommand'/>
+<use f='redis/src/debug.c' l='291' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='310' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='712' u='c' c='logCurrentClient'/>
+<use f='redis/src/dict.c' l='384' u='c' c='dictReplace'/>
+<use f='redis/src/dict.c' l='403' u='c' c='dictReplaceRaw'/>
+<def f='redis/src/dict.c' l='489' ll='508' type='dictEntry * dictFind(dict * d, const void * key)'/>
+<use f='redis/src/dict.c' l='513' u='c' c='dictFetchValue'/>
+<use f='redis/src/latency.c' l='584' u='c' c='latencyCommand'/>
+<use f='redis/src/multi.c' l='300' u='c' c='touchWatchedKeysOnFlush'/>
+<use f='redis/src/object.c' l='707' u='c' c='objectCommandLookup'/>
+<use f='redis/src/pubsub.c' l='68' u='c' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='100' u='c' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='232' u='c' c='pubsubPublishMessage'/>
+<use f='redis/src/redis.c' l='3146' u='c' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3261' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/replication.c' l='1783' u='c' c='replicationScriptCacheExists'/>
+<use f='redis/src/scripting.c' l='1164' u='c' c='scriptCommand'/>
+<use f='redis/src/scripting.c' l='1177' u='c' c='scriptCommand'/>
+<use f='redis/src/sentinel.c' l='925' u='c' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='3210' u='c' c='sentinelLeaderIncr'/>
+<use f='redis/src/t_hash.c' l='106' u='c' c='hashTypeGetFromHashTable'/>
+<use f='redis/src/t_list.c' l='791' u='c' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='850' u='c' c='signalListAsReady'/>
+<use f='redis/src/t_list.c' l='853' u='c' c='signalListAsReady'/>
+<use f='redis/src/t_list.c' l='975' u='c' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_set.c' l='103' u='c' c='setTypeIsMember'/>
+<use f='redis/src/t_zset.c' l='1257' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1345' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1781' u='c' c='zuiFind'/>
+<use f='redis/src/t_zset.c' l='1803' u='c' c='zuiFind'/>
+<use f='redis/src/t_zset.c' l='2005' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2766' u='c' c='zscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2823' u='c' c='zrankGenericCommand'/>

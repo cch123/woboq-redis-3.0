@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='927' type='int'/>
+<offset>416</offset>
+<doc f='redis/src/redis.h' l='927'>/* The last argument that&apos;s a key */</doc>
+<use f='redis/src/db.c' l='991' u='r' c='getKeysUsingCommandTable'/>
+<use f='redis/src/redis.c' l='2517' u='r' c='addReplyCommand'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='886' type='redisClient *'/>
+<offset>19520</offset>
+<doc f='redis/src/redis.h' l='886'>/* The &quot;fake client&quot; to query Redis from Lua */</doc>
+<use f='redis/src/redis.c' l='1477' u='w' c='initServerConfig'/>
+<use f='redis/src/scripting.c' l='209' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='754' u='r' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='755' u='w' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='756' u='r' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='1009' u='r' c='evalGenericCommand'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/sentinel.c' l='332' type='void sentinelAbortFailover(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='3542' u='c' c='sentinelFailoverWaitStart'/>
+<use f='redis/src/sentinel.c' l='3559' u='c' c='sentinelFailoverSelectSlave'/>
+<use f='redis/src/sentinel.c' l='3580' u='c' c='sentinelFailoverSendSlaveOfNoOne'/>
+<use f='redis/src/sentinel.c' l='3604' u='c' c='sentinelFailoverWaitPromotion'/>
+<def f='redis/src/sentinel.c' l='3775' ll='3786' type='void sentinelAbortFailover(sentinelRedisInstance * ri)'/>
+<doc f='redis/src/sentinel.c' l='3770'>/* Abort a failover in progress:
+ *
+ * This function can only be called before the promoted slave acknowledged
+ * the slave -&gt; master switch. Otherwise the failover can&apos;t be aborted and
+ * will reach its end (possibly by timeout). */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='121' type='void (*)(void *)'/>
+<use f='redis/deps/hiredis/async.c' l='457' u='r' c='redisProcessCallbacks'/>
+<use f='redis/deps/hiredis/async.c' l='469' u='r' c='redisProcessCallbacks'/>
+<offset>256</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='189' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='190' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='578' u='r' c='redisReaderFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='579' u='r' c='redisReaderFree'/>

@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='878' type='char *'/>
+<offset>19200</offset>
+<doc f='redis/src/redis.h' l='878'>/* Cluster auto-generated config file name. */</doc>
+<use f='redis/src/cluster.c' l='313' u='r' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='416' u='r' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='420' u='r' c='clusterInit'/>
+<use f='redis/src/config.c' l='440' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='441' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1852' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1474' u='w' c='initServerConfig'/>

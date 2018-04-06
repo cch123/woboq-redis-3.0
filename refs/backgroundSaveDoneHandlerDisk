@@ -1,0 +1,4 @@
+<def f='redis/src/rdb.c' l='1243' ll='1274' type='void backgroundSaveDoneHandlerDisk(int exitcode, int bysignal)'/>
+<use f='redis/src/rdb.c' l='1375' u='c' c='backgroundSaveDoneHandler'/>
+<doc f='redis/src/rdb.c' l='1241'>/* A background saving child (BGSAVE) terminated its work. Handle this.
+ * This function covers the case of actual BGSAVEs. */</doc>

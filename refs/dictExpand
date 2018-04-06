@@ -1,0 +1,17 @@
+<dec f='redis/deps/hiredis/dict.h' l='116' type='int dictExpand(dict * ht, unsigned long size)'/>
+<def f='redis/deps/hiredis/dict.c' l='88' ll='132' type='int dictExpand(dict * ht, unsigned long size)'/>
+<use f='redis/deps/hiredis/dict.c' l='299' u='c' c='_dictExpandIfNeeded'/>
+<use f='redis/deps/hiredis/dict.c' l='301' u='c' c='_dictExpandIfNeeded'/>
+<doc f='redis/deps/hiredis/dict.c' l='87'>/* Expand or create the hashtable */</doc>
+<dec f='redis/src/dict.h' l='151' type='int dictExpand(dict * d, unsigned long size)'/>
+<use f='redis/src/debug.c' l='336' u='c' c='debugCommand'/>
+<use f='redis/src/dict.c' l='200' u='c' c='dictResize'/>
+<def f='redis/src/dict.c' l='204' ll='234' type='int dictExpand(dict * d, unsigned long size)'/>
+<use f='redis/src/dict.c' l='929' u='c' c='_dictExpandIfNeeded'/>
+<use f='redis/src/dict.c' l='939' u='c' c='_dictExpandIfNeeded'/>
+<doc f='redis/src/dict.c' l='203'>/* Expand or create the hash table */</doc>
+<use f='redis/src/rdb.c' l='872' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='889' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_set.c' l='232' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_zset.c' l='1990' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2039' u='c' c='zunionInterGenericCommand'/>

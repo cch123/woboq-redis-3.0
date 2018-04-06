@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='371' type='int luaO_fb2int(int x)'/>
+<def f='redis/deps/lua/src/lobject.c' l='47' ll='51' type='int luaO_fb2int(int x)'/>
+<doc f='redis/deps/lua/src/lobject.c' l='46'>/* converts back */</doc>
+<use f='redis/deps/lua/src/lvm.c' l='464' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='464' u='c' c='luaV_execute'/>

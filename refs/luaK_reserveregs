@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lcode.h' l='49' type='void luaK_reserveregs(FuncState * fs, int n)'/>
+<def f='redis/deps/lua/src/lcode.c' l='209' ll='212' type='void luaK_reserveregs(FuncState * fs, int n)'/>
+<use f='redis/deps/lua/src/lcode.c' l='287' u='c' c='luaK_setreturns'/>
+<use f='redis/deps/lua/src/lcode.c' l='384' u='c' c='discharge2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='417' u='c' c='luaK_exp2nextreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='508' u='c' c='luaK_self'/>
+<use f='redis/deps/lua/src/lparser.c' l='263' u='c' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='269' u='c' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='572' u='c' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='926' u='c' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='1056' u='c' c='forbody'/>
+<use f='redis/deps/lua/src/lparser.c' l='1083' u='c' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='1170' u='c' c='localfunc'/>

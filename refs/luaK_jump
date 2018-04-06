@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lcode.h' l='64' type='int luaK_jump(FuncState * fs)'/>
+<def f='redis/deps/lua/src/lcode.c' l='59' ll='66' type='int luaK_jump(FuncState * fs)'/>
+<use f='redis/deps/lua/src/lcode.c' l='76' u='c' c='condjump'/>
+<use f='redis/deps/lua/src/lcode.c' l='399' u='c' c='exp2reg'/>
+<use f='redis/deps/lua/src/lparser.c' l='987' u='c' c='breakstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1003' u='c' c='whilestat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1030' u='c' c='repeatstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1053' u='c' c='forbody'/>
+<use f='redis/deps/lua/src/lparser.c' l='1063' u='c' c='forbody'/>
+<use f='redis/deps/lua/src/lparser.c' l='1148' u='c' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1153' u='c' c='ifstat'/>

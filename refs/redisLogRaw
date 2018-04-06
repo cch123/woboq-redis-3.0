@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1241' type='void redisLogRaw(int level, const char * msg)'/>
+<use f='redis/src/debug.c' l='827' u='c' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='830' u='c' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='889' u='c' c='redisLogHexDump'/>
+<use f='redis/src/debug.c' l='893' u='c' c='redisLogHexDump'/>
+<def f='redis/src/redis.c' l='295' ll='334' type='void redisLogRaw(int level, const char * msg)'/>
+<use f='redis/src/redis.c' l='349' u='c' c='redisLog'/>
+<use f='redis/src/redis.c' l='3460' u='c' c='redisAsciiArt'/>
+<doc f='redis/src/redis.c' l='293'>/* Low level logging. To use only for very big messages, otherwise
+ * redisLog() is to prefer. */</doc>
+<use f='redis/src/scripting.c' l='539' u='c' c='luaLogCommand'/>

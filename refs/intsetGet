@@ -1,0 +1,8 @@
+<dec f='redis/src/intset.h' l='46' type='uint8_t intsetGet(intset * is, uint32_t pos, int64_t * value)'/>
+<use f='redis/src/aof.c' l='834' u='c' c='rewriteSetObject'/>
+<use f='redis/src/db.c' l='516' u='c' c='scanGenericCommand'/>
+<def f='redis/src/intset.c' l='266' ll='272' type='uint8_t intsetGet(intset * is, uint32_t pos, int64_t * value)'/>
+<doc f='redis/src/intset.c' l='264'>/* Sets the value to the value at the given position. When this position is
+ * out of range the function returns 0, when in range it returns 1. */</doc>
+<use f='redis/src/t_set.c' l='151' u='c' c='setTypeNext'/>
+<use f='redis/src/t_zset.c' l='1659' u='c' c='zuiNext'/>

@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='131' type='int'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='404' u='w' c='emptybuffer'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='411' u='r' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='417' u='r' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='422' u='r' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='424' u='w' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='424' u='r' c='adjuststack'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='449' u='r' c='luaL_pushresult'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='450' u='w' c='luaL_pushresult'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='466' u='w' c='luaL_addvalue'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='475' u='w' c='luaL_buffinit'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lauxlib.h' l='131'>/* number of strings in the stack (level) */</doc>

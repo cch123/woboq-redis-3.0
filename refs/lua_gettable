@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lua.h' l='177' type='void lua_gettable(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='534' ll='541' macro='1' type='void lua_gettable(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='265' u='c' c='ll_register'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='630' u='c' c='add_value'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='388' u='c' c='mp_encode_lua_table_as_array'/>
+<use f='redis/src/scripting.c' l='183' u='c' c='luaSortArray'/>
+<use f='redis/src/scripting.c' l='194' u='c' c='luaSortArray'/>
+<use f='redis/src/scripting.c' l='446' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='820' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='833' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='848' u='c' c='luaReplyToRedisReply'/>

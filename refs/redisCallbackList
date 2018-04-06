@@ -1,0 +1,5 @@
+<def f='redis/deps/hiredis/async.h' l='52' ll='54'/>
+<size>16</size>
+<doc f='redis/deps/hiredis/async.h' l='51'>/* List of callbacks for either regular replies or pub/sub */</doc>
+<mbr r='redisCallbackList::head' o='0' t='redisCallback *'/>
+<mbr r='redisCallbackList::tail' o='64' t='redisCallback *'/>

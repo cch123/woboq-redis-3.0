@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1398' type='void randomkeyCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='323' ll='333' type='void randomkeyCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='214' u='r'/>
+<use f='redis/src/redis.c' l='214' u='r'/>
+<use f='redis/src/redis.c' l='214' u='r'/>
+<use f='redis/src/redis.c' l='214' u='r'/>

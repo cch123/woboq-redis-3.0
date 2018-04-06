@@ -1,0 +1,13 @@
+<def f='redis/src/cluster.c' l='1374' ll='1401' type='int nodeUpdateAddressIfNeeded(clusterNode * node, clusterLink * link, int port)'/>
+<use f='redis/src/cluster.c' l='1682' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1720' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='1364'>/* Update the node address to the IP address that can be extracted
+ * from link-&gt;fd, and at the specified port.
+ * Also disconnect the node link so that we&apos;ll connect again to the new
+ * address.
+ *
+ * If the ip/port pair are already correct no operation is performed at
+ * all.
+ *
+ * The function returns 0 if the node address is still the same,
+ * otherwise 1 is returned. */</doc>

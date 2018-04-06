@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lstate.h' l='112' type='int'/>
+<offset>704</offset>
+<use f='redis/deps/lua/src/ldo.c' l='145' u='r' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='146' u='w' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='162' u='r' c='luaD_growstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='163' u='r' c='luaD_growstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='165' u='r' c='luaD_growstack'/>
+<use f='redis/deps/lua/src/lgc.c' l='249' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='250' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='251' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='304' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lstate.c' l='50' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='52' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='63' u='r' c='freestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='87' u='w' c='preinit_state'/>

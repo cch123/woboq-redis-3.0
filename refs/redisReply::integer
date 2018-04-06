@@ -1,0 +1,14 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='100' type='long long'/>
+<use f='redis/deps/hiredis/async.c' l='388' u='r' c='__redisGetSubscribeCallback'/>
+<offset>64</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='100'>/* The integer when type is REDIS_REPLY_INTEGER */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='161' u='w' c='createIntegerObject'/>
+<use f='redis/src/redis-cli.c' l='428' u='r' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='501' u='r' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='531' u='r' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='1602' u='r' c='getDbSize'/>
+<use f='redis/src/redis-cli.c' l='1691' u='r' c='getKeySizes'/>
+<use f='redis/src/sentinel.c' l='3100' u='r' c='sentinelReceiveIsMasterDownReply'/>
+<use f='redis/src/sentinel.c' l='3109' u='r' c='sentinelReceiveIsMasterDownReply'/>
+<use f='redis/src/sentinel.c' l='3113' u='r' c='sentinelReceiveIsMasterDownReply'/>
+<use f='redis/src/sentinel.c' l='3115' u='r' c='sentinelReceiveIsMasterDownReply'/>

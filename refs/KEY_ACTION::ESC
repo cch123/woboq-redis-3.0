@@ -1,0 +1,4 @@
+<dec f='redis/deps/linenoise/linenoise.c' l='168' type='27'/>
+<use f='redis/deps/linenoise/linenoise.c' l='276' u='r' c='getCursorPosition'/>
+<use f='redis/deps/linenoise/linenoise.c' l='814' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='168'>/* Escape */</doc>

@@ -1,0 +1,21 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='158' type='void freeReplyObject(void * reply)'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='157'>/* Function to free the reply objects hiredis returns by default. */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='57' u='r'/>
+<use f='redis/deps/hiredis/hiredis.c' l='57' u='r'/>
+<def f='redis/deps/hiredis/hiredis.c' l='72' ll='95' type='void freeReplyObject(void * reply)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='83' u='c' c='freeReplyObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='107' u='c' c='createStringObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='139' u='c' c='createArrayObject'/>
+<doc f='redis/deps/hiredis/hiredis.c' l='71'>/* Free a reply object */</doc>
+<use f='redis/src/redis-cli.c' l='352' u='c' c='cliAuth'/>
+<use f='redis/src/redis-cli.c' l='367' u='c' c='cliSelect'/>
+<use f='redis/src/redis-cli.c' l='630' u='c' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='1114' u='c' c='latencyMode'/>
+<use f='redis/src/redis-cli.c' l='1257' u='c' c='latencyDistMode'/>
+<use f='redis/src/redis-cli.c' l='1469' u='c' c='pipeMode'/>
+<use f='redis/src/redis-cli.c' l='1603' u='c' c='getDbSize'/>
+<use f='redis/src/redis-cli.c' l='1649' u='c' c='getKeyTypes'/>
+<use f='redis/src/redis-cli.c' l='1694' u='c' c='getKeySizes'/>
+<use f='redis/src/redis-cli.c' l='1790' u='c' c='findBigKeys'/>
+<use f='redis/src/redis-cli.c' l='1971' u='c' c='statMode'/>
+<use f='redis/src/redis-cli.c' l='2003' u='c' c='scanMode'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1191' type='void backgroundRewriteDoneHandler(int exitcode, int bysignal)'/>
+<def f='redis/src/aof.c' l='1364' ll='1506' type='void backgroundRewriteDoneHandler(int exitcode, int bysignal)'/>
+<doc f='redis/src/aof.c' l='1362'>/* A background append only file rewriting (BGREWRITEAOF) terminated its work.
+ * Handle this. */</doc>
+<use f='redis/src/redis.c' l='1170' u='c' c='serverCron'/>

@@ -1,0 +1,15 @@
+<dec f='include/x86_64-linux-gnu/sys/time.h' l='71' type='int gettimeofday(struct timeval *restrict __tv, __timezone_ptr_t __tz)'/>
+<doc f='include/x86_64-linux-gnu/sys/time.h' l='66'>/* Get the current time of day and timezone information,
+   putting it into *TV and *TZ.  If TZ is NULL, *TZ is not filled.
+   Returns 0 on success, -1 on errors.
+   NOTE: This form of timezone information is obsolete.
+   Use the functions and variables declared in &lt;time.h&gt; instead.  */</doc>
+<use f='redis/src/ae.c' l='184' u='c' c='aeGetTime'/>
+<use f='redis/src/dict.c' l='293' u='c' c='timeInMilliseconds'/>
+<use f='redis/src/redis-cli.c' l='131' u='c' c='ustime'/>
+<use f='redis/src/redis.c' l='317' u='c' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='385' u='c' c='ustime'/>
+<use f='redis/src/redis.c' l='2469' u='c' c='timeCommand'/>
+<use f='redis/src/redis.c' l='3581' u='c' c='main'/>
+<use f='redis/src/replication.c' l='269' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/util.c' l='492' u='c' c='getRandomHexChars'/>

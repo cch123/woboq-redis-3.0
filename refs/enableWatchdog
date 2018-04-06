@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1551' type='void enableWatchdog(int period)'/>
+<use f='redis/src/config.c' l='912' u='c' c='configSetCommand'/>
+<def f='redis/src/debug.c' l='931' ll='951' type='void enableWatchdog(int period)'/>
+<doc f='redis/src/debug.c' l='930'>/* Enable the software watchdog with the specified period in milliseconds. */</doc>

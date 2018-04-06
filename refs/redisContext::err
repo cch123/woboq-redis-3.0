@@ -1,0 +1,19 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='167' type='int'/>
+<use f='redis/deps/hiredis/async.c' l='146' u='r' c='__redisAsyncCopyError'/>
+<use f='redis/deps/hiredis/async.c' l='444' u='w' c='redisProcessCallbacks'/>
+<offset>0</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='167'>/* Error flags, 0 when there is no error */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='976' u='w' c='__redisSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='996' u='w' c='redisContextInit'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1139' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1175' u='r' c='redisBufferWrite'/>
+<use f='redis/src/redis-cli.c' l='386' u='r' c='cliConnect'/>
+<use f='redis/src/redis-cli.c' l='568' u='r' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='571' u='r' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='722' u='r' c='reconnectingRedisCommand'/>
+<use f='redis/src/redis-cli.c' l='724' u='r' c='reconnectingRedisCommand'/>
+<use f='redis/src/redis-cli.c' l='738' u='r' c='reconnectingRedisCommand'/>
+<use f='redis/src/redis-cli.c' l='738' u='r' c='reconnectingRedisCommand'/>
+<use f='redis/src/redis-cli.c' l='1640' u='r' c='getKeyTypes'/>
+<use f='redis/src/redis-cli.c' l='1681' u='r' c='getKeySizes'/>
+<use f='redis/src/redis-cli.c' l='2082' u='r' c='LRUTestMode'/>

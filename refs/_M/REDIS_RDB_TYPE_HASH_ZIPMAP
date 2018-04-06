@@ -1,0 +1,4 @@
+<dec f='redis/src/rdb.h' l='79'/>
+<doc f='redis/src/rdb.h' l='78'>/* Object types for encoded objects. */</doc>
+<use f='redis/src/rdb.c' l='998' u='c'/>
+<use f='redis/src/rdb.c' l='1019' u='c'/>

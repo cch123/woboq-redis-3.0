@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lstate.h' l='92' type='struct Table *[9]'/>
+<use f='redis/deps/lua/src/lapi.c' l='601' u='r' c='lua_getmetatable'/>
+<use f='redis/deps/lua/src/lapi.c' l='724' u='w' c='lua_setmetatable'/>
+<offset>1792</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='92'>/* metatables for basic types */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='496' u='r' c='markmt'/>
+<use f='redis/deps/lua/src/lgc.c' l='496' u='r' c='markmt'/>
+<use f='redis/deps/lua/src/lgc.c' l='496' u='r' c='markmt'/>
+<use f='redis/deps/lua/src/lstate.c' l='181' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/ltm.c' l='71' u='r' c='luaT_gettmbyobj'/>

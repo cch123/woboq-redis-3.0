@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1357' type='char * sentinelHandleConfiguration(char ** argv, int argc)'/>
+<use f='redis/src/config.c' l='540' u='c' c='loadServerConfigFromString'/>
+<def f='redis/src/sentinel.c' l='1334' ll='1446' type='char * sentinelHandleConfiguration(char ** argv, int argc)'/>
+<doc f='redis/src/sentinel.c' l='1333'>/* ============================ Config handling ============================= */</doc>

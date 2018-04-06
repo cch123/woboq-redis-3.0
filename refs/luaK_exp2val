@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lcode.h' l='56' type='void luaK_exp2val(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='436' ll='441' type='void luaK_exp2val(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='445' u='c' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='754' u='c' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lparser.c' l='422' u='c' c='yindex'/>

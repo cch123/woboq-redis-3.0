@@ -1,0 +1,4 @@
+<def f='redis/src/adlist.h' l='42' ll='45'/>
+<size>16</size>
+<mbr r='listIter::next' o='0' t='listNode *'/>
+<mbr r='listIter::direction' o='64' t='int'/>

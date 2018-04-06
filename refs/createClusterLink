@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='539' ll='547' type='clusterLink * createClusterLink(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='597' u='c' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='3078' u='c' c='clusterCron'/>
+<doc f='redis/src/cluster.c' l='535'>/* -----------------------------------------------------------------------------
+ * CLUSTER communication link
+ * -------------------------------------------------------------------------- */</doc>

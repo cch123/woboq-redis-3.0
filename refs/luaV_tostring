@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lvm.h' l='28' type='int luaV_tostring(lua_State * L, StkId obj)'/>
+<use f='redis/deps/lua/src/lapi.c' l='347' u='c' c='lua_tolstring'/>
+<use f='redis/deps/lua/src/lapi.c' l='370' u='c' c='lua_objlen'/>
+<def f='redis/deps/lua/src/lvm.c' l='47' ll='57' type='int luaV_tostring(lua_State * L, StkId obj)'/>
+<use f='redis/deps/lua/src/lvm.c' l='286' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='290' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='297' macro='1' u='c'/>

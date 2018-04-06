@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.h' l='116' type='int'/>
+<use f='redis/src/cluster.c' l='404' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1918' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2757' u='w' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2830' u='r' c='clusterHandleSlaveFailover'/>
+<offset>3146176</offset>
+<doc f='redis/src/cluster.h' l='116'>/* Number of votes received so far. */</doc>

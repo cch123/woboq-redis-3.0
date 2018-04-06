@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='504'/>
+<use f='redis/deps/lua/src/luaconf.h' l='557' u='a'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='495'>/*
+** {==================================================================
+@@ LUA_NUMBER is the type of numbers in Lua.
+** CHANGE the following definitions only if you want to build Lua
+** with a number type different from double. You may also need to
+** change lua_number2int &amp; lua_number2integer.
+** ===================================================================
+*/</doc>
+<use f='redis/deps/lua/src/lua_bit.c' l='49' u='a'/>
+<use f='redis/deps/lua/src/lua_bit.c' l='66' u='a'/>
+<use f='redis/deps/lua/src/lua_bit.c' l='170' u='a'/>

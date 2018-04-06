@@ -1,0 +1,2 @@
+<use f='redis/deps/lua/src/loslib.c' l='140' u='r' c='os_date'/>
+<use f='redis/deps/lua/src/loslib.c' l='180' u='w' c='os_time'/>

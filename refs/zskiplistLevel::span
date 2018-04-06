@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='589' type='unsigned int'/>
+<offset>64</offset>
+<use f='redis/src/t_zset.c' l='75' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='124' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='138' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='148' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='148' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='149' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='154' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='171' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='171' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='174' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='361' u='r' c='zslDeleteRangeByRank'/>
+<use f='redis/src/t_zset.c' l='362' u='r' c='zslDeleteRangeByRank'/>
+<use f='redis/src/t_zset.c' l='397' u='r' c='zslGetRank'/>
+<use f='redis/src/t_zset.c' l='417' u='r' c='zslGetElementByRank'/>
+<use f='redis/src/t_zset.c' l='419' u='r' c='zslGetElementByRank'/>

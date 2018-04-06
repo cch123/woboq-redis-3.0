@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='21' type='void luaG_typeerror(lua_State * L, const TValue * o, const char * opname)'/>
+<def f='redis/deps/lua/src/ldebug.c' l='567' ll='578' type='void luaG_typeerror(lua_State * L, const TValue * o, const char * op)'/>
+<use f='redis/deps/lua/src/ldebug.c' l='584' u='c' c='luaG_concaterror'/>
+<use f='redis/deps/lua/src/ldebug.c' l='592' u='c' c='luaG_aritherror'/>
+<use f='redis/deps/lua/src/ldo.c' l='249' u='c' c='tryfuncTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='123' u='c' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='152' u='c' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='528' u='c' c='luaV_execute'/>

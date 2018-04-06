@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1323' type='robj * dbRandomKey(redisDb * db)'/>
+<def f='redis/src/db.c' l='139' ll='159' type='robj * dbRandomKey(redisDb * db)'/>
+<use f='redis/src/db.c' l='326' u='c' c='randomkeyCommand'/>
+<doc f='redis/src/db.c' l='135'>/* Return a random key, in form of a Redis object.
+ * If there are no keys, NULL is returned.
+ *
+ * The function makes sure to return keys not already expired. */</doc>

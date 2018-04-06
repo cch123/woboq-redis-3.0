@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='128' type='void lua_xmove(lua_State * from, lua_State * to, int n)'/>
+<def f='redis/deps/lua/src/lapi.c' l='110' ll='122' macro='1' type='void lua_xmove(lua_State * from, lua_State * to, int n)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='526' u='c' c='auxresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='533' u='c' c='auxresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='537' u='c' c='auxresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='581' u='c' c='luaB_cocreate'/>
+<use f='redis/deps/lua/src/ldblib.c' l='94' u='c' c='treatstackoption'/>
+<use f='redis/deps/lua/src/ldblib.c' l='114' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='153' u='c' c='db_getlocal'/>
+<use f='redis/deps/lua/src/ldblib.c' l='173' u='c' c='db_setlocal'/>

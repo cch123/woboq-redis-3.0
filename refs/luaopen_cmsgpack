@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lua_cmsgpack.c' l='903' ll='913' macro='1' type='int luaopen_cmsgpack(lua_State * L)'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='918' u='c' c='luaopen_cmsgpack_safe'/>
+<dec f='redis/src/scripting.c' l='576' type='int luaopen_cmsgpack(lua_State * L)'/>
+<use f='redis/src/scripting.c' l='587' u='r' c='luaLoadLibraries'/>

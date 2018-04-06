@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='751' type='time_t'/>
+<use f='redis/src/aof.c' l='236' u='w' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='427' u='w' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='429' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='431' u='w' c='flushAppendOnlyFile'/>
+<offset>13312</offset>
+<doc f='redis/src/redis.h' l='751'>/* UNIX time of last fsync() */</doc>
+<use f='redis/src/redis.c' l='1432' u='w' c='initServerConfig'/>

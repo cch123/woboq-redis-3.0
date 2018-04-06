@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldo.c' l='45' type='struct lua_longjmp *'/>
+<use f='redis/deps/lua/src/ldo.c' l='114' u='w' c='luaD_rawrunprotected'/>
+<use f='redis/deps/lua/src/ldo.c' l='119' u='r' c='luaD_rawrunprotected'/>
+<offset>0</offset>

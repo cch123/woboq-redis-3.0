@@ -1,0 +1,2 @@
+<def f='redis/src/ae_epoll.c' l='58' ll='63' type='int aeApiResize(aeEventLoop * eventLoop, int setsize)'/>
+<use f='redis/src/ae.c' l='111' u='c' c='aeResizeSetSize'/>

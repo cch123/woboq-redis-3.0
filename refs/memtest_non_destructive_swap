@@ -1,0 +1,6 @@
+<dec f='redis/src/debug.c' l='724' type='void memtest_non_destructive_swap(void * addr, size_t size)'/>
+<use f='redis/src/debug.c' l='775' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='777' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='787' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='789' u='c' c='memtest_test_linux_anonymous_maps'/>
+<def f='redis/src/memtest.c' l='256' ll='270' type='void memtest_non_destructive_swap(void * addr, size_t size)'/>

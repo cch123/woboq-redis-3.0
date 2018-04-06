@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='787' type='int'/>
+<offset>14912</offset>
+<doc f='redis/src/redis.h' l='787'>/* of each slave in diskless SYNC. */</doc>
+<use f='redis/src/rdb.c' l='1307' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1316' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1324' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1404' u='w' c='rdbSaveToSlavesSockets'/>

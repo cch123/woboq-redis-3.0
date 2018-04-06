@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='37'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='34'>/*
+** size and position of opcode arguments.
+*/</doc>

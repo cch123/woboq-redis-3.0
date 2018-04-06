@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/ldo.h' l='54' type='void luaD_seterrorobj(lua_State * L, int errcode, StkId oldtop)'/>
+<def f='redis/deps/lua/src/ldo.c' l='51' ll='68' type='void luaD_seterrorobj(lua_State * L, int errcode, StkId oldtop)'/>
+<use f='redis/deps/lua/src/ldo.c' l='85' u='c' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='431' u='c' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='468' u='c' c='luaD_pcall'/>

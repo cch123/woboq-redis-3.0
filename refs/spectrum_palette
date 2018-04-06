@@ -1,0 +1,6 @@
+<def f='redis/src/redis-cli.c' l='75' type='int *'/>
+<use f='redis/src/redis-cli.c' l='793' u='w' c='parseOptions'/>
+<use f='redis/src/redis-cli.c' l='1174' u='r' c='showLatencyDistSamples'/>
+<use f='redis/src/redis-cli.c' l='1196' u='r' c='showLatencyDistLegend'/>
+<use f='redis/src/redis-cli.c' l='2208' u='w' c='main'/>
+<doc f='redis/src/redis-cli.c' l='74'>/* The actual palette in use. */</doc>

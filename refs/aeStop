@@ -1,0 +1,2 @@
+<dec f='redis/src/ae.h' l='103' type='void aeStop(aeEventLoop * eventLoop)'/>
+<def f='redis/src/ae.c' l='131' ll='133' type='void aeStop(aeEventLoop * eventLoop)'/>

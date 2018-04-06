@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='204' type='unsigned int'/>
+<offset>96</offset>
+<use f='redis/deps/lua/src/lstring.c' l='36' u='r' c='luaS_resize'/>
+<use f='redis/deps/lua/src/lstring.c' l='58' u='w' c='newlstr'/>
+<use f='redis/deps/lua/src/ltable.c' l='52' u='r' c='mainposition'/>
+<use f='redis/deps/lua/src/ltable.c' l='52' u='r' c='luaH_getstr'/>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='377' type='void luaO_chunkid(char * out, const char * source, size_t len)'/>
+<use f='redis/deps/lua/src/ldebug.c' l='163' u='c' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='172' u='c' c='info_tailcall'/>
+<use f='redis/deps/lua/src/ldebug.c' l='612' u='c' c='addinfo'/>
+<use f='redis/deps/lua/src/llex.c' l='104' u='c' c='luaX_lexerror'/>
+<def f='redis/deps/lua/src/lobject.c' l='182' ll='214' type='void luaO_chunkid(char * out, const char * source, size_t bufflen)'/>

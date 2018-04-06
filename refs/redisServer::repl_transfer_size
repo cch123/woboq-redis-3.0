@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='823' type='off_t'/>
+<offset>16512</offset>
+<doc f='redis/src/redis.h' l='823'>/* Size of RDB to read from master during sync. */</doc>
+<use f='redis/src/redis.c' l='2895' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='877' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='917' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='922' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='925' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='934' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='995' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1362' u='w' c='syncWithMaster'/>

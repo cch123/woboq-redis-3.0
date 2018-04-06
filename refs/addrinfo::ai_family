@@ -1,0 +1,12 @@
+<dec f='include/netdb.h' l='570' type='int'/>
+<use f='redis/deps/hiredis/net.c' l='266' u='w' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='275' u='w' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='282' u='r' c='_redisContextConnectTcp'/>
+<offset>32</offset>
+<doc f='include/netdb.h' l='570'>/* Protocol family for socket.  */</doc>
+<use f='redis/src/anet.c' l='211' u='w' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='218' u='r' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='276' u='w' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='287' u='r' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='453' u='w' c='_anetTcpServer'/>
+<use f='redis/src/anet.c' l='462' u='r' c='_anetTcpServer'/>

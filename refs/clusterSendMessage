@@ -1,0 +1,12 @@
+<def f='redis/src/cluster.c' l='2065' ll='2072' type='void clusterSendMessage(clusterLink * link, unsigned char * msg, size_t msglen)'/>
+<use f='redis/src/cluster.c' l='2091' u='c' c='clusterBroadcastMessage'/>
+<use f='redis/src/cluster.c' l='2271' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2347' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2382' u='c' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2431' u='c' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2444' u='c' c='clusterSendMFStart'/>
+<doc f='redis/src/cluster.c' l='2060'>/* Put stuff into the send buffer.
+ *
+ * It is guaranteed that this function will never have as a side effect
+ * the link to be invalidated, so it is safe to call this function
+ * from event handlers that will do stuff with the same link later. */</doc>

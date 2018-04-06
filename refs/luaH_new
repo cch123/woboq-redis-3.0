@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/ltable.h' l='27' type='Table * luaH_new(lua_State * L, int narray, int lnhash)'/>
+<use f='redis/deps/lua/src/lapi.c' l='581' u='c' c='lua_createtable'/>
+<use f='redis/deps/lua/src/ldebug.c' l='182' u='c' c='collectvalidlines'/>
+<use f='redis/deps/lua/src/ldo.c' l='221' u='c' c='adjust_varargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='347' u='c' c='open_func'/>
+<use f='redis/deps/lua/src/lstate.c' l='74' u='c' c='f_luaopen'/>
+<use f='redis/deps/lua/src/lstate.c' l='75' u='c' c='f_luaopen'/>
+<def f='redis/deps/lua/src/ltable.c' l='358' ll='371' type='Table * luaH_new(lua_State * L, int narray, int nhash)'/>
+<doc f='redis/deps/lua/src/ltable.c' l='353'>/*
+** }=============================================================
+*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='464' u='c' c='luaV_execute'/>

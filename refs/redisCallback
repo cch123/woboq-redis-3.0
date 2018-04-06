@@ -1,0 +1,5 @@
+<def f='redis/deps/hiredis/async.h' l='45' ll='49'/>
+<size>24</size>
+<mbr r='redisCallback::next' o='0' t='struct redisCallback *'/>
+<mbr r='redisCallback::fn' o='64' t='redisCallbackFn *'/>
+<mbr r='redisCallback::privdata' o='128' t='void *'/>

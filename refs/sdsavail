@@ -1,0 +1,13 @@
+<def f='redis/deps/hiredis/sds.h' l='52' ll='55' type='size_t sdsavail(const sds s)'/>
+<dec f='redis/deps/hiredis/sds.h' l='63' type='size_t sdsavail(const sds s)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='595' u='c' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/sds.c' l='131' u='c' c='sdsMakeRoomFor'/>
+<def f='redis/src/sds.h' l='52' ll='55' type='size_t sdsavail(const sds s)'/>
+<dec f='redis/src/sds.h' l='63' type='size_t sdsavail(const sds s)'/>
+<use f='redis/src/aof.c' l='406' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/debug.c' l='324' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='326' u='c' c='debugCommand'/>
+<use f='redis/src/networking.c' l='1346' u='c' c='catClientInfoString'/>
+<use f='redis/src/object.c' l='434' u='c' c='tryObjectEncoding'/>
+<use f='redis/src/redis.c' l='955' u='c' c='clientsCronResizeQueryBuffer'/>
+<use f='redis/src/sds.c' l='131' u='c' c='sdsMakeRoomFor'/>

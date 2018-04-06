@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='71' type='void strbuf_append_fmt_retry(strbuf_t * s, const char * format)'/>
+<def f='redis/deps/lua/src/strbuf.c' l='221' ll='248' type='void strbuf_append_fmt_retry(strbuf_t * s, const char * fmt)'/>
+<doc f='redis/deps/lua/src/strbuf.c' l='219'>/* strbuf_append_fmt_retry() can be used when the there is no known
+ * upper bound for the output string. */</doc>

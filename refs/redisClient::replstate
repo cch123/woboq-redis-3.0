@@ -1,0 +1,39 @@
+<dec f='redis/src/redis.h' l='537' type='int'/>
+<use f='redis/src/aof.c' l='568' u='w' c='createFakeClient'/>
+<offset>1280</offset>
+<doc f='redis/src/redis.h' l='537'>/* replication state if this is a slave */</doc>
+<use f='redis/src/networking.c' l='102' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='168' u='r' c='prepareClientToWrite'/>
+<use f='redis/src/networking.c' l='169' u='r' c='prepareClientToWrite'/>
+<use f='redis/src/networking.c' l='758' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1684' u='r' c='flushSlavesOutputBuffers'/>
+<use f='redis/src/rdb.c' l='1336' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1420' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1423' u='w' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='2939' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2952' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='245' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='400' u='w' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='533' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='539' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='544' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='553' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='560' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='570' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='631' u='r' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='662' u='w' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='755' u='r' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='757' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='758' u='r' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='775' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='792' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='813' u='r' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1531' u='r' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1696' u='r' c='refreshGoodSlavesCount'/>
+<use f='redis/src/replication.c' l='1831' u='r' c='replicationCountAcksByOffset'/>
+<use f='redis/src/replication.c' l='2003' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2004' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2023' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2076' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2095' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2096' u='w' c='replicationCron'/>

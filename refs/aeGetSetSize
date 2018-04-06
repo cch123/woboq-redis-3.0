@@ -1,0 +1,4 @@
+<dec f='redis/src/ae.h' l='117' type='int aeGetSetSize(aeEventLoop * eventLoop)'/>
+<def f='redis/src/ae.c' l='95' ll='97' type='int aeGetSetSize(aeEventLoop * eventLoop)'/>
+<doc f='redis/src/ae.c' l='94'>/* Return the current set size. */</doc>
+<use f='redis/src/config.c' l='655' u='c' c='configSetCommand'/>

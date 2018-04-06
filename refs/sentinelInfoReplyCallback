@@ -1,0 +1,2 @@
+<def f='redis/src/sentinel.c' l='2028' ll='2040' type='void sentinelInfoReplyCallback(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='2374' u='r' c='sentinelSendPeriodicCommands'/>

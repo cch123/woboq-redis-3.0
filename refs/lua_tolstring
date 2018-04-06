@@ -1,0 +1,37 @@
+<dec f='redis/deps/lua/src/lua.h' l='149' type='const char * lua_tolstring(lua_State * L, int idx, size_t * len)'/>
+<def f='redis/deps/lua/src/lapi.c' l='343' ll='358' macro='1' type='const char * lua_tolstring(lua_State * L, int idx, size_t * len)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='159' u='c' c='luaL_checklstring'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='353' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='457' u='c' c='luaL_addvalue'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='545' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='581' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='642' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='40' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='308' u='c' c='generic_reader'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='360' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='402' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='112' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='311' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='50' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='202' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='352' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='356' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='362' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='376' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='376' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='422' macro='1' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='471' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='551' u='c' c='gmatch_aux'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='552' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='593' u='c' c='add_s'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='470' u='c' c='json_append_string'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='343' u='c' c='mp_encode_lua_string'/>
+<use f='redis/src/scripting.c' l='260' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='475' u='c' c='luaRedisSha1hexCommand'/>
+<use f='redis/src/scripting.c' l='533' u='c' c='luaLogCommand'/>
+<use f='redis/src/scripting.c' l='807' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='823' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='836' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='899' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='907' macro='1' u='c'/>
+<use f='redis/src/scripting.c' l='1058' macro='1' u='c'/>

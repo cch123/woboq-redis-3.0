@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='763' ll='766' type='int clusterNodeFailureReportsCount(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='1154' u='c' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='4173' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='760'>/* Return the number of external nodes that believe &apos;node&apos; is failing,
+ * not including this node, that may have a PFAIL or FAIL state for this
+ * node as well. */</doc>

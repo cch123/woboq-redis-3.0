@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='372' type='int luaO_rawequalObj(const TValue * t1, const TValue * t2)'/>
+<use f='redis/deps/lua/src/lapi.c' l='283' u='c' c='lua_rawequal'/>
+<def f='redis/deps/lua/src/lobject.c' l='72' ll='87' type='int luaO_rawequalObj(const TValue * t1, const TValue * t2)'/>
+<use f='redis/deps/lua/src/ltable.c' l='147' u='c' c='findindex'/>
+<use f='redis/deps/lua/src/ltable.c' l='484' u='c' c='luaH_get'/>
+<use f='redis/deps/lua/src/lvm.c' l='184' u='c' c='get_compTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='196' u='c' c='call_orderTM'/>

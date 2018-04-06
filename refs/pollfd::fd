@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/poll.h' l='41' type='int'/>
+<use f='redis/deps/hiredis/net.c' l='183' u='w' c='redisContextWaitReady'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/sys/poll.h' l='41'>/* File descriptor to poll.  */</doc>
+<use f='redis/src/ae.c' l='435' u='w' c='aeWait'/>

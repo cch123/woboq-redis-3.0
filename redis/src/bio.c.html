@@ -1,0 +1,239 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>bio.c source code [redis/src/bio.c] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="bio_job "/>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/bio.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='bio.c.html'>bio.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Background I/O service for Redis.</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * This file implements operations that we need to perform in the background.</i></td></tr>
+<tr><th id="4">4</th><td><i> * Currently there is only a single operation, that is a background close(2)</i></td></tr>
+<tr><th id="5">5</th><td><i> * system call. This is needed as when the process is the last owner of a</i></td></tr>
+<tr><th id="6">6</th><td><i> * reference to a file closing it means unlinking it, and the deletion of the</i></td></tr>
+<tr><th id="7">7</th><td><i> * file is slow, blocking the server.</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> * In the future we'll either continue implementing new things we need or</i></td></tr>
+<tr><th id="10">10</th><td><i> * we'll switch to libeio. However there are probably long term uses for this</i></td></tr>
+<tr><th id="11">11</th><td><i> * file as we may want to put here Redis specific background tasks (for instance</i></td></tr>
+<tr><th id="12">12</th><td><i> * it is not impossible that we'll need a non blocking FLUSHDB/FLUSHALL</i></td></tr>
+<tr><th id="13">13</th><td><i> * implementation).</i></td></tr>
+<tr><th id="14">14</th><td><i> *</i></td></tr>
+<tr><th id="15">15</th><td><i> * DESIGN</i></td></tr>
+<tr><th id="16">16</th><td><i> * ------</i></td></tr>
+<tr><th id="17">17</th><td><i> *</i></td></tr>
+<tr><th id="18">18</th><td><i> * The design is trivial, we have a structure representing a job to perform</i></td></tr>
+<tr><th id="19">19</th><td><i> * and a different thread and job queue for every job type.</i></td></tr>
+<tr><th id="20">20</th><td><i> * Every thread wait for new jobs in its queue, and process every job</i></td></tr>
+<tr><th id="21">21</th><td><i> * sequentially.</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * Jobs of the same type are guaranteed to be processed from the least</i></td></tr>
+<tr><th id="24">24</th><td><i> * recently inserted to the most recently inserted (older jobs processed</i></td></tr>
+<tr><th id="25">25</th><td><i> * first).</i></td></tr>
+<tr><th id="26">26</th><td><i> *</i></td></tr>
+<tr><th id="27">27</th><td><i> * Currently there is no way for the creator of the job to be notified about</i></td></tr>
+<tr><th id="28">28</th><td><i> * the completion of the operation, this will only be added when/if needed.</i></td></tr>
+<tr><th id="29">29</th><td><i> *</i></td></tr>
+<tr><th id="30">30</th><td><i> * ----------------------------------------------------------------------------</i></td></tr>
+<tr><th id="31">31</th><td><i> *</i></td></tr>
+<tr><th id="32">32</th><td><i> * Copyright (c) 2009-2012, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="33">33</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="34">34</th><td><i> *</i></td></tr>
+<tr><th id="35">35</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="36">36</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="37">37</th><td><i> *</i></td></tr>
+<tr><th id="38">38</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="39">39</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="40">40</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="41">41</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="42">42</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="43">43</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="44">44</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="45">45</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="46">46</th><td><i> *</i></td></tr>
+<tr><th id="47">47</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="48">48</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="49">49</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="50">50</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="51">51</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="52">52</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="53">53</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="54">54</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="55">55</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="56">56</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="57">57</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="58">58</th><td><i> */</i></td></tr>
+<tr><th id="59">59</th><td></td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><u>#include <a href="redis.h.html">"redis.h"</a></u></td></tr>
+<tr><th id="62">62</th><td><u>#include <a href="bio.h.html">"bio.h"</a></u></td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_t" title='pthread_t' data-type='unsigned long' data-ref="pthread_t">pthread_t</a> <dfn class="tu decl def" id="bio_threads" title='bio_threads' data-type='pthread_t [2]' data-ref="bio_threads">bio_threads</dfn>[<a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>];</td></tr>
+<tr><th id="65">65</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_mutex_t" title='pthread_mutex_t' data-type='union pthread_mutex_t' data-ref="pthread_mutex_t">pthread_mutex_t</a> <dfn class="tu decl def" id="bio_mutex" title='bio_mutex' data-type='pthread_mutex_t [2]' data-ref="bio_mutex">bio_mutex</dfn>[<a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>];</td></tr>
+<tr><th id="66">66</th><td><em>static</em> <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_cond_t" title='pthread_cond_t' data-type='union pthread_cond_t' data-ref="pthread_cond_t">pthread_cond_t</a> <dfn class="tu decl def" id="bio_condvar" title='bio_condvar' data-type='pthread_cond_t [2]' data-ref="bio_condvar">bio_condvar</dfn>[<a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>];</td></tr>
+<tr><th id="67">67</th><td><em>static</em> <a class="typedef" href="adlist.h.html#list" title='list' data-type='struct list' data-ref="list">list</a> *<dfn class="tu decl def" id="bio_jobs" title='bio_jobs' data-type='list *[2]' data-ref="bio_jobs">bio_jobs</dfn>[<a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>];</td></tr>
+<tr><th id="68">68</th><td><i  data-doc="bio_pending">/* The following array is used to hold the number of pending jobs for every</i></td></tr>
+<tr><th id="69">69</th><td><i  data-doc="bio_pending"> * OP type. This allows us to export the bioPendingJobsOfType() API that is</i></td></tr>
+<tr><th id="70">70</th><td><i  data-doc="bio_pending"> * useful when the main thread wants to perform some operation that may involve</i></td></tr>
+<tr><th id="71">71</th><td><i  data-doc="bio_pending"> * objects shared with the background thread. The main thread will just wait</i></td></tr>
+<tr><th id="72">72</th><td><i  data-doc="bio_pending"> * that there are no longer jobs of this type to be executed before performing</i></td></tr>
+<tr><th id="73">73</th><td><i  data-doc="bio_pending"> * the sensible operation. This data is also useful for reporting. */</i></td></tr>
+<tr><th id="74">74</th><td><em>static</em> <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="tu decl def" id="bio_pending" title='bio_pending' data-type='unsigned long long [2]' data-ref="bio_pending">bio_pending</dfn>[<a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>];</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><i>/* This structure represents a background Job. It is only used locally to this</i></td></tr>
+<tr><th id="77">77</th><td><i> * file as the API does not expose the internals at all. */</i></td></tr>
+<tr><th id="78">78</th><td><b>struct</b> <dfn class="type def" id="bio_job" title='bio_job' data-ref="bio_job">bio_job</dfn> {</td></tr>
+<tr><th id="79">79</th><td>    <a class="typedef" href="../../include/time.h.html#time_t" title='time_t' data-type='__time_t' data-ref="time_t">time_t</a> <dfn class="tu decl field" id="bio_job::time" title='bio_job::time' data-type='time_t' data-ref="bio_job::time">time</dfn>; <i  data-doc="bio_job::time">/* Time at which the job was created. */</i></td></tr>
+<tr><th id="80">80</th><td>    <i>/* Job specific arguments pointers. If we need to pass more than three</i></td></tr>
+<tr><th id="81">81</th><td><i>     * arguments we can just pass a pointer to a structure or alike. */</i></td></tr>
+<tr><th id="82">82</th><td>    <em>void</em> *<dfn class="tu decl field" id="bio_job::arg1" title='bio_job::arg1' data-type='void *' data-ref="bio_job::arg1">arg1</dfn>, *<dfn class="tu decl field" id="bio_job::arg2" title='bio_job::arg2' data-type='void *' data-ref="bio_job::arg2">arg2</dfn>, *<dfn class="tu decl field" id="bio_job::arg3" title='bio_job::arg3' data-type='void *' data-ref="bio_job::arg3">arg3</dfn>;</td></tr>
+<tr><th id="83">83</th><td>};</td></tr>
+<tr><th id="84">84</th><td></td></tr>
+<tr><th id="85">85</th><td><em>void</em> *<a class="decl fn" href="#bioProcessBackgroundJobs" title='bioProcessBackgroundJobs' data-ref="bioProcessBackgroundJobs">bioProcessBackgroundJobs</a>(<em>void</em> *<dfn class="local col1 decl" id="1arg" title='arg' data-type='void *' data-ref="1arg">arg</dfn>);</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i>/* Make sure we have enough stack to perform all the things we do in the</i></td></tr>
+<tr><th id="88">88</th><td><i> * main thread. */</i></td></tr>
+<tr><th id="89">89</th><td><u>#define <dfn class="macro" id="_M/REDIS_THREAD_STACK_SIZE" data-ref="_M/REDIS_THREAD_STACK_SIZE">REDIS_THREAD_STACK_SIZE</dfn> (1024*1024*4)</u></td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><i>/* Initialize the background system, spawning the thread. */</i></td></tr>
+<tr><th id="92">92</th><td><em>void</em> <dfn class="decl def fn" id="bioInit" title='bioInit' data-ref="bioInit">bioInit</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="93">93</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_attr_t" title='pthread_attr_t' data-type='union pthread_attr_t' data-ref="pthread_attr_t">pthread_attr_t</a> <dfn class="local col2 decl" id="2attr" title='attr' data-type='pthread_attr_t' data-ref="2attr">attr</dfn>;</td></tr>
+<tr><th id="94">94</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/bits/pthreadtypes.h.html#pthread_t" title='pthread_t' data-type='unsigned long' data-ref="pthread_t">pthread_t</a> <dfn class="local col3 decl" id="3thread" title='thread' data-type='pthread_t' data-ref="3thread">thread</dfn>;</td></tr>
+<tr><th id="95">95</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="4stacksize" title='stacksize' data-type='size_t' data-ref="4stacksize">stacksize</dfn>;</td></tr>
+<tr><th id="96">96</th><td>    <em>int</em> <dfn class="local col5 decl" id="5j" title='j' data-type='int' data-ref="5j">j</dfn>;</td></tr>
+<tr><th id="97">97</th><td></td></tr>
+<tr><th id="98">98</th><td>    <i>/* Initialization of state vars and objects */</i></td></tr>
+<tr><th id="99">99</th><td>    <b>for</b> (<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a> = <var>0</var>; <a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a> &lt; <a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>; <a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>++) {</td></tr>
+<tr><th id="100">100</th><td>        <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_init" title='pthread_mutex_init' data-ref="pthread_mutex_init">pthread_mutex_init</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>],<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="101">101</th><td>        <a class="ref fn" href="../../include/pthread.h.html#pthread_cond_init" title='pthread_cond_init' data-ref="pthread_cond_init">pthread_cond_init</a>(&amp;<a class="tu ref" href="#bio_condvar" title='bio_condvar' data-use='a' data-ref="bio_condvar">bio_condvar</a>[<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>],<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="102">102</th><td>        <a class="tu ref" href="#bio_jobs" title='bio_jobs' data-use='w' data-ref="bio_jobs">bio_jobs</a>[<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>] = <a class="ref fn" href="adlist.h.html#listCreate" title='listCreate' data-ref="listCreate">listCreate</a>();</td></tr>
+<tr><th id="103">103</th><td>        <a class="tu ref" href="#bio_pending" title='bio_pending' data-use='w' data-ref="bio_pending">bio_pending</a>[<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>] = <var>0</var>;</td></tr>
+<tr><th id="104">104</th><td>    }</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td>    <i>/* Set the stack size as by default it may be small in some system */</i></td></tr>
+<tr><th id="107">107</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_attr_init" title='pthread_attr_init' data-ref="pthread_attr_init">pthread_attr_init</a>(&amp;<a class="local col2 ref" href="#2attr" title='attr' data-ref="2attr">attr</a>);</td></tr>
+<tr><th id="108">108</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_attr_getstacksize" title='pthread_attr_getstacksize' data-ref="pthread_attr_getstacksize">pthread_attr_getstacksize</a>(&amp;<a class="local col2 ref" href="#2attr" title='attr' data-ref="2attr">attr</a>,&amp;<a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a>);</td></tr>
+<tr><th id="109">109</th><td>    <b>if</b> (!<a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a>) <a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a> = <var>1</var>; <i>/* The world is full of Solaris Fixes */</i></td></tr>
+<tr><th id="110">110</th><td>    <b>while</b> (<a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a> &lt; <a class="macro" href="#89" title="(1024*1024*4)" data-ref="_M/REDIS_THREAD_STACK_SIZE">REDIS_THREAD_STACK_SIZE</a>) <a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a> *= <var>2</var>;</td></tr>
+<tr><th id="111">111</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_attr_setstacksize" title='pthread_attr_setstacksize' data-ref="pthread_attr_setstacksize">pthread_attr_setstacksize</a>(&amp;<a class="local col2 ref" href="#2attr" title='attr' data-ref="2attr">attr</a>, <a class="local col4 ref" href="#4stacksize" title='stacksize' data-ref="4stacksize">stacksize</a>);</td></tr>
+<tr><th id="112">112</th><td></td></tr>
+<tr><th id="113">113</th><td>    <i>/* Ready to spawn our threads. We use the single argument the thread</i></td></tr>
+<tr><th id="114">114</th><td><i>     * function accepts in order to pass the job ID the thread is</i></td></tr>
+<tr><th id="115">115</th><td><i>     * responsible of. */</i></td></tr>
+<tr><th id="116">116</th><td>    <b>for</b> (<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a> = <var>0</var>; <a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a> &lt; <a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>; <a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>++) {</td></tr>
+<tr><th id="117">117</th><td>        <em>void</em> *<dfn class="local col6 decl" id="6arg" title='arg' data-type='void *' data-ref="6arg">arg</dfn> = (<em>void</em>*)(<em>unsigned</em> <em>long</em>) <a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>;</td></tr>
+<tr><th id="118">118</th><td>        <b>if</b> (<a class="ref fn" href="../../include/pthread.h.html#pthread_create" title='pthread_create' data-ref="pthread_create">pthread_create</a>(&amp;<a class="local col3 ref" href="#3thread" title='thread' data-ref="3thread">thread</a>,&amp;<a class="local col2 ref" href="#2attr" title='attr' data-ref="2attr">attr</a>,<a class="ref fn" href="#bioProcessBackgroundJobs" title='bioProcessBackgroundJobs' data-ref="bioProcessBackgroundJobs">bioProcessBackgroundJobs</a>,<a class="local col6 ref" href="#6arg" title='arg' data-ref="6arg">arg</a>) != <var>0</var>) {</td></tr>
+<tr><th id="119">119</th><td>            <a class="ref fn" href="redis.h.html#redisLog" title='redisLog' data-ref="redisLog">redisLog</a>(<a class="macro" href="redis.h.html#304" title="3" data-ref="_M/REDIS_WARNING">REDIS_WARNING</a>,<q>"Fatal: Can't initialize Background Jobs."</q>);</td></tr>
+<tr><th id="120">120</th><td>            <a class="ref fn" href="../../include/stdlib.h.html#exit" title='exit' data-ref="exit">exit</a>(<var>1</var>);</td></tr>
+<tr><th id="121">121</th><td>        }</td></tr>
+<tr><th id="122">122</th><td>        <a class="tu ref" href="#bio_threads" title='bio_threads' data-use='w' data-ref="bio_threads">bio_threads</a>[<a class="local col5 ref" href="#5j" title='j' data-ref="5j">j</a>] = <a class="local col3 ref" href="#3thread" title='thread' data-ref="3thread">thread</a>;</td></tr>
+<tr><th id="123">123</th><td>    }</td></tr>
+<tr><th id="124">124</th><td>}</td></tr>
+<tr><th id="125">125</th><td></td></tr>
+<tr><th id="126">126</th><td><em>void</em> <dfn class="decl def fn" id="bioCreateBackgroundJob" title='bioCreateBackgroundJob' data-ref="bioCreateBackgroundJob">bioCreateBackgroundJob</dfn>(<em>int</em> <dfn class="local col7 decl" id="7type" title='type' data-type='int' data-ref="7type">type</dfn>, <em>void</em> *<dfn class="local col8 decl" id="8arg1" title='arg1' data-type='void *' data-ref="8arg1">arg1</dfn>, <em>void</em> *<dfn class="local col9 decl" id="9arg2" title='arg2' data-type='void *' data-ref="9arg2">arg2</dfn>, <em>void</em> *<dfn class="local col0 decl" id="10arg3" title='arg3' data-type='void *' data-ref="10arg3">arg3</dfn>) {</td></tr>
+<tr><th id="127">127</th><td>    <b>struct</b> <a class="type" href="#bio_job" title='bio_job' data-ref="bio_job">bio_job</a> *<dfn class="local col1 decl" id="11job" title='job' data-type='struct bio_job *' data-ref="11job">job</dfn> = <a class="ref fn" href="zmalloc.h.html#zmalloc" title='zmalloc' data-ref="zmalloc">zmalloc</a>(<b>sizeof</b>(*<a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>));</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>    <a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>-&gt;<a class="tu ref field" href="#bio_job::time" title='bio_job::time' data-use='w' data-ref="bio_job::time">time</a> = <a class="ref fn" href="../../include/time.h.html#time" title='time' data-ref="time">time</a>(<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="130">130</th><td>    <a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>-&gt;<a class="tu ref field" href="#bio_job::arg1" title='bio_job::arg1' data-use='w' data-ref="bio_job::arg1">arg1</a> = <a class="local col8 ref" href="#8arg1" title='arg1' data-ref="8arg1">arg1</a>;</td></tr>
+<tr><th id="131">131</th><td>    <a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>-&gt;<a class="tu ref field" href="#bio_job::arg2" title='bio_job::arg2' data-use='w' data-ref="bio_job::arg2">arg2</a> = <a class="local col9 ref" href="#9arg2" title='arg2' data-ref="9arg2">arg2</a>;</td></tr>
+<tr><th id="132">132</th><td>    <a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>-&gt;<a class="tu ref field" href="#bio_job::arg3" title='bio_job::arg3' data-use='w' data-ref="bio_job::arg3">arg3</a> = <a class="local col0 ref" href="#10arg3" title='arg3' data-ref="10arg3">arg3</a>;</td></tr>
+<tr><th id="133">133</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_lock" title='pthread_mutex_lock' data-ref="pthread_mutex_lock">pthread_mutex_lock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>]);</td></tr>
+<tr><th id="134">134</th><td>    <a class="ref fn" href="adlist.h.html#listAddNodeTail" title='listAddNodeTail' data-ref="listAddNodeTail">listAddNodeTail</a>(<a class="tu ref" href="#bio_jobs" title='bio_jobs' data-use='r' data-ref="bio_jobs">bio_jobs</a>[<a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>],<a class="local col1 ref" href="#11job" title='job' data-ref="11job">job</a>);</td></tr>
+<tr><th id="135">135</th><td>    <a class="tu ref" href="#bio_pending" title='bio_pending' data-use='w' data-ref="bio_pending">bio_pending</a>[<a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>]++;</td></tr>
+<tr><th id="136">136</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_cond_signal" title='pthread_cond_signal' data-ref="pthread_cond_signal">pthread_cond_signal</a>(&amp;<a class="tu ref" href="#bio_condvar" title='bio_condvar' data-use='a' data-ref="bio_condvar">bio_condvar</a>[<a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>]);</td></tr>
+<tr><th id="137">137</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_unlock" title='pthread_mutex_unlock' data-ref="pthread_mutex_unlock">pthread_mutex_unlock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>]);</td></tr>
+<tr><th id="138">138</th><td>}</td></tr>
+<tr><th id="139">139</th><td></td></tr>
+<tr><th id="140">140</th><td><em>void</em> *<dfn class="decl def fn" id="bioProcessBackgroundJobs" title='bioProcessBackgroundJobs' data-ref="bioProcessBackgroundJobs">bioProcessBackgroundJobs</dfn>(<em>void</em> *<dfn class="local col2 decl" id="12arg" title='arg' data-type='void *' data-ref="12arg">arg</dfn>) {</td></tr>
+<tr><th id="141">141</th><td>    <b>struct</b> <a class="type" href="#bio_job" title='bio_job' data-ref="bio_job">bio_job</a> *<dfn class="local col3 decl" id="13job" title='job' data-type='struct bio_job *' data-ref="13job">job</dfn>;</td></tr>
+<tr><th id="142">142</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col4 decl" id="14type" title='type' data-type='unsigned long' data-ref="14type">type</dfn> = (<em>unsigned</em> <em>long</em>) <a class="local col2 ref" href="#12arg" title='arg' data-ref="12arg">arg</a>;</td></tr>
+<tr><th id="143">143</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/select.h.html#sigset_t" title='sigset_t' data-type='__sigset_t' data-ref="sigset_t">sigset_t</a> <dfn class="local col5 decl" id="15sigset" title='sigset' data-type='sigset_t' data-ref="15sigset">sigset</dfn>;</td></tr>
+<tr><th id="144">144</th><td></td></tr>
+<tr><th id="145">145</th><td>    <i>/* Make the thread killable at any time, so that bioKillThreads()</i></td></tr>
+<tr><th id="146">146</th><td><i>     * can work reliably. */</i></td></tr>
+<tr><th id="147">147</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_setcancelstate" title='pthread_setcancelstate' data-ref="pthread_setcancelstate">pthread_setcancelstate</a>(<a class="macro" href="../../include/pthread.h.html#202" title="PTHREAD_CANCEL_ENABLE" data-ref="_M/PTHREAD_CANCEL_ENABLE">PTHREAD_CANCEL_ENABLE</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="148">148</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_setcanceltype" title='pthread_setcanceltype' data-ref="pthread_setcanceltype">pthread_setcanceltype</a>(<a class="macro" href="../../include/pthread.h.html#211" title="PTHREAD_CANCEL_ASYNCHRONOUS" data-ref="_M/PTHREAD_CANCEL_ASYNCHRONOUS">PTHREAD_CANCEL_ASYNCHRONOUS</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>);</td></tr>
+<tr><th id="149">149</th><td></td></tr>
+<tr><th id="150">150</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_lock" title='pthread_mutex_lock' data-ref="pthread_mutex_lock">pthread_mutex_lock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]);</td></tr>
+<tr><th id="151">151</th><td>    <i>/* Block SIGALRM so we are sure that only the main thread will</i></td></tr>
+<tr><th id="152">152</th><td><i>     * receive the watchdog signal. */</i></td></tr>
+<tr><th id="153">153</th><td>    <a class="ref fn" href="../../include/signal.h.html#sigemptyset" title='sigemptyset' data-ref="sigemptyset">sigemptyset</a>(&amp;<a class="local col5 ref" href="#15sigset" title='sigset' data-ref="15sigset">sigset</a>);</td></tr>
+<tr><th id="154">154</th><td>    <a class="ref fn" href="../../include/signal.h.html#sigaddset" title='sigaddset' data-ref="sigaddset">sigaddset</a>(&amp;<a class="local col5 ref" href="#15sigset" title='sigset' data-ref="15sigset">sigset</a>, <a class="macro" href="../../include/x86_64-linux-gnu/bits/signum.h.html#46" title="14" data-ref="_M/SIGALRM">SIGALRM</a>);</td></tr>
+<tr><th id="155">155</th><td>    <b>if</b> (<a class="ref fn" href="../../include/x86_64-linux-gnu/bits/sigthread.h.html#pthread_sigmask" title='pthread_sigmask' data-ref="pthread_sigmask">pthread_sigmask</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/sigaction.h.html#76" title="0" data-ref="_M/SIG_BLOCK">SIG_BLOCK</a>, &amp;<a class="local col5 ref" href="#15sigset" title='sigset' data-ref="15sigset">sigset</a>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>))</td></tr>
+<tr><th id="156">156</th><td>        <a class="ref fn" href="redis.h.html#redisLog" title='redisLog' data-ref="redisLog">redisLog</a>(<a class="macro" href="redis.h.html#304" title="3" data-ref="_M/REDIS_WARNING">REDIS_WARNING</a>,</td></tr>
+<tr><th id="157">157</th><td>            <q>"Warning: can't mask SIGALRM in bio.c thread: %s"</q>, <a class="ref fn" href="../../include/string.h.html#strerror" title='strerror' data-ref="strerror">strerror</a>(<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a>));</td></tr>
+<tr><th id="158">158</th><td></td></tr>
+<tr><th id="159">159</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="160">160</th><td>        <a class="typedef" href="adlist.h.html#listNode" title='listNode' data-type='struct listNode' data-ref="listNode">listNode</a> *<dfn class="local col6 decl" id="16ln" title='ln' data-type='listNode *' data-ref="16ln">ln</dfn>;</td></tr>
+<tr><th id="161">161</th><td></td></tr>
+<tr><th id="162">162</th><td>        <i>/* The loop always starts with the lock hold. */</i></td></tr>
+<tr><th id="163">163</th><td>        <b>if</b> (<a class="macro" href="adlist.h.html#57" title="((bio_jobs[type])-&gt;len)" data-ref="_M/listLength">listLength</a>(<a class="tu ref" href="#bio_jobs" title='bio_jobs' data-use='r' data-ref="bio_jobs">bio_jobs</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]) == <var>0</var>) {</td></tr>
+<tr><th id="164">164</th><td>            <a class="ref fn" href="../../include/pthread.h.html#pthread_cond_wait" title='pthread_cond_wait' data-ref="pthread_cond_wait">pthread_cond_wait</a>(&amp;<a class="tu ref" href="#bio_condvar" title='bio_condvar' data-use='a' data-ref="bio_condvar">bio_condvar</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>],&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]);</td></tr>
+<tr><th id="165">165</th><td>            <b>continue</b>;</td></tr>
+<tr><th id="166">166</th><td>        }</td></tr>
+<tr><th id="167">167</th><td>        <i>/* Pop the job from the queue. */</i></td></tr>
+<tr><th id="168">168</th><td>        <a class="local col6 ref" href="#16ln" title='ln' data-ref="16ln">ln</a> = <a class="macro" href="adlist.h.html#58" title="((bio_jobs[type])-&gt;head)" data-ref="_M/listFirst">listFirst</a>(<a class="tu ref" href="#bio_jobs" title='bio_jobs' data-use='r' data-ref="bio_jobs">bio_jobs</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]);</td></tr>
+<tr><th id="169">169</th><td>        <a class="local col3 ref" href="#13job" title='job' data-ref="13job">job</a> = <a class="local col6 ref" href="#16ln" title='ln' data-ref="16ln">ln</a>-&gt;<a class="ref field" href="adlist.h.html#listNode::value" title='listNode::value' data-ref="listNode::value">value</a>;</td></tr>
+<tr><th id="170">170</th><td>        <i>/* It is now possible to unlock the background system as we know have</i></td></tr>
+<tr><th id="171">171</th><td><i>         * a stand alone job structure to process.*/</i></td></tr>
+<tr><th id="172">172</th><td>        <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_unlock" title='pthread_mutex_unlock' data-ref="pthread_mutex_unlock">pthread_mutex_unlock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]);</td></tr>
+<tr><th id="173">173</th><td></td></tr>
+<tr><th id="174">174</th><td>        <i>/* Process the job accordingly to its type. */</i></td></tr>
+<tr><th id="175">175</th><td>        <b>if</b> (<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a> == <a class="macro" href="bio.h.html#39" title="0" data-ref="_M/REDIS_BIO_CLOSE_FILE">REDIS_BIO_CLOSE_FILE</a>) {</td></tr>
+<tr><th id="176">176</th><td>            <a class="ref fn" href="../../include/unistd.h.html#close" title='close' data-ref="close">close</a>((<em>long</em>)<a class="local col3 ref" href="#13job" title='job' data-ref="13job">job</a>-&gt;<a class="tu ref field" href="#bio_job::arg1" title='bio_job::arg1' data-use='r' data-ref="bio_job::arg1">arg1</a>);</td></tr>
+<tr><th id="177">177</th><td>        } <b>else</b> <b>if</b> (<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a> == <a class="macro" href="bio.h.html#40" title="1" data-ref="_M/REDIS_BIO_AOF_FSYNC">REDIS_BIO_AOF_FSYNC</a>) {</td></tr>
+<tr><th id="178">178</th><td>            <a class="macro" href="config.h.html#87" title="fdatasync" data-ref="_M/aof_fsync">aof_fsync</a>((<em>long</em>)<a class="local col3 ref" href="#13job" title='job' data-ref="13job">job</a>-&gt;<a class="tu ref field" href="#bio_job::arg1" title='bio_job::arg1' data-use='r' data-ref="bio_job::arg1">arg1</a>);</td></tr>
+<tr><th id="179">179</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="180">180</th><td>            <a class="macro" href="redis.h.html#400" title="_redisPanic(&quot;\&quot;Wrong job type in bioProcessBackgroundJobs().\&quot;&quot;,&quot;/vagrant/data/redis-v3.0.0/src/bio.c&quot;,180),_exit(1)" data-ref="_M/redisPanic">redisPanic</a>(<q>"Wrong job type in bioProcessBackgroundJobs()."</q>);</td></tr>
+<tr><th id="181">181</th><td>        }</td></tr>
+<tr><th id="182">182</th><td>        <a class="ref fn" href="zmalloc.h.html#zfree" title='zfree' data-ref="zfree">zfree</a>(<a class="local col3 ref" href="#13job" title='job' data-ref="13job">job</a>);</td></tr>
+<tr><th id="183">183</th><td></td></tr>
+<tr><th id="184">184</th><td>        <i>/* Lock again before reiterating the loop, if there are no longer</i></td></tr>
+<tr><th id="185">185</th><td><i>         * jobs to process we'll block again in pthread_cond_wait(). */</i></td></tr>
+<tr><th id="186">186</th><td>        <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_lock" title='pthread_mutex_lock' data-ref="pthread_mutex_lock">pthread_mutex_lock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]);</td></tr>
+<tr><th id="187">187</th><td>        <a class="ref fn" href="adlist.h.html#listDelNode" title='listDelNode' data-ref="listDelNode">listDelNode</a>(<a class="tu ref" href="#bio_jobs" title='bio_jobs' data-use='r' data-ref="bio_jobs">bio_jobs</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>],<a class="local col6 ref" href="#16ln" title='ln' data-ref="16ln">ln</a>);</td></tr>
+<tr><th id="188">188</th><td>        <a class="tu ref" href="#bio_pending" title='bio_pending' data-use='w' data-ref="bio_pending">bio_pending</a>[<a class="local col4 ref" href="#14type" title='type' data-ref="14type">type</a>]--;</td></tr>
+<tr><th id="189">189</th><td>    }</td></tr>
+<tr><th id="190">190</th><td>}</td></tr>
+<tr><th id="191">191</th><td></td></tr>
+<tr><th id="192">192</th><td><i>/* Return the number of pending jobs of the specified type. */</i></td></tr>
+<tr><th id="193">193</th><td><em>unsigned</em> <em>long</em> <em>long</em> <dfn class="decl def fn" id="bioPendingJobsOfType" title='bioPendingJobsOfType' data-ref="bioPendingJobsOfType">bioPendingJobsOfType</dfn>(<em>int</em> <dfn class="local col7 decl" id="17type" title='type' data-type='int' data-ref="17type">type</dfn>) {</td></tr>
+<tr><th id="194">194</th><td>    <em>unsigned</em> <em>long</em> <em>long</em> <dfn class="local col8 decl" id="18val" title='val' data-type='unsigned long long' data-ref="18val">val</dfn>;</td></tr>
+<tr><th id="195">195</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_lock" title='pthread_mutex_lock' data-ref="pthread_mutex_lock">pthread_mutex_lock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col7 ref" href="#17type" title='type' data-ref="17type">type</a>]);</td></tr>
+<tr><th id="196">196</th><td>    <a class="local col8 ref" href="#18val" title='val' data-ref="18val">val</a> = <a class="tu ref" href="#bio_pending" title='bio_pending' data-use='r' data-ref="bio_pending">bio_pending</a>[<a class="local col7 ref" href="#17type" title='type' data-ref="17type">type</a>];</td></tr>
+<tr><th id="197">197</th><td>    <a class="ref fn" href="../../include/pthread.h.html#pthread_mutex_unlock" title='pthread_mutex_unlock' data-ref="pthread_mutex_unlock">pthread_mutex_unlock</a>(&amp;<a class="tu ref" href="#bio_mutex" title='bio_mutex' data-use='a' data-ref="bio_mutex">bio_mutex</a>[<a class="local col7 ref" href="#17type" title='type' data-ref="17type">type</a>]);</td></tr>
+<tr><th id="198">198</th><td>    <b>return</b> <a class="local col8 ref" href="#18val" title='val' data-ref="18val">val</a>;</td></tr>
+<tr><th id="199">199</th><td>}</td></tr>
+<tr><th id="200">200</th><td></td></tr>
+<tr><th id="201">201</th><td><i>/* Kill the running bio threads in an unclean way. This function should be</i></td></tr>
+<tr><th id="202">202</th><td><i> * used only when it's critical to stop the threads for some reason.</i></td></tr>
+<tr><th id="203">203</th><td><i> * Currently Redis does this only on crash (for instance on SIGSEGV) in order</i></td></tr>
+<tr><th id="204">204</th><td><i> * to perform a fast memory check without other threads messing with memory. */</i></td></tr>
+<tr><th id="205">205</th><td><em>void</em> <dfn class="decl def fn" id="bioKillThreads" title='bioKillThreads' data-ref="bioKillThreads">bioKillThreads</dfn>(<em>void</em>) {</td></tr>
+<tr><th id="206">206</th><td>    <em>int</em> <dfn class="local col9 decl" id="19err" title='err' data-type='int' data-ref="19err">err</dfn>, <dfn class="local col0 decl" id="20j" title='j' data-type='int' data-ref="20j">j</dfn>;</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td>    <b>for</b> (<a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a> = <var>0</var>; <a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a> &lt; <a class="macro" href="bio.h.html#41" title="2" data-ref="_M/REDIS_BIO_NUM_OPS">REDIS_BIO_NUM_OPS</a>; <a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a>++) {</td></tr>
+<tr><th id="209">209</th><td>        <b>if</b> (<a class="ref fn" href="../../include/pthread.h.html#pthread_cancel" title='pthread_cancel' data-ref="pthread_cancel">pthread_cancel</a>(<a class="tu ref" href="#bio_threads" title='bio_threads' data-use='r' data-ref="bio_threads">bio_threads</a>[<a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a>]) == <var>0</var>) {</td></tr>
+<tr><th id="210">210</th><td>            <b>if</b> ((<a class="local col9 ref" href="#19err" title='err' data-ref="19err">err</a> = <a class="ref fn" href="../../include/pthread.h.html#pthread_join" title='pthread_join' data-ref="pthread_join">pthread_join</a>(<a class="tu ref" href="#bio_threads" title='bio_threads' data-use='r' data-ref="bio_threads">bio_threads</a>[<a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a>],<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>)) != <var>0</var>) {</td></tr>
+<tr><th id="211">211</th><td>                <a class="ref fn" href="redis.h.html#redisLog" title='redisLog' data-ref="redisLog">redisLog</a>(<a class="macro" href="redis.h.html#304" title="3" data-ref="_M/REDIS_WARNING">REDIS_WARNING</a>,</td></tr>
+<tr><th id="212">212</th><td>                    <q>"Bio thread for job type #%d can be joined: %s"</q>,</td></tr>
+<tr><th id="213">213</th><td>                        <a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a>, <a class="ref fn" href="../../include/string.h.html#strerror" title='strerror' data-ref="strerror">strerror</a>(<a class="local col9 ref" href="#19err" title='err' data-ref="19err">err</a>));</td></tr>
+<tr><th id="214">214</th><td>            } <b>else</b> {</td></tr>
+<tr><th id="215">215</th><td>                <a class="ref fn" href="redis.h.html#redisLog" title='redisLog' data-ref="redisLog">redisLog</a>(<a class="macro" href="redis.h.html#304" title="3" data-ref="_M/REDIS_WARNING">REDIS_WARNING</a>,</td></tr>
+<tr><th id="216">216</th><td>                    <q>"Bio thread for job type #%d terminated"</q>,<a class="local col0 ref" href="#20j" title='j' data-ref="20j">j</a>);</td></tr>
+<tr><th id="217">217</th><td>            }</td></tr>
+<tr><th id="218">218</th><td>        }</td></tr>
+<tr><th id="219">219</th><td>    }</td></tr>
+<tr><th id="220">220</th><td>}</td></tr>
+<tr><th id="221">221</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

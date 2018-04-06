@@ -1,0 +1,4 @@
+<def f='redis/src/aof.c' l='770' ll='823' type='int rewriteListObject(rio * r, robj * key, robj * o)'/>
+<use f='redis/src/aof.c' l='1084' u='c' c='rewriteAppendOnlyFile'/>
+<doc f='redis/src/aof.c' l='768'>/* Emit the commands needed to rebuild a list object.
+ * The function returns 0 on error, 1 on success. */</doc>

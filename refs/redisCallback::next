@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/async.h' l='46' type='struct redisCallback *'/>
+<use f='redis/deps/hiredis/async.c' l='226' u='w' c='__redisPushCallback'/>
+<use f='redis/deps/hiredis/async.c' l='233' u='w' c='__redisPushCallback'/>
+<use f='redis/deps/hiredis/async.c' l='241' u='r' c='__redisShiftCallback'/>
+<offset>0</offset>
+<doc f='redis/deps/hiredis/async.h' l='46'>/* simple singly linked list */</doc>

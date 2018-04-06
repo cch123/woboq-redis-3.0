@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1366' type='void unblockClient(redisClient * c)'/>
+<def f='redis/src/blocked.c' l='131' ll='146' type='void unblockClient(redisClient * c)'/>
+<use f='redis/src/blocked.c' l='179' u='c' c='disconnectAllBlockedClients'/>
+<doc f='redis/src/blocked.c' l='129'>/* Unblock a client calling the right function depending on the kind
+ * of operation the client is blocking for. */</doc>
+<use f='redis/src/networking.c' l='717' u='c' c='freeClient'/>
+<use f='redis/src/redis.c' l='928' u='c' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='933' u='c' c='clientsCronHandleTimeout'/>
+<use f='redis/src/replication.c' l='1900' u='c' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='1908' u='c' c='processClientsWaitingReplicas'/>
+<use f='redis/src/t_list.c' l='994' u='c' c='handleClientsBlockedOnLists'/>

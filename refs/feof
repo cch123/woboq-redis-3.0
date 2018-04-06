@@ -1,0 +1,5 @@
+<dec f='include/stdio.h' l='828' type='int feof(FILE * __stream)'/>
+<doc f='include/stdio.h' l='827'>/* Return the EOF indicator for STREAM.  */</doc>
+<use f='redis/deps/lua/src/lauxlib.c' l='537' u='c' c='getF'/>
+<use f='redis/src/aof.c' l='640' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='712' u='c' c='loadAppendOnlyFile'/>

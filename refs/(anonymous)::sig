@@ -1,0 +1,8 @@
+<dec f='redis/src/cluster.h' l='220' type='char [4]'/>
+<use f='redis/src/cluster.c' l='2018' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2112' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2113' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2114' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2115' u='w' c='clusterBuildMessageHdr'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='220'>/* Siganture &quot;RCmb&quot; (Redis Cluster message bus). */</doc>

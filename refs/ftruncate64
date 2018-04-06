@@ -1,0 +1,4 @@
+<use f='redis/src/aof.c' l='356' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='331' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/config.c' l='1758' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/replication.c' l='972' u='c' c='readSyncBulkPayload'/>

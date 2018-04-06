@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='351'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='345'>/*
+@@ LUA_COMPAT_LSTR controls compatibility with old long string nesting
+@* facility.
+** CHANGE it to 2 if you want the old behaviour, or undefine it to turn
+** off the advisory error when nesting [[...]].
+*/</doc>
+<use f='redis/deps/lua/src/llex.c' l='235' u='a'/>
+<use f='redis/deps/lua/src/llex.c' l='240' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='251' u='a'/>
+<use f='redis/deps/lua/src/llex.c' l='251' u='c'/>

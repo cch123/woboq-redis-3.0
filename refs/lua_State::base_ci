@@ -1,0 +1,32 @@
+<dec f='redis/deps/lua/src/lstate.h' l='111' type='CallInfo *'/>
+<use f='redis/deps/lua/src/lapi.c' l='80' u='r' c='getcurrenv'/>
+<use f='redis/deps/lua/src/lapi.c' l='207' u='r' c='lua_replace'/>
+<offset>640</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='111'>/* array of CallInfo&apos;s */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='88' u='r' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='93' u='r' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='95' u='r' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='128' u='r' c='lua_getlocal'/>
+<use f='redis/deps/lua/src/ldebug.c' l='139' u='r' c='lua_setlocal'/>
+<use f='redis/deps/lua/src/ldebug.c' l='245' u='r' c='lua_getinfo'/>
+<use f='redis/deps/lua/src/ldo.c' l='74' u='r' c='restore_stack_limit'/>
+<use f='redis/deps/lua/src/ldo.c' l='82' u='r' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='132' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='153' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='154' u='w' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='154' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='156' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='157' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='192' u='r' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/ldo.c' l='405' u='r' c='resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='421' u='r' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='460' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='470' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='242' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='261' u='r' c='traversestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='44' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='45' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='47' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='62' u='r' c='freestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='98' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='206' u='r' c='lua_close'/>

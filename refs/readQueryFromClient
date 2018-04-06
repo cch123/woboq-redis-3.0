@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1033' type='void readQueryFromClient(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/networking.c' l='77' u='r' c='createClient'/>
+<def f='redis/src/networking.c' l='1167' ll='1228' type='void readQueryFromClient(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/replication.c' l='1662' u='r' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/scripting.c' l='1035' u='r' c='evalGenericCommand'/>

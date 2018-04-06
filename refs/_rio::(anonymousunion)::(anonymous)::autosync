@@ -1,0 +1,7 @@
+<dec f='redis/src/rio.h' l='74' type='off_t'/>
+<offset>128</offset>
+<doc f='redis/src/rio.h' l='74'>/* fsync after &apos;autosync&apos; bytes written. */</doc>
+<use f='redis/src/rio.c' l='115' u='r' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='116' u='r' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='157' u='w' c='rioInitWithFile'/>
+<use f='redis/src/rio.c' l='303' u='w' c='rioSetAutoSync'/>

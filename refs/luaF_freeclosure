@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='28' type='void luaF_freeclosure(lua_State * L, Closure * c)'/>
+<def f='redis/deps/lua/src/lfunc.c' l='152' ll='156' type='void luaF_freeclosure(lua_State * L, Closure * c)'/>
+<use f='redis/deps/lua/src/lgc.c' l='381' u='c' c='freeobj'/>

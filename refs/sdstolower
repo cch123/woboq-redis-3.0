@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/sds.h' l='87' type='void sdstolower(sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='629' ll='633' type='void sdstolower(sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='628'>/* Apply tolower() to every character of the sds string &apos;s&apos;. */</doc>
+<dec f='redis/src/sds.h' l='87' type='void sdstolower(sds s)'/>
+<use f='redis/src/config.c' l='112' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1358' u='c' c='rewriteConfigReadOldFile'/>
+<def f='redis/src/sds.c' l='629' ll='633' type='void sdstolower(sds s)'/>
+<doc f='redis/src/sds.c' l='628'>/* Apply tolower() to every character of the sds string &apos;s&apos;. */</doc>

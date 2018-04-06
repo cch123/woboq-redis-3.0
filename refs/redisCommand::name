@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='917' type='char *'/>
+<offset>0</offset>
+<use f='redis/src/networking.c' l='1351' u='r' c='catClientInfoString'/>
+<use f='redis/src/redis.c' l='1915' u='r' c='populateCommandTable'/>
+<use f='redis/src/redis.c' l='1918' u='r' c='populateCommandTable'/>
+<use f='redis/src/redis.c' l='2149' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2441' u='r' c='pingCommand'/>
+<use f='redis/src/redis.c' l='2492' u='r' c='addReplyCommand'/>
+<use f='redis/src/redis.c' l='3002' u='r' c='genRedisInfoString'/>
+<use f='redis/src/sentinel.c' l='421' u='r' c='initSentinel'/>
+<use f='redis/src/t_string.c' l='72' u='r' c='setGenericCommand'/>

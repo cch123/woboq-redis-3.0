@@ -1,0 +1,7 @@
+<dec f='redis/src/rdb.h' l='112' type='int rdbSaveKeyValuePair(rio * rdb, robj * key, robj * val, long long expiretime, long long now)'/>
+<def f='redis/src/rdb.c' l='612' ll='628' type='int rdbSaveKeyValuePair(rio * rdb, robj * key, robj * val, long long expiretime, long long now)'/>
+<use f='redis/src/rdb.c' l='670' u='c' c='rdbSaveRio'/>
+<doc f='redis/src/rdb.c' l='608'>/* Save a key-value pair, with expire time, type, key, value.
+ * On error -1 is returned.
+ * On success if the key was actually saved 1 is returned, otherwise 0
+ * is returned (the key was already expired). */</doc>

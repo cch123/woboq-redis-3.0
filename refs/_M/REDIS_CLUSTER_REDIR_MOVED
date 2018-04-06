@@ -1,0 +1,4 @@
+<dec f='redis/src/cluster.h' l='32'/>
+<use f='redis/src/cluster.c' l='4925' u='c'/>
+<use f='redis/src/cluster.c' l='4948' u='c'/>
+<use f='redis/src/cluster.c' l='4999' u='c'/>

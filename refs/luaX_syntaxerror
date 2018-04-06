@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/llex.h' l='77' type='void luaX_syntaxerror(LexState * ls, const char * s)'/>
+<use f='redis/deps/lua/src/lcode.c' l='85' u='c' c='fixjump'/>
+<use f='redis/deps/lua/src/lcode.c' l='203' u='c' c='luaK_checkstack'/>
+<def f='redis/deps/lua/src/llex.c' l='112' ll='114' type='void luaX_syntaxerror(LexState * ls, const char * msg)'/>
+<use f='redis/deps/lua/src/llex.c' l='136' u='c' c='inclinenumber'/>
+<use f='redis/deps/lua/src/lparser.c' l='66' u='c' c='error_expected'/>
+<use f='redis/deps/lua/src/lparser.c' l='109' u='c' c='check_match'/>
+<use f='redis/deps/lua/src/lparser.c' l='566' u='c' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='617' u='c' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='638' u='c' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='683' u='c' c='prefixexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='100' u='c' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='100' u='c' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='984' u='c' c='breakstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1123' u='c' c='forstat'/>

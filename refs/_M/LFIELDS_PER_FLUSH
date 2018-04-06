@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='265'/>
+<use f='redis/deps/lua/src/lcode.c' l='820' u='c'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='264'>/* number of list items to accumulate before a SETLIST instruction */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='468' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='709' u='c'/>

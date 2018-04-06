@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lua.h' l='193' type='void lua_rawseti(lua_State * L, int idx, int n)'/>
+<def f='redis/deps/lua/src/lapi.c' l='684' ll='694' macro='1' type='void lua_rawseti(lua_State * L, int idx, int n)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='493' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='499' u='c' c='luaL_ref'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='508' u='c' c='luaL_unref'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='510' u='c' c='luaL_unref'/>
+<use f='redis/deps/lua/src/liolib.c' l='213' u='c' c='g_iofile'/>
+<use f='redis/deps/lua/src/liolib.c' l='522' u='c' c='createstdfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='646' u='c' c='luaopen_package'/>
+<use f='redis/deps/lua/src/ltablib.c' l='104' u='c' c='tinsert'/>
+<use f='redis/deps/lua/src/ltablib.c' l='113' u='c' c='tinsert'/>
+<use f='redis/deps/lua/src/ltablib.c' l='127' u='c' c='tremove'/>
+<use f='redis/deps/lua/src/ltablib.c' l='130' u='c' c='tremove'/>
+<use f='redis/deps/lua/src/ltablib.c' l='174' u='c' c='set2'/>
+<use f='redis/deps/lua/src/ltablib.c' l='175' u='c' c='set2'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1207' u='c' c='json_parse_array_context'/>
+<use f='redis/src/scripting.c' l='874' u='c' c='luaSetGlobalArray'/>

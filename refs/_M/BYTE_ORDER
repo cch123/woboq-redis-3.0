@@ -1,0 +1,10 @@
+<dec f='include/endian.h' l='48'/>
+<use f='redis/src/config.h' l='129' u='a'/>
+<use f='redis/src/config.h' l='164' u='a'/>
+<use f='redis/src/config.h' l='182' u='a'/>
+<use f='redis/src/config.h' l='183' u='c'/>
+<use f='redis/src/config.h' l='183' u='c'/>
+<use f='redis/src/endianconv.h' l='48' u='c'/>
+<use f='redis/src/endianconv.h' l='66' u='c'/>
+<use f='redis/src/hyperloglog.c' l='403' u='c'/>
+<use f='redis/src/sha1.c' l='35' u='c'/>

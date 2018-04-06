@@ -1,0 +1,29 @@
+<dec f='redis/src/cluster.h' l='105' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='143' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='272' u='r' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='273' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='309' u='r' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='396' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='515' u='w' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='933' u='r' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='933' u='r' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='972' u='w' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='973' u='r' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='1038' u='w' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1039' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1588' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1589' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2128' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2466' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2471' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2476' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2480' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2544' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2547' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2817' u='w' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2818' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2820' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='4031' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4257' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4258' u='w' c='clusterCommand'/>
+<offset>64</offset>

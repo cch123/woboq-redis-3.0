@@ -1,0 +1,31 @@
+<dec f='include/x86_64-linux-gnu/bits/time.h' l='33' type='__suseconds_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/time.h' l='33'>/* Microseconds.  */</doc>
+<use f='redis/deps/hiredis/net.c' l='188' u='r' c='redisContextWaitReady'/>
+<use f='redis/deps/hiredis/net.c' l='194' u='r' c='redisContextWaitReady'/>
+<use f='redis/src/ae_epoll.c' l='115' u='r' c='aeApiPoll'/>
+<use f='redis/src/ae.c' l='186' u='r' c='aeGetTime'/>
+<use f='redis/src/ae.c' l='380' u='w' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='383' u='w' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='386' u='r' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='386' u='w' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='392' u='w' c='aeProcessEvents'/>
+<use f='redis/src/anet.c' l='188' u='w' c='anetSendTimeout'/>
+<use f='redis/src/debug.c' l='923' u='w' c='watchdogScheduleSignal'/>
+<use f='redis/src/debug.c' l='926' u='w' c='watchdogScheduleSignal'/>
+<use f='redis/src/dict.c' l='294' u='r' c='timeInMilliseconds'/>
+<use f='redis/src/redis-cli.c' l='133' u='r' c='ustime'/>
+<use f='redis/src/redis.c' l='319' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='387' u='r' c='ustime'/>
+<use f='redis/src/redis.c' l='2472' u='r' c='timeCommand'/>
+<use f='redis/src/redis.c' l='2985' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2986' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2987' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2988' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3582' u='r' c='main'/>
+<use f='redis/src/replication.c' l='270' u='r' c='replicationFeedMonitors'/>
+<use f='redis/src/util.c' l='493' u='r' c='getRandomHexChars'/>
+<use f='redis/src/util.c' l='494' u='a' c='getRandomHexChars'/>
+<use f='redis/src/util.c' l='494' u='r' c='getRandomHexChars'/>
+<use f='redis/src/util.c' l='495' u='r' c='getRandomHexChars'/>
+<use f='redis/src/util.c' l='496' u='r' c='getRandomHexChars'/>

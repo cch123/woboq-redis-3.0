@@ -1,0 +1,15 @@
+<dec f='redis/deps/hiredis/sds.h' l='89' type='sds sdsfromlonglong(long long value)'/>
+<def f='redis/deps/hiredis/sds.c' l='365' ll='370' type='sds sdsfromlonglong(long long value)'/>
+<doc f='redis/deps/hiredis/sds.c' l='361'>/* Create an sds string from a long long value. It is much faster than:
+ *
+ * sdscatprintf(sdsempty(),&quot;%lld\n&quot;, value);
+ */</doc>
+<dec f='redis/src/sds.h' l='89' type='sds sdsfromlonglong(long long value)'/>
+<use f='redis/src/object.c' l='106' u='c' c='createStringObjectFromLongLong'/>
+<use f='redis/src/rdb.c' l='190' u='c' c='rdbLoadIntegerObject'/>
+<use f='redis/src/replication.c' l='1303' u='c' c='syncWithMaster'/>
+<def f='redis/src/sds.c' l='365' ll='370' type='sds sdsfromlonglong(long long value)'/>
+<doc f='redis/src/sds.c' l='361'>/* Create an sds string from a long long value. It is much faster than:
+ *
+ * sdscatprintf(sdsempty(),&quot;%lld\n&quot;, value);
+ */</doc>

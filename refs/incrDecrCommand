@@ -1,0 +1,5 @@
+<def f='redis/src/t_string.c' l='325' ll='361' type='void incrDecrCommand(redisClient * c, long long incr)'/>
+<use f='redis/src/t_string.c' l='364' u='c' c='incrCommand'/>
+<use f='redis/src/t_string.c' l='368' u='c' c='decrCommand'/>
+<use f='redis/src/t_string.c' l='375' u='c' c='incrbyCommand'/>
+<use f='redis/src/t_string.c' l='382' u='c' c='decrbyCommand'/>

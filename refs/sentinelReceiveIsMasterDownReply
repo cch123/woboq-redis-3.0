@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='3082' ll='3118' type='void sentinelReceiveIsMasterDownReply(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='3157' u='r' c='sentinelAskMasterStateToOtherSentinels'/>
+<doc f='redis/src/sentinel.c' l='3080'>/* Receive the SENTINEL is-master-down-by-addr reply, see the
+ * sentinelAskMasterStateToOtherSentinels() function for more information. */</doc>

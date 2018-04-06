@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='779' type='time_t'/>
+<offset>14528</offset>
+<doc f='redis/src/redis.h' l='779'>/* Unix time of last successful save */</doc>
+<use f='redis/src/db.c' l='612' u='r' c='lastsaveCommand'/>
+<use f='redis/src/rdb.c' l='753' u='w' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='1248' u='w' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/redis.c' l='1189' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1819' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2749' u='r' c='genRedisInfoString'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1339' type='void getKeysFreeResult(int * result)'/>
+<use f='redis/src/cluster.c' l='4834' u='c' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4858' u='c' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4877' u='c' c='getNodeByQuery'/>
+<def f='redis/src/db.c' l='1022' ll='1024' type='void getKeysFreeResult(int * result)'/>
+<doc f='redis/src/db.c' l='1021'>/* Free the result of getKeysFromCommand. */</doc>
+<use f='redis/src/redis.c' l='2559' u='c' c='commandCommand'/>

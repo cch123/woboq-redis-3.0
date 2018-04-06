@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/sys/epoll.h' l='82' type='int'/>
+<use f='redis/src/ae_epoll.c' l='86' u='w' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='100' u='w' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='128' u='r' c='aeApiPoll'/>
+<offset>0</offset>

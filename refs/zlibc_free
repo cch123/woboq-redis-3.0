@@ -1,0 +1,6 @@
+<dec f='redis/src/zmalloc.h' l='80' type='void zlibc_free(void * ptr)'/>
+<def f='redis/src/zmalloc.c' l='38' ll='40' type='void zlibc_free(void * ptr)'/>
+<doc f='redis/src/zmalloc.c' l='34'>/* This function provide us access to the original libc free(). This is useful
+ * for instance to free results obtained by backtrace_symbols(). We need
+ * to define this function before including zmalloc.h that may shadow the
+ * free implementation if we use jemalloc or another non standard allocator. */</doc>

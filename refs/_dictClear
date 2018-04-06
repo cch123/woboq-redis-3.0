@@ -1,0 +1,9 @@
+<def f='redis/deps/hiredis/dict.c' l='213' ll='235' type='int _dictClear(dict * ht)'/>
+<use f='redis/deps/hiredis/dict.c' l='239' u='c' c='dictRelease'/>
+<doc f='redis/deps/hiredis/dict.c' l='212'>/* Destroy an entire hash table */</doc>
+<def f='redis/src/dict.c' l='455' ll='479' type='int _dictClear(dict * d, dictht * ht, void (*)(void *) callback)'/>
+<use f='redis/src/dict.c' l='484' u='c' c='dictRelease'/>
+<use f='redis/src/dict.c' l='485' u='c' c='dictRelease'/>
+<use f='redis/src/dict.c' l='988' u='c' c='dictEmpty'/>
+<use f='redis/src/dict.c' l='989' u='c' c='dictEmpty'/>
+<doc f='redis/src/dict.c' l='454'>/* Destroy an entire dictionary */</doc>

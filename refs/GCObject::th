@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lstate.h' l='144' type='struct lua_State'/>
+<use f='redis/deps/lua/src/lapi.c' l='397' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='406' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='629' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lapi.c' l='750' macro='1' u='a'/>
+<offset>0</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='144'>/* thread */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='101' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='298' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='386' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='413' macro='1' u='a'/>

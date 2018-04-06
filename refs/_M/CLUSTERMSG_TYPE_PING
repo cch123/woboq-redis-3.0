@@ -1,0 +1,15 @@
+<dec f='redis/src/cluster.h' l='151'/>
+<use f='redis/src/cluster.c' l='1546' u='c'/>
+<use f='redis/src/cluster.c' l='1616' u='c'/>
+<use f='redis/src/cluster.c' l='1668' u='c'/>
+<use f='redis/src/cluster.c' l='1672' u='c'/>
+<use f='redis/src/cluster.c' l='1718' u='c'/>
+<use f='redis/src/cluster.c' l='2211' u='c'/>
+<use f='redis/src/cluster.c' l='3091' u='c'/>
+<use f='redis/src/cluster.c' l='3133' u='c'/>
+<use f='redis/src/cluster.c' l='3194' u='c'/>
+<use f='redis/src/cluster.c' l='3205' u='c'/>
+<doc f='redis/src/cluster.h' l='147'>/* Note that the PING, PONG and MEET messages are actually the same exact
+ * kind of packet. PONG is the reply to ping, in the exact format as a PING,
+ * while MEET is a special PING that forces the receiver to add the sender
+ * as a node (if it is not already in the list). */</doc>

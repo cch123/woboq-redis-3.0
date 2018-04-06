@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='135' type='long long'/>
+<use f='redis/src/cluster.c' l='409' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='2071' u='w' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='4033' u='r' c='clusterCommand'/>
+<offset>3146816</offset>
+<doc f='redis/src/cluster.h' l='135'>/* Num of msg sent via cluster bus. */</doc>

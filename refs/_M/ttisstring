@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lobject.h' l='81'/>
+<use f='redis/deps/lua/src/lapi.c' l='345' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='394' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='490' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='582' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='166' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='339' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='458' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='38' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='231' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='245' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='286' u='c'/>

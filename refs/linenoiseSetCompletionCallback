@@ -1,0 +1,4 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='50' type='void linenoiseSetCompletionCallback(linenoiseCompletionCallback * )'/>
+<def f='redis/deps/linenoise/linenoise.c' l='406' ll='408' type='void linenoiseSetCompletionCallback(linenoiseCompletionCallback * fn)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='405'>/* Register a callback function to be called for tab-completion. */</doc>
+<use f='redis/src/redis-cli.c' l='973' u='c' c='repl'/>

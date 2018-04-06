@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='446'/>
+<use f='redis/deps/lua/src/lapi.c' l='98' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='98' u='c'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='438'>/*
+@@ LUAI_MAXCSTACK limits the number of Lua stack slots that a C function
+@* can use.
+** CHANGE it if you need lots of (Lua) stack space for your C
+** functions. This limit is arbitrary; its only purpose is to stop C
+** functions to consume unlimited stack space. (must be smaller than
+** -LUA_REGISTRYINDEX)
+*/</doc>

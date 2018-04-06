@@ -1,0 +1,7 @@
+<def f='redis/src/t_zset.c' l='82' ll='85' type='void zslFreeNode(zskiplistNode * node)'/>
+<use f='redis/src/t_zset.c' l='93' u='c' c='zslFree'/>
+<use f='redis/src/t_zset.c' l='206' u='c' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='316' u='c' c='zslDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='345' u='c' c='zslDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='374' u='c' c='zslDeleteRangeByRank'/>
+<use f='redis/src/t_zset.c' l='1157' u='c' c='zsetConvert'/>

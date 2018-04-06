@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ltm.h' l='23' type='4'/>
+<doc f='redis/deps/lua/src/ltm.h' l='23'>/* last tag method with `fast&apos; access */</doc>
+<use f='redis/deps/lua/src/lvm.c' l='266' u='r' c='luaV_equalval'/>
+<use f='redis/deps/lua/src/lvm.c' l='271' u='r' c='luaV_equalval'/>

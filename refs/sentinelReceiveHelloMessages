@@ -1,0 +1,5 @@
+<dec f='redis/src/sentinel.c' l='324' type='void sentinelReceiveHelloMessages(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='1752' u='r' c='sentinelReconnectInstance'/>
+<def f='redis/src/sentinel.c' l='2201' ll='2227' type='void sentinelReceiveHelloMessages(redisAsyncContext * c, void * reply, void * privdata)'/>
+<doc f='redis/src/sentinel.c' l='2199'>/* This is our Pub/Sub callback for the Hello channel. It&apos;s useful in order
+ * to discover other sentinels attached at the same master. */</doc>

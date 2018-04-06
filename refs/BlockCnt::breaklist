@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lparser.c' l='42' type='int'/>
+<use f='redis/deps/lua/src/lparser.c' l='286' u='w' c='enterblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='306' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='987' u='a' c='breakstat'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lparser.c' l='42'>/* list of jumps out of this loop */</doc>

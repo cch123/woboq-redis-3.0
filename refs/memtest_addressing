@@ -1,0 +1,5 @@
+<def f='redis/src/memtest.c' l='93' ll='115' type='void memtest_addressing(unsigned long * l, size_t bytes)'/>
+<use f='redis/src/memtest.c' l='225' u='c' c='memtest_test'/>
+<doc f='redis/src/memtest.c' l='90'>/* Test that addressing is fine. Every location is populated with its own
+ * address, and finally verified. This test is very fast but may detect
+ * ASAP big issues with the memory subsystem. */</doc>

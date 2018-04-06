@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1460' type='void zincrbyCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='174' u='r'/>
+<use f='redis/src/redis.c' l='174' u='r'/>
+<use f='redis/src/redis.c' l='174' u='r'/>
+<use f='redis/src/redis.c' l='174' u='r'/>
+<def f='redis/src/t_zset.c' l='1313' ll='1315' type='void zincrbyCommand(redisClient * c)'/>

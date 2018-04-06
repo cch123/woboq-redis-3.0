@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='519' type='robj *'/>
+<use f='redis/src/aof.c' l='558' u='w' c='createFakeClient'/>
+<offset>256</offset>
+<doc f='redis/src/redis.h' l='519'>/* As set by CLIENT SETNAME */</doc>
+<use f='redis/src/networking.c' l='88' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='788' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='788' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1337' u='r' c='catClientInfoString'/>
+<use f='redis/src/networking.c' l='1337' u='r' c='catClientInfoString'/>
+<use f='redis/src/networking.c' l='1475' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1475' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1476' u='w' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1492' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1492' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1493' u='w' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1494' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1497' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1498' u='r' c='clientCommand'/>

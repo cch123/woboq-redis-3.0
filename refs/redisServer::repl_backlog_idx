@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='802' type='long long'/>
+<offset>15680</offset>
+<doc f='redis/src/redis.h' l='802'>/* Backlog circular buffer current offset */</doc>
+<use f='redis/src/redis.c' l='1511' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='75' u='w' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='109' u='w' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='133' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='135' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='136' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='137' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='138' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='319' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='327' u='r' c='addReplyReplicationBacklog'/>

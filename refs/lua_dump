@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='207' type='int lua_dump(lua_State * L, lua_Writer writer, void * data)'/>
+<def f='redis/deps/lua/src/lapi.c' l='875' ll='887' macro='1' type='int lua_dump(lua_State * L, lua_Writer writer, void * data)'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='152' u='c' c='str_dump'/>

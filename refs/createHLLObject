@@ -1,0 +1,6 @@
+<def f='redis/src/hyperloglog.c' l='1089' ll='1119' type='robj * createHLLObject()'/>
+<use f='redis/src/hyperloglog.c' l='1164' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1314' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1396' u='c' c='pfselftestCommand'/>
+<doc f='redis/src/hyperloglog.c' l='1087'>/* Create an HLL object. We always create the HLL using sparse encoding.
+ * This will be upgraded to the dense representation as needed. */</doc>

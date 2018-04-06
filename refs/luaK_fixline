@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lcode.h' l='47' type='void luaK_fixline(FuncState * fs, int line)'/>
+<def f='redis/deps/lua/src/lcode.c' l='784' ll='786' type='void luaK_fixline(FuncState * fs, int line)'/>
+<use f='redis/deps/lua/src/lparser.c' l='652' u='c' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='1062' u='c' c='forbody'/>
+<use f='redis/deps/lua/src/lparser.c' l='1220' u='c' c='funcstat'/>

@@ -1,0 +1,6 @@
+<def f='redis/src/networking.c' l='186' ll='198' type='robj * dupLastObjectIfNeeded(list * reply)'/>
+<use f='redis/src/networking.c' l='239' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='272' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='302' u='c' c='_addReplyStringToList'/>
+<doc f='redis/src/networking.c' l='184'>/* Create a duplicate of the last object in the reply list when
+ * it is not exclusively owned by the reply list. */</doc>

@@ -1,0 +1,4 @@
+<dec f='include/unistd.h' l='500' type='int chdir(const char * __path)'/>
+<doc f='include/unistd.h' l='499'>/* Change the process&apos;s working directory to PATH.  */</doc>
+<use f='redis/src/config.c' l='164' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='794' u='c' c='configSetCommand'/>

@@ -1,0 +1,25 @@
+<dec f='redis/src/redis.h' l='568' type='robj *'/>
+<offset>320</offset>
+<use f='redis/src/bitops.c' l='257' u='r' c='setbitCommand'/>
+<use f='redis/src/bitops.c' l='284' u='r' c='getbitCommand'/>
+<use f='redis/src/db.c' l='299' u='r' c='existsCommand'/>
+<use f='redis/src/db.c' l='698' u='r' c='renameGenericCommand'/>
+<use f='redis/src/db.c' l='759' u='r' c='moveCommand'/>
+<use f='redis/src/db.c' l='903' u='r' c='expireGenericCommand'/>
+<use f='redis/src/db.c' l='907' u='r' c='expireGenericCommand'/>
+<use f='redis/src/db.c' l='969' u='r' c='persistCommand'/>
+<use f='redis/src/hyperloglog.c' l='1191' u='r' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1546' u='r' c='pfdebugCommand'/>
+<use f='redis/src/networking.c' l='502' u='r' c='addReplyLongLong'/>
+<use f='redis/src/redis.c' l='1315' u='w' c='createSharedObjects'/>
+<use f='redis/src/scripting.c' l='810' u='r' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='1165' u='r' c='scriptCommand'/>
+<use f='redis/src/sentinel.c' l='2681' u='r' c='sentinelCommand'/>
+<use f='redis/src/t_hash.c' l='472' u='r' c='hsetCommand'/>
+<use f='redis/src/t_hash.c' l='488' u='r' c='hsetnxCommand'/>
+<use f='redis/src/t_hash.c' l='760' u='r' c='hexistsCommand'/>
+<use f='redis/src/t_set.c' l='324' u='r' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='355' u='r' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='366' u='r' c='sismemberCommand'/>
+<use f='redis/src/t_string.c' l='132' u='r' c='setnxCommand'/>
+<use f='redis/src/t_string.c' l='314' u='r' c='msetGenericCommand'/>

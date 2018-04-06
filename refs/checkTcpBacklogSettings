@@ -1,0 +1,4 @@
+<def f='redis/src/redis.c' l='1635' ll='1648' type='void checkTcpBacklogSettings()'/>
+<use f='redis/src/redis.c' l='3661' u='c' c='main'/>
+<doc f='redis/src/redis.c' l='1633'>/* Check that server.tcp_backlog can be actually enforced in Linux according
+ * to the value of /proc/sys/net/core/somaxconn, or warn about it. */</doc>

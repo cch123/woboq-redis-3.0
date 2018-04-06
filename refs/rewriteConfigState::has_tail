@@ -1,0 +1,9 @@
+<dec f='redis/src/config.c' l='1278' type='int'/>
+<use f='redis/src/config.c' l='1326' u='w' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1339' u='r' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1340' u='w' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1412' u='r' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1415' u='w' c='rewriteConfigRewriteLine'/>
+<offset>256</offset>
+<doc f='redis/src/config.c' l='1278'>/* True if we already added directives that were
+                             not present in the original config file. */</doc>

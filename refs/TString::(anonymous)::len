@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lobject.h' l='205' type='size_t'/>
+<use f='redis/deps/lua/src/lapi.c' l='356' u='r' c='lua_tolstring'/>
+<use f='redis/deps/lua/src/lapi.c' l='364' u='r' c='lua_objlen'/>
+<use f='redis/deps/lua/src/lapi.c' l='370' u='r' c='lua_objlen'/>
+<offset>128</offset>
+<use f='redis/deps/lua/src/ldump.c' l='70' u='r' c='DumpString'/>
+<use f='redis/deps/lua/src/lgc.c' l='391' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lparser.c' l='60' u='r' c='anchor_token'/>
+<use f='redis/deps/lua/src/lstring.c' l='57' u='w' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='86' u='r' c='luaS_newlstr'/>
+<use f='redis/deps/lua/src/lvm.c' l='205' u='r' c='l_strcmp'/>
+<use f='redis/deps/lua/src/lvm.c' l='207' u='r' c='l_strcmp'/>
+<use f='redis/deps/lua/src/lvm.c' l='289' u='r' c='luaV_concat'/>
+<use f='redis/deps/lua/src/lvm.c' l='293' u='r' c='luaV_concat'/>
+<use f='redis/deps/lua/src/lvm.c' l='298' u='r' c='luaV_concat'/>
+<use f='redis/deps/lua/src/lvm.c' l='305' u='r' c='luaV_concat'/>
+<use f='redis/deps/lua/src/lvm.c' l='522' u='r' c='luaV_execute'/>

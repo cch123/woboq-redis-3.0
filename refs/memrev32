@@ -1,0 +1,5 @@
+<dec f='redis/src/endianconv.h' l='40' type='void memrev32(void * p)'/>
+<def f='redis/src/endianconv.c' l='59' ll='68' type='void memrev32(void * p)'/>
+<use f='redis/src/endianconv.c' l='95' u='c' c='intrev32'/>
+<doc f='redis/src/endianconv.c' l='57'>/* Toggle the 32 bit unsigned integer pointed by *p from little endian to
+ * big endian */</doc>

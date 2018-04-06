@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='60' type='void luaK_goiftrue(FuncState * fs, expdesc * e)'/>
+<def f='redis/deps/lua/src/lcode.c' l='539' ll='560' type='void luaK_goiftrue(FuncState * fs, expdesc * e)'/>
+<use f='redis/deps/lua/src/lcode.c' l='713' u='c' c='luaK_infix'/>
+<use f='redis/deps/lua/src/lparser.c' l='970' u='c' c='cond'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/t_set.c' l='584' ll='588' type='int qsortCompareSetsByRevCardinality(const void * s1, const void * s2)'/>
+<use f='redis/src/t_set.c' l='788' u='r' c='sunionDiffGenericCommand'/>
+<doc f='redis/src/t_set.c' l='582'>/* This is used by SDIFF and in this case we can receive NULL that should
+ * be handled as empty sets. */</doc>

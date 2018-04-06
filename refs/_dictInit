@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/dict.c' l='47' type='int _dictInit(dict * ht, dictType * type, void * privDataPtr)'/>
+<use f='redis/deps/hiredis/dict.c' l='75' u='c' c='dictCreate'/>
+<def f='redis/deps/hiredis/dict.c' l='80' ll='85' type='int _dictInit(dict * ht, dictType * type, void * privDataPtr)'/>
+<use f='redis/deps/hiredis/dict.c' l='97' u='c' c='dictExpand'/>
+<doc f='redis/deps/hiredis/dict.c' l='79'>/* Initialize the hash table */</doc>

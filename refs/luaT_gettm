@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/ltm.h' l='49' type='const TValue * luaT_gettm(Table * events, TMS event, TString * ename)'/>
+<use f='redis/deps/lua/src/lgc.c' l='136' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='165' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' macro='1' u='c'/>
+<def f='redis/deps/lua/src/ltm.c' l='50' ll='58' type='const TValue * luaT_gettm(Table * events, TMS event, TString * ename)'/>
+<doc f='redis/deps/lua/src/ltm.c' l='46'>/*
+** function to be used with macro &quot;fasttm&quot;: optimized for absence of
+** tag methods
+*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='116' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='178' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='182' macro='1' u='c'/>

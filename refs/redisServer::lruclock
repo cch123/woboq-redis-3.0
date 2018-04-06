@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='657' type='unsigned int'/>
+<offset>448</offset>
+<doc f='redis/src/redis.h' l='657'>/* Clock for LRU eviction */</doc>
+<use f='redis/src/db.c' l='53' macro='1' u='r'/>
+<use f='redis/src/object.c' l='47' macro='1' u='r'/>
+<use f='redis/src/object.c' l='68' macro='1' u='r'/>
+<use f='redis/src/object.c' l='693' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1099' u='w' c='serverCron'/>
+<use f='redis/src/redis.c' l='1483' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2672' u='r' c='genRedisInfoString'/>

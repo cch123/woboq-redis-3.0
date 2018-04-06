@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='768' ll='783' type='int clusterNodeRemoveSlave(clusterNode * master, clusterNode * slave)'/>
+<use f='redis/src/cluster.c' l='825' u='c' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='1409' u='c' c='clusterSetNodeAsMaster'/>
+<use f='redis/src/cluster.c' l='1774' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='3572' u='c' c='clusterSetMaster'/>

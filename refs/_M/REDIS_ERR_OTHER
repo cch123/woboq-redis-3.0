@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='53'/>
+<use f='redis/deps/hiredis/async.c' l='444' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='129' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='144' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='151' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='157' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='277' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='294' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='307' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='334' u='c'/>

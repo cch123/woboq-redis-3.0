@@ -1,0 +1,9 @@
+<dec f='redis/src/lzf.h' l='49'/>
+<doc f='redis/src/lzf.h' l='40'>/***********************************************************************
+**
+**	lzf -- an extremely fast/free compression/decompression-method
+**	http://liblzf.plan9.de/
+**
+**	This algorithm is believed to be patent-free.
+**
+***********************************************************************/</doc>

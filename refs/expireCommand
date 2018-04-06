@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1446' type='void expireCommand(redisClient * c)'/>
+<use f='redis/src/aof.c' l='475' u='r' c='catAppendOnlyExpireAtCommand'/>
+<use f='redis/src/aof.c' l='481' u='r' c='catAppendOnlyExpireAtCommand'/>
+<use f='redis/src/aof.c' l='512' u='r' c='feedAppendOnlyFile'/>
+<def f='redis/src/db.c' l='915' ll='917' type='void expireCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='219' u='r'/>
+<use f='redis/src/redis.c' l='219' u='r'/>
+<use f='redis/src/redis.c' l='219' u='r'/>
+<use f='redis/src/redis.c' l='219' u='r'/>

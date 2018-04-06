@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lua.h' l='152' type='void * lua_touserdata(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='385' ll='392' macro='1' type='void * lua_touserdata(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lapi.c' l='409' u='c' c='lua_topointer'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='125' u='c' c='luaL_checkudata'/>
+<use f='redis/deps/lua/src/liolib.c' l='60' u='c' c='io_type'/>
+<use f='redis/deps/lua/src/liolib.c' l='193' u='c' c='getiofile'/>
+<use f='redis/deps/lua/src/liolib.c' l='392' u='c' c='io_readline'/>
+<use f='redis/deps/lua/src/loadlib.c' l='267' u='c' c='ll_register'/>
+<use f='redis/deps/lua/src/loadlib.c' l='458' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/loadlib.c' l='488' u='c' c='ll_require'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='198' u='c' c='json_fetch_config'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='365' u='c' c='json_destroy_config'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='691' u='c' c='json_append_data'/>

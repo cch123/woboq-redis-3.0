@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/sds.h' l='32'/>
+<dec f='redis/src/sds.h' l='32'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='466' type='robj **'/>
+<offset>0</offset>
+<use f='redis/src/cluster.c' l='4800' u='w' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4814' u='r' c='getNodeByQuery'/>
+<use f='redis/src/multi.c' l='49' u='r' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='50' u='r' c='freeClientMultiState'/>
+<use f='redis/src/multi.c' l='65' u='w' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='66' u='r' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='68' u='r' c='queueMultiCommand'/>
+<use f='redis/src/multi.c' l='147' u='r' c='execCommand'/>
+<use f='redis/src/multi.c' l='163' u='w' c='execCommand'/>

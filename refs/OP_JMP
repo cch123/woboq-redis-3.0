@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='183' type='22'/>
+<use f='redis/deps/lua/src/lcode.c' l='63' u='r' c='luaK_jump'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='183'>/*	sBx	pc+=sBx					*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='371' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='416' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='541' c='luaV_execute'/>

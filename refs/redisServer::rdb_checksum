@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='778' type='int'/>
+<offset>14496</offset>
+<doc f='redis/src/redis.h' l='778'>/* Use RDB checksum? */</doc>
+<use f='redis/src/config.c' l='311' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1092' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1811' u='r' c='rewriteConfig'/>
+<use f='redis/src/rdb.c' l='646' u='r' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='1113' u='r' c='rdbLoadProgressCallback'/>
+<use f='redis/src/rdb.c' l='1218' u='r' c='rdbLoad'/>
+<use f='redis/src/redis.c' l='1447' u='w' c='initServerConfig'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1423' type='void saddCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='158' u='r'/>
+<use f='redis/src/redis.c' l='158' u='r'/>
+<use f='redis/src/redis.c' l='158' u='r'/>
+<use f='redis/src/redis.c' l='158' u='r'/>
+<def f='redis/src/t_set.c' l='250' ll='275' type='void saddCommand(redisClient * c)'/>

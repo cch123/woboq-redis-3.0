@@ -1,0 +1,6 @@
+<def f='redis/src/config.c' l='1441' ll='1449' type='void rewriteConfigBytesOption(struct rewriteConfigState * state, char * option, long long value, long long defvalue)'/>
+<use f='redis/src/config.c' l='1820' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1821' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1830' u='c' c='rewriteConfig'/>
+<use f='redis/src/config.c' l='1849' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1440'>/* Rewrite a simple &quot;option-name &lt;bytes&gt;&quot; configuration option. */</doc>

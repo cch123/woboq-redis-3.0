@@ -1,0 +1,8 @@
+<dec f='redis/src/rio.h' l='43' type='size_t (*)(struct _rio *, void *, size_t)'/>
+<use f='redis/src/rio.h' l='109' u='r' c='rioRead'/>
+<offset>0</offset>
+<doc f='redis/src/rio.h' l='40'>/* Backend functions.
+     * Since this functions do not tolerate short writes or reads the return
+     * value is simplified to: zero on error, non zero on complete success. */</doc>
+<use f='redis/src/rio.c' l='302' u='r' c='rioSetAutoSync'/>
+<use f='redis/src/rio.c' l='302' u='r' c='rioSetAutoSync'/>

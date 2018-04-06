@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='149' type='void luaL_addvalue(luaL_Buffer * B)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='454' ll='469' macro='1' type='void luaL_addvalue(luaL_Buffer * B)'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='605' u='c' c='add_s'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='640' u='c' c='add_value'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='806' u='c' c='str_format'/>
+<use f='redis/deps/lua/src/ltablib.c' l='140' u='c' c='addfield'/>

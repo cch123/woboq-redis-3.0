@@ -1,0 +1,26 @@
+<def f='redis/src/lzf_d.c' l='55' ll='149' type='unsigned int lzf_decompress(const void *const in_data, unsigned int in_len, void * out_data, unsigned int out_len)'/>
+<doc f='redis/src/lzf_d.c' l='46'>/*
+#if (__i386 || __amd64) &amp;&amp; __GNUC__ &gt;= 3
+# define lzf_movsb(dst, src, len)                \
+   asm (&quot;rep movsb&quot;                              \
+        : &quot;=D&quot; (dst), &quot;=S&quot; (src), &quot;=c&quot; (len)     \
+        :  &quot;0&quot; (dst),  &quot;1&quot; (src),  &quot;2&quot; (len));
+#endif
+*/</doc>
+<dec f='redis/src/lzf.h' l='96' type='unsigned int lzf_decompress(const void *const in_data, unsigned int in_len, void * out_data, unsigned int out_len)'/>
+<use f='redis/src/rdb.c' l='259' u='c' c='rdbLoadLzfStringObject'/>
+<doc f='redis/src/lzf.h' l='80'>/*
+ * Decompress data compressed with some version of the lzf_compress
+ * function and stored at location in_data and length in_len. The result
+ * will be stored at out_data up to a maximum of out_len characters.
+ *
+ * If the output buffer is not large enough to hold the decompressed
+ * data, a 0 is returned and errno is set to E2BIG. Otherwise the number
+ * of decompressed bytes (i.e. the original length of the data) is
+ * returned.
+ *
+ * If an error in the compressed data is detected, a zero is returned and
+ * errno is set to EINVAL.
+ *
+ * This function is very fast, about as fast as a copying loop.
+ */</doc>

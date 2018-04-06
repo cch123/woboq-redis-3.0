@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.c' l='72' type='void resetManualFailover()'/>
+<use f='redis/src/cluster.c' l='470' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='496' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='1929' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2673' u='c' c='clusterFailoverReplaceYourMaster'/>
+<def f='redis/src/cluster.c' l='2977' ll='2986' type='void resetManualFailover()'/>
+<use f='redis/src/cluster.c' l='2992' u='c' c='manualFailoverCheckTimeout'/>
+<use f='redis/src/cluster.c' l='3577' u='c' c='clusterSetMaster'/>
+<use f='redis/src/cluster.c' l='4208' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='2972'>/* Reset the manual failover state. This works for both masters and slavesa
+ * as all the state about manual failover is cleared.
+ *
+ * The function can be used both to initialize the manual failover state at
+ * startup or to abort a manual failover in progress. */</doc>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='345' type='Node *'/>
+<offset>320</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='345'>/* any free position is before this position */</doc>
+<use f='redis/deps/lua/src/ltable.c' l='293' u='w' c='setnodevector'/>
+<use f='redis/deps/lua/src/ltable.c' l='383' u='w' c='getfreepos'/>
+<use f='redis/deps/lua/src/ltable.c' l='384' u='r' c='getfreepos'/>
+<use f='redis/deps/lua/src/ltable.c' l='385' u='r' c='getfreepos'/>

@@ -1,0 +1,3 @@
+<use f='redis/src/aof.c' l='635' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='695' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/rio.c' l='132' u='c' c='rioFileTell'/>

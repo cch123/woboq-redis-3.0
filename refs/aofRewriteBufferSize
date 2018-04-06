@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1193' type='unsigned long aofRewriteBufferSize()'/>
+<def f='redis/src/aof.c' l='78' ll='89' type='unsigned long aofRewriteBufferSize()'/>
+<use f='redis/src/aof.c' l='156' u='c' c='aofRewriteBufferAppend'/>
+<use f='redis/src/aof.c' l='1396' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/aof.c' l='77'>/* Return the current size of the AOF rewrite buffer. */</doc>
+<use f='redis/src/redis.c' l='2776' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3210' u='c' c='freeMemoryIfNeeded'/>

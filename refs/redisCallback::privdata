@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/async.h' l='48' type='void *'/>
+<use f='redis/deps/hiredis/async.c' l='258' u='r' c='__redisRunCallback'/>
+<use f='redis/deps/hiredis/async.c' l='584' u='w' c='__redisAsyncCommand'/>
+<offset>128</offset>

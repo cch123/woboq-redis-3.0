@@ -1,0 +1,4 @@
+<def f='redis/src/redis.c' l='2486' ll='2520' type='void addReplyCommand(redisClient * c, struct redisCommand * cmd)'/>
+<use f='redis/src/redis.c' l='2531' u='c' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2538' u='c' c='commandCommand'/>
+<doc f='redis/src/redis.c' l='2485'>/* Output the representation of a Redis command. Used by the COMMAND command. */</doc>

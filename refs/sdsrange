@@ -1,0 +1,49 @@
+<dec f='redis/deps/hiredis/sds.h' l='81' type='void sdsrange(sds s, int start, int end)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='653' u='c' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1192' u='c' c='redisBufferWrite'/>
+<def f='redis/deps/hiredis/sds.c' l='598' ll='626' type='void sdsrange(sds s, int start, int end)'/>
+<doc f='redis/deps/hiredis/sds.c' l='582'>/* Turn the string into a smaller (or equal) string containing only the
+ * substring specified by the &apos;start&apos; and &apos;end&apos; indexes.
+ *
+ * start and end can be negative, where -1 means the last character of the
+ * string, -2 the penultimate character, and so forth.
+ *
+ * The interval is inclusive, so the start and end characters will be part
+ * of the resulting string.
+ *
+ * The string is modified in-place.
+ *
+ * Example:
+ *
+ * s = sdsnew(&quot;Hello World&quot;);
+ * sdsrange(s,1,-1); =&gt; &quot;ello World&quot;
+ */</doc>
+<dec f='redis/src/sds.h' l='81' type='void sdsrange(sds s, int start, int end)'/>
+<use f='redis/src/aof.c' l='389' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='1989' u='c' c='clusterWriteHandler'/>
+<use f='redis/src/networking.c' l='953' u='c' c='processInlineBuffer'/>
+<use f='redis/src/networking.c' l='984' u='c' c='setProtocolError'/>
+<use f='redis/src/networking.c' l='1022' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1075' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1116' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/replication.c' l='695' u='c' c='sendBulkToSlave'/>
+<def f='redis/src/sds.c' l='598' ll='626' type='void sdsrange(sds s, int start, int end)'/>
+<doc f='redis/src/sds.c' l='582'>/* Turn the string into a smaller (or equal) string containing only the
+ * substring specified by the &apos;start&apos; and &apos;end&apos; indexes.
+ *
+ * start and end can be negative, where -1 means the last character of the
+ * string, -2 the penultimate character, and so forth.
+ *
+ * The interval is inclusive, so the start and end characters will be part
+ * of the resulting string.
+ *
+ * The string is modified in-place.
+ *
+ * Example:
+ *
+ * s = sdsnew(&quot;Hello World&quot;);
+ * sdsrange(s,1,-1); =&gt; &quot;ello World&quot;
+ */</doc>
+<use f='redis/src/sentinel.c' l='2439' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/util.c' l='550' u='c' c='getAbsolutePath'/>
+<use f='redis/src/util.c' l='559' u='c' c='getAbsolutePath'/>

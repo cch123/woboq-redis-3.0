@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='577' type='robj *[10000]'/>
+<offset>3456</offset>
+<use f='redis/src/object.c' l='98' u='r' c='createStringObjectFromLongLong'/>
+<use f='redis/src/object.c' l='99' u='r' c='createStringObjectFromLongLong'/>
+<use f='redis/src/object.c' l='401' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/object.c' l='402' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/redis.c' l='1380' u='w' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='1381' u='r' c='createSharedObjects'/>

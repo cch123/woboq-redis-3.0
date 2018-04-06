@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/ldo.h' l='47' type='void luaD_reallocCI(lua_State * L, int newsize)'/>
+<use f='redis/deps/lua/src/ldo.c' l='76' u='c' c='restore_stack_limit'/>
+<def f='redis/deps/lua/src/ldo.c' l='152' ll='158' type='void luaD_reallocCI(lua_State * L, int newsize)'/>
+<use f='redis/deps/lua/src/ldo.c' l='173' u='c' c='growCI'/>
+<use f='redis/deps/lua/src/lgc.c' l='247' u='c' c='checkstacksizes'/>

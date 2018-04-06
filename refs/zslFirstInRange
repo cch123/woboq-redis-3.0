@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1214' type='zskiplistNode * zslFirstInRange(zskiplist * zsl, zrangespec * range)'/>
+<use f='redis/src/db.c' l='1157' u='c' c='getKeysInSlot'/>
+<use f='redis/src/db.c' l='1175' u='c' c='delKeysInSlot'/>
+<use f='redis/src/db.c' l='1197' u='c' c='countKeysInSlot'/>
+<def f='redis/src/t_zset.c' l='239' ll='261' type='zskiplistNode * zslFirstInRange(zskiplist * zsl, zrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='2332' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2451' u='c' c='zcountCommand'/>
+<doc f='redis/src/t_zset.c' l='237'>/* Find the first node that is contained in the specified range.
+ * Returns NULL when no element is contained in the range. */</doc>

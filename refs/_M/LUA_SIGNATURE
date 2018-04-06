@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lua.h' l='27'/>
+<doc f='redis/deps/lua/src/lua.h' l='26'>/* mark for precompiled code (`&lt;esc&gt;Lua&apos;) */</doc>
+<use f='redis/deps/lua/src/lauxlib.c' l='573' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='577' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='498' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='200' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='217' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='217' u='c'/>
+<use f='redis/deps/lua/src/lundump.c' l='218' u='c'/>

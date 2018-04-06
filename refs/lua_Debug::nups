@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='353' type='int'/>
+<offset>352</offset>
+<doc f='redis/deps/lua/src/lua.h' l='353'>/* (u) number of upvalues */</doc>
+<use f='redis/deps/lua/src/ldblib.c' l='131' u='r' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='173' u='w' c='info_tailcall'/>
+<use f='redis/deps/lua/src/ldebug.c' l='211' u='w' c='auxgetinfo'/>

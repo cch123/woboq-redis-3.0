@@ -1,0 +1,34 @@
+<dec f='redis/src/redis.h' l='773' type='pid_t'/>
+<use f='redis/src/aof.c' l='320' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='416' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1326' u='r' c='bgrewriteaofCommand'/>
+<offset>14208</offset>
+<doc f='redis/src/redis.h' l='773'>/* PID of RDB saving child */</doc>
+<use f='redis/src/db.c' l='52' u='r' c='lookupKey'/>
+<use f='redis/src/db.c' l='266' u='r' c='flushallCommand'/>
+<use f='redis/src/db.c' l='267' u='r' c='flushallCommand'/>
+<use f='redis/src/db.c' l='268' u='r' c='flushallCommand'/>
+<use f='redis/src/rdb.c' l='768' u='r' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='804' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1259' u='r' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/rdb.c' l='1267' u='w' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/rdb.c' l='1291' u='w' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1398' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1515' u='w' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1525' u='r' c='saveCommand'/>
+<use f='redis/src/rdb.c' l='1537' u='r' c='bgsaveCommand'/>
+<use f='redis/src/redis.c' l='697' u='r' c='updateDictResizePolicy'/>
+<use f='redis/src/redis.c' l='1006' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1150' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1157' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1167' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1202' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1814' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2332' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2334' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2335' u='r' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='2748' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2752' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='520' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='547' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='2067' u='r' c='replicationCron'/>

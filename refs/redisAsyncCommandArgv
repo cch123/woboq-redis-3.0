@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/async.h' l='120' type='int redisAsyncCommandArgv(redisAsyncContext * ac, redisCallbackFn * fn, void * privdata, int argc, const char ** argv, const size_t * argvlen)'/>
+<def f='redis/deps/hiredis/async.c' l='653' ll='661' type='int redisAsyncCommandArgv(redisAsyncContext * ac, redisCallbackFn * fn, void * privdata, int argc, const char ** argv, const size_t * argvlen)'/>

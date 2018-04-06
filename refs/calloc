@@ -1,0 +1,10 @@
+<dec f='include/stdlib.h' l='468' type='void * calloc(size_t __nmemb, size_t __size)'/>
+<use f='redis/deps/hiredis/dict.c' l='100' u='c' c='dictExpand'/>
+<doc f='include/stdlib.h' l='467'>/* Allocate NMEMB elements of SIZE bytes each, all initialized to 0.  */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='62' u='c' c='createReplyObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='137' u='c' c='createArrayObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='559' u='c' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='992' u='c' c='redisContextInit'/>
+<use f='redis/deps/hiredis/sds.c' l='57' macro='1' u='c'/>
+<dec f='redis/src/redis.h' l='1537' type='void * calloc(size_t count, size_t size)'/>
+<use f='redis/src/zmalloc.c' l='139' u='c' c='zcalloc'/>

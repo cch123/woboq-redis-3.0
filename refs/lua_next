@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='239' type='int lua_next(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='973' ll='987' macro='1' type='int lua_next(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='229' u='c' c='luaB_next'/>
+<use f='redis/deps/lua/src/ltablib.c' l='43' u='c' c='foreach'/>
+<use f='redis/deps/lua/src/ltablib.c' l='60' u='c' c='maxn'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='504' u='c' c='lua_array_length'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='629' u='c' c='json_append_object'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='402' u='c' c='mp_encode_lua_table_as_map'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='410' u='c' c='mp_encode_lua_table_as_map'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='435' u='c' c='table_is_an_array'/>

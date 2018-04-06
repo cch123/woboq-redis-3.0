@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='224' type='uint16_t'/>
+<use f='redis/src/cluster.c' l='1532' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2116' u='w' c='clusterBuildMessageHdr'/>
+<offset>96</offset>
+<doc f='redis/src/cluster.h' l='224'>/* Message type */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='716' type='long long'/>
+<offset>8000</offset>
+<doc f='redis/src/redis.h' l='716'>/* Bytes read from network. */</doc>
+<use f='redis/src/networking.c' l='1211' u='w' c='readQueryFromClient'/>
+<use f='redis/src/redis.c' l='1083' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1741' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2840' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='945' u='w' c='readSyncBulkPayload'/>

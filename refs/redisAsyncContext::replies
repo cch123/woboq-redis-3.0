@@ -1,0 +1,12 @@
+<dec f='redis/deps/hiredis/async.h' l='93' type='redisCallbackList'/>
+<use f='redis/deps/hiredis/async.c' l='133' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='134' u='m' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='271' u='a' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='328' u='a' c='__redisAsyncDisconnect'/>
+<use f='redis/deps/hiredis/async.c' l='349' u='m' c='redisAsyncDisconnect'/>
+<use f='redis/deps/hiredis/async.c' l='417' u='a' c='redisProcessCallbacks'/>
+<use f='redis/deps/hiredis/async.c' l='427' u='a' c='redisProcessCallbacks'/>
+<use f='redis/deps/hiredis/async.c' l='616' u='a' c='__redisAsyncCommand'/>
+<use f='redis/deps/hiredis/async.c' l='623' u='a' c='__redisAsyncCommand'/>
+<offset>1984</offset>
+<doc f='redis/deps/hiredis/async.h' l='92'>/* Regular command callbacks */</doc>

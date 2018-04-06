@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='706' type='double'/>
+<use f='redis/src/aof.c' l='1298' u='w' c='rewriteAppendOnlyFileBackground'/>
+<offset>7360</offset>
+<doc f='redis/src/redis.h' l='706'>/* Fork rate in GB/sec. */</doc>
+<use f='redis/src/latency.c' l='276' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='280' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='284' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='290' u='r' c='createLatencyReport'/>
+<use f='redis/src/rdb.c' l='794' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1503' u='w' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='1729' u='w' c='resetServerStats'/>

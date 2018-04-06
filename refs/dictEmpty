@@ -1,0 +1,9 @@
+<dec f='redis/src/dict.h' l='171' type='void dictEmpty(dict * d, void (*)(void *) callback)'/>
+<use f='redis/src/db.c' l='218' u='c' c='emptyDb'/>
+<use f='redis/src/db.c' l='219' u='c' c='emptyDb'/>
+<use f='redis/src/db.c' l='256' u='c' c='flushdbCommand'/>
+<use f='redis/src/db.c' l='257' u='c' c='flushdbCommand'/>
+<def f='redis/src/dict.c' l='987' ll='992' type='void dictEmpty(dict * d, void (*)(void *) callback)'/>
+<use f='redis/src/replication.c' l='1752' u='c' c='replicationScriptCacheFlush'/>
+<use f='redis/src/sentinel.c' l='416' u='c' c='initSentinel'/>
+<use f='redis/src/t_list.c' l='832' u='c' c='unblockClientWaitingData'/>

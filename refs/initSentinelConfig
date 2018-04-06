@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1354' type='void initSentinelConfig()'/>
+<doc f='redis/src/redis.h' l='1353'>/* Sentinel */</doc>
+<use f='redis/src/redis.c' l='3590' u='c' c='main'/>
+<def f='redis/src/sentinel.c' l='406' ll='408' type='void initSentinelConfig()'/>
+<doc f='redis/src/sentinel.c' l='404'>/* This function overwrites a few normal Redis config default with Sentinel
+ * specific defaults. */</doc>

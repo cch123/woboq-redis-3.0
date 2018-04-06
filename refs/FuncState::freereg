@@ -1,0 +1,27 @@
+<dec f='redis/deps/lua/src/lparser.h' l='68' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='200' u='r' c='luaK_checkstack'/>
+<use f='redis/deps/lua/src/lcode.c' l='211' u='w' c='luaK_reserveregs'/>
+<use f='redis/deps/lua/src/lcode.c' l='217' u='w' c='freereg'/>
+<use f='redis/deps/lua/src/lcode.c' l='286' u='r' c='luaK_setreturns'/>
+<use f='redis/deps/lua/src/lcode.c' l='385' u='r' c='discharge2anyreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='418' u='r' c='luaK_exp2nextreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='507' u='r' c='luaK_self'/>
+<use f='redis/deps/lua/src/lcode.c' l='829' u='w' c='luaK_setlist'/>
+<offset>480</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='68'>/* first free register */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='268' u='r' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='305' u='w' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='339' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='446' u='r' c='recfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='460' u='w' c='recfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='649' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='653' u='w' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='910' u='r' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='925' u='r' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='952' u='w' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='960' u='r' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='1070' u='r' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='1082' u='r' c='fornum'/>
+<use f='redis/deps/lua/src/lparser.c' l='1095' u='r' c='forlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='1169' u='r' c='localfunc'/>
+<use f='redis/deps/lua/src/lparser.c' l='1334' u='w' c='chunk'/>

@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='877' type='mstime_t'/>
+<offset>19136</offset>
+<doc f='redis/src/redis.h' l='877'>/* Cluster node timeout. */</doc>
+<use f='redis/src/cluster.c' l='718' u='r' c='clusterNodeCleanupFailureReports'/>
+<use f='redis/src/cluster.c' l='1198' u='r' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='2509' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2515' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2603' u='r' c='clusterLogCantFailover'/>
+<use f='redis/src/cluster.c' l='2701' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2733' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2734' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2743' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='3041' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3176' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3180' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3192' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3217' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3465' u='r' c='clusterUpdateState'/>
+<use f='redis/src/config.c' l='450' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='451' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='961' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1074' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1854' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1470' u='w' c='initServerConfig'/>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='85' type='lu_mem'/>
+<offset>1088</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='85'>/* how much GC is `behind schedule&apos; */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='601' u='w' c='singlestep'/>
+<use f='redis/deps/lua/src/lgc.c' l='615' u='w' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='622' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='625' u='w' c='luaC_step'/>
+<use f='redis/deps/lua/src/lstate.c' l='180' u='w' c='lua_newstate'/>

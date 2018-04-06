@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='475' type='time_t'/>
+<offset>128</offset>
+<doc f='redis/src/redis.h' l='475'>/* MINREPLICAS timeout as unixtime. */</doc>

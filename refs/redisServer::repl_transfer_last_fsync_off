@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='825' type='off_t'/>
+<offset>16640</offset>
+<doc f='redis/src/redis.h' l='825'>/* Offset when we fsync-ed last time. */</doc>
+<use f='redis/src/replication.c' l='984' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='987' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='989' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='990' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1364' u='w' c='syncWithMaster'/>

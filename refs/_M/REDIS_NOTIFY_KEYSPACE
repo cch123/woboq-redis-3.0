@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='377'/>
+<doc f='redis/src/redis.h' l='375'>/* Keyspace changes notification classes. Every class is associated with a
+ * character for configuration purposes. */</doc>
+<use f='redis/src/notify.c' l='55' u='c'/>
+<use f='redis/src/notify.c' l='83' u='c'/>
+<use f='redis/src/notify.c' l='107' u='c'/>

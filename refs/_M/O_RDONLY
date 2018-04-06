@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl-linux.h' l='43'/>
+<use f='redis/src/aof.c' l='1431' u='c'/>
+<use f='redis/src/replication.c' l='784' u='c'/>
+<use f='redis/src/sentinel.c' l='1607' u='c'/>
+<use f='redis/src/zmalloc.c' l='273' u='c'/>

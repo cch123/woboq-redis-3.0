@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1293' type='int pubsubPublishMessage(robj * channel, robj * message)'/>
+<use f='redis/src/cluster.c' l='1903' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/notify.c' l='114' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='126' u='c' c='notifyKeyspaceEvent'/>
+<def f='redis/src/pubsub.c' l='225' ll='271' type='int pubsubPublishMessage(robj * channel, robj * message)'/>
+<use f='redis/src/pubsub.c' l='318' u='c' c='publishCommand'/>
+<doc f='redis/src/pubsub.c' l='224'>/* Publish a message */</doc>
+<use f='redis/src/sentinel.c' l='571' u='c' c='sentinelEvent'/>

@@ -1,0 +1,17 @@
+<dec f='redis/src/ae.h' l='112' type='int aeProcessEvents(aeEventLoop * eventLoop, int flags)'/>
+<def f='redis/src/ae.c' l='352' ll='426' type='int aeProcessEvents(aeEventLoop * eventLoop, int flags)'/>
+<use f='redis/src/ae.c' l='455' u='c' c='aeMain'/>
+<doc f='redis/src/ae.c' l='339'>/* Process every pending time event, then every pending file event
+ * (that may be registered by time event callbacks just processed).
+ * Without special flags the function sleeps until some file event
+ * fires, or when the next time event occurs (if any).
+ *
+ * If flags is 0, the function does nothing and returns.
+ * if flags has AE_ALL_EVENTS set, all the kind of events are processed.
+ * if flags has AE_FILE_EVENTS set, file events are processed.
+ * if flags has AE_TIME_EVENTS set, time events are processed.
+ * if flags has AE_DONT_WAIT set the function returns ASAP until all
+ * the events that&apos;s possible to process without to wait are processed.
+ *
+ * The function returns the number of events processed. */</doc>
+<use f='redis/src/networking.c' l='1759' u='c' c='processEventsWhileBlocked'/>

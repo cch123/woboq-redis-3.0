@@ -1,0 +1,4 @@
+<dec f='include/ctype.h' l='57' type='2'/>
+<doc f='include/ctype.h' l='57'>/* Control character.  */</doc>
+<use f='redis/deps/lua/src/llex.c' l='81' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='230' macro='1' u='r'/>

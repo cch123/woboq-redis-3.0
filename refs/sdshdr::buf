@@ -1,0 +1,31 @@
+<dec f='redis/deps/hiredis/sds.h' l='44' type='char []'/>
+<offset>64</offset>
+<use f='redis/deps/hiredis/sds.c' l='63' u='r' c='sdsnewlen'/>
+<use f='redis/deps/hiredis/sds.c' l='64' u='w' c='sdsnewlen'/>
+<use f='redis/deps/hiredis/sds.c' l='65' u='r' c='sdsnewlen'/>
+<use f='redis/deps/hiredis/sds.c' l='120' u='w' c='sdsclear'/>
+<use f='redis/deps/hiredis/sds.c' l='146' u='r' c='sdsMakeRoomFor'/>
+<use f='redis/deps/hiredis/sds.c' l='161' u='r' c='sdsRemoveFreeSpace'/>
+<use f='redis/deps/hiredis/sds.c' l='575' u='r' c='sdstrim'/>
+<use f='redis/deps/hiredis/sds.c' l='575' u='r' c='sdstrim'/>
+<use f='redis/deps/hiredis/sds.c' l='576' u='w' c='sdstrim'/>
+<use f='redis/deps/hiredis/sds.c' l='622' u='r' c='sdsrange'/>
+<use f='redis/deps/hiredis/sds.c' l='622' u='r' c='sdsrange'/>
+<use f='redis/deps/hiredis/sds.c' l='623' u='w' c='sdsrange'/>
+<dec f='redis/src/sds.h' l='44' type='char []'/>
+<offset>64</offset>
+<use f='redis/src/object.c' l='73' u='r' c='createEmbeddedStringObject'/>
+<use f='redis/src/object.c' l='74' u='w' c='createEmbeddedStringObject'/>
+<use f='redis/src/object.c' l='76' u='r' c='createEmbeddedStringObject'/>
+<use f='redis/src/sds.c' l='63' u='r' c='sdsnewlen'/>
+<use f='redis/src/sds.c' l='64' u='w' c='sdsnewlen'/>
+<use f='redis/src/sds.c' l='65' u='r' c='sdsnewlen'/>
+<use f='redis/src/sds.c' l='120' u='w' c='sdsclear'/>
+<use f='redis/src/sds.c' l='146' u='r' c='sdsMakeRoomFor'/>
+<use f='redis/src/sds.c' l='161' u='r' c='sdsRemoveFreeSpace'/>
+<use f='redis/src/sds.c' l='575' u='r' c='sdstrim'/>
+<use f='redis/src/sds.c' l='575' u='r' c='sdstrim'/>
+<use f='redis/src/sds.c' l='576' u='w' c='sdstrim'/>
+<use f='redis/src/sds.c' l='622' u='r' c='sdsrange'/>
+<use f='redis/src/sds.c' l='622' u='r' c='sdsrange'/>
+<use f='redis/src/sds.c' l='623' u='w' c='sdsrange'/>

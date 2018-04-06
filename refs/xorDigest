@@ -1,0 +1,14 @@
+<def f='redis/src/debug.c' l='58' ll='69' type='void xorDigest(unsigned char * digest, void * ptr, size_t len)'/>
+<use f='redis/src/debug.c' l='73' u='c' c='xorObjectDigest'/>
+<use f='redis/src/debug.c' l='95' u='c' c='mixDigest'/>
+<use f='redis/src/debug.c' l='202' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='218' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='239' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='246' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='248' u='c' c='computeDatasetDigest'/>
+<doc f='redis/src/debug.c' l='52'>/* Compute the sha1 of string at &apos;s&apos; with &apos;len&apos; bytes long.
+ * The SHA1 is then xored against the string pointed by digest.
+ * Since xor is commutative, this operation is used in order to
+ * &quot;add&quot; digests relative to unordered elements.
+ *
+ * So digest(a,b,c,d) will be the same of digest(b,a,c,d) */</doc>

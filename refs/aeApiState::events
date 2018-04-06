@@ -1,0 +1,10 @@
+<dec f='redis/src/ae_epoll.c' l='36' type='struct epoll_event *'/>
+<use f='redis/src/ae_epoll.c' l='43' u='w' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='44' u='r' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='50' u='r' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='61' u='w' c='aeApiResize'/>
+<use f='redis/src/ae_epoll.c' l='61' u='r' c='aeApiResize'/>
+<use f='redis/src/ae_epoll.c' l='69' u='r' c='aeApiFree'/>
+<use f='redis/src/ae_epoll.c' l='114' u='r' c='aeApiPoll'/>
+<use f='redis/src/ae_epoll.c' l='122' u='r' c='aeApiPoll'/>
+<offset>64</offset>

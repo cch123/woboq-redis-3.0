@@ -1,0 +1,14 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='172' type='redisReader *'/>
+<use f='redis/deps/hiredis/async.c' l='457' u='r' c='redisProcessCallbacks'/>
+<use f='redis/deps/hiredis/async.c' l='469' u='r' c='redisProcessCallbacks'/>
+<offset>1216</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='172'>/* Protocol reader */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='999' u='w' c='redisContextInit'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1008' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1009' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1154' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1155' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1155' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1203' u='r' c='redisGetReplyFromReader'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1204' u='r' c='redisGetReplyFromReader'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1204' u='r' c='redisGetReplyFromReader'/>

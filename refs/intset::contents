@@ -1,0 +1,14 @@
+<dec f='redis/src/intset.h' l='38' type='int8_t []'/>
+<offset>64</offset>
+<use f='redis/src/intset.c' l='61' u='r' c='_intsetGetEncoded'/>
+<use f='redis/src/intset.c' l='65' u='r' c='_intsetGetEncoded'/>
+<use f='redis/src/intset.c' l='69' u='r' c='_intsetGetEncoded'/>
+<use f='redis/src/intset.c' l='85' u='w' c='_intsetSet'/>
+<use f='redis/src/intset.c' l='88' u='w' c='_intsetSet'/>
+<use f='redis/src/intset.c' l='91' u='w' c='_intsetSet'/>
+<use f='redis/src/intset.c' l='188' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='189' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='192' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='193' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='196' u='r' c='intsetMoveTail'/>
+<use f='redis/src/intset.c' l='197' u='r' c='intsetMoveTail'/>

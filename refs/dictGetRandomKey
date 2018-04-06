@@ -1,0 +1,13 @@
+<dec f='redis/src/dict.h' l='166' type='dictEntry * dictGetRandomKey(dict * d)'/>
+<use f='redis/src/cluster.c' l='2218' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='3119' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='4481' u='c' c='migrateGetSocket'/>
+<use f='redis/src/db.c' l='146' u='c' c='dbRandomKey'/>
+<def f='redis/src/dict.c' l='623' ll='662' type='dictEntry * dictGetRandomKey(dict * d)'/>
+<doc f='redis/src/dict.c' l='621'>/* Return a random entry from the hash table. Useful to
+ * implement randomized algorithms */</doc>
+<use f='redis/src/redis.c' l='840' u='c' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='3246' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3292' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/t_set.c' l='198' u='c' c='setTypeRandomElement'/>
+<use f='redis/src/t_set.c' l='510' u='c' c='srandmemberWithCountCommand'/>

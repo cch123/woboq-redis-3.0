@@ -1,0 +1,3 @@
+<dec f='redis/src/cluster.h' l='28'/>
+<use f='redis/src/cluster.c' l='4784' u='c'/>
+<doc f='redis/src/cluster.h' l='27'>/* Redirection errors returned by getNodeByQuery(). */</doc>

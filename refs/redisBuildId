@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1374' type='uint64_t redisBuildId()'/>
+<use f='redis/src/redis.c' l='2656' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3411' u='c' c='version'/>
+<def f='redis/src/release.c' l='48' ll='52' type='uint64_t redisBuildId()'/>

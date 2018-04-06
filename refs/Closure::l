@@ -1,0 +1,35 @@
+<dec f='redis/deps/lua/src/lobject.h' l='311' type='LClosure'/>
+<use f='redis/deps/lua/src/lapi.c' l='882' u='m' c='lua_dump'/>
+<use f='redis/deps/lua/src/lapi.c' l='1049' u='m' c='aux_upvalue'/>
+<use f='redis/deps/lua/src/lapi.c' l='1051' u='m' c='aux_upvalue'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='40' u='m' c='currentpc'/>
+<use f='redis/deps/lua/src/ldebug.c' l='49' u='m' c='currentline'/>
+<use f='redis/deps/lua/src/ldebug.c' l='49' u='m' c='currentline'/>
+<use f='redis/deps/lua/src/ldebug.c' l='108' u='m' c='getluaproto'/>
+<use f='redis/deps/lua/src/ldebug.c' l='158' u='m' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='159' u='m' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='160' u='m' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='183' u='m' c='collectvalidlines'/>
+<use f='redis/deps/lua/src/ldebug.c' l='185' u='m' c='collectvalidlines'/>
+<use f='redis/deps/lua/src/ldebug.c' l='500' u='m' c='getobjname'/>
+<use f='redis/deps/lua/src/ldebug.c' l='549' u='m' c='getfuncname'/>
+<use f='redis/deps/lua/src/ldo.c' l='271' u='a' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='501' u='m' c='f_parser'/>
+<use f='redis/deps/lua/src/ldo.c' l='503' u='m' c='f_parser'/>
+<use f='redis/deps/lua/src/lfunc.c' l='36' u='m' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='37' u='m' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='38' u='m' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='39' u='m' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='154' u='m' c='luaF_freeclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='234' u='m' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='234' u='m' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='235' u='m' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='236' u='m' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='236' u='m' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='295' u='m' c='propagatemark'/>
+<use f='redis/deps/lua/src/lvm.c' l='69' u='m' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='385' u='a' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='730' u='m' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='733' u='m' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='736' u='m' c='luaV_execute'/>

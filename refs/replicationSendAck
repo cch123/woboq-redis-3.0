@@ -1,0 +1,7 @@
+<dec f='redis/src/replication.c' l='42' type='void replicationSendAck()'/>
+<use f='redis/src/replication.c' l='638' u='c' c='replconfCommand'/>
+<def f='redis/src/replication.c' l='1563' ll='1574' type='void replicationSendAck()'/>
+<use f='redis/src/replication.c' l='1979' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='1560'>/* Send a REPLCONF ACK command to the master to inform it about the current
+ * processed offset. If we are not connected with a master, the command has
+ * no effects. */</doc>

@@ -1,0 +1,25 @@
+<dec f='redis/deps/lua/src/lstate.h' l='114' type='unsigned short'/>
+<use f='redis/deps/lua/src/lapi.c' l='126' u='w' c='lua_setlevel'/>
+<use f='redis/deps/lua/src/lapi.c' l='126' u='r' c='lua_setlevel'/>
+<offset>768</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='114'>/* number of nested C calls */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='86' u='w' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='371' u='w' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='372' u='r' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='374' u='r' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='379' u='w' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='423' u='r' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='427' u='w' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='438' u='w' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='447' u='r' c='lua_yield'/>
+<use f='redis/deps/lua/src/ldo.c' l='459' u='r' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/ldo.c' l='469' u='w' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/lparser.c' l='277' u='w' c='enterlevel'/>
+<use f='redis/deps/lua/src/lparser.c' l='282' u='w' c='subexpr'/>
+<use f='redis/deps/lua/src/lparser.c' l='941' u='r' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='941' u='r' c='assignment'/>
+<use f='redis/deps/lua/src/lparser.c' l='282' u='w' c='chunk'/>
+<use f='redis/deps/lua/src/lstate.c' l='96' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='208' u='w' c='lua_close'/>
+<use f='redis/deps/lua/src/lundump.c' l='164' u='w' c='LoadFunction'/>
+<use f='redis/deps/lua/src/lundump.c' l='179' u='w' c='LoadFunction'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1170' type='int replicationCountAcksByOffset(long long offset)'/>
+<use f='redis/src/blocked.c' l='154' u='c' c='replyToBlockedClientTimedOut'/>
+<def f='redis/src/replication.c' l='1822' ll='1835' type='int replicationCountAcksByOffset(long long offset)'/>
+<use f='redis/src/replication.c' l='1851' u='c' c='waitCommand'/>
+<use f='redis/src/replication.c' l='1903' u='c' c='processClientsWaitingReplicas'/>
+<doc f='redis/src/replication.c' l='1820'>/* Return the number of slaves that already acknowledged the specified
+ * replication offset. */</doc>

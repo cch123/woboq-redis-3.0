@@ -1,0 +1,6 @@
+<dec f='redis/src/rdb.h' l='105' type='void rdbRemoveTempFile(pid_t childpid)'/>
+<use f='redis/src/db.c' l='268' u='c' c='flushallCommand'/>
+<def f='redis/src/rdb.c' l='812' ll='817' type='void rdbRemoveTempFile(pid_t childpid)'/>
+<use f='redis/src/rdb.c' l='1259' u='c' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/redis.c' l='2335' u='c' c='prepareForShutdown'/>
+<use f='redis/src/redis.c' l='3485' u='c' c='sigShutdownHandler'/>

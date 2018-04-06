@@ -1,0 +1,4 @@
+<def f='redis/src/latency.c' l='477' ll='491' type='void latencyCommandReplyWithSamples(redisClient * c, struct latencyTimeSeries * ts)'/>
+<use f='redis/src/latency.c' l='576' u='c' c='latencyCommand'/>
+<doc f='redis/src/latency.c' l='475'>/* latencyCommand() helper to produce a time-delay reply for all the samples
+ * in memory for the specified time series. */</doc>

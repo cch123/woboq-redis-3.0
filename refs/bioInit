@@ -1,0 +1,5 @@
+<dec f='redis/src/bio.h' l='31' type='void bioInit()'/>
+<doc f='redis/src/bio.h' l='30'>/* Exported API */</doc>
+<def f='redis/src/bio.c' l='92' ll='124' type='void bioInit()'/>
+<doc f='redis/src/bio.c' l='91'>/* Initialize the background system, spawning the thread. */</doc>
+<use f='redis/src/redis.c' l='1881' u='c' c='initServer'/>

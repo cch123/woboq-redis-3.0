@@ -1,0 +1,7 @@
+<dec f='redis/src/rio.h' l='55' type='uint64_t'/>
+<offset>320</offset>
+<doc f='redis/src/rio.h' l='54'>/* The current checksum */</doc>
+<use f='redis/src/rdb.c' l='681' u='r' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='1219' u='r' c='rdbLoad'/>
+<use f='redis/src/rio.c' l='290' u='w' c='rioGenericUpdateChecksum'/>
+<use f='redis/src/rio.c' l='290' u='r' c='rioGenericUpdateChecksum'/>

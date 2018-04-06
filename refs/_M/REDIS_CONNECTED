@@ -1,0 +1,13 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='61'/>
+<use f='redis/deps/hiredis/async.c' l='117' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='296' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='495' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='506' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='511' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='528' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='533' u='c'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='59'>/* Connection may be disconnected before being free&apos;d. The second bit
+ * in the flags field is set when the context is connected. */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='1111' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='327' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='380' u='c'/>

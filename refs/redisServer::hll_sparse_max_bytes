@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='867' type='size_t'/>
+<offset>18752</offset>
+<use f='redis/src/config.c' l='410' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='821' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1053' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1868' u='r' c='rewriteConfig'/>
+<use f='redis/src/hyperloglog.c' l='819' u='r' c='hllSparseAdd'/>
+<use f='redis/src/hyperloglog.c' l='1408' u='r' c='pfselftestCommand'/>
+<use f='redis/src/redis.c' l='1463' u='w' c='initServerConfig'/>

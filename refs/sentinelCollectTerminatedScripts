@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='743' ll='786' type='void sentinelCollectTerminatedScripts()'/>
+<use f='redis/src/sentinel.c' l='3889' u='c' c='sentinelTimer'/>
+<doc f='redis/src/sentinel.c' l='739'>/* Check for scripts that terminated, and remove them from the queue if the
+ * script terminated successfully. If instead the script was terminated by
+ * a signal, or returned exit code &quot;1&quot;, it is scheduled to run again if
+ * the max number of retries did not already elapsed. */</doc>

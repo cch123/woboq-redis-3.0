@@ -1,0 +1,30 @@
+<dec f='redis/src/redis.h' l='212'/>
+<dec f='redis/src/rdb.h' l='56'/>
+<doc f='redis/src/redis.h' l='199'>/* Defines related to the dump file format. To store 32 bits lengths for short
+ * keys requires a lot of space, so we check the most significant 2 bits of
+ * the first byte to interpreter the length:
+ *
+ * 00|000000 =&gt; if the two MSB are 00 the len is the 6 bits of this byte
+ * 01|000000 00000000 =&gt;  01, the len is 14 byes, 6 bits + 8 bits of next byte
+ * 10|000000 [32 bit integer] =&gt; if it&apos;s 10, a full 32 bit len will follow
+ * 11|000000 this means: specially encoded object will follow. The six bits
+ *           number specify the kind of object that follows.
+ *           See the REDIS_RDB_ENC_* defines.
+ *
+ * Lengths up to 63 are stored using a single byte, most DB keys, and may
+ * values, will fit inside. */</doc>
+<doc f='redis/src/rdb.h' l='43'>/* Defines related to the dump file format. To store 32 bits lengths for short
+ * keys requires a lot of space, so we check the most significant 2 bits of
+ * the first byte to interpreter the length:
+ *
+ * 00|000000 =&gt; if the two MSB are 00 the len is the 6 bits of this byte
+ * 01|000000 00000000 =&gt;  01, the len is 14 byes, 6 bits + 8 bits of next byte
+ * 10|000000 [32 bit integer] =&gt; if it&apos;s 01, a full 32 bit len will follow
+ * 11|000000 this means: specially encoded object will follow. The six bits
+ *           number specify the kind of object that follows.
+ *           See the REDIS_RDB_ENC_* defines.
+ *
+ * Lengths up to 63 are stored using a single byte, most DB keys, and may
+ * values, will fit inside. */</doc>
+<use f='redis/src/rdb.c' l='88' u='c'/>
+<use f='redis/src/rdb.c' l='123' u='c'/>

@@ -1,0 +1,22 @@
+<dec f='redis/src/redis.h' l='1315' type='robj * lookupKeyRead(redisDb * db, robj * key)'/>
+<use f='redis/src/bitops.c' l='325' u='c' c='bitopCommand'/>
+<use f='redis/src/bitops.c' l='535' u='c' c='bitposCommand'/>
+<use f='redis/src/cluster.c' l='4364' u='c' c='dumpCommand'/>
+<use f='redis/src/cluster.c' l='4592' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4872' u='c' c='getNodeByQuery'/>
+<def f='redis/src/db.c' l='60' ll='70' type='robj * lookupKeyRead(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='78' u='c' c='lookupKeyReadOrReply'/>
+<use f='redis/src/db.c' l='619' u='c' c='typeCommand'/>
+<use f='redis/src/db.c' l='880' u='c' c='expireGenericCommand'/>
+<use f='redis/src/db.c' l='935' u='c' c='ttlGenericCommand'/>
+<use f='redis/src/debug.c' l='341' u='c' c='debugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1215' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1236' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1296' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1461' u='c' c='pfdebugCommand'/>
+<use f='redis/src/sort.c' l='109' u='c' c='lookupKeyByPattern'/>
+<use f='redis/src/sort.c' l='202' u='c' c='sortCommand'/>
+<use f='redis/src/t_hash.c' l='640' u='c' c='hmgetCommand'/>
+<use f='redis/src/t_set.c' l='602' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='747' u='c' c='sunionDiffGenericCommand'/>
+<use f='redis/src/t_string.c' l='274' u='c' c='mgetCommand'/>

@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='341' type='lua_Hook lua_gethook(lua_State * L)'/>
+<use f='redis/deps/lua/src/ldblib.c' l='287' u='c' c='db_gethook'/>
+<def f='redis/deps/lua/src/ldebug.c' l='69' ll='71' macro='1' type='lua_Hook lua_gethook(lua_State * L)'/>

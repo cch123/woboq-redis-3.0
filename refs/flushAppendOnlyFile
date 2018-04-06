@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1184' type='void flushAppendOnlyFile(int force)'/>
+<use f='redis/src/aof.c' l='208' u='c' c='stopAppendOnly'/>
+<def f='redis/src/aof.c' l='273' ll='433' type='void flushAppendOnlyFile(int force)'/>
+<doc f='redis/src/redis.h' l='1183'>/* AOF persistence */</doc>
+<use f='redis/src/redis.c' l='1220' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1228' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1302' u='c' c='beforeSleep'/>

@@ -1,0 +1,5 @@
+<def f='redis/deps/linenoise/linenoise.c' l='594' ll='618' type='int linenoiseEditInsert(struct linenoiseState * l, char c)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='870' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='591'>/* Insert the character &apos;c&apos; at cursor current position.
+ *
+ * On error writing to the terminal -1 is returned, otherwise 0. */</doc>

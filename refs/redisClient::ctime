@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='532' type='time_t'/>
+<offset>1024</offset>
+<doc f='redis/src/redis.h' l='532'>/* Client creation time */</doc>
+<use f='redis/src/networking.c' l='100' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='1338' u='r' c='catClientInfoString'/>

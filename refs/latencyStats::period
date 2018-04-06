@@ -1,0 +1,12 @@
+<dec f='redis/src/latency.h' l='61' type='time_t'/>
+<offset>192</offset>
+<doc f='redis/src/latency.h' l='61'>/* Number of seconds since first event and now. */</doc>
+<use f='redis/src/latency.c' l='170' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='189' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='189' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='190' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='198' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='198' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='199' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='199' u='w' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='270' u='r' c='createLatencyReport'/>

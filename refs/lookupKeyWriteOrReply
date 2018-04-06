@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1318' type='robj * lookupKeyWriteOrReply(redisClient * c, robj * key, robj * reply)'/>
+<def f='redis/src/db.c' l='83' ll='87' type='robj * lookupKeyWriteOrReply(redisClient * c, robj * key, robj * reply)'/>
+<use f='redis/src/db.c' l='673' u='c' c='renameGenericCommand'/>
+<use f='redis/src/t_hash.c' l='656' u='c' c='hdelCommand'/>
+<use f='redis/src/t_list.c' l='452' u='c' c='lsetCommand'/>
+<use f='redis/src/t_list.c' l='495' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='593' u='c' c='ltrimCommand'/>
+<use f='redis/src/t_list.c' l='652' u='c' c='lremCommand'/>
+<use f='redis/src/t_list.c' l='717' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_set.c' l='281' u='c' c='sremCommand'/>
+<use f='redis/src/t_set.c' l='385' u='c' c='spopCommand'/>
+<use f='redis/src/t_zset.c' l='1322' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1408' u='c' c='zremrangeGenericCommand'/>

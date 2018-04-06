@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1502' type='void hincrbyfloatCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='200' u='r'/>
+<use f='redis/src/redis.c' l='200' u='r'/>
+<use f='redis/src/redis.c' l='200' u='r'/>
+<use f='redis/src/redis.c' l='200' u='r'/>
+<def f='redis/src/t_hash.c' l='550' ll='584' type='void hincrbyfloatCommand(redisClient * c)'/>

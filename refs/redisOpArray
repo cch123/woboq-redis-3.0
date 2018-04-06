@@ -1,0 +1,11 @@
+<def f='redis/src/redis.h' l='631' ll='634'/>
+<size>16</size>
+<doc f='redis/src/redis.h' l='624'>/* Defines an array of Redis operations. There is an API to add to this
+ * structure in a easy way.
+ *
+ * redisOpArrayInit();
+ * redisOpArrayAppend();
+ * redisOpArrayFree();
+ */</doc>
+<mbr r='redisOpArray::ops' o='0' t='redisOp *'/>
+<mbr r='redisOpArray::numops' o='64' t='int'/>

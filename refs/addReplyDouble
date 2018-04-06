@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1042' type='void addReplyDouble(redisClient * c, double d)'/>
+<def f='redis/src/networking.c' l='460' ll='472' type='void addReplyDouble(redisClient * c, double d)'/>
+<doc f='redis/src/networking.c' l='459'>/* Add a double as a bulk reply */</doc>
+<use f='redis/src/t_zset.c' l='1296' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2156' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2186' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2313' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2368' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2758' u='c' c='zscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2769' u='c' c='zscoreCommand'/>

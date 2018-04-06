@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='1027' type='void * addDeferredMultiBulkLength(redisClient * c)'/>
+<use f='redis/src/cluster.c' l='3741' u='c' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3761' u='c' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/config.c' l='1015' u='c' c='configGetCommand'/>
+<use f='redis/src/db.c' l='341' u='c' c='keysCommand'/>
+<use f='redis/src/latency.c' l='478' u='c' c='latencyCommandReplyWithSamples'/>
+<def f='redis/src/networking.c' l='423' ll='430' type='void * addDeferredMultiBulkLength(redisClient * c)'/>
+<doc f='redis/src/networking.c' l='421'>/* Adds an empty object to the reply list that will contain the multi bulk
+ * length, which is not known when this function is called. */</doc>
+<use f='redis/src/pubsub.c' l='338' u='c' c='pubsubCommand'/>
+<use f='redis/src/redis.c' l='2496' u='c' c='addReplyCommand'/>
+<use f='redis/src/replication.c' l='1524' u='c' c='roleCommand'/>
+<use f='redis/src/scripting.c' l='842' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/sentinel.c' l='2406' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/slowlog.c' l='150' u='c' c='slowlogCommand'/>
+<use f='redis/src/t_set.c' l='632' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2280' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2344' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2632' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2692' u='c' c='genericZrangebylexCommand'/>

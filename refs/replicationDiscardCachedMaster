@@ -1,0 +1,8 @@
+<dec f='redis/src/replication.c' l='40' type='void replicationDiscardCachedMaster()'/>
+<use f='redis/src/replication.c' l='1179' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1207' u='c' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1444' u='c' c='replicationSetMaster'/>
+<use f='redis/src/replication.c' l='1468' u='c' c='replicationUnsetMaster'/>
+<def f='redis/src/replication.c' l='1635' ll='1642' type='void replicationDiscardCachedMaster()'/>
+<doc f='redis/src/replication.c' l='1633'>/* Free a cached master, called when there are no longer the conditions for
+ * a partial resync on reconnection. */</doc>

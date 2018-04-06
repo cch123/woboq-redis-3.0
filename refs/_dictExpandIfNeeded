@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/dict.c' l='44' type='int _dictExpandIfNeeded(dict * ht)'/>
+<def f='redis/deps/hiredis/dict.c' l='295' ll='303' type='int _dictExpandIfNeeded(dict * ht)'/>
+<use f='redis/deps/hiredis/dict.c' l='325' u='c' c='_dictKeyIndex'/>
+<doc f='redis/deps/hiredis/dict.c' l='42'>/* -------------------------- private prototypes ---------------------------- */</doc>
+<doc f='redis/deps/hiredis/dict.c' l='294'>/* Expand the hash table if needed */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1021' type='redisClient * createClient(int fd)'/>
+<doc f='redis/src/redis.h' l='1020'>/* networking.c -- Networking and Client related operations */</doc>
+<def f='redis/src/networking.c' l='64' ll='129' type='redisClient * createClient(int fd)'/>
+<use f='redis/src/networking.c' l='586' u='c' c='acceptCommonHandler'/>
+<use f='redis/src/replication.c' l='1022' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/scripting.c' l='755' u='c' c='scriptingInit'/>

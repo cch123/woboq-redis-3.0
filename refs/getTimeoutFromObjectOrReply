@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='1368' type='int getTimeoutFromObjectOrReply(redisClient * c, robj * object, mstime_t * timeout, int unit)'/>
+<def f='redis/src/blocked.c' l='76' ll='95' type='int getTimeoutFromObjectOrReply(redisClient * c, robj * object, mstime_t * timeout, int unit)'/>
+<doc f='redis/src/blocked.c' l='68'>/* Get a timeout value from an object and store it into &apos;timeout&apos;.
+ * The final timeout is always stored as milliseconds as a time where the
+ * timeout will expire, however the parsing is performed according to
+ * the &apos;unit&apos; that can be seconds or milliseconds.
+ *
+ * Note that if the timeout is zero (usually from the point of view of
+ * commands API this means no timeout) the value stored into &apos;timeout&apos;
+ * is zero. */</doc>
+<use f='redis/src/networking.c' l='1504' u='c' c='clientCommand'/>
+<use f='redis/src/replication.c' l='1847' u='c' c='waitCommand'/>
+<use f='redis/src/t_list.c' l='1033' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_list.c' l='1095' u='c' c='brpoplpushCommand'/>

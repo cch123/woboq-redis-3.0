@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/llex.h' l='27' type='262'/>
+<use f='redis/deps/lua/src/lparser.c' l='590' u='r' c='body'/>
+<use f='redis/deps/lua/src/lparser.c' l='873' c='block_follow'/>
+<use f='redis/deps/lua/src/lparser.c' l='1004' u='r' c='whilestat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1125' u='r' c='forstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1161' u='r' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1285' u='r' c='statement'/>

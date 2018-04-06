@@ -1,0 +1,13 @@
+<def f='redis/src/ae.h' l='87' ll='98'/>
+<size>72</size>
+<doc f='redis/src/ae.h' l='86'>/* State of an event based program */</doc>
+<mbr r='aeEventLoop::maxfd' o='0' t='int'/>
+<mbr r='aeEventLoop::setsize' o='32' t='int'/>
+<mbr r='aeEventLoop::timeEventNextId' o='64' t='long long'/>
+<mbr r='aeEventLoop::lastTime' o='128' t='time_t'/>
+<mbr r='aeEventLoop::events' o='192' t='aeFileEvent *'/>
+<mbr r='aeEventLoop::fired' o='256' t='aeFiredEvent *'/>
+<mbr r='aeEventLoop::timeEventHead' o='320' t='aeTimeEvent *'/>
+<mbr r='aeEventLoop::stop' o='384' t='int'/>
+<mbr r='aeEventLoop::apidata' o='448' t='void *'/>
+<mbr r='aeEventLoop::beforesleep' o='512' t='aeBeforeSleepProc *'/>

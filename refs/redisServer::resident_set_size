@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='715' type='size_t'/>
+<offset>7936</offset>
+<doc f='redis/src/redis.h' l='715'>/* RSS sampled in serverCron(). */</doc>
+<use f='redis/src/redis.c' l='1106' u='w' c='serverCron'/>
+<use f='redis/src/redis.c' l='1828' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2718' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2722' u='r' c='genRedisInfoString'/>

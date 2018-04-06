@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='161' type='6'/>
+<use f='redis/deps/lua/src/lcode.c' l='323' u='r' c='luaK_dischargevars'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='161'>/*	A B C	R(A) := R(B)[RK(C)]				*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='522' c='getobjname'/>
+<use f='redis/deps/lua/src/lvm.c' l='440' c='luaV_execute'/>

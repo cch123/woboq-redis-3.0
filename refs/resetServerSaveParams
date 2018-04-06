@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1303' type='void resetServerSaveParams()'/>
+<def f='redis/src/config.c' l='76' ll='80' type='void resetServerSaveParams()'/>
+<use f='redis/src/config.c' l='161' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='768' u='c' c='configSetCommand'/>
+<use f='redis/src/redis.c' l='1484' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='3643' u='c' c='main'/>

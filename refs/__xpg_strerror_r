@@ -1,0 +1,3 @@
+<dec f='include/string.h' l='422' type='int strerror_r(int __errnum, char * __buf, size_t __buflen)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='985' u='c' c='__redisSetError'/>
+<use f='redis/deps/hiredis/net.c' l='70' u='c' c='__redisSetErrorFromErrno'/>

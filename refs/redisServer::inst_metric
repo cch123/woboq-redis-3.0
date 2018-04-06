@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='725' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/redis.h:720:5) [3]'/>
+<offset>8128</offset>
+<doc f='redis/src/redis.h' l='718'>/* The following two are used to track instantaneous metrics, like
+     * number of operations per second, network traffic. */</doc>
+<use f='redis/src/redis.c' l='880' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='882' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='887' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='887' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='889' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='890' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='891' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='892' u='m' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='901' u='m' c='getInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='1735' u='m' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='1736' u='m' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='1737' u='m' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='1738' u='m' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='1739' u='m' c='resetServerStats'/>

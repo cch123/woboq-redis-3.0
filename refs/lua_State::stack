@@ -1,0 +1,43 @@
+<dec f='redis/deps/lua/src/lstate.h' l='109' type='StkId'/>
+<use f='redis/deps/lua/src/lapi.c' l='817' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='821' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='856' macro='1' u='r'/>
+<offset>512</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='109'>/* stack base */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='620' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='129' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='131' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='133' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='134' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='135' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='137' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='142' u='r' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='145' u='w' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='145' u='r' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='147' u='r' c='luaD_reallocstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='184' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='185' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='202' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='203' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='247' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='253' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='270' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='278' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='287' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='312' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='333' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='339' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='466' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='514' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='243' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='265' u='r' c='traversestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='49' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='51' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='52' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='63' u='r' c='freestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='86' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='107' u='r' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='135' u='r' c='luaE_freethread'/>
+<use f='redis/deps/lua/src/lstate.c' l='202' u='r' c='lua_close'/>
+<use f='redis/deps/lua/src/lvm.c' l='82' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='89' macro='1' u='r'/>

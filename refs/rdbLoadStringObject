@@ -1,0 +1,6 @@
+<dec f='redis/src/rdb.h' l='113' type='robj * rdbLoadStringObject(rio * rdb)'/>
+<def f='redis/src/rdb.c' l='362' ll='364' type='robj * rdbLoadStringObject(rio * rdb)'/>
+<use f='redis/src/rdb.c' l='953' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='956' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1004' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1196' u='c' c='rdbLoad'/>

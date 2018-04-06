@@ -1,0 +1,5 @@
+<def f='redis/deps/lua/src/lstate.c' l='35' ll='38'/>
+<size>616</size>
+<doc f='redis/deps/lua/src/lstate.c' l='32'>/*
+** Main thread combines a thread state and the global state
+*/</doc>

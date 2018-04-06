@@ -1,0 +1,17 @@
+<dec f='redis/src/config.c' l='1245' type='unsigned int dictSdsCaseHash(const void * key)'/>
+<use f='redis/src/config.c' l='1255'/>
+<use f='redis/src/config.c' l='1255'/>
+<use f='redis/src/config.c' l='1264'/>
+<use f='redis/src/config.c' l='1264'/>
+<doc f='redis/src/config.c' l='1242'>/* We use the following dictionary type to store where a configuration
+ * option is mentioned in the old configuration file, so it&apos;s
+ * like &quot;maxmemory&quot; -&gt; list of line numbers (first line is zero). */</doc>
+<def f='redis/src/redis.c' l='479' ll='481' type='unsigned int dictSdsCaseHash(const void * key)'/>
+<use f='redis/src/redis.c' l='556'/>
+<use f='redis/src/redis.c' l='556'/>
+<use f='redis/src/redis.c' l='576'/>
+<use f='redis/src/redis.c' l='576'/>
+<use f='redis/src/redis.c' l='621'/>
+<use f='redis/src/redis.c' l='621'/>
+<use f='redis/src/redis.c' l='643'/>
+<use f='redis/src/redis.c' l='643'/>

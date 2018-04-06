@@ -1,0 +1,8 @@
+<def f='redis/src/config.c' l='1273' ll='1280'/>
+<size>40</size>
+<doc f='redis/src/config.c' l='1272'>/* The config rewrite state. */</doc>
+<mbr r='rewriteConfigState::option_to_line' o='0' t='dict *'/>
+<mbr r='rewriteConfigState::rewritten' o='64' t='dict *'/>
+<mbr r='rewriteConfigState::numlines' o='128' t='int'/>
+<mbr r='rewriteConfigState::lines' o='192' t='sds *'/>
+<mbr r='rewriteConfigState::has_tail' o='256' t='int'/>

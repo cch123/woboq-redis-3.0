@@ -1,0 +1,2 @@
+<def f='redis/src/config.c' l='1263' ll='1270' type='dictType'/>
+<use f='redis/src/config.c' l='1323' u='a' c='rewriteConfigReadOldFile'/>

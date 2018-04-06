@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1452' type='void pttlCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='957' ll='959' type='void pttlCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='247' u='r'/>
+<use f='redis/src/redis.c' l='247' u='r'/>
+<use f='redis/src/redis.c' l='247' u='r'/>
+<use f='redis/src/redis.c' l='247' u='r'/>

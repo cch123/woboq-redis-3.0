@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1280' type='void hashTypeCurrentFromZiplist(hashTypeIterator * hi, int what, unsigned char ** vstr, unsigned int * vlen, long long * vll)'/>
+<use f='redis/src/aof.c' l='953' u='c' c='rioWriteHashIteratorCursor'/>
+<def f='redis/src/t_hash.c' l='340' ll='356' type='void hashTypeCurrentFromZiplist(hashTypeIterator * hi, int what, unsigned char ** vstr, unsigned int * vlen, long long * vll)'/>
+<use f='redis/src/t_hash.c' l='381' u='c' c='hashTypeCurrentObject'/>
+<use f='redis/src/t_hash.c' l='694' u='c' c='addHashIteratorCursorToReply'/>
+<doc f='redis/src/t_hash.c' l='338'>/* Get the field or value at iterator cursor, for an iterator on a hash value
+ * encoded as a ziplist. Prototype is similar to `hashTypeGetFromZiplist`. */</doc>

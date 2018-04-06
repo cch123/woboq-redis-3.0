@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='221' ll='235' type='int zslIsInRange(zskiplist * zsl, zrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='244' u='c' c='zslFirstInRange'/>
+<use f='redis/src/t_zset.c' l='270' u='c' c='zslLastInRange'/>
+<doc f='redis/src/t_zset.c' l='220'>/* Returns if there is a part of the zset is in range. */</doc>

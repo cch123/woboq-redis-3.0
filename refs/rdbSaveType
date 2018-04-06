@@ -1,0 +1,14 @@
+<dec f='redis/src/rdb.h' l='94' type='int rdbSaveType(rio * rdb, unsigned char type)'/>
+<def f='redis/src/rdb.c' l='49' ll='51' type='int rdbSaveType(rio * rdb, unsigned char type)'/>
+<use f='redis/src/rdb.c' l='434' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='437' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='439' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='444' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='446' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='451' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='453' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='458' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='460' u='c' c='rdbSaveObjectType'/>
+<use f='redis/src/rdb.c' l='619' u='c' c='rdbSaveKeyValuePair'/>
+<use f='redis/src/rdb.c' l='659' u='c' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='677' u='c' c='rdbSaveRio'/>

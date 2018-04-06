@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/dict.c' l='45' type='unsigned long _dictNextPower(unsigned long size)'/>
+<use f='redis/deps/hiredis/dict.c' l='90' u='c' c='dictExpand'/>
+<def f='redis/deps/hiredis/dict.c' l='306' ll='315' type='unsigned long _dictNextPower(unsigned long size)'/>
+<doc f='redis/deps/hiredis/dict.c' l='305'>/* Our hash table capability is a power of two */</doc>

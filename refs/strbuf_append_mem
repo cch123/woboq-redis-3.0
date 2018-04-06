@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='72' type='void strbuf_append_mem(strbuf_t * s, const char * c, int len)'/>
+<def f='redis/deps/lua/src/strbuf.h' l='127' ll='132' type='void strbuf_append_mem(strbuf_t * s, const char * c, int len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='602' u='c' c='json_append_number'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='608' u='c' c='json_append_number'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='640' u='c' c='json_append_object'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='674' u='c' c='json_append_data'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='676' u='c' c='json_append_data'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='688' u='c' c='json_append_data'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='692' u='c' c='json_append_data'/>

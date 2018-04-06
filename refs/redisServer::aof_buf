@@ -1,0 +1,21 @@
+<dec f='redis/src/redis.h' l='747' type='sds'/>
+<use f='redis/src/aof.c' l='278' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='311' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='311' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='330' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='353' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='389' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='406' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='406' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='407' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='409' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='410' u='w' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='535' u='w' c='feedAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='535' u='r' c='feedAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1468' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1469' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13120</offset>
+<doc f='redis/src/redis.h' l='747'>/* AOF buffer, written before entering the event loop */</doc>
+<use f='redis/src/redis.c' l='1818' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2775' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3209' u='r' c='freeMemoryIfNeeded'/>

@@ -1,0 +1,4 @@
+<dec f='include/ctype.h' l='50' type='1024'/>
+<doc f='include/ctype.h' l='50'>/* Alphabetic.  */</doc>
+<use f='redis/deps/lua/src/llex.c' l='422' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='229' macro='1' u='r'/>

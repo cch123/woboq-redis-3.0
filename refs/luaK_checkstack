@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='50' type='void luaK_checkstack(FuncState * fs, int n)'/>
+<def f='redis/deps/lua/src/lcode.c' l='199' ll='206' type='void luaK_checkstack(FuncState * fs, int n)'/>
+<use f='redis/deps/lua/src/lcode.c' l='210' u='c' c='luaK_reserveregs'/>
+<use f='redis/deps/lua/src/lparser.c' l='1107' u='c' c='forlist'/>

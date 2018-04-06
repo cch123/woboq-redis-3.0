@@ -1,0 +1,2 @@
+<def f='redis/src/t_set.c' l='421' ll='552' type='void srandmemberWithCountCommand(redisClient * c)'/>
+<use f='redis/src/t_set.c' l='560' u='c' c='srandmemberCommand'/>

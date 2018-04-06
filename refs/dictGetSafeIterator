@@ -1,0 +1,24 @@
+<dec f='redis/src/dict.h' l='163' type='dictIterator * dictGetSafeIterator(dict * d)'/>
+<use f='redis/src/aof.c' l='1050' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='502' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='875' u='c' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='927' u='c' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='1083' u='c' c='clusterBlacklistCleanup'/>
+<use f='redis/src/cluster.c' l='1215' u='c' c='clusterHandshakeInProgress'/>
+<use f='redis/src/cluster.c' l='2084' u='c' c='clusterBroadcastMessage'/>
+<use f='redis/src/cluster.c' l='2295' u='c' c='clusterBroadcastPong'/>
+<use f='redis/src/cluster.c' l='2905' u='c' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3045' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3146' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3439' u='c' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3700' u='c' c='clusterGenNodesDescription'/>
+<use f='redis/src/cluster.c' l='3744' u='c' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4538' u='c' c='migrateCloseTimedoutSockets'/>
+<use f='redis/src/db.c' l='343' u='c' c='keysCommand'/>
+<def f='redis/src/dict.c' l='568' ll='573' type='dictIterator * dictGetSafeIterator(dict * d)'/>
+<use f='redis/src/latency.c' l='139' u='c' c='latencyResetEvent'/>
+<use f='redis/src/latency.c' l='251' u='c' c='createLatencyReport'/>
+<use f='redis/src/pubsub.c' l='179' u='c' c='pubsubUnsubscribeAllChannels'/>
+<use f='redis/src/rdb.c' l='655' u='c' c='rdbSaveRio'/>
+<use f='redis/src/sentinel.c' l='1074' u='c' c='removeMatchingSentinelsFromMaster'/>
+<use f='redis/src/sentinel.c' l='2286' u='c' c='sentinelForceHelloUpdateDictOfRedisInstances'/>

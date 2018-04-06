@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/llex.h' l='31' type='284'/>
+<use f='redis/deps/lua/src/llex.c' l='93' c='txtToken'/>
+<use f='redis/deps/lua/src/llex.c' l='188' u='r' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='406' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='420' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='731' c='simpleexp'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/db.c' l='364' ll='391' type='void scanCallback(void * privdata, const dictEntry * de)'/>
+<use f='redis/src/db.c' l='508' u='r' c='scanGenericCommand'/>
+<doc f='redis/src/db.c' l='362'>/* This callback is used by scanGenericCommand in order to collect elements
+ * returned by the dictionary iterator into a list. */</doc>

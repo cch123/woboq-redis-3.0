@@ -1,0 +1,7 @@
+<dec f='redis/deps/hiredis/async.h' l='113' type='void redisAsyncHandleRead(redisAsyncContext * ac)'/>
+<def f='redis/deps/hiredis/async.c' l='503' ll='522' type='void redisAsyncHandleRead(redisAsyncContext * ac)'/>
+<doc f='redis/deps/hiredis/async.c' l='500'>/* This function should be called when the socket is readable.
+ * It processes all replies that can be read and executes their callbacks.
+ */</doc>
+<doc f='redis/deps/hiredis/async.h' l='112'>/* Handle read/write events */</doc>
+<use f='redis/src/sentinel.c' l='241' u='c' c='redisAeReadEvent'/>

@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/sys/syslog.h' l='181' type='void openlog(const char * __ident, int __option, int __facility)'/>
+<doc f='include/x86_64-linux-gnu/sys/syslog.h' l='177'>/* Open connection to system logger.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/src/redis.c' l='1753' u='c' c='initServer'/>

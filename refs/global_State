@@ -1,0 +1,30 @@
+<def f='redis/deps/lua/src/lstate.h' l='68' ll='94'/>
+<size>432</size>
+<doc f='redis/deps/lua/src/lstate.h' l='65'>/*
+** `global state&apos;, shared by all threads of this state
+*/</doc>
+<mbr r='global_State::strt' o='0' t='stringtable'/>
+<mbr r='global_State::frealloc' o='128' t='lua_Alloc'/>
+<mbr r='global_State::ud' o='192' t='void *'/>
+<mbr r='global_State::currentwhite' o='256' t='lu_byte'/>
+<mbr r='global_State::gcstate' o='264' t='lu_byte'/>
+<mbr r='global_State::sweepstrgc' o='288' t='int'/>
+<mbr r='global_State::rootgc' o='320' t='GCObject *'/>
+<mbr r='global_State::sweepgc' o='384' t='GCObject **'/>
+<mbr r='global_State::gray' o='448' t='GCObject *'/>
+<mbr r='global_State::grayagain' o='512' t='GCObject *'/>
+<mbr r='global_State::weak' o='576' t='GCObject *'/>
+<mbr r='global_State::tmudata' o='640' t='GCObject *'/>
+<mbr r='global_State::buff' o='704' t='Mbuffer'/>
+<mbr r='global_State::GCthreshold' o='896' t='lu_mem'/>
+<mbr r='global_State::totalbytes' o='960' t='lu_mem'/>
+<mbr r='global_State::estimate' o='1024' t='lu_mem'/>
+<mbr r='global_State::gcdept' o='1088' t='lu_mem'/>
+<mbr r='global_State::gcpause' o='1152' t='int'/>
+<mbr r='global_State::gcstepmul' o='1184' t='int'/>
+<mbr r='global_State::panic' o='1216' t='lua_CFunction'/>
+<mbr r='global_State::l_registry' o='1280' t='TValue'/>
+<mbr r='global_State::mainthread' o='1408' t='struct lua_State *'/>
+<mbr r='global_State::uvhead' o='1472' t='UpVal'/>
+<mbr r='global_State::mt' o='1792' t='struct Table *[9]'/>
+<mbr r='global_State::tmname' o='2368' t='TString *[17]'/>

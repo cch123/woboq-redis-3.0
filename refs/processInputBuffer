@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1029' type='void processInputBuffer(redisClient * c)'/>
+<use f='redis/src/blocked.c' l='123' u='c' c='processUnblockedClients'/>
+<def f='redis/src/networking.c' l='1125' ll='1165' type='void processInputBuffer(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1226' u='c' c='readQueryFromClient'/>

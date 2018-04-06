@@ -1,0 +1,5 @@
+<dec f='redis/src/rdb.h' l='72'/>
+<doc f='redis/src/rdb.h' l='70'>/* Dup object types to RDB object types. Only reason is readability (are we
+ * dealing with RDB types or with in-memory object types?). */</doc>
+<use f='redis/src/rdb.c' l='434' u='c'/>
+<use f='redis/src/rdb.c' l='826' u='c'/>

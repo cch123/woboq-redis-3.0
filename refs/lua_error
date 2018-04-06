@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lua.h' l='237' type='int lua_error(lua_State * L)'/>
+<def f='redis/deps/lua/src/lapi.c' l='964' ll='970' macro='1' type='int lua_error(lua_State * L)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='93' u='c' c='luaL_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='89' u='c' c='luaB_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='328' u='c' c='luaB_dofile'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='570' u='c' c='luaB_auxwrap'/>
+<use f='redis/src/scripting.c' l='448' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='564' u='c' c='luaMaskCountHook'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/networking.c' l='253' ll='282' type='void _addReplySdsToList(redisClient * c, sds s)'/>
+<use f='redis/src/networking.c' l='366' u='c' c='addReplySds'/>
+<doc f='redis/src/networking.c' l='251'>/* This method takes responsibility over the sds. When it is no longer
+ * needed it will be free&apos;d, otherwise it ends up in a robj. */</doc>

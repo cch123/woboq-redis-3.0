@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1245' type='int htNeedsResize(dict * dict)'/>
+<def f='redis/src/redis.c' l='651' ll='658' type='int htNeedsResize(dict * dict)'/>
+<use f='redis/src/redis.c' l='663' u='c' c='tryResizeHashTables'/>
+<use f='redis/src/redis.c' l='665' u='c' c='tryResizeHashTables'/>
+<use f='redis/src/t_hash.c' l='251' u='c' c='hashTypeDelete'/>
+<use f='redis/src/t_set.c' l='85' u='c' c='setTypeRemove'/>
+<use f='redis/src/t_zset.c' l='1355' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1457' u='c' c='zremrangeGenericCommand'/>

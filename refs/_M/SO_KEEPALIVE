@@ -1,0 +1,4 @@
+<dec f='include/asm-generic/socket.h' l='19'/>
+<use f='redis/deps/hiredis/net.c' l='128' u='c'/>
+<use f='redis/src/anet.c' l='99' u='c'/>
+<use f='redis/src/anet.c' l='175' u='c'/>

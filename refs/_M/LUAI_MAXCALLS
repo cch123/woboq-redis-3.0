@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='435'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='429'>/*
+@@ LUAI_MAXCALLS limits the number of nested calls.
+** CHANGE it if you need really deep recursive calls. This limit is
+** arbitrary; its only purpose is to stop infinite recursion before
+** exhausting memory.
+*/</doc>
+<use f='redis/deps/lua/src/ldo.c' l='73' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='75' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='76' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='170' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='174' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='244' u='c'/>

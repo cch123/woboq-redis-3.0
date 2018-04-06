@@ -1,0 +1,5 @@
+<dec f='include/string.h' l='125' type='char * strcpy(char *restrict __dest, const char *restrict __src)'/>
+<doc f='include/string.h' l='124'>/* Copy SRC to DEST.  */</doc>
+<use f='redis/deps/lua/src/lobject.c' l='193' u='c' c='luaO_chunkid'/>
+<use f='redis/deps/lua/src/lobject.c' l='204' u='c' c='luaO_chunkid'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='750' u='c' c='addintlen'/>

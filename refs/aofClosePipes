@@ -1,0 +1,4 @@
+<dec f='redis/src/aof.c' l='43' type='void aofClosePipes()'/>
+<use f='redis/src/aof.c' l='229' u='c' c='stopAppendOnly'/>
+<def f='redis/src/aof.c' l='1242' ll='1251' type='void aofClosePipes()'/>
+<use f='redis/src/aof.c' l='1497' u='c' c='backgroundRewriteDoneHandler'/>

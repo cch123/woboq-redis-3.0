@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='445' ll='448'/>
+<size>16</size>
+<mbr r='evictionPoolEntry::idle' o='0' t='unsigned long long'/>
+<mbr r='evictionPoolEntry::key' o='64' t='sds'/>

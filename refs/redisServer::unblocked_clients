@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='851' type='list *'/>
+<offset>18048</offset>
+<doc f='redis/src/redis.h' l='851'>/* list of clients to unblock before next loop */</doc>
+<use f='redis/src/blocked.c' l='113' u='r' c='processUnblockedClients'/>
+<use f='redis/src/blocked.c' l='114' u='r' c='processUnblockedClients'/>
+<use f='redis/src/blocked.c' l='117' u='r' c='processUnblockedClients'/>
+<use f='redis/src/blocked.c' l='145' u='r' c='unblockClient'/>
+<use f='redis/src/networking.c' l='750' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='752' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1737' u='r' c='clientsArePaused'/>
+<use f='redis/src/redis.c' l='1298' u='r' c='beforeSleep'/>
+<use f='redis/src/redis.c' l='1764' u='w' c='initServer'/>

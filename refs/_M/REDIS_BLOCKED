@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='236'/>
+<use f='redis/src/aof.c' l='690' u='c'/>
+<use f='redis/src/blocked.c' l='101' u='c'/>
+<use f='redis/src/blocked.c' l='141' u='c'/>
+<use f='redis/src/blocked.c' l='175' u='c'/>
+<use f='redis/src/cluster.c' l='4972' u='c'/>
+<use f='redis/src/networking.c' l='698' u='c'/>
+<use f='redis/src/networking.c' l='717' u='c'/>
+<use f='redis/src/networking.c' l='1132' u='c'/>
+<use f='redis/src/networking.c' l='1317' u='c'/>
+<use f='redis/src/networking.c' l='1735' u='c'/>
+<use f='redis/src/redis.c' l='912' u='c'/>
+<use f='redis/src/redis.c' l='919' u='c'/>

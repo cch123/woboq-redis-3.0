@@ -1,0 +1,5 @@
+<dec f='redis/src/zipmap.h' l='46' type='size_t zipmapBlobLen(unsigned char * zm)'/>
+<def f='redis/src/zipmap.c' l='367' ll='371' type='size_t zipmapBlobLen(unsigned char * zm)'/>
+<doc f='redis/src/zipmap.c' l='364'>/* Return the raw size in bytes of a zipmap, so that we can serialize
+ * the zipmap on disk (or everywhere is needed) just writing the returned
+ * amount of bytes of the C array starting at the zipmap pointer. */</doc>

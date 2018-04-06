@@ -1,0 +1,28 @@
+<dec f='redis/src/redis.h' l='558' type='int'/>
+<use f='redis/src/aof.c' l='563' u='w' c='createFakeClient'/>
+<use f='redis/src/aof.c' l='688' u='r' c='loadAppendOnlyFile'/>
+<offset>3072</offset>
+<doc f='redis/src/redis.h' l='557'>/* Response buffer */</doc>
+<use f='redis/src/networking.c' l='89' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='167' u='r' c='prepareClientToWrite'/>
+<use f='redis/src/networking.c' l='205' u='r' c='_addReplyToBuffer'/>
+<use f='redis/src/networking.c' l='216' u='r' c='_addReplyToBuffer'/>
+<use f='redis/src/networking.c' l='217' u='w' c='_addReplyToBuffer'/>
+<use f='redis/src/networking.c' l='337' u='r' c='addReply'/>
+<use f='redis/src/networking.c' l='578' u='r' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='579' u='w' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='579' u='r' c='copyClientOutputBuffer'/>
+<use f='redis/src/networking.c' l='824' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='825' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='826' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='833' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='834' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='890' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='1347' u='r' c='catClientInfoString'/>
+<use f='redis/src/replication.c' l='478' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='1669' u='r' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/scripting.c' l='382' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='386' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='388' u='w' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='390' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='391' u='w' c='luaRedisGenericCommand'/>

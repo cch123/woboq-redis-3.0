@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='48' type='void luaK_nil(FuncState * fs, int from, int n)'/>
+<def f='redis/deps/lua/src/lcode.c' l='35' ll='56' type='void luaK_nil(FuncState * fs, int from, int n)'/>
+<use f='redis/deps/lua/src/lcode.c' l='347' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lparser.c' l='270' u='c' c='adjust_assign'/>

@@ -1,0 +1,5 @@
+flushAppendOnlyFile|flushAppendOnlyFile
+flushallCommand|flushallCommand
+flushdbCommand|flushdbCommand
+flagTransaction|flagTransaction
+flushSlavesOutputBuffers|flushSlavesOutputBuffers

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='571' type='robj *'/>
+<offset>1408</offset>
+<use f='redis/src/redis.c' l='1341' u='w' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='2214' u='r' c='processCommand'/>
+<use f='redis/src/scripting.c' l='338' u='r' c='luaRedisGenericCommand'/>

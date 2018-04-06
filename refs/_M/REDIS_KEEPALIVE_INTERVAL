@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='91'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1124' u='c'/>

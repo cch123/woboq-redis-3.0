@@ -1,0 +1,11 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='184' type='double floor(double __x)'/>
+<use f='redis/deps/lua/src/lcode.c' l='641' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='87' u='c' c='math_floor'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='193' u='c' c='math_random'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='200' u='c' c='math_random'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='509' u='c' c='lua_array_length'/>
+<use f='redis/deps/lua/src/lvm.c' l='329' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='491' macro='1' u='c'/>
+<use f='redis/src/cluster.c' l='2195' u='c' c='clusterSendPing'/>
+<use f='redis/src/scripting.c' l='1129' u='c' c='redis_math_random'/>
+<use f='redis/src/scripting.c' l='1136' u='c' c='redis_math_random'/>

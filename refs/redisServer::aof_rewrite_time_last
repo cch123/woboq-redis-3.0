@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='752' type='time_t'/>
+<use f='redis/src/aof.c' l='1501' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13376</offset>
+<doc f='redis/src/redis.h' l='752'>/* Time used by last AOF rewrite run. */</doc>
+<use f='redis/src/redis.c' l='1433' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2757' u='r' c='genRedisInfoString'/>

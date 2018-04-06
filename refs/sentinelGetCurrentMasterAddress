@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='1299' ll='1313' type='sentinelAddr * sentinelGetCurrentMasterAddress(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='1466' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='2247' u='c' c='sentinelSendHello'/>
+<use f='redis/src/sentinel.c' l='2698' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='1297'>/* Return the current master address, that is, its address or the address
+ * of the promoted slave if already operational. */</doc>

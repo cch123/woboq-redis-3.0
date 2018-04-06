@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='542' type='sds'/>
+<offset>1536</offset>
+<doc f='redis/src/redis.h' l='542'>/* replication DB preamble. */</doc>
+<use f='redis/src/networking.c' l='760' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='760' u='r' c='freeClient'/>
+<use f='redis/src/replication.c' l='686' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='687' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='687' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='695' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='696' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='697' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='698' u='w' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='793' u='w' c='updateSlavesWaitingBgsave'/>

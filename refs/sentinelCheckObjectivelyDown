@@ -1,0 +1,8 @@
+<def f='redis/src/sentinel.c' l='3045' ll='3078' type='void sentinelCheckObjectivelyDown(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3820' u='c' c='sentinelHandleRedisInstance'/>
+<doc f='redis/src/sentinel.c' l='3039'>/* Is this instance down according to the configured quorum?
+ *
+ * Note that ODOWN is a weak quorum, it only means that enough Sentinels
+ * reported in a given time range that the instance was not reachable.
+ * However messages can be delayed so there are no strong guarantees about
+ * N instances agreeing at the same time about the down state. */</doc>

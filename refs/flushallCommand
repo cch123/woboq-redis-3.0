@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1439' type='void flushallCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='262' ll='278' type='void flushallCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='242' u='r'/>
+<use f='redis/src/redis.c' l='242' u='r'/>
+<use f='redis/src/redis.c' l='242' u='r'/>
+<use f='redis/src/redis.c' l='242' u='r'/>

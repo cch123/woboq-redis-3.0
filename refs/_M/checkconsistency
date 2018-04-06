@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lobject.h' l='108'/>
+<doc f='redis/deps/lua/src/lobject.h' l='105'>/*
+** for internal debug only
+*/</doc>

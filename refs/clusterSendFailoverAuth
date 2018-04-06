@@ -1,0 +1,3 @@
+<def f='redis/src/cluster.c' l='2422' ll='2432' type='void clusterSendFailoverAuth(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='2543' u='c' c='clusterSendFailoverAuthIfNeeded'/>
+<doc f='redis/src/cluster.c' l='2421'>/* Send a FAILOVER_AUTH_ACK message to the specified node. */</doc>

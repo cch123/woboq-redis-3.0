@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.h' l='204' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:202:5)'/>
+<use f='redis/src/cluster.c' l='1869' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1875' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1885' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2366' u='m' c='clusterSendFail'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='201'>/* FAIL */</doc>

@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lua.h' l='244' type='void lua_setallocf(lua_State * L, lua_Alloc f, void * ud)'/>
+<def f='redis/deps/lua/src/lapi.c' l='1017' ll='1022' macro='1' type='void lua_setallocf(lua_State * L, lua_Alloc f, void * ud)'/>

@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lua.h' l='348' type='const char *'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lua.h' l='348'>/* (n) */</doc>
+<use f='redis/deps/lua/src/lauxlib.c' l='52' u='r' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='54' u='r' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='55' u='w' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='57' u='r' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/ldblib.c' l='133' u='r' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='358' u='r' c='db_errorfb'/>
+<use f='redis/deps/lua/src/ldebug.c' l='168' u='w' c='info_tailcall'/>
+<use f='redis/deps/lua/src/ldebug.c' l='215' u='a' c='auxgetinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='218' u='w' c='auxgetinfo'/>

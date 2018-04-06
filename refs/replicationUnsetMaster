@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1162' type='void replicationUnsetMaster()'/>
+<use f='redis/src/cluster.c' l='490' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='2654' u='c' c='clusterFailoverReplaceYourMaster'/>
+<def f='redis/src/replication.c' l='1453' ll='1471' type='void replicationUnsetMaster()'/>
+<use f='redis/src/replication.c' l='1486' u='c' c='slaveofCommand'/>
+<doc f='redis/src/replication.c' l='1452'>/* Cancel replication, setting the instance as a master itself. */</doc>

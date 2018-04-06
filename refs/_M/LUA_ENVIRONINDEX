@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lua.h' l='37'/>
+<use f='redis/deps/lua/src/lapi.c' l='62' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='207' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='212' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='136' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='192' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='213' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='216' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='251' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='522' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='541' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='355' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='437' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='463' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='640' u='c'/>

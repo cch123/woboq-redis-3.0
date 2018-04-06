@@ -1,0 +1,14 @@
+<def f='redis/src/config.c' l='1724' ll='1767' type='int rewriteConfigOverwriteFile(char * configfile, sds content)'/>
+<use f='redis/src/config.c' l='1884' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1712'>/* This function overwrites the old configuration file with the new content.
+ *
+ * 1) The old file length is obtained.
+ * 2) If the new content is smaller, padding is added.
+ * 3) A single write(2) call is used to replace the content of the file.
+ * 4) Later the file is truncated to the length of the new content.
+ *
+ * This way we are sure the file is left in a consistent state even if the
+ * process is stopped between any of the four operations.
+ *
+ * The function returns 0 on success, otherwise -1 is returned and errno
+ * set accordingly. */</doc>

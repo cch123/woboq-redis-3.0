@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1185' type='void feedAppendOnlyFile(struct redisCommand * cmd, int dictid, robj ** argv, int argc)'/>
+<def f='redis/src/aof.c' l='497' ll='545' type='void feedAppendOnlyFile(struct redisCommand * cmd, int dictid, robj ** argv, int argc)'/>
+<use f='redis/src/db.c' l='815' u='c' c='propagateExpire'/>
+<use f='redis/src/redis.c' l='2013' u='c' c='propagate'/>

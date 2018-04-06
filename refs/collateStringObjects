@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1143' type='int collateStringObjects(robj * a, robj * b)'/>
+<def f='redis/src/object.c' l='512' ll='514' type='int collateStringObjects(robj * a, robj * b)'/>
+<doc f='redis/src/object.c' l='511'>/* Wrapper for compareStringObjectsWithFlags() using collation. */</doc>
+<use f='redis/src/sort.c' l='180' u='c' c='sortCompare'/>

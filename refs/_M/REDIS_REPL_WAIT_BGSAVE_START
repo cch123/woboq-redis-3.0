@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='282'/>
+<use f='redis/src/aof.c' l='568' u='c'/>
+<doc f='redis/src/redis.h' l='278'>/* Slave replication state - from the point of view of the master.
+ * In SEND_BULK and ONLINE state the slave receives new updates
+ * in its output queue. In the WAIT_BGSAVE state instead the server is waiting
+ * to start the next background saving in order to send updates to it. */</doc>
+<use f='redis/src/rdb.c' l='1420' u='c'/>
+<use f='redis/src/redis.c' l='2940' u='c'/>
+<use f='redis/src/replication.c' l='245' u='c'/>
+<use f='redis/src/replication.c' l='544' u='c'/>
+<use f='redis/src/replication.c' l='553' u='c'/>
+<use f='redis/src/replication.c' l='560' u='c'/>
+<use f='redis/src/replication.c' l='755' u='c'/>
+<use f='redis/src/replication.c' l='813' u='c'/>
+<use f='redis/src/replication.c' l='2003' u='c'/>
+<use f='redis/src/replication.c' l='2076' u='c'/>
+<use f='redis/src/replication.c' l='2095' u='c'/>

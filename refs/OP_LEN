@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='179' type='20'/>
+<use f='redis/deps/lua/src/lcode.c' l='644' c='constfolding'/>
+<use f='redis/deps/lua/src/lcode.c' l='657' u='r' c='codearith'/>
+<use f='redis/deps/lua/src/lcode.c' l='702' u='r' c='luaK_prefix'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='179'>/*	A B	R(A) := length of R(B)				*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='514' c='luaV_execute'/>

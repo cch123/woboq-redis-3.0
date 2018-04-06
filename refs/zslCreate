@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1209' type='zskiplist * zslCreate()'/>
+<use f='redis/src/cluster.c' l='463' u='c' c='clusterInit'/>
+<use f='redis/src/db.c' l='1146' u='c' c='slotToKeyFlush'/>
+<use f='redis/src/object.c' l='224' u='c' c='createZsetObject'/>
+<def f='redis/src/t_zset.c' l='65' ll='80' type='zskiplist * zslCreate()'/>
+<use f='redis/src/t_zset.c' l='1112' u='c' c='zsetConvert'/>

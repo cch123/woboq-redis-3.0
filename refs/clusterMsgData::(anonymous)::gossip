@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='198' type='clusterMsgDataGossip [1]'/>
+<use f='redis/src/cluster.c' l='1291' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='2246' u='m' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2253' u='a' c='clusterSendPing'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='197'>/* Array of N clusterMsgDataGossip structures */</doc>

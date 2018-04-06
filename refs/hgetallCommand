@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1497' type='void hgetallCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='205' u='r'/>
+<use f='redis/src/redis.c' l='205' u='r'/>
+<use f='redis/src/redis.c' l='205' u='r'/>
+<use f='redis/src/redis.c' l='205' u='r'/>
+<def f='redis/src/t_hash.c' l='751' ll='753' type='void hgetallCommand(redisClient * c)'/>

@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='65' type='double sin(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='32' u='c' c='math_sin'/>

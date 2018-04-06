@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='3449' ll='3475' type='int compareSlavesForPromotion(const void * a, const void * b)'/>
+<use f='redis/src/sentinel.c' l='3513' u='r' c='sentinelSelectSlave'/>
+<doc f='redis/src/sentinel.c' l='3446'>/* Helper for sentinelSelectSlave(). This is used by qsort() in order to
+ * sort suitable slaves in a &quot;better first&quot; order, to take the first of
+ * the list. */</doc>

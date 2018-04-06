@@ -1,0 +1,15 @@
+<def f='redis/src/hyperloglog.c' l='485' ll='498' type='int hllDenseAdd(uint8_t * registers, unsigned char * ele, size_t elesize)'/>
+<use f='redis/src/hyperloglog.c' l='879' u='c' c='hllSparseAdd'/>
+<use f='redis/src/hyperloglog.c' l='1030' u='c' c='hllAdd'/>
+<use f='redis/src/hyperloglog.c' l='1403' u='c' c='pfselftestCommand'/>
+<doc f='redis/src/hyperloglog.c' l='474'>/* &quot;Add&quot; the element in the dense hyperloglog data structure.
+ * Actually nothing is added, but the max 0 pattern counter of the subset
+ * the element belongs to is incremented if needed.
+ *
+ * &apos;registers&apos; is expected to have room for HLL_REGISTERS plus an
+ * additional byte on the right. This requirement is met by sds strings
+ * automatically since they are implicitly null terminated.
+ *
+ * The function always succeed, however if as a result of the operation
+ * the approximated cardinality changed, 1 is returned. Otherwise 0
+ * is returned. */</doc>

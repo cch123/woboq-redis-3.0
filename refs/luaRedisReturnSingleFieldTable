@@ -1,0 +1,10 @@
+<def f='redis/src/scripting.c' l='488' ll='499' type='int luaRedisReturnSingleFieldTable(lua_State * lua, char * field)'/>
+<use f='redis/src/scripting.c' l='502' u='c' c='luaRedisErrorReplyCommand'/>
+<use f='redis/src/scripting.c' l='506' u='c' c='luaRedisStatusReplyCommand'/>
+<doc f='redis/src/scripting.c' l='481'>/* Returns a table with a single field &apos;field&apos; set to the string value
+ * passed as argument. This helper function is handy when returning
+ * a Redis Protocol error or status reply from Lua:
+ *
+ * return redis.error_reply(&quot;ERR Some Error&quot;)
+ * return redis.status_reply(&quot;ERR Some Error&quot;)
+ */</doc>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lua.h' l='125' type='void lua_replace(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='203' ll='225' macro='1' type='void lua_replace(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='307' u='c' c='generic_reader'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='391' u='c' c='luaB_xpcall'/>
+<use f='redis/deps/lua/src/liolib.c' l='541' u='c' c='luaopen_io'/>
+<use f='redis/deps/lua/src/loadlib.c' l='640' u='c' c='luaopen_package'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='566' u='c' c='gmatch_aux'/>

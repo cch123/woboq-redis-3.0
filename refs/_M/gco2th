@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lstate.h' l='159'/>
+<use f='redis/deps/lua/src/lgc.c' l='101' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='298' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='386' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='413' u='c'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1215' type='zskiplistNode * zslLastInRange(zskiplist * zsl, zrangespec * range)'/>
+<use f='redis/src/db.c' l='1205' u='c' c='countKeysInSlot'/>
+<def f='redis/src/t_zset.c' l='265' ll='286' type='zskiplistNode * zslLastInRange(zskiplist * zsl, zrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='2330' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2459' u='c' c='zcountCommand'/>
+<doc f='redis/src/t_zset.c' l='263'>/* Find the last node that is contained in the specified range.
+ * Returns NULL when no element is contained in the range. */</doc>

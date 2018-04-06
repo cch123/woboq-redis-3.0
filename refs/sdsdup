@@ -1,0 +1,13 @@
+<dec f='redis/deps/hiredis/sds.h' l='61' type='sds sdsdup(const sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='81' ll='83' type='sds sdsdup(const sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='80'>/* Duplicate an sds string. */</doc>
+<dec f='redis/src/sds.h' l='61' type='sds sdsdup(const sds s)'/>
+<use f='redis/src/cluster.c' l='1102' u='c' c='clusterBlacklistAddNode'/>
+<use f='redis/src/config.c' l='427' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1294' u='c' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/config.c' l='1740' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/db.c' l='94' u='c' c='dbAdd'/>
+<use f='redis/src/redis.c' l='3180' u='c' c='evictionPoolPopulate'/>
+<use f='redis/src/replication.c' l='1761' u='c' c='replicationScriptCacheAdd'/>
+<def f='redis/src/sds.c' l='81' ll='83' type='sds sdsdup(const sds s)'/>
+<doc f='redis/src/sds.c' l='80'>/* Duplicate an sds string. */</doc>

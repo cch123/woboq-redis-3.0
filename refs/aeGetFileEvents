@@ -1,0 +1,5 @@
+<dec f='redis/src/ae.h' l='107' type='int aeGetFileEvents(aeEventLoop * eventLoop, int fd)'/>
+<def f='redis/src/ae.c' l='173' ll='178' type='int aeGetFileEvents(aeEventLoop * eventLoop, int fd)'/>
+<use f='redis/src/aof.c' l='163' u='c' c='aofRewriteBufferAppend'/>
+<use f='redis/src/networking.c' l='1327' u='c' c='catClientInfoString'/>
+<use f='redis/src/networking.c' l='1682' u='c' c='flushSlavesOutputBuffers'/>

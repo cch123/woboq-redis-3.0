@@ -1,0 +1,10 @@
+<def f='redis/src/cluster.c' l='2080' ll='2094' type='void clusterBroadcastMessage(void * buf, size_t len)'/>
+<use f='redis/src/cluster.c' l='2349' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2367' u='c' c='clusterSendFail'/>
+<use f='redis/src/cluster.c' l='2418' u='c' c='clusterRequestFailoverAuth'/>
+<doc f='redis/src/cluster.c' l='2074'>/* Send a message to all the nodes that are part of the cluster having
+ * a connected link.
+ *
+ * It is guaranteed that this function will never have as a side effect
+ * some node-&gt;link to be invalidated, so it is safe to call this function
+ * from event handlers that will do stuff with node links later. */</doc>

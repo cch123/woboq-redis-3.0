@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lparser.h' l='31' type='11'/>
+<use f='redis/deps/lua/src/lcode.c' l='299' u='r' c='luaK_setoneret'/>
+<use f='redis/deps/lua/src/lcode.c' l='312' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='317' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='324' u='r' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='362' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='525' u='r' c='jumponcond'/>
+<use f='redis/deps/lua/src/lcode.c' l='601' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='606' u='r' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='668' u='r' c='codearith'/>
+<use f='redis/deps/lua/src/lcode.c' l='755' u='r' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='759' u='r' c='luaK_posfix'/>
+<doc f='redis/deps/lua/src/lparser.h' l='31'>/* info = instruction pc */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='320' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='506' u='r' c='constructor'/>

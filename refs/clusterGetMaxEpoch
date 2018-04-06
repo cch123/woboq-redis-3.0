@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.c' l='77' type='uint64_t clusterGetMaxEpoch()'/>
+<use f='redis/src/cluster.c' l='272' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='273' u='c' c='clusterLoadConfig'/>
+<def f='redis/src/cluster.c' l='922' ll='935' type='uint64_t clusterGetMaxEpoch()'/>
+<use f='redis/src/cluster.c' l='967' u='c' c='clusterBumpConfigEpochWithoutConsensus'/>
+<doc f='redis/src/cluster.c' l='920'>/* Return the greatest configEpoch found in the cluster, or the current
+ * epoch if greater than any node configEpoch. */</doc>

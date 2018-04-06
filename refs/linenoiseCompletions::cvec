@@ -1,0 +1,11 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='46' type='char **'/>
+<use f='redis/deps/linenoise/linenoise.c' l='336' u='r' c='freeCompletions'/>
+<use f='redis/deps/linenoise/linenoise.c' l='337' u='r' c='freeCompletions'/>
+<use f='redis/deps/linenoise/linenoise.c' l='338' u='r' c='freeCompletions'/>
+<use f='redis/deps/linenoise/linenoise.c' l='363' u='r' c='completeLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='364' u='r' c='completeLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='392' u='r' c='completeLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='421' u='r' c='linenoiseAddCompletion'/>
+<use f='redis/deps/linenoise/linenoise.c' l='426' u='w' c='linenoiseAddCompletion'/>
+<use f='redis/deps/linenoise/linenoise.c' l='427' u='r' c='linenoiseAddCompletion'/>
+<offset>64</offset>

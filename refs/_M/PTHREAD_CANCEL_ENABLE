@@ -1,0 +1,2 @@
+<dec f='include/pthread.h' l='202'/>
+<use f='redis/src/bio.c' l='147' u='c'/>

@@ -1,0 +1,5 @@
+<def f='redis/deps/lua/src/strbuf.h' l='122' ll='125' type='void strbuf_append_char_unsafe(strbuf_t * s, const char c)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='478' u='c' c='json_append_string'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='484' u='c' c='json_append_string'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='486' u='c' c='json_append_string'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='934' u='c' c='json_next_string_token'/>

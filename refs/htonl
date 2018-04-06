@@ -1,0 +1,14 @@
+<dec f='include/netinet/in.h' l='379' type='uint32_t htonl(uint32_t __hostlong)'/>
+<use f='redis/src/cluster.c' l='2151' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2255' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2256' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2270' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2330' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2331' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2332' u='c' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2417' u='c' c='clusterRequestFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2430' u='c' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2443' u='c' c='clusterSendMFStart'/>
+<use f='redis/src/debug.c' l='131' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='148' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/rdb.c' l='101' u='c' c='rdbSaveLen'/>

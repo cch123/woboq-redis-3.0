@@ -1,0 +1,16 @@
+<def f='redis/src/rio.h' l='106' ll='117' type='size_t rioRead(rio * r, void * buf, size_t len)'/>
+<use f='redis/src/rdb.c' l='58' u='c' c='rdbLoadType'/>
+<use f='redis/src/rdb.c' l='64' u='c' c='rdbLoadTime'/>
+<use f='redis/src/rdb.c' l='75' u='c' c='rdbLoadMillisecondTime'/>
+<use f='redis/src/rdb.c' l='117' u='c' c='rdbLoadLen'/>
+<use f='redis/src/rdb.c' l='128' u='c' c='rdbLoadLen'/>
+<use f='redis/src/rdb.c' l='132' u='c' c='rdbLoadLen'/>
+<use f='redis/src/rdb.c' l='171' u='c' c='rdbLoadIntegerObject'/>
+<use f='redis/src/rdb.c' l='175' u='c' c='rdbLoadIntegerObject'/>
+<use f='redis/src/rdb.c' l='180' u='c' c='rdbLoadIntegerObject'/>
+<use f='redis/src/rdb.c' l='258' u='c' c='rdbLoadLzfStringObject'/>
+<use f='redis/src/rdb.c' l='355' u='c' c='rdbGenericLoadStringObject'/>
+<use f='redis/src/rdb.c' l='417' u='c' c='rdbLoadDoubleValue'/>
+<use f='redis/src/rdb.c' l='423' u='c' c='rdbLoadDoubleValue'/>
+<use f='redis/src/rdb.c' l='1143' u='c' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1221' u='c' c='rdbLoad'/>

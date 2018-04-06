@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='488'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='485'>/*
+@@ LUAL_BUFFERSIZE is the buffer size used by the lauxlib buffer system.
+*/</doc>
+<use f='redis/deps/lua/src/lauxlib.h' l='133' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='525' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='300' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='321' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='463' u='c'/>

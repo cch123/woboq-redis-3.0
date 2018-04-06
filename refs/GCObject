@@ -1,0 +1,13 @@
+<def f='redis/deps/lua/src/lstate.h' l='136' ll='145'/>
+<size>184</size>
+<doc f='redis/deps/lua/src/lstate.h' l='133'>/*
+** Union of all collectable objects
+*/</doc>
+<mbr r='GCObject::gch' o='0' t='GCheader'/>
+<mbr r='GCObject::ts' o='0' t='union TString'/>
+<mbr r='GCObject::u' o='0' t='union Udata'/>
+<mbr r='GCObject::cl' o='0' t='union Closure'/>
+<mbr r='GCObject::h' o='0' t='struct Table'/>
+<mbr r='GCObject::p' o='0' t='struct Proto'/>
+<mbr r='GCObject::uv' o='0' t='struct UpVal'/>
+<mbr r='GCObject::th' o='0' t='struct lua_State'/>

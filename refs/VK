@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.h' l='24' type='4'/>
+<use f='redis/deps/lua/src/lcode.c' l='354' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='455' u='r' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='460' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lcode.c' l='543' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='593' c='codenot'/>
+<doc f='redis/deps/lua/src/lparser.h' l='24'>/* info = index of constant in `k&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='134' u='r' c='codestring'/>

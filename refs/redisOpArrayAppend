@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='1942' ll='1956' type='int redisOpArrayAppend(redisOpArray * oa, struct redisCommand * cmd, int dbid, robj ** argv, int argc, int target)'/>
+<use f='redis/src/redis.c' l='2023' u='c' c='alsoPropagate'/>

@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='212' type='void * redisvCommand(redisContext * c, const char * format, struct __va_list_tag * ap)'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='207'>/* Issue a command to Redis. In a blocking context, it is identical to calling
+ * redisAppendCommand, followed by redisGetReply. The function will return
+ * NULL if there was an error in performing the request, otherwise it will
+ * return the reply. In a non-blocking context, it is identical to calling
+ * only redisAppendCommand and will always return NULL. */</doc>
+<def f='redis/deps/hiredis/hiredis.c' l='1339' ll='1343' type='void * redisvCommand(redisContext * c, const char * format, struct __va_list_tag * ap)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1349' u='c' c='redisCommand'/>
+<use f='redis/src/redis-cli.c' l='735' u='c' c='reconnectingRedisCommand'/>

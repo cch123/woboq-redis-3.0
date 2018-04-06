@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='3830' ll='3852' type='void sentinelHandleDictOfRedisInstances(dict * instances)'/>
+<use f='redis/src/sentinel.c' l='3842' u='c' c='sentinelHandleDictOfRedisInstances'/>
+<use f='redis/src/sentinel.c' l='3843' u='c' c='sentinelHandleDictOfRedisInstances'/>
+<use f='redis/src/sentinel.c' l='3887' u='c' c='sentinelTimer'/>
+<doc f='redis/src/sentinel.c' l='3828'>/* Perform scheduled operations for all the instances in the dictionary.
+ * Recursively call the function against dictionaries of slaves. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/llex.h' l='78' type='const char * luaX_token2str(LexState * ls, int token)'/>
+<def f='redis/deps/lua/src/llex.c' l='78' ll='86' type='const char * luaX_token2str(LexState * ls, int token)'/>
+<use f='redis/deps/lua/src/llex.c' l='97' u='c' c='txtToken'/>
+<use f='redis/deps/lua/src/lparser.c' l='67' u='c' c='error_expected'/>
+<use f='redis/deps/lua/src/lparser.c' l='111' u='c' c='check_match'/>
+<use f='redis/deps/lua/src/lparser.c' l='111' u='c' c='check_match'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/ae.h' l='113' type='int aeWait(int fd, int mask, long long milliseconds)'/>
+<def f='redis/src/ae.c' l='430' ll='448' type='int aeWait(int fd, int mask, long long milliseconds)'/>
+<doc f='redis/src/ae.c' l='428'>/* Wait for milliseconds until the given file descriptor becomes
+ * writable/readable/exception */</doc>
+<use f='redis/src/aof.c' l='1125' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='4500' u='c' c='migrateGetSocket'/>
+<use f='redis/src/redis-cli.c' l='1427' u='c' c='pipeMode'/>
+<use f='redis/src/syncio.c' l='71' u='c' c='syncWrite'/>
+<use f='redis/src/syncio.c' l='110' u='c' c='syncRead'/>

@@ -1,0 +1,21 @@
+<dec f='redis/src/dict.h' l='153' type='dictEntry * dictAddRaw(dict * d, void * key)'/>
+<use f='redis/src/dict.c' l='324' u='c' c='dictAdd'/>
+<def f='redis/src/dict.c' l='346' ll='369' type='dictEntry * dictAddRaw(dict * d, void * key)'/>
+<use f='redis/src/dict.c' l='405' u='c' c='dictReplaceRaw'/>
+<doc f='redis/src/dict.c' l='331'>/* Low level add. This function adds the entry but instead of setting
+ * a value returns the dictEntry structure to the user, that will make
+ * sure to fill the value field as he wishes.
+ *
+ * This function is also directly exposed to the user API to be called
+ * mainly in order to store non-pointers inside the hash value, example:
+ *
+ * entry = dictAddRaw(dict,mykey);
+ * if (entry != NULL) dictSetSignedIntegerVal(entry,1000);
+ *
+ * Return values:
+ *
+ * If key already exists NULL is returned.
+ * If key was added, the hash entry is returned to be manipulated by the caller.
+ */</doc>
+<use f='redis/src/sentinel.c' l='3218' u='c' c='sentinelLeaderIncr'/>
+<use f='redis/src/t_zset.c' l='2017' u='c' c='zunionInterGenericCommand'/>

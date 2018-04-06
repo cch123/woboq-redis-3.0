@@ -1,0 +1,7 @@
+<dec f='redis/src/cluster.h' l='126' type='clusterNode *'/>
+<use f='redis/src/cluster.c' l='1931' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2984' u='w' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='3202' u='r' c='clusterCron'/>
+<offset>3146496</offset>
+<doc f='redis/src/cluster.h' l='125'>/* Manual failover state of master. */</doc>
+<doc f='redis/src/cluster.h' l='126'>/* Slave performing the manual failover. */</doc>

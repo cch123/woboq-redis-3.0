@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lua_cmsgpack.c' l='544' ll='555' type='void mp_decode_to_lua_array(lua_State * L, mp_cur * c, size_t len)'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='717' u='c' c='mp_decode_to_lua_type'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='728' u='c' c='mp_decode_to_lua_type'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='765' u='c' c='mp_decode_to_lua_type'/>

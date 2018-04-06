@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/async.h' l='109' type='void redisAsyncDisconnect(redisAsyncContext * ac)'/>
+<def f='redis/deps/hiredis/async.c' l='346' ll='351' type='void redisAsyncDisconnect(redisAsyncContext * ac)'/>
+<doc f='redis/deps/hiredis/async.c' l='340'>/* Tries to do a clean disconnect from Redis, meaning it stops new commands
+ * from being issued, but tries to flush the output buffer and execute
+ * callbacks for all remaining replies. When this function is called from a
+ * callback, there might be more replies and we can safely defer disconnecting
+ * to redisProcessCallbacks(). Otherwise, we can only disconnect immediately
+ * when there are no pending callbacks. */</doc>

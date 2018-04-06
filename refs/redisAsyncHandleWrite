@@ -1,0 +1,3 @@
+<dec f='redis/deps/hiredis/async.h' l='114' type='void redisAsyncHandleWrite(redisAsyncContext * ac)'/>
+<def f='redis/deps/hiredis/async.c' l='524' ll='549' type='void redisAsyncHandleWrite(redisAsyncContext * ac)'/>
+<use f='redis/src/sentinel.c' l='248' u='c' c='redisAeWriteEvent'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1003' type='double'/>
+<use f='redis/src/rdb.c' l='421' u='r' c='rdbLoadDoubleValue'/>
+<def f='redis/src/redis.c' l='64' type='double'/>
+<use f='redis/src/redis.c' l='1524' u='w' c='initServerConfig'/>

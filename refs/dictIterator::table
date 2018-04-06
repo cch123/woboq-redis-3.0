@@ -1,0 +1,8 @@
+<dec f='redis/src/dict.h' l='91' type='int'/>
+<offset>128</offset>
+<use f='redis/src/dict.c' l='560' u='w' c='dictGetIterator'/>
+<use f='redis/src/dict.c' l='579' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='580' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='588' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='589' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='612' u='r' c='dictReleaseIterator'/>

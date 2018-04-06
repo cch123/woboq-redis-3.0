@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lua.h' l='183' type='int lua_getmetatable(lua_State * L, int objindex)'/>
+<def f='redis/deps/lua/src/lapi.c' l='587' ll='613' macro='1' type='int lua_getmetatable(lua_State * L, int objindex)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='127' u='c' c='luaL_checkudata'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='204' u='c' c='luaL_getmetafield'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='95' u='c' c='luaB_getmetatable'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='434' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='440' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/ldblib.c' l='30' u='c' c='db_getmetatable'/>
+<use f='redis/deps/lua/src/liolib.c' l='62' u='c' c='io_type'/>
+<use f='redis/deps/lua/src/loadlib.c' l='574' u='c' c='ll_seeall'/>

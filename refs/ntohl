@@ -1,0 +1,18 @@
+<dec f='include/netinet/in.h' l='376' type='uint32_t ntohl(uint32_t __netlong)'/>
+<doc f='include/netinet/in.h' l='369'>/* Functions to convert between host and network byte order.
+
+   Please note that these functions normally take `unsigned long int&apos; or
+   `unsigned short int&apos; values as arguments and also return them.  But
+   this was a short-sighted decision since on different systems the types
+   may have different representations but the values are always the same.  */</doc>
+<use f='redis/src/cluster.c' l='1531' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1565' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1566' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1896' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1897' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2019' u='c' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2028' u='c' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2049' u='c' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2367' u='c' c='clusterSendFail'/>
+<use f='redis/src/cluster.c' l='2382' u='c' c='clusterSendUpdate'/>
+<use f='redis/src/rdb.c' l='133' u='c' c='rdbLoadLen'/>

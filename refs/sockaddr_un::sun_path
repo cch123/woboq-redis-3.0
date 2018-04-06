@@ -1,0 +1,10 @@
+<dec f='include/x86_64-linux-gnu/sys/un.h' l='32' type='char [108]'/>
+<use f='redis/deps/hiredis/net.c' l='366' u='r' c='redisContextConnectUnix'/>
+<use f='redis/deps/hiredis/net.c' l='366' u='r' c='redisContextConnectUnix'/>
+<offset>16</offset>
+<doc f='include/x86_64-linux-gnu/sys/un.h' l='32'>/* Path name.  */</doc>
+<use f='redis/src/anet.c' l='363' u='r' c='anetUnixGenericConnect'/>
+<use f='redis/src/anet.c' l='363' u='r' c='anetUnixGenericConnect'/>
+<use f='redis/src/anet.c' l='502' u='r' c='anetUnixServer'/>
+<use f='redis/src/anet.c' l='502' u='r' c='anetUnixServer'/>
+<use f='redis/src/anet.c' l='506' u='r' c='anetUnixServer'/>

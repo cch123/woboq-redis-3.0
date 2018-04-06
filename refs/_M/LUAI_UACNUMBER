@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='511'/>
+<use f='redis/deps/lua/src/llimits.h' l='51' u='c'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='507'>/*
+@@ LUAI_UACNUMBER is the result of an &apos;usual argument conversion&apos;
+@* over a number.
+*/</doc>

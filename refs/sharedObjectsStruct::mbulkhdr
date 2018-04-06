@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='578' type='robj *[32]'/>
+<offset>643456</offset>
+<use f='redis/src/networking.c' l='484' u='r' c='addReplyLongLongWithPrefix'/>
+<use f='redis/src/networking.c' l='509' u='r' c='addReplyMultiBulkLen'/>
+<use f='redis/src/pubsub.c' l='79' u='r' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='115' u='r' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='141' u='r' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='166' u='r' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='190' u='r' c='pubsubUnsubscribeAllChannels'/>
+<use f='redis/src/pubsub.c' l='215' u='r' c='pubsubUnsubscribeAllPatterns'/>
+<use f='redis/src/pubsub.c' l='242' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='260' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/redis.c' l='1384' u='w' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='2446' u='r' c='pingCommand'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='424'/>
+<doc f='redis/src/redis.h' l='420'>/* Macro used to obtain the current LRU clock.
+ * If the current resolution is lower than the frequency we refresh the
+ * LRU clock (as it should be in production servers) we return the
+ * precomputed value, otherwise we need to resort to a function call. */</doc>
+<use f='redis/src/db.c' l='53' u='c'/>
+<use f='redis/src/object.c' l='47' u='c'/>
+<use f='redis/src/object.c' l='68' u='c'/>
+<use f='redis/src/object.c' l='693' u='c'/>

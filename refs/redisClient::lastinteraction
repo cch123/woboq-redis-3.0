@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='533' type='time_t'/>
+<offset>1088</offset>
+<doc f='redis/src/redis.h' l='533'>/* time of the last interaction, used for timeout */</doc>
+<use f='redis/src/cluster.c' l='2724' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/networking.c' l='100' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='888' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='1209' u='w' c='readQueryFromClient'/>
+<use f='redis/src/networking.c' l='1339' u='r' c='catClientInfoString'/>
+<use f='redis/src/redis.c' l='914' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='945' u='r' c='clientsCronResizeQueryBuffer'/>
+<use f='redis/src/redis.c' l='2885' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1656' u='w' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1959' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2077' u='r' c='replicationCron'/>

@@ -1,0 +1,16 @@
+<dec f='redis/deps/hiredis/dict.h' l='55' type='int (*)(void *, const void *, const void *)'/>
+<use f='redis/deps/hiredis/dict.c' l='193' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='193' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='251' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='251' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='332' macro='1' u='r'/>
+<use f='redis/deps/hiredis/dict.c' l='332' macro='1' u='r'/>
+<offset>192</offset>
+<dec f='redis/src/dict.h' l='62' type='int (*)(void *, const void *, const void *)'/>
+<offset>192</offset>
+<use f='redis/src/dict.c' l='424' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='424' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='501' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='501' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='978' macro='1' u='r'/>
+<use f='redis/src/dict.c' l='978' macro='1' u='r'/>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='185' type='23'/>
+<use f='redis/deps/lua/src/lcode.c' l='679' u='r' c='codecomp'/>
+<use f='redis/deps/lua/src/lcode.c' l='773' u='r' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='774' u='r' c='luaK_posfix'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='185'>/*	A B C	if ((RK(B) == RK(C)) ~= A) then pc++		*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='545' c='luaV_execute'/>

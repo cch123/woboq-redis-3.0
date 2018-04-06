@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1534' type='void latencyCommand(redisClient * c)'/>
+<def f='redis/src/latency.c' l='567' ll='622' type='void latencyCommand(redisClient * c)'/>
+<doc f='redis/src/latency.c' l='560'>/* LATENCY command implementations.
+ *
+ * LATENCY SAMPLES: return time-latency samples for the specified event.
+ * LATENCY LATEST: return the latest latency for all the events classes.
+ * LATENCY DOCTOR: returns an human readable analysis of instance latency.
+ * LATENCY GRAPH: provide an ASCII graph of the latency of the specified event.
+ */</doc>
+<use f='redis/src/redis.c' l='286' u='r'/>
+<use f='redis/src/redis.c' l='286' u='r'/>
+<use f='redis/src/redis.c' l='286' u='r'/>
+<use f='redis/src/redis.c' l='286' u='r'/>

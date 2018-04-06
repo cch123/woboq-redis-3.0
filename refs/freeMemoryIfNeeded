@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1224' type='int freeMemoryIfNeeded()'/>
+<doc f='redis/src/redis.h' l='1223'>/* Core functions */</doc>
+<use f='redis/src/config.c' l='639' u='c' c='configSetCommand'/>
+<use f='redis/src/redis.c' l='2194' u='c' c='processCommand'/>
+<def f='redis/src/redis.c' l='3186' ll='3349' type='int freeMemoryIfNeeded()'/>
+<use f='redis/src/scripting.c' l='350' u='c' c='luaRedisGenericCommand'/>

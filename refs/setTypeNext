@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1262' type='int setTypeNext(setTypeIterator * si, robj ** objele, int64_t * llele)'/>
+<def f='redis/src/t_set.c' l='145' ll='155' type='int setTypeNext(setTypeIterator * si, robj ** objele, int64_t * llele)'/>
+<use f='redis/src/t_set.c' l='169' u='c' c='setTypeNextObject'/>
+<use f='redis/src/t_set.c' l='236' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_set.c' l='493' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='643' u='c' c='sinterGenericCommand'/>
+<doc f='redis/src/t_set.c' l='134'>/* Move to the next entry in the set. Returns the object at the current
+ * position.
+ *
+ * Since set elements can be internally be stored as redis objects or
+ * simple arrays of integers, setTypeNext returns the encoding of the
+ * set object you are iterating, and will populate the appropriate pointer
+ * (eobj) or (llobj) accordingly.
+ *
+ * When there are no longer elements -1 is returned.
+ * Returned objects ref count is not incremented, so this function is
+ * copy on write friendly. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='198' type='32'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='198'>/*	A sBx	R(A)-=R(A+2); pc+=sBx				*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='413' c='symbexec'/>
+<use f='redis/deps/lua/src/lparser.c' l='1053' u='r' c='forbody'/>
+<use f='redis/deps/lua/src/lvm.c' l='666' c='luaV_execute'/>

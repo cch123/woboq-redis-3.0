@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='261' type='const char *const [39]'/>
+<def f='redis/deps/lua/src/lopcodes.c' l='16' ll='56' type='const char *const [39]'/>
+<doc f='redis/deps/lua/src/lopcodes.c' l='14'>/* ORDER OP */</doc>

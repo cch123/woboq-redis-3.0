@@ -1,0 +1,356 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>dict.c source code [redis/deps/hiredis/dict.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/hiredis/dict.c'; var root_path = '../../..'; var data_path = '../../../../data';</script>
+<script src='../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../..'>redis</a>/<a href='..'>deps</a>/<a href='./'>hiredis</a>/<a href='dict.c.html'>dict.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Hash table implementation.</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * This file implements in memory hash tables with insert/del/replace/find/</i></td></tr>
+<tr><th id="4">4</th><td><i> * get-random-element operations. Hash tables will auto resize if needed</i></td></tr>
+<tr><th id="5">5</th><td><i> * tables of power of two in size are used, collisions are handled by</i></td></tr>
+<tr><th id="6">6</th><td><i> * chaining. See the source code for more information... :)</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Copyright (c) 2006-2010, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="9">9</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="12">12</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="13">13</th><td><i> *</i></td></tr>
+<tr><th id="14">14</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="15">15</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="16">16</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="17">17</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="18">18</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="19">19</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="20">20</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="21">21</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="22">22</th><td><i> *</i></td></tr>
+<tr><th id="23">23</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="24">24</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="25">25</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="26">26</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="27">27</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="28">28</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="29">29</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="30">30</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="31">31</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="32">32</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="33">33</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="34">34</th><td><i> */</i></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#include <a href="fmacros.h.html">"fmacros.h"</a></u></td></tr>
+<tr><th id="37">37</th><td><u>#include <a href="../../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="38">38</th><td><u>#include <a href="../../../include/assert.h.html">&lt;assert.h&gt;</a></u></td></tr>
+<tr><th id="39">39</th><td><u>#include &lt;limits.h&gt;</u></td></tr>
+<tr><th id="40">40</th><td><u>#include <a href="dict.h.html">"dict.h"</a></u></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td><i>/* -------------------------- private prototypes ---------------------------- */</i></td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td><em>static</em> <em>int</em> <a class="decl fn" href="#_dictExpandIfNeeded" title='_dictExpandIfNeeded' data-ref="_dictExpandIfNeeded">_dictExpandIfNeeded</a>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="700ht" title='ht' data-type='dict *' data-ref="700ht">ht</dfn>);</td></tr>
+<tr><th id="45">45</th><td><em>static</em> <em>unsigned</em> <em>long</em> <a class="decl fn" href="#_dictNextPower" title='_dictNextPower' data-ref="_dictNextPower">_dictNextPower</a>(<em>unsigned</em> <em>long</em> <dfn class="local col1 decl" id="701size" title='size' data-type='unsigned long' data-ref="701size">size</dfn>);</td></tr>
+<tr><th id="46">46</th><td><em>static</em> <em>int</em> <a class="decl fn" href="#_dictKeyIndex" title='_dictKeyIndex' data-ref="_dictKeyIndex">_dictKeyIndex</a>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col2 decl" id="702ht" title='ht' data-type='dict *' data-ref="702ht">ht</dfn>, <em>const</em> <em>void</em> *<dfn class="local col3 decl" id="703key" title='key' data-type='const void *' data-ref="703key">key</dfn>);</td></tr>
+<tr><th id="47">47</th><td><em>static</em> <em>int</em> <a class="decl fn" href="#_dictInit" title='_dictInit' data-ref="_dictInit">_dictInit</a>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col4 decl" id="704ht" title='ht' data-type='dict *' data-ref="704ht">ht</dfn>, <a class="typedef" href="dict.h.html#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> *<dfn class="local col5 decl" id="705type" title='type' data-type='dictType *' data-ref="705type">type</dfn>, <em>void</em> *<dfn class="local col6 decl" id="706privDataPtr" title='privDataPtr' data-type='void *' data-ref="706privDataPtr">privDataPtr</dfn>);</td></tr>
+<tr><th id="48">48</th><td></td></tr>
+<tr><th id="49">49</th><td><i>/* -------------------------- hash functions -------------------------------- */</i></td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><i>/* Generic hash function (a popular one from Bernstein).</i></td></tr>
+<tr><th id="52">52</th><td><i> * I tested a few and this was the best. */</i></td></tr>
+<tr><th id="53">53</th><td><em>static</em> <em>unsigned</em> <em>int</em> <dfn class="decl def fn" id="dictGenHashFunction" title='dictGenHashFunction' data-ref="dictGenHashFunction">dictGenHashFunction</dfn>(<em>const</em> <em>unsigned</em> <em>char</em> *<dfn class="local col7 decl" id="707buf" title='buf' data-type='const unsigned char *' data-ref="707buf">buf</dfn>, <em>int</em> <dfn class="local col8 decl" id="708len" title='len' data-type='int' data-ref="708len">len</dfn>) {</td></tr>
+<tr><th id="54">54</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col9 decl" id="709hash" title='hash' data-type='unsigned int' data-ref="709hash">hash</dfn> = <var>5381</var>;</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td>    <b>while</b> (<a class="local col8 ref" href="#708len" title='len' data-ref="708len">len</a>--)</td></tr>
+<tr><th id="57">57</th><td>        <a class="local col9 ref" href="#709hash" title='hash' data-ref="709hash">hash</a> = ((<a class="local col9 ref" href="#709hash" title='hash' data-ref="709hash">hash</a> &lt;&lt; <var>5</var>) + <a class="local col9 ref" href="#709hash" title='hash' data-ref="709hash">hash</a>) + (*<a class="local col7 ref" href="#707buf" title='buf' data-ref="707buf">buf</a>++); <i>/* hash * 33 + c */</i></td></tr>
+<tr><th id="58">58</th><td>    <b>return</b> <a class="local col9 ref" href="#709hash" title='hash' data-ref="709hash">hash</a>;</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><i>/* ----------------------------- API implementation ------------------------- */</i></td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/* Reset an hashtable already initialized with ht_init().</i></td></tr>
+<tr><th id="64">64</th><td><i> * NOTE: This function should only called by ht_destroy(). */</i></td></tr>
+<tr><th id="65">65</th><td><em>static</em> <em>void</em> <dfn class="decl def fn" id="_dictReset" title='_dictReset' data-ref="_dictReset">_dictReset</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="710ht" title='ht' data-type='dict *' data-ref="710ht">ht</dfn>) {</td></tr>
+<tr><th id="66">66</th><td>    <a class="local col0 ref" href="#710ht" title='ht' data-ref="710ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="67">67</th><td>    <a class="local col0 ref" href="#710ht" title='ht' data-ref="710ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> = <var>0</var>;</td></tr>
+<tr><th id="68">68</th><td>    <a class="local col0 ref" href="#710ht" title='ht' data-ref="710ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a> = <var>0</var>;</td></tr>
+<tr><th id="69">69</th><td>    <a class="local col0 ref" href="#710ht" title='ht' data-ref="710ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> = <var>0</var>;</td></tr>
+<tr><th id="70">70</th><td>}</td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td><i>/* Create a new hash table */</i></td></tr>
+<tr><th id="73">73</th><td><em>static</em> <a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="decl def fn" id="dictCreate" title='dictCreate' data-ref="dictCreate">dictCreate</dfn>(<a class="typedef" href="dict.h.html#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> *<dfn class="local col1 decl" id="711type" title='type' data-type='dictType *' data-ref="711type">type</dfn>, <em>void</em> *<dfn class="local col2 decl" id="712privDataPtr" title='privDataPtr' data-type='void *' data-ref="712privDataPtr">privDataPtr</dfn>) {</td></tr>
+<tr><th id="74">74</th><td>    <a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="713ht" title='ht' data-type='dict *' data-ref="713ht">ht</dfn> = <a class="ref fn" href="../../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<b>sizeof</b>(*<a class="local col3 ref" href="#713ht" title='ht' data-ref="713ht">ht</a>));</td></tr>
+<tr><th id="75">75</th><td>    <a class="ref fn" href="#_dictInit" title='_dictInit' data-ref="_dictInit">_dictInit</a>(<a class="local col3 ref" href="#713ht" title='ht' data-ref="713ht">ht</a>,<a class="local col1 ref" href="#711type" title='type' data-ref="711type">type</a>,<a class="local col2 ref" href="#712privDataPtr" title='privDataPtr' data-ref="712privDataPtr">privDataPtr</a>);</td></tr>
+<tr><th id="76">76</th><td>    <b>return</b> <a class="local col3 ref" href="#713ht" title='ht' data-ref="713ht">ht</a>;</td></tr>
+<tr><th id="77">77</th><td>}</td></tr>
+<tr><th id="78">78</th><td></td></tr>
+<tr><th id="79">79</th><td><i>/* Initialize the hash table */</i></td></tr>
+<tr><th id="80">80</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="_dictInit" title='_dictInit' data-ref="_dictInit">_dictInit</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col4 decl" id="714ht" title='ht' data-type='dict *' data-ref="714ht">ht</dfn>, <a class="typedef" href="dict.h.html#dictType" title='dictType' data-type='struct dictType' data-ref="dictType">dictType</a> *<dfn class="local col5 decl" id="715type" title='type' data-type='dictType *' data-ref="715type">type</dfn>, <em>void</em> *<dfn class="local col6 decl" id="716privDataPtr" title='privDataPtr' data-type='void *' data-ref="716privDataPtr">privDataPtr</dfn>) {</td></tr>
+<tr><th id="81">81</th><td>    <a class="ref fn" href="#_dictReset" title='_dictReset' data-ref="_dictReset">_dictReset</a>(<a class="local col4 ref" href="#714ht" title='ht' data-ref="714ht">ht</a>);</td></tr>
+<tr><th id="82">82</th><td>    <a class="local col4 ref" href="#714ht" title='ht' data-ref="714ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::type" title='dict::type' data-ref="dict::type">type</a> = <a class="local col5 ref" href="#715type" title='type' data-ref="715type">type</a>;</td></tr>
+<tr><th id="83">83</th><td>    <a class="local col4 ref" href="#714ht" title='ht' data-ref="714ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::privdata" title='dict::privdata' data-ref="dict::privdata">privdata</a> = <a class="local col6 ref" href="#716privDataPtr" title='privDataPtr' data-ref="716privDataPtr">privDataPtr</a>;</td></tr>
+<tr><th id="84">84</th><td>    <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>;</td></tr>
+<tr><th id="85">85</th><td>}</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td><i>/* Expand or create the hashtable */</i></td></tr>
+<tr><th id="88">88</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="dictExpand" title='dictExpand' data-ref="dictExpand">dictExpand</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col7 decl" id="717ht" title='ht' data-type='dict *' data-ref="717ht">ht</dfn>, <em>unsigned</em> <em>long</em> <dfn class="local col8 decl" id="718size" title='size' data-type='unsigned long' data-ref="718size">size</dfn>) {</td></tr>
+<tr><th id="89">89</th><td>    <a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> <dfn class="local col9 decl" id="719n" title='n' data-type='dict' data-ref="719n">n</dfn>; <i>/* the new hashtable */</i></td></tr>
+<tr><th id="90">90</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col0 decl" id="720realsize" title='realsize' data-type='unsigned long' data-ref="720realsize">realsize</dfn> = <a class="ref fn" href="#_dictNextPower" title='_dictNextPower' data-ref="_dictNextPower">_dictNextPower</a>(<a class="local col8 ref" href="#718size" title='size' data-ref="718size">size</a>), <dfn class="local col1 decl" id="721i" title='i' data-type='unsigned long' data-ref="721i">i</dfn>;</td></tr>
+<tr><th id="91">91</th><td></td></tr>
+<tr><th id="92">92</th><td>    <i>/* the size is invalid if it is smaller than the number of</i></td></tr>
+<tr><th id="93">93</th><td><i>     * elements already inside the hashtable */</i></td></tr>
+<tr><th id="94">94</th><td>    <b>if</b> (<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> &gt; <a class="local col8 ref" href="#718size" title='size' data-ref="718size">size</a>)</td></tr>
+<tr><th id="95">95</th><td>        <b>return</b> <a class="macro" href="dict.h.html#40" title="1" data-ref="_M/DICT_ERR">DICT_ERR</a>;</td></tr>
+<tr><th id="96">96</th><td></td></tr>
+<tr><th id="97">97</th><td>    <a class="ref fn" href="#_dictInit" title='_dictInit' data-ref="_dictInit">_dictInit</a>(&amp;<a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>, <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::type" title='dict::type' data-ref="dict::type">type</a>, <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::privdata" title='dict::privdata' data-ref="dict::privdata">privdata</a>);</td></tr>
+<tr><th id="98">98</th><td>    <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> = <a class="local col0 ref" href="#720realsize" title='realsize' data-ref="720realsize">realsize</a>;</td></tr>
+<tr><th id="99">99</th><td>    <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a> = <a class="local col0 ref" href="#720realsize" title='realsize' data-ref="720realsize">realsize</a>-<var>1</var>;</td></tr>
+<tr><th id="100">100</th><td>    <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a> = <a class="ref fn" href="../../../include/stdlib.h.html#calloc" title='calloc' data-ref="calloc">calloc</a>(<a class="local col0 ref" href="#720realsize" title='realsize' data-ref="720realsize">realsize</a>,<b>sizeof</b>(<a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a>*));</td></tr>
+<tr><th id="101">101</th><td></td></tr>
+<tr><th id="102">102</th><td>    <i>/* Copy all the elements from the old to the new table:</i></td></tr>
+<tr><th id="103">103</th><td><i>     * note that if the old hash table is empty ht-&gt;size is zero,</i></td></tr>
+<tr><th id="104">104</th><td><i>     * so dictExpand just creates an hash table. */</i></td></tr>
+<tr><th id="105">105</th><td>    <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> = <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a>;</td></tr>
+<tr><th id="106">106</th><td>    <b>for</b> (<a class="local col1 ref" href="#721i" title='i' data-ref="721i">i</a> = <var>0</var>; <a class="local col1 ref" href="#721i" title='i' data-ref="721i">i</a> &lt; <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> &amp;&amp; <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> &gt; <var>0</var>; <a class="local col1 ref" href="#721i" title='i' data-ref="721i">i</a>++) {</td></tr>
+<tr><th id="107">107</th><td>        <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col2 decl" id="722he" title='he' data-type='dictEntry *' data-ref="722he">he</dfn>, *<dfn class="local col3 decl" id="723nextHe" title='nextHe' data-type='dictEntry *' data-ref="723nextHe">nextHe</dfn>;</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td>        <b>if</b> (<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col1 ref" href="#721i" title='i' data-ref="721i">i</a>] == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>continue</b>;</td></tr>
+<tr><th id="110">110</th><td></td></tr>
+<tr><th id="111">111</th><td>        <i>/* For each hash entry on this slot... */</i></td></tr>
+<tr><th id="112">112</th><td>        <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a> = <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col1 ref" href="#721i" title='i' data-ref="721i">i</a>];</td></tr>
+<tr><th id="113">113</th><td>        <b>while</b>(<a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a>) {</td></tr>
+<tr><th id="114">114</th><td>            <em>unsigned</em> <em>int</em> <dfn class="local col4 decl" id="724h" title='h' data-type='unsigned int' data-ref="724h">h</dfn>;</td></tr>
+<tr><th id="115">115</th><td></td></tr>
+<tr><th id="116">116</th><td>            <a class="local col3 ref" href="#723nextHe" title='nextHe' data-ref="723nextHe">nextHe</a> = <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="117">117</th><td>            <i>/* Get the new element index */</i></td></tr>
+<tr><th id="118">118</th><td>            <a class="local col4 ref" href="#724h" title='h' data-ref="724h">h</a> = <a class="macro" href="dict.h.html#106" title="(ht)-&gt;type-&gt;hashFunction(he-&gt;key)" data-ref="_M/dictHashKey">dictHashKey</a>(<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>, <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::key" title='dictEntry::key' data-ref="dictEntry::key">key</a>) &amp; <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a>;</td></tr>
+<tr><th id="119">119</th><td>            <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a> = <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col4 ref" href="#724h" title='h' data-ref="724h">h</a>];</td></tr>
+<tr><th id="120">120</th><td>            <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>.<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col4 ref" href="#724h" title='h' data-ref="724h">h</a>] = <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a>;</td></tr>
+<tr><th id="121">121</th><td>            <a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a>--;</td></tr>
+<tr><th id="122">122</th><td>            <i>/* Pass to the next element */</i></td></tr>
+<tr><th id="123">123</th><td>            <a class="local col2 ref" href="#722he" title='he' data-ref="722he">he</a> = <a class="local col3 ref" href="#723nextHe" title='nextHe' data-ref="723nextHe">nextHe</a>;</td></tr>
+<tr><th id="124">124</th><td>        }</td></tr>
+<tr><th id="125">125</th><td>    }</td></tr>
+<tr><th id="126">126</th><td>    <a class="macro" href="../../../include/assert.h.html#88" title="((ht-&gt;used == 0) ? (void) (0) : __assert_fail (&quot;ht-&gt;used == 0&quot;, &quot;/vagrant/data/redis-v3.0.0/deps/hiredis/dict.c&quot;, 126, __PRETTY_FUNCTION__))" data-ref="_M/assert">assert</a>(<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> == <var>0</var>);</td></tr>
+<tr><th id="127">127</th><td>    <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>);</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td>    <i>/* Remap the new hashtable in the old */</i></td></tr>
+<tr><th id="130">130</th><td>    *<a class="local col7 ref" href="#717ht" title='ht' data-ref="717ht">ht</a> = <a class="local col9 ref" href="#719n" title='n' data-ref="719n">n</a>;</td></tr>
+<tr><th id="131">131</th><td>    <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>;</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><i>/* Add an element to the target hash table */</i></td></tr>
+<tr><th id="135">135</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="dictAdd" title='dictAdd' data-ref="dictAdd">dictAdd</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col5 decl" id="725ht" title='ht' data-type='dict *' data-ref="725ht">ht</dfn>, <em>void</em> *<dfn class="local col6 decl" id="726key" title='key' data-type='void *' data-ref="726key">key</dfn>, <em>void</em> *<dfn class="local col7 decl" id="727val" title='val' data-type='void *' data-ref="727val">val</dfn>) {</td></tr>
+<tr><th id="136">136</th><td>    <em>int</em> <dfn class="local col8 decl" id="728index" title='index' data-type='int' data-ref="728index">index</dfn>;</td></tr>
+<tr><th id="137">137</th><td>    <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col9 decl" id="729entry" title='entry' data-type='dictEntry *' data-ref="729entry">entry</dfn>;</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td>    <i>/* Get the index of the new element, or -1 if</i></td></tr>
+<tr><th id="140">140</th><td><i>     * the element already exists. */</i></td></tr>
+<tr><th id="141">141</th><td>    <b>if</b> ((<a class="local col8 ref" href="#728index" title='index' data-ref="728index">index</a> = <a class="ref fn" href="#_dictKeyIndex" title='_dictKeyIndex' data-ref="_dictKeyIndex">_dictKeyIndex</a>(<a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>, <a class="local col6 ref" href="#726key" title='key' data-ref="726key">key</a>)) == -<var>1</var>)</td></tr>
+<tr><th id="142">142</th><td>        <b>return</b> <a class="macro" href="dict.h.html#40" title="1" data-ref="_M/DICT_ERR">DICT_ERR</a>;</td></tr>
+<tr><th id="143">143</th><td></td></tr>
+<tr><th id="144">144</th><td>    <i>/* Allocates the memory and stores key */</i></td></tr>
+<tr><th id="145">145</th><td>    <a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a> = <a class="ref fn" href="../../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<b>sizeof</b>(*<a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a>));</td></tr>
+<tr><th id="146">146</th><td>    <a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a> = <a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col8 ref" href="#728index" title='index' data-ref="728index">index</a>];</td></tr>
+<tr><th id="147">147</th><td>    <a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col8 ref" href="#728index" title='index' data-ref="728index">index</a>] = <a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a>;</td></tr>
+<tr><th id="148">148</th><td></td></tr>
+<tr><th id="149">149</th><td>    <i>/* Set the hash entry fields. */</i></td></tr>
+<tr><th id="150">150</th><td>    <a class="macro" href="dict.h.html#94" title="do { if ((ht)-&gt;type-&gt;keyDup) entry-&gt;key = (ht)-&gt;type-&gt;keyDup((ht)-&gt;privdata, key); else entry-&gt;key = (key); } while(0)" data-ref="_M/dictSetHashKey">dictSetHashKey</a>(<a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>, <a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a>, <a class="local col6 ref" href="#726key" title='key' data-ref="726key">key</a>);</td></tr>
+<tr><th id="151">151</th><td>    <a class="macro" href="dict.h.html#83" title="do { if ((ht)-&gt;type-&gt;valDup) entry-&gt;val = (ht)-&gt;type-&gt;valDup((ht)-&gt;privdata, val); else entry-&gt;val = (val); } while(0)" data-ref="_M/dictSetHashVal">dictSetHashVal</a>(<a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>, <a class="local col9 ref" href="#729entry" title='entry' data-ref="729entry">entry</a>, <a class="local col7 ref" href="#727val" title='val' data-ref="727val">val</a>);</td></tr>
+<tr><th id="152">152</th><td>    <a class="local col5 ref" href="#725ht" title='ht' data-ref="725ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a>++;</td></tr>
+<tr><th id="153">153</th><td>    <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>;</td></tr>
+<tr><th id="154">154</th><td>}</td></tr>
+<tr><th id="155">155</th><td></td></tr>
+<tr><th id="156">156</th><td><i>/* Add an element, discarding the old if the key already exists.</i></td></tr>
+<tr><th id="157">157</th><td><i> * Return 1 if the key was added from scratch, 0 if there was already an</i></td></tr>
+<tr><th id="158">158</th><td><i> * element with such key and dictReplace() just performed a value update</i></td></tr>
+<tr><th id="159">159</th><td><i> * operation. */</i></td></tr>
+<tr><th id="160">160</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="dictReplace" title='dictReplace' data-ref="dictReplace">dictReplace</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="730ht" title='ht' data-type='dict *' data-ref="730ht">ht</dfn>, <em>void</em> *<dfn class="local col1 decl" id="731key" title='key' data-type='void *' data-ref="731key">key</dfn>, <em>void</em> *<dfn class="local col2 decl" id="732val" title='val' data-type='void *' data-ref="732val">val</dfn>) {</td></tr>
+<tr><th id="161">161</th><td>    <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col3 decl" id="733entry" title='entry' data-type='dictEntry *' data-ref="733entry">entry</dfn>, <dfn class="local col4 decl" id="734auxentry" title='auxentry' data-type='dictEntry' data-ref="734auxentry">auxentry</dfn>;</td></tr>
+<tr><th id="162">162</th><td></td></tr>
+<tr><th id="163">163</th><td>    <i>/* Try to add the element. If the key</i></td></tr>
+<tr><th id="164">164</th><td><i>     * does not exists dictAdd will suceed. */</i></td></tr>
+<tr><th id="165">165</th><td>    <b>if</b> (<a class="ref fn" href="#dictAdd" title='dictAdd' data-ref="dictAdd">dictAdd</a>(<a class="local col0 ref" href="#730ht" title='ht' data-ref="730ht">ht</a>, <a class="local col1 ref" href="#731key" title='key' data-ref="731key">key</a>, <a class="local col2 ref" href="#732val" title='val' data-ref="732val">val</a>) == <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>)</td></tr>
+<tr><th id="166">166</th><td>        <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="167">167</th><td>    <i>/* It already exists, get the entry */</i></td></tr>
+<tr><th id="168">168</th><td>    <a class="local col3 ref" href="#733entry" title='entry' data-ref="733entry">entry</a> = <a class="ref fn" href="#dictFind" title='dictFind' data-ref="dictFind">dictFind</a>(<a class="local col0 ref" href="#730ht" title='ht' data-ref="730ht">ht</a>, <a class="local col1 ref" href="#731key" title='key' data-ref="731key">key</a>);</td></tr>
+<tr><th id="169">169</th><td>    <i>/* Free the old value and set the new one */</i></td></tr>
+<tr><th id="170">170</th><td>    <i>/* Set the new value and free the old one. Note that it is important</i></td></tr>
+<tr><th id="171">171</th><td><i>     * to do that in this order, as the value may just be exactly the same</i></td></tr>
+<tr><th id="172">172</th><td><i>     * as the previous one. In this context, think to reference counting,</i></td></tr>
+<tr><th id="173">173</th><td><i>     * you want to increment (set), and then decrement (free), and not the</i></td></tr>
+<tr><th id="174">174</th><td><i>     * reverse. */</i></td></tr>
+<tr><th id="175">175</th><td>    <a class="local col4 ref" href="#734auxentry" title='auxentry' data-ref="734auxentry">auxentry</a> = *<a class="local col3 ref" href="#733entry" title='entry' data-ref="733entry">entry</a>;</td></tr>
+<tr><th id="176">176</th><td>    <a class="macro" href="dict.h.html#83" title="do { if ((ht)-&gt;type-&gt;valDup) entry-&gt;val = (ht)-&gt;type-&gt;valDup((ht)-&gt;privdata, val); else entry-&gt;val = (val); } while(0)" data-ref="_M/dictSetHashVal">dictSetHashVal</a>(<a class="local col0 ref" href="#730ht" title='ht' data-ref="730ht">ht</a>, <a class="local col3 ref" href="#733entry" title='entry' data-ref="733entry">entry</a>, <a class="local col2 ref" href="#732val" title='val' data-ref="732val">val</a>);</td></tr>
+<tr><th id="177">177</th><td>    <a class="macro" href="dict.h.html#79" title="if ((ht)-&gt;type-&gt;valDestructor) (ht)-&gt;type-&gt;valDestructor((ht)-&gt;privdata, (&amp;auxentry)-&gt;val)" data-ref="_M/dictFreeEntryVal">dictFreeEntryVal</a>(<a class="local col0 ref" href="#730ht" title='ht' data-ref="730ht">ht</a>, &amp;<a class="local col4 ref" href="#734auxentry" title='auxentry' data-ref="734auxentry">auxentry</a>);</td></tr>
+<tr><th id="178">178</th><td>    <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="179">179</th><td>}</td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><i>/* Search and remove an element */</i></td></tr>
+<tr><th id="182">182</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="dictDelete" title='dictDelete' data-ref="dictDelete">dictDelete</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col5 decl" id="735ht" title='ht' data-type='dict *' data-ref="735ht">ht</dfn>, <em>const</em> <em>void</em> *<dfn class="local col6 decl" id="736key" title='key' data-type='const void *' data-ref="736key">key</dfn>) {</td></tr>
+<tr><th id="183">183</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col7 decl" id="737h" title='h' data-type='unsigned int' data-ref="737h">h</dfn>;</td></tr>
+<tr><th id="184">184</th><td>    <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col8 decl" id="738de" title='de' data-type='dictEntry *' data-ref="738de">de</dfn>, *<dfn class="local col9 decl" id="739prevde" title='prevde' data-type='dictEntry *' data-ref="739prevde">prevde</dfn>;</td></tr>
+<tr><th id="185">185</th><td></td></tr>
+<tr><th id="186">186</th><td>    <b>if</b> (<a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> == <var>0</var>)</td></tr>
+<tr><th id="187">187</th><td>        <b>return</b> <a class="macro" href="dict.h.html#40" title="1" data-ref="_M/DICT_ERR">DICT_ERR</a>;</td></tr>
+<tr><th id="188">188</th><td>    <a class="local col7 ref" href="#737h" title='h' data-ref="737h">h</a> = <a class="macro" href="dict.h.html#106" title="(ht)-&gt;type-&gt;hashFunction(key)" data-ref="_M/dictHashKey">dictHashKey</a>(<a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>, <a class="local col6 ref" href="#736key" title='key' data-ref="736key">key</a>) &amp; <a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a>;</td></tr>
+<tr><th id="189">189</th><td>    <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a> = <a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col7 ref" href="#737h" title='h' data-ref="737h">h</a>];</td></tr>
+<tr><th id="190">190</th><td></td></tr>
+<tr><th id="191">191</th><td>    <a class="local col9 ref" href="#739prevde" title='prevde' data-ref="739prevde">prevde</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="192">192</th><td>    <b>while</b>(<a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>) {</td></tr>
+<tr><th id="193">193</th><td>        <b>if</b> (<a class="macro" href="dict.h.html#101" title="(((ht)-&gt;type-&gt;keyCompare) ? (ht)-&gt;type-&gt;keyCompare((ht)-&gt;privdata, key, de-&gt;key) : (key) == (de-&gt;key))" data-ref="_M/dictCompareHashKeys">dictCompareHashKeys</a>(<a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>,<a class="local col6 ref" href="#736key" title='key' data-ref="736key">key</a>,<a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::key" title='dictEntry::key' data-ref="dictEntry::key">key</a>)) {</td></tr>
+<tr><th id="194">194</th><td>            <i>/* Unlink the element from the list */</i></td></tr>
+<tr><th id="195">195</th><td>            <b>if</b> (<a class="local col9 ref" href="#739prevde" title='prevde' data-ref="739prevde">prevde</a>)</td></tr>
+<tr><th id="196">196</th><td>                <a class="local col9 ref" href="#739prevde" title='prevde' data-ref="739prevde">prevde</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a> = <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="197">197</th><td>            <b>else</b></td></tr>
+<tr><th id="198">198</th><td>                <a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col7 ref" href="#737h" title='h' data-ref="737h">h</a>] = <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="199">199</th><td></td></tr>
+<tr><th id="200">200</th><td>            <a class="macro" href="dict.h.html#90" title="if ((ht)-&gt;type-&gt;keyDestructor) (ht)-&gt;type-&gt;keyDestructor((ht)-&gt;privdata, (de)-&gt;key)" data-ref="_M/dictFreeEntryKey">dictFreeEntryKey</a>(<a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>,<a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>);</td></tr>
+<tr><th id="201">201</th><td>            <a class="macro" href="dict.h.html#79" title="if ((ht)-&gt;type-&gt;valDestructor) (ht)-&gt;type-&gt;valDestructor((ht)-&gt;privdata, (de)-&gt;val)" data-ref="_M/dictFreeEntryVal">dictFreeEntryVal</a>(<a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>,<a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>);</td></tr>
+<tr><th id="202">202</th><td>            <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>);</td></tr>
+<tr><th id="203">203</th><td>            <a class="local col5 ref" href="#735ht" title='ht' data-ref="735ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a>--;</td></tr>
+<tr><th id="204">204</th><td>            <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>;</td></tr>
+<tr><th id="205">205</th><td>        }</td></tr>
+<tr><th id="206">206</th><td>        <a class="local col9 ref" href="#739prevde" title='prevde' data-ref="739prevde">prevde</a> = <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>;</td></tr>
+<tr><th id="207">207</th><td>        <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a> = <a class="local col8 ref" href="#738de" title='de' data-ref="738de">de</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="208">208</th><td>    }</td></tr>
+<tr><th id="209">209</th><td>    <b>return</b> <a class="macro" href="dict.h.html#40" title="1" data-ref="_M/DICT_ERR">DICT_ERR</a>; <i>/* not found */</i></td></tr>
+<tr><th id="210">210</th><td>}</td></tr>
+<tr><th id="211">211</th><td></td></tr>
+<tr><th id="212">212</th><td><i>/* Destroy an entire hash table */</i></td></tr>
+<tr><th id="213">213</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="_dictClear" title='_dictClear' data-ref="_dictClear">_dictClear</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col0 decl" id="740ht" title='ht' data-type='dict *' data-ref="740ht">ht</dfn>) {</td></tr>
+<tr><th id="214">214</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col1 decl" id="741i" title='i' data-type='unsigned long' data-ref="741i">i</dfn>;</td></tr>
+<tr><th id="215">215</th><td></td></tr>
+<tr><th id="216">216</th><td>    <i>/* Free all the elements */</i></td></tr>
+<tr><th id="217">217</th><td>    <b>for</b> (<a class="local col1 ref" href="#741i" title='i' data-ref="741i">i</a> = <var>0</var>; <a class="local col1 ref" href="#741i" title='i' data-ref="741i">i</a> &lt; <a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> &amp;&amp; <a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> &gt; <var>0</var>; <a class="local col1 ref" href="#741i" title='i' data-ref="741i">i</a>++) {</td></tr>
+<tr><th id="218">218</th><td>        <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col2 decl" id="742he" title='he' data-type='dictEntry *' data-ref="742he">he</dfn>, *<dfn class="local col3 decl" id="743nextHe" title='nextHe' data-type='dictEntry *' data-ref="743nextHe">nextHe</dfn>;</td></tr>
+<tr><th id="219">219</th><td></td></tr>
+<tr><th id="220">220</th><td>        <b>if</b> ((<a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a> = <a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col1 ref" href="#741i" title='i' data-ref="741i">i</a>]) == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) <b>continue</b>;</td></tr>
+<tr><th id="221">221</th><td>        <b>while</b>(<a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a>) {</td></tr>
+<tr><th id="222">222</th><td>            <a class="local col3 ref" href="#743nextHe" title='nextHe' data-ref="743nextHe">nextHe</a> = <a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="223">223</th><td>            <a class="macro" href="dict.h.html#90" title="if ((ht)-&gt;type-&gt;keyDestructor) (ht)-&gt;type-&gt;keyDestructor((ht)-&gt;privdata, (he)-&gt;key)" data-ref="_M/dictFreeEntryKey">dictFreeEntryKey</a>(<a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>, <a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a>);</td></tr>
+<tr><th id="224">224</th><td>            <a class="macro" href="dict.h.html#79" title="if ((ht)-&gt;type-&gt;valDestructor) (ht)-&gt;type-&gt;valDestructor((ht)-&gt;privdata, (he)-&gt;val)" data-ref="_M/dictFreeEntryVal">dictFreeEntryVal</a>(<a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>, <a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a>);</td></tr>
+<tr><th id="225">225</th><td>            <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a>);</td></tr>
+<tr><th id="226">226</th><td>            <a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a>--;</td></tr>
+<tr><th id="227">227</th><td>            <a class="local col2 ref" href="#742he" title='he' data-ref="742he">he</a> = <a class="local col3 ref" href="#743nextHe" title='nextHe' data-ref="743nextHe">nextHe</a>;</td></tr>
+<tr><th id="228">228</th><td>        }</td></tr>
+<tr><th id="229">229</th><td>    }</td></tr>
+<tr><th id="230">230</th><td>    <i>/* Free the table and the allocated cache structure */</i></td></tr>
+<tr><th id="231">231</th><td>    <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>);</td></tr>
+<tr><th id="232">232</th><td>    <i>/* Re-initialize the table */</i></td></tr>
+<tr><th id="233">233</th><td>    <a class="ref fn" href="#_dictReset" title='_dictReset' data-ref="_dictReset">_dictReset</a>(<a class="local col0 ref" href="#740ht" title='ht' data-ref="740ht">ht</a>);</td></tr>
+<tr><th id="234">234</th><td>    <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>; <i>/* never fails */</i></td></tr>
+<tr><th id="235">235</th><td>}</td></tr>
+<tr><th id="236">236</th><td></td></tr>
+<tr><th id="237">237</th><td><i>/* Clear &amp; Release the hash table */</i></td></tr>
+<tr><th id="238">238</th><td><em>static</em> <em>void</em> <dfn class="decl def fn" id="dictRelease" title='dictRelease' data-ref="dictRelease">dictRelease</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col4 decl" id="744ht" title='ht' data-type='dict *' data-ref="744ht">ht</dfn>) {</td></tr>
+<tr><th id="239">239</th><td>    <a class="ref fn" href="#_dictClear" title='_dictClear' data-ref="_dictClear">_dictClear</a>(<a class="local col4 ref" href="#744ht" title='ht' data-ref="744ht">ht</a>);</td></tr>
+<tr><th id="240">240</th><td>    <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col4 ref" href="#744ht" title='ht' data-ref="744ht">ht</a>);</td></tr>
+<tr><th id="241">241</th><td>}</td></tr>
+<tr><th id="242">242</th><td></td></tr>
+<tr><th id="243">243</th><td><em>static</em> <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl def fn" id="dictFind" title='dictFind' data-ref="dictFind">dictFind</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col5 decl" id="745ht" title='ht' data-type='dict *' data-ref="745ht">ht</dfn>, <em>const</em> <em>void</em> *<dfn class="local col6 decl" id="746key" title='key' data-type='const void *' data-ref="746key">key</dfn>) {</td></tr>
+<tr><th id="244">244</th><td>    <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col7 decl" id="747he" title='he' data-type='dictEntry *' data-ref="747he">he</dfn>;</td></tr>
+<tr><th id="245">245</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="748h" title='h' data-type='unsigned int' data-ref="748h">h</dfn>;</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td>    <b>if</b> (<a class="local col5 ref" href="#745ht" title='ht' data-ref="745ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> == <var>0</var>) <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="248">248</th><td>    <a class="local col8 ref" href="#748h" title='h' data-ref="748h">h</a> = <a class="macro" href="dict.h.html#106" title="(ht)-&gt;type-&gt;hashFunction(key)" data-ref="_M/dictHashKey">dictHashKey</a>(<a class="local col5 ref" href="#745ht" title='ht' data-ref="745ht">ht</a>, <a class="local col6 ref" href="#746key" title='key' data-ref="746key">key</a>) &amp; <a class="local col5 ref" href="#745ht" title='ht' data-ref="745ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a>;</td></tr>
+<tr><th id="249">249</th><td>    <a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a> = <a class="local col5 ref" href="#745ht" title='ht' data-ref="745ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col8 ref" href="#748h" title='h' data-ref="748h">h</a>];</td></tr>
+<tr><th id="250">250</th><td>    <b>while</b>(<a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a>) {</td></tr>
+<tr><th id="251">251</th><td>        <b>if</b> (<a class="macro" href="dict.h.html#101" title="(((ht)-&gt;type-&gt;keyCompare) ? (ht)-&gt;type-&gt;keyCompare((ht)-&gt;privdata, key, he-&gt;key) : (key) == (he-&gt;key))" data-ref="_M/dictCompareHashKeys">dictCompareHashKeys</a>(<a class="local col5 ref" href="#745ht" title='ht' data-ref="745ht">ht</a>, <a class="local col6 ref" href="#746key" title='key' data-ref="746key">key</a>, <a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::key" title='dictEntry::key' data-ref="dictEntry::key">key</a>))</td></tr>
+<tr><th id="252">252</th><td>            <b>return</b> <a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a>;</td></tr>
+<tr><th id="253">253</th><td>        <a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a> = <a class="local col7 ref" href="#747he" title='he' data-ref="747he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="254">254</th><td>    }</td></tr>
+<tr><th id="255">255</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="256">256</th><td>}</td></tr>
+<tr><th id="257">257</th><td></td></tr>
+<tr><th id="258">258</th><td><em>static</em> <a class="typedef" href="dict.h.html#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="decl def fn" id="dictGetIterator" title='dictGetIterator' data-ref="dictGetIterator">dictGetIterator</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col9 decl" id="749ht" title='ht' data-type='dict *' data-ref="749ht">ht</dfn>) {</td></tr>
+<tr><th id="259">259</th><td>    <a class="typedef" href="dict.h.html#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="local col0 decl" id="750iter" title='iter' data-type='dictIterator *' data-ref="750iter">iter</dfn> = <a class="ref fn" href="../../../include/stdlib.h.html#malloc" title='malloc' data-ref="malloc">malloc</a>(<b>sizeof</b>(*<a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>));</td></tr>
+<tr><th id="260">260</th><td></td></tr>
+<tr><th id="261">261</th><td>    <a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::ht" title='dictIterator::ht' data-ref="dictIterator::ht">ht</a> = <a class="local col9 ref" href="#749ht" title='ht' data-ref="749ht">ht</a>;</td></tr>
+<tr><th id="262">262</th><td>    <a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::index" title='dictIterator::index' data-ref="dictIterator::index">index</a> = -<var>1</var>;</td></tr>
+<tr><th id="263">263</th><td>    <a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="264">264</th><td>    <a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::nextEntry" title='dictIterator::nextEntry' data-ref="dictIterator::nextEntry">nextEntry</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="265">265</th><td>    <b>return</b> <a class="local col0 ref" href="#750iter" title='iter' data-ref="750iter">iter</a>;</td></tr>
+<tr><th id="266">266</th><td>}</td></tr>
+<tr><th id="267">267</th><td></td></tr>
+<tr><th id="268">268</th><td><em>static</em> <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="decl def fn" id="dictNext" title='dictNext' data-ref="dictNext">dictNext</dfn>(<a class="typedef" href="dict.h.html#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="local col1 decl" id="751iter" title='iter' data-type='dictIterator *' data-ref="751iter">iter</dfn>) {</td></tr>
+<tr><th id="269">269</th><td>    <b>while</b> (<var>1</var>) {</td></tr>
+<tr><th id="270">270</th><td>        <b>if</b> (<a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>) {</td></tr>
+<tr><th id="271">271</th><td>            <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::index" title='dictIterator::index' data-ref="dictIterator::index">index</a>++;</td></tr>
+<tr><th id="272">272</th><td>            <b>if</b> (<a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::index" title='dictIterator::index' data-ref="dictIterator::index">index</a> &gt;=</td></tr>
+<tr><th id="273">273</th><td>                    (<em>signed</em>)<a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::ht" title='dictIterator::ht' data-ref="dictIterator::ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a>) <b>break</b>;</td></tr>
+<tr><th id="274">274</th><td>            <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a> = <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::ht" title='dictIterator::ht' data-ref="dictIterator::ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::index" title='dictIterator::index' data-ref="dictIterator::index">index</a>];</td></tr>
+<tr><th id="275">275</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="276">276</th><td>            <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a> = <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::nextEntry" title='dictIterator::nextEntry' data-ref="dictIterator::nextEntry">nextEntry</a>;</td></tr>
+<tr><th id="277">277</th><td>        }</td></tr>
+<tr><th id="278">278</th><td>        <b>if</b> (<a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a>) {</td></tr>
+<tr><th id="279">279</th><td>            <i>/* We need to save the 'next' here, the iterator user</i></td></tr>
+<tr><th id="280">280</th><td><i>             * may delete the entry we are returning. */</i></td></tr>
+<tr><th id="281">281</th><td>            <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::nextEntry" title='dictIterator::nextEntry' data-ref="dictIterator::nextEntry">nextEntry</a> = <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="282">282</th><td>            <b>return</b> <a class="local col1 ref" href="#751iter" title='iter' data-ref="751iter">iter</a>-&gt;<a class="ref field" href="dict.h.html#dictIterator::entry" title='dictIterator::entry' data-ref="dictIterator::entry">entry</a>;</td></tr>
+<tr><th id="283">283</th><td>        }</td></tr>
+<tr><th id="284">284</th><td>    }</td></tr>
+<tr><th id="285">285</th><td>    <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="286">286</th><td>}</td></tr>
+<tr><th id="287">287</th><td></td></tr>
+<tr><th id="288">288</th><td><em>static</em> <em>void</em> <dfn class="decl def fn" id="dictReleaseIterator" title='dictReleaseIterator' data-ref="dictReleaseIterator">dictReleaseIterator</dfn>(<a class="typedef" href="dict.h.html#dictIterator" title='dictIterator' data-type='struct dictIterator' data-ref="dictIterator">dictIterator</a> *<dfn class="local col2 decl" id="752iter" title='iter' data-type='dictIterator *' data-ref="752iter">iter</dfn>) {</td></tr>
+<tr><th id="289">289</th><td>    <a class="ref fn" href="../../../include/stdlib.h.html#free" title='free' data-ref="free">free</a>(<a class="local col2 ref" href="#752iter" title='iter' data-ref="752iter">iter</a>);</td></tr>
+<tr><th id="290">290</th><td>}</td></tr>
+<tr><th id="291">291</th><td></td></tr>
+<tr><th id="292">292</th><td><i>/* ------------------------- private functions ------------------------------ */</i></td></tr>
+<tr><th id="293">293</th><td></td></tr>
+<tr><th id="294">294</th><td><i>/* Expand the hash table if needed */</i></td></tr>
+<tr><th id="295">295</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="_dictExpandIfNeeded" title='_dictExpandIfNeeded' data-ref="_dictExpandIfNeeded">_dictExpandIfNeeded</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col3 decl" id="753ht" title='ht' data-type='dict *' data-ref="753ht">ht</dfn>) {</td></tr>
+<tr><th id="296">296</th><td>    <i>/* If the hash table is empty expand it to the intial size,</i></td></tr>
+<tr><th id="297">297</th><td><i>     * if the table is "full" dobule its size. */</i></td></tr>
+<tr><th id="298">298</th><td>    <b>if</b> (<a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a> == <var>0</var>)</td></tr>
+<tr><th id="299">299</th><td>        <b>return</b> <a class="ref fn" href="#dictExpand" title='dictExpand' data-ref="dictExpand">dictExpand</a>(<a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>, <a class="macro" href="dict.h.html#76" title="4" data-ref="_M/DICT_HT_INITIAL_SIZE">DICT_HT_INITIAL_SIZE</a>);</td></tr>
+<tr><th id="300">300</th><td>    <b>if</b> (<a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::used" title='dict::used' data-ref="dict::used">used</a> == <a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a>)</td></tr>
+<tr><th id="301">301</th><td>        <b>return</b> <a class="ref fn" href="#dictExpand" title='dictExpand' data-ref="dictExpand">dictExpand</a>(<a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>, <a class="local col3 ref" href="#753ht" title='ht' data-ref="753ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::size" title='dict::size' data-ref="dict::size">size</a>*<var>2</var>);</td></tr>
+<tr><th id="302">302</th><td>    <b>return</b> <a class="macro" href="dict.h.html#39" title="0" data-ref="_M/DICT_OK">DICT_OK</a>;</td></tr>
+<tr><th id="303">303</th><td>}</td></tr>
+<tr><th id="304">304</th><td></td></tr>
+<tr><th id="305">305</th><td><i>/* Our hash table capability is a power of two */</i></td></tr>
+<tr><th id="306">306</th><td><em>static</em> <em>unsigned</em> <em>long</em> <dfn class="decl def fn" id="_dictNextPower" title='_dictNextPower' data-ref="_dictNextPower">_dictNextPower</dfn>(<em>unsigned</em> <em>long</em> <dfn class="local col4 decl" id="754size" title='size' data-type='unsigned long' data-ref="754size">size</dfn>) {</td></tr>
+<tr><th id="307">307</th><td>    <em>unsigned</em> <em>long</em> <dfn class="local col5 decl" id="755i" title='i' data-type='unsigned long' data-ref="755i">i</dfn> = <a class="macro" href="dict.h.html#76" title="4" data-ref="_M/DICT_HT_INITIAL_SIZE">DICT_HT_INITIAL_SIZE</a>;</td></tr>
+<tr><th id="308">308</th><td></td></tr>
+<tr><th id="309">309</th><td>    <b>if</b> (<a class="local col4 ref" href="#754size" title='size' data-ref="754size">size</a> &gt;= <span class="macro" title="9223372036854775807L" data-ref="_M/LONG_MAX">LONG_MAX</span>) <b>return</b> <span class="macro" title="9223372036854775807L" data-ref="_M/LONG_MAX">LONG_MAX</span>;</td></tr>
+<tr><th id="310">310</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="311">311</th><td>        <b>if</b> (<a class="local col5 ref" href="#755i" title='i' data-ref="755i">i</a> &gt;= <a class="local col4 ref" href="#754size" title='size' data-ref="754size">size</a>)</td></tr>
+<tr><th id="312">312</th><td>            <b>return</b> <a class="local col5 ref" href="#755i" title='i' data-ref="755i">i</a>;</td></tr>
+<tr><th id="313">313</th><td>        <a class="local col5 ref" href="#755i" title='i' data-ref="755i">i</a> *= <var>2</var>;</td></tr>
+<tr><th id="314">314</th><td>    }</td></tr>
+<tr><th id="315">315</th><td>}</td></tr>
+<tr><th id="316">316</th><td></td></tr>
+<tr><th id="317">317</th><td><i>/* Returns the index of a free slot that can be populated with</i></td></tr>
+<tr><th id="318">318</th><td><i> * an hash entry for the given 'key'.</i></td></tr>
+<tr><th id="319">319</th><td><i> * If the key already exists, -1 is returned. */</i></td></tr>
+<tr><th id="320">320</th><td><em>static</em> <em>int</em> <dfn class="decl def fn" id="_dictKeyIndex" title='_dictKeyIndex' data-ref="_dictKeyIndex">_dictKeyIndex</dfn>(<a class="typedef" href="dict.h.html#dict" title='dict' data-type='struct dict' data-ref="dict">dict</a> *<dfn class="local col6 decl" id="756ht" title='ht' data-type='dict *' data-ref="756ht">ht</dfn>, <em>const</em> <em>void</em> *<dfn class="local col7 decl" id="757key" title='key' data-type='const void *' data-ref="757key">key</dfn>) {</td></tr>
+<tr><th id="321">321</th><td>    <em>unsigned</em> <em>int</em> <dfn class="local col8 decl" id="758h" title='h' data-type='unsigned int' data-ref="758h">h</dfn>;</td></tr>
+<tr><th id="322">322</th><td>    <a class="typedef" href="dict.h.html#dictEntry" title='dictEntry' data-type='struct dictEntry' data-ref="dictEntry">dictEntry</a> *<dfn class="local col9 decl" id="759he" title='he' data-type='dictEntry *' data-ref="759he">he</dfn>;</td></tr>
+<tr><th id="323">323</th><td></td></tr>
+<tr><th id="324">324</th><td>    <i>/* Expand the hashtable if needed */</i></td></tr>
+<tr><th id="325">325</th><td>    <b>if</b> (<a class="ref fn" href="#_dictExpandIfNeeded" title='_dictExpandIfNeeded' data-ref="_dictExpandIfNeeded">_dictExpandIfNeeded</a>(<a class="local col6 ref" href="#756ht" title='ht' data-ref="756ht">ht</a>) == <a class="macro" href="dict.h.html#40" title="1" data-ref="_M/DICT_ERR">DICT_ERR</a>)</td></tr>
+<tr><th id="326">326</th><td>        <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="327">327</th><td>    <i>/* Compute the key hash value */</i></td></tr>
+<tr><th id="328">328</th><td>    <a class="local col8 ref" href="#758h" title='h' data-ref="758h">h</a> = <a class="macro" href="dict.h.html#106" title="(ht)-&gt;type-&gt;hashFunction(key)" data-ref="_M/dictHashKey">dictHashKey</a>(<a class="local col6 ref" href="#756ht" title='ht' data-ref="756ht">ht</a>, <a class="local col7 ref" href="#757key" title='key' data-ref="757key">key</a>) &amp; <a class="local col6 ref" href="#756ht" title='ht' data-ref="756ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::sizemask" title='dict::sizemask' data-ref="dict::sizemask">sizemask</a>;</td></tr>
+<tr><th id="329">329</th><td>    <i>/* Search if this slot does not already contain the given key */</i></td></tr>
+<tr><th id="330">330</th><td>    <a class="local col9 ref" href="#759he" title='he' data-ref="759he">he</a> = <a class="local col6 ref" href="#756ht" title='ht' data-ref="756ht">ht</a>-&gt;<a class="ref field" href="dict.h.html#dict::table" title='dict::table' data-ref="dict::table">table</a>[<a class="local col8 ref" href="#758h" title='h' data-ref="758h">h</a>];</td></tr>
+<tr><th id="331">331</th><td>    <b>while</b>(<a class="local col9 ref" href="#759he" title='he' data-ref="759he">he</a>) {</td></tr>
+<tr><th id="332">332</th><td>        <b>if</b> (<a class="macro" href="dict.h.html#101" title="(((ht)-&gt;type-&gt;keyCompare) ? (ht)-&gt;type-&gt;keyCompare((ht)-&gt;privdata, key, he-&gt;key) : (key) == (he-&gt;key))" data-ref="_M/dictCompareHashKeys">dictCompareHashKeys</a>(<a class="local col6 ref" href="#756ht" title='ht' data-ref="756ht">ht</a>, <a class="local col7 ref" href="#757key" title='key' data-ref="757key">key</a>, <a class="local col9 ref" href="#759he" title='he' data-ref="759he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::key" title='dictEntry::key' data-ref="dictEntry::key">key</a>))</td></tr>
+<tr><th id="333">333</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="334">334</th><td>        <a class="local col9 ref" href="#759he" title='he' data-ref="759he">he</a> = <a class="local col9 ref" href="#759he" title='he' data-ref="759he">he</a>-&gt;<a class="ref field" href="dict.h.html#dictEntry::next" title='dictEntry::next' data-ref="dictEntry::next">next</a>;</td></tr>
+<tr><th id="335">335</th><td>    }</td></tr>
+<tr><th id="336">336</th><td>    <b>return</b> <a class="local col8 ref" href="#758h" title='h' data-ref="758h">h</a>;</td></tr>
+<tr><th id="337">337</th><td>}</td></tr>
+<tr><th id="338">338</th><td></td></tr>
+<tr><th id="339">339</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='async.c.html'>redis/deps/hiredis/async.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

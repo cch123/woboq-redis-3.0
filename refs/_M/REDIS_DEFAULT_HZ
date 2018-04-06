@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='71'/>
+<doc f='redis/src/redis.h' l='70'>/* Static server configuration */</doc>
+<use f='redis/src/config.c' l='1871' u='c'/>
+<use f='redis/src/redis.c' l='1402' u='c'/>
+<use f='redis/src/sentinel.c' l='1602' u='c'/>
+<use f='redis/src/sentinel.c' l='3898' u='c'/>
+<use f='redis/src/sentinel.c' l='3898' u='c'/>

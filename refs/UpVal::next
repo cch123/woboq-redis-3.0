@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='43' type='GCObject *'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='65' u='a' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='71' u='w' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='102' u='r' c='luaF_close'/>

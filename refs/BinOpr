@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lcode.h' l='26' ll='33'/>
+<doc f='redis/deps/lua/src/lcode.h' l='23'>/*
+** grep &quot;ORDER OPR&quot; if you change these enums
+*/</doc>

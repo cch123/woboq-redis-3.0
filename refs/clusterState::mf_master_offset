@@ -1,0 +1,11 @@
+<dec f='redis/src/cluster.h' l='128' type='long long'/>
+<use f='redis/src/cluster.c' l='1605' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1607' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1611' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2985' u='w' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='3006' u='r' c='clusterHandleManualFailover'/>
+<use f='redis/src/cluster.c' l='3008' u='r' c='clusterHandleManualFailover'/>
+<offset>3146560</offset>
+<doc f='redis/src/cluster.h' l='127'>/* Manual failover state of slave. */</doc>
+<doc f='redis/src/cluster.h' l='128'>/* Master offset the slave needs to start MF
+                                   or zero if stil not received. */</doc>

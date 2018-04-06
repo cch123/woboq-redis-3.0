@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/ltm.h' l='31' type='12'/>
+<use f='redis/deps/lua/src/lvm.c' l='527' u='r' c='luaV_execute'/>

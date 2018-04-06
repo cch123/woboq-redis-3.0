@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lparser.h' l='27' type='7'/>
+<use f='redis/deps/lua/src/lcode.c' l='310' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='479' c='luaK_storevar'/>
+<doc f='redis/deps/lua/src/lparser.h' l='27'>/* info = index of upvalue in `upvalues&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='241' u='r' c='singlevaraux'/>
+<use f='redis/deps/lua/src/lparser.c' l='242' u='r' c='singlevaraux'/>

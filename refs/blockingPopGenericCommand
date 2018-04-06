@@ -1,0 +1,4 @@
+<def f='redis/src/t_list.c' l='1028' ll='1082' type='void blockingPopGenericCommand(redisClient * c, int where)'/>
+<use f='redis/src/t_list.c' l='1085' u='c' c='blpopCommand'/>
+<use f='redis/src/t_list.c' l='1089' u='c' c='brpopCommand'/>
+<doc f='redis/src/t_list.c' l='1027'>/* Blocking RPOP/LPOP */</doc>

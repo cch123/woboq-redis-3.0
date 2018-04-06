@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='103' ll='108' type='int zslRandomLevel()'/>
+<use f='redis/src/t_zset.c' l='133' u='c' c='zslInsert'/>
+<doc f='redis/src/t_zset.c' l='99'>/* Returns a random level for the new skiplist node we are going to create.
+ * The return value of this function is between 1 and ZSKIPLIST_MAXLEVEL
+ * (both inclusive), with a powerlaw-alike distribution where higher
+ * levels are less likely to be returned. */</doc>

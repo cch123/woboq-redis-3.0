@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='214' type='void * redisCommandArgv(redisContext * c, int argc, const char ** argv, const size_t * argvlen)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1354' ll='1358' type='void * redisCommandArgv(redisContext * c, int argc, const char ** argv, const size_t * argvlen)'/>

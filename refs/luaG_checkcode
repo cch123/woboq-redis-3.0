@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='30' type='int luaG_checkcode(const Proto * pt)'/>
+<def f='redis/deps/lua/src/ldebug.c' l='484' ll='486' type='int luaG_checkcode(const Proto * pt)'/>
+<doc f='redis/deps/lua/src/ldebug.c' l='481'>/* }====================================================== */</doc>
+<use f='redis/deps/lua/src/lundump.c' l='177' u='c' c='LoadFunction'/>

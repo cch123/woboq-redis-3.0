@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1367' type='void replyToBlockedClientTimedOut(redisClient * c)'/>
+<def f='redis/src/blocked.c' l='150' ll='158' type='void replyToBlockedClientTimedOut(redisClient * c)'/>
+<doc f='redis/src/blocked.c' l='148'>/* This function gets called when a blocked client timed out in order to
+ * send it a reply of some kind. */</doc>
+<use f='redis/src/redis.c' l='927' u='c' c='clientsCronHandleTimeout'/>

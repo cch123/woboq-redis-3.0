@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='826' type='int'/>
+<offset>16704</offset>
+<doc f='redis/src/redis.h' l='826'>/* Slave -&gt; Master SYNC socket */</doc>
+<use f='redis/src/replication.c' l='826' u='r' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='827' u='r' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='846' u='r' c='replicationSendNewlineToMaster'/>
+<use f='redis/src/replication.c' l='1012' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1022' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1372' u='w' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1397' u='w' c='connectWithMaster'/>
+<use f='redis/src/replication.c' l='1405' u='r' c='undoConnectWithMaster'/>
+<use f='redis/src/replication.c' l='1411' u='w' c='undoConnectWithMaster'/>

@@ -1,0 +1,10 @@
+<def f='redis/deps/lua/src/lobject.h' l='274' ll='284'/>
+<size>40</size>
+<doc f='redis/deps/lua/src/lobject.h' l='270'>/*
+** Upvalues
+*/</doc>
+<mbr r='UpVal::next' o='0' t='GCObject *'/>
+<mbr r='UpVal::tt' o='64' t='lu_byte'/>
+<mbr r='UpVal::marked' o='72' t='lu_byte'/>
+<mbr r='UpVal::v' o='128' t='TValue *'/>
+<mbr r='UpVal::u' o='192' t='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:277:3)'/>

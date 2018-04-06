@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/lua.h' l='30'/>
+<doc f='redis/deps/lua/src/lua.h' l='29'>/* option for multiple returns in `lua_pcall&apos; and `lua_call&apos; */</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='329' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='377' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='389' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='821' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='429' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='467' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='360' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='389' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='479' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='645' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1255' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='859' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='612' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='748' u='c'/>

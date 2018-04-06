@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='3209' ll='3223' type='int sentinelLeaderIncr(dict * counters, char * runid)'/>
+<use f='redis/src/sentinel.c' l='3251' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/sentinel.c' l='3278' u='c' c='sentinelGetLeader'/>
+<doc f='redis/src/sentinel.c' l='3207'>/* Helper function for sentinelGetLeader, increment the counter
+ * relative to the specified runid. */</doc>

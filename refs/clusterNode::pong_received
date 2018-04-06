@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.h' l='92' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='217' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='660' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1728' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2256' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='3126' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3128' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3178' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3192' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3641' u='r' c='clusterGenNodeDescription'/>
+<offset>17152</offset>
+<doc f='redis/src/cluster.h' l='92'>/* Unix time we received the pong */</doc>

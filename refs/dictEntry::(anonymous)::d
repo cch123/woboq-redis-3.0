@@ -1,0 +1,5 @@
+<dec f='redis/src/dict.h' l='53' type='double'/>
+<offset>0</offset>
+<use f='redis/src/t_zset.c' l='2019' macro='1' u='w'/>
+<use f='redis/src/t_zset.c' l='2027' u='a' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2043' macro='1' u='r'/>

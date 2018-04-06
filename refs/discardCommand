@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1476' type='void discardCommand(redisClient * c)'/>
+<def f='redis/src/multi.c' l='95' ll='102' type='void discardCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='237' u='r'/>
+<use f='redis/src/redis.c' l='237' u='r'/>
+<use f='redis/src/redis.c' l='237' u='r'/>
+<use f='redis/src/redis.c' l='237' u='r'/>
+<use f='redis/src/redis.c' l='2293' u='r' c='processCommand'/>

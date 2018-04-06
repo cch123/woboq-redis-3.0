@@ -1,0 +1,31 @@
+<dec f='include/unistd.h' l='363' type='ssize_t read(int __fd, void * __buf, size_t __nbytes)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1142' u='c' c='redisBufferRead'/>
+<doc f='include/unistd.h' l='358'>/* Read NBYTES into BUF from FD.  Return the
+   number read, -1 for errors or 0 for EOF.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='269' u='c' c='getCursorPosition'/>
+<use f='redis/deps/linenoise/linenoise.c' l='373' u='c' c='completeLine'/>
+<use f='redis/deps/linenoise/linenoise.c' l='756' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='818' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='819' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='825' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='914' u='c' c='linenoisePrintKeyCodes'/>
+<use f='redis/src/anet.c' l='396' u='c' c='anetRead'/>
+<use f='redis/src/aof.c' l='1007' u='c' c='aofReadDiffFromParent'/>
+<use f='redis/src/aof.c' l='1192' u='c' c='aofChildPipeReadable'/>
+<use f='redis/src/cluster.c' l='2032' u='c' c='clusterReadHandler'/>
+<use f='redis/src/networking.c' l='1193' u='c' c='readQueryFromClient'/>
+<use f='redis/src/rdb.c' l='1307' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1316' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/redis-cli.c' l='853' u='c' c='readArgFromStdin'/>
+<use f='redis/src/redis-cli.c' l='1303' u='c' c='sendSync'/>
+<use f='redis/src/redis-cli.c' l='1332' u='c' c='slaveMode'/>
+<use f='redis/src/redis-cli.c' l='1377' u='c' c='getRDB'/>
+<use f='redis/src/redis-cli.c' l='1435' u='c' c='pipeMode'/>
+<use f='redis/src/redis-cli.c' l='1496' u='c' c='pipeMode'/>
+<use f='redis/src/replication.c' l='707' u='c' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='938' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/syncio.c' l='98' u='c' c='syncRead'/>
+<use f='redis/src/zmalloc.c' l='274' u='c' c='zmalloc_get_rss'/>

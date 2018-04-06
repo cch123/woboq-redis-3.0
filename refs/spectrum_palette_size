@@ -1,0 +1,5 @@
+<def f='redis/src/redis-cli.c' l='76' type='int'/>
+<use f='redis/src/redis-cli.c' l='794' u='w' c='parseOptions'/>
+<use f='redis/src/redis-cli.c' l='1173' u='r' c='showLatencyDistSamples'/>
+<use f='redis/src/redis-cli.c' l='1195' u='r' c='showLatencyDistLegend'/>
+<use f='redis/src/redis-cli.c' l='2209' u='w' c='main'/>

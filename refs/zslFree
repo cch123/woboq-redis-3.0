@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1210' type='void zslFree(zskiplist * zsl)'/>
+<use f='redis/src/db.c' l='1145' u='c' c='slotToKeyFlush'/>
+<use f='redis/src/object.c' l='275' u='c' c='freeZsetObject'/>
+<def f='redis/src/t_zset.c' l='87' ll='97' type='void zslFree(zskiplist * zsl)'/>

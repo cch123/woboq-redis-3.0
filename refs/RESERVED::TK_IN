@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/llex.h' l='28' type='267'/>
+<use f='redis/deps/lua/src/lparser.c' l='1104' u='r' c='forlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='1122' c='forstat'/>

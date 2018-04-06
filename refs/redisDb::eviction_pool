@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='459' type='struct evictionPoolEntry *'/>
+<offset>320</offset>
+<doc f='redis/src/redis.h' l='459'>/* Eviction pool of keys */</doc>
+<use f='redis/src/redis.c' l='1805' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='3254' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3257' u='r' c='freeMemoryIfNeeded'/>

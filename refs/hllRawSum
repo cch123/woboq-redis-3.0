@@ -1,0 +1,4 @@
+<def f='redis/src/hyperloglog.c' l='928' ll='954' type='double hllRawSum(uint8_t * registers, double * PE, int * ezp)'/>
+<use f='redis/src/hyperloglog.c' l='992' u='c' c='hllCount'/>
+<doc f='redis/src/hyperloglog.c' l='926'>/* Implements the SUM operation for uint8_t data type which is only used
+ * internally as speedup for PFCOUNT with multiple keys. */</doc>

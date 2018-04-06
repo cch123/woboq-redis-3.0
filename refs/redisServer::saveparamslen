@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='775' type='int'/>
+<offset>14336</offset>
+<doc f='redis/src/redis.h' l='775'>/* Number of saving points */</doc>
+<use f='redis/src/config.c' l='70' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='71' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='72' u='r' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='73' u='w' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='79' u='w' c='resetServerSaveParams'/>
+<use f='redis/src/config.c' l='1153' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1157' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1549' u='r' c='rewriteConfigSaveOption'/>
+<use f='redis/src/db.c' l='270' u='r' c='flushallCommand'/>
+<use f='redis/src/redis.c' l='1181' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='2205' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2355' u='r' c='prepareForShutdown'/>
+<use f='redis/src/scripting.c' l='335' u='r' c='luaRedisGenericCommand'/>

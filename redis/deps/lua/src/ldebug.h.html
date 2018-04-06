@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>ldebug.h source code [redis/deps/lua/src/ldebug.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/ldebug.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='ldebug.h.html'>ldebug.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: ldebug.h,v 2.3.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Auxiliary functions from Debug Interface module</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/ldebug_h">ldebug_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/ldebug_h" data-ref="_M/ldebug_h">ldebug_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lstate.h.html">"lstate.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><u>#define <dfn class="macro" id="_M/pcRel" data-ref="_M/pcRel">pcRel</dfn>(pc, p)	(cast(int, (pc) - (p)-&gt;code) - 1)</u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/getline" data-ref="_M/getline">getline</dfn>(f,pc)	(((f)-&gt;lineinfo) ? (f)-&gt;lineinfo[pc] : 0)</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/resethookcount" data-ref="_M/resethookcount">resethookcount</dfn>(L)	(L-&gt;hookcount = L-&gt;basehookcount)</u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaG_typeerror" title='luaG_typeerror' data-ref="luaG_typeerror">luaG_typeerror</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="744L" title='L' data-type='lua_State *' data-ref="744L">L</dfn>, <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col5 decl" id="745o" title='o' data-type='const TValue *' data-ref="745o">o</dfn>,</td></tr>
+<tr><th id="22">22</th><td>                                             <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="746opname" title='opname' data-type='const char *' data-ref="746opname">opname</dfn>);</td></tr>
+<tr><th id="23">23</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaG_concaterror" title='luaG_concaterror' data-ref="luaG_concaterror">luaG_concaterror</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col7 decl" id="747L" title='L' data-type='lua_State *' data-ref="747L">L</dfn>, <a class="typedef" href="lobject.h.html#StkId" title='StkId' data-type='TValue *' data-ref="StkId">StkId</a> <dfn class="local col8 decl" id="748p1" title='p1' data-type='StkId' data-ref="748p1">p1</dfn>, <a class="typedef" href="lobject.h.html#StkId" title='StkId' data-type='TValue *' data-ref="StkId">StkId</a> <dfn class="local col9 decl" id="749p2" title='p2' data-type='StkId' data-ref="749p2">p2</dfn>);</td></tr>
+<tr><th id="24">24</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaG_aritherror" title='luaG_aritherror' data-ref="luaG_aritherror">luaG_aritherror</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col0 decl" id="750L" title='L' data-type='lua_State *' data-ref="750L">L</dfn>, <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col1 decl" id="751p1" title='p1' data-type='const TValue *' data-ref="751p1">p1</dfn>,</td></tr>
+<tr><th id="25">25</th><td>                                              <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col2 decl" id="752p2" title='p2' data-type='const TValue *' data-ref="752p2">p2</dfn>);</td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaG_ordererror" title='luaG_ordererror' data-ref="luaG_ordererror">luaG_ordererror</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="753L" title='L' data-type='lua_State *' data-ref="753L">L</dfn>, <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col4 decl" id="754p1" title='p1' data-type='const TValue *' data-ref="754p1">p1</dfn>,</td></tr>
+<tr><th id="27">27</th><td>                                             <em>const</em> <a class="typedef" href="lobject.h.html#TValue" title='TValue' data-type='struct lua_TValue' data-ref="TValue">TValue</a> *<dfn class="local col5 decl" id="755p2" title='p2' data-type='const TValue *' data-ref="755p2">p2</dfn>);</td></tr>
+<tr><th id="28">28</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaG_runerror" title='luaG_runerror' data-ref="luaG_runerror">luaG_runerror</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col6 decl" id="756L" title='L' data-type='lua_State *' data-ref="756L">L</dfn>, <em>const</em> <em>char</em> *<dfn class="local col7 decl" id="757fmt" title='fmt' data-type='const char *' data-ref="757fmt">fmt</dfn>, ...);</td></tr>
+<tr><th id="29">29</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaG_errormsg" title='luaG_errormsg' data-ref="luaG_errormsg">luaG_errormsg</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="758L" title='L' data-type='lua_State *' data-ref="758L">L</dfn>);</td></tr>
+<tr><th id="30">30</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaG_checkcode" title='luaG_checkcode' data-ref="luaG_checkcode">luaG_checkcode</dfn> (<em>const</em> <a class="typedef" href="lobject.h.html#Proto" title='Proto' data-type='struct Proto' data-ref="Proto">Proto</a> *<dfn class="local col9 decl" id="759pt" title='pt' data-type='const Proto *' data-ref="759pt">pt</dfn>);</td></tr>
+<tr><th id="31">31</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaG_checkopenop" title='luaG_checkopenop' data-ref="luaG_checkopenop">luaG_checkopenop</dfn> (<a class="typedef" href="llimits.h.html#Instruction" title='Instruction' data-type='lu_int32' data-ref="Instruction">Instruction</a> <dfn class="local col0 decl" id="760i" title='i' data-type='Instruction' data-ref="760i">i</dfn>);</td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lapi.c.html'>redis/deps/lua/src/lapi.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

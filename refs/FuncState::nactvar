@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lparser.h' l='72' type='lu_byte'/>
+<use f='redis/deps/lua/src/lcode.c' l='39' u='r' c='luaK_nil'/>
+<use f='redis/deps/lua/src/lcode.c' l='216' u='r' c='freereg'/>
+<use f='redis/deps/lua/src/lcode.c' l='426' u='r' c='luaK_exp2anyreg'/>
+<offset>592</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='72'>/* number of active local variables */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='162' u='r' c='new_localvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='163' u='r' c='new_localvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='169' u='w' c='adjustlocalvars'/>
+<use f='redis/deps/lua/src/lparser.c' l='169' u='r' c='adjustlocalvars'/>
+<use f='redis/deps/lua/src/lparser.c' l='171' u='r' c='adjustlocalvars'/>
+<use f='redis/deps/lua/src/lparser.c' l='178' u='r' c='removevars'/>
+<use f='redis/deps/lua/src/lparser.c' l='179' u='w' c='removevars'/>
+<use f='redis/deps/lua/src/lparser.c' l='209' u='r' c='searchvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='288' u='r' c='enterblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='305' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='343' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='571' u='r' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='572' u='r' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='1175' u='r' c='localfunc'/>
+<use f='redis/deps/lua/src/lparser.c' l='1254' u='r' c='retstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1262' u='r' c='retstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1334' u='r' c='chunk'/>

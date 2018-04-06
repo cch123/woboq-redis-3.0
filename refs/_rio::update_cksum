@@ -1,0 +1,13 @@
+<dec f='redis/src/rio.h' l='52' type='void (*)(struct _rio *, const void *, size_t)'/>
+<use f='redis/src/rio.h' l='96' u='r' c='rioWrite'/>
+<use f='redis/src/rio.h' l='96' u='r' c='rioWrite'/>
+<use f='redis/src/rio.h' l='111' u='r' c='rioRead'/>
+<use f='redis/src/rio.h' l='111' u='r' c='rioRead'/>
+<offset>256</offset>
+<doc f='redis/src/rio.h' l='47'>/* The update_cksum method if not NULL is used to compute the checksum of
+     * all the data that was read or written so far. The method should be
+     * designed so that can be called with the current checksum, and the buf
+     * and len fields pointing to the new block of data to add to the checksum
+     * computation. */</doc>
+<use f='redis/src/rdb.c' l='647' u='w' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='1141' u='w' c='rdbLoad'/>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='221' type='size_t'/>
+<use f='redis/deps/lua/src/lapi.c' l='365' u='r' c='lua_objlen'/>
+<offset>256</offset>
+<use f='redis/deps/lua/src/lgc.c' l='141' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='395' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstring.c' l='103' u='w' c='luaS_newudata'/>

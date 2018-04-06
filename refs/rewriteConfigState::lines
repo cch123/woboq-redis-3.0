@@ -1,0 +1,14 @@
+<dec f='redis/src/config.c' l='1277' type='sds *'/>
+<use f='redis/src/config.c' l='1284' u='w' c='rewriteConfigAppendLine'/>
+<use f='redis/src/config.c' l='1284' u='r' c='rewriteConfigAppendLine'/>
+<use f='redis/src/config.c' l='1285' u='r' c='rewriteConfigAppendLine'/>
+<use f='redis/src/config.c' l='1325' u='w' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1408' u='r' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1409' u='r' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1657' u='r' c='rewriteConfigGetContentFromState'/>
+<use f='redis/src/config.c' l='1663' u='r' c='rewriteConfigGetContentFromState'/>
+<use f='redis/src/config.c' l='1671' u='r' c='rewriteConfigReleaseState'/>
+<use f='redis/src/config.c' l='1704' u='r' c='rewriteConfigRemoveOrphaned'/>
+<use f='redis/src/config.c' l='1705' u='r' c='rewriteConfigRemoveOrphaned'/>
+<offset>192</offset>
+<doc f='redis/src/config.c' l='1277'>/* Current lines as an array of sds strings */</doc>

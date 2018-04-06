@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lzio.h source code [redis/deps/lua/src/lzio.h] - Woboq Code Browser</title>
+<meta name="woboq:interestingDefinitions" content="Mbuffer,Zio "/>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lzio.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lzio.h.html'>lzio.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lzio.h,v 1.21.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Buffered streams</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#<span data-ppcond="8">ifndef</span> <span class="macro" data-ref="_M/lzio_h">lzio_h</span></u></td></tr>
+<tr><th id="9">9</th><td><u>#define <dfn class="macro" id="_M/lzio_h" data-ref="_M/lzio_h">lzio_h</dfn></u></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lua.h.html">"lua.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="lmem.h.html">"lmem.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/EOZ" data-ref="_M/EOZ">EOZ</dfn>	(-1)			/* end of stream */</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><b>typedef</b> <b>struct</b> <a class="type" href="#Zio" title='Zio' data-ref="Zio">Zio</a> <dfn class="typedef" id="ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</dfn>;</td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/char2int" data-ref="_M/char2int">char2int</dfn>(c)	cast(int, cast(unsigned char, (c)))</u></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/zgetc" data-ref="_M/zgetc">zgetc</dfn>(z)  (((z)-&gt;n--)&gt;0 ?  char2int(*(z)-&gt;p++) : luaZ_fill(z))</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><b>typedef</b> <b>struct</b> <dfn class="type def" id="Mbuffer" title='Mbuffer' data-ref="Mbuffer"><a class="type" href="#Mbuffer" title='Mbuffer' data-ref="Mbuffer">Mbuffer</a></dfn> {</td></tr>
+<tr><th id="25">25</th><td>  <em>char</em> *<dfn class="decl field" id="Mbuffer::buffer" title='Mbuffer::buffer' data-ref="Mbuffer::buffer">buffer</dfn>;</td></tr>
+<tr><th id="26">26</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="Mbuffer::n" title='Mbuffer::n' data-ref="Mbuffer::n">n</dfn>;</td></tr>
+<tr><th id="27">27</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="Mbuffer::buffsize" title='Mbuffer::buffsize' data-ref="Mbuffer::buffsize">buffsize</dfn>;</td></tr>
+<tr><th id="28">28</th><td>} <dfn class="typedef" id="Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</dfn>;</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#define <dfn class="macro" id="_M/luaZ_initbuffer" data-ref="_M/luaZ_initbuffer">luaZ_initbuffer</dfn>(L, buff) ((buff)-&gt;buffer = NULL, (buff)-&gt;buffsize = 0)</u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><u>#define <dfn class="macro" id="_M/luaZ_buffer" data-ref="_M/luaZ_buffer">luaZ_buffer</dfn>(buff)	((buff)-&gt;buffer)</u></td></tr>
+<tr><th id="33">33</th><td><u>#define <dfn class="macro" id="_M/luaZ_sizebuffer" data-ref="_M/luaZ_sizebuffer">luaZ_sizebuffer</dfn>(buff)	((buff)-&gt;buffsize)</u></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/luaZ_bufflen" data-ref="_M/luaZ_bufflen">luaZ_bufflen</dfn>(buff)	((buff)-&gt;n)</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#define <dfn class="macro" id="_M/luaZ_resetbuffer" data-ref="_M/luaZ_resetbuffer">luaZ_resetbuffer</dfn>(buff) ((buff)-&gt;n = 0)</u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+<tr><th id="38">38</th><td></td></tr>
+<tr><th id="39">39</th><td><u>#define <dfn class="macro" id="_M/luaZ_resizebuffer" data-ref="_M/luaZ_resizebuffer">luaZ_resizebuffer</dfn>(L, buff, size) \</u></td></tr>
+<tr><th id="40">40</th><td><u>	(luaM_reallocvector(L, (buff)-&gt;buffer, (buff)-&gt;buffsize, size, char), \</u></td></tr>
+<tr><th id="41">41</th><td><u>	(buff)-&gt;buffsize = size)</u></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/luaZ_freebuffer" data-ref="_M/luaZ_freebuffer">luaZ_freebuffer</dfn>(L, buff)	luaZ_resizebuffer(L, buff, 0)</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>char</em> *<dfn class="decl fn" id="luaZ_openspace" title='luaZ_openspace' data-ref="luaZ_openspace">luaZ_openspace</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col9 decl" id="729L" title='L' data-type='lua_State *' data-ref="729L">L</dfn>, <a class="typedef" href="#Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</a> *<dfn class="local col0 decl" id="730buff" title='buff' data-type='Mbuffer *' data-ref="730buff">buff</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col1 decl" id="731n" title='n' data-type='size_t' data-ref="731n">n</dfn>);</td></tr>
+<tr><th id="47">47</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaZ_init" title='luaZ_init' data-ref="luaZ_init">luaZ_init</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col2 decl" id="732L" title='L' data-type='lua_State *' data-ref="732L">L</dfn>, <a class="typedef" href="#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col3 decl" id="733z" title='z' data-type='ZIO *' data-ref="733z">z</dfn>, <a class="typedef" href="lua.h.html#lua_Reader" title='lua_Reader' data-type='const char *(*)(lua_State *, void *, size_t *)' data-ref="lua_Reader">lua_Reader</a> <dfn class="local col4 decl" id="734reader" title='reader' data-type='lua_Reader' data-ref="734reader">reader</dfn>,</td></tr>
+<tr><th id="48">48</th><td>                                        <em>void</em> *<dfn class="local col5 decl" id="735data" title='data' data-type='void *' data-ref="735data">data</dfn>);</td></tr>
+<tr><th id="49">49</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl fn" id="luaZ_read" title='luaZ_read' data-ref="luaZ_read">luaZ_read</dfn> (<a class="typedef" href="#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a>* <dfn class="local col6 decl" id="736z" title='z' data-type='ZIO *' data-ref="736z">z</dfn>, <em>void</em>* <dfn class="local col7 decl" id="737b" title='b' data-type='void *' data-ref="737b">b</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col8 decl" id="738n" title='n' data-type='size_t' data-ref="738n">n</dfn>);	<i>/* read next n bytes */</i></td></tr>
+<tr><th id="50">50</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaZ_lookahead" title='luaZ_lookahead' data-ref="luaZ_lookahead">luaZ_lookahead</dfn> (<a class="typedef" href="#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col9 decl" id="739z" title='z' data-type='ZIO *' data-ref="739z">z</dfn>);</td></tr>
+<tr><th id="51">51</th><td></td></tr>
+<tr><th id="52">52</th><td></td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td><i>/* --------- Private Part ------------------ */</i></td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><b>struct</b> <dfn class="type def" id="Zio" title='Zio' data-ref="Zio">Zio</dfn> {</td></tr>
+<tr><th id="57">57</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl field" id="Zio::n" title='Zio::n' data-ref="Zio::n">n</dfn>;			<i>/* bytes still unread */</i></td></tr>
+<tr><th id="58">58</th><td>  <em>const</em> <em>char</em> *<dfn class="decl field" id="Zio::p" title='Zio::p' data-ref="Zio::p">p</dfn>;		<i>/* current position in buffer */</i></td></tr>
+<tr><th id="59">59</th><td>  <a class="typedef" href="lua.h.html#lua_Reader" title='lua_Reader' data-type='const char *(*)(lua_State *, void *, size_t *)' data-ref="lua_Reader">lua_Reader</a> <dfn class="decl field" id="Zio::reader" title='Zio::reader' data-ref="Zio::reader">reader</dfn>;</td></tr>
+<tr><th id="60">60</th><td>  <em>void</em>* <dfn class="decl field" id="Zio::data" title='Zio::data' data-ref="Zio::data">data</dfn>;			<i>/* additional data */</i></td></tr>
+<tr><th id="61">61</th><td>  <a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="decl field" id="Zio::L" title='Zio::L' data-ref="Zio::L">L</dfn>;			<i>/* Lua state (for reader) */</i></td></tr>
+<tr><th id="62">62</th><td>};</td></tr>
+<tr><th id="63">63</th><td></td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaZ_fill" title='luaZ_fill' data-ref="luaZ_fill">luaZ_fill</dfn> (<a class="typedef" href="#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col0 decl" id="740z" title='z' data-type='ZIO *' data-ref="740z">z</dfn>);</td></tr>
+<tr><th id="66">66</th><td></td></tr>
+<tr><th id="67">67</th><td><u>#<span data-ppcond="8">endif</span></u></td></tr>
+<tr><th id="68">68</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lapi.c.html'>redis/deps/lua/src/lapi.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

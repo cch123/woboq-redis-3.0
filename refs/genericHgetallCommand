@@ -1,0 +1,4 @@
+<def f='redis/src/t_hash.c' l='712' ll='741' type='void genericHgetallCommand(redisClient * c, int flags)'/>
+<use f='redis/src/t_hash.c' l='744' u='c' c='hkeysCommand'/>
+<use f='redis/src/t_hash.c' l='748' u='c' c='hvalsCommand'/>
+<use f='redis/src/t_hash.c' l='752' u='c' c='hgetallCommand'/>

@@ -1,0 +1,21 @@
+<dec f='redis/src/redis.h' l='956' type='listNode *'/>
+<dec f='redis/src/redis.h' l='963' type='listNode *'/>
+<offset>128</offset>
+<doc f='redis/src/redis.h' l='963'>/* Entry in linked list */</doc>
+<use f='redis/src/t_list.c' l='131' u='w' c='listTypeInitIterator'/>
+<use f='redis/src/t_list.c' l='161' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='161' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='162' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='164' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='164' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='166' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='166' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='192' u='r' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='193' u='r' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='221' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='223' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='238' u='r' c='listTypeEqual'/>
+<use f='redis/src/t_list.c' l='259' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='261' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='262' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='263' u='w' c='listTypeDelete'/>

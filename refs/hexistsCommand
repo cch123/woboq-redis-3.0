@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1498' type='void hexistsCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='206' u='r'/>
+<use f='redis/src/redis.c' l='206' u='r'/>
+<use f='redis/src/redis.c' l='206' u='r'/>
+<use f='redis/src/redis.c' l='206' u='r'/>
+<def f='redis/src/t_hash.c' l='755' ll='761' type='void hexistsCommand(redisClient * c)'/>

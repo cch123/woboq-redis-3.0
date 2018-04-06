@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1453' type='void persistCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='961' ll='975' type='void persistCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='248' u='r'/>
+<use f='redis/src/redis.c' l='248' u='r'/>
+<use f='redis/src/redis.c' l='248' u='r'/>
+<use f='redis/src/redis.c' l='248' u='r'/>

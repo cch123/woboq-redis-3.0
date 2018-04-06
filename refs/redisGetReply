@@ -1,0 +1,13 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='194' type='int redisGetReply(redisContext * c, void ** reply)'/>
+<use f='redis/deps/hiredis/async.c' l='406' u='c' c='redisProcessCallbacks'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='190'>/* In a blocking context, this function first checks if there are unconsumed
+ * replies to return and returns one if so. Otherwise, it flushes the output
+ * buffer to the socket and reads until it has a reply. In a non-blocking
+ * context, it will return unconsumed replies until there are no more. */</doc>
+<def f='redis/deps/hiredis/hiredis.c' l='1210' ll='1238' type='int redisGetReply(redisContext * c, void ** reply)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1332' u='c' c='__redisBlockForReply'/>
+<use f='redis/src/redis-cli.c' l='560' u='c' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='1638' u='c' c='getKeyTypes'/>
+<use f='redis/src/redis-cli.c' l='1679' u='c' c='getKeySizes'/>
+<use f='redis/src/redis-cli.c' l='2059' u='c' c='LRUTestMode'/>
+<use f='redis/src/redis-cli.c' l='2067' u='c' c='LRUTestMode'/>

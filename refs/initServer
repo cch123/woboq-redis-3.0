@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='1745' ll='1882' type='void initServer()'/>
+<use f='redis/src/redis.c' l='3650' u='c' c='main'/>

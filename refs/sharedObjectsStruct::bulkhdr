@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='579' type='robj *[32]'/>
+<offset>645504</offset>
+<use f='redis/src/networking.c' l='487' u='r' c='addReplyLongLongWithPrefix'/>
+<use f='redis/src/networking.c' l='535' u='r' c='addReplyBulkLen'/>
+<use f='redis/src/redis.c' l='1386' u='w' c='createSharedObjects'/>

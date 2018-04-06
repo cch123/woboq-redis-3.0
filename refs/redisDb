@@ -1,0 +1,13 @@
+<def f='redis/src/redis.h' l='453' ll='462'/>
+<size>64</size>
+<doc f='redis/src/redis.h' l='450'>/* Redis database representation. There are multiple databases identified
+ * by integers from 0 (the default database) up to the max configured
+ * database. The database number is the &apos;id&apos; field in the structure. */</doc>
+<mbr r='redisDb::dict' o='0' t='dict *'/>
+<mbr r='redisDb::expires' o='64' t='dict *'/>
+<mbr r='redisDb::blocking_keys' o='128' t='dict *'/>
+<mbr r='redisDb::ready_keys' o='192' t='dict *'/>
+<mbr r='redisDb::watched_keys' o='256' t='dict *'/>
+<mbr r='redisDb::eviction_pool' o='320' t='struct evictionPoolEntry *'/>
+<mbr r='redisDb::id' o='384' t='int'/>
+<mbr r='redisDb::avg_ttl' o='448' t='long long'/>

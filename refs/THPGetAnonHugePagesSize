@@ -1,0 +1,5 @@
+<def f='redis/src/latency.c' l='81' ll='83' type='int THPGetAnonHugePagesSize()'/>
+<use f='redis/src/latency.c' l='383' u='c' c='createLatencyReport'/>
+<doc f='redis/src/latency.c' l='78'>/* Report the amount of AnonHugePages in smap, in bytes. If the return
+ * value of the function is non-zero, the process is being targeted by
+ * THP support, and is likely to have memory usage / latency issues. */</doc>

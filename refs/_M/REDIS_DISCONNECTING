@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='67'/>
+<use f='redis/deps/hiredis/async.c' l='332' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='348' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='410' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='580' u='c'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='63'>/* The async API might try to disconnect cleanly and flush the output
+ * buffer and read all subsequent replies before disconnecting.
+ * This flag means no new commands can come in and the connection
+ * should be terminated once all replies have been read. */</doc>

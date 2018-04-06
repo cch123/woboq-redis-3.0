@@ -1,0 +1,9 @@
+<dec f='redis/src/adlist.h' l='81' type='void listReleaseIterator(listIter * iter)'/>
+<def f='redis/src/adlist.c' l='192' ll='194' type='void listReleaseIterator(listIter * iter)'/>
+<use f='redis/src/adlist.c' l='261' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='268' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='272' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='294' u='c' c='listSearchKey'/>
+<use f='redis/src/adlist.c' l='299' u='c' c='listSearchKey'/>
+<use f='redis/src/adlist.c' l='304' u='c' c='listSearchKey'/>
+<doc f='redis/src/adlist.c' l='191'>/* Release the iterator memory */</doc>

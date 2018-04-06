@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1188' type='int loadAppendOnlyFile(char * filename)'/>
+<def f='redis/src/aof.c' l='599' ll='748' type='int loadAppendOnlyFile(char * filename)'/>
+<doc f='redis/src/aof.c' l='596'>/* Replay the append log file. On success REDIS_OK is returned. On non fatal
+ * error (the append only file is zero-length) REDIS_ERR is returned. On
+ * fatal error an error message is logged and the program exists. */</doc>
+<use f='redis/src/debug.c' l='279' u='c' c='debugCommand'/>
+<use f='redis/src/redis.c' l='3535' u='c' c='loadDataFromDisk'/>

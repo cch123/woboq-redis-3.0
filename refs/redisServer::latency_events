@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='900' type='dict *'/>
+<offset>20032</offset>
+<use f='redis/src/latency.c' l='91' u='w' c='latencyMonitorInit'/>
+<use f='redis/src/latency.c' l='99' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='109' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='139' u='r' c='latencyResetEvent'/>
+<use f='redis/src/latency.c' l='144' u='r' c='latencyResetEvent'/>
+<use f='redis/src/latency.c' l='160' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='238' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='238' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='251' u='r' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='499' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='499' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='500' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='572' u='r' c='latencyCommand'/>
+<use f='redis/src/latency.c' l='584' u='r' c='latencyCommand'/>

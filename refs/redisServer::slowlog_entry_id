@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='712' type='long long'/>
+<offset>7744</offset>
+<doc f='redis/src/redis.h' l='712'>/* SLOWLOG current entry ID */</doc>
+<use f='redis/src/slowlog.c' l='83' u='w' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='105' u='w' c='slowlogInit'/>

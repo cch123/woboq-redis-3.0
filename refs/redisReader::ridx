@@ -1,0 +1,30 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='135' type='int'/>
+<offset>4224</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='135'>/* Index of current read task */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='202' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='332' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='334' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='335' u='w' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='339' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='340' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='343' u='w' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='356' u='r' c='processLineItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='381' u='r' c='processLineItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='390' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='433' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='443' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='450' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='458' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='487' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='488' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='489' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='490' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='491' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='492' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='493' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='508' u='r' c='processItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='573' u='w' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='631' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='638' u='w' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='642' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='659' u='r' c='redisReaderGetReply'/>

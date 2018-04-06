@@ -1,0 +1,65 @@
+<dec f='redis/src/adlist.h' l='80' type='listNode * listNext(listIter * iter)'/>
+<def f='redis/src/adlist.c' l='221' ll='232' type='listNode * listNext(listIter * iter)'/>
+<use f='redis/src/adlist.c' l='254' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='291' u='c' c='listSearchKey'/>
+<doc f='redis/src/adlist.c' l='207'>/* Return the next element of an iterator.
+ * It&apos;s valid to remove the currently returned element using
+ * listDelNode(), but not to remove other elements.
+ *
+ * The function returns a pointer to the next element of the list,
+ * or NULL if there are no more elements, so the classical usage patter
+ * is:
+ *
+ * iter = listGetIterator(list,&lt;direction&gt;);
+ * while ((node = listNext(iter)) != NULL) {
+ *     doSomethingWith(listNodeValue(node));
+ * }
+ *
+ * */</doc>
+<use f='redis/src/aof.c' l='84' u='c' c='aofRewriteBufferSize'/>
+<use f='redis/src/aof.c' l='178' u='c' c='aofRewriteBufferWrite'/>
+<use f='redis/src/aof.c' l='804' u='c' c='rewriteListObject'/>
+<use f='redis/src/blocked.c' l='172' u='c' c='disconnectAllBlockedClients'/>
+<use f='redis/src/cluster.c' l='692' u='c' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='723' u='c' c='clusterNodeCleanupFailureReports'/>
+<use f='redis/src/cluster.c' l='748' u='c' c='clusterNodeDelFailureReport'/>
+<use f='redis/src/multi.c' l='210' u='c' c='watchForKey'/>
+<use f='redis/src/multi.c' l='239' u='c' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='273' u='c' c='touchWatchedKey'/>
+<use f='redis/src/multi.c' l='290' u='c' c='touchWatchedKeysOnFlush'/>
+<use f='redis/src/multi.c' l='293' u='c' c='touchWatchedKeysOnFlush'/>
+<use f='redis/src/networking.c' l='1238' u='c' c='getClientsMaxBuffers'/>
+<use f='redis/src/networking.c' l='1362' u='c' c='getAllClientsInfoString'/>
+<use f='redis/src/networking.c' l='1437' u='c' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1678' u='c' c='flushSlavesOutputBuffers'/>
+<use f='redis/src/networking.c' l='1730' u='c' c='clientsArePaused'/>
+<use f='redis/src/pubsub.c' l='208' u='c' c='pubsubUnsubscribeAllPatterns'/>
+<use f='redis/src/pubsub.c' l='239' u='c' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='253' u='c' c='pubsubPublishMessage'/>
+<use f='redis/src/rdb.c' l='502' u='c' c='rdbSaveObject'/>
+<use f='redis/src/rdb.c' l='1333' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1417' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='2931' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3199' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/replication.c' l='202' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='241' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='293' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='531' u='c' c='syncCommand'/>
+<use f='redis/src/replication.c' l='752' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='810' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1526' u='c' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1692' u='c' c='refreshGoodSlavesCount'/>
+<use f='redis/src/replication.c' l='1828' u='c' c='replicationCountAcksByOffset'/>
+<use f='redis/src/replication.c' l='1890' u='c' c='processClientsWaitingReplicas'/>
+<use f='redis/src/replication.c' l='2000' u='c' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2020' u='c' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2074' u='c' c='replicationCron'/>
+<use f='redis/src/replication.c' l='2093' u='c' c='replicationCron'/>
+<use f='redis/src/sentinel.c' l='647' u='c' c='sentinelScheduleScriptExecution'/>
+<use f='redis/src/sentinel.c' l='668' u='c' c='sentinelGetScriptListNodeByPid'/>
+<use f='redis/src/sentinel.c' l='688' u='c' c='sentinelRunPendingScripts'/>
+<use f='redis/src/sentinel.c' l='796' u='c' c='sentinelKillTimedoutScripts'/>
+<use f='redis/src/sentinel.c' l='816' u='c' c='sentinelPendingScriptsCommand'/>
+<use f='redis/src/slowlog.c' l='151' u='c' c='slowlogCommand'/>
+<use f='redis/src/sort.c' l='493' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='523' u='c' c='sortCommand'/>

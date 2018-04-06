@@ -1,0 +1,4 @@
+<def f='redis/src/scripting.c' l='598' ll='601' type='void luaRemoveUnsupportedFunctions(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='648' u='c' c='scriptingInit'/>
+<doc f='redis/src/scripting.c' l='596'>/* Remove a functions that we don&apos;t want to expose to the Redis scripting
+ * environment. */</doc>

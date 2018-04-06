@@ -1,0 +1,6 @@
+<def f='redis/src/sentinel.c' l='494' ll='497' type='void releaseSentinelAddr(sentinelAddr * sa)'/>
+<use f='redis/src/sentinel.c' l='1019' u='c' c='releaseSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1271' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1281' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='2186' u='c' c='sentinelProcessHelloMessage'/>
+<doc f='redis/src/sentinel.c' l='493'>/* Free a Sentinel address. Can&apos;t fail. */</doc>

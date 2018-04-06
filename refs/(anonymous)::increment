@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='38' type='int'/>
+<offset>128</offset>
+<use f='redis/deps/lua/src/strbuf.c' l='56' u='w' c='strbuf_init'/>
+<use f='redis/deps/lua/src/strbuf.c' l='91' u='w' c='strbuf_set_increment'/>
+<use f='redis/deps/lua/src/strbuf.c' l='149' u='r' c='calculate_new_size'/>
+<use f='redis/deps/lua/src/strbuf.c' l='152' u='r' c='calculate_new_size'/>
+<use f='redis/deps/lua/src/strbuf.c' l='155' u='r' c='calculate_new_size'/>
+<use f='redis/deps/lua/src/strbuf.c' l='155' u='r' c='calculate_new_size'/>
+<use f='redis/deps/lua/src/strbuf.c' l='155' u='r' c='calculate_new_size'/>

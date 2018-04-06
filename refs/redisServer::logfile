@@ -1,0 +1,18 @@
+<dec f='redis/src/redis.h' l='791' type='char *'/>
+<offset>15104</offset>
+<doc f='redis/src/redis.h' l='790'>/* Logging */</doc>
+<doc f='redis/src/redis.h' l='791'>/* Path of log file */</doc>
+<use f='redis/src/config.c' l='181' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='182' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='183' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='186' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1026' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1026' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1803' u='r' c='rewriteConfig'/>
+<use f='redis/src/debug.c' l='662' u='r' c='logStackTrace'/>
+<use f='redis/src/debug.c' l='667' u='r' c='logStackTrace'/>
+<use f='redis/src/redis.c' l='301' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='306' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='360' u='r' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='366' u='r' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='1420' u='w' c='initServerConfig'/>

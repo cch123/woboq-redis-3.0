@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/strbuf.h' l='78' ll='81' type='void strbuf_reset(strbuf_t * s)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='720' u='c' c='json_encode'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='900' u='c' c='json_next_string_token'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='77'>/* Reset string for before use */</doc>

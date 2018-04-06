@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='295'/>
+<doc f='redis/src/redis.h' l='294'>/* Sort operations */</doc>
+<use f='redis/src/sort.c' l='270' u='c'/>
+<use f='redis/src/sort.c' l='498' u='c'/>
+<use f='redis/src/sort.c' l='507' u='c'/>
+<use f='redis/src/sort.c' l='528' u='c'/>
+<use f='redis/src/sort.c' l='538' u='c'/>

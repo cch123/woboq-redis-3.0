@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1269' type='void hashTypeConvert(robj * o, int enc)'/>
+<doc f='redis/src/redis.h' l='1268'>/* Hash data type */</doc>
+<use f='redis/src/rdb.c' l='945' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='969' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1044' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1070' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='49' u='c' c='hashTypeTryConversion'/>
+<use f='redis/src/t_hash.c' l='208' u='c' c='hashTypeSet'/>
+<def f='redis/src/t_hash.c' l='450' ll='458' type='void hashTypeConvert(robj * o, int enc)'/>

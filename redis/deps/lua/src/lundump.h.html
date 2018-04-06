@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lundump.h source code [redis/deps/lua/src/lundump.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lundump.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lundump.h.html'>lundump.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lundump.h,v 1.37.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** load precompiled Lua chunks</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/lundump_h">lundump_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/lundump_h" data-ref="_M/lundump_h">lundump_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lzio.h.html">"lzio.h"</a></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><i>/* load one chunk; from lundump.c */</i></td></tr>
+<tr><th id="14">14</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <a class="typedef" href="lobject.h.html#Proto" title='Proto' data-type='struct Proto' data-ref="Proto">Proto</a>* <dfn class="decl fn" id="luaU_undump" title='luaU_undump' data-ref="luaU_undump">luaU_undump</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a>* <dfn class="local col8 decl" id="868L" title='L' data-type='lua_State *' data-ref="868L">L</dfn>, <a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a>* <dfn class="local col9 decl" id="869Z" title='Z' data-type='ZIO *' data-ref="869Z">Z</dfn>, <a class="typedef" href="lzio.h.html#Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</a>* <dfn class="local col0 decl" id="870buff" title='buff' data-type='Mbuffer *' data-ref="870buff">buff</dfn>, <em>const</em> <em>char</em>* <dfn class="local col1 decl" id="871name" title='name' data-type='const char *' data-ref="871name">name</dfn>);</td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><i>/* make header; from lundump.c */</i></td></tr>
+<tr><th id="17">17</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaU_header" title='luaU_header' data-ref="luaU_header">luaU_header</dfn> (<em>char</em>* <dfn class="local col2 decl" id="872h" title='h' data-type='char *' data-ref="872h">h</dfn>);</td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td><i>/* dump one chunk; from ldump.c */</i></td></tr>
+<tr><th id="20">20</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>int</em> <dfn class="decl fn" id="luaU_dump" title='luaU_dump' data-ref="luaU_dump">luaU_dump</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a>* <dfn class="local col3 decl" id="873L" title='L' data-type='lua_State *' data-ref="873L">L</dfn>, <em>const</em> <a class="typedef" href="lobject.h.html#Proto" title='Proto' data-type='struct Proto' data-ref="Proto">Proto</a>* <dfn class="local col4 decl" id="874f" title='f' data-type='const Proto *' data-ref="874f">f</dfn>, <a class="typedef" href="lua.h.html#lua_Writer" title='lua_Writer' data-type='int (*)(lua_State *, const void *, size_t, void *)' data-ref="lua_Writer">lua_Writer</a> <dfn class="local col5 decl" id="875w" title='w' data-type='lua_Writer' data-ref="875w">w</dfn>, <em>void</em>* <dfn class="local col6 decl" id="876data" title='data' data-type='void *' data-ref="876data">data</dfn>, <em>int</em> <dfn class="local col7 decl" id="877strip" title='strip' data-type='int' data-ref="877strip">strip</dfn>);</td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td><u>#<span data-ppcond="22">ifdef</span> <span class="macro" data-ref="_M/luac_c">luac_c</span></u></td></tr>
+<tr><th id="23">23</th><td><i>/* print one chunk; from print.c */</i></td></tr>
+<tr><th id="24">24</th><td>LUAI_FUNC <em>void</em> luaU_print (<em>const</em> Proto* f, <em>int</em> full);</td></tr>
+<tr><th id="25">25</th><td><u>#<span data-ppcond="22">endif</span></u></td></tr>
+<tr><th id="26">26</th><td></td></tr>
+<tr><th id="27">27</th><td><i>/* for header of binary files -- this is Lua 5.1 */</i></td></tr>
+<tr><th id="28">28</th><td><u>#define <dfn class="macro" id="_M/LUAC_VERSION" data-ref="_M/LUAC_VERSION">LUAC_VERSION</dfn>		0x51</u></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><i>/* for header of binary files -- this is the official format */</i></td></tr>
+<tr><th id="31">31</th><td><u>#define <dfn class="macro" id="_M/LUAC_FORMAT" data-ref="_M/LUAC_FORMAT">LUAC_FORMAT</dfn>		0</u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>/* size of header of binary files */</i></td></tr>
+<tr><th id="34">34</th><td><u>#define <dfn class="macro" id="_M/LUAC_HEADERSIZE" data-ref="_M/LUAC_HEADERSIZE">LUAC_HEADERSIZE</dfn>		12</u></td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="37">37</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lapi.c.html'>redis/deps/lua/src/lapi.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

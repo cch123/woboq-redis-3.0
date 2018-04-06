@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='1110' type='robj * resetRefCount(robj * obj)'/>
+<def f='redis/src/object.c' l='340' ll='343' type='robj * resetRefCount(robj * obj)'/>
+<doc f='redis/src/object.c' l='328'>/* This function set the ref count to zero without freeing the object.
+ * It is useful in order to pass a new object to functions incrementing
+ * the ref count of the received object. Example:
+ *
+ *    functionThatWillIncrementRefCount(resetRefCount(CreateObject(...)));
+ *
+ * Otherwise you need to resort to the less elegant pattern:
+ *
+ *    *obj = createObject(...);
+ *    functionThatWillIncrementRefCount(obj);
+ *    decrRefCount(obj);
+ */</doc>
+<use f='redis/src/scripting.c' l='1087' u='c' c='evalGenericCommand'/>

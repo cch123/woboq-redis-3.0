@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='695' ll='697' type='unsigned int zzlLength(unsigned char * zl)'/>
+<use f='redis/src/t_zset.c' l='1084' u='c' c='zsetLength'/>
+<use f='redis/src/t_zset.c' l='1244' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1332' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1440' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1630' u='c' c='zuiLength'/>

@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lzio.h' l='30'/>
+<use f='redis/deps/lua/src/ldo.c' l='513' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='167' u='c'/>

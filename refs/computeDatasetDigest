@@ -1,0 +1,8 @@
+<def f='redis/src/debug.c' l='113' ll='253' type='void computeDatasetDigest(unsigned char * final)'/>
+<use f='redis/src/debug.c' l='356' u='c' c='debugCommand'/>
+<doc f='redis/src/debug.c' l='107'>/* Compute the dataset digest. Since keys, sets elements, hashes elements
+ * are not ordered, we use a trick: every aggregate digest is the xor
+ * of the digests of their elements. This way the order will not change
+ * the result. For list instead we use a feedback entering the output digest
+ * as input in order to ensure that a different ordered list will result in
+ * a different digest. */</doc>

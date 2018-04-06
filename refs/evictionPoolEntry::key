@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='447' type='sds'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='447'>/* Key name. */</doc>
+<use f='redis/src/redis.c' l='3106' u='w' c='evictionPoolAlloc'/>
+<use f='redis/src/redis.c' l='3155' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3157' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3161' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3166' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3176' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3180' u='w' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3260' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3261' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3264' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3270' u='w' c='freeMemoryIfNeeded'/>

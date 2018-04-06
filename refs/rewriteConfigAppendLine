@@ -1,0 +1,7 @@
+<def f='redis/src/config.c' l='1283' ll='1286' type='void rewriteConfigAppendLine(struct rewriteConfigState * state, sds line)'/>
+<use f='redis/src/config.c' l='1341' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1354' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1362' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1413' u='c' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1417' u='c' c='rewriteConfigRewriteLine'/>
+<doc f='redis/src/config.c' l='1282'>/* Append the new line to the current configuration state. */</doc>

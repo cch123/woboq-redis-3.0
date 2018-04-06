@@ -1,0 +1,12 @@
+<dec f='redis/deps/hiredis/async.h' l='74' type='void *'/>
+<use f='redis/deps/hiredis/async.c' l='123' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='51' u='r' c='redisAsyncSetConnectCallback'/>
+<use f='redis/deps/hiredis/async.c' l='57' u='r' c='__redisAsyncFree'/>
+<use f='redis/deps/hiredis/async.c' l='45' u='r' c='redisAsyncHandleRead'/>
+<use f='redis/deps/hiredis/async.c' l='51' u='r' c='redisAsyncHandleWrite'/>
+<use f='redis/deps/hiredis/async.c' l='54' u='r' c='redisAsyncHandleWrite'/>
+<use f='redis/deps/hiredis/async.c' l='45' u='r' c='redisAsyncHandleWrite'/>
+<use f='redis/deps/hiredis/async.c' l='51' u='r' c='__redisAsyncCommand'/>
+<offset>0</offset>
+<use f='redis/src/sentinel.c' l='299' u='r' c='redisAeAttach'/>
+<use f='redis/src/sentinel.c' l='315' u='w' c='redisAeAttach'/>

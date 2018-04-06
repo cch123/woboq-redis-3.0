@@ -1,0 +1,3 @@
+<def f='redis/src/latency.c' l='44' ll='46' type='unsigned int dictStringHash(const void * key)'/>
+<use f='redis/src/latency.c' l='51' u='r'/>
+<use f='redis/src/latency.c' l='51' u='r'/>

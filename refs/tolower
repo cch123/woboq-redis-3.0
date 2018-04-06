@@ -1,0 +1,18 @@
+<dec f='include/ctype.h' l='124' type='int tolower(int __c)'/>
+<use f='redis/deps/hiredis/async.c' l='367' u='c' c='__redisGetSubscribeCallback'/>
+<use f='redis/deps/hiredis/async.c' l='590' u='c' c='__redisAsyncCommand'/>
+<doc f='include/ctype.h' l='123'>/* Return the lowercase version of C.  */</doc>
+<use f='redis/deps/hiredis/sds.c' l='632' u='c' c='sdstolower'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='75' u='c' c='str_lower'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='228' u='c' c='match_class'/>
+<use f='redis/src/dict.c' l='151' u='c' c='dictGenCaseHashFunction'/>
+<use f='redis/src/redis.c' l='2281' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2284' u='c' c='processCommand'/>
+<use f='redis/src/sds.c' l='632' u='c' c='sdstolower'/>
+<use f='redis/src/util.c' l='108' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='109' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='110' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='121' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='121' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='147' u='c' c='stringmatchlen'/>
+<use f='redis/src/util.c' l='147' u='c' c='stringmatchlen'/>

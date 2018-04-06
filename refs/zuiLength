@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='1615' ll='1640' type='int zuiLength(zsetopsrc * op)'/>
+<use f='redis/src/t_zset.c' l='1818' u='c' c='zuiCompareByCardinality'/>
+<use f='redis/src/t_zset.c' l='1818' u='c' c='zuiCompareByCardinality'/>
+<use f='redis/src/t_zset.c' l='1941' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1990' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1996' u='c' c='zunionInterGenericCommand'/>

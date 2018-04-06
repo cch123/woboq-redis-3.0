@@ -1,0 +1,10 @@
+<def f='redis/src/anet.c' l='203' ll='228' type='int anetGenericResolve(char * err, char * host, char * ipbuf, size_t ipbuf_len, int flags)'/>
+<use f='redis/src/anet.c' l='231' u='c' c='anetResolve'/>
+<use f='redis/src/anet.c' l='235' u='c' c='anetResolveIP'/>
+<doc f='redis/src/anet.c' l='196'>/* anetGenericResolve() is called by anetResolve() and anetResolveIP() to
+ * do the actual work. It resolves the hostname &quot;host&quot; and set the string
+ * representation of the IP address into the buffer pointed by &quot;ipbuf&quot;.
+ *
+ * If flags is set to ANET_IP_ONLY the function only resolves hostnames
+ * that are actually already IPv4 or IPv6 addresses. This turns the function
+ * into a validating / normalizing function. */</doc>

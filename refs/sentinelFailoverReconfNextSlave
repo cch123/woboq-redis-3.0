@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='3673' ll='3730' type='void sentinelFailoverReconfNextSlave(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3765' u='c' c='sentinelFailoverStateMachine'/>
+<doc f='redis/src/sentinel.c' l='3671'>/* Send SLAVE OF &lt;new master address&gt; to all the remaining slaves that
+ * still don&apos;t appear to have the configuration updated. */</doc>

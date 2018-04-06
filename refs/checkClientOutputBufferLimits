@@ -1,0 +1,8 @@
+<def f='redis/src/networking.c' l='1618' ll='1650' type='int checkClientOutputBufferLimits(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1662' u='c' c='asyncCloseClientOnOutputBufferLimitReached'/>
+<doc f='redis/src/networking.c' l='1612'>/* The function checks if the client reached output buffer soft or hard
+ * limit, and also update the state needed to check the soft limit as
+ * a side effect.
+ *
+ * Return value: non-zero if the client reached the soft or the hard limit.
+ *               Otherwise zero is returned. */</doc>

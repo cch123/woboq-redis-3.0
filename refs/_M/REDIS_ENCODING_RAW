@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='189'/>
+<doc f='redis/src/redis.h' l='186'>/* Objects encoding. Some kind of objects like Strings and Hashes can be
+ * internally represented in multiple ways. The &apos;encoding&apos; field of the object
+ * is set to one of this fields for this object. */</doc>
+<use f='redis/src/db.c' l='203' u='c'/>
+<use f='redis/src/networking.c' l='49' u='c'/>
+<use f='redis/src/networking.c' l='235' u='c'/>
+<use f='redis/src/networking.c' l='268' u='c'/>
+<use f='redis/src/networking.c' l='298' u='c'/>
+<use f='redis/src/networking.c' l='442' u='c'/>
+<use f='redis/src/object.c' l='42' u='c'/>
+<use f='redis/src/object.c' l='168' u='c'/>
+<use f='redis/src/object.c' l='238' u='c'/>
+<use f='redis/src/object.c' l='404' u='c'/>
+<use f='redis/src/object.c' l='433' u='c'/>
+<use f='redis/src/object.c' l='678' u='c'/>
+<use f='redis/src/scripting.c' l='421' u='c'/>

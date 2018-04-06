@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1149' type='ssize_t syncWrite(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<doc f='redis/src/redis.h' l='1148'>/* Synchronous I/O with timeout */</doc>
+<use f='redis/src/cluster.c' l='4649' u='c' c='migrateCommand'/>
+<use f='redis/src/replication.c' l='1083' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1249' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1331' u='c' c='syncWithMaster'/>
+<def f='redis/src/syncio.c' l='49' ll='79' type='ssize_t syncWrite(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<doc f='redis/src/syncio.c' l='45'>/* Write the specified payload to &apos;fd&apos;. If writing the whole payload will be
+ * done within &apos;timeout&apos; milliseconds the operation succeeds and &apos;size&apos; is
+ * returned. Otherwise the operation fails, -1 is returned, and an unspecified
+ * partial write could be performed against the file descriptor. */</doc>

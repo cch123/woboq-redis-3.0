@@ -1,0 +1,5 @@
+<dec f='include/signal.h' l='102' type='__sighandler_t signal(int __sig, __sighandler_t __handler)'/>
+<use f='redis/src/redis-cli.c' l='2138' u='c' c='intrinsicLatencyMode'/>
+<use f='redis/src/redis-cli.c' l='2283' u='c' c='main'/>
+<use f='redis/src/redis.c' l='1748' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1749' u='c' c='initServer'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1314' type='robj * lookupKey(redisDb * db, robj * key)'/>
+<def f='redis/src/db.c' l='44' ll='58' type='robj * lookupKey(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='64' u='c' c='lookupKeyRead'/>
+<use f='redis/src/db.c' l='74' u='c' c='lookupKeyWrite'/>
+<doc f='redis/src/db.c' l='40'>/*-----------------------------------------------------------------------------
+ * C-level DB API
+ *----------------------------------------------------------------------------*/</doc>

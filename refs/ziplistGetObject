@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='659' ll='672' type='robj * ziplistGetObject(unsigned char * sptr)'/>
+<use f='redis/src/t_zset.c' l='825' u='c' c='zzlLexValueGteMin'/>
+<use f='redis/src/t_zset.c' l='832' u='c' c='zzlLexValueLteMax'/>
+<doc f='redis/src/t_zset.c' l='656'>/* Return a ziplist element as a Redis string object.
+ * This simple abstraction can be used to simplifies some code at the
+ * cost of some performance. */</doc>

@@ -1,0 +1,25 @@
+<dec f='redis/src/cluster.h' l='98' type='int'/>
+<use f='redis/src/cluster.c' l='171' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='467' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='664' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1220' u='r' c='clusterHandshakeInProgress'/>
+<use f='redis/src/cluster.c' l='1280' u='w' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1335' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1386' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1390' u='w' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1394' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1399' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1652' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1710' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2258' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='3064' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3074' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3106' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3238' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3576' u='r' c='clusterSetMaster'/>
+<use f='redis/src/cluster.c' l='3627' u='r' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3779' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3788' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4954' u='r' c='clusterRedirectClient'/>
+<offset>17856</offset>
+<doc f='redis/src/cluster.h' l='98'>/* Latest known port of this node */</doc>

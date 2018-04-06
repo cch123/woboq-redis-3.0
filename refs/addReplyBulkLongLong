@@ -1,0 +1,45 @@
+<dec f='redis/src/redis.h' l='1037' type='void addReplyBulkLongLong(redisClient * c, long long ll)'/>
+<use f='redis/src/db.c' l='585' u='c' c='scanGenericCommand'/>
+<def f='redis/src/networking.c' l='564' ll='570' type='void addReplyBulkLongLong(redisClient * c, long long ll)'/>
+<doc f='redis/src/networking.c' l='563'>/* Add a long long as a bulk reply */</doc>
+<use f='redis/src/redis.c' l='2471' u='c' c='timeCommand'/>
+<use f='redis/src/redis.c' l='2472' u='c' c='timeCommand'/>
+<use f='redis/src/replication.c' l='1534' u='c' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1535' u='c' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1571' u='c' c='replicationSendAck'/>
+<use f='redis/src/sentinel.c' l='833' u='c' c='sentinelPendingScriptsCommand'/>
+<use f='redis/src/sentinel.c' l='837' u='c' c='sentinelPendingScriptsCommand'/>
+<use f='redis/src/sentinel.c' l='842' u='c' c='sentinelPendingScriptsCommand'/>
+<use f='redis/src/sentinel.c' l='846' u='c' c='sentinelPendingScriptsCommand'/>
+<use f='redis/src/sentinel.c' l='2417' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2445' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2455' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2460' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2464' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2469' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2475' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2480' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2486' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2495' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2502' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2506' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2510' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2514' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2518' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2522' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2541' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2556' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2560' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2564' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2571' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2579' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2702' u='c' c='sentinelCommand'/>
+<use f='redis/src/t_hash.c' l='606' u='c' c='addHashFieldToReply'/>
+<use f='redis/src/t_hash.c' l='698' u='c' c='addHashIteratorCursorToReply'/>
+<use f='redis/src/t_list.c' l='563' u='c' c='lrangeCommand'/>
+<use f='redis/src/t_set.c' l='460' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='572' u='c' c='srandmemberCommand'/>
+<use f='redis/src/t_set.c' l='686' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2151' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2307' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2658' u='c' c='genericZrangebylexCommand'/>

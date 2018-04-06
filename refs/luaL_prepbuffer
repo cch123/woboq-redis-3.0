@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='146' type='char * luaL_prepbuffer(luaL_Buffer * B)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='429' ll='433' macro='1' type='char * luaL_prepbuffer(luaL_Buffer * B)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='438' macro='1' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='299' u='c' c='read_line'/>
+<use f='redis/deps/lua/src/liolib.c' l='323' u='c' c='read_chars'/>
+<use f='redis/deps/lua/src/loslib.c' l='155' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='62' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='75' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='88' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='133' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='596' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='600' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='672' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='699' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='703' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='704' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='716' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='722' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='766' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='768' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='220' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='228' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='250' macro='1' u='c'/>

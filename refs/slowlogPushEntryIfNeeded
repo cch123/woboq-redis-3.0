@@ -1,0 +1,6 @@
+<dec f='redis/src/slowlog.h' l='44' type='void slowlogPushEntryIfNeeded(robj ** argv, int argc, long long duration)'/>
+<use f='redis/src/redis.c' l='2079' u='c' c='call'/>
+<def f='redis/src/slowlog.c' l='112' ll='120' type='void slowlogPushEntryIfNeeded(robj ** argv, int argc, long long duration)'/>
+<doc f='redis/src/slowlog.c' l='109'>/* Push a new entry into the slow log.
+ * This function will make sure to trim the slow log accordingly to the
+ * configured max length. */</doc>

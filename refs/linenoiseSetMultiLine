@@ -1,0 +1,4 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='59' type='void linenoiseSetMultiLine(int ml)'/>
+<def f='redis/deps/linenoise/linenoise.c' l='198' ll='200' type='void linenoiseSetMultiLine(int ml)'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='197'>/* Set if to use or not the multi line mode. */</doc>
+<use f='redis/src/redis-cli.c' l='972' u='c' c='repl'/>

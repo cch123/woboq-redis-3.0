@@ -1,0 +1,5 @@
+<dec f='redis/src/ae.h' l='90' type='long long'/>
+<use f='redis/src/ae.c' l='74' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='207' u='w' c='aeCreateTimeEvent'/>
+<use f='redis/src/ae.c' l='295' u='r' c='processTimeEvents'/>
+<offset>64</offset>

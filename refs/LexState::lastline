@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/llex.h' l='58' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='808' u='r' c='luaK_codeABC'/>
+<use f='redis/deps/lua/src/lcode.c' l='815' u='r' c='luaK_codeABx'/>
+<use f='redis/deps/lua/src/lcode.c' l='827' u='r' c='luaK_setlist'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/llex.h' l='58'>/* line of last token `consumed&apos; */</doc>
+<use f='redis/deps/lua/src/llex.c' l='147' u='w' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='449' u='w' c='luaX_next'/>
+<use f='redis/deps/lua/src/lparser.c' l='616' u='r' c='funcargs'/>

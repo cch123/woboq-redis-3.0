@@ -1,0 +1,29 @@
+<dec f='redis/src/redis.h' l='455' type='dict *'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='455'>/* Timeout of keys with a timeout set */</doc>
+<use f='redis/src/db.c' l='151' u='r' c='dbRandomKey'/>
+<use f='redis/src/db.c' l='165' u='r' c='dbDelete'/>
+<use f='redis/src/db.c' l='165' u='r' c='dbDelete'/>
+<use f='redis/src/db.c' l='165' u='r' c='dbDelete'/>
+<use f='redis/src/db.c' l='219' u='r' c='emptyDb'/>
+<use f='redis/src/db.c' l='257' u='r' c='flushdbCommand'/>
+<use f='redis/src/db.c' l='770' u='r' c='removeExpire'/>
+<use f='redis/src/db.c' l='779' u='r' c='setExpire'/>
+<use f='redis/src/db.c' l='789' u='r' c='getExpire'/>
+<use f='redis/src/db.c' l='789' u='r' c='getExpire'/>
+<use f='redis/src/db.c' l='790' u='r' c='getExpire'/>
+<use f='redis/src/redis.c' l='665' u='r' c='tryResizeHashTables'/>
+<use f='redis/src/redis.c' l='666' u='r' c='tryResizeHashTables'/>
+<use f='redis/src/redis.c' l='683' u='r' c='incrementallyRehash'/>
+<use f='redis/src/redis.c' l='684' u='r' c='incrementallyRehash'/>
+<use f='redis/src/redis.c' l='814' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='814' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='818' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='818' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='840' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='1123' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1123' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1801' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='3024' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3024' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3238' u='r' c='freeMemoryIfNeeded'/>

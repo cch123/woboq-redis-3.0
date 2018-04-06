@@ -1,0 +1,13 @@
+<dec f='redis/src/rio.h' l='131' type='size_t rioWriteBulkCount(rio * r, char prefix, int count)'/>
+<use f='redis/src/aof.c' l='785' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='811' u='c' c='rewriteListObject'/>
+<use f='redis/src/aof.c' l='839' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='857' u='c' c='rewriteSetObject'/>
+<use f='redis/src/aof.c' l='898' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='925' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='983' u='c' c='rewriteHashObject'/>
+<use f='redis/src/cluster.c' l='4606' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4617' u='c' c='migrateCommand'/>
+<def f='redis/src/rio.c' l='312' ll='322' type='size_t rioWriteBulkCount(rio * r, char prefix, int count)'/>
+<use f='redis/src/rio.c' l='328' u='c' c='rioWriteBulkString'/>
+<doc f='redis/src/rio.c' l='311'>/* Write multi bulk count in the format: &quot;*&lt;count&gt;\r\n&quot;. */</doc>

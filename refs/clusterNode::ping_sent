@@ -1,0 +1,20 @@
+<dec f='redis/src/cluster.h' l='91' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='216' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='660' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='1729' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2212' u='w' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2255' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='3071' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3071' u='w' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3089' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3096' u='w' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3123' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3177' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3178' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3180' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3191' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3210' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3215' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3640' u='r' c='clusterGenNodeDescription'/>
+<offset>17088</offset>
+<doc f='redis/src/cluster.h' l='91'>/* Unix time we sent latest ping */</doc>

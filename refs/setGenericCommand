@@ -1,0 +1,5 @@
+<def f='redis/src/t_string.c' l='65' ll='91' type='void setGenericCommand(redisClient * c, int flags, robj * key, robj * val, robj * expire, int unit, robj * ok_reply, robj * abort_reply)'/>
+<use f='redis/src/t_string.c' l='127' u='c' c='setCommand'/>
+<use f='redis/src/t_string.c' l='132' u='c' c='setnxCommand'/>
+<use f='redis/src/t_string.c' l='137' u='c' c='setexCommand'/>
+<use f='redis/src/t_string.c' l='142' u='c' c='psetexCommand'/>

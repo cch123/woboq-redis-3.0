@@ -1,0 +1,28 @@
+<dec f='redis/src/rio.h' l='69' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/rio.h:66:9)'/>
+<offset>0</offset>
+<doc f='redis/src/rio.h' l='65'>/* In-memory buffer target. */</doc>
+<use f='redis/src/cluster.c' l='4324' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4324' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4327' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4328' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4330' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4330' u='m' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4373' u='m' c='dumpCommand'/>
+<use f='redis/src/cluster.c' l='4631' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4632' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4633' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4643' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4691' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4695' u='m' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4703' u='m' c='migrateCommand'/>
+<use f='redis/src/rio.c' l='62' u='m' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='62' u='m' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='63' u='m' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='69' u='m' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='69' u='m' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='71' u='m' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='71' u='m' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='72' u='m' c='rioBufferRead'/>
+<use f='redis/src/rio.c' l='78' u='m' c='rioBufferTell'/>
+<use f='redis/src/rio.c' l='102' u='m' c='rioInitWithBuffer'/>
+<use f='redis/src/rio.c' l='103' u='m' c='rioInitWithBuffer'/>

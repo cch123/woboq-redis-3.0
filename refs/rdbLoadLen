@@ -1,0 +1,13 @@
+<dec f='redis/src/rdb.h' l='99' type='uint32_t rdbLoadLen(rio * rdb, int * isencoded)'/>
+<def f='redis/src/rdb.c' l='111' ll='135' type='uint32_t rdbLoadLen(rio * rdb, int * isencoded)'/>
+<use f='redis/src/rdb.c' l='254' u='c' c='rdbLoadLzfStringObject'/>
+<use f='redis/src/rdb.c' l='255' u='c' c='rdbLoadLzfStringObject'/>
+<use f='redis/src/rdb.c' l='338' u='c' c='rdbGenericLoadStringObject'/>
+<use f='redis/src/rdb.c' l='832' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='864' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='907' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='938' u='c' c='rdbLoadObject'/>
+<use f='redis/src/rdb.c' l='1186' u='c' c='rdbLoad'/>
+<doc f='redis/src/rdb.c' l='108'>/* Load an encoded length. The &quot;isencoded&quot; argument is set to 1 if the length
+ * is not actually a length but an &quot;encoding type&quot;. See the REDIS_RDB_ENC_*
+ * definitions in rdb.h for more information. */</doc>

@@ -1,0 +1,10 @@
+<dec f='redis/src/config.c' l='1274' type='dict *'/>
+<use f='redis/src/config.c' l='1290' u='r' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/config.c' l='1294' u='r' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/config.c' l='1322' u='w' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1389' u='r' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1407' u='r' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1672' u='r' c='rewriteConfigReleaseState'/>
+<use f='redis/src/config.c' l='1686' u='r' c='rewriteConfigRemoveOrphaned'/>
+<offset>0</offset>
+<doc f='redis/src/config.c' l='1274'>/* Option -&gt; list of config file lines map */</doc>

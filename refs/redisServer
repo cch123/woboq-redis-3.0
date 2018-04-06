@@ -1,0 +1,223 @@
+<def f='redis/src/redis.h' l='648' ll='907'/>
+<size>2544</size>
+<mbr r='redisServer::pid' o='0' t='pid_t'/>
+<mbr r='redisServer::configfile' o='64' t='char *'/>
+<mbr r='redisServer::hz' o='128' t='int'/>
+<mbr r='redisServer::db' o='192' t='redisDb *'/>
+<mbr r='redisServer::commands' o='256' t='dict *'/>
+<mbr r='redisServer::orig_commands' o='320' t='dict *'/>
+<mbr r='redisServer::el' o='384' t='aeEventLoop *'/>
+<mbr r='redisServer::lruclock' o='448' t='unsigned int'/>
+<mbr r='redisServer::shutdown_asap' o='480' t='int'/>
+<mbr r='redisServer::activerehashing' o='512' t='int'/>
+<mbr r='redisServer::requirepass' o='576' t='char *'/>
+<mbr r='redisServer::pidfile' o='640' t='char *'/>
+<mbr r='redisServer::arch_bits' o='704' t='int'/>
+<mbr r='redisServer::cronloops' o='736' t='int'/>
+<mbr r='redisServer::runid' o='768' t='char [41]'/>
+<mbr r='redisServer::sentinel_mode' o='1120' t='int'/>
+<mbr r='redisServer::port' o='1152' t='int'/>
+<mbr r='redisServer::tcp_backlog' o='1184' t='int'/>
+<mbr r='redisServer::bindaddr' o='1216' t='char *[16]'/>
+<mbr r='redisServer::bindaddr_count' o='2240' t='int'/>
+<mbr r='redisServer::unixsocket' o='2304' t='char *'/>
+<mbr r='redisServer::unixsocketperm' o='2368' t='mode_t'/>
+<mbr r='redisServer::ipfd' o='2400' t='int [16]'/>
+<mbr r='redisServer::ipfd_count' o='2912' t='int'/>
+<mbr r='redisServer::sofd' o='2944' t='int'/>
+<mbr r='redisServer::cfd' o='2976' t='int [16]'/>
+<mbr r='redisServer::cfd_count' o='3488' t='int'/>
+<mbr r='redisServer::clients' o='3520' t='list *'/>
+<mbr r='redisServer::clients_to_close' o='3584' t='list *'/>
+<mbr r='redisServer::slaves' o='3648' t='list *'/>
+<mbr r='redisServer::monitors' o='3712' t='list *'/>
+<mbr r='redisServer::current_client' o='3776' t='redisClient *'/>
+<mbr r='redisServer::clients_paused' o='3840' t='int'/>
+<mbr r='redisServer::clients_pause_end_time' o='3904' t='mstime_t'/>
+<mbr r='redisServer::neterr' o='3968' t='char [256]'/>
+<mbr r='redisServer::migrate_cached_sockets' o='6016' t='dict *'/>
+<mbr r='redisServer::next_client_id' o='6080' t='uint64_t'/>
+<mbr r='redisServer::loading' o='6144' t='int'/>
+<mbr r='redisServer::loading_total_bytes' o='6208' t='off_t'/>
+<mbr r='redisServer::loading_loaded_bytes' o='6272' t='off_t'/>
+<mbr r='redisServer::loading_start_time' o='6336' t='time_t'/>
+<mbr r='redisServer::loading_process_events_interval_bytes' o='6400' t='off_t'/>
+<mbr r='redisServer::delCommand' o='6464' t='struct redisCommand *'/>
+<mbr r='redisServer::multiCommand' o='6528' t='struct redisCommand *'/>
+<mbr r='redisServer::lpushCommand' o='6592' t='struct redisCommand *'/>
+<mbr r='redisServer::lpopCommand' o='6656' t='struct redisCommand *'/>
+<mbr r='redisServer::rpopCommand' o='6720' t='struct redisCommand *'/>
+<mbr r='redisServer::stat_starttime' o='6784' t='time_t'/>
+<mbr r='redisServer::stat_numcommands' o='6848' t='long long'/>
+<mbr r='redisServer::stat_numconnections' o='6912' t='long long'/>
+<mbr r='redisServer::stat_expiredkeys' o='6976' t='long long'/>
+<mbr r='redisServer::stat_evictedkeys' o='7040' t='long long'/>
+<mbr r='redisServer::stat_keyspace_hits' o='7104' t='long long'/>
+<mbr r='redisServer::stat_keyspace_misses' o='7168' t='long long'/>
+<mbr r='redisServer::stat_peak_memory' o='7232' t='size_t'/>
+<mbr r='redisServer::stat_fork_time' o='7296' t='long long'/>
+<mbr r='redisServer::stat_fork_rate' o='7360' t='double'/>
+<mbr r='redisServer::stat_rejected_conn' o='7424' t='long long'/>
+<mbr r='redisServer::stat_sync_full' o='7488' t='long long'/>
+<mbr r='redisServer::stat_sync_partial_ok' o='7552' t='long long'/>
+<mbr r='redisServer::stat_sync_partial_err' o='7616' t='long long'/>
+<mbr r='redisServer::slowlog' o='7680' t='list *'/>
+<mbr r='redisServer::slowlog_entry_id' o='7744' t='long long'/>
+<mbr r='redisServer::slowlog_log_slower_than' o='7808' t='long long'/>
+<mbr r='redisServer::slowlog_max_len' o='7872' t='unsigned long'/>
+<mbr r='redisServer::resident_set_size' o='7936' t='size_t'/>
+<mbr r='redisServer::stat_net_input_bytes' o='8000' t='long long'/>
+<mbr r='redisServer::stat_net_output_bytes' o='8064' t='long long'/>
+<mbr r='redisServer::inst_metric' o='8128' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/redis.h:720:5) [3]'/>
+<mbr r='redisServer::verbosity' o='11776' t='int'/>
+<mbr r='redisServer::maxidletime' o='11808' t='int'/>
+<mbr r='redisServer::tcpkeepalive' o='11840' t='int'/>
+<mbr r='redisServer::active_expire_enabled' o='11872' t='int'/>
+<mbr r='redisServer::client_max_querybuf_len' o='11904' t='size_t'/>
+<mbr r='redisServer::dbnum' o='11968' t='int'/>
+<mbr r='redisServer::daemonize' o='12000' t='int'/>
+<mbr r='redisServer::client_obuf_limits' o='12032' t='clientBufferLimitsConfig [3]'/>
+<mbr r='redisServer::aof_state' o='12608' t='int'/>
+<mbr r='redisServer::fdatasync' o='12640' t='int'/>
+<mbr r='redisServer::aof_filename' o='12672' t='char *'/>
+<mbr r='redisServer::aof_no_fsync_on_rewrite' o='12736' t='int'/>
+<mbr r='redisServer::aof_rewrite_perc' o='12768' t='int'/>
+<mbr r='redisServer::aof_rewrite_min_size' o='12800' t='off_t'/>
+<mbr r='redisServer::aof_rewrite_base_size' o='12864' t='off_t'/>
+<mbr r='redisServer::aof_current_size' o='12928' t='off_t'/>
+<mbr r='redisServer::aof_rewrite_scheduled' o='12992' t='int'/>
+<mbr r='redisServer::aof_child_pid' o='13024' t='pid_t'/>
+<mbr r='redisServer::aof_rewrite_buf_blocks' o='13056' t='list *'/>
+<mbr r='redisServer::aof_buf' o='13120' t='sds'/>
+<mbr r='redisServer::aof_fd' o='13184' t='int'/>
+<mbr r='redisServer::aof_selected_db' o='13216' t='int'/>
+<mbr r='redisServer::aof_flush_postponed_start' o='13248' t='time_t'/>
+<mbr r='redisServer::aof_last_fsync' o='13312' t='time_t'/>
+<mbr r='redisServer::aof_rewrite_time_last' o='13376' t='time_t'/>
+<mbr r='redisServer::aof_rewrite_time_start' o='13440' t='time_t'/>
+<mbr r='redisServer::aof_lastbgrewrite_status' o='13504' t='int'/>
+<mbr r='redisServer::aof_delayed_fsync' o='13568' t='unsigned long'/>
+<mbr r='redisServer::aof_rewrite_incremental_fsync' o='13632' t='int'/>
+<mbr r='redisServer::aof_last_write_status' o='13664' t='int'/>
+<mbr r='redisServer::aof_last_write_errno' o='13696' t='int'/>
+<mbr r='redisServer::aof_load_truncated' o='13728' t='int'/>
+<mbr r='redisServer::aof_pipe_write_data_to_child' o='13760' t='int'/>
+<mbr r='redisServer::aof_pipe_read_data_from_parent' o='13792' t='int'/>
+<mbr r='redisServer::aof_pipe_write_ack_to_parent' o='13824' t='int'/>
+<mbr r='redisServer::aof_pipe_read_ack_from_child' o='13856' t='int'/>
+<mbr r='redisServer::aof_pipe_write_ack_to_child' o='13888' t='int'/>
+<mbr r='redisServer::aof_pipe_read_ack_from_parent' o='13920' t='int'/>
+<mbr r='redisServer::aof_stop_sending_diff' o='13952' t='int'/>
+<mbr r='redisServer::aof_child_diff' o='14016' t='sds'/>
+<mbr r='redisServer::dirty' o='14080' t='long long'/>
+<mbr r='redisServer::dirty_before_bgsave' o='14144' t='long long'/>
+<mbr r='redisServer::rdb_child_pid' o='14208' t='pid_t'/>
+<mbr r='redisServer::saveparams' o='14272' t='struct saveparam *'/>
+<mbr r='redisServer::saveparamslen' o='14336' t='int'/>
+<mbr r='redisServer::rdb_filename' o='14400' t='char *'/>
+<mbr r='redisServer::rdb_compression' o='14464' t='int'/>
+<mbr r='redisServer::rdb_checksum' o='14496' t='int'/>
+<mbr r='redisServer::lastsave' o='14528' t='time_t'/>
+<mbr r='redisServer::lastbgsave_try' o='14592' t='time_t'/>
+<mbr r='redisServer::rdb_save_time_last' o='14656' t='time_t'/>
+<mbr r='redisServer::rdb_save_time_start' o='14720' t='time_t'/>
+<mbr r='redisServer::rdb_child_type' o='14784' t='int'/>
+<mbr r='redisServer::lastbgsave_status' o='14816' t='int'/>
+<mbr r='redisServer::stop_writes_on_bgsave_err' o='14848' t='int'/>
+<mbr r='redisServer::rdb_pipe_write_result_to_parent' o='14880' t='int'/>
+<mbr r='redisServer::rdb_pipe_read_result_from_child' o='14912' t='int'/>
+<mbr r='redisServer::also_propagate' o='14976' t='redisOpArray'/>
+<mbr r='redisServer::logfile' o='15104' t='char *'/>
+<mbr r='redisServer::syslog_enabled' o='15168' t='int'/>
+<mbr r='redisServer::syslog_ident' o='15232' t='char *'/>
+<mbr r='redisServer::syslog_facility' o='15296' t='int'/>
+<mbr r='redisServer::slaveseldb' o='15328' t='int'/>
+<mbr r='redisServer::master_repl_offset' o='15360' t='long long'/>
+<mbr r='redisServer::repl_ping_slave_period' o='15424' t='int'/>
+<mbr r='redisServer::repl_backlog' o='15488' t='char *'/>
+<mbr r='redisServer::repl_backlog_size' o='15552' t='long long'/>
+<mbr r='redisServer::repl_backlog_histlen' o='15616' t='long long'/>
+<mbr r='redisServer::repl_backlog_idx' o='15680' t='long long'/>
+<mbr r='redisServer::repl_backlog_off' o='15744' t='long long'/>
+<mbr r='redisServer::repl_backlog_time_limit' o='15808' t='time_t'/>
+<mbr r='redisServer::repl_no_slaves_since' o='15872' t='time_t'/>
+<mbr r='redisServer::repl_min_slaves_to_write' o='15936' t='int'/>
+<mbr r='redisServer::repl_min_slaves_max_lag' o='15968' t='int'/>
+<mbr r='redisServer::repl_good_slaves_count' o='16000' t='int'/>
+<mbr r='redisServer::repl_diskless_sync' o='16032' t='int'/>
+<mbr r='redisServer::repl_diskless_sync_delay' o='16064' t='int'/>
+<mbr r='redisServer::masterauth' o='16128' t='char *'/>
+<mbr r='redisServer::masterhost' o='16192' t='char *'/>
+<mbr r='redisServer::masterport' o='16256' t='int'/>
+<mbr r='redisServer::repl_timeout' o='16288' t='int'/>
+<mbr r='redisServer::master' o='16320' t='redisClient *'/>
+<mbr r='redisServer::cached_master' o='16384' t='redisClient *'/>
+<mbr r='redisServer::repl_syncio_timeout' o='16448' t='int'/>
+<mbr r='redisServer::repl_state' o='16480' t='int'/>
+<mbr r='redisServer::repl_transfer_size' o='16512' t='off_t'/>
+<mbr r='redisServer::repl_transfer_read' o='16576' t='off_t'/>
+<mbr r='redisServer::repl_transfer_last_fsync_off' o='16640' t='off_t'/>
+<mbr r='redisServer::repl_transfer_s' o='16704' t='int'/>
+<mbr r='redisServer::repl_transfer_fd' o='16736' t='int'/>
+<mbr r='redisServer::repl_transfer_tmpfile' o='16768' t='char *'/>
+<mbr r='redisServer::repl_transfer_lastio' o='16832' t='time_t'/>
+<mbr r='redisServer::repl_serve_stale_data' o='16896' t='int'/>
+<mbr r='redisServer::repl_slave_ro' o='16928' t='int'/>
+<mbr r='redisServer::repl_down_since' o='16960' t='time_t'/>
+<mbr r='redisServer::repl_disable_tcp_nodelay' o='17024' t='int'/>
+<mbr r='redisServer::slave_priority' o='17056' t='int'/>
+<mbr r='redisServer::repl_master_runid' o='17088' t='char [41]'/>
+<mbr r='redisServer::repl_master_initial_offset' o='17472' t='long long'/>
+<mbr r='redisServer::repl_scriptcache_dict' o='17536' t='dict *'/>
+<mbr r='redisServer::repl_scriptcache_fifo' o='17600' t='list *'/>
+<mbr r='redisServer::repl_scriptcache_size' o='17664' t='unsigned int'/>
+<mbr r='redisServer::clients_waiting_acks' o='17728' t='list *'/>
+<mbr r='redisServer::get_ack_from_slaves' o='17792' t='int'/>
+<mbr r='redisServer::maxclients' o='17824' t='unsigned int'/>
+<mbr r='redisServer::maxmemory' o='17856' t='unsigned long long'/>
+<mbr r='redisServer::maxmemory_policy' o='17920' t='int'/>
+<mbr r='redisServer::maxmemory_samples' o='17952' t='int'/>
+<mbr r='redisServer::bpop_blocked_clients' o='17984' t='unsigned int'/>
+<mbr r='redisServer::unblocked_clients' o='18048' t='list *'/>
+<mbr r='redisServer::ready_keys' o='18112' t='list *'/>
+<mbr r='redisServer::sort_desc' o='18176' t='int'/>
+<mbr r='redisServer::sort_alpha' o='18208' t='int'/>
+<mbr r='redisServer::sort_bypattern' o='18240' t='int'/>
+<mbr r='redisServer::sort_store' o='18272' t='int'/>
+<mbr r='redisServer::hash_max_ziplist_entries' o='18304' t='size_t'/>
+<mbr r='redisServer::hash_max_ziplist_value' o='18368' t='size_t'/>
+<mbr r='redisServer::list_max_ziplist_entries' o='18432' t='size_t'/>
+<mbr r='redisServer::list_max_ziplist_value' o='18496' t='size_t'/>
+<mbr r='redisServer::set_max_intset_entries' o='18560' t='size_t'/>
+<mbr r='redisServer::zset_max_ziplist_entries' o='18624' t='size_t'/>
+<mbr r='redisServer::zset_max_ziplist_value' o='18688' t='size_t'/>
+<mbr r='redisServer::hll_sparse_max_bytes' o='18752' t='size_t'/>
+<mbr r='redisServer::unixtime' o='18816' t='time_t'/>
+<mbr r='redisServer::mstime' o='18880' t='long long'/>
+<mbr r='redisServer::pubsub_channels' o='18944' t='dict *'/>
+<mbr r='redisServer::pubsub_patterns' o='19008' t='list *'/>
+<mbr r='redisServer::notify_keyspace_events' o='19072' t='int'/>
+<mbr r='redisServer::cluster_enabled' o='19104' t='int'/>
+<mbr r='redisServer::cluster_node_timeout' o='19136' t='mstime_t'/>
+<mbr r='redisServer::cluster_configfile' o='19200' t='char *'/>
+<mbr r='redisServer::cluster' o='19264' t='struct clusterState *'/>
+<mbr r='redisServer::cluster_migration_barrier' o='19328' t='int'/>
+<mbr r='redisServer::cluster_slave_validity_factor' o='19360' t='int'/>
+<mbr r='redisServer::cluster_require_full_coverage' o='19392' t='int'/>
+<mbr r='redisServer::lua' o='19456' t='lua_State *'/>
+<mbr r='redisServer::lua_client' o='19520' t='redisClient *'/>
+<mbr r='redisServer::lua_caller' o='19584' t='redisClient *'/>
+<mbr r='redisServer::lua_scripts' o='19648' t='dict *'/>
+<mbr r='redisServer::lua_time_limit' o='19712' t='mstime_t'/>
+<mbr r='redisServer::lua_time_start' o='19776' t='mstime_t'/>
+<mbr r='redisServer::lua_write_dirty' o='19840' t='int'/>
+<mbr r='redisServer::lua_random_dirty' o='19872' t='int'/>
+<mbr r='redisServer::lua_timedout' o='19904' t='int'/>
+<mbr r='redisServer::lua_kill' o='19936' t='int'/>
+<mbr r='redisServer::latency_monitor_threshold' o='19968' t='long long'/>
+<mbr r='redisServer::latency_events' o='20032' t='dict *'/>
+<mbr r='redisServer::assert_failed' o='20096' t='char *'/>
+<mbr r='redisServer::assert_file' o='20160' t='char *'/>
+<mbr r='redisServer::assert_line' o='20224' t='int'/>
+<mbr r='redisServer::bug_report_start' o='20256' t='int'/>
+<mbr r='redisServer::watchdog_period' o='20288' t='int'/>

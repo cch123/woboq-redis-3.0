@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='265'/>
+<doc f='redis/src/redis.h' l='263'>/* Client classes for client limits, currently used only for
+ * the max-client-output-buffer limit implementation. */</doc>
+<use f='redis/src/networking.c' l='1593' u='c'/>
+<use f='redis/src/networking.c' l='1597' u='c'/>
+<use f='redis/src/networking.c' l='1605' u='c'/>

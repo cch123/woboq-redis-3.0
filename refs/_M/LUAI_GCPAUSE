@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='302'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='295'>/*
+@@ LUAI_GCPAUSE defines the default pause between garbage-collector cycles
+@* as a percentage.
+** CHANGE it if you want the GC to run faster or slower (higher values
+** mean larger pauses which mean slower collection.) You can also change
+** this value dynamically.
+*/</doc>
+<use f='redis/deps/lua/src/lstate.c' l='178' u='c'/>

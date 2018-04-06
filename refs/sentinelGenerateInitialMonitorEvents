@@ -1,0 +1,7 @@
+<dec f='redis/src/sentinel.c' l='341' type='void sentinelGenerateInitialMonitorEvents()'/>
+<use f='redis/src/sentinel.c' l='455' u='c' c='sentinelIsRunning'/>
+<def f='redis/src/sentinel.c' l='591' ll='601' type='void sentinelGenerateInitialMonitorEvents()'/>
+<doc f='redis/src/sentinel.c' l='587'>/* This function is called only at startup and is used to generate a
+ * +monitor event for every configured master. The same events are also
+ * generated when a master to monitor is added at runtime via the
+ * SENTINEL MONITOR command. */</doc>

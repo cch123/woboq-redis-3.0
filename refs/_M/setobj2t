@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='181'/>
+<use f='redis/deps/lua/src/lapi.c' l='677' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='690' u='c'/>
+<doc f='redis/deps/lua/src/lobject.h' l='180'>/* to table */</doc>
+<use f='redis/deps/lua/src/lvm.c' l='144' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='714' u='c'/>

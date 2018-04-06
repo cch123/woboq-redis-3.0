@@ -1,0 +1,5 @@
+<def f='redis/src/aof.c' l='1186' ll='1207' type='void aofChildPipeReadable(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/aof.c' l='1224' u='r' c='aofCreatePipes'/>
+<doc f='redis/src/aof.c' l='1183'>/* This event handler is called when the AOF rewriting child sends us a
+ * single &apos;!&apos; char to signal we should stop sending buffer diffs. The
+ * parent sends a &apos;!&apos; as well to acknowledge. */</doc>

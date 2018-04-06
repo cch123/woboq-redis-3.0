@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1351' type='void clusterBeforeSleep()'/>
+<def f='redis/src/cluster.c' l='3265' ll='3285' type='void clusterBeforeSleep()'/>
+<doc f='redis/src/cluster.c' l='3260'>/* This function is called before the event handler returns to sleep for
+ * events. It is useful to perform operations that must be done ASAP in
+ * reaction to events fired but that are not safe to perform inside event
+ * handlers, or to perform potentially expansive tasks that we need to do
+ * a single time before replying to clients. */</doc>
+<use f='redis/src/redis.c' l='1270' u='c' c='beforeSleep'/>

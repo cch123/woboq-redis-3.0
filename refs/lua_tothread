@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lua.h' l='153' type='lua_State * lua_tothread(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='395' ll='398' macro='1' type='lua_State * lua_tothread(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='511' u='c' c='luaB_costatus'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='544' u='c' c='luaB_coresume'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='562' u='c' c='luaB_auxwrap'/>
+<use f='redis/deps/lua/src/ldblib.c' l='79' u='c' c='getthread'/>

@@ -1,0 +1,12 @@
+<dec f='include/stdio.h' l='168' type='struct _IO_FILE *'/>
+<doc f='include/stdio.h' l='167'>/* Standard streams.  */</doc>
+<doc f='include/stdio.h' l='168'>/* Standard input stream.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='939' macro='1' u='r'/>
+<use f='redis/deps/linenoise/linenoise.c' l='969' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='560' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldblib.c' l='306' macro='1' u='r'/>
+<use f='redis/deps/lua/src/liolib.c' l='546' macro='1' u='r'/>
+<use f='redis/src/config.c' l='584' macro='1' u='r'/>
+<use f='redis/src/config.c' l='594' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='853' macro='1' u='r'/>
+<use f='redis/src/redis-cli.c' l='976' macro='1' u='r'/>

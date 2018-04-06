@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lua.h' l='44'/>
+<use f='redis/deps/lua/src/ldebug.c' l='627' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='62' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='414' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1332' u='c'/>

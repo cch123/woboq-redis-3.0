@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lparser.h' l='63' type='struct lua_State *'/>
+<use f='redis/deps/lua/src/lcode.c' l='230' u='r' c='addk'/>
+<use f='redis/deps/lua/src/lcode.c' l='793' u='r' c='luaK_code'/>
+<use f='redis/deps/lua/src/lcode.c' l='797' u='r' c='luaK_code'/>
+<offset>256</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='63'>/* copy of the Lua state */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='73' u='r' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='74' u='r' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='195' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='199' u='r' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='334' u='w' c='open_func'/>

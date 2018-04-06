@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lgc.h' l='70'/>
+<use f='redis/deps/lua/src/lfunc.c' l='61' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='103' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='88' u='c'/>

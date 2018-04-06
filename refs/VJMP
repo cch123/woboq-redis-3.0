@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.h' l='30' type='10'/>
+<use f='redis/deps/lua/src/lcode.c' l='392' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='399' u='r' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='547' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='571' c='luaK_goiffalse'/>
+<use f='redis/deps/lua/src/lcode.c' l='597' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='685' u='r' c='codecomp'/>
+<doc f='redis/deps/lua/src/lparser.h' l='30'>/* info = instruction pc */</doc>

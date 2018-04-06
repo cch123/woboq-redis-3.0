@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='621' type='struct redisCommand *'/>
+<offset>192</offset>
+<use f='redis/src/redis.c' l='1949' u='w' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='2111' u='r' c='call'/>

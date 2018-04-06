@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='202' type='34'/>
+<use f='redis/deps/lua/src/lcode.c' l='824' u='r' c='luaK_setlist'/>
+<use f='redis/deps/lua/src/lcode.c' l='826' u='r' c='luaK_setlist'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='202'>/*	A B C	R(A)[(C-1)*FPF+i] := R(A+i), 1 &lt;= i &lt;= B	*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='295' c='luaG_checkopenop'/>
+<use f='redis/deps/lua/src/ldebug.c' l='356' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='377' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='442' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='697' c='luaV_execute'/>

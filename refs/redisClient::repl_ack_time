@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='545' type='long long'/>
+<offset>1728</offset>
+<doc f='redis/src/redis.h' l='545'>/* replication ack time, if this is a slave */</doc>
+<use f='redis/src/networking.c' l='106' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='950' u='w' c='processInlineBuffer'/>
+<use f='redis/src/redis.c' l='2953' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='401' u='w' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='627' u='w' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='664' u='w' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='777' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1694' u='r' c='refreshGoodSlavesCount'/>
+<use f='redis/src/replication.c' l='2025' u='r' c='replicationCron'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/dict.h' l='143'/>
+<use f='redis/src/cluster.c' l='1085' u='c'/>
+<use f='redis/src/sentinel.c' l='3214' u='c'/>
+<use f='redis/src/sentinel.c' l='3260' u='c'/>

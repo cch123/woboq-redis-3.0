@@ -1,0 +1,23 @@
+<def f='redis/src/debug.c' l='91' ll='99' type='void mixDigest(unsigned char * digest, void * ptr, size_t len)'/>
+<use f='redis/src/debug.c' l='103' u='c' c='mixObjectDigest'/>
+<use f='redis/src/debug.c' l='132' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='144' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='149' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='194' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='197' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='201' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='217' u='c' c='computeDatasetDigest'/>
+<doc f='redis/src/debug.c' l='77'>/* This function instead of just computing the SHA1 and xoring it
+ * against digest, also perform the digest of &quot;digest&quot; itself and
+ * replace the old value with the new one.
+ *
+ * So the final digest will be:
+ *
+ * digest = SHA1(digest xor SHA1(data))
+ *
+ * This function is used every time we want to preserve the order so
+ * that digest(a,b,c,d) will be different than digest(b,c,d,a)
+ *
+ * Also note that mixdigest(&quot;foo&quot;) followed by mixdigest(&quot;bar&quot;)
+ * will lead to a different digest compared to &quot;fo&quot;, &quot;obar&quot;.
+ */</doc>

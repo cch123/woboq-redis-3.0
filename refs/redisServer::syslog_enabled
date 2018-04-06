@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='792' type='int'/>
+<offset>15168</offset>
+<doc f='redis/src/redis.h' l='792'>/* Is syslog enabled? */</doc>
+<use f='redis/src/config.c' l='195' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1804' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='333' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='1421' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1752' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='3441' u='r' c='redisAsciiArt'/>

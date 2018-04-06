@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1079' type='void listTypeTryConversion(robj * subject, robj * value)'/>
+<doc f='redis/src/redis.h' l='1078'>/* List data type */</doc>
+<def f='redis/src/t_list.c' l='39' ll='44' type='void listTypeTryConversion(robj * subject, robj * value)'/>
+<use f='redis/src/t_list.c' l='53' u='c' c='listTypePush'/>
+<use f='redis/src/t_list.c' l='346' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='460' u='c' c='lsetCommand'/>
+<doc f='redis/src/t_list.c' l='36'>/* Check the argument length to see if it requires us to convert the ziplist
+ * to a real list. Only check raw-encoded objects because integer encoded
+ * objects are never too long. */</doc>

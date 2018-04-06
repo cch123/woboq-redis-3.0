@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1228' type='struct redisCommand * lookupCommandByCString(char * s)'/>
+<use f='redis/src/redis.c' l='1532' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1533' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1534' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1535' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1536' u='c' c='initServerConfig'/>
+<def f='redis/src/redis.c' l='1978' ll='1985' type='struct redisCommand * lookupCommandByCString(char * s)'/>

@@ -1,0 +1,5 @@
+<def f='redis/src/redis-cli.c' l='1286' ll='1317' type='unsigned long long sendSync(int fd)'/>
+<use f='redis/src/redis-cli.c' l='1321' u='c' c='slaveMode'/>
+<use f='redis/src/redis-cli.c' l='1356' u='c' c='getRDB'/>
+<doc f='redis/src/redis-cli.c' l='1284'>/* Sends SYNC and reads the number of bytes in the payload. Used both by
+ * slaveMode() and getRDB(). */</doc>

@@ -1,0 +1,2 @@
+<def f='redis/src/memtest.c' l='182' ll='199' type='void memtest_compare(unsigned long * l, size_t bytes)'/>
+<use f='redis/src/memtest.c' l='206' u='c' c='memtest_compare_times'/>

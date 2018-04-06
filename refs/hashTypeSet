@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1274' type='int hashTypeSet(robj * o, robj * key, robj * value)'/>
+<def f='redis/src/t_hash.c' l='170' ll='220' type='int hashTypeSet(robj * o, robj * field, robj * value)'/>
+<use f='redis/src/t_hash.c' l='471' u='c' c='hsetCommand'/>
+<use f='redis/src/t_hash.c' l='487' u='c' c='hsetnxCommand'/>
+<use f='redis/src/t_hash.c' l='508' u='c' c='hmsetCommand'/>
+<use f='redis/src/t_hash.c' l='542' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_hash.c' l='570' u='c' c='hincrbyfloatCommand'/>
+<doc f='redis/src/t_hash.c' l='166'>/* Add an element, discard the old if the key already exists.
+ * Return 0 on insert and 1 on update.
+ * This function will take care of incrementing the reference count of the
+ * retained fields and value objects. */</doc>

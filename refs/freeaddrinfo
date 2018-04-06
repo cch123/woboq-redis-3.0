@@ -1,0 +1,8 @@
+<dec f='include/netdb.h' l='668' type='void freeaddrinfo(struct addrinfo * __ai)'/>
+<use f='redis/deps/hiredis/net.c' l='303' u='c' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='341' u='c' c='_redisContextConnectTcp'/>
+<doc f='include/netdb.h' l='667'>/* Free `addrinfo&apos; structure AI including associated storage.  */</doc>
+<use f='redis/src/anet.c' l='226' u='c' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='306' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='335' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='478' u='c' c='_anetTcpServer'/>

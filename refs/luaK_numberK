@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lcode.h' l='52' type='int luaK_numberK(FuncState * fs, lua_Number r)'/>
+<def f='redis/deps/lua/src/lcode.c' l='257' ll='261' type='int luaK_numberK(FuncState * fs, lua_Number r)'/>
+<use f='redis/deps/lua/src/lcode.c' l='359' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='453' u='c' c='luaK_exp2RK'/>
+<use f='redis/deps/lua/src/lparser.c' l='1082' u='c' c='fornum'/>

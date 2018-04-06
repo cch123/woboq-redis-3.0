@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='89' type='TValue'/>
+<use f='redis/deps/lua/src/lapi.c' l='61' macro='1' u='a'/>
+<offset>1280</offset>
+<use f='redis/deps/lua/src/lgc.c' l='509' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='509' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='509' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='75' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lstate.c' l='166' macro='1' u='a'/>

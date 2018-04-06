@@ -1,0 +1,25 @@
+<dec f='redis/src/zmalloc.h' l='70' type='void * zrealloc(void * ptr, size_t size)'/>
+<use f='redis/src/ae_epoll.c' l='61' u='c' c='aeApiResize'/>
+<use f='redis/src/ae.c' l='113' u='c' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='114' u='c' c='aeResizeSetSize'/>
+<use f='redis/src/cluster.c' l='791' u='c' c='clusterNodeAddSlave'/>
+<use f='redis/src/config.c' l='70' u='c' c='appendServerSaveParams'/>
+<use f='redis/src/config.c' l='1284' u='c' c='rewriteConfigAppendLine'/>
+<use f='redis/src/intset.c' l='107' u='c' c='intsetResize'/>
+<use f='redis/src/multi.c' l='60' u='c' c='queueMultiCommand'/>
+<use f='redis/src/rdb.c' l='1314' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/redis-cli.c' l='1039' u='c' c='noninteractive'/>
+<use f='redis/src/redis-cli.c' l='1737' u='c' c='findBigKeys'/>
+<use f='redis/src/redis-cli.c' l='1738' u='c' c='findBigKeys'/>
+<use f='redis/src/redis.c' l='1947' u='c' c='redisOpArrayAppend'/>
+<use f='redis/src/scripting.c' l='243' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/sds.c' l='142' u='c' c='sdsMakeRoomFor'/>
+<use f='redis/src/sds.c' l='159' u='c' c='sdsRemoveFreeSpace'/>
+<use f='redis/src/sds.c' l='700' u='c' c='sdssplitlen'/>
+<use f='redis/src/sds.c' l='909' u='c' c='sdssplitargs'/>
+<use f='redis/src/sentinel.c' l='1243' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1253' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sparkline.c' l='73' u='c' c='sparklineSequenceAddSample'/>
+<use f='redis/src/ziplist.c' l='430' u='c' c='ziplistResize'/>
+<use f='redis/src/zipmap.c' l='203' u='c' c='zipmapResize'/>
+<def f='redis/src/zmalloc.c' l='152' ll='179' type='void * zrealloc(void * ptr, size_t size)'/>

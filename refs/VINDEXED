@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lparser.h' l='29' type='9'/>
+<use f='redis/deps/lua/src/lcode.c' l='320' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='489' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='623' u='r' c='luaK_indexed'/>
+<doc f='redis/deps/lua/src/lparser.h' l='29'>/* info = table register; aux = index register (or `k&apos;) */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='913' u='r' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='933' u='r' c='assignment'/>

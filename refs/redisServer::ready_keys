@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='852' type='list *'/>
+<offset>18112</offset>
+<doc f='redis/src/redis.h' l='852'>/* List of readyList structures for BLPOP &amp; co */</doc>
+<use f='redis/src/redis.c' l='1765' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2301' u='r' c='processCommand'/>
+<use f='redis/src/t_list.c' l='860' u='r' c='signalListAsReady'/>
+<use f='redis/src/t_list.c' l='949' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='956' u='r' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='957' u='w' c='handleClientsBlockedOnLists'/>

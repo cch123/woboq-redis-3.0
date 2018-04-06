@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1513' type='void migrateCommand(redisClient * c)'/>
+<def f='redis/src/cluster.c' l='4554' ll='4709' type='void migrateCommand(redisClient * c)'/>
+<doc f='redis/src/cluster.c' l='4553'>/* MIGRATE host port key dbid timeout [COPY | REPLACE] */</doc>
+<use f='redis/src/redis.c' l='264' u='r'/>
+<use f='redis/src/redis.c' l='264' u='r'/>
+<use f='redis/src/redis.c' l='264' u='r'/>
+<use f='redis/src/redis.c' l='264' u='r'/>

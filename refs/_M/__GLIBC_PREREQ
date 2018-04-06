@@ -1,0 +1,5 @@
+<dec f='include/features.h' l='361'/>
+<use f='redis/src/config.h' l='95' u='a'/>
+<use f='redis/src/config.h' l='96' u='c'/>
+<use f='redis/src/config.h' l='197' u='a'/>
+<use f='redis/src/config.h' l='198' u='c'/>

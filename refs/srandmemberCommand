@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1429' type='void srandmemberCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='164' u='r'/>
+<use f='redis/src/redis.c' l='164' u='r'/>
+<use f='redis/src/redis.c' l='164' u='r'/>
+<use f='redis/src/redis.c' l='164' u='r'/>
+<def f='redis/src/t_set.c' l='554' ll='576' type='void srandmemberCommand(redisClient * c)'/>

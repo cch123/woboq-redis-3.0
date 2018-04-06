@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='809' type='int'/>
+<offset>15936</offset>
+<doc f='redis/src/redis.h' l='809'>/* Min number of slaves to write. */</doc>
+<use f='redis/src/config.c' l='515' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='516' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='946' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1071' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1826' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1467' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2226' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2229' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2918' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1688' u='r' c='refreshGoodSlavesCount'/>

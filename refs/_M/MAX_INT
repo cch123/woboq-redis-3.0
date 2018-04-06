@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/llimits.h' l='35'/>
+<use f='redis/deps/lua/src/lcode.c' l='794' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='798' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='135' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='196' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='450' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='492' u='c'/>
+<use f='redis/deps/lua/src/lstring.c' l='69' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='539' u='c'/>

@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='390'/>
+<doc f='redis/src/redis.h' l='389'>/* Get the first bind addr or NULL */</doc>
+<use f='redis/src/cluster.c' l='3064' u='c'/>
+<use f='redis/src/cluster.c' l='4490' u='c'/>
+<use f='redis/src/replication.c' l='1381' u='c'/>
+<use f='redis/src/sentinel.c' l='1711' u='c'/>
+<use f='redis/src/sentinel.c' l='1733' u='c'/>

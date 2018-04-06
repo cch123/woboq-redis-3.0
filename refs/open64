@@ -1,0 +1,14 @@
+<use f='redis/src/aof.c' l='237' u='c' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='1379' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1431' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/cluster.c' l='313' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='364' u='c' c='clusterLockConfig'/>
+<use f='redis/src/config.c' l='1726' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/debug.c' l='667' u='c' c='logStackTrace'/>
+<use f='redis/src/redis-cli.c' l='1366' u='c' c='getRDB'/>
+<use f='redis/src/redis.c' l='366' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='1857' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='3396' u='c' c='daemonize'/>
+<use f='redis/src/replication.c' l='784' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='1342' u='c' c='syncWithMaster'/>
+<use f='redis/src/sentinel.c' l='1607' u='c' c='sentinelFlushConfig'/>

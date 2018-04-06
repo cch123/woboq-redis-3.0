@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1449' type='void pexpireatCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='927' ll='929' type='void pexpireatCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='222' u='r'/>
+<use f='redis/src/redis.c' l='222' u='r'/>
+<use f='redis/src/redis.c' l='222' u='r'/>
+<use f='redis/src/redis.c' l='222' u='r'/>

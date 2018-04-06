@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='671' type='char *'/>
+<offset>2304</offset>
+<doc f='redis/src/redis.h' l='671'>/* UNIX socket path */</doc>
+<use f='redis/src/config.c' l='145' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1025' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1025' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1793' u='r' c='rewriteConfig'/>
+<use f='redis/src/networking.c' l='646' u='r' c='acceptUnixHandler'/>
+<use f='redis/src/networking.c' l='1278' u='r' c='genClientPeerId'/>
+<use f='redis/src/redis.c' l='1408' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1781' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1782' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1783' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2318' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2320' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='3674' u='r' c='main'/>
+<use f='redis/src/replication.c' l='274' u='r' c='replicationFeedMonitors'/>

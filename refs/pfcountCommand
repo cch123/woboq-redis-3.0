@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1531' type='void pfcountCommand(redisClient * c)'/>
+<def f='redis/src/hyperloglog.c' l='1195' ll='1282' type='void pfcountCommand(redisClient * c)'/>
+<doc f='redis/src/hyperloglog.c' l='1194'>/* PFCOUNT var -&gt; approximated cardinality of set. */</doc>
+<use f='redis/src/redis.c' l='283' u='r'/>
+<use f='redis/src/redis.c' l='283' u='r'/>
+<use f='redis/src/redis.c' l='283' u='r'/>
+<use f='redis/src/redis.c' l='283' u='r'/>

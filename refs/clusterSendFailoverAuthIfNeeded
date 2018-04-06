@@ -1,0 +1,4 @@
+<dec f='redis/src/cluster.c' l='56' type='void clusterSendFailoverAuthIfNeeded(clusterNode * node, clusterMsg * request)'/>
+<use f='redis/src/cluster.c' l='1909' u='c' c='clusterProcessPacket'/>
+<def f='redis/src/cluster.c' l='2448' ll='2548' type='void clusterSendFailoverAuthIfNeeded(clusterNode * node, clusterMsg * request)'/>
+<doc f='redis/src/cluster.c' l='2447'>/* Vote for the node asking for our vote if there are the conditions. */</doc>

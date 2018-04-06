@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1054' type='void rewriteClientCommandArgument(redisClient * c, int i, robj * newval)'/>
+<def f='redis/src/networking.c' l='1545' ll='1559' type='void rewriteClientCommandArgument(redisClient * c, int i, robj * newval)'/>
+<doc f='redis/src/networking.c' l='1543'>/* Rewrite a single item in the command vector.
+ * The new val ref count is incremented, and the old decremented. */</doc>
+<use f='redis/src/scripting.c' l='1086' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1088' u='c' c='evalGenericCommand'/>
+<use f='redis/src/t_hash.c' l='580' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_hash.c' l='582' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='414' u='c' c='incrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='416' u='c' c='incrbyfloatCommand'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1128' type='robj * createZiplistObject()'/>
+<def f='redis/src/object.c' l='191' ll='196' type='robj * createZiplistObject()'/>
+<use f='redis/src/rdb.c' l='838' u='c' c='rdbLoadObject'/>
+<use f='redis/src/sort.c' l='512' u='c' c='sortCommand'/>
+<use f='redis/src/t_list.c' l='307' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='705' u='c' c='rpoplpushHandlePush'/>

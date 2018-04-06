@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lvm.h' l='25' type='int luaV_lessthan(lua_State * L, const TValue * l, const TValue * r)'/>
+<use f='redis/deps/lua/src/lapi.c' l='306' u='c' c='lua_lessthan'/>
+<def f='redis/deps/lua/src/lvm.c' l='225' ll='236' type='int luaV_lessthan(lua_State * L, const TValue * l, const TValue * r)'/>
+<use f='redis/deps/lua/src/lvm.c' l='557' u='c' c='luaV_execute'/>

@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='194' type='30'/>
+<use f='redis/deps/lua/src/lcode.c' l='70' u='r' c='luaK_ret'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='194'>/*	A B	return R(A), ... ,R(A+B-2)	(see note)	*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='283' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='294' c='luaG_checkopenop'/>
+<use f='redis/deps/lua/src/ldebug.c' l='437' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='639' c='luaV_execute'/>

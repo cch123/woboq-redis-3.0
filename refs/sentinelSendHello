@@ -1,0 +1,13 @@
+<def f='redis/src/sentinel.c' l='2240' ll='2278' type='int sentinelSendHello(sentinelRedisInstance * ri)'/>
+<use f='redis/src/sentinel.c' l='2381' u='c' c='sentinelSendPeriodicCommands'/>
+<doc f='redis/src/sentinel.c' l='2229'>/* Send an &quot;Hello&quot; message via Pub/Sub to the specified &apos;ri&apos; Redis
+ * instance in order to broadcast the current configuraiton for this
+ * master, and to advertise the existence of this Sentinel at the same time.
+ *
+ * The message has the following format:
+ *
+ * sentinel_ip,sentinel_port,sentinel_runid,current_epoch,
+ * master_name,master_ip,master_port,master_config_epoch.
+ *
+ * Returns REDIS_OK if the PUBLISH was queued correctly, otherwise
+ * REDIS_ERR is returned. */</doc>

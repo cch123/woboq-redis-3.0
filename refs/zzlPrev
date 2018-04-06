@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1218' type='void zzlPrev(unsigned char * zl, unsigned char ** eptr, unsigned char ** sptr)'/>
+<def f='redis/src/t_zset.c' l='720' ll='735' type='void zzlPrev(unsigned char * zl, unsigned char ** eptr, unsigned char ** sptr)'/>
+<use f='redis/src/t_zset.c' l='2159' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2286' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2318' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2638' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2665' u='c' c='genericZrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='718'>/* Move to the previous entry based on the values in eptr and sptr. Both are
+ * set to NULL when there is no next entry. */</doc>

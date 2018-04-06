@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1421' type='void typeCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='615' ll='633' type='void typeCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='234' u='r'/>
+<use f='redis/src/redis.c' l='234' u='r'/>
+<use f='redis/src/redis.c' l='234' u='r'/>
+<use f='redis/src/redis.c' l='234' u='r'/>

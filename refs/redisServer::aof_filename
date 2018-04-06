@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='738' type='char *'/>
+<use f='redis/src/aof.c' l='237' u='r' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='1431' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1440' u='r' c='backgroundRewriteDoneHandler'/>
+<offset>12672</offset>
+<doc f='redis/src/redis.h' l='738'>/* Name of the AOF file */</doc>
+<use f='redis/src/config.c' l='338' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='339' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1841' u='r' c='rewriteConfig'/>
+<use f='redis/src/debug.c' l='279' u='r' c='debugCommand'/>
+<use f='redis/src/redis.c' l='1444' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1857' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='3535' u='r' c='loadDataFromDisk'/>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lstate.h' l='142' type='struct Proto'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lgc.c' l='106' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='308' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='380' macro='1' u='a'/>

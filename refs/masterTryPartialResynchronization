@@ -1,0 +1,7 @@
+<def f='redis/src/replication.c' l='357' ll='438' type='int masterTryPartialResynchronization(redisClient * c)'/>
+<use f='redis/src/replication.c' l='496' u='c' c='syncCommand'/>
+<doc f='redis/src/replication.c' l='352'>/* This function handles the PSYNC command from the point of view of a
+ * master receiving a request for partial resynchronization.
+ *
+ * On success return REDIS_OK, otherwise REDIS_ERR is returned and we proceed
+ * with the usual full resync. */</doc>

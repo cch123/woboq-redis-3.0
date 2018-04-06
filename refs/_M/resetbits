@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lgc.h' l='27'/>
+<doc f='redis/deps/lua/src/lgc.h' l='24'>/*
+** some userful bit tricks
+*/</doc>

@@ -1,0 +1,7 @@
+<def f='redis/src/aof.c' l='1214' ll='1240' type='int aofCreatePipes()'/>
+<use f='redis/src/aof.c' l='1274' u='c' c='rewriteAppendOnlyFileBackground'/>
+<doc f='redis/src/aof.c' l='1209'>/* Create the pipes used for parent - child process IPC during rewrite.
+ * We have a data pipe used to send AOF incremental diffs to the child,
+ * and two other pipes used by the children to signal it finished with
+ * the rewrite so no more data should be written, and another for the
+ * parent to acknowledge it understood this new condition. */</doc>

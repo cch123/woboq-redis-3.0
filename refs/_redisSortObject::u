@@ -1,0 +1,33 @@
+<dec f='redis/src/redis.h' l='942' type='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/redis.h:939:5)'/>
+<offset>64</offset>
+<use f='redis/src/sort.c' l='144' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='144' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='146' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='146' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='157' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='157' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='159' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='159' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='161' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='168' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='168' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='172' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='172' u='m' c='sortCompare'/>
+<use f='redis/src/sort.c' l='351' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='352' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='361' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='362' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='397' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='398' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='415' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='416' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='439' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='444' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='446' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='446' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='446' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='446' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='446' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='454' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='564' u='m' c='sortCommand'/>
+<use f='redis/src/sort.c' l='565' u='m' c='sortCommand'/>

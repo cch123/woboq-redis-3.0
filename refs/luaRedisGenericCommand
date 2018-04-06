@@ -1,0 +1,3 @@
+<def f='redis/src/scripting.c' l='206' ll='452' type='int luaRedisGenericCommand(lua_State * lua, int raise_error)'/>
+<use f='redis/src/scripting.c' l='455' u='c' c='luaRedisCallCommand'/>
+<use f='redis/src/scripting.c' l='459' u='c' c='luaRedisPCallCommand'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='521' type='size_t'/>
+<use f='redis/src/aof.c' l='560' u='w' c='createFakeClient'/>
+<offset>384</offset>
+<doc f='redis/src/redis.h' l='521'>/* Recent (100ms or more) peak of querybuf size */</doc>
+<use f='redis/src/networking.c' l='91' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='1191' u='r' c='readQueryFromClient'/>
+<use f='redis/src/networking.c' l='1191' u='w' c='readQueryFromClient'/>
+<use f='redis/src/redis.c' l='951' u='r' c='clientsCronResizeQueryBuffer'/>
+<use f='redis/src/redis.c' l='961' u='w' c='clientsCronResizeQueryBuffer'/>

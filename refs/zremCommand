@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1470' type='void zremCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='175' u='r'/>
+<use f='redis/src/redis.c' l='175' u='r'/>
+<use f='redis/src/redis.c' l='175' u='r'/>
+<use f='redis/src/redis.c' l='175' u='r'/>
+<def f='redis/src/t_zset.c' l='1317' ll='1375' type='void zremCommand(redisClient * c)'/>

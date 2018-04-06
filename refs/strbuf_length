@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='63' type='int strbuf_length(strbuf_t * s)'/>
+<def f='redis/deps/lua/src/strbuf.h' l='111' ll='114' type='int strbuf_length(strbuf_t * s)'/>

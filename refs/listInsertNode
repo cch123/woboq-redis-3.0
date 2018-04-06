@@ -1,0 +1,4 @@
+<dec f='redis/src/adlist.h' l='77' type='list * listInsertNode(list * list, listNode * old_node, void * value, int after)'/>
+<def f='redis/src/adlist.c' l='126' ll='153' type='list * listInsertNode(list * list, listNode * old_node, void * value, int after)'/>
+<use f='redis/src/t_list.c' l='221' u='c' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='223' u='c' c='listTypeInsert'/>

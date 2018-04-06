@@ -1,0 +1,3 @@
+<dec f='redis/src/rio.h' l='45' type='off_t (*)(struct _rio *)'/>
+<use f='redis/src/rio.h' l='120' u='r' c='rioTell'/>
+<offset>128</offset>

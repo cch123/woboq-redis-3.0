@@ -1,0 +1,5 @@
+<def f='redis/deps/linenoise/linenoise.c' l='637' ll='642' type='void linenoiseEditMoveHome(struct linenoiseState * l)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='848' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='861' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='883' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='636'>/* Move cursor to the start of the line. */</doc>

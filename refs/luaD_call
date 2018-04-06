@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/ldo.h' l='43' type='void luaD_call(lua_State * L, StkId func, int nResults)'/>
+<use f='redis/deps/lua/src/lapi.c' l='782' u='c' c='lua_call'/>
+<use f='redis/deps/lua/src/lapi.c' l='800' u='c' c='f_call'/>
+<use f='redis/deps/lua/src/lapi.c' l='846' u='c' c='f_Ccall'/>
+<use f='redis/deps/lua/src/ldebug.c' l='625' u='c' c='luaG_errormsg'/>
+<def f='redis/deps/lua/src/ldo.c' l='370' ll='381' type='void luaD_call(lua_State * L, StkId func, int nResults)'/>
+<doc f='redis/deps/lua/src/ldo.c' l='364'>/*
+** Call a function (C or Lua). The function to be called is at *func.
+** The arguments are on the stack, right after the function.
+** When returns, all the results are on the stack, starting at the original
+** function position.
+*/</doc>
+<use f='redis/deps/lua/src/lgc.c' l='467' u='c' c='GCTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='88' u='c' c='callTMres'/>
+<use f='redis/deps/lua/src/lvm.c' l='104' u='c' c='callTM'/>
+<use f='redis/deps/lua/src/lvm.c' l='687' u='c' c='luaV_execute'/>

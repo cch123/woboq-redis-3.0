@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='1165' type='void replicationScriptCacheFlush()'/>
+<use f='redis/src/aof.c' l='1317' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/replication.c' l='458' u='c' c='startBgsaveForReplication'/>
+<def f='redis/src/replication.c' l='1751' ll='1755' type='void replicationScriptCacheFlush()'/>
+<use f='redis/src/replication.c' l='2057' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='1740'>/* Empty the script cache. Should be called every time we are no longer sure
+ * that every slave knows about all the scripts in our set, or when the
+ * current AOF &quot;context&quot; is no longer aware of the script. In general we
+ * should flush the cache:
+ *
+ * 1) Every time a new slave reconnects to this master and performs a
+ *    full SYNC (PSYNC does not require flushing).
+ * 2) Every time an AOF rewrite is performed.
+ * 3) Every time we are left without slaves at all, and AOF is off, in order
+ *    to reclaim otherwise unused memory.
+ */</doc>
+<use f='redis/src/scripting.c' l='1157' u='c' c='scriptCommand'/>

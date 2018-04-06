@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lstring.h source code [redis/deps/lua/src/lstring.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lstring.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lstring.h.html'>lstring.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lstring.h,v 1.43.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** String table (keep all strings handled by Lua)</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td><u>#<span data-ppcond="7">ifndef</span> <span class="macro" data-ref="_M/lstring_h">lstring_h</span></u></td></tr>
+<tr><th id="8">8</th><td><u>#define <dfn class="macro" id="_M/lstring_h" data-ref="_M/lstring_h">lstring_h</dfn></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#include <a href="lgc.h.html">"lgc.h"</a></u></td></tr>
+<tr><th id="12">12</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="lstate.h.html">"lstate.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#define <dfn class="macro" id="_M/sizestring" data-ref="_M/sizestring">sizestring</dfn>(s)	(sizeof(union TString)+((s)-&gt;len+1)*sizeof(char))</u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><u>#define <dfn class="macro" id="_M/sizeudata" data-ref="_M/sizeudata">sizeudata</dfn>(u)	(sizeof(union Udata)+(u)-&gt;len)</u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#define <dfn class="macro" id="_M/luaS_new" data-ref="_M/luaS_new">luaS_new</dfn>(L, s)	(luaS_newlstr(L, s, strlen(s)))</u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/luaS_newliteral" data-ref="_M/luaS_newliteral">luaS_newliteral</dfn>(L, s)	(luaS_newlstr(L, "" s, \</u></td></tr>
+<tr><th id="22">22</th><td><u>                                 (sizeof(s)/sizeof(char))-1))</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td><u>#define <dfn class="macro" id="_M/luaS_fix" data-ref="_M/luaS_fix">luaS_fix</dfn>(s)	l_setbit((s)-&gt;tsv.marked, FIXEDBIT)</u></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <em>void</em> <dfn class="decl fn" id="luaS_resize" title='luaS_resize' data-ref="luaS_resize">luaS_resize</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="833L" title='L' data-type='lua_State *' data-ref="833L">L</dfn>, <em>int</em> <dfn class="local col4 decl" id="834newsize" title='newsize' data-type='int' data-ref="834newsize">newsize</dfn>);</td></tr>
+<tr><th id="27">27</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <a class="typedef" href="lobject.h.html#Udata" title='Udata' data-type='union Udata' data-ref="Udata">Udata</a> *<dfn class="decl fn" id="luaS_newudata" title='luaS_newudata' data-ref="luaS_newudata">luaS_newudata</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col5 decl" id="835L" title='L' data-type='lua_State *' data-ref="835L">L</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="836s" title='s' data-type='size_t' data-ref="836s">s</dfn>, <a class="typedef" href="lobject.h.html#Table" title='Table' data-type='struct Table' data-ref="Table">Table</a> *<dfn class="local col7 decl" id="837e" title='e' data-type='Table *' data-ref="837e">e</dfn>);</td></tr>
+<tr><th id="28">28</th><td><a class="macro" href="luaconf.h.html#187" title="__attribute__((visibility(&quot;hidden&quot;))) extern" data-ref="_M/LUAI_FUNC">LUAI_FUNC</a> <a class="typedef" href="lobject.h.html#TString" title='TString' data-type='union TString' data-ref="TString">TString</a> *<dfn class="decl fn" id="luaS_newlstr" title='luaS_newlstr' data-ref="luaS_newlstr">luaS_newlstr</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="838L" title='L' data-type='lua_State *' data-ref="838L">L</dfn>, <em>const</em> <em>char</em> *<dfn class="local col9 decl" id="839str" title='str' data-type='const char *' data-ref="839str">str</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col0 decl" id="840l" title='l' data-type='size_t' data-ref="840l">l</dfn>);</td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#<span data-ppcond="7">endif</span></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='lapi.c.html'>redis/deps/lua/src/lapi.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

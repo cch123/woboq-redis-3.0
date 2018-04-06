@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='1231' type='void propagate(struct redisCommand * cmd, int dbid, robj ** argv, int argc, int flags)'/>
+<use f='redis/src/multi.c' l='109' u='c' c='execCommandPropagateMulti'/>
+<def f='redis/src/redis.c' l='2009' ll='2016' type='void propagate(struct redisCommand * cmd, int dbid, robj ** argv, int argc, int flags)'/>
+<use f='redis/src/redis.c' l='2095' u='c' c='call'/>
+<use f='redis/src/redis.c' l='2111' u='c' c='call'/>
+<doc f='redis/src/redis.c' l='2001'>/* Propagate the specified command (in the context of the specified database id)
+ * to AOF and Slaves.
+ *
+ * flags are an xor between:
+ * + REDIS_PROPAGATE_NONE (no propagation of command at all)
+ * + REDIS_PROPAGATE_AOF (propagate into the AOF file if is enabled)
+ * + REDIS_PROPAGATE_REPL (propagate into the replication link)
+ */</doc>
+<use f='redis/src/t_list.c' l='897' u='c' c='serveClientBlockedOnList'/>
+<use f='redis/src/t_list.c' l='915' u='c' c='serveClientBlockedOnList'/>
+<use f='redis/src/t_list.c' l='925' u='c' c='serveClientBlockedOnList'/>

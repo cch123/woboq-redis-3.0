@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='562' ll='565'/>
+<size>16</size>
+<mbr r='saveparam::seconds' o='0' t='time_t'/>
+<mbr r='saveparam::changes' o='64' t='int'/>

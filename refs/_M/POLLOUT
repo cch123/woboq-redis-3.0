@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/poll.h' l='27'/>
+<use f='redis/deps/hiredis/net.c' l='184' u='c'/>
+<use f='redis/src/ae.c' l='437' u='c'/>
+<use f='redis/src/ae.c' l='441' u='c'/>

@@ -1,0 +1,9 @@
+<def f='redis/deps/hiredis/hiredis.h' l='166' ll='173'/>
+<size>160</size>
+<doc f='redis/deps/hiredis/hiredis.h' l='165'>/* Context for a connection to Redis */</doc>
+<mbr r='redisContext::err' o='0' t='int'/>
+<mbr r='redisContext::errstr' o='32' t='char [128]'/>
+<mbr r='redisContext::fd' o='1056' t='int'/>
+<mbr r='redisContext::flags' o='1088' t='int'/>
+<mbr r='redisContext::obuf' o='1152' t='char *'/>
+<mbr r='redisContext::reader' o='1216' t='redisReader *'/>

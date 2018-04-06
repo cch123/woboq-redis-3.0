@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='730' type='int'/>
+<offset>11872</offset>
+<doc f='redis/src/redis.h' l='730'>/* Can be disabled for testing purposes. */</doc>
+<use f='redis/src/debug.c' l='373' u='w' c='debugCommand'/>
+<use f='redis/src/redis.c' l='1000' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1274' u='r' c='beforeSleep'/>
+<use f='redis/src/redis.c' l='1416' u='w' c='initServerConfig'/>

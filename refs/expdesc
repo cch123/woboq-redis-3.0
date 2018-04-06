@@ -1,0 +1,6 @@
+<def f='redis/deps/lua/src/lparser.h' l='37' ll='45'/>
+<size>24</size>
+<mbr r='expdesc::k' o='0' t='expkind'/>
+<mbr r='expdesc::u' o='64' t='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/lparser.h:39:3)'/>
+<mbr r='expdesc::t' o='128' t='int'/>
+<mbr r='expdesc::f' o='160' t='int'/>

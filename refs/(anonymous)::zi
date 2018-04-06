@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='955' type='unsigned char *'/>
+<dec f='redis/src/redis.h' l='962' type='unsigned char *'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='962'>/* Entry in ziplist */</doc>
+<use f='redis/src/t_list.c' l='129' u='w' c='listTypeInitIterator'/>
+<use f='redis/src/t_list.c' l='152' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='152' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='153' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='155' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='155' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='157' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='157' u='r' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='183' u='r' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='184' u='r' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='206' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='216' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='236' u='r' c='listTypeEqual'/>
+<use f='redis/src/t_list.c' l='248' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='253' u='w' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='255' u='w' c='listTypeDelete'/>

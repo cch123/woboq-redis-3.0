@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lobject.h' l='370' type='int luaO_int2fb(unsigned int x)'/>
+<def f='redis/deps/lua/src/lobject.c' l='35' ll='43' type='int luaO_int2fb(unsigned int x)'/>
+<doc f='redis/deps/lua/src/lobject.c' l='30'>/*
+** converts an integer to a &quot;floating point byte&quot;, represented as
+** (eeeeexxx), where the real value is (1xxx) * 2^(eeeee - 1) if
+** eeeee != 0 and (xxx) otherwise.
+*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='535' u='c' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='536' u='c' c='constructor'/>

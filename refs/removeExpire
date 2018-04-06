@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1309' type='int removeExpire(redisDb * db, robj * key)'/>
+<doc f='redis/src/redis.h' l='1308'>/* db.c -- Keyspace access API */</doc>
+<use f='redis/src/db.c' l='127' u='c' c='setKey'/>
+<def f='redis/src/db.c' l='766' ll='771' type='int removeExpire(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='968' u='c' c='persistCommand'/>
+<doc f='redis/src/db.c' l='762'>/*-----------------------------------------------------------------------------
+ * Expires API
+ *----------------------------------------------------------------------------*/</doc>

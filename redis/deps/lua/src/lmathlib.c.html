@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lmathlib.c source code [redis/deps/lua/src/lmathlib.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lmathlib.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lmathlib.c.html'>lmathlib.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lmathlib.c,v 1.67.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Standard mathematical library</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#include <a href="../../../../include/stdlib.h.html">&lt;stdlib.h&gt;</a></u></td></tr>
+<tr><th id="9">9</th><td><u>#include <a href="../../../../include/math.h.html">&lt;math.h&gt;</a></u></td></tr>
+<tr><th id="10">10</th><td></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/lmathlib_c" data-ref="_M/lmathlib_c">lmathlib_c</dfn></u></td></tr>
+<tr><th id="12">12</th><td><u>#define <dfn class="macro" id="_M/LUA_LIB" data-ref="_M/LUA_LIB">LUA_LIB</dfn></u></td></tr>
+<tr><th id="13">13</th><td></td></tr>
+<tr><th id="14">14</th><td><u>#include <a href="lua.h.html">"lua.h"</a></u></td></tr>
+<tr><th id="15">15</th><td></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="lauxlib.h.html">"lauxlib.h"</a></u></td></tr>
+<tr><th id="17">17</th><td><u>#include <a href="lualib.h.html">"lualib.h"</a></u></td></tr>
+<tr><th id="18">18</th><td></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td><u>#undef <span class="macro" data-ref="_M/PI">PI</span></u></td></tr>
+<tr><th id="21">21</th><td><u>#define <dfn class="macro" id="_M/PI" data-ref="_M/PI">PI</dfn> (3.14159265358979323846)</u></td></tr>
+<tr><th id="22">22</th><td><u>#define <dfn class="macro" id="_M/RADIANS_PER_DEGREE" data-ref="_M/RADIANS_PER_DEGREE">RADIANS_PER_DEGREE</dfn> (PI/180.0)</u></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+<tr><th id="24">24</th><td></td></tr>
+<tr><th id="25">25</th><td></td></tr>
+<tr><th id="26">26</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_abs" title='math_abs' data-type='int math_abs(lua_State * L)' data-ref="math_abs">math_abs</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="1L" title='L' data-type='lua_State *' data-ref="1L">L</dfn>) {</td></tr>
+<tr><th id="27">27</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#181" title='fabs' data-ref="fabs">fabs</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="28">28</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="29">29</th><td>}</td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_sin" title='math_sin' data-type='int math_sin(lua_State * L)' data-ref="math_sin">math_sin</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col2 decl" id="2L" title='L' data-type='lua_State *' data-ref="2L">L</dfn>) {</td></tr>
+<tr><th id="32">32</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col2 ref" href="#2L" title='L' data-ref="2L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#65" title='sin' data-ref="sin">sin</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col2 ref" href="#2L" title='L' data-ref="2L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="33">33</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="34">34</th><td>}</td></tr>
+<tr><th id="35">35</th><td></td></tr>
+<tr><th id="36">36</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_sinh" title='math_sinh' data-type='int math_sinh(lua_State * L)' data-ref="math_sinh">math_sinh</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="3L" title='L' data-type='lua_State *' data-ref="3L">L</dfn>) {</td></tr>
+<tr><th id="37">37</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col3 ref" href="#3L" title='L' data-ref="3L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#74" title='sinh' data-ref="sinh">sinh</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col3 ref" href="#3L" title='L' data-ref="3L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="38">38</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="39">39</th><td>}</td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_cos" title='math_cos' data-type='int math_cos(lua_State * L)' data-ref="math_cos">math_cos</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="4L" title='L' data-type='lua_State *' data-ref="4L">L</dfn>) {</td></tr>
+<tr><th id="42">42</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col4 ref" href="#4L" title='L' data-ref="4L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#63" title='cos' data-ref="cos">cos</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col4 ref" href="#4L" title='L' data-ref="4L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="43">43</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="44">44</th><td>}</td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_cosh" title='math_cosh' data-type='int math_cosh(lua_State * L)' data-ref="math_cosh">math_cosh</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col5 decl" id="5L" title='L' data-type='lua_State *' data-ref="5L">L</dfn>) {</td></tr>
+<tr><th id="47">47</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col5 ref" href="#5L" title='L' data-ref="5L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#72" title='cosh' data-ref="cosh">cosh</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col5 ref" href="#5L" title='L' data-ref="5L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="48">48</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="49">49</th><td>}</td></tr>
+<tr><th id="50">50</th><td></td></tr>
+<tr><th id="51">51</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_tan" title='math_tan' data-type='int math_tan(lua_State * L)' data-ref="math_tan">math_tan</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col6 decl" id="6L" title='L' data-type='lua_State *' data-ref="6L">L</dfn>) {</td></tr>
+<tr><th id="52">52</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col6 ref" href="#6L" title='L' data-ref="6L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#67" title='tan' data-ref="tan">tan</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col6 ref" href="#6L" title='L' data-ref="6L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="53">53</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="54">54</th><td>}</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_tanh" title='math_tanh' data-type='int math_tanh(lua_State * L)' data-ref="math_tanh">math_tanh</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col7 decl" id="7L" title='L' data-type='lua_State *' data-ref="7L">L</dfn>) {</td></tr>
+<tr><th id="57">57</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col7 ref" href="#7L" title='L' data-ref="7L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#76" title='tanh' data-ref="tanh">tanh</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col7 ref" href="#7L" title='L' data-ref="7L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="58">58</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="59">59</th><td>}</td></tr>
+<tr><th id="60">60</th><td></td></tr>
+<tr><th id="61">61</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_asin" title='math_asin' data-type='int math_asin(lua_State * L)' data-ref="math_asin">math_asin</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="8L" title='L' data-type='lua_State *' data-ref="8L">L</dfn>) {</td></tr>
+<tr><th id="62">62</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#8L" title='L' data-ref="8L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#56" title='asin' data-ref="asin">asin</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col8 ref" href="#8L" title='L' data-ref="8L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="63">63</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="64">64</th><td>}</td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_acos" title='math_acos' data-type='int math_acos(lua_State * L)' data-ref="math_acos">math_acos</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col9 decl" id="9L" title='L' data-type='lua_State *' data-ref="9L">L</dfn>) {</td></tr>
+<tr><th id="67">67</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col9 ref" href="#9L" title='L' data-ref="9L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#54" title='acos' data-ref="acos">acos</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col9 ref" href="#9L" title='L' data-ref="9L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="68">68</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="69">69</th><td>}</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_atan" title='math_atan' data-type='int math_atan(lua_State * L)' data-ref="math_atan">math_atan</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col0 decl" id="10L" title='L' data-type='lua_State *' data-ref="10L">L</dfn>) {</td></tr>
+<tr><th id="72">72</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col0 ref" href="#10L" title='L' data-ref="10L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#58" title='atan' data-ref="atan">atan</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col0 ref" href="#10L" title='L' data-ref="10L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="73">73</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="74">74</th><td>}</td></tr>
+<tr><th id="75">75</th><td></td></tr>
+<tr><th id="76">76</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_atan2" title='math_atan2' data-type='int math_atan2(lua_State * L)' data-ref="math_atan2">math_atan2</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="11L" title='L' data-type='lua_State *' data-ref="11L">L</dfn>) {</td></tr>
+<tr><th id="77">77</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col1 ref" href="#11L" title='L' data-ref="11L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#60" title='atan2' data-ref="atan2">atan2</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col1 ref" href="#11L" title='L' data-ref="11L">L</a>, <var>1</var>), <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col1 ref" href="#11L" title='L' data-ref="11L">L</a>, <var>2</var>)));</td></tr>
+<tr><th id="78">78</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="79">79</th><td>}</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_ceil" title='math_ceil' data-type='int math_ceil(lua_State * L)' data-ref="math_ceil">math_ceil</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col2 decl" id="12L" title='L' data-type='lua_State *' data-ref="12L">L</dfn>) {</td></tr>
+<tr><th id="82">82</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col2 ref" href="#12L" title='L' data-ref="12L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#178" title='ceil' data-ref="ceil">ceil</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col2 ref" href="#12L" title='L' data-ref="12L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="83">83</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="84">84</th><td>}</td></tr>
+<tr><th id="85">85</th><td></td></tr>
+<tr><th id="86">86</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_floor" title='math_floor' data-type='int math_floor(lua_State * L)' data-ref="math_floor">math_floor</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="13L" title='L' data-type='lua_State *' data-ref="13L">L</dfn>) {</td></tr>
+<tr><th id="87">87</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col3 ref" href="#13L" title='L' data-ref="13L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#184" title='floor' data-ref="floor">floor</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col3 ref" href="#13L" title='L' data-ref="13L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="88">88</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="89">89</th><td>}</td></tr>
+<tr><th id="90">90</th><td></td></tr>
+<tr><th id="91">91</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_fmod" title='math_fmod' data-type='int math_fmod(lua_State * L)' data-ref="math_fmod">math_fmod</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="14L" title='L' data-type='lua_State *' data-ref="14L">L</dfn>) {</td></tr>
+<tr><th id="92">92</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col4 ref" href="#14L" title='L' data-ref="14L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#187" title='fmod' data-ref="fmod">fmod</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col4 ref" href="#14L" title='L' data-ref="14L">L</a>, <var>1</var>), <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col4 ref" href="#14L" title='L' data-ref="14L">L</a>, <var>2</var>)));</td></tr>
+<tr><th id="93">93</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="94">94</th><td>}</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_modf" title='math_modf' data-type='int math_modf(lua_State * L)' data-ref="math_modf">math_modf</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col5 decl" id="15L" title='L' data-type='lua_State *' data-ref="15L">L</dfn>) {</td></tr>
+<tr><th id="97">97</th><td>  <em>double</em> <dfn class="local col6 decl" id="16ip" title='ip' data-type='double' data-ref="16ip">ip</dfn>;</td></tr>
+<tr><th id="98">98</th><td>  <em>double</em> <dfn class="local col7 decl" id="17fp" title='fp' data-type='double' data-ref="17fp">fp</dfn> = <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#115" title='modf' data-ref="modf">modf</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col5 ref" href="#15L" title='L' data-ref="15L">L</a>, <var>1</var>), &amp;<a class="local col6 ref" href="#16ip" title='ip' data-ref="16ip">ip</a>);</td></tr>
+<tr><th id="99">99</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col5 ref" href="#15L" title='L' data-ref="15L">L</a>, <a class="local col6 ref" href="#16ip" title='ip' data-ref="16ip">ip</a>);</td></tr>
+<tr><th id="100">100</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col5 ref" href="#15L" title='L' data-ref="15L">L</a>, <a class="local col7 ref" href="#17fp" title='fp' data-ref="17fp">fp</a>);</td></tr>
+<tr><th id="101">101</th><td>  <b>return</b> <var>2</var>;</td></tr>
+<tr><th id="102">102</th><td>}</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_sqrt" title='math_sqrt' data-type='int math_sqrt(lua_State * L)' data-ref="math_sqrt">math_sqrt</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="18L" title='L' data-type='lua_State *' data-ref="18L">L</dfn>) {</td></tr>
+<tr><th id="105">105</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#18L" title='L' data-ref="18L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#156" title='sqrt' data-ref="sqrt">sqrt</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col8 ref" href="#18L" title='L' data-ref="18L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="106">106</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="107">107</th><td>}</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_pow" title='math_pow' data-type='int math_pow(lua_State * L)' data-ref="math_pow">math_pow</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col9 decl" id="19L" title='L' data-type='lua_State *' data-ref="19L">L</dfn>) {</td></tr>
+<tr><th id="110">110</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col9 ref" href="#19L" title='L' data-ref="19L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#153" title='pow' data-ref="pow">pow</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col9 ref" href="#19L" title='L' data-ref="19L">L</a>, <var>1</var>), <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col9 ref" href="#19L" title='L' data-ref="19L">L</a>, <var>2</var>)));</td></tr>
+<tr><th id="111">111</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="112">112</th><td>}</td></tr>
+<tr><th id="113">113</th><td></td></tr>
+<tr><th id="114">114</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_log" title='math_log' data-type='int math_log(lua_State * L)' data-ref="math_log">math_log</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col0 decl" id="20L" title='L' data-type='lua_State *' data-ref="20L">L</dfn>) {</td></tr>
+<tr><th id="115">115</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col0 ref" href="#20L" title='L' data-ref="20L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#109" title='log' data-ref="log">log</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col0 ref" href="#20L" title='L' data-ref="20L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="116">116</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="117">117</th><td>}</td></tr>
+<tr><th id="118">118</th><td></td></tr>
+<tr><th id="119">119</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_log10" title='math_log10' data-type='int math_log10(lua_State * L)' data-ref="math_log10">math_log10</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="21L" title='L' data-type='lua_State *' data-ref="21L">L</dfn>) {</td></tr>
+<tr><th id="120">120</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col1 ref" href="#21L" title='L' data-ref="21L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#112" title='log10' data-ref="log10">log10</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col1 ref" href="#21L" title='L' data-ref="21L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="121">121</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="122">122</th><td>}</td></tr>
+<tr><th id="123">123</th><td></td></tr>
+<tr><th id="124">124</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_exp" title='math_exp' data-type='int math_exp(lua_State * L)' data-ref="math_exp">math_exp</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col2 decl" id="22L" title='L' data-type='lua_State *' data-ref="22L">L</dfn>) {</td></tr>
+<tr><th id="125">125</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col2 ref" href="#22L" title='L' data-ref="22L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#100" title='exp' data-ref="exp">exp</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col2 ref" href="#22L" title='L' data-ref="22L">L</a>, <var>1</var>)));</td></tr>
+<tr><th id="126">126</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="127">127</th><td>}</td></tr>
+<tr><th id="128">128</th><td></td></tr>
+<tr><th id="129">129</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_deg" title='math_deg' data-type='int math_deg(lua_State * L)' data-ref="math_deg">math_deg</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="23L" title='L' data-type='lua_State *' data-ref="23L">L</dfn>) {</td></tr>
+<tr><th id="130">130</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col3 ref" href="#23L" title='L' data-ref="23L">L</a>, <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col3 ref" href="#23L" title='L' data-ref="23L">L</a>, <var>1</var>)/<a class="macro" href="#22" title="((3.14159265358979323846)/180.0)" data-ref="_M/RADIANS_PER_DEGREE">RADIANS_PER_DEGREE</a>);</td></tr>
+<tr><th id="131">131</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="132">132</th><td>}</td></tr>
+<tr><th id="133">133</th><td></td></tr>
+<tr><th id="134">134</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_rad" title='math_rad' data-type='int math_rad(lua_State * L)' data-ref="math_rad">math_rad</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="24L" title='L' data-type='lua_State *' data-ref="24L">L</dfn>) {</td></tr>
+<tr><th id="135">135</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col4 ref" href="#24L" title='L' data-ref="24L">L</a>, <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col4 ref" href="#24L" title='L' data-ref="24L">L</a>, <var>1</var>)*<a class="macro" href="#22" title="((3.14159265358979323846)/180.0)" data-ref="_M/RADIANS_PER_DEGREE">RADIANS_PER_DEGREE</a>);</td></tr>
+<tr><th id="136">136</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="137">137</th><td>}</td></tr>
+<tr><th id="138">138</th><td></td></tr>
+<tr><th id="139">139</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_frexp" title='math_frexp' data-type='int math_frexp(lua_State * L)' data-ref="math_frexp">math_frexp</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col5 decl" id="25L" title='L' data-type='lua_State *' data-ref="25L">L</dfn>) {</td></tr>
+<tr><th id="140">140</th><td>  <em>int</em> <dfn class="local col6 decl" id="26e" title='e' data-type='int' data-ref="26e">e</dfn>;</td></tr>
+<tr><th id="141">141</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col5 ref" href="#25L" title='L' data-ref="25L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#103" title='frexp' data-ref="frexp">frexp</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col5 ref" href="#25L" title='L' data-ref="25L">L</a>, <var>1</var>), &amp;<a class="local col6 ref" href="#26e" title='e' data-ref="26e">e</a>));</td></tr>
+<tr><th id="142">142</th><td>  <a class="ref fn" href="lua.h.html#lua_pushinteger" title='lua_pushinteger' data-ref="lua_pushinteger">lua_pushinteger</a>(<a class="local col5 ref" href="#25L" title='L' data-ref="25L">L</a>, <a class="local col6 ref" href="#26e" title='e' data-ref="26e">e</a>);</td></tr>
+<tr><th id="143">143</th><td>  <b>return</b> <var>2</var>;</td></tr>
+<tr><th id="144">144</th><td>}</td></tr>
+<tr><th id="145">145</th><td></td></tr>
+<tr><th id="146">146</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_ldexp" title='math_ldexp' data-type='int math_ldexp(lua_State * L)' data-ref="math_ldexp">math_ldexp</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col7 decl" id="27L" title='L' data-type='lua_State *' data-ref="27L">L</dfn>) {</td></tr>
+<tr><th id="147">147</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col7 ref" href="#27L" title='L' data-ref="27L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#106" title='ldexp' data-ref="ldexp">ldexp</a>(<a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col7 ref" href="#27L" title='L' data-ref="27L">L</a>, <var>1</var>), <a class="macro" href="lauxlib.h.html#104" title="((int)luaL_checkinteger(L, (2)))" data-ref="_M/luaL_checkint">luaL_checkint</a>(<a class="local col7 ref" href="#27L" title='L' data-ref="27L">L</a>, <var>2</var>)));</td></tr>
+<tr><th id="148">148</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="149">149</th><td>}</td></tr>
+<tr><th id="150">150</th><td></td></tr>
+<tr><th id="151">151</th><td></td></tr>
+<tr><th id="152">152</th><td></td></tr>
+<tr><th id="153">153</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_min" title='math_min' data-type='int math_min(lua_State * L)' data-ref="math_min">math_min</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="28L" title='L' data-type='lua_State *' data-ref="28L">L</dfn>) {</td></tr>
+<tr><th id="154">154</th><td>  <em>int</em> <dfn class="local col9 decl" id="29n" title='n' data-type='int' data-ref="29n">n</dfn> = <a class="ref fn" href="lua.h.html#lua_gettop" title='lua_gettop' data-ref="lua_gettop">lua_gettop</a>(<a class="local col8 ref" href="#28L" title='L' data-ref="28L">L</a>);  <i>/* number of arguments */</i></td></tr>
+<tr><th id="155">155</th><td>  <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="local col0 decl" id="30dmin" title='dmin' data-type='lua_Number' data-ref="30dmin">dmin</dfn> = <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col8 ref" href="#28L" title='L' data-ref="28L">L</a>, <var>1</var>);</td></tr>
+<tr><th id="156">156</th><td>  <em>int</em> <dfn class="local col1 decl" id="31i" title='i' data-type='int' data-ref="31i">i</dfn>;</td></tr>
+<tr><th id="157">157</th><td>  <b>for</b> (<a class="local col1 ref" href="#31i" title='i' data-ref="31i">i</a>=<var>2</var>; <a class="local col1 ref" href="#31i" title='i' data-ref="31i">i</a>&lt;=<a class="local col9 ref" href="#29n" title='n' data-ref="29n">n</a>; <a class="local col1 ref" href="#31i" title='i' data-ref="31i">i</a>++) {</td></tr>
+<tr><th id="158">158</th><td>    <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="local col2 decl" id="32d" title='d' data-type='lua_Number' data-ref="32d">d</dfn> = <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col8 ref" href="#28L" title='L' data-ref="28L">L</a>, <a class="local col1 ref" href="#31i" title='i' data-ref="31i">i</a>);</td></tr>
+<tr><th id="159">159</th><td>    <b>if</b> (<a class="local col2 ref" href="#32d" title='d' data-ref="32d">d</a> &lt; <a class="local col0 ref" href="#30dmin" title='dmin' data-ref="30dmin">dmin</a>)</td></tr>
+<tr><th id="160">160</th><td>      <a class="local col0 ref" href="#30dmin" title='dmin' data-ref="30dmin">dmin</a> = <a class="local col2 ref" href="#32d" title='d' data-ref="32d">d</a>;</td></tr>
+<tr><th id="161">161</th><td>  }</td></tr>
+<tr><th id="162">162</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#28L" title='L' data-ref="28L">L</a>, <a class="local col0 ref" href="#30dmin" title='dmin' data-ref="30dmin">dmin</a>);</td></tr>
+<tr><th id="163">163</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="164">164</th><td>}</td></tr>
+<tr><th id="165">165</th><td></td></tr>
+<tr><th id="166">166</th><td></td></tr>
+<tr><th id="167">167</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_max" title='math_max' data-type='int math_max(lua_State * L)' data-ref="math_max">math_max</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="33L" title='L' data-type='lua_State *' data-ref="33L">L</dfn>) {</td></tr>
+<tr><th id="168">168</th><td>  <em>int</em> <dfn class="local col4 decl" id="34n" title='n' data-type='int' data-ref="34n">n</dfn> = <a class="ref fn" href="lua.h.html#lua_gettop" title='lua_gettop' data-ref="lua_gettop">lua_gettop</a>(<a class="local col3 ref" href="#33L" title='L' data-ref="33L">L</a>);  <i>/* number of arguments */</i></td></tr>
+<tr><th id="169">169</th><td>  <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="local col5 decl" id="35dmax" title='dmax' data-type='lua_Number' data-ref="35dmax">dmax</dfn> = <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col3 ref" href="#33L" title='L' data-ref="33L">L</a>, <var>1</var>);</td></tr>
+<tr><th id="170">170</th><td>  <em>int</em> <dfn class="local col6 decl" id="36i" title='i' data-type='int' data-ref="36i">i</dfn>;</td></tr>
+<tr><th id="171">171</th><td>  <b>for</b> (<a class="local col6 ref" href="#36i" title='i' data-ref="36i">i</a>=<var>2</var>; <a class="local col6 ref" href="#36i" title='i' data-ref="36i">i</a>&lt;=<a class="local col4 ref" href="#34n" title='n' data-ref="34n">n</a>; <a class="local col6 ref" href="#36i" title='i' data-ref="36i">i</a>++) {</td></tr>
+<tr><th id="172">172</th><td>    <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="local col7 decl" id="37d" title='d' data-type='lua_Number' data-ref="37d">d</dfn> = <a class="ref fn" href="lauxlib.h.html#luaL_checknumber" title='luaL_checknumber' data-ref="luaL_checknumber">luaL_checknumber</a>(<a class="local col3 ref" href="#33L" title='L' data-ref="33L">L</a>, <a class="local col6 ref" href="#36i" title='i' data-ref="36i">i</a>);</td></tr>
+<tr><th id="173">173</th><td>    <b>if</b> (<a class="local col7 ref" href="#37d" title='d' data-ref="37d">d</a> &gt; <a class="local col5 ref" href="#35dmax" title='dmax' data-ref="35dmax">dmax</a>)</td></tr>
+<tr><th id="174">174</th><td>      <a class="local col5 ref" href="#35dmax" title='dmax' data-ref="35dmax">dmax</a> = <a class="local col7 ref" href="#37d" title='d' data-ref="37d">d</a>;</td></tr>
+<tr><th id="175">175</th><td>  }</td></tr>
+<tr><th id="176">176</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col3 ref" href="#33L" title='L' data-ref="33L">L</a>, <a class="local col5 ref" href="#35dmax" title='dmax' data-ref="35dmax">dmax</a>);</td></tr>
+<tr><th id="177">177</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="178">178</th><td>}</td></tr>
+<tr><th id="179">179</th><td></td></tr>
+<tr><th id="180">180</th><td></td></tr>
+<tr><th id="181">181</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_random" title='math_random' data-type='int math_random(lua_State * L)' data-ref="math_random">math_random</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col8 decl" id="38L" title='L' data-type='lua_State *' data-ref="38L">L</dfn>) {</td></tr>
+<tr><th id="182">182</th><td>  <i>/* the `%' avoids the (rare) case of r==1, and is needed also because on</i></td></tr>
+<tr><th id="183">183</th><td><i>     some systems (SunOS!) `rand()' may return a value larger than RAND_MAX */</i></td></tr>
+<tr><th id="184">184</th><td>  <a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a> <dfn class="local col9 decl" id="39r" title='r' data-type='lua_Number' data-ref="39r">r</dfn> = (<a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a>)(<a class="ref fn" href="../../../../include/stdlib.h.html#rand" title='rand' data-ref="rand">rand</a>()%<a class="macro" href="../../../../include/stdlib.h.html#128" title="2147483647" data-ref="_M/RAND_MAX">RAND_MAX</a>) / (<a class="typedef" href="lua.h.html#lua_Number" title='lua_Number' data-type='double' data-ref="lua_Number">lua_Number</a>)<a class="macro" href="../../../../include/stdlib.h.html#128" title="2147483647" data-ref="_M/RAND_MAX">RAND_MAX</a>;</td></tr>
+<tr><th id="185">185</th><td>  <b>switch</b> (<a class="ref fn" href="lua.h.html#lua_gettop" title='lua_gettop' data-ref="lua_gettop">lua_gettop</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>)) {  <i>/* check number of arguments */</i></td></tr>
+<tr><th id="186">186</th><td>    <b>case</b> <var>0</var>: {  <i>/* no arguments */</i></td></tr>
+<tr><th id="187">187</th><td>      <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <a class="local col9 ref" href="#39r" title='r' data-ref="39r">r</a>);  <i>/* Number between 0 and 1 */</i></td></tr>
+<tr><th id="188">188</th><td>      <b>break</b>;</td></tr>
+<tr><th id="189">189</th><td>    }</td></tr>
+<tr><th id="190">190</th><td>    <b>case</b> <var>1</var>: {  <i>/* only upper limit */</i></td></tr>
+<tr><th id="191">191</th><td>      <em>int</em> <dfn class="local col0 decl" id="40u" title='u' data-type='int' data-ref="40u">u</dfn> = <a class="macro" href="lauxlib.h.html#104" title="((int)luaL_checkinteger(L, (1)))" data-ref="_M/luaL_checkint">luaL_checkint</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <var>1</var>);</td></tr>
+<tr><th id="192">192</th><td>      <a class="macro" href="lauxlib.h.html#100" title="((void)((1&lt;=u) || luaL_argerror(L, (1), (&quot;interval is empty&quot;))))" data-ref="_M/luaL_argcheck">luaL_argcheck</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <var>1</var>&lt;=<a class="local col0 ref" href="#40u" title='u' data-ref="40u">u</a>, <var>1</var>, <q>"interval is empty"</q>);</td></tr>
+<tr><th id="193">193</th><td>      <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#184" title='floor' data-ref="floor">floor</a>(<a class="local col9 ref" href="#39r" title='r' data-ref="39r">r</a>*<a class="local col0 ref" href="#40u" title='u' data-ref="40u">u</a>)+<var>1</var>);  <i>/* int between 1 and `u' */</i></td></tr>
+<tr><th id="194">194</th><td>      <b>break</b>;</td></tr>
+<tr><th id="195">195</th><td>    }</td></tr>
+<tr><th id="196">196</th><td>    <b>case</b> <var>2</var>: {  <i>/* lower and upper limits */</i></td></tr>
+<tr><th id="197">197</th><td>      <em>int</em> <dfn class="local col1 decl" id="41l" title='l' data-type='int' data-ref="41l">l</dfn> = <a class="macro" href="lauxlib.h.html#104" title="((int)luaL_checkinteger(L, (1)))" data-ref="_M/luaL_checkint">luaL_checkint</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <var>1</var>);</td></tr>
+<tr><th id="198">198</th><td>      <em>int</em> <dfn class="local col2 decl" id="42u" title='u' data-type='int' data-ref="42u">u</dfn> = <a class="macro" href="lauxlib.h.html#104" title="((int)luaL_checkinteger(L, (2)))" data-ref="_M/luaL_checkint">luaL_checkint</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <var>2</var>);</td></tr>
+<tr><th id="199">199</th><td>      <a class="macro" href="lauxlib.h.html#100" title="((void)((l&lt;=u) || luaL_argerror(L, (2), (&quot;interval is empty&quot;))))" data-ref="_M/luaL_argcheck">luaL_argcheck</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <a class="local col1 ref" href="#41l" title='l' data-ref="41l">l</a>&lt;=<a class="local col2 ref" href="#42u" title='u' data-ref="42u">u</a>, <var>2</var>, <q>"interval is empty"</q>);</td></tr>
+<tr><th id="200">200</th><td>      <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <a class="ref fn" href="../../../../include/x86_64-linux-gnu/bits/mathcalls.h.html#184" title='floor' data-ref="floor">floor</a>(<a class="local col9 ref" href="#39r" title='r' data-ref="39r">r</a>*(<a class="local col2 ref" href="#42u" title='u' data-ref="42u">u</a>-<a class="local col1 ref" href="#41l" title='l' data-ref="41l">l</a>+<var>1</var>))+<a class="local col1 ref" href="#41l" title='l' data-ref="41l">l</a>);  <i>/* int between `l' and `u' */</i></td></tr>
+<tr><th id="201">201</th><td>      <b>break</b>;</td></tr>
+<tr><th id="202">202</th><td>    }</td></tr>
+<tr><th id="203">203</th><td>    <b>default</b>: <b>return</b> <a class="ref fn" href="lauxlib.h.html#luaL_error" title='luaL_error' data-ref="luaL_error">luaL_error</a>(<a class="local col8 ref" href="#38L" title='L' data-ref="38L">L</a>, <q>"wrong number of arguments"</q>);</td></tr>
+<tr><th id="204">204</th><td>  }</td></tr>
+<tr><th id="205">205</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="206">206</th><td>}</td></tr>
+<tr><th id="207">207</th><td></td></tr>
+<tr><th id="208">208</th><td></td></tr>
+<tr><th id="209">209</th><td><em>static</em> <em>int</em> <dfn class="tu decl def fn" id="math_randomseed" title='math_randomseed' data-type='int math_randomseed(lua_State * L)' data-ref="math_randomseed">math_randomseed</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="43L" title='L' data-type='lua_State *' data-ref="43L">L</dfn>) {</td></tr>
+<tr><th id="210">210</th><td>  <a class="ref fn" href="../../../../include/stdlib.h.html#srand" title='srand' data-ref="srand">srand</a>(<a class="macro" href="lauxlib.h.html#104" title="((int)luaL_checkinteger(L, (1)))" data-ref="_M/luaL_checkint">luaL_checkint</a>(<a class="local col3 ref" href="#43L" title='L' data-ref="43L">L</a>, <var>1</var>));</td></tr>
+<tr><th id="211">211</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="212">212</th><td>}</td></tr>
+<tr><th id="213">213</th><td></td></tr>
+<tr><th id="214">214</th><td></td></tr>
+<tr><th id="215">215</th><td><em>static</em> <em>const</em> <a class="typedef" href="lauxlib.h.html#luaL_Reg" title='luaL_Reg' data-type='struct luaL_Reg' data-ref="luaL_Reg">luaL_Reg</a> <dfn class="tu decl def" id="mathlib" title='mathlib' data-type='const luaL_Reg [29]' data-ref="mathlib">mathlib</dfn>[] = {</td></tr>
+<tr><th id="216">216</th><td>  {<q>"abs"</q>,   <a class="tu ref fn" href="#math_abs" title='math_abs' data-use='r' data-ref="math_abs">math_abs</a>},</td></tr>
+<tr><th id="217">217</th><td>  {<q>"acos"</q>,  <a class="tu ref fn" href="#math_acos" title='math_acos' data-use='r' data-ref="math_acos">math_acos</a>},</td></tr>
+<tr><th id="218">218</th><td>  {<q>"asin"</q>,  <a class="tu ref fn" href="#math_asin" title='math_asin' data-use='r' data-ref="math_asin">math_asin</a>},</td></tr>
+<tr><th id="219">219</th><td>  {<q>"atan2"</q>, <a class="tu ref fn" href="#math_atan2" title='math_atan2' data-use='r' data-ref="math_atan2">math_atan2</a>},</td></tr>
+<tr><th id="220">220</th><td>  {<q>"atan"</q>,  <a class="tu ref fn" href="#math_atan" title='math_atan' data-use='r' data-ref="math_atan">math_atan</a>},</td></tr>
+<tr><th id="221">221</th><td>  {<q>"ceil"</q>,  <a class="tu ref fn" href="#math_ceil" title='math_ceil' data-use='r' data-ref="math_ceil">math_ceil</a>},</td></tr>
+<tr><th id="222">222</th><td>  {<q>"cosh"</q>,   <a class="tu ref fn" href="#math_cosh" title='math_cosh' data-use='r' data-ref="math_cosh">math_cosh</a>},</td></tr>
+<tr><th id="223">223</th><td>  {<q>"cos"</q>,   <a class="tu ref fn" href="#math_cos" title='math_cos' data-use='r' data-ref="math_cos">math_cos</a>},</td></tr>
+<tr><th id="224">224</th><td>  {<q>"deg"</q>,   <a class="tu ref fn" href="#math_deg" title='math_deg' data-use='r' data-ref="math_deg">math_deg</a>},</td></tr>
+<tr><th id="225">225</th><td>  {<q>"exp"</q>,   <a class="tu ref fn" href="#math_exp" title='math_exp' data-use='r' data-ref="math_exp">math_exp</a>},</td></tr>
+<tr><th id="226">226</th><td>  {<q>"floor"</q>, <a class="tu ref fn" href="#math_floor" title='math_floor' data-use='r' data-ref="math_floor">math_floor</a>},</td></tr>
+<tr><th id="227">227</th><td>  {<q>"fmod"</q>,   <a class="tu ref fn" href="#math_fmod" title='math_fmod' data-use='r' data-ref="math_fmod">math_fmod</a>},</td></tr>
+<tr><th id="228">228</th><td>  {<q>"frexp"</q>, <a class="tu ref fn" href="#math_frexp" title='math_frexp' data-use='r' data-ref="math_frexp">math_frexp</a>},</td></tr>
+<tr><th id="229">229</th><td>  {<q>"ldexp"</q>, <a class="tu ref fn" href="#math_ldexp" title='math_ldexp' data-use='r' data-ref="math_ldexp">math_ldexp</a>},</td></tr>
+<tr><th id="230">230</th><td>  {<q>"log10"</q>, <a class="tu ref fn" href="#math_log10" title='math_log10' data-use='r' data-ref="math_log10">math_log10</a>},</td></tr>
+<tr><th id="231">231</th><td>  {<q>"log"</q>,   <a class="tu ref fn" href="#math_log" title='math_log' data-use='r' data-ref="math_log">math_log</a>},</td></tr>
+<tr><th id="232">232</th><td>  {<q>"max"</q>,   <a class="tu ref fn" href="#math_max" title='math_max' data-use='r' data-ref="math_max">math_max</a>},</td></tr>
+<tr><th id="233">233</th><td>  {<q>"min"</q>,   <a class="tu ref fn" href="#math_min" title='math_min' data-use='r' data-ref="math_min">math_min</a>},</td></tr>
+<tr><th id="234">234</th><td>  {<q>"modf"</q>,   <a class="tu ref fn" href="#math_modf" title='math_modf' data-use='r' data-ref="math_modf">math_modf</a>},</td></tr>
+<tr><th id="235">235</th><td>  {<q>"pow"</q>,   <a class="tu ref fn" href="#math_pow" title='math_pow' data-use='r' data-ref="math_pow">math_pow</a>},</td></tr>
+<tr><th id="236">236</th><td>  {<q>"rad"</q>,   <a class="tu ref fn" href="#math_rad" title='math_rad' data-use='r' data-ref="math_rad">math_rad</a>},</td></tr>
+<tr><th id="237">237</th><td>  {<q>"random"</q>,     <a class="tu ref fn" href="#math_random" title='math_random' data-use='r' data-ref="math_random">math_random</a>},</td></tr>
+<tr><th id="238">238</th><td>  {<q>"randomseed"</q>, <a class="tu ref fn" href="#math_randomseed" title='math_randomseed' data-use='r' data-ref="math_randomseed">math_randomseed</a>},</td></tr>
+<tr><th id="239">239</th><td>  {<q>"sinh"</q>,   <a class="tu ref fn" href="#math_sinh" title='math_sinh' data-use='r' data-ref="math_sinh">math_sinh</a>},</td></tr>
+<tr><th id="240">240</th><td>  {<q>"sin"</q>,   <a class="tu ref fn" href="#math_sin" title='math_sin' data-use='r' data-ref="math_sin">math_sin</a>},</td></tr>
+<tr><th id="241">241</th><td>  {<q>"sqrt"</q>,  <a class="tu ref fn" href="#math_sqrt" title='math_sqrt' data-use='r' data-ref="math_sqrt">math_sqrt</a>},</td></tr>
+<tr><th id="242">242</th><td>  {<q>"tanh"</q>,   <a class="tu ref fn" href="#math_tanh" title='math_tanh' data-use='r' data-ref="math_tanh">math_tanh</a>},</td></tr>
+<tr><th id="243">243</th><td>  {<q>"tan"</q>,   <a class="tu ref fn" href="#math_tan" title='math_tan' data-use='r' data-ref="math_tan">math_tan</a>},</td></tr>
+<tr><th id="244">244</th><td>  {<span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>, <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>}</td></tr>
+<tr><th id="245">245</th><td>};</td></tr>
+<tr><th id="246">246</th><td></td></tr>
+<tr><th id="247">247</th><td></td></tr>
+<tr><th id="248">248</th><td><i>/*</i></td></tr>
+<tr><th id="249">249</th><td><i>** Open math library</i></td></tr>
+<tr><th id="250">250</th><td><i>*/</i></td></tr>
+<tr><th id="251">251</th><td><a class="macro" href="luaconf.h.html#169" title="extern" data-ref="_M/LUALIB_API">LUALIB_API</a> <em>int</em> <dfn class="decl def fn" id="luaopen_math" title='luaopen_math' data-ref="luaopen_math">luaopen_math</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="44L" title='L' data-type='lua_State *' data-ref="44L">L</dfn>) {</td></tr>
+<tr><th id="252">252</th><td>  <a class="ref fn" href="lauxlib.h.html#luaL_register" title='luaL_register' data-ref="luaL_register">luaL_register</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, <a class="macro" href="lualib.h.html#33" title="&quot;math&quot;" data-ref="_M/LUA_MATHLIBNAME">LUA_MATHLIBNAME</a>, <a class="tu ref" href="#mathlib" title='mathlib' data-use='r' data-ref="mathlib">mathlib</a>);</td></tr>
+<tr><th id="253">253</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, <a class="macro" href="#21" title="(3.14159265358979323846)" data-ref="_M/PI">PI</a>);</td></tr>
+<tr><th id="254">254</th><td>  <a class="ref fn" href="lua.h.html#lua_setfield" title='lua_setfield' data-ref="lua_setfield">lua_setfield</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, -<var>2</var>, <q>"pi"</q>);</td></tr>
+<tr><th id="255">255</th><td>  <a class="ref fn" href="lua.h.html#lua_pushnumber" title='lua_pushnumber' data-ref="lua_pushnumber">lua_pushnumber</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, <a class="macro" href="../../../../include/x86_64-linux-gnu/bits/huge_val.h.html#27" title="(__builtin_huge_val())" data-ref="_M/HUGE_VAL">HUGE_VAL</a>);</td></tr>
+<tr><th id="256">256</th><td>  <a class="ref fn" href="lua.h.html#lua_setfield" title='lua_setfield' data-ref="lua_setfield">lua_setfield</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, -<var>2</var>, <q>"huge"</q>);</td></tr>
+<tr><th id="257">257</th><td><u>#<span data-ppcond="257">if</span> defined(<a class="macro" href="luaconf.h.html#343" data-ref="_M/LUA_COMPAT_MOD">LUA_COMPAT_MOD</a>)</u></td></tr>
+<tr><th id="258">258</th><td>  <a class="ref fn" href="lua.h.html#lua_getfield" title='lua_getfield' data-ref="lua_getfield">lua_getfield</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, -<var>1</var>, <q>"fmod"</q>);</td></tr>
+<tr><th id="259">259</th><td>  <a class="ref fn" href="lua.h.html#lua_setfield" title='lua_setfield' data-ref="lua_setfield">lua_setfield</a>(<a class="local col4 ref" href="#44L" title='L' data-ref="44L">L</a>, -<var>2</var>, <q>"mod"</q>);</td></tr>
+<tr><th id="260">260</th><td><u>#<span data-ppcond="257">endif</span></u></td></tr>
+<tr><th id="261">261</th><td>  <b>return</b> <var>1</var>;</td></tr>
+<tr><th id="262">262</th><td>}</td></tr>
+<tr><th id="263">263</th><td></td></tr>
+<tr><th id="264">264</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

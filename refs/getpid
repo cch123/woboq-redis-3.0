@@ -1,0 +1,21 @@
+<dec f='include/unistd.h' l='631' type='__pid_t getpid()'/>
+<doc f='include/unistd.h' l='630'>/* Get the process ID of the calling process.  */</doc>
+<use f='redis/src/aof.c' l='1034' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1282' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/debug.c' l='868' u='c' c='sigsegvHandler'/>
+<use f='redis/src/rdb.c' l='725' u='c' c='rdbSave'/>
+<use f='redis/src/redis-cli.c' l='2045' u='c' c='LRUTestMode'/>
+<use f='redis/src/redis.c' l='315' u='c' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='328' u='c' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='368' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='1757' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='2666' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3382' u='c' c='createPidFile'/>
+<use f='redis/src/redis.c' l='3449' u='c' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3458' u='c' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3485' u='c' c='sigShutdownHandler'/>
+<use f='redis/src/redis.c' l='3580' u='c' c='main'/>
+<use f='redis/src/redis.c' l='3582' u='c' c='main'/>
+<use f='redis/src/replication.c' l='1341' u='c' c='syncWithMaster'/>
+<use f='redis/src/util.c' l='489' u='c' c='getRandomHexChars'/>
+<use f='redis/src/zmalloc.c' l='272' u='c' c='zmalloc_get_rss'/>

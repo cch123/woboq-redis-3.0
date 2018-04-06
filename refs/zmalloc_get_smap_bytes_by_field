@@ -1,0 +1,4 @@
+<dec f='redis/src/zmalloc.h' l='79' type='size_t zmalloc_get_smap_bytes_by_field(char * field)'/>
+<use f='redis/src/latency.c' l='82' u='c' c='THPGetAnonHugePagesSize'/>
+<def f='redis/src/zmalloc.c' l='338' ll='356' type='size_t zmalloc_get_smap_bytes_by_field(char * field)'/>
+<use f='redis/src/zmalloc.c' l='365' u='c' c='zmalloc_get_private_dirty'/>

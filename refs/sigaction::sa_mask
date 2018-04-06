@@ -1,0 +1,8 @@
+<dec f='include/x86_64-linux-gnu/bits/sigaction.h' l='43' type='__sigset_t'/>
+<offset>64</offset>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='42'>/* Additional set of signals to be blocked.  */</doc>
+<use f='redis/src/debug.c' l='864' u='a' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='939' u='a' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='961' u='a' c='disableWatchdog'/>
+<use f='redis/src/redis.c' l='3500' u='a' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3507' u='a' c='setupSignalHandlers'/>

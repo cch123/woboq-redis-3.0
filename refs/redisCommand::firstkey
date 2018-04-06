@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='926' type='int'/>
+<offset>384</offset>
+<doc f='redis/src/redis.h' l='925'>/* What keys should be loaded in background when calling this command? */</doc>
+<doc f='redis/src/redis.h' l='926'>/* The first argument that&apos;s a key (0 = no keys) */</doc>
+<use f='redis/src/db.c' l='987' u='r' c='getKeysUsingCommandTable'/>
+<use f='redis/src/db.c' l='993' u='r' c='getKeysUsingCommandTable'/>
+<use f='redis/src/db.c' l='994' u='r' c='getKeysUsingCommandTable'/>
+<use f='redis/src/redis.c' l='2169' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2516' u='r' c='addReplyCommand'/>

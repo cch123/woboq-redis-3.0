@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='848' type='int'/>
+<offset>17952</offset>
+<doc f='redis/src/redis.h' l='848'>/* Pricision of random sampling */</doc>
+<use f='redis/src/config.c' l='247' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='248' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='691' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1031' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1839' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1455' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='3128' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3131' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3134' u='r' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3288' u='r' c='freeMemoryIfNeeded'/>

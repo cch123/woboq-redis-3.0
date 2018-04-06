@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lstate.h' l='59'/>
+<use f='redis/deps/lua/src/lapi.c' l='63' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='69' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='83' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='213' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='221' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='320' u='c'/>

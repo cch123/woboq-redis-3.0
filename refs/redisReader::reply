@@ -1,0 +1,13 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='136' type='void *'/>
+<offset>4288</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='136'>/* Temporary reply pointer */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='189' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='190' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='191' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='381' u='w' c='processLineItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='433' u='w' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='500' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='578' u='r' c='redisReaderFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='579' u='r' c='redisReaderFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='661' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='662' u='w' c='redisReaderGetReply'/>

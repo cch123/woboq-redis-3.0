@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='26' type='void luaF_close(lua_State * L, StkId level)'/>
+<use f='redis/deps/lua/src/ldo.c' l='84' u='c' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='467' u='c' c='luaD_pcall'/>
+<def f='redis/deps/lua/src/lfunc.c' l='96' ll='112' type='void luaF_close(lua_State * L, StkId level)'/>
+<use f='redis/deps/lua/src/lstate.c' l='107' u='c' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='135' u='c' c='luaE_freethread'/>
+<use f='redis/deps/lua/src/lstate.c' l='202' u='c' c='lua_close'/>
+<use f='redis/deps/lua/src/lvm.c' l='619' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='642' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='720' u='c' c='luaV_execute'/>

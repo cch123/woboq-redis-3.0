@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='786' type='int'/>
+<offset>14880</offset>
+<doc f='redis/src/redis.h' l='786'>/* RDB pipes used to return the state */</doc>
+<use f='redis/src/rdb.c' l='1325' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1405' u='w' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1490' u='r' c='rdbSaveToSlavesSockets'/>

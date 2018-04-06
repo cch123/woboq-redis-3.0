@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='70' type='void strbuf_append_fmt(strbuf_t * s, int len, const char * fmt)'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='69'>/* Update */</doc>
+<def f='redis/deps/lua/src/strbuf.c' l='202' ll='217' type='void strbuf_append_fmt(strbuf_t * s, int len, const char * fmt)'/>
+<doc f='redis/deps/lua/src/strbuf.c' l='200'>/* strbuf_append_fmt() should only be used when an upper bound
+ * is known for the output string. */</doc>

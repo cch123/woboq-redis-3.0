@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lcode.h' l='68' type='void luaK_concat(FuncState * fs, int * l1, int l2)'/>
+<use f='redis/deps/lua/src/lcode.c' l='64' u='c' c='luaK_jump'/>
+<use f='redis/deps/lua/src/lcode.c' l='181' u='c' c='luaK_patchtohere'/>
+<def f='redis/deps/lua/src/lcode.c' l='185' ll='196' type='void luaK_concat(FuncState * fs, int * l1, int l2)'/>
+<use f='redis/deps/lua/src/lcode.c' l='393' u='c' c='exp2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='557' u='c' c='luaK_goiftrue'/>
+<use f='redis/deps/lua/src/lcode.c' l='580' u='c' c='luaK_goiffalse'/>
+<use f='redis/deps/lua/src/lcode.c' l='742' u='c' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='749' u='c' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lparser.c' l='987' u='c' c='breakstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1148' u='c' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1153' u='c' c='ifstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1159' u='c' c='ifstat'/>

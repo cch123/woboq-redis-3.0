@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='125'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='124'>/* gets the index of the constant */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='310' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='490' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='491' u='c'/>

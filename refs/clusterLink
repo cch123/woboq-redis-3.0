@@ -1,0 +1,8 @@
+<def f='redis/src/cluster.h' l='39' ll='45'/>
+<size>40</size>
+<doc f='redis/src/cluster.h' l='38'>/* clusterLink encapsulates everything needed to talk with a remote node. */</doc>
+<mbr r='clusterLink::ctime' o='0' t='mstime_t'/>
+<mbr r='clusterLink::fd' o='64' t='int'/>
+<mbr r='clusterLink::sndbuf' o='128' t='sds'/>
+<mbr r='clusterLink::rcvbuf' o='192' t='sds'/>
+<mbr r='clusterLink::node' o='256' t='struct clusterNode *'/>

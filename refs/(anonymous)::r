@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/llex.h' l='44' type='lua_Number'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/llex.c' l='185' u='a' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='205' u='a' c='read_numeral'/>
+<use f='redis/deps/lua/src/lparser.c' l='733' u='r' c='simpleexp'/>

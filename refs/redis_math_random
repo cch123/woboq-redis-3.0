@@ -1,0 +1,5 @@
+<dec f='redis/src/scripting.c' l='46' type='int redis_math_random(lua_State * L)'/>
+<use f='redis/src/scripting.c' l='709' u='r' c='scriptingInit'/>
+<def f='redis/src/scripting.c' l='1116' ll='1142' type='int redis_math_random(lua_State * L)'/>
+<doc f='redis/src/scripting.c' l='1114'>/* The following implementation is the one shipped with Lua itself but with
+ * rand() replaced by redisLrand48(). */</doc>

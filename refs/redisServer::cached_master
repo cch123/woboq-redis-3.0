@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='820' type='redisClient *'/>
+<offset>16384</offset>
+<doc f='redis/src/redis.h' l='820'>/* Cached master to be reused for PSYNC. */</doc>
+<use f='redis/src/redis.c' l='1494' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2870' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2871' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1138' u='r' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1139' u='r' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1140' u='r' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1599' u='r' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1610' u='w' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1636' u='r' c='replicationDiscardCachedMaster'/>
+<use f='redis/src/replication.c' l='1639' u='r' c='replicationDiscardCachedMaster'/>
+<use f='redis/src/replication.c' l='1640' u='r' c='replicationDiscardCachedMaster'/>
+<use f='redis/src/replication.c' l='1641' u='w' c='replicationDiscardCachedMaster'/>
+<use f='redis/src/replication.c' l='1651' u='r' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1652' u='w' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1923' u='r' c='replicationGetSlaveOffset'/>
+<use f='redis/src/replication.c' l='1924' u='r' c='replicationGetSlaveOffset'/>

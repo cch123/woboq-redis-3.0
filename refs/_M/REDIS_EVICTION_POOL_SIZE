@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='444'/>
+<doc f='redis/src/redis.h' l='437'>/* To improve the quality of the LRU approximation we take a set of keys
+ * that are good candidate for eviction across freeMemoryIfNeeded() calls.
+ *
+ * Entries inside the eviciton pool are taken ordered by idle time, putting
+ * greater idle times to the right (ascending order).
+ *
+ * Empty entries have the key pointer set to NULL. */</doc>
+<use f='redis/src/redis.c' l='3103' u='c'/>
+<use f='redis/src/redis.c' l='3104' u='c'/>
+<use f='redis/src/redis.c' l='3154' u='c'/>
+<use f='redis/src/redis.c' l='3157' u='c'/>
+<use f='redis/src/redis.c' l='3161' u='c'/>
+<use f='redis/src/redis.c' l='3166' u='c'/>
+<use f='redis/src/redis.c' l='3170' u='c'/>
+<use f='redis/src/redis.c' l='3259' u='c'/>
+<use f='redis/src/redis.c' l='3267' u='c'/>
+<use f='redis/src/redis.c' l='3270' u='c'/>
+<use f='redis/src/redis.c' l='3271' u='c'/>

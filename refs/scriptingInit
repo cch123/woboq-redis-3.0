@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1361' type='void scriptingInit()'/>
+<doc f='redis/src/redis.h' l='1360'>/* Scripting */</doc>
+<use f='redis/src/redis.c' l='1878' u='c' c='initServer'/>
+<def f='redis/src/scripting.c' l='644' ll='765' type='void scriptingInit()'/>
+<use f='redis/src/scripting.c' l='776' u='c' c='scriptingReset'/>
+<doc f='redis/src/scripting.c' l='640'>/* Initialize the scripting environment.
+ * It is possible to call this function to reset the scripting environment
+ * assuming that we call scriptingRelease() before.
+ * See scriptingReset() for more information. */</doc>

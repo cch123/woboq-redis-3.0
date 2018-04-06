@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lparser.c' l='45' type='lu_byte'/>
+<use f='redis/deps/lua/src/lparser.c' l='287' u='w' c='enterblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='979' u='r' c='breakstat'/>
+<offset>112</offset>
+<doc f='redis/deps/lua/src/lparser.c' l='45'>/* true if `block&apos; is a loop */</doc>

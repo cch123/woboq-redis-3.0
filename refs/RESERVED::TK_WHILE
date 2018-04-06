@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/llex.h' l='29' type='277'/>
+<use f='redis/deps/lua/src/llex.c' l='66' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lparser.c' l='1004' u='r' c='whilestat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1278' c='statement'/>

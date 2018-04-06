@@ -1,0 +1,4 @@
+<dec f='redis/src/zipmap.h' l='40' type='unsigned char * zipmapDel(unsigned char * zm, unsigned char * key, unsigned int klen, int * deleted)'/>
+<def f='redis/src/zipmap.c' l='281' ll='297' type='unsigned char * zipmapDel(unsigned char * zm, unsigned char * key, unsigned int klen, int * deleted)'/>
+<doc f='redis/src/zipmap.c' l='279'>/* Remove the specified key. If &apos;deleted&apos; is not NULL the pointed integer is
+ * set to 0 if the key was not found, to 1 if it was found and deleted. */</doc>

@@ -1,0 +1,11 @@
+<dec f='redis/src/ae.h' l='77' type='struct aeTimeEvent *'/>
+<use f='redis/src/ae.c' l='217' u='w' c='aeCreateTimeEvent'/>
+<use f='redis/src/ae.c' l='230' u='r' c='aeDeleteTimeEvent'/>
+<use f='redis/src/ae.c' l='232' u='w' c='aeDeleteTimeEvent'/>
+<use f='redis/src/ae.c' l='232' u='r' c='aeDeleteTimeEvent'/>
+<use f='redis/src/ae.c' l='239' u='r' c='aeDeleteTimeEvent'/>
+<use f='redis/src/ae.c' l='265' u='r' c='aeSearchNearestTimer'/>
+<use f='redis/src/ae.c' l='289' u='r' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='301' u='r' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='333' u='r' c='processTimeEvents'/>
+<offset>384</offset>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1211' type='zskiplistNode * zslInsert(zskiplist * zsl, double score, robj * obj)'/>
+<use f='redis/src/db.c' l='1134' u='c' c='slotToKeyAdd'/>
+<use f='redis/src/rdb.c' l='925' u='c' c='rdbLoadObject'/>
+<def f='redis/src/t_zset.c' l='110' ll='164' type='zskiplistNode * zslInsert(zskiplist * zsl, double score, robj * obj)'/>
+<use f='redis/src/t_zset.c' l='1128' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1277' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1284' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1968' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2044' u='c' c='zunionInterGenericCommand'/>

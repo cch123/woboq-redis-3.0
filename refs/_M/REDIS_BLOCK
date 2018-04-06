@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='57'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='55'>/* Connection type can be blocking or non-blocking and is set in the
+ * least significant bit of the flags field in redisContext. */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='1030' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1042' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1054' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1062' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1074' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1086' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1098' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1111' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1117' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1144' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1181' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1219' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1331' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='262' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='357' u='c'/>

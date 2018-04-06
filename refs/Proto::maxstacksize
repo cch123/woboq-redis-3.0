@@ -1,0 +1,26 @@
+<dec f='redis/deps/lua/src/lobject.h' l='252' type='lu_byte'/>
+<offset>920</offset>
+<use f='redis/deps/lua/src/lcode.c' l='201' u='r' c='luaK_checkstack'/>
+<use f='redis/deps/lua/src/lcode.c' l='204' u='w' c='luaK_checkstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='277' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='278' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='checkArgMode'/>
+<use f='redis/deps/lua/src/ldebug.c' l='310' u='r' c='checkArgMode'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='272' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldo.c' l='220' u='r' c='adjust_varargs'/>
+<use f='redis/deps/lua/src/ldo.c' l='220' u='r' c='adjust_varargs'/>
+<use f='redis/deps/lua/src/ldo.c' l='277' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='277' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='292' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldump.c' l='137' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/lfunc.c' l='130' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='346' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='173' u='w' c='LoadFunction'/>

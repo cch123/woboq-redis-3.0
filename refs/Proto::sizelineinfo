@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lobject.h' l='243' type='int'/>
+<offset>672</offset>
+<use f='redis/deps/lua/src/lcode.c' l='797' u='r' c='luaK_code'/>
+<use f='redis/deps/lua/src/lcode.c' l='797' u='a' c='luaK_code'/>
+<use f='redis/deps/lua/src/ldebug.c' l='185' u='r' c='collectvalidlines'/>
+<use f='redis/deps/lua/src/ldebug.c' l='282' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldebug.c' l='282' u='r' c='precheck'/>
+<use f='redis/deps/lua/src/ldump.c' l='114' u='r' c='DumpDebug'/>
+<use f='redis/deps/lua/src/lfunc.c' l='124' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='145' u='r' c='luaF_freeproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='314' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lparser.c' l='364' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='365' u='w' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='142' u='w' c='LoadDebug'/>

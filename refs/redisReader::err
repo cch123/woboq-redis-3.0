@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='126' type='int'/>
+<offset>0</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='126'>/* Error flags, 0 when there is no error */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='205' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='563' u='w' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='589' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='623' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='647' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1155' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1204' u='r' c='redisGetReplyFromReader'/>

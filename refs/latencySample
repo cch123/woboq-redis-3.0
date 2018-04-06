@@ -1,0 +1,6 @@
+<def f='redis/src/latency.h' l='41' ll='44'/>
+<size>8</size>
+<doc f='redis/src/latency.h' l='39'>/* Representation of a latency sample: the sampling time and the latency
+ * observed in milliseconds. */</doc>
+<mbr r='latencySample::time' o='0' t='int32_t'/>
+<mbr r='latencySample::latency' o='32' t='uint32_t'/>

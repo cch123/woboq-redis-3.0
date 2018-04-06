@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='186' type='24'/>
+<use f='redis/deps/lua/src/lcode.c' l='775' u='r' c='luaK_posfix'/>
+<use f='redis/deps/lua/src/lcode.c' l='777' u='r' c='luaK_posfix'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='186'>/*	A B C	if ((RK(B) &lt;  RK(C)) ~= A) then pc++  		*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='555' c='luaV_execute'/>

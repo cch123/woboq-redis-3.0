@@ -1,0 +1,85 @@
+<dec f='redis/src/util.h' l='38' type='int ll2string(char * s, size_t len, long long value)'/>
+<use f='redis/src/aof.c' l='441' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/aof.c' l='449' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/bitops.c' l='280' u='c' c='getbitCommand'/>
+<use f='redis/src/bitops.c' l='476' u='c' c='bitcountCommand'/>
+<use f='redis/src/bitops.c' l='545' u='c' c='bitposCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1006' u='c' c='configGetCommand'/>
+<use f='redis/src/db.c' l='554' u='c' c='scanGenericCommand'/>
+<use f='redis/src/debug.c' l='196' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/networking.c' l='341' u='c' c='addReply'/>
+<use f='redis/src/networking.c' l='492' u='c' c='addReplyLongLongWithPrefix'/>
+<use f='redis/src/networking.c' l='568' u='c' c='addReplyBulkLongLong'/>
+<use f='redis/src/notify.c' l='109' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='121' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/object.c' l='455' u='c' c='getDecodedObject'/>
+<use f='redis/src/object.c' l='484' u='c' c='compareStringObjectsWithFlags'/>
+<use f='redis/src/object.c' l='491' u='c' c='compareStringObjectsWithFlags'/>
+<use f='redis/src/object.c' l='538' u='c' c='stringObjectLen'/>
+<use f='redis/src/rdb.c' l='203' u='c' c='rdbTryIntegerEncoding'/>
+<use f='redis/src/rdb.c' l='311' u='c' c='rdbSaveLongLongAsStringObject'/>
+<use f='redis/src/redis.c' l='368' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='371' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='511' u='c' c='dictEncObjHash'/>
+<use f='redis/src/redis.c' l='1363' u='c' c='createSharedObjects'/>
+<use f='redis/src/replication.c' l='158' u='c' c='feedReplicationBacklogWithObject'/>
+<use f='redis/src/replication.c' l='190' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='218' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='230' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/rio.c' l='317' u='c' c='rioWriteBulkCount'/>
+<use f='redis/src/rio.c' l='339' u='c' c='rioWriteBulkLongLong'/>
+<use f='redis/src/sentinel.c' l='866' u='c' c='sentinelCallClientReconfScript'/>
+<use f='redis/src/sentinel.c' l='867' u='c' c='sentinelCallClientReconfScript'/>
+<use f='redis/src/sentinel.c' l='3155' u='c' c='sentinelAskMasterStateToOtherSentinels'/>
+<use f='redis/src/sentinel.c' l='3310' u='c' c='sentinelSendSlaveOf'/>
+<use f='redis/src/t_string.c' l='247' u='c' c='getrangeCommand'/>
+<use f='redis/src/t_zset.c' l='685' u='c' c='zzlCompareElements'/>
+<use f='redis/src/t_zset.c' l='1746' u='c' c='zuiBufferFromValue'/>
+<use f='redis/src/t_zset.c' l='1755' u='c' c='zuiBufferFromValue'/>
+<def f='redis/src/util.c' l='265' ll='317' type='int ll2string(char * dst, size_t dstlen, long long svalue)'/>
+<use f='redis/src/util.c' l='431' u='c' c='d2string'/>
+<doc f='redis/src/util.c' l='254'>/* Convert a long long into a string. Returns the number of
+ * characters needed to represent the number.
+ * If the buffer is not big enough to store the string, 0 is returned.
+ *
+ * Based on the following article (that apparently does not provide a
+ * novel approach but only publicizes an already used technique):
+ *
+ * https://www.facebook.com/notes/facebook-engineering/three-optimization-tips-for-c/10151361643253920
+ *
+ * Modified in order to handle signed integers since the original code was
+ * designed for unsigned integers. */</doc>

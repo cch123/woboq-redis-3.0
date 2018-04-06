@@ -1,0 +1,10 @@
+<dec f='redis/src/sentinel.c' l='329' type='void sentinelDisconnectInstanceFromContext(const redisAsyncContext * c)'/>
+<def f='redis/src/sentinel.c' l='1637' ll='1651' type='void sentinelDisconnectInstanceFromContext(const redisAsyncContext * c)'/>
+<use f='redis/src/sentinel.c' l='1655' u='c' c='sentinelLinkEstablishedCallback'/>
+<use f='redis/src/sentinel.c' l='1667' u='c' c='sentinelDisconnectCallback'/>
+<doc f='redis/src/sentinel.c' l='1631'>/* This function takes a hiredis context that is in an error condition
+ * and make sure to mark the instance as disconnected performing the
+ * cleanup needed.
+ *
+ * Note: we don&apos;t free the hiredis context as hiredis will do it for us
+ * for async connections. */</doc>

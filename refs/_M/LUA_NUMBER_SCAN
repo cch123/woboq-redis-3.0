@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='521'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='514'>/*
+@@ LUA_NUMBER_SCAN is the format for reading numbers.
+@@ LUA_NUMBER_FMT is the format for writing numbers.
+@@ lua_number2str converts a number to a string.
+@@ LUAI_MAXNUMBER2STR is maximum size of previous conversion.
+@@ lua_str2number converts a string to a number.
+*/</doc>
+<use f='redis/deps/lua/src/liolib.c' l='275' u='c'/>

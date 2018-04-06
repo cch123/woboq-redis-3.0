@@ -1,0 +1,3 @@
+<dec f='redis/deps/hiredis/dict.h' l='83'/>
+<use f='redis/deps/hiredis/dict.c' l='151' u='c'/>
+<use f='redis/deps/hiredis/dict.c' l='176' u='c'/>

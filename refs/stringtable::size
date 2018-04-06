@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lstate.h' l='41' type='int'/>
+<offset>96</offset>
+<use f='redis/deps/lua/src/lgc.c' l='434' u='r' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='435' u='r' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='436' u='r' c='checkSizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='488' u='r' c='luaC_freeall'/>
+<use f='redis/deps/lua/src/lgc.c' l='575' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lstate.c' l='111' u='r' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='163' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstring.c' l='32' u='r' c='luaS_resize'/>
+<use f='redis/deps/lua/src/lstring.c' l='44' u='r' c='luaS_resize'/>
+<use f='redis/deps/lua/src/lstring.c' l='45' u='w' c='luaS_resize'/>
+<use f='redis/deps/lua/src/lstring.c' l='65' u='r' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='69' u='r' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='69' u='r' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='70' u='r' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='82' u='r' c='luaS_newlstr'/>

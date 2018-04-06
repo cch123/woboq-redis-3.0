@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='796' type='int'/>
+<offset>15328</offset>
+<doc f='redis/src/redis.h' l='795'>/* Replication (master) */</doc>
+<doc f='redis/src/redis.h' l='796'>/* Last SELECTed DB in replication output */</doc>
+<use f='redis/src/redis.c' l='1285' u='r' c='beforeSleep'/>
+<use f='redis/src/redis.c' l='1763' u='w' c='initServer'/>
+<use f='redis/src/replication.c' l='181' u='r' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='210' u='w' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='578' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='1992' u='r' c='replicationCron'/>

@@ -1,0 +1,10 @@
+<def f='redis/src/t_zset.c' l='542' ll='548' type='int compareStringObjectsForLexRange(robj * a, robj * b)'/>
+<use f='redis/src/t_zset.c' l='552' u='c' c='zslLexValueGteMin'/>
+<use f='redis/src/t_zset.c' l='553' u='c' c='zslLexValueGteMin'/>
+<use f='redis/src/t_zset.c' l='558' u='c' c='zslLexValueLteMax'/>
+<use f='redis/src/t_zset.c' l='559' u='c' c='zslLexValueLteMax'/>
+<use f='redis/src/t_zset.c' l='567' u='c' c='zslIsInLexRange'/>
+<use f='redis/src/t_zset.c' l='844' u='c' c='zzlIsInLexRange'/>
+<doc f='redis/src/t_zset.c' l='539'>/* This is just a wrapper to compareStringObjects() that is able to
+ * handle shared.minstring and shared.maxstring as the equivalent of
+ * -inf and +inf for strings */</doc>

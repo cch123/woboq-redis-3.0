@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='77' type='int luaL_loadfile(lua_State * L, const char * filename)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='552' ll='590' macro='1' type='int luaL_loadfile(lua_State * L, const char * filename)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='287' u='c' c='luaB_loadfile'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='328' u='c' c='luaB_dofile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='385' u='c' c='loader_Lua'/>

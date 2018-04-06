@@ -1,0 +1,9 @@
+<dec f='include/unistd.h' l='759' type='__pid_t fork()'/>
+<doc f='include/unistd.h' l='756'>/* Clone the calling process, creating an exact copy.
+   Return -1 for errors, 0 to the new process,
+   and the process ID of the new process to the old process.  */</doc>
+<use f='redis/src/aof.c' l='1276' u='c' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/rdb.c' l='774' u='c' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1434' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis.c' l='3390' u='c' c='daemonize'/>
+<use f='redis/src/sentinel.c' l='702' u='c' c='sentinelRunPendingScripts'/>

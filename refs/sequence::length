@@ -1,0 +1,13 @@
+<dec f='redis/src/sparkline.h' l='40' type='int'/>
+<offset>0</offset>
+<use f='redis/src/latency.c' l='529' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/sparkline.c' l='59' u='w' c='createSparklineSequence'/>
+<use f='redis/src/sparkline.c' l='67' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='73' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='74' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='75' u='r' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='76' u='w' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='84' u='r' c='freeSparklineSequence'/>
+<use f='redis/src/sparkline.c' l='168' u='r' c='sparklineRender'/>
+<use f='redis/src/sparkline.c' l='169' u='r' c='sparklineRender'/>
+<use f='redis/src/sparkline.c' l='169' u='r' c='sparklineRender'/>

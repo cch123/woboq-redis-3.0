@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lmem.c source code [redis/deps/lua/src/lmem.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lmem.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lmem.c.html'>lmem.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lmem.c,v 1.70.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** Interface to Memory Manager</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#include &lt;stddef.h&gt;</u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/lmem_c" data-ref="_M/lmem_c">lmem_c</dfn></u></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/LUA_CORE" data-ref="_M/LUA_CORE">LUA_CORE</dfn></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="lua.h.html">"lua.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><u>#include <a href="ldebug.h.html">"ldebug.h"</a></u></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="ldo.h.html">"ldo.h"</a></u></td></tr>
+<tr><th id="17">17</th><td><u>#include <a href="lmem.h.html">"lmem.h"</a></u></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="lobject.h.html">"lobject.h"</a></u></td></tr>
+<tr><th id="19">19</th><td><u>#include <a href="lstate.h.html">"lstate.h"</a></u></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td></td></tr>
+<tr><th id="22">22</th><td></td></tr>
+<tr><th id="23">23</th><td><i>/*</i></td></tr>
+<tr><th id="24">24</th><td><i>** About the realloc function:</i></td></tr>
+<tr><th id="25">25</th><td><i>** void * frealloc (void *ud, void *ptr, size_t osize, size_t nsize);</i></td></tr>
+<tr><th id="26">26</th><td><i>** (`osize' is the old size, `nsize' is the new size)</i></td></tr>
+<tr><th id="27">27</th><td><i>**</i></td></tr>
+<tr><th id="28">28</th><td><i>** Lua ensures that (ptr == NULL) iff (osize == 0).</i></td></tr>
+<tr><th id="29">29</th><td><i>**</i></td></tr>
+<tr><th id="30">30</th><td><i>** * frealloc(ud, NULL, 0, x) creates a new block of size `x'</i></td></tr>
+<tr><th id="31">31</th><td><i>**</i></td></tr>
+<tr><th id="32">32</th><td><i>** * frealloc(ud, p, x, 0) frees the block `p'</i></td></tr>
+<tr><th id="33">33</th><td><i>** (in this specific case, frealloc must return NULL).</i></td></tr>
+<tr><th id="34">34</th><td><i>** particularly, frealloc(ud, NULL, 0, 0) does nothing</i></td></tr>
+<tr><th id="35">35</th><td><i>** (which is equivalent to free(NULL) in ANSI C)</i></td></tr>
+<tr><th id="36">36</th><td><i>**</i></td></tr>
+<tr><th id="37">37</th><td><i>** frealloc returns NULL if it cannot create or reallocate the area</i></td></tr>
+<tr><th id="38">38</th><td><i>** (any reallocation to an equal or smaller size cannot fail!)</i></td></tr>
+<tr><th id="39">39</th><td><i>*/</i></td></tr>
+<tr><th id="40">40</th><td></td></tr>
+<tr><th id="41">41</th><td></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/MINSIZEARRAY" data-ref="_M/MINSIZEARRAY">MINSIZEARRAY</dfn>	4</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td></td></tr>
+<tr><th id="46">46</th><td><em>void</em> *<dfn class="decl def fn" id="luaM_growaux_" title='luaM_growaux_' data-ref="luaM_growaux_">luaM_growaux_</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col1 decl" id="1L" title='L' data-type='lua_State *' data-ref="1L">L</dfn>, <em>void</em> *<dfn class="local col2 decl" id="2block" title='block' data-type='void *' data-ref="2block">block</dfn>, <em>int</em> *<dfn class="local col3 decl" id="3size" title='size' data-type='int *' data-ref="3size">size</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col4 decl" id="4size_elems" title='size_elems' data-type='size_t' data-ref="4size_elems">size_elems</dfn>,</td></tr>
+<tr><th id="47">47</th><td>                     <em>int</em> <dfn class="local col5 decl" id="5limit" title='limit' data-type='int' data-ref="5limit">limit</dfn>, <em>const</em> <em>char</em> *<dfn class="local col6 decl" id="6errormsg" title='errormsg' data-type='const char *' data-ref="6errormsg">errormsg</dfn>) {</td></tr>
+<tr><th id="48">48</th><td>  <em>void</em> *<dfn class="local col7 decl" id="7newblock" title='newblock' data-type='void *' data-ref="7newblock">newblock</dfn>;</td></tr>
+<tr><th id="49">49</th><td>  <em>int</em> <dfn class="local col8 decl" id="8newsize" title='newsize' data-type='int' data-ref="8newsize">newsize</dfn>;</td></tr>
+<tr><th id="50">50</th><td>  <b>if</b> (*<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a> &gt;= <a class="local col5 ref" href="#5limit" title='limit' data-ref="5limit">limit</a>/<var>2</var>) {  <i>/* cannot double it? */</i></td></tr>
+<tr><th id="51">51</th><td>    <b>if</b> (*<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a> &gt;= <a class="local col5 ref" href="#5limit" title='limit' data-ref="5limit">limit</a>)  <i>/* cannot grow even a little? */</i></td></tr>
+<tr><th id="52">52</th><td>      <a class="ref fn" href="ldebug.h.html#luaG_runerror" title='luaG_runerror' data-ref="luaG_runerror">luaG_runerror</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <a class="local col6 ref" href="#6errormsg" title='errormsg' data-ref="6errormsg">errormsg</a>);</td></tr>
+<tr><th id="53">53</th><td>    <a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a> = <a class="local col5 ref" href="#5limit" title='limit' data-ref="5limit">limit</a>;  <i>/* still have at least one free place */</i></td></tr>
+<tr><th id="54">54</th><td>  }</td></tr>
+<tr><th id="55">55</th><td>  <b>else</b> {</td></tr>
+<tr><th id="56">56</th><td>    <a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a> = (*<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a>)*<var>2</var>;</td></tr>
+<tr><th id="57">57</th><td>    <b>if</b> (<a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a> &lt; <a class="macro" href="#43" title="4" data-ref="_M/MINSIZEARRAY">MINSIZEARRAY</a>)</td></tr>
+<tr><th id="58">58</th><td>      <a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a> = <a class="macro" href="#43" title="4" data-ref="_M/MINSIZEARRAY">MINSIZEARRAY</a>;  <i>/* minimum size */</i></td></tr>
+<tr><th id="59">59</th><td>  }</td></tr>
+<tr><th id="60">60</th><td>  <a class="local col7 ref" href="#7newblock" title='newblock' data-ref="7newblock">newblock</a> = <a class="macro" href="lmem.h.html#19" title="((((size_t)((newsize)+1)) &lt;= ((size_t)(~(size_t)0)-2)/(size_elems)) ? luaM_realloc_(L, (block), (*size)*(size_elems), (newsize)*(size_elems)) : luaM_toobig(L))" data-ref="_M/luaM_reallocv">luaM_reallocv</a>(<a class="local col1 ref" href="#1L" title='L' data-ref="1L">L</a>, <a class="local col2 ref" href="#2block" title='block' data-ref="2block">block</a>, *<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a>, <a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a>, <a class="local col4 ref" href="#4size_elems" title='size_elems' data-ref="4size_elems">size_elems</a>);</td></tr>
+<tr><th id="61">61</th><td>  *<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a> = <a class="local col8 ref" href="#8newsize" title='newsize' data-ref="8newsize">newsize</a>;  <i>/* update only when everything else is OK */</i></td></tr>
+<tr><th id="62">62</th><td>  <b>return</b> <a class="local col7 ref" href="#7newblock" title='newblock' data-ref="7newblock">newblock</a>;</td></tr>
+<tr><th id="63">63</th><td>}</td></tr>
+<tr><th id="64">64</th><td></td></tr>
+<tr><th id="65">65</th><td></td></tr>
+<tr><th id="66">66</th><td><em>void</em> *<dfn class="decl def fn" id="luaM_toobig" title='luaM_toobig' data-ref="luaM_toobig">luaM_toobig</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col9 decl" id="9L" title='L' data-type='lua_State *' data-ref="9L">L</dfn>) {</td></tr>
+<tr><th id="67">67</th><td>  <a class="ref fn" href="ldebug.h.html#luaG_runerror" title='luaG_runerror' data-ref="luaG_runerror">luaG_runerror</a>(<a class="local col9 ref" href="#9L" title='L' data-ref="9L">L</a>, <q>"memory allocation error: block too big"</q>);</td></tr>
+<tr><th id="68">68</th><td>  <b>return</b> <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;  <i>/* to avoid warnings */</i></td></tr>
+<tr><th id="69">69</th><td>}</td></tr>
+<tr><th id="70">70</th><td></td></tr>
+<tr><th id="71">71</th><td></td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/*</i></td></tr>
+<tr><th id="74">74</th><td><i>** generic allocation routine.</i></td></tr>
+<tr><th id="75">75</th><td><i>*/</i></td></tr>
+<tr><th id="76">76</th><td><em>void</em> *<dfn class="decl def fn" id="luaM_realloc_" title='luaM_realloc_' data-ref="luaM_realloc_">luaM_realloc_</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col0 decl" id="10L" title='L' data-type='lua_State *' data-ref="10L">L</dfn>, <em>void</em> *<dfn class="local col1 decl" id="11block" title='block' data-type='void *' data-ref="11block">block</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="12osize" title='osize' data-type='size_t' data-ref="12osize">osize</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="13nsize" title='nsize' data-type='size_t' data-ref="13nsize">nsize</dfn>) {</td></tr>
+<tr><th id="77">77</th><td>  <a class="typedef" href="lstate.h.html#global_State" title='global_State' data-type='struct global_State' data-ref="global_State">global_State</a> *<dfn class="local col4 decl" id="14g" title='g' data-type='global_State *' data-ref="14g">g</dfn> = <a class="macro" href="lstate.h.html#130" title="(L-&gt;l_G)" data-ref="_M/G">G</a>(<a class="local col0 ref" href="#10L" title='L' data-ref="10L">L</a>);</td></tr>
+<tr><th id="78">78</th><td>  <a class="macro" href="llimits.h.html#62" title="((void)0)" data-ref="_M/lua_assert">lua_assert</a>((osize == <var>0</var>) == (block == NULL));</td></tr>
+<tr><th id="79">79</th><td>  <a class="local col1 ref" href="#11block" title='block' data-ref="11block">block</a> = (*<a class="local col4 ref" href="#14g" title='g' data-ref="14g">g</a>-&gt;<a class="ref field" href="lstate.h.html#global_State::frealloc" title='global_State::frealloc' data-ref="global_State::frealloc">frealloc</a>)(<a class="local col4 ref" href="#14g" title='g' data-ref="14g">g</a>-&gt;<a class="ref field" href="lstate.h.html#global_State::ud" title='global_State::ud' data-ref="global_State::ud">ud</a>, <a class="local col1 ref" href="#11block" title='block' data-ref="11block">block</a>, <a class="local col2 ref" href="#12osize" title='osize' data-ref="12osize">osize</a>, <a class="local col3 ref" href="#13nsize" title='nsize' data-ref="13nsize">nsize</a>);</td></tr>
+<tr><th id="80">80</th><td>  <b>if</b> (<a class="local col1 ref" href="#11block" title='block' data-ref="11block">block</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> &amp;&amp; <a class="local col3 ref" href="#13nsize" title='nsize' data-ref="13nsize">nsize</a> &gt; <var>0</var>)</td></tr>
+<tr><th id="81">81</th><td>    <a class="ref fn" href="ldo.h.html#luaD_throw" title='luaD_throw' data-ref="luaD_throw">luaD_throw</a>(<a class="local col0 ref" href="#10L" title='L' data-ref="10L">L</a>, <a class="macro" href="lua.h.html#46" title="4" data-ref="_M/LUA_ERRMEM">LUA_ERRMEM</a>);</td></tr>
+<tr><th id="82">82</th><td>  <a class="macro" href="llimits.h.html#62" title="((void)0)" data-ref="_M/lua_assert">lua_assert</a>((nsize == <var>0</var>) == (block == NULL));</td></tr>
+<tr><th id="83">83</th><td>  <a class="local col4 ref" href="#14g" title='g' data-ref="14g">g</a>-&gt;<a class="ref field" href="lstate.h.html#global_State::totalbytes" title='global_State::totalbytes' data-ref="global_State::totalbytes">totalbytes</a> = (<a class="local col4 ref" href="#14g" title='g' data-ref="14g">g</a>-&gt;<a class="ref field" href="lstate.h.html#global_State::totalbytes" title='global_State::totalbytes' data-ref="global_State::totalbytes">totalbytes</a> - <a class="local col2 ref" href="#12osize" title='osize' data-ref="12osize">osize</a>) + <a class="local col3 ref" href="#13nsize" title='nsize' data-ref="13nsize">nsize</a>;</td></tr>
+<tr><th id="84">84</th><td>  <b>return</b> <a class="local col1 ref" href="#11block" title='block' data-ref="11block">block</a>;</td></tr>
+<tr><th id="85">85</th><td>}</td></tr>
+<tr><th id="86">86</th><td></td></tr>
+<tr><th id="87">87</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

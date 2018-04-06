@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/llex.h' l='40' type='const char *const []'/>
+<def f='redis/deps/lua/src/llex.c' l='37' ll='45' type='const char *const [32]'/>
+<use f='redis/deps/lua/src/llex.c' l='67' u='r' c='luaX_init'/>
+<use f='redis/deps/lua/src/llex.c' l='67' u='r' c='luaX_init'/>
+<use f='redis/deps/lua/src/llex.c' l='85' u='r' c='luaX_token2str'/>
+<doc f='redis/deps/lua/src/llex.c' l='36'>/* ORDER RESERVED */</doc>

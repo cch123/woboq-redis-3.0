@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/ldo.h' l='42' type='int luaD_precall(lua_State * L, StkId func, int nresults)'/>
+<def f='redis/deps/lua/src/ldo.c' l='265' ll='329' type='int luaD_precall(lua_State * L, StkId func, int nresults)'/>
+<use f='redis/deps/lua/src/ldo.c' l='377' u='c' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='389' u='c' c='resume'/>
+<use f='redis/deps/lua/src/lvm.c' l='591' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='612' u='c' c='luaV_execute'/>

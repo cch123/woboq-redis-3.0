@@ -1,0 +1,5 @@
+<def f='redis/src/memtest.c' l='151' ll='180' type='void memtest_fill_value(unsigned long * l, size_t bytes, unsigned long v1, unsigned long v2, char sym)'/>
+<use f='redis/src/memtest.c' l='234' u='c' c='memtest_test'/>
+<use f='redis/src/memtest.c' l='239' u='c' c='memtest_test'/>
+<doc f='redis/src/memtest.c' l='149'>/* Like memtest_fill_random() but uses the two specified values to fill
+ * memory, in an alternated way (v1|v2|v1|v2|...) */</doc>

@@ -1,0 +1,22 @@
+<dec f='redis/deps/lua/src/lzio.h' l='27' type='size_t'/>
+<offset>128</offset>
+<use f='redis/deps/lua/src/ldo.c' l='513' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ldo.c' l='515' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='515' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lgc.c' l='438' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='439' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='440' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='440' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='53' u='r' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='55' u='r' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='57' u='r' c='save'/>
+<use f='redis/deps/lua/src/llex.c' l='58' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='58' macro='1' u='w'/>
+<use f='redis/deps/lua/src/llex.c' l='149' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='149' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lstate.c' l='112' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='112' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lstate.c' l='167' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lzio.c' l='75' u='r' c='luaZ_openspace'/>
+<use f='redis/deps/lua/src/lzio.c' l='77' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lzio.c' l='77' macro='1' u='w'/>

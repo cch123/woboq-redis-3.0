@@ -1,0 +1,33 @@
+<def f='redis/deps/lua/src/lstate.h' l='100' ll='127'/>
+<size>184</size>
+<doc f='redis/deps/lua/src/lstate.h' l='97'>/*
+** `per thread&apos; state
+*/</doc>
+<mbr r='lua_State::next' o='0' t='GCObject *'/>
+<mbr r='lua_State::tt' o='64' t='lu_byte'/>
+<mbr r='lua_State::marked' o='72' t='lu_byte'/>
+<mbr r='lua_State::status' o='80' t='lu_byte'/>
+<mbr r='lua_State::top' o='128' t='StkId'/>
+<mbr r='lua_State::base' o='192' t='StkId'/>
+<mbr r='lua_State::l_G' o='256' t='global_State *'/>
+<mbr r='lua_State::ci' o='320' t='CallInfo *'/>
+<mbr r='lua_State::savedpc' o='384' t='const Instruction *'/>
+<mbr r='lua_State::stack_last' o='448' t='StkId'/>
+<mbr r='lua_State::stack' o='512' t='StkId'/>
+<mbr r='lua_State::end_ci' o='576' t='CallInfo *'/>
+<mbr r='lua_State::base_ci' o='640' t='CallInfo *'/>
+<mbr r='lua_State::stacksize' o='704' t='int'/>
+<mbr r='lua_State::size_ci' o='736' t='int'/>
+<mbr r='lua_State::nCcalls' o='768' t='unsigned short'/>
+<mbr r='lua_State::baseCcalls' o='784' t='unsigned short'/>
+<mbr r='lua_State::hookmask' o='800' t='lu_byte'/>
+<mbr r='lua_State::allowhook' o='808' t='lu_byte'/>
+<mbr r='lua_State::basehookcount' o='832' t='int'/>
+<mbr r='lua_State::hookcount' o='864' t='int'/>
+<mbr r='lua_State::hook' o='896' t='lua_Hook'/>
+<mbr r='lua_State::l_gt' o='960' t='TValue'/>
+<mbr r='lua_State::env' o='1088' t='TValue'/>
+<mbr r='lua_State::openupval' o='1216' t='GCObject *'/>
+<mbr r='lua_State::gclist' o='1280' t='GCObject *'/>
+<mbr r='lua_State::errorJmp' o='1344' t='struct lua_longjmp *'/>
+<mbr r='lua_State::errfunc' o='1408' t='ptrdiff_t'/>

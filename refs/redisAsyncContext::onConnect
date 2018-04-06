@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/async.h' l='90' type='redisConnectCallback *'/>
+<use f='redis/deps/hiredis/async.c' l='130' u='w' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='195' u='r' c='redisAsyncSetConnectCallback'/>
+<use f='redis/deps/hiredis/async.c' l='196' u='w' c='redisAsyncSetConnectCallback'/>
+<use f='redis/deps/hiredis/async.c' l='489' u='r' c='__redisAsyncHandleConnect'/>
+<use f='redis/deps/hiredis/async.c' l='489' u='r' c='__redisAsyncHandleConnect'/>
+<use f='redis/deps/hiredis/async.c' l='496' u='r' c='__redisAsyncHandleConnect'/>
+<use f='redis/deps/hiredis/async.c' l='496' u='r' c='__redisAsyncHandleConnect'/>
+<offset>1920</offset>
+<doc f='redis/deps/hiredis/async.h' l='89'>/* Called when the first write event was received. */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='78' type='mstime_t'/>
+<use f='redis/src/cluster.c' l='695' u='w' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='703' u='w' c='clusterNodeAddFailureReport'/>
+<use f='redis/src/cluster.c' l='725' u='r' c='clusterNodeCleanupFailureReports'/>
+<offset>64</offset>
+<doc f='redis/src/cluster.h' l='78'>/* Time of the last report from this node. */</doc>

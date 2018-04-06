@@ -1,0 +1,2 @@
+<def f='redis/src/config.c' l='1013' ll='1234' type='void configGetCommand(redisClient * c)'/>
+<use f='redis/src/config.c' l='1901' u='c' c='configCommand'/>

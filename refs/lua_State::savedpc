@@ -1,0 +1,41 @@
+<dec f='redis/deps/lua/src/lstate.h' l='107' type='const Instruction *'/>
+<offset>384</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='107'>/* `savedpc&apos; of current function */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='39' u='r' c='currentpc'/>
+<use f='redis/deps/lua/src/ldo.c' l='272' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='294' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='301' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='303' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='353' u='w' c='luaD_poscall'/>
+<use f='redis/deps/lua/src/ldo.c' l='472' u='w' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/lstate.c' l='99' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lvm.c' l='62' u='r' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='63' u='w' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='384' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='396' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='590' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='610' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='625' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='643' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='670' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='361' u='w' c='luaV_execute'/>

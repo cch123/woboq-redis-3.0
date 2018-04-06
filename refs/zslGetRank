@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1221' type='unsigned long zslGetRank(zskiplist * zsl, double score, robj * o)'/>
+<use f='redis/src/db.c' l='1201' u='c' c='countKeysInSlot'/>
+<use f='redis/src/db.c' l='1209' u='c' c='countKeysInSlot'/>
+<def f='redis/src/t_zset.c' l='386' ll='407' type='unsigned long zslGetRank(zskiplist * zsl, double score, robj * o)'/>
+<use f='redis/src/t_zset.c' l='2455' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2463' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2533' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2541' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2826' u='c' c='zrankGenericCommand'/>
+<doc f='redis/src/t_zset.c' l='382'>/* Find the rank for an element by both score and key.
+ * Returns 0 when the element cannot be found, rank otherwise.
+ * Note that the rank is 1-based due to the span of zsl-&gt;header to the
+ * first element. */</doc>

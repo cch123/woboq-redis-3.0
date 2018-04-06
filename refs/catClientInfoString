@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1051' type='sds catClientInfoString(sds s, redisClient * client)'/>
+<use f='redis/src/debug.c' l='695' u='c' c='logCurrentClient'/>
+<use f='redis/src/networking.c' l='978' u='c' c='setProtocolError'/>
+<use f='redis/src/networking.c' l='1217' u='c' c='readQueryFromClient'/>
+<def f='redis/src/networking.c' l='1304' ll='1352' type='sds catClientInfoString(sds s, redisClient * client)'/>
+<use f='redis/src/networking.c' l='1364' u='c' c='getAllClientsInfoString'/>
+<use f='redis/src/networking.c' l='1663' u='c' c='asyncCloseClientOnOutputBufferLimitReached'/>
+<doc f='redis/src/networking.c' l='1302'>/* Concatenate a string representing the state of a client in an human
+ * readable format, into the sds string &apos;s&apos;. */</doc>

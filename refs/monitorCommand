@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1445' type='void monitorCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='245' u='r'/>
+<use f='redis/src/redis.c' l='245' u='r'/>
+<use f='redis/src/redis.c' l='245' u='r'/>
+<use f='redis/src/redis.c' l='245' u='r'/>
+<def f='redis/src/redis.c' l='3049' ll='3056' type='void monitorCommand(redisClient * c)'/>

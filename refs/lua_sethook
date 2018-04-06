@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lua.h' l='340' type='int lua_sethook(lua_State * L, lua_Hook func, int mask, int count)'/>
+<use f='redis/deps/lua/src/ldblib.c' l='277' u='c' c='db_sethook'/>
+<def f='redis/deps/lua/src/ldebug.c' l='56' ll='66' macro='1' type='int lua_sethook(lua_State * L, lua_Hook func, int mask, int count)'/>
+<use f='redis/src/scripting.c' l='1019' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1029' u='c' c='evalGenericCommand'/>

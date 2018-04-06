@@ -1,0 +1,4 @@
+<dec f='redis/src/cluster.c' l='65' type='int clusterNodeSetSlotBit(clusterNode * n, int slot)'/>
+<def f='redis/src/cluster.c' l='3318' ll='3323' type='int clusterNodeSetSlotBit(clusterNode * n, int slot)'/>
+<use f='redis/src/cluster.c' l='3344' u='c' c='clusterAddSlot'/>
+<doc f='redis/src/cluster.c' l='3317'>/* Set the slot bit and return the old value. */</doc>

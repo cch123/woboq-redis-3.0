@@ -1,0 +1,4 @@
+<def f='redis/src/rand.c' l='76' ll='78' type='void redisSrand48(int32_t seedval)'/>
+<dec f='redis/src/rand.h' l='34' type='void redisSrand48(int32_t seedval)'/>
+<use f='redis/src/scripting.c' l='932' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1145' u='c' c='redis_math_randomseed'/>

@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lstring.h' l='20'/>
+<use f='redis/deps/lua/src/lapi.c' l='550' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='664' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='411' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='67' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='105' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='387' u='c'/>
+<use f='redis/deps/lua/src/ltm.c' l='40' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='54' u='c'/>

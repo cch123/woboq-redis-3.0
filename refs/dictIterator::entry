@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/dict.h' l='72' type='dictEntry *'/>
+<use f='redis/deps/hiredis/dict.c' l='263' u='w' c='dictGetIterator'/>
+<use f='redis/deps/hiredis/dict.c' l='270' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='274' u='w' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='276' u='w' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='278' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='281' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='282' u='r' c='dictNext'/>
+<offset>128</offset>
+<dec f='redis/src/dict.h' l='92' type='dictEntry *'/>
+<offset>192</offset>
+<use f='redis/src/dict.c' l='563' u='w' c='dictGetIterator'/>
+<use f='redis/src/dict.c' l='578' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='596' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='598' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='600' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='603' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='604' u='r' c='dictNext'/>

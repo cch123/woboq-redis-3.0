@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='1112' ll='1120' type='int clusterBlacklistExists(char * nodeid)'/>
+<use f='redis/src/cluster.c' l='1348' u='c' c='clusterProcessGossipSection'/>
+<doc f='redis/src/cluster.c' l='1109'>/* Return non-zero if the specified node ID exists in the blacklist.
+ * You don&apos;t need to pass an sds string here, any pointer to 40 bytes
+ * will work. */</doc>

@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/ltm.h' l='35' type='16'/>
+<use f='redis/deps/lua/src/ldo.c' l='245' u='r' c='tryfuncTM'/>

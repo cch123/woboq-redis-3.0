@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/llex.h' l='31' type='283'/>
+<use f='redis/deps/lua/src/llex.c' l='389' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='797' c='getbinopr'/>

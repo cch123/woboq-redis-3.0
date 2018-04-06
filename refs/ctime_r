@@ -1,0 +1,1 @@
+<use f='redis/src/sentinel.c' l='3403' u='c' c='sentinelStartFailoverIfNeeded'/>

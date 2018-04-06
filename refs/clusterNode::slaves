@@ -1,0 +1,27 @@
+<dec f='redis/src/cluster.h' l='89' type='struct clusterNode **'/>
+<use f='redis/src/cluster.c' l='658' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='772' u='r' c='clusterNodeRemoveSlave'/>
+<use f='redis/src/cluster.c' l='775' u='r' c='clusterNodeRemoveSlave'/>
+<use f='redis/src/cluster.c' l='775' u='r' c='clusterNodeRemoveSlave'/>
+<use f='redis/src/cluster.c' l='776' u='r' c='clusterNodeRemoveSlave'/>
+<use f='redis/src/cluster.c' l='790' u='r' c='clusterNodeAddSlave'/>
+<use f='redis/src/cluster.c' l='791' u='w' c='clusterNodeAddSlave'/>
+<use f='redis/src/cluster.c' l='791' u='r' c='clusterNodeAddSlave'/>
+<use f='redis/src/cluster.c' l='793' u='r' c='clusterNodeAddSlave'/>
+<use f='redis/src/cluster.c' l='799' u='r' c='clusterNodeResetSlaves'/>
+<use f='redis/src/cluster.c' l='801' u='w' c='clusterNodeResetSlaves'/>
+<use f='redis/src/cluster.c' l='808' u='r' c='clusterCountNonFailingSlaves'/>
+<use f='redis/src/cluster.c' l='821' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='835' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='2573' u='r' c='clusterGetSlaveRank'/>
+<use f='redis/src/cluster.c' l='2574' u='r' c='clusterGetSlaveRank'/>
+<use f='redis/src/cluster.c' l='2891' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='2892' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='2923' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='2927' u='r' c='clusterHandleSlaveMigration'/>
+<use f='redis/src/cluster.c' l='3785' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3787' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='3788' u='r' c='clusterReplyMultiBulkSlots'/>
+<use f='redis/src/cluster.c' l='4159' u='r' c='clusterCommand'/>
+<offset>16960</offset>
+<doc f='redis/src/cluster.h' l='89'>/* pointers to slave nodes */</doc>

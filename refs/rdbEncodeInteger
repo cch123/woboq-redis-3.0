@@ -1,0 +1,7 @@
+<def f='redis/src/rdb.c' l='141' ll='161' type='int rdbEncodeInteger(long long value, unsigned char * enc)'/>
+<use f='redis/src/rdb.c' l='209' u='c' c='rdbTryIntegerEncoding'/>
+<use f='redis/src/rdb.c' l='306' u='c' c='rdbSaveLongLongAsStringObject'/>
+<doc f='redis/src/rdb.c' l='137'>/* Encodes the &quot;value&quot; argument as integer when it fits in the supported ranges
+ * for encoded types. If the function successfully encodes the integer, the
+ * representation is stored in the buffer pointer to by &quot;enc&quot; and the string
+ * length is returned. Otherwise 0 is returned. */</doc>

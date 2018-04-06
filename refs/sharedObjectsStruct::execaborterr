@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='572' type='robj *'/>
+<offset>1600</offset>
+<use f='redis/src/multi.c' l='133' u='r' c='execCommand'/>
+<use f='redis/src/redis.c' l='1349' u='w' c='createSharedObjects'/>

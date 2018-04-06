@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1025' type='void resetClient(redisClient * c)'/>
+<def f='redis/src/networking.c' l='900' ll='911' type='void resetClient(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1158' u='c' c='processInputBuffer'/>
+<use f='redis/src/networking.c' l='1162' u='c' c='processInputBuffer'/>
+<doc f='redis/src/networking.c' l='899'>/* resetClient prepare the client to process the next command */</doc>

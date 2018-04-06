@@ -1,0 +1,5 @@
+<dec f='redis/deps/hiredis/net.h' l='44' type='int redisContextConnectTcp(redisContext * c, const char * addr, int port, const struct timeval * timeout)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1031' u='c' c='redisConnect'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1043' u='c' c='redisConnectWithTimeout'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1055' u='c' c='redisConnectNonBlock'/>
+<def f='redis/deps/hiredis/net.c' l='345' ll='348' type='int redisContextConnectTcp(redisContext * c, const char * addr, int port, const struct timeval * timeout)'/>

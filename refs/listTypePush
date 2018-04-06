@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1080' type='void listTypePush(robj * subject, robj * value, int where)'/>
+<use f='redis/src/sort.c' l='520' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='534' u='c' c='sortCommand'/>
+<def f='redis/src/t_list.c' l='51' ll='73' type='void listTypePush(robj * subject, robj * value, int where)'/>
+<use f='redis/src/t_list.c' l='310' u='c' c='pushGenericCommand'/>
+<use f='redis/src/t_list.c' l='376' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='709' u='c' c='rpoplpushHandlePush'/>
+<use f='redis/src/t_list.c' l='1002' u='c' c='handleClientsBlockedOnLists'/>
+<doc f='redis/src/t_list.c' l='46'>/* The function pushes an element to the specified list object &apos;subject&apos;,
+ * at head or tail position as specified by &apos;where&apos;.
+ *
+ * There is no need for the caller to increment the refcount of &apos;value&apos; as
+ * the function takes care of it if needed. */</doc>

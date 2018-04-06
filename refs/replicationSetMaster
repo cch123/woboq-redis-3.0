@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1161' type='void replicationSetMaster(char * ip, int port)'/>
+<use f='redis/src/cluster.c' l='1399' u='c' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='3238' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3576' u='c' c='clusterSetMaster'/>
+<def f='redis/src/replication.c' l='1437' ll='1450' type='void replicationSetMaster(char * ip, int port)'/>
+<use f='redis/src/replication.c' l='1504' u='c' c='slaveofCommand'/>
+<doc f='redis/src/replication.c' l='1436'>/* Set replication to the specified master address and port. */</doc>

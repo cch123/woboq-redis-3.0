@@ -1,0 +1,5 @@
+<dec f='redis/src/anet.h' l='52' type='int anetTcpNonBlockBindConnect(char * err, char * addr, int port, char * source_addr)'/>
+<def f='redis/src/anet.c' l='349' ll='352' type='int anetTcpNonBlockBindConnect(char * err, char * addr, int port, char * source_addr)'/>
+<use f='redis/src/cluster.c' l='3063' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='4489' u='c' c='migrateGetSocket'/>
+<use f='redis/src/replication.c' l='1380' u='c' c='connectWithMaster'/>

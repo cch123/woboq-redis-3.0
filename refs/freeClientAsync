@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1024' type='void freeClientAsync(redisClient * c)'/>
+<use f='redis/src/networking.c' l='175' u='c' c='prepareClientToWrite'/>
+<def f='redis/src/networking.c' l='799' ll='803' type='void freeClientAsync(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1665' u='c' c='asyncCloseClientOnOutputBufferLimitReached'/>
+<doc f='redis/src/networking.c' l='795'>/* Schedule a client to free it at a safe time in the serverCron() function.
+ * This function is useful when we need to terminate a client but we are in
+ * a context where calling freeClient() is not possible, because the client
+ * should be valid for the continuation of the flow of the program. */</doc>
+<use f='redis/src/replication.c' l='409' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='434' u='c' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1664' u='c' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1673' u='c' c='replicationResurrectCachedMaster'/>

@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lobject.h' l='239' type='TString *'/>
+<offset>512</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='158' u='r' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='612' u='r' c='addinfo'/>
+<use f='redis/deps/lua/src/ldump.c' l='108' u='r' c='DumpConstants'/>
+<use f='redis/deps/lua/src/ldump.c' l='131' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/ldump.c' l='131' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/lfunc.c' l='136' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='205' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='205' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='345' u='w' c='open_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='134' u='r' c='LoadConstants'/>
+<use f='redis/deps/lua/src/lundump.c' l='167' u='w' c='LoadFunction'/>
+<use f='redis/deps/lua/src/lundump.c' l='167' u='r' c='LoadFunction'/>
+<use f='redis/deps/lua/src/lundump.c' l='167' u='w' c='LoadFunction'/>

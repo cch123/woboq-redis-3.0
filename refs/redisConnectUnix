@@ -1,0 +1,3 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='179' type='redisContext * redisConnectUnix(const char * path)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1067' ll='1077' type='redisContext * redisConnectUnix(const char * path)'/>
+<use f='redis/src/redis-cli.c' l='383' u='c' c='cliConnect'/>

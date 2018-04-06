@@ -1,0 +1,6 @@
+<def f='redis/src/hyperloglog.c' l='888' ll='918' type='double hllSparseSum(uint8_t * sparse, int sparselen, double * PE, int * ezp, int * invalid)'/>
+<use f='redis/src/hyperloglog.c' l='989' u='c' c='hllCount'/>
+<doc f='redis/src/hyperloglog.c' l='884'>/* Compute SUM(2^-reg) in the sparse representation.
+ * PE is an array with a pre-computer table of values 2^-reg indexed by reg.
+ * As a side effect the integer pointed by &apos;ezp&apos; is set to the number
+ * of zero registers. */</doc>

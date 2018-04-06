@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1150' type='ssize_t syncRead(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<use f='redis/src/aof.c' l='1142' u='c' c='rewriteAppendOnlyFile'/>
+<def f='redis/src/syncio.c' l='85' ll='118' type='ssize_t syncRead(int fd, char * ptr, ssize_t size, long long timeout)'/>
+<use f='redis/src/syncio.c' l='132' u='c' c='syncReadLine'/>
+<doc f='redis/src/syncio.c' l='81'>/* Read the specified amount of bytes from &apos;fd&apos;. If all the bytes are read
+ * within &apos;timeout&apos; milliseconds the operation succeed and &apos;size&apos; is returned.
+ * Otherwise the operation fails, -1 is returned, and an unspecified amount of
+ * data could be read from the file descriptor. */</doc>

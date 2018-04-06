@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='596' type='int'/>
+<offset>192</offset>
+<use f='redis/src/debug.c' l='447' u='r' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/t_zset.c' l='70' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='117' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='119' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='134' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='135' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='140' u='w' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='153' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='169' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='182' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='182' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='183' u='w' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='193' u='r' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='247' u='r' c='zslFirstInRange'/>
+<use f='redis/src/t_zset.c' l='273' u='r' c='zslLastInRange'/>
+<use f='redis/src/t_zset.c' l='298' u='r' c='zslDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='330' u='r' c='zslDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='360' u='r' c='zslDeleteRangeByRank'/>
+<use f='redis/src/t_zset.c' l='392' u='r' c='zslGetRank'/>
+<use f='redis/src/t_zset.c' l='416' u='r' c='zslGetElementByRank'/>
+<use f='redis/src/t_zset.c' l='590' u='r' c='zslFirstInLexRange'/>
+<use f='redis/src/t_zset.c' l='616' u='r' c='zslLastInLexRange'/>

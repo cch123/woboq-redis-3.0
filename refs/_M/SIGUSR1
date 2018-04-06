@@ -1,0 +1,6 @@
+<dec f='include/x86_64-linux-gnu/bits/signum.h' l='42'/>
+<use f='redis/src/aof.c' l='221' u='c'/>
+<use f='redis/src/db.c' l='267' u='c'/>
+<use f='redis/src/rdb.c' l='1264' u='c'/>
+<use f='redis/src/redis.c' l='2334' u='c'/>
+<use f='redis/src/redis.c' l='2349' u='c'/>

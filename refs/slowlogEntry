@@ -1,0 +1,8 @@
+<def f='redis/src/slowlog.h' l='34' ll='40'/>
+<size>40</size>
+<doc f='redis/src/slowlog.h' l='33'>/* This structure defines an entry inside the slow log list */</doc>
+<mbr r='slowlogEntry::argv' o='0' t='robj **'/>
+<mbr r='slowlogEntry::argc' o='64' t='int'/>
+<mbr r='slowlogEntry::id' o='128' t='long long'/>
+<mbr r='slowlogEntry::duration' o='192' t='long long'/>
+<mbr r='slowlogEntry::time' o='256' t='time_t'/>

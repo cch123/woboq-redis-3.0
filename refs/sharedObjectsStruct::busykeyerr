@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='573' type='robj *'/>
+<offset>1792</offset>
+<use f='redis/src/cluster.c' l='4398' u='r' c='restoreCommand'/>
+<use f='redis/src/redis.c' l='1353' u='w' c='createSharedObjects'/>

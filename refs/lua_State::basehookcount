@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lstate.h' l='118' type='int'/>
+<offset>832</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='62' u='w' c='lua_sethook'/>
+<use f='redis/deps/lua/src/ldebug.c' l='63' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='80' u='r' c='lua_gethookcount'/>
+<use f='redis/deps/lua/src/lstate.c' l='91' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='93' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='126' u='w' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/lstate.c' l='126' u='r' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/lstate.c' l='128' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='65' macro='1' u='r'/>

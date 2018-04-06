@@ -1,0 +1,22 @@
+<dec f='redis/deps/lua/src/lobject.h' l='343' type='TValue *'/>
+<offset>192</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='343'>/* array part */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='181' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='181' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='181' u='r' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='359' u='r' c='cleartable'/>
+<use f='redis/deps/lua/src/ltable.c' l='165' u='r' c='luaH_next'/>
+<use f='redis/deps/lua/src/ltable.c' l='167' u='r' c='luaH_next'/>
+<use f='redis/deps/lua/src/ltable.c' l='237' u='r' c='numusearray'/>
+<use f='redis/deps/lua/src/ltable.c' l='265' u='w' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='265' u='r' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='267' u='r' c='setarrayvector'/>
+<use f='redis/deps/lua/src/ltable.c' l='310' u='r' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='311' u='r' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='314' u='w' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='314' u='r' c='resize'/>
+<use f='redis/deps/lua/src/ltable.c' l='364' u='w' c='luaH_new'/>
+<use f='redis/deps/lua/src/ltable.c' l='377' u='r' c='luaH_free'/>
+<use f='redis/deps/lua/src/ltable.c' l='438' u='r' c='luaH_getnum'/>
+<use f='redis/deps/lua/src/ltable.c' l='562' u='r' c='luaH_getn'/>
+<use f='redis/deps/lua/src/ltable.c' l='567' u='r' c='luaH_getn'/>

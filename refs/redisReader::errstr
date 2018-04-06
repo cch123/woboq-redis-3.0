@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='127' type='char [128]'/>
+<offset>32</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='127'>/* String representation of error when applicable */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='207' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='207' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='208' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='209' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='564' u='w' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1155' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1204' u='r' c='redisGetReplyFromReader'/>

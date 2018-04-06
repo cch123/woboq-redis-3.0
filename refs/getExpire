@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1312' type='long long getExpire(redisDb * db, robj * key)'/>
+<use f='redis/src/aof.c' l='1070' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='4612' u='c' c='migrateCommand'/>
+<use f='redis/src/db.c' l='677' u='c' c='renameGenericCommand'/>
+<def f='redis/src/db.c' l='785' ll='796' type='long long getExpire(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='823' u='c' c='expireIfNeeded'/>
+<use f='redis/src/db.c' l='941' u='c' c='ttlGenericCommand'/>
+<doc f='redis/src/db.c' l='783'>/* Return the expire time of the specified key, or -1 if no expire
+ * is associated with this key (i.e. the key is non volatile) */</doc>
+<use f='redis/src/debug.c' l='150' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/rdb.c' l='669' u='c' c='rdbSaveRio'/>

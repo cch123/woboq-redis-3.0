@@ -1,0 +1,17 @@
+<dec f='include/stdlib.h' l='480' type='void * realloc(void * __ptr, size_t __size)'/>
+<use f='redis/deps/hiredis/async.c' l='108' u='c' c='redisAsyncInitialize'/>
+<doc f='include/stdlib.h' l='477'>/* __attribute_malloc__ is not used, because if realloc returns
+   the same pointer that was passed to it, aliasing needs to be allowed
+   between objects pointed by the old and new pointers.  */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='710' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='862' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/sds.c' l='142' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='159' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='700' macro='1' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='909' macro='1' u='c'/>
+<use f='redis/deps/linenoise/linenoise.c' l='421' u='c' c='linenoiseAddCompletion'/>
+<use f='redis/deps/linenoise/linenoise.c' l='447' u='c' c='abAppend'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='635' u='c' c='l_alloc'/>
+<use f='redis/deps/lua/src/strbuf.c' l='176' u='c' c='strbuf_resize'/>
+<dec f='redis/src/redis.h' l='1540' type='void * realloc(void * ptr, size_t size)'/>
+<use f='redis/src/zmalloc.c' l='171' u='c' c='zrealloc'/>

@@ -1,0 +1,3 @@
+<def f='redis/src/config.c' l='1491' ll='1496' type='void rewriteConfigOctalOption(struct rewriteConfigState * state, char * option, int value, int defvalue)'/>
+<use f='redis/src/config.c' l='1794' u='c' c='rewriteConfig'/>
+<doc f='redis/src/config.c' l='1490'>/* Rewrite a octal option. */</doc>

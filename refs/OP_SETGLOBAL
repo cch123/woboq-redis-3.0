@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='163' type='7'/>
+<use f='redis/deps/lua/src/lcode.c' l='486' u='r' c='luaK_storevar'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='163'>/*	A Bx	Gbl[Kst(Bx)] := R(A)				*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='393' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='444' c='luaV_execute'/>

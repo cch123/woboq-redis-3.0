@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='54' type='double acos(double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='67' u='c' c='math_acos'/>

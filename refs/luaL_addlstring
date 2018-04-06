@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='147' type='void luaL_addlstring(luaL_Buffer * B, const char * s, size_t l)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='347' u='c' c='luaL_gsub'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='436' ll='439' macro='1' type='void luaL_addlstring(luaL_Buffer * B, const char * s, size_t l)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='443' u='c' c='luaL_addstring'/>
+<use f='redis/deps/lua/src/loslib.c' l='161' u='c' c='os_date'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='100' u='c' c='str_rep'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='142' u='c' c='writer'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='602' u='c' c='add_s'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='676' u='c' c='str_gsub'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='708' u='c' c='addquoted'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='712' u='c' c='addquoted'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='819' u='c' c='str_format'/>
+<use f='redis/deps/lua/src/ltablib.c' l='155' u='c' c='tconcat'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='190' u='c' c='putinteger'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='234' u='c' c='b_pack'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='240' u='c' c='b_pack'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='248' u='c' c='b_pack'/>

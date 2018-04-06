@@ -1,0 +1,29 @@
+<dec f='redis/src/redis.h' l='847' type='int'/>
+<offset>17920</offset>
+<doc f='redis/src/redis.h' l='847'>/* Policy for key eviction */</doc>
+<use f='redis/src/config.c' l='231' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='233' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='235' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='237' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='239' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='241' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='674' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='676' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='678' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='680' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='682' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='684' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1123' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1831' u='r' c='rewriteConfig'/>
+<use f='redis/src/object.c' l='395' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/object.c' l='396' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/redis.c' l='1454' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1873' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='3216' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3233' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3234' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3243' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3244' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3251' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3252' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3287' u='r' c='freeMemoryIfNeeded'/>

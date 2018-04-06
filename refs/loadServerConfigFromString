@@ -1,0 +1,2 @@
+<def f='redis/src/config.c' l='82' ll='566' type='void loadServerConfigFromString(char * config)'/>
+<use f='redis/src/config.c' l='601' u='c' c='loadServerConfig'/>

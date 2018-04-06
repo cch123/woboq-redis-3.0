@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='754' type='int'/>
+<use f='redis/src/aof.c' l='1472' u='w' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1485' u='w' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1490' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13504</offset>
+<doc f='redis/src/redis.h' l='754'>/* REDIS_OK or REDIS_ERR */</doc>
+<use f='redis/src/redis.c' l='1435' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2760' u='r' c='genRedisInfoString'/>

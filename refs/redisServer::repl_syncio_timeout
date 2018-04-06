@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='821' type='int'/>
+<offset>16448</offset>
+<doc f='redis/src/redis.h' l='821'>/* Timeout for synchronous I/O calls */</doc>
+<use f='redis/src/redis.c' l='1497' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='878' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1083' u='r' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1091' u='r' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1264' u='r' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1331' u='r' c='syncWithMaster'/>

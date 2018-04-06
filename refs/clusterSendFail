@@ -1,0 +1,8 @@
+<dec f='redis/src/cluster.c' l='55' type='void clusterSendFail(char * nodename)'/>
+<use f='redis/src/cluster.c' l='1169' u='c' c='markNodeAsFailingIfNeeded'/>
+<def f='redis/src/cluster.c' l='2361' ll='2368' type='void clusterSendFail(char * nodename)'/>
+<doc f='redis/src/cluster.c' l='2356'>/* Send a FAIL message to all the nodes we are able to contact.
+ * The FAIL message is sent when we detect that a node is failing
+ * (REDIS_NODE_PFAIL) and we also receive a gossip confirmation of this:
+ * we switch the node state to REDIS_NODE_FAIL and ask all the other
+ * nodes to do the same ASAP. */</doc>

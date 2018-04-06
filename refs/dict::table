@@ -1,0 +1,18 @@
+<dec f='redis/deps/hiredis/dict.h' l='61' type='dictEntry **'/>
+<use f='redis/deps/hiredis/dict.c' l='66' u='w' c='_dictReset'/>
+<use f='redis/deps/hiredis/dict.c' l='100' u='w' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='109' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='112' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='119' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='120' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='127' u='r' c='dictExpand'/>
+<use f='redis/deps/hiredis/dict.c' l='146' u='r' c='dictAdd'/>
+<use f='redis/deps/hiredis/dict.c' l='147' u='r' c='dictAdd'/>
+<use f='redis/deps/hiredis/dict.c' l='189' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='198' u='r' c='dictDelete'/>
+<use f='redis/deps/hiredis/dict.c' l='220' u='r' c='_dictClear'/>
+<use f='redis/deps/hiredis/dict.c' l='231' u='r' c='_dictClear'/>
+<use f='redis/deps/hiredis/dict.c' l='249' u='r' c='dictFind'/>
+<use f='redis/deps/hiredis/dict.c' l='274' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='330' u='r' c='_dictKeyIndex'/>
+<offset>0</offset>

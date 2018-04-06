@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/ltable.h' l='14'/>
+<use f='redis/deps/lua/src/lgc.c' l='64' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='65' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='191' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='148' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='149' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='288' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='384' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='425' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='425' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='443' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='443' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='458' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='458' u='c'/>

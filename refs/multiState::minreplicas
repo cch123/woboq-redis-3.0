@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='474' type='int'/>
+<offset>96</offset>
+<doc f='redis/src/redis.h' l='474'>/* MINREPLICAS for synchronous replication */</doc>

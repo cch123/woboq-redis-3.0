@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>crc16.c source code [redis/src/crc16.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/crc16.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='crc16.c.html'>crc16.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><u>#include <a href="redis.h.html">"redis.h"</a></u></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><i>/*</i></td></tr>
+<tr><th id="4">4</th><td><i> * Copyright 2001-2010 Georges Menie (www.menie.org)</i></td></tr>
+<tr><th id="5">5</th><td><i> * Copyright 2010-2012 Salvatore Sanfilippo (adapted to Redis coding style)</i></td></tr>
+<tr><th id="6">6</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="9">9</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="10">10</th><td><i> *</i></td></tr>
+<tr><th id="11">11</th><td><i> *     * Redistributions of source code must retain the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *       notice, this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="13">13</th><td><i> *     * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="14">14</th><td><i> *       notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="15">15</th><td><i> *       documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="16">16</th><td><i> *     * Neither the name of the University of California, Berkeley nor the</i></td></tr>
+<tr><th id="17">17</th><td><i> *       names of its contributors may be used to endorse or promote products</i></td></tr>
+<tr><th id="18">18</th><td><i> *       derived from this software without specific prior written permission.</i></td></tr>
+<tr><th id="19">19</th><td><i> *</i></td></tr>
+<tr><th id="20">20</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE REGENTS AND CONTRIBUTORS ``AS IS'' AND ANY</i></td></tr>
+<tr><th id="21">21</th><td><i> * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED</i></td></tr>
+<tr><th id="22">22</th><td><i> * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</i></td></tr>
+<tr><th id="23">23</th><td><i> * DISCLAIMED. IN NO EVENT SHALL THE REGENTS AND CONTRIBUTORS BE LIABLE FOR ANY</i></td></tr>
+<tr><th id="24">24</th><td><i> * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES</i></td></tr>
+<tr><th id="25">25</th><td><i> * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;</i></td></tr>
+<tr><th id="26">26</th><td><i> * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND</i></td></tr>
+<tr><th id="27">27</th><td><i> * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT</i></td></tr>
+<tr><th id="28">28</th><td><i> * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS</i></td></tr>
+<tr><th id="29">29</th><td><i> * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="30">30</th><td><i> */</i></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i  data-doc="crc16tab">/* CRC16 implementation according to CCITT standards.</i></td></tr>
+<tr><th id="33">33</th><td><i  data-doc="crc16tab"> *</i></td></tr>
+<tr><th id="34">34</th><td><i  data-doc="crc16tab"> * Note by @antirez: this is actually the XMODEM CRC 16 algorithm, using the</i></td></tr>
+<tr><th id="35">35</th><td><i  data-doc="crc16tab"> * following parameters:</i></td></tr>
+<tr><th id="36">36</th><td><i  data-doc="crc16tab"> *</i></td></tr>
+<tr><th id="37">37</th><td><i  data-doc="crc16tab"> * Name                       : "XMODEM", also known as "ZMODEM", "CRC-16/ACORN"</i></td></tr>
+<tr><th id="38">38</th><td><i  data-doc="crc16tab"> * Width                      : 16 bit</i></td></tr>
+<tr><th id="39">39</th><td><i  data-doc="crc16tab"> * Poly                       : 1021 (That is actually x^16 + x^12 + x^5 + 1)</i></td></tr>
+<tr><th id="40">40</th><td><i  data-doc="crc16tab"> * Initialization             : 0000</i></td></tr>
+<tr><th id="41">41</th><td><i  data-doc="crc16tab"> * Reflect Input byte         : False</i></td></tr>
+<tr><th id="42">42</th><td><i  data-doc="crc16tab"> * Reflect Output CRC         : False</i></td></tr>
+<tr><th id="43">43</th><td><i  data-doc="crc16tab"> * Xor constant to output CRC : 0000</i></td></tr>
+<tr><th id="44">44</th><td><i  data-doc="crc16tab"> * Output for "123456789"     : 31C3</i></td></tr>
+<tr><th id="45">45</th><td><i  data-doc="crc16tab"> */</i></td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td><em>static</em> <em>const</em> <a class="typedef" href="../../include/stdint.h.html#uint16_t" title='uint16_t' data-type='unsigned short' data-ref="uint16_t">uint16_t</a> <dfn class="tu decl def" id="crc16tab" title='crc16tab' data-type='const uint16_t [256]' data-ref="crc16tab">crc16tab</dfn>[<var>256</var>]= {</td></tr>
+<tr><th id="48">48</th><td>    <var>0x0000</var>,<var>0x1021</var>,<var>0x2042</var>,<var>0x3063</var>,<var>0x4084</var>,<var>0x50a5</var>,<var>0x60c6</var>,<var>0x70e7</var>,</td></tr>
+<tr><th id="49">49</th><td>    <var>0x8108</var>,<var>0x9129</var>,<var>0xa14a</var>,<var>0xb16b</var>,<var>0xc18c</var>,<var>0xd1ad</var>,<var>0xe1ce</var>,<var>0xf1ef</var>,</td></tr>
+<tr><th id="50">50</th><td>    <var>0x1231</var>,<var>0x0210</var>,<var>0x3273</var>,<var>0x2252</var>,<var>0x52b5</var>,<var>0x4294</var>,<var>0x72f7</var>,<var>0x62d6</var>,</td></tr>
+<tr><th id="51">51</th><td>    <var>0x9339</var>,<var>0x8318</var>,<var>0xb37b</var>,<var>0xa35a</var>,<var>0xd3bd</var>,<var>0xc39c</var>,<var>0xf3ff</var>,<var>0xe3de</var>,</td></tr>
+<tr><th id="52">52</th><td>    <var>0x2462</var>,<var>0x3443</var>,<var>0x0420</var>,<var>0x1401</var>,<var>0x64e6</var>,<var>0x74c7</var>,<var>0x44a4</var>,<var>0x5485</var>,</td></tr>
+<tr><th id="53">53</th><td>    <var>0xa56a</var>,<var>0xb54b</var>,<var>0x8528</var>,<var>0x9509</var>,<var>0xe5ee</var>,<var>0xf5cf</var>,<var>0xc5ac</var>,<var>0xd58d</var>,</td></tr>
+<tr><th id="54">54</th><td>    <var>0x3653</var>,<var>0x2672</var>,<var>0x1611</var>,<var>0x0630</var>,<var>0x76d7</var>,<var>0x66f6</var>,<var>0x5695</var>,<var>0x46b4</var>,</td></tr>
+<tr><th id="55">55</th><td>    <var>0xb75b</var>,<var>0xa77a</var>,<var>0x9719</var>,<var>0x8738</var>,<var>0xf7df</var>,<var>0xe7fe</var>,<var>0xd79d</var>,<var>0xc7bc</var>,</td></tr>
+<tr><th id="56">56</th><td>    <var>0x48c4</var>,<var>0x58e5</var>,<var>0x6886</var>,<var>0x78a7</var>,<var>0x0840</var>,<var>0x1861</var>,<var>0x2802</var>,<var>0x3823</var>,</td></tr>
+<tr><th id="57">57</th><td>    <var>0xc9cc</var>,<var>0xd9ed</var>,<var>0xe98e</var>,<var>0xf9af</var>,<var>0x8948</var>,<var>0x9969</var>,<var>0xa90a</var>,<var>0xb92b</var>,</td></tr>
+<tr><th id="58">58</th><td>    <var>0x5af5</var>,<var>0x4ad4</var>,<var>0x7ab7</var>,<var>0x6a96</var>,<var>0x1a71</var>,<var>0x0a50</var>,<var>0x3a33</var>,<var>0x2a12</var>,</td></tr>
+<tr><th id="59">59</th><td>    <var>0xdbfd</var>,<var>0xcbdc</var>,<var>0xfbbf</var>,<var>0xeb9e</var>,<var>0x9b79</var>,<var>0x8b58</var>,<var>0xbb3b</var>,<var>0xab1a</var>,</td></tr>
+<tr><th id="60">60</th><td>    <var>0x6ca6</var>,<var>0x7c87</var>,<var>0x4ce4</var>,<var>0x5cc5</var>,<var>0x2c22</var>,<var>0x3c03</var>,<var>0x0c60</var>,<var>0x1c41</var>,</td></tr>
+<tr><th id="61">61</th><td>    <var>0xedae</var>,<var>0xfd8f</var>,<var>0xcdec</var>,<var>0xddcd</var>,<var>0xad2a</var>,<var>0xbd0b</var>,<var>0x8d68</var>,<var>0x9d49</var>,</td></tr>
+<tr><th id="62">62</th><td>    <var>0x7e97</var>,<var>0x6eb6</var>,<var>0x5ed5</var>,<var>0x4ef4</var>,<var>0x3e13</var>,<var>0x2e32</var>,<var>0x1e51</var>,<var>0x0e70</var>,</td></tr>
+<tr><th id="63">63</th><td>    <var>0xff9f</var>,<var>0xefbe</var>,<var>0xdfdd</var>,<var>0xcffc</var>,<var>0xbf1b</var>,<var>0xaf3a</var>,<var>0x9f59</var>,<var>0x8f78</var>,</td></tr>
+<tr><th id="64">64</th><td>    <var>0x9188</var>,<var>0x81a9</var>,<var>0xb1ca</var>,<var>0xa1eb</var>,<var>0xd10c</var>,<var>0xc12d</var>,<var>0xf14e</var>,<var>0xe16f</var>,</td></tr>
+<tr><th id="65">65</th><td>    <var>0x1080</var>,<var>0x00a1</var>,<var>0x30c2</var>,<var>0x20e3</var>,<var>0x5004</var>,<var>0x4025</var>,<var>0x7046</var>,<var>0x6067</var>,</td></tr>
+<tr><th id="66">66</th><td>    <var>0x83b9</var>,<var>0x9398</var>,<var>0xa3fb</var>,<var>0xb3da</var>,<var>0xc33d</var>,<var>0xd31c</var>,<var>0xe37f</var>,<var>0xf35e</var>,</td></tr>
+<tr><th id="67">67</th><td>    <var>0x02b1</var>,<var>0x1290</var>,<var>0x22f3</var>,<var>0x32d2</var>,<var>0x4235</var>,<var>0x5214</var>,<var>0x6277</var>,<var>0x7256</var>,</td></tr>
+<tr><th id="68">68</th><td>    <var>0xb5ea</var>,<var>0xa5cb</var>,<var>0x95a8</var>,<var>0x8589</var>,<var>0xf56e</var>,<var>0xe54f</var>,<var>0xd52c</var>,<var>0xc50d</var>,</td></tr>
+<tr><th id="69">69</th><td>    <var>0x34e2</var>,<var>0x24c3</var>,<var>0x14a0</var>,<var>0x0481</var>,<var>0x7466</var>,<var>0x6447</var>,<var>0x5424</var>,<var>0x4405</var>,</td></tr>
+<tr><th id="70">70</th><td>    <var>0xa7db</var>,<var>0xb7fa</var>,<var>0x8799</var>,<var>0x97b8</var>,<var>0xe75f</var>,<var>0xf77e</var>,<var>0xc71d</var>,<var>0xd73c</var>,</td></tr>
+<tr><th id="71">71</th><td>    <var>0x26d3</var>,<var>0x36f2</var>,<var>0x0691</var>,<var>0x16b0</var>,<var>0x6657</var>,<var>0x7676</var>,<var>0x4615</var>,<var>0x5634</var>,</td></tr>
+<tr><th id="72">72</th><td>    <var>0xd94c</var>,<var>0xc96d</var>,<var>0xf90e</var>,<var>0xe92f</var>,<var>0x99c8</var>,<var>0x89e9</var>,<var>0xb98a</var>,<var>0xa9ab</var>,</td></tr>
+<tr><th id="73">73</th><td>    <var>0x5844</var>,<var>0x4865</var>,<var>0x7806</var>,<var>0x6827</var>,<var>0x18c0</var>,<var>0x08e1</var>,<var>0x3882</var>,<var>0x28a3</var>,</td></tr>
+<tr><th id="74">74</th><td>    <var>0xcb7d</var>,<var>0xdb5c</var>,<var>0xeb3f</var>,<var>0xfb1e</var>,<var>0x8bf9</var>,<var>0x9bd8</var>,<var>0xabbb</var>,<var>0xbb9a</var>,</td></tr>
+<tr><th id="75">75</th><td>    <var>0x4a75</var>,<var>0x5a54</var>,<var>0x6a37</var>,<var>0x7a16</var>,<var>0x0af1</var>,<var>0x1ad0</var>,<var>0x2ab3</var>,<var>0x3a92</var>,</td></tr>
+<tr><th id="76">76</th><td>    <var>0xfd2e</var>,<var>0xed0f</var>,<var>0xdd6c</var>,<var>0xcd4d</var>,<var>0xbdaa</var>,<var>0xad8b</var>,<var>0x9de8</var>,<var>0x8dc9</var>,</td></tr>
+<tr><th id="77">77</th><td>    <var>0x7c26</var>,<var>0x6c07</var>,<var>0x5c64</var>,<var>0x4c45</var>,<var>0x3ca2</var>,<var>0x2c83</var>,<var>0x1ce0</var>,<var>0x0cc1</var>,</td></tr>
+<tr><th id="78">78</th><td>    <var>0xef1f</var>,<var>0xff3e</var>,<var>0xcf5d</var>,<var>0xdf7c</var>,<var>0xaf9b</var>,<var>0xbfba</var>,<var>0x8fd9</var>,<var>0x9ff8</var>,</td></tr>
+<tr><th id="79">79</th><td>    <var>0x6e17</var>,<var>0x7e36</var>,<var>0x4e55</var>,<var>0x5e74</var>,<var>0x2e93</var>,<var>0x3eb2</var>,<var>0x0ed1</var>,<var>0x1ef0</var></td></tr>
+<tr><th id="80">80</th><td>};</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td><a class="typedef" href="../../include/stdint.h.html#uint16_t" title='uint16_t' data-type='unsigned short' data-ref="uint16_t">uint16_t</a> <dfn class="decl def fn" id="crc16" title='crc16' data-ref="crc16">crc16</dfn>(<em>const</em> <em>char</em> *<dfn class="local col1 decl" id="1buf" title='buf' data-type='const char *' data-ref="1buf">buf</dfn>, <em>int</em> <dfn class="local col2 decl" id="2len" title='len' data-type='int' data-ref="2len">len</dfn>) {</td></tr>
+<tr><th id="83">83</th><td>    <em>int</em> <dfn class="local col3 decl" id="3counter" title='counter' data-type='int' data-ref="3counter">counter</dfn>;</td></tr>
+<tr><th id="84">84</th><td>    <a class="typedef" href="../../include/stdint.h.html#uint16_t" title='uint16_t' data-type='unsigned short' data-ref="uint16_t">uint16_t</a> <dfn class="local col4 decl" id="4crc" title='crc' data-type='uint16_t' data-ref="4crc">crc</dfn> = <var>0</var>;</td></tr>
+<tr><th id="85">85</th><td>    <b>for</b> (<a class="local col3 ref" href="#3counter" title='counter' data-ref="3counter">counter</a> = <var>0</var>; <a class="local col3 ref" href="#3counter" title='counter' data-ref="3counter">counter</a> &lt; <a class="local col2 ref" href="#2len" title='len' data-ref="2len">len</a>; <a class="local col3 ref" href="#3counter" title='counter' data-ref="3counter">counter</a>++)</td></tr>
+<tr><th id="86">86</th><td>            <a class="local col4 ref" href="#4crc" title='crc' data-ref="4crc">crc</a> = (<a class="local col4 ref" href="#4crc" title='crc' data-ref="4crc">crc</a>&lt;&lt;<var>8</var>) ^ <a class="tu ref" href="#crc16tab" title='crc16tab' data-use='r' data-ref="crc16tab">crc16tab</a>[((<a class="local col4 ref" href="#4crc" title='crc' data-ref="4crc">crc</a>&gt;&gt;<var>8</var>) ^ *<a class="local col1 ref" href="#1buf" title='buf' data-ref="1buf">buf</a>++)&amp;<var>0x00FF</var>];</td></tr>
+<tr><th id="87">87</th><td>    <b>return</b> <a class="local col4 ref" href="#4crc" title='crc' data-ref="4crc">crc</a>;</td></tr>
+<tr><th id="88">88</th><td>}</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

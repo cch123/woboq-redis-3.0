@@ -1,0 +1,20 @@
+<dec f='include/stdio.h' l='622' type='char * fgets(char *restrict __s, int __n, FILE *restrict __stream)'/>
+<doc f='include/stdio.h' l='618'>/* Get a newline-terminated string of finite length from STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='939' u='c' c='linenoiseRaw'/>
+<use f='redis/deps/linenoise/linenoise.c' l='969' u='c' c='linenoise'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1095' u='c' c='linenoiseHistoryLoad'/>
+<use f='redis/deps/lua/src/ldblib.c' l='306' u='c' c='db_debug'/>
+<use f='redis/deps/lua/src/liolib.c' l='300' u='c' c='read_line'/>
+<use f='redis/src/aof.c' l='639' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='655' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='123' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/config.c' l='592' u='c' c='loadServerConfig'/>
+<use f='redis/src/config.c' l='1330' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/debug.c' l='736' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/latency.c' l='69' u='c' c='THPIsEnabled'/>
+<use f='redis/src/redis.c' l='1640' u='c' c='checkTcpBacklogSettings'/>
+<use f='redis/src/redis.c' l='3359' u='c' c='linuxOvercommitMemoryValue'/>
+<use f='redis/src/zmalloc.c' l='345' u='c' c='zmalloc_get_smap_bytes_by_field'/>

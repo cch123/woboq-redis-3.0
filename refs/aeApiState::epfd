@@ -1,0 +1,9 @@
+<dec f='redis/src/ae_epoll.c' l='35' type='int'/>
+<use f='redis/src/ae_epoll.c' l='48' u='w' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='49' u='r' c='aeApiCreate'/>
+<use f='redis/src/ae_epoll.c' l='68' u='r' c='aeApiFree'/>
+<use f='redis/src/ae_epoll.c' l='87' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='102' u='r' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='106' u='r' c='aeApiDelEvent'/>
+<use f='redis/src/ae_epoll.c' l='114' u='r' c='aeApiPoll'/>
+<offset>0</offset>

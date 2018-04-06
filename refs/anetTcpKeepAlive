@@ -1,0 +1,2 @@
+<dec f='redis/src/anet.h' l='68' type='int anetTcpKeepAlive(char * err, int fd)'/>
+<def f='redis/src/anet.c' l='172' ll='180' type='int anetTcpKeepAlive(char * err, int fd)'/>

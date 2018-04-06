@@ -1,0 +1,7 @@
+<def f='redis/src/networking.c' l='476' ll='496' type='void addReplyLongLongWithPrefix(redisClient * c, long long ll, char prefix)'/>
+<use f='redis/src/networking.c' l='504' u='c' c='addReplyLongLong'/>
+<use f='redis/src/networking.c' l='511' u='c' c='addReplyMultiBulkLen'/>
+<use f='redis/src/networking.c' l='537' u='c' c='addReplyBulkLen'/>
+<use f='redis/src/networking.c' l='549' u='c' c='addReplyBulkCBuffer'/>
+<doc f='redis/src/networking.c' l='474'>/* Add a long long as integer reply or bulk len / multi bulk count.
+ * Basically this is used to output &lt;prefix&gt;&lt;long long&gt;&lt;crlf&gt;. */</doc>

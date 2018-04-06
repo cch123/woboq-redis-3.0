@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.h' l='194' ll='215'/>
+<size>2096</size>
+<mbr r='clusterMsgData::ping' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:196:5)'/>
+<mbr r='clusterMsgData::fail' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:202:5)'/>
+<mbr r='clusterMsgData::publish' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:207:5)'/>
+<mbr r='clusterMsgData::update' o='0' t='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:212:5)'/>

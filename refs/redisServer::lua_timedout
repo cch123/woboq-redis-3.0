@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='895' type='int'/>
+<offset>19904</offset>
+<doc f='redis/src/redis.h' l='895'>/* True if we reached the time limit for script
+                             execution. */</doc>
+<use f='redis/src/redis.c' l='1478' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2276' u='r' c='processCommand'/>
+<use f='redis/src/scripting.c' l='550' u='r' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='552' u='w' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='560' u='r' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='1030' u='r' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1031' u='w' c='evalGenericCommand'/>

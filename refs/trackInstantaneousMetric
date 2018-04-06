@@ -1,0 +1,5 @@
+<def f='redis/src/redis.c' l='879' ll='893' type='void trackInstantaneousMetric(int metric, long long current_reading)'/>
+<use f='redis/src/redis.c' l='1081' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1082' u='c' c='serverCron'/>
+<use f='redis/src/redis.c' l='1084' u='c' c='serverCron'/>
+<doc f='redis/src/redis.c' l='878'>/* Add a sample to the operations per second array of samples. */</doc>

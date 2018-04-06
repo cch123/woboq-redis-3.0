@@ -1,0 +1,7 @@
+<def f='redis/src/redis.h' l='412' ll='418'/>
+<size>16</size>
+<mbr r='redisObject::type' o='0' t='unsigned int'/>
+<mbr r='redisObject::encoding' o='4' t='unsigned int'/>
+<mbr r='redisObject::lru' o='8' t='unsigned int'/>
+<mbr r='redisObject::refcount' o='32' t='int'/>
+<mbr r='redisObject::ptr' o='64' t='void *'/>

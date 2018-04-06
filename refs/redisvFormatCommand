@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='161' type='int redisvFormatCommand(char ** target, const char * format, struct __va_list_tag * ap)'/>
+<use f='redis/deps/hiredis/async.c' l='638' u='c' c='redisvAsyncCommand'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='160'>/* Functions to format a command according to the protocol. */</doc>
+<def f='redis/deps/hiredis/hiredis.c' l='686' ll='911' type='int redisvFormatCommand(char ** target, const char * format, struct __va_list_tag * ap)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='929' u='c' c='redisFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1273' u='c' c='redisvAppendCommand'/>

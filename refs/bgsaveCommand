@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1404' type='void bgsaveCommand(redisClient * c)'/>
+<def f='redis/src/rdb.c' l='1536' ll='1546' type='void bgsaveCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='230' u='r'/>
+<use f='redis/src/redis.c' l='230' u='r'/>
+<use f='redis/src/redis.c' l='230' u='r'/>
+<use f='redis/src/redis.c' l='230' u='r'/>

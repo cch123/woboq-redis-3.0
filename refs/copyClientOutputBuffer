@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1045' type='void copyClientOutputBuffer(redisClient * dst, redisClient * src)'/>
+<def f='redis/src/networking.c' l='575' ll='581' type='void copyClientOutputBuffer(redisClient * dst, redisClient * src)'/>
+<doc f='redis/src/networking.c' l='572'>/* Copy &apos;src&apos; client output buffers into &apos;dst&apos; client output buffers.
+ * The function takes care of freeing the old output buffers of the
+ * destination client. */</doc>
+<use f='redis/src/replication.c' l='538' u='c' c='syncCommand'/>

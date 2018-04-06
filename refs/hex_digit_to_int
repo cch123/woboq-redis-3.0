@@ -1,0 +1,10 @@
+<def f='redis/deps/hiredis/sds.c' l='778' ll='798' type='int hex_digit_to_int(char c)'/>
+<use f='redis/deps/hiredis/sds.c' l='843' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='844' u='c' c='sdssplitargs'/>
+<doc f='redis/deps/hiredis/sds.c' l='776'>/* Helper function for sdssplitargs() that converts a hex digit into an
+ * integer from 0 to 15 */</doc>
+<def f='redis/src/sds.c' l='778' ll='798' type='int hex_digit_to_int(char c)'/>
+<use f='redis/src/sds.c' l='843' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='844' u='c' c='sdssplitargs'/>
+<doc f='redis/src/sds.c' l='776'>/* Helper function for sdssplitargs() that converts a hex digit into an
+ * integer from 0 to 15 */</doc>

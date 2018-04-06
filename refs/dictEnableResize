@@ -1,0 +1,3 @@
+<dec f='redis/src/dict.h' l='172' type='void dictEnableResize()'/>
+<def f='redis/src/dict.c' l='994' ll='996' type='void dictEnableResize()'/>
+<use f='redis/src/redis.c' l='698' u='c' c='updateDictResizePolicy'/>

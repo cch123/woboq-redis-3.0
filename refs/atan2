@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='60' type='double atan2(double __y, double __x)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='77' u='c' c='math_atan2'/>

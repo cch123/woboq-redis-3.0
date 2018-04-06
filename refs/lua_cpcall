@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lua.h' l='203' type='int lua_cpcall(lua_State * L, lua_CFunction func, void * ud)'/>
+<def f='redis/deps/lua/src/lapi.c' l='850' ll='859' macro='1' type='int lua_cpcall(lua_State * L, lua_CFunction func, void * ud)'/>

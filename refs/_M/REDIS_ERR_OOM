@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='52'/>
+<use f='redis/deps/hiredis/async.c' l='222' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='246' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1252' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1275' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1304' u='c'/>

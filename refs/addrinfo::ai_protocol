@@ -1,0 +1,6 @@
+<dec f='include/netdb.h' l='572' type='int'/>
+<use f='redis/deps/hiredis/net.c' l='282' u='r' c='_redisContextConnectTcp'/>
+<offset>96</offset>
+<doc f='include/netdb.h' l='572'>/* Protocol for socket.  */</doc>
+<use f='redis/src/anet.c' l='287' u='r' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='462' u='r' c='_anetTcpServer'/>

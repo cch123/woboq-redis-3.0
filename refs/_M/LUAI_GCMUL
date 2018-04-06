@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='313'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='305'>/*
+@@ LUAI_GCMUL defines the default speed of garbage collection relative to
+@* memory allocation as a percentage.
+** CHANGE it if you want to change the granularity of the garbage
+** collection. (Higher values mean coarser collections. 0 represents
+** infinity, where each step performs a full collection.) You can also
+** change this value dynamically.
+*/</doc>
+<use f='redis/deps/lua/src/lstate.c' l='179' u='c'/>

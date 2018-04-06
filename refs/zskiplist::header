@@ -1,0 +1,29 @@
+<dec f='redis/src/redis.h' l='594' type='struct zskiplistNode *'/>
+<offset>0</offset>
+<use f='redis/src/sort.c' l='388' u='r' c='sortCommand'/>
+<use f='redis/src/t_zset.c' l='72' u='w' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='74' u='r' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='75' u='r' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='77' u='r' c='zslCreate'/>
+<use f='redis/src/t_zset.c' l='88' u='r' c='zslFree'/>
+<use f='redis/src/t_zset.c' l='90' u='r' c='zslFree'/>
+<use f='redis/src/t_zset.c' l='116' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='137' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='157' u='r' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='182' u='r' c='zslDeleteNode'/>
+<use f='redis/src/t_zset.c' l='192' u='r' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='231' u='r' c='zslIsInRange'/>
+<use f='redis/src/t_zset.c' l='246' u='r' c='zslFirstInRange'/>
+<use f='redis/src/t_zset.c' l='272' u='r' c='zslLastInRange'/>
+<use f='redis/src/t_zset.c' l='297' u='r' c='zslDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='329' u='r' c='zslDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='359' u='r' c='zslDeleteRangeByRank'/>
+<use f='redis/src/t_zset.c' l='391' u='r' c='zslGetRank'/>
+<use f='redis/src/t_zset.c' l='415' u='r' c='zslGetElementByRank'/>
+<use f='redis/src/t_zset.c' l='574' u='r' c='zslIsInLexRange'/>
+<use f='redis/src/t_zset.c' l='589' u='r' c='zslFirstInLexRange'/>
+<use f='redis/src/t_zset.c' l='615' u='r' c='zslLastInLexRange'/>
+<use f='redis/src/t_zset.c' l='1147' u='r' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1148' u='r' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1579' u='r' c='zuiInitIterator'/>
+<use f='redis/src/t_zset.c' l='2176' u='r' c='zrangeGenericCommand'/>

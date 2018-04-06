@@ -1,0 +1,5 @@
+<dec f='redis/src/bio.h' l='33' type='unsigned long long bioPendingJobsOfType(int type)'/>
+<use f='redis/src/aof.c' l='281' u='c' c='flushAppendOnlyFile'/>
+<def f='redis/src/bio.c' l='193' ll='199' type='unsigned long long bioPendingJobsOfType(int type)'/>
+<doc f='redis/src/bio.c' l='192'>/* Return the number of pending jobs of the specified type. */</doc>
+<use f='redis/src/redis.c' l='2777' u='c' c='genRedisInfoString'/>

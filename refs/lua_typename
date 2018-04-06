@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lua.h' l='140' type='const char * lua_typename(lua_State * L, int tp)'/>
+<def f='redis/deps/lua/src/lapi.c' l='248' ll='251' macro='1' type='const char * lua_typename(lua_State * L, int t)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='63' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='69' u='c' c='tag_error'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='221' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='414' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='639' macro='1' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='139' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='454' u='c' c='json_encode_exception'/>

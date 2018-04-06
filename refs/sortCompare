@@ -1,0 +1,6 @@
+<def f='redis/src/sort.c' l='138' ll='185' type='int sortCompare(const void * s1, const void * s2)'/>
+<use f='redis/src/sort.c' l='474' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='476' u='r' c='sortCommand'/>
+<doc f='redis/src/sort.c' l='135'>/* sortCompare() is used by qsort in sortCommand(). Given that qsort_r with
+ * the additional parameter is not standard but a BSD-specific we have to
+ * pass sorting parameters via the global &apos;server&apos; structure */</doc>

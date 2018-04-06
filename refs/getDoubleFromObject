@@ -1,0 +1,2 @@
+<def f='redis/src/object.c' l='542' ll='568' type='int getDoubleFromObject(robj * o, double * target)'/>
+<use f='redis/src/object.c' l='572' u='c' c='getDoubleFromObjectOrReply'/>

@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='549' type='int'/>
+<use f='redis/src/aof.c' l='565' u='w' c='createFakeClient'/>
+<offset>2368</offset>
+<doc f='redis/src/redis.h' l='549'>/* Type of blocking op if REDIS_BLOCKED. */</doc>
+<use f='redis/src/blocked.c' l='102' u='w' c='blockClient'/>
+<use f='redis/src/blocked.c' l='132' u='r' c='unblockClient'/>
+<use f='redis/src/blocked.c' l='134' u='r' c='unblockClient'/>
+<use f='redis/src/blocked.c' l='143' u='w' c='unblockClient'/>
+<use f='redis/src/blocked.c' l='151' u='r' c='replyToBlockedClientTimedOut'/>
+<use f='redis/src/blocked.c' l='153' u='r' c='replyToBlockedClientTimedOut'/>
+<use f='redis/src/cluster.c' l='4972' u='r' c='clusterRedirectBlockedClientIfNeeded'/>
+<use f='redis/src/networking.c' l='113' u='w' c='createClient'/>

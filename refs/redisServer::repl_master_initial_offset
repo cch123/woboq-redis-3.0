@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='836' type='long long'/>
+<offset>17472</offset>
+<doc f='redis/src/redis.h' l='836'>/* Master PSYNC offset. */</doc>
+<use f='redis/src/redis.c' l='1495' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='1026' u='r' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1136' u='w' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1173' u='w' c='slaveTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1176' u='r' c='slaveTryPartialResynchronization'/>

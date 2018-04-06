@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lmem.h' l='37'/>
+<use f='redis/deps/lua/src/ldo.c' l='145' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='154' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='362' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='364' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='366' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='370' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='372' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='265' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='314' u='c'/>

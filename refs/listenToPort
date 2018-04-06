@@ -1,0 +1,22 @@
+<dec f='redis/src/redis.h' l='1063' type='int listenToPort(int port, int * fds, int * count)'/>
+<use f='redis/src/cluster.c' l='447' u='c' c='clusterInit'/>
+<def f='redis/src/redis.c' l='1668' ll='1714' type='int listenToPort(int port, int * fds, int * count)'/>
+<use f='redis/src/redis.c' l='1777' u='c' c='initServer'/>
+<doc f='redis/src/redis.c' l='1650'>/* Initialize a set of file descriptors to listen to the specified &apos;port&apos;
+ * binding the addresses specified in the Redis server configuration.
+ *
+ * The listening file descriptors are stored in the integer array &apos;fds&apos;
+ * and their number is set in &apos;*count&apos;.
+ *
+ * The addresses to bind are specified in the global server.bindaddr array
+ * and their number is server.bindaddr_count. If the server configuration
+ * contains no specific addresses to bind, this function will try to
+ * bind * (all addresses) for both the IPv4 and IPv6 protocols.
+ *
+ * On success the function returns REDIS_OK.
+ *
+ * On error the function returns REDIS_ERR. For the function to be on
+ * error, at least one of the server.bindaddr addresses was
+ * impossible to bind, or no bind addresses were specified in the server
+ * configuration but the function is not able to bind * for at least
+ * one of the IPv4 or IPv6 protocols. */</doc>

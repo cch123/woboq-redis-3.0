@@ -1,0 +1,4 @@
+<dec f='redis/src/rdb.h' l='82'/>
+<use f='redis/src/rdb.c' l='451' u='c'/>
+<use f='redis/src/rdb.c' l='1001' u='c'/>
+<use f='redis/src/rdb.c' l='1060' u='c'/>

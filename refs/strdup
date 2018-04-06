@@ -1,0 +1,10 @@
+<dec f='include/string.h' l='171' type='char * strdup(const char * __s)'/>
+<doc f='include/string.h' l='170'>/* Duplicate S, returning an identical malloc&apos;d string.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='661' u='c' c='linenoiseEditHistoryNext'/>
+<use f='redis/deps/linenoise/linenoise.c' l='975' u='c' c='linenoise'/>
+<use f='redis/deps/linenoise/linenoise.c' l='979' u='c' c='linenoise'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1027' u='c' c='linenoiseHistoryAdd'/>
+<use f='redis/src/setproctitle.c' l='138' u='c' c='spt_copyargs'/>
+<use f='redis/src/setproctitle.c' l='173' u='c' c='spt_init'/>
+<use f='redis/src/setproctitle.c' l='177' u='c' c='spt_init'/>
+<use f='redis/src/setproctitle.c' l='182' u='c' c='spt_init'/>

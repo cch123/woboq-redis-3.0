@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lvm.h' l='33' type='void luaV_execute(lua_State * L, int nexeccalls)'/>
+<use f='redis/deps/lua/src/ldo.c' l='378' u='c' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='405' u='c' c='resume'/>
+<def f='redis/deps/lua/src/lvm.c' l='377' ll='766' type='void luaV_execute(lua_State * L, int nexeccalls)'/>

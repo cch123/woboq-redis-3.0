@@ -1,0 +1,5 @@
+<def f='redis/src/redis.c' l='896' ll='903' type='long long getInstantaneousMetric(int metric)'/>
+<use f='redis/src/redis.c' l='2839' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2842' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2843' u='c' c='genRedisInfoString'/>
+<doc f='redis/src/redis.c' l='895'>/* Return the mean of all the samples. */</doc>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1141' type='char * strEncoding(int encoding)'/>
+<use f='redis/src/debug.c' l='296' u='c' c='debugCommand'/>
+<def f='redis/src/object.c' l='676' ll='688' type='char * strEncoding(int encoding)'/>
+<use f='redis/src/object.c' l='730' u='c' c='objectCommand'/>

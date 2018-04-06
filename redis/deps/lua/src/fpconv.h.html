@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>fpconv.h source code [redis/deps/lua/src/fpconv.h] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/fpconv.h'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='fpconv.h.html'>fpconv.h</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Lua CJSON floating point conversion routines */</i></td></tr>
+<tr><th id="2">2</th><td></td></tr>
+<tr><th id="3">3</th><td><i>/* Buffer required to store the largest string representation of a double.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Longest double printed with %.14g is 21 characters long:</i></td></tr>
+<tr><th id="6">6</th><td><i> * -1.7976931348623e+308 */</i></td></tr>
+<tr><th id="7">7</th><td><u># define <dfn class="macro" id="_M/FPCONV_G_FMT_BUFSIZE" data-ref="_M/FPCONV_G_FMT_BUFSIZE">FPCONV_G_FMT_BUFSIZE</dfn>   32</u></td></tr>
+<tr><th id="8">8</th><td></td></tr>
+<tr><th id="9">9</th><td><u>#<span data-ppcond="9">ifdef</span> <span class="macro" data-ref="_M/USE_INTERNAL_FPCONV">USE_INTERNAL_FPCONV</span></u></td></tr>
+<tr><th id="10">10</th><td><em>static</em> <b>inline</b> <em>void</em> fpconv_init()</td></tr>
+<tr><th id="11">11</th><td>{</td></tr>
+<tr><th id="12">12</th><td>    <i>/* Do nothing - not required */</i></td></tr>
+<tr><th id="13">13</th><td>}</td></tr>
+<tr><th id="14">14</th><td><u>#<span data-ppcond="9">else</span></u></td></tr>
+<tr><th id="15">15</th><td><b>extern</b> <em>void</em> <a class="decl fn" href="fpconv.c.html#fpconv_init" title='fpconv_init' data-ref="fpconv_init" id="fpconv_init">fpconv_init</a>();</td></tr>
+<tr><th id="16">16</th><td><u>#<span data-ppcond="9">endif</span></u></td></tr>
+<tr><th id="17">17</th><td></td></tr>
+<tr><th id="18">18</th><td><b>extern</b> <em>int</em> <a class="decl fn" href="fpconv.c.html#fpconv_g_fmt" title='fpconv_g_fmt' data-ref="fpconv_g_fmt" id="fpconv_g_fmt">fpconv_g_fmt</a>(<em>char</em>*, <em>double</em>, <em>int</em>);</td></tr>
+<tr><th id="19">19</th><td><b>extern</b> <em>double</em> <a class="decl fn" href="fpconv.c.html#fpconv_strtod" title='fpconv_strtod' data-ref="fpconv_strtod" id="fpconv_strtod">fpconv_strtod</a>(<em>const</em> <em>char</em>*, <em>char</em>**);</td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><i>/* vi:ai et sw=4 ts=4:</i></td></tr>
+<tr><th id="22">22</th><td><i> */</i></td></tr>
+<tr><th id="23">23</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated while processing <a href='fpconv.c.html'>redis/deps/lua/src/fpconv.c</a><br/>Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

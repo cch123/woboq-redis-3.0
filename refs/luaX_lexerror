@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/llex.h' l='76' type='void luaX_lexerror(LexState * ls, const char * msg, int token)'/>
+<use f='redis/deps/lua/src/llex.c' l='56' u='c' c='save'/>
+<def f='redis/deps/lua/src/llex.c' l='102' ll='109' type='void luaX_lexerror(LexState * ls, const char * msg, int token)'/>
+<use f='redis/deps/lua/src/llex.c' l='113' u='c' c='luaX_syntaxerror'/>
+<use f='redis/deps/lua/src/llex.c' l='188' u='c' c='trydecpoint'/>
+<use f='redis/deps/lua/src/llex.c' l='232' u='c' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='242' u='c' c='read_long_string'/>
+<use f='redis/deps/lua/src/llex.c' l='283' u='c' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='287' u='c' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='314' u='c' c='read_string'/>
+<use f='redis/deps/lua/src/llex.c' l='369' u='c' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='76' u='c' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='278' u='c' c='enterlevel'/>

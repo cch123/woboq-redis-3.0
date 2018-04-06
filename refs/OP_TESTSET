@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='190' type='27'/>
+<use f='redis/deps/lua/src/lcode.c' l='125' u='r' c='need_value'/>
+<use f='redis/deps/lua/src/lcode.c' l='133' u='r' c='patchtestreg'/>
+<use f='redis/deps/lua/src/lcode.c' l='535' u='r' c='jumponcond'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='190'>/*	A B C	if (R(B) &lt;=&gt; C) then R(A) := R(B) else pc++	*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='577' c='luaV_execute'/>

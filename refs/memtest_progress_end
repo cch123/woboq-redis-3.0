@@ -1,0 +1,6 @@
+<def f='redis/src/memtest.c' l='78' ll='80' type='void memtest_progress_end()'/>
+<use f='redis/src/memtest.c' l='207' u='c' c='memtest_compare_times'/>
+<use f='redis/src/memtest.c' l='226' u='c' c='memtest_test'/>
+<use f='redis/src/memtest.c' l='230' u='c' c='memtest_test'/>
+<use f='redis/src/memtest.c' l='235' u='c' c='memtest_test'/>
+<use f='redis/src/memtest.c' l='240' u='c' c='memtest_test'/>

@@ -1,0 +1,22 @@
+<dec f='redis/src/cluster.c' l='68' type='void clusterHandleSlaveMigration(int max_slaves)'/>
+<def f='redis/src/cluster.c' l='2878' ll='2941' type='void clusterHandleSlaveMigration(int max_slaves)'/>
+<use f='redis/src/cluster.c' l='3253' u='c' c='clusterCron'/>
+<doc f='redis/src/cluster.c' l='2859'>/* This function is responsible to decide if this replica should be migrated
+ * to a different (orphaned) master. It is called by the clusterCron() function
+ * only if:
+ *
+ * 1) We are a slave node.
+ * 2) It was detected that there is at least one orphaned master in
+ *    the cluster.
+ * 3) We are a slave of one of the masters with the greatest number of
+ *    slaves.
+ *
+ * This checks are performed by the caller since it requires to iterate
+ * the nodes anyway, so we spend time into clusterHandleSlaveMigration()
+ * if definitely needed.
+ *
+ * The fuction is called with a pre-computed max_slaves, that is the max
+ * number of working (not in FAIL state) slaves for a single master.
+ *
+ * Additional conditions for migration are examined inside the function.
+ */</doc>

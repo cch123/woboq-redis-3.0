@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lvm.h' l='29' type='void luaV_gettable(lua_State * L, const TValue * t, TValue * key, StkId val)'/>
+<use f='redis/deps/lua/src/lapi.c' l='539' u='c' c='lua_gettable'/>
+<use f='redis/deps/lua/src/lapi.c' l='551' u='c' c='lua_getfield'/>
+<def f='redis/deps/lua/src/lvm.c' l='108' ll='131' type='void luaV_gettable(lua_State * L, const TValue * t, TValue * key, StkId val)'/>
+<use f='redis/deps/lua/src/lvm.c' l='437' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='441' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='471' u='c' c='luaV_execute'/>

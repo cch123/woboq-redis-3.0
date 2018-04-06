@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1227' type='struct redisCommand * lookupCommand(sds name)'/>
+<use f='redis/src/aof.c' l='678' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/config.c' l='412' u='c' c='loadServerConfigFromString'/>
+<def f='redis/src/redis.c' l='1974' ll='1976' type='struct redisCommand * lookupCommand(sds name)'/>
+<use f='redis/src/redis.c' l='2139' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2543' u='c' c='commandCommand'/>
+<doc f='redis/src/redis.c' l='1972'>/* ====================== Commands lookup and execution ===================== */</doc>
+<use f='redis/src/scripting.c' l='301' u='c' c='luaRedisGenericCommand'/>

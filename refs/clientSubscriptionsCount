@@ -1,0 +1,6 @@
+<def f='redis/src/pubsub.c' l='51' ll='54' type='int clientSubscriptionsCount(redisClient * c)'/>
+<use f='redis/src/pubsub.c' l='82' u='c' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='144' u='c' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='294' u='c' c='unsubscribeCommand'/>
+<use f='redis/src/pubsub.c' l='314' u='c' c='punsubscribeCommand'/>
+<doc f='redis/src/pubsub.c' l='50'>/* Return the number of channels + patterns a client is subscribed to. */</doc>

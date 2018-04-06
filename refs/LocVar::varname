@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lobject.h' l='263' type='TString *'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/ldump.c' l='120' u='r' c='DumpDebug'/>
+<use f='redis/deps/lua/src/lfunc.c' l='169' u='r' c='luaF_getlocalname'/>
+<use f='redis/deps/lua/src/lgc.c' l='217' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='218' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='149' u='w' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='150' u='w' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='210' u='r' c='searchvar'/>
+<use f='redis/deps/lua/src/lundump.c' l='147' u='w' c='LoadDebug'/>
+<use f='redis/deps/lua/src/lundump.c' l='150' u='w' c='LoadDebug'/>

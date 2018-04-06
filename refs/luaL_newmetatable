@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='65' type='int luaL_newmetatable(lua_State * L, const char * tname)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='112' ll='121' macro='1' type='int luaL_newmetatable(lua_State * L, const char * tname)'/>
+<use f='redis/deps/lua/src/liolib.c' l='511' u='c' c='createmeta'/>
+<use f='redis/deps/lua/src/loadlib.c' l='630' u='c' c='luaopen_package'/>

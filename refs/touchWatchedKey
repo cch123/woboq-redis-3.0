@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1101' type='void touchWatchedKey(redisDb * db, robj * key)'/>
+<use f='redis/src/db.c' l='242' u='c' c='signalModifiedKey'/>
+<def f='redis/src/multi.c' l='261' ll='278' type='void touchWatchedKey(redisDb * db, robj * key)'/>
+<doc f='redis/src/multi.c' l='259'>/* &quot;Touch&quot; a key, so that if this key is being WATCHed by some client the
+ * next EXEC will fail. */</doc>

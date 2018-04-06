@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='82' type='lua_State * luaL_newstate()'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='647' ll='651' macro='1' type='lua_State * luaL_newstate()'/>
+<use f='redis/src/scripting.c' l='645' macro='1' u='c'/>

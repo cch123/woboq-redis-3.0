@@ -1,0 +1,4 @@
+<def f='redis/src/pubsub.c' l='58' ll='84' type='int pubsubSubscribeChannel(redisClient * c, robj * channel)'/>
+<use f='redis/src/pubsub.c' l='281' u='c' c='subscribeCommand'/>
+<doc f='redis/src/pubsub.c' l='56'>/* Subscribe a client to a channel. Returns 1 if the operation succeeded, or
+ * 0 if the client was already subscribed to that channel. */</doc>

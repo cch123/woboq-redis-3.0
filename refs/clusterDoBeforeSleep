@@ -1,0 +1,30 @@
+<dec f='redis/src/cluster.c' l='70' type='void clusterDoBeforeSleep(int flags)'/>
+<use f='redis/src/cluster.c' l='530' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='974' u='c' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='1170' u='c' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='1189' u='c' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1204' u='c' c='clearNodeFailureIfNeeded'/>
+<use f='redis/src/cluster.c' l='1415' u='c' c='clusterSetNodeAsMaster'/>
+<use f='redis/src/cluster.c' l='1485' u='c' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1504' u='c' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1593' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1639' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1654' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1684' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1700' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1712' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1722' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1739' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1767' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1779' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1879' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1921' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1950' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2823' u='c' c='clusterHandleSlaveFailover'/>
+<def f='redis/src/cluster.c' l='3287' ll='3289' type='void clusterDoBeforeSleep(int flags)'/>
+<use f='redis/src/cluster.c' l='3844' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3894' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3986' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4101' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4139' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4262' u='c' c='clusterCommand'/>

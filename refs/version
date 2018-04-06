@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3404' ll='3413' type='void version()'/>
+<use f='redis/src/redis.c' l='3601' u='c' c='main'/>

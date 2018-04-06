@@ -1,0 +1,124 @@
+<dec f='redis/deps/hiredis/sds.h' l='65' type='sds sdscatlen(sds s, const void * t, size_t len)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='604' u='c' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='722' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='739' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='745' u='c' c='redisvFormatCommand'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1250' u='c' c='__redisAppendCommand'/>
+<def f='redis/deps/hiredis/sds.c' l='239' ll='251' type='sds sdscatlen(sds s, const void * t, size_t len)'/>
+<use f='redis/deps/hiredis/sds.c' l='258' u='c' c='sdscat'/>
+<use f='redis/deps/hiredis/sds.c' l='266' u='c' c='sdscatsds'/>
+<use f='redis/deps/hiredis/sds.c' l='745' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='752' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='753' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='754' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='755' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='756' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='766' u='c' c='sdscatrepr'/>
+<use f='redis/deps/hiredis/sds.c' l='845' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='859' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='869' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='874' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='884' u='c' c='sdssplitargs'/>
+<use f='redis/deps/hiredis/sds.c' l='902' u='c' c='sdssplitargs'/>
+<doc f='redis/deps/hiredis/sds.c' l='234'>/* Append the specified binary-safe string pointed by &apos;t&apos; of &apos;len&apos; bytes to the
+ * end of the specified sds string &apos;s&apos;.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<dec f='redis/src/sds.h' l='65' type='sds sdscatlen(sds s, const void * t, size_t len)'/>
+<use f='redis/src/aof.c' l='444' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/aof.c' l='452' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/aof.c' l='453' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/aof.c' l='454' u='c' c='catAppendOnlyGenericCommand'/>
+<use f='redis/src/aof.c' l='535' u='c' c='feedAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1008' u='c' c='aofReadDiffFromParent'/>
+<use f='redis/src/cluster.c' l='2043' u='c' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2070' u='c' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='3636' u='c' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3708' u='c' c='clusterGenNodesDescription'/>
+<use f='redis/src/cluster.c' l='4324' u='c' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4330' u='c' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4468' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4469' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4470' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4522' u='c' c='migrateCloseSocket'/>
+<use f='redis/src/cluster.c' l='4523' u='c' c='migrateCloseSocket'/>
+<use f='redis/src/cluster.c' l='4524' u='c' c='migrateCloseSocket'/>
+<use f='redis/src/config.c' l='1158' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1190' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1476' u='c' c='rewriteConfigStringOption'/>
+<use f='redis/src/config.c' l='1594' u='c' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<use f='redis/src/config.c' l='1642' u='c' c='rewriteConfigBindOption'/>
+<use f='redis/src/config.c' l='1664' u='c' c='rewriteConfigGetContentFromState'/>
+<use f='redis/src/debug.c' l='380' u='c' c='debugCommand'/>
+<use f='redis/src/latency.c' l='378' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='553' u='c' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='554' u='c' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/networking.c' l='240' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='273' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='303' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='451' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='1365' u='c' c='getAllClientsInfoString'/>
+<use f='redis/src/notify.c' l='72' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='74' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='75' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='76' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='77' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='78' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='79' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='80' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='81' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='83' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='84' u='c' c='keyspaceEventsFlagsToString'/>
+<use f='redis/src/notify.c' l='110' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='111' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='122' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='123' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/redis-cli.c' l='471' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='493' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='494' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='498' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='507' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='542' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='860' u='c' c='readArgFromStdin'/>
+<use f='redis/src/redis-cli.c' l='1068' u='c' c='evalMode'/>
+<use f='redis/src/replication.c' l='287' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='289' u='c' c='replicationFeedMonitors'/>
+<use f='redis/src/replication.c' l='1077' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/replication.c' l='1080' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/rio.c' l='62' u='c' c='rioBufferWrite'/>
+<use f='redis/src/rio.c' l='178' u='c' c='rioFdsetWrite'/>
+<use f='redis/src/scripting.c' l='395' u='c' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='535' u='c' c='luaLogCommand'/>
+<use f='redis/src/scripting.c' l='536' u='c' c='luaLogCommand'/>
+<use f='redis/src/scripting.c' l='634' u='c' c='scriptingEnableGlobalsProtection'/>
+<use f='redis/src/scripting.c' l='892' u='c' c='luaCreateFunction'/>
+<use f='redis/src/scripting.c' l='893' u='c' c='luaCreateFunction'/>
+<use f='redis/src/scripting.c' l='894' u='c' c='luaCreateFunction'/>
+<use f='redis/src/scripting.c' l='895' u='c' c='luaCreateFunction'/>
+<def f='redis/src/sds.c' l='239' ll='251' type='sds sdscatlen(sds s, const void * t, size_t len)'/>
+<use f='redis/src/sds.c' l='258' u='c' c='sdscat'/>
+<use f='redis/src/sds.c' l='266' u='c' c='sdscatsds'/>
+<use f='redis/src/sds.c' l='745' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='752' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='753' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='754' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='755' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='756' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='766' u='c' c='sdscatrepr'/>
+<use f='redis/src/sds.c' l='845' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='859' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='869' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='874' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='884' u='c' c='sdssplitargs'/>
+<use f='redis/src/sds.c' l='902' u='c' c='sdssplitargs'/>
+<doc f='redis/src/sds.c' l='234'>/* Append the specified binary-safe string pointed by &apos;t&apos; of &apos;len&apos; bytes to the
+ * end of the specified sds string &apos;s&apos;.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<use f='redis/src/sentinel.c' l='2807' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sparkline.c' l='156' u='c' c='sparklineRenderRange'/>
+<use f='redis/src/sparkline.c' l='157' u='c' c='sparklineRenderRange'/>
+<use f='redis/src/sparkline.c' l='171' u='c' c='sparklineRender'/>
+<use f='redis/src/t_string.c' l='443' u='c' c='appendCommand'/>

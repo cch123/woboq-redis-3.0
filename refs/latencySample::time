@@ -1,0 +1,14 @@
+<dec f='redis/src/latency.h' l='42' type='int32_t'/>
+<offset>0</offset>
+<doc f='redis/src/latency.h' l='42'>/* We don&apos;t use time_t to force 4 bytes usage everywhere. */</doc>
+<use f='redis/src/latency.c' l='115' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='121' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='176' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='189' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='190' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='207' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='484' u='r' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='486' u='r' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='508' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='527' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='537' u='r' c='latencyCommandGenSparkeline'/>

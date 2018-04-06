@@ -1,0 +1,7 @@
+<dec f='include/x86_64-linux-gnu/bits/ioctl-types.h' l='30' type='unsigned short'/>
+<use f='redis/deps/linenoise/linenoise.c' l='286' u='r' c='getColumns'/>
+<use f='redis/deps/linenoise/linenoise.c' l='309' u='r' c='getColumns'/>
+<offset>16</offset>
+<use f='redis/src/memtest.c' l='68' u='r' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='74' u='r' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='274' u='w' c='memtest'/>

@@ -1,0 +1,15 @@
+<dec f='include/stdlib.h' l='907' type='void setkey(const char * __key)'/>
+<doc f='include/stdlib.h' l='906'>/* Setup DES tables according KEY.  */</doc>
+<dec f='redis/src/redis.h' l='1321' type='void setKey(redisDb * db, robj * key, robj * val)'/>
+<use f='redis/src/bitops.c' l='450' u='c' c='bitopCommand'/>
+<def f='redis/src/db.c' l='120' ll='129' type='void setKey(redisDb * db, robj * key, robj * val)'/>
+<doc f='redis/src/db.c' l='114'>/* High level Set operation. This function can be used in order to set
+ * a key, whatever it was existing or not, to a new object.
+ *
+ * 1) The ref count of the value object is incremented.
+ * 2) clients WATCHing for the destination key notified.
+ * 3) The expire time of the key is reset (the key is made persistent). */</doc>
+<use f='redis/src/sort.c' l='544' u='c' c='sortCommand'/>
+<use f='redis/src/t_string.c' l='84' u='c' c='setGenericCommand'/>
+<use f='redis/src/t_string.c' l='167' u='c' c='getsetCommand'/>
+<use f='redis/src/t_string.c' l='310' u='c' c='msetGenericCommand'/>

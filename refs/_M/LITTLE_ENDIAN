@@ -1,0 +1,5 @@
+<dec f='include/endian.h' l='45'/>
+<use f='redis/src/config.h' l='183' u='c'/>
+<use f='redis/src/endianconv.h' l='48' u='c'/>
+<use f='redis/src/hyperloglog.c' l='403' u='c'/>
+<use f='redis/src/sha1.c' l='35' u='c'/>

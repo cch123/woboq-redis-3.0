@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='798' type='int'/>
+<offset>15424</offset>
+<doc f='redis/src/redis.h' l='798'>/* Master pings the slave every N seconds */</doc>
+<use f='redis/src/cluster.c' l='2742' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/config.c' l='258' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='259' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='898' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1064' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1818' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1465' u='w' c='initServerConfig'/>
+<use f='redis/src/replication.c' l='1985' u='r' c='replicationCron'/>

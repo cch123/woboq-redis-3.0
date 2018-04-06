@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='136'/>
+<use f='redis/deps/lua/src/lcode.c' l='135' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='146' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='164' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='174' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='535' u='c'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='133'>/*
+** invalid register that fits in 8 bits
+*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='419' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='459' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='485' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='226' u='c'/>

@@ -1,0 +1,28 @@
+<dec f='include/string.h' l='46' type='void * memmove(void * __dest, const void * __src, size_t __n)'/>
+<doc f='include/string.h' l='44'>/* Copy N bytes of SRC to DEST, guaranteeing
+   correct behavior for overlapping strings.  */</doc>
+<use f='redis/deps/hiredis/sds.c' l='575' u='c' c='sdstrim'/>
+<use f='redis/deps/hiredis/sds.c' l='622' u='c' c='sdsrange'/>
+<use f='redis/deps/linenoise/linenoise.c' l='609' u='c' c='linenoiseEditInsert'/>
+<use f='redis/deps/linenoise/linenoise.c' l='682' u='c' c='linenoiseEditDelete'/>
+<use f='redis/deps/linenoise/linenoise.c' l='692' u='c' c='linenoiseEditBackspace'/>
+<use f='redis/deps/linenoise/linenoise.c' l='711' u='c' c='linenoiseEditDeletePrevWord'/>
+<use f='redis/deps/linenoise/linenoise.c' l='916' u='c' c='linenoisePrintKeyCodes'/>
+<use f='redis/deps/linenoise/linenoise.c' l='1031' u='c' c='linenoiseHistoryAdd'/>
+<use f='redis/src/aof.c' l='115' u='c' c='aofChildWriteDiffData'/>
+<use f='redis/src/cluster.c' l='775' u='c' c='clusterNodeRemoveSlave'/>
+<use f='redis/src/hyperloglog.c' l='820' u='c' c='hllSparseAdd'/>
+<use f='redis/src/hyperloglog.c' l='850' u='c' c='hllSparseAdd'/>
+<use f='redis/src/intset.c' l='200' u='c' c='intsetMoveTail'/>
+<use f='redis/src/redis.c' l='3169' u='c' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3177' u='c' c='evictionPoolPopulate'/>
+<use f='redis/src/redis.c' l='3266' u='c' c='freeMemoryIfNeeded'/>
+<use f='redis/src/replication.c' l='957' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/sds.c' l='575' u='c' c='sdstrim'/>
+<use f='redis/src/sds.c' l='622' u='c' c='sdsrange'/>
+<use f='redis/src/ziplist.c' l='493' u='c' c='__ziplistCascadeUpdate'/>
+<use f='redis/src/ziplist.c' l='555' u='c' c='__ziplistDelete'/>
+<use f='redis/src/ziplist.c' l='626' u='c' c='__ziplistInsert'/>
+<use f='redis/src/zipmap.c' l='243' u='c' c='zipmapSet'/>
+<use f='redis/src/zipmap.c' l='258' u='c' c='zipmapSet'/>
+<use f='redis/src/zipmap.c' l='286' u='c' c='zipmapDel'/>

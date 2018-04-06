@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='86'/>
+<use f='redis/deps/hiredis/hiredis.c' l='88' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='112' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='519' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='543' u='c'/>
+<use f='redis/src/redis-cli.c' l='423' u='c'/>
+<use f='redis/src/redis-cli.c' l='496' u='c'/>
+<use f='redis/src/redis-cli.c' l='527' u='c'/>
+<use f='redis/src/redis-cli.c' l='1642' u='c'/>
+<use f='redis/src/sentinel.c' l='2061' u='c'/>

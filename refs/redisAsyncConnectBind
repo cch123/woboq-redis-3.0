@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/async.h' l='105' type='redisAsyncContext * redisAsyncConnectBind(const char * ip, int port, const char * source_addr)'/>
+<def f='redis/deps/hiredis/async.c' l='168' ll='174' type='redisAsyncContext * redisAsyncConnectBind(const char * ip, int port, const char * source_addr)'/>
+<use f='redis/src/sentinel.c' l='1711' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1733' u='c' c='sentinelReconnectInstance'/>

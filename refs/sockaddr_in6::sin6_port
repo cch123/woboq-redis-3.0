@@ -1,0 +1,6 @@
+<dec f='include/netinet/in.h' l='257' type='in_port_t'/>
+<offset>16</offset>
+<doc f='include/netinet/in.h' l='257'>/* Transport layer port # */</doc>
+<use f='redis/src/anet.c' l='541' u='r' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='570' u='r' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='609' u='r' c='anetSockName'/>

@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='2315' ll='2354' type='void clusterSendPublish(clusterLink * link, robj * channel, robj * message)'/>
+<use f='redis/src/cluster.c' l='2393' u='c' c='clusterPropagatePublish'/>
+<doc f='redis/src/cluster.c' l='2312'>/* Send a PUBLISH message.
+ *
+ * If link is NULL, then the message is broadcasted to the whole cluster. */</doc>

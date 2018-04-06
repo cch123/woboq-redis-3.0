@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1098' type='void initClientMultiState(redisClient * c)'/>
+<use f='redis/src/aof.c' l='576' u='c' c='createFakeClient'/>
+<def f='redis/src/multi.c' l='35' ll='38' type='void initClientMultiState(redisClient * c)'/>
+<use f='redis/src/multi.c' l='74' u='c' c='discardTransaction'/>
+<doc f='redis/src/multi.c' l='34'>/* Client state initialization for MULTI/EXEC */</doc>
+<use f='redis/src/networking.c' l='127' u='c' c='createClient'/>

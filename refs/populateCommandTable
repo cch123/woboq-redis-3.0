@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1247' type='void populateCommandTable()'/>
+<use f='redis/src/redis.c' l='1531' u='c' c='initServerConfig'/>
+<def f='redis/src/redis.c' l='1886' ll='1921' type='void populateCommandTable()'/>
+<doc f='redis/src/redis.c' l='1884'>/* Populates the Redis Command Table starting from the hard coded list
+ * we have on top of redis.c file. */</doc>

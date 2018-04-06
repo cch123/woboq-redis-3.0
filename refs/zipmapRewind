@@ -1,0 +1,5 @@
+<dec f='redis/src/zipmap.h' l='41' type='unsigned char * zipmapRewind(unsigned char * zm)'/>
+<use f='redis/src/rdb.c' l='1024' u='c' c='rdbLoadObject'/>
+<def f='redis/src/zipmap.c' l='300' ll='302' type='unsigned char * zipmapRewind(unsigned char * zm)'/>
+<use f='redis/src/zipmap.c' l='355' u='c' c='zipmapLen'/>
+<doc f='redis/src/zipmap.c' l='299'>/* Call before iterating through elements via zipmapNext() */</doc>

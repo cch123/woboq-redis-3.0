@@ -1,0 +1,10 @@
+<dec f='redis/src/util.h' l='42' type='sds getAbsolutePath(char * filename)'/>
+<use f='redis/src/redis.c' l='3642' u='c' c='main'/>
+<def f='redis/src/util.c' l='524' ll='567' type='sds getAbsolutePath(char * filename)'/>
+<doc f='redis/src/util.c' l='517'>/* Given the filename, return the absolute path as an SDS string, or NULL
+ * if it fails for some reason. Note that &quot;filename&quot; may be an absolute path
+ * already, this will be detected and handled correctly.
+ *
+ * The function does not try to normalize everything, but only the obvious
+ * case of one or more &quot;../&quot; appearning at the start of &quot;filename&quot;
+ * relative path. */</doc>

@@ -1,0 +1,6 @@
+<def f='redis/src/hyperloglog.c' l='504' ll='558' type='double hllDenseSum(uint8_t * registers, double * PE, int * ezp)'/>
+<use f='redis/src/hyperloglog.c' l='987' u='c' c='hllCount'/>
+<doc f='redis/src/hyperloglog.c' l='500'>/* Compute SUM(2^-reg) in the dense representation.
+ * PE is an array with a pre-computer table of values 2^-reg indexed by reg.
+ * As a side effect the integer pointed by &apos;ezp&apos; is set to the number
+ * of zero registers. */</doc>

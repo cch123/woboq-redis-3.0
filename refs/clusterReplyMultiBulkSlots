@@ -1,0 +1,2 @@
+<def f='redis/src/cluster.c' l='3730' ll='3798' type='void clusterReplyMultiBulkSlots(redisClient * c)'/>
+<use f='redis/src/cluster.c' l='3836' u='c' c='clusterCommand'/>

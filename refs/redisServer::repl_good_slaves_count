@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='811' type='int'/>
+<offset>16000</offset>
+<doc f='redis/src/redis.h' l='811'>/* Number of slaves with lag &lt;= max_lag. */</doc>
+<use f='redis/src/redis.c' l='1832' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2229' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2922' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1699' u='w' c='refreshGoodSlavesCount'/>

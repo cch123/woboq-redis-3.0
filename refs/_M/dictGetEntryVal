@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/dict.h' l='109'/>
+<use f='redis/deps/hiredis/async.c' l='281' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='287' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='379' u='c'/>

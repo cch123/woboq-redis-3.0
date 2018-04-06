@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='717' type='long long'/>
+<offset>8064</offset>
+<doc f='redis/src/redis.h' l='717'>/* Bytes written to network. */</doc>
+<use f='redis/src/networking.c' l='868' u='w' c='sendReplyToClient'/>
+<use f='redis/src/redis.c' l='1085' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1742' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2841' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='694' u='w' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='723' u='w' c='sendBulkToSlave'/>

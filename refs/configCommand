@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1500' type='void configCommand(redisClient * c)'/>
+<def f='redis/src/config.c' l='1895' ll='1929' type='void configCommand(redisClient * c)'/>
+<doc f='redis/src/config.c' l='1891'>/*-----------------------------------------------------------------------------
+ * CONFIG command entry point
+ *----------------------------------------------------------------------------*/</doc>
+<use f='redis/src/redis.c' l='252' u='r'/>
+<use f='redis/src/redis.c' l='252' u='r'/>
+<use f='redis/src/redis.c' l='252' u='r'/>
+<use f='redis/src/redis.c' l='252' u='r'/>

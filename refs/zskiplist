@@ -1,0 +1,6 @@
+<def f='redis/src/redis.h' l='593' ll='597'/>
+<size>32</size>
+<mbr r='zskiplist::header' o='0' t='struct zskiplistNode *'/>
+<mbr r='zskiplist::tail' o='64' t='struct zskiplistNode *'/>
+<mbr r='zskiplist::length' o='128' t='unsigned long'/>
+<mbr r='zskiplist::level' o='192' t='int'/>

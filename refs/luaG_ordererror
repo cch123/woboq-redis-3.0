@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='26' type='int luaG_ordererror(lua_State * L, const TValue * p1, const TValue * p2)'/>
+<def f='redis/deps/lua/src/ldebug.c' l='596' ll='604' type='int luaG_ordererror(lua_State * L, const TValue * p1, const TValue * p2)'/>
+<use f='redis/deps/lua/src/lvm.c' l='228' u='c' c='luaV_lessthan'/>
+<use f='redis/deps/lua/src/lvm.c' l='235' u='c' c='luaV_lessthan'/>
+<use f='redis/deps/lua/src/lvm.c' l='242' u='c' c='lessequal'/>
+<use f='redis/deps/lua/src/lvm.c' l='251' u='c' c='lessequal'/>

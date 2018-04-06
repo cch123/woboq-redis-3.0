@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='187' type='double fmod(double __x, double __y)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='92' u='c' c='math_fmod'/>

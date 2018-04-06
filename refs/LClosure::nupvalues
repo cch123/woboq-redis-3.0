@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='292' type='lu_byte'/>
+<offset>88</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='38' u='w' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lfunc.c' l='154' u='r' c='luaF_freeclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='235' u='r' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='295' u='r' c='propagatemark'/>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lzio.h' l='39'/>
+<use f='redis/deps/lua/src/lgc.c' l='440' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='58' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='149' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='77' u='c'/>

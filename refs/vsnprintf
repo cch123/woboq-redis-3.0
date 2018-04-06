@@ -1,0 +1,9 @@
+<dec f='include/stdio.h' l='390' type='int vsnprintf(char *restrict __s, size_t __maxlen, const char *restrict __format, struct __va_list_tag * __arg)'/>
+<use f='redis/deps/hiredis/sds.c' l='392' u='c' c='sdscatvprintf'/>
+<use f='redis/deps/lua/src/strbuf.c' l='210' u='c' c='strbuf_append_fmt'/>
+<use f='redis/deps/lua/src/strbuf.c' l='236' u='c' c='strbuf_append_fmt_retry'/>
+<use f='redis/src/anet.c' l='57' u='c' c='anetSetError'/>
+<use f='redis/src/redis.c' l='346' u='c' c='redisLog'/>
+<use f='redis/src/sds.c' l='392' u='c' c='sdscatvprintf'/>
+<use f='redis/src/sentinel.c' l='559' u='c' c='sentinelEvent'/>
+<use f='redis/src/setproctitle.c' l='227' u='c' c='setproctitle'/>

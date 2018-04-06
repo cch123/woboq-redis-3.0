@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.c' l='63' type='int clusterDelSlot(int slot)'/>
+<use f='redis/src/cluster.c' l='499' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='871' u='c' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='1483' u='c' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='2659' u='c' c='clusterFailoverReplaceYourMaster'/>
+<def f='redis/src/cluster.c' l='3352' ll='3359' type='int clusterDelSlot(int slot)'/>
+<use f='redis/src/cluster.c' l='3367' u='c' c='clusterDelNodeSlots'/>
+<use f='redis/src/cluster.c' l='3888' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3979' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3349'>/* Delete the specified slot marking it as unassigned.
+ * Returns REDIS_OK if the slot was assigned, otherwise if the slot was
+ * already unassigned REDIS_ERR is returned. */</doc>

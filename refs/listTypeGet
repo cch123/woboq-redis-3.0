@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1086' type='robj * listTypeGet(listTypeEntry * entry)'/>
+<use f='redis/src/debug.c' l='159' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/sort.c' l='350' u='c' c='sortCommand'/>
+<def f='redis/src/t_list.c' l='176' ll='199' type='robj * listTypeGet(listTypeEntry * entry)'/>
+<use f='redis/src/t_list.c' l='280' u='c' c='listTypeConvert'/>
+<doc f='redis/src/t_list.c' l='175'>/* Return entry or NULL at the current position of the iterator. */</doc>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='568' type='robj *'/>
+<offset>0</offset>
+<use f='redis/src/cluster.c' l='4039' u='r' c='clusterCommand'/>
+<use f='redis/src/networking.c' l='544' u='r' c='addReplyBulk'/>
+<use f='redis/src/networking.c' l='551' u='r' c='addReplyBulkCBuffer'/>
+<use f='redis/src/redis.c' l='1310' u='w' c='createSharedObjects'/>
+<use f='redis/src/redis.c' l='3046' u='r' c='infoCommand'/>
+<use f='redis/src/sentinel.c' l='2849' u='r' c='sentinelInfoCommand'/>
+<use f='redis/src/t_string.c' l='360' u='r' c='incrDecrCommand'/>

@@ -1,0 +1,17 @@
+<dec f='redis/src/ae.h' l='63' type='int'/>
+<use f='redis/src/ae_epoll.c' l='78' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='82' u='r' c='aeApiAddEvent'/>
+<use f='redis/src/ae_epoll.c' l='94' u='r' c='aeApiDelEvent'/>
+<use f='redis/src/ae.c' l='82' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='120' u='w' c='aeResizeSetSize'/>
+<use f='redis/src/ae.c' l='146' u='w' c='aeCreateFileEvent'/>
+<use f='redis/src/ae.c' l='159' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='162' u='w' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='162' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='163' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='168' u='r' c='aeDeleteFileEvent'/>
+<use f='redis/src/ae.c' l='177' u='r' c='aeGetFileEvents'/>
+<use f='redis/src/ae.c' l='410' u='r' c='aeProcessEvents'/>
+<use f='redis/src/ae.c' l='414' u='r' c='aeProcessEvents'/>
+<offset>0</offset>
+<doc f='redis/src/ae.h' l='63'>/* one of AE_(READABLE|WRITABLE) */</doc>

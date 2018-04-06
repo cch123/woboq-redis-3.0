@@ -1,0 +1,27 @@
+<dec f='redis/deps/hiredis/sds.h' l='90' type='sds sdscatrepr(sds s, const char * p, size_t len)'/>
+<def f='redis/deps/hiredis/sds.c' l='744' ll='767' type='sds sdscatrepr(sds s, const char * p, size_t len)'/>
+<doc f='redis/deps/hiredis/sds.c' l='738'>/* Append to the sds string &quot;s&quot; an escaped string representation where
+ * all the non-printable characters (tested with isprint()) are turned into
+ * escapes in the form &quot;\n\r\a....&quot; or &quot;\x&lt;hex-number&gt;&quot;.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<dec f='redis/src/sds.h' l='90' type='sds sdscatrepr(sds s, const char * p, size_t len)'/>
+<use f='redis/src/config.c' l='1477' u='c' c='rewriteConfigStringOption'/>
+<use f='redis/src/config.c' l='1595' u='c' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<use f='redis/src/debug.c' l='434' u='c' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/networking.c' l='1219' u='c' c='readQueryFromClient'/>
+<use f='redis/src/redis-cli.c' l='433' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='525' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='528' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='534' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis.c' l='3630' u='c' c='main'/>
+<use f='redis/src/replication.c' l='283' u='c' c='replicationFeedMonitors'/>
+<def f='redis/src/sds.c' l='744' ll='767' type='sds sdscatrepr(sds s, const char * p, size_t len)'/>
+<doc f='redis/src/sds.c' l='738'>/* Append to the sds string &quot;s&quot; an escaped string representation where
+ * all the non-printable characters (tested with isprint()) are turned into
+ * escapes in the form &quot;\n\r\a....&quot; or &quot;\x&lt;hex-number&gt;&quot;.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<use f='redis/src/sentinel.c' l='1576' u='c' c='rewriteConfigSentinelOption'/>

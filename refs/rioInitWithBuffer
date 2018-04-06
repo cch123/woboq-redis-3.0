@@ -1,0 +1,5 @@
+<dec f='redis/src/rio.h' l='128' type='void rioInitWithBuffer(rio * r, sds s)'/>
+<use f='redis/src/cluster.c' l='4310' u='c' c='createDumpPayload'/>
+<use f='redis/src/cluster.c' l='4417' u='c' c='restoreCommand'/>
+<use f='redis/src/cluster.c' l='4601' u='c' c='migrateCommand'/>
+<def f='redis/src/rio.c' l='100' ll='104' type='void rioInitWithBuffer(rio * r, sds s)'/>

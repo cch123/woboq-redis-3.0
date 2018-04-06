@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1100' type='void queueMultiCommand(redisClient * c)'/>
+<def f='redis/src/multi.c' l='56' ll='70' type='void queueMultiCommand(redisClient * c)'/>
+<doc f='redis/src/multi.c' l='55'>/* Add a new command into the MULTI commands queue */</doc>
+<use f='redis/src/redis.c' l='2296' u='c' c='processCommand'/>

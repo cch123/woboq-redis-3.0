@@ -1,0 +1,26 @@
+<dec f='redis/deps/lua/src/lcode.h' l='46' type='int luaK_codeABC(FuncState * fs, OpCode o, int A, int B, int C)'/>
+<use f='redis/deps/lua/src/lcode.c' l='55' u='c' c='luaK_nil'/>
+<use f='redis/deps/lua/src/lcode.c' l='70' u='c' c='luaK_ret'/>
+<use f='redis/deps/lua/src/lcode.c' l='75' u='c' c='condjump'/>
+<use f='redis/deps/lua/src/lcode.c' l='311' u='c' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='323' u='c' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='339' u='c' c='code_label'/>
+<use f='redis/deps/lua/src/lcode.c' l='351' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='369' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='481' u='c' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='491' u='c' c='luaK_storevar'/>
+<use f='redis/deps/lua/src/lcode.c' l='509' u='c' c='luaK_self'/>
+<use f='redis/deps/lua/src/lcode.c' l='605' u='c' c='codenot'/>
+<use f='redis/deps/lua/src/lcode.c' l='667' u='c' c='codearith'/>
+<def f='redis/deps/lua/src/lcode.c' l='804' ll='809' type='int luaK_codeABC(FuncState * fs, OpCode o, int a, int b, int c)'/>
+<use f='redis/deps/lua/src/lcode.c' l='824' u='c' c='luaK_setlist'/>
+<use f='redis/deps/lua/src/lcode.c' l='826' u='c' c='luaK_setlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='301' u='c' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='323' u='c' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='459' u='c' c='recfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='502' u='c' c='constructor'/>
+<use f='redis/deps/lua/src/lparser.c' l='651' u='c' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='757' u='c' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='925' u='c' c='check_conflict'/>
+<use f='redis/deps/lua/src/lparser.c' l='986' u='c' c='breakstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1061' u='c' c='forbody'/>

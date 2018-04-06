@@ -1,0 +1,4 @@
+<def f='redis/src/sentinel.c' l='1199' ll='1217' type='int sentinelResetMastersByPattern(char * pattern, int flags)'/>
+<use f='redis/src/sentinel.c' l='2688' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='1197'>/* Call sentinelResetMaster() on every master with a name matching the specified
+ * pattern. */</doc>

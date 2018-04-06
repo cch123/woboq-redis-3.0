@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/lobject.h' l='244' type='int'/>
+<offset>704</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='244'>/* size of `p&apos; */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='452' u='r' c='symbexec'/>
+<use f='redis/deps/lua/src/ldump.c' l='106' u='r' c='DumpConstants'/>
+<use f='redis/deps/lua/src/lfunc.c' l='121' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='143' u='r' c='luaF_freeproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='212' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='312' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lparser.c' l='313' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='315' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='315' u='a' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='317' u='r' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='368' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='369' u='w' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='132' u='w' c='LoadConstants'/>

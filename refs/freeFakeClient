@@ -1,0 +1,2 @@
+<def f='redis/src/aof.c' l='588' ll='594' type='void freeFakeClient(struct redisClient * c)'/>
+<use f='redis/src/aof.c' l='704' u='c' c='loadAppendOnlyFile'/>

@@ -1,0 +1,11 @@
+<def f='redis/deps/lua/src/lauxlib.h' l='129' ll='134'/>
+<size>8216</size>
+<doc f='redis/deps/lua/src/lauxlib.h' l='121'>/*
+** {======================================================
+** Generic Buffer manipulation
+** =======================================================
+*/</doc>
+<mbr r='luaL_Buffer::p' o='0' t='char *'/>
+<mbr r='luaL_Buffer::lvl' o='64' t='int'/>
+<mbr r='luaL_Buffer::L' o='128' t='lua_State *'/>
+<mbr r='luaL_Buffer::buffer' o='192' t='char [8192]'/>

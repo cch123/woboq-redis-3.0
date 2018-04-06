@@ -1,0 +1,33 @@
+<dec f='redis/src/cluster.h' l='99' type='clusterLink *'/>
+<use f='redis/src/cluster.c' l='560' u='w' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='662' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='833' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='833' u='r' c='freeClusterNode'/>
+<use f='redis/src/cluster.c' l='1383' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1391' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1391' u='r' c='nodeUpdateAddressIfNeeded'/>
+<use f='redis/src/cluster.c' l='1842' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2088' u='r' c='clusterBroadcastMessage'/>
+<use f='redis/src/cluster.c' l='2091' u='r' c='clusterBroadcastMessage'/>
+<use f='redis/src/cluster.c' l='2238' u='r' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2299' u='r' c='clusterBroadcastPong'/>
+<use f='redis/src/cluster.c' l='2307' u='r' c='clusterBroadcastPong'/>
+<use f='redis/src/cluster.c' l='2427' u='r' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2431' u='r' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2440' u='r' c='clusterSendMFStart'/>
+<use f='redis/src/cluster.c' l='2444' u='r' c='clusterSendMFStart'/>
+<use f='redis/src/cluster.c' l='3058' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3080' u='w' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3123' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3133' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3174' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3175' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3183' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3190' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3194' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3203' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3205' u='r' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3643' u='r' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='4202' u='r' c='clusterCommand'/>
+<offset>17920</offset>
+<doc f='redis/src/cluster.h' l='99'>/* TCP/IP link with this node */</doc>

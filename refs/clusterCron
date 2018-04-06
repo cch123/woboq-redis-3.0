@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1348' type='void clusterCron()'/>
+<def f='redis/src/cluster.c' l='3023' ll='3258' type='void clusterCron()'/>
+<doc f='redis/src/cluster.c' l='3022'>/* This is executed 10 times every second */</doc>
+<use f='redis/src/redis.c' l='1243' u='c' c='serverCron'/>

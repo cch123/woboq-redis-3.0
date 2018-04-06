@@ -1,0 +1,5 @@
+<def f='redis/src/t_zset.c' l='915' ll='936' type='unsigned char * zzlFind(unsigned char * zl, robj * ele, double * score)'/>
+<use f='redis/src/t_zset.c' l='1224' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1329' u='c' c='zremCommand'/>
+<use f='redis/src/t_zset.c' l='1794' u='c' c='zuiFind'/>
+<use f='redis/src/t_zset.c' l='2757' u='c' c='zscoreCommand'/>

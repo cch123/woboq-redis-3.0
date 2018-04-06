@@ -1,0 +1,9 @@
+<def f='redis/src/sentinel.c' l='732' ll='737' type='mstime_t sentinelScriptRetryDelay(int retry_num)'/>
+<use f='redis/src/sentinel.c' l='773' u='c' c='sentinelCollectTerminatedScripts'/>
+<doc f='redis/src/sentinel.c' l='725'>/* How much to delay the execution of a script that we need to retry after
+ * an error?
+ *
+ * We double the retry delay for every further retry we do. So for instance
+ * if RETRY_DELAY is set to 30 seconds and the max number of retries is 10
+ * starting from the second attempt to execute the script the delays are:
+ * 30 sec, 60 sec, 2 min, 4 min, 8 min, 16 min, 32 min, 64 min, 128 min. */</doc>

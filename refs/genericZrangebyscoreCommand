@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='2203' ll='2387' type='void genericZrangebyscoreCommand(redisClient * c, int reverse)'/>
+<use f='redis/src/t_zset.c' l='2390' u='c' c='zrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2394' u='c' c='zrevrangebyscoreCommand'/>
+<doc f='redis/src/t_zset.c' l='2202'>/* This command implements ZRANGEBYSCORE, ZREVRANGEBYSCORE. */</doc>

@@ -1,0 +1,11 @@
+<dec f='include/stdio.h' l='689' type='int fputs(const char *restrict __s, FILE *restrict __stream)'/>
+<doc f='include/stdio.h' l='685'>/* Write a string to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='44' u='c' c='luaB_print'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='45' u='c' c='luaB_print'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='48' u='c' c='luaB_print'/>
+<use f='redis/deps/lua/src/ldblib.c' l='305' u='c' c='db_debug'/>
+<use f='redis/deps/lua/src/ldblib.c' l='311' u='c' c='db_debug'/>
+<use f='redis/deps/lua/src/ldblib.c' l='312' u='c' c='db_debug'/>

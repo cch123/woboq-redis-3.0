@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3378' ll='3385' type='void createPidFile()'/>
+<use f='redis/src/redis.c' l='3651' u='c' c='main'/>

@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.c' l='67' type='void clusterHandleSlaveFailover()'/>
+<def f='redis/src/cluster.c' l='2684' ll='2849' type='void clusterHandleSlaveFailover()'/>
+<use f='redis/src/cluster.c' l='3246' u='c' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3269' u='c' c='clusterBeforeSleep'/>
+<doc f='redis/src/cluster.c' l='2676'>/* This function is called if we are a slave node and our master serving
+ * a non-zero amount of hash slots is in FAIL state.
+ *
+ * The gaol of this function is:
+ * 1) To check if we are able to perform a failover, is our data updated?
+ * 2) Try to get elected by masters.
+ * 3) Perform the failover informing all the other nodes.
+ */</doc>

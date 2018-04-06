@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='838' type='dict *'/>
+<offset>17536</offset>
+<doc f='redis/src/redis.h' l='837'>/* Replication script cache. */</doc>
+<doc f='redis/src/redis.h' l='838'>/* SHA1 all slaves are aware of. */</doc>
+<use f='redis/src/replication.c' l='1736' u='w' c='replicationScriptCacheInit'/>
+<use f='redis/src/replication.c' l='1752' u='r' c='replicationScriptCacheFlush'/>
+<use f='redis/src/replication.c' l='1769' u='r' c='replicationScriptCacheAdd'/>
+<use f='redis/src/replication.c' l='1775' u='r' c='replicationScriptCacheAdd'/>
+<use f='redis/src/replication.c' l='1783' u='r' c='replicationScriptCacheExists'/>

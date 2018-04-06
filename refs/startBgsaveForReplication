@@ -1,0 +1,9 @@
+<def f='redis/src/replication.c' l='445' ll='460' type='int startBgsaveForReplication()'/>
+<use f='redis/src/replication.c' l='565' u='c' c='syncCommand'/>
+<use f='redis/src/replication.c' l='805' u='c' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='2086' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='440'>/* Start a BGSAVE for replication goals, which is, selecting the disk or
+ * socket target depending on the configuration, and making sure that
+ * the script cache is flushed before to start.
+ *
+ * Returns REDIS_OK on success or REDIS_ERR otherwise. */</doc>

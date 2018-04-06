@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='748' type='int'/>
+<use f='redis/src/aof.c' l='209' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='210' u='r' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='212' u='w' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='237' u='w' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='239' u='r' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='244' u='r' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='311' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='356' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='424' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='430' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='732' u='r' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='732' u='r' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1352' u='r' c='aofUpdateCurrentSize'/>
+<use f='redis/src/aof.c' l='1425' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1450' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1456' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1457' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13184</offset>
+<doc f='redis/src/redis.h' l='748'>/* File descriptor of currently selected AOF file */</doc>
+<use f='redis/src/redis.c' l='1437' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1857' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='1859' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2353' u='r' c='prepareForShutdown'/>

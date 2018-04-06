@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lua.h' l='347' type='int'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/ldblib.c' l='215' u='r' c='hookf'/>
+<use f='redis/deps/lua/src/ldo.c' l='187' u='w' c='luaD_callhook'/>

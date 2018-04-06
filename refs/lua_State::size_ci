@@ -1,0 +1,19 @@
+<dec f='redis/deps/lua/src/lstate.h' l='113' type='int'/>
+<offset>736</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='113'>/* size of array `base_ci&apos; */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='73' u='r' c='restore_stack_limit'/>
+<use f='redis/deps/lua/src/ldo.c' l='154' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='155' u='w' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='157' u='r' c='luaD_reallocCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='170' u='r' c='growCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='173' u='r' c='growCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='174' u='r' c='growCI'/>
+<use f='redis/deps/lua/src/lgc.c' l='244' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='246' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='246' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='247' u='r' c='checkstacksizes'/>
+<use f='redis/deps/lua/src/lgc.c' l='305' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lstate.c' l='46' u='w' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='47' u='r' c='stack_init'/>
+<use f='redis/deps/lua/src/lstate.c' l='62' u='r' c='freestack'/>
+<use f='redis/deps/lua/src/lstate.c' l='95' u='w' c='preinit_state'/>

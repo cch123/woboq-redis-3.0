@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='864' ll='885' type='unsigned char * zzlFirstInLexRange(unsigned char * zl, zlexrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='1047' u='c' c='zzlDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='2499' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2615' u='c' c='genericZrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='862'>/* Find pointer to the first element contained in the specified lex range.
+ * Returns NULL when no element is contained in the range. */</doc>

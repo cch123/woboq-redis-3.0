@@ -1,0 +1,36 @@
+<dec f='redis/src/cluster.h' l='85' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='220' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='517' u='w' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='653' u='w' c='createClusterNode'/>
+<use f='redis/src/cluster.c' l='930' u='r' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='930' u='r' c='clusterGetMaxEpoch'/>
+<use f='redis/src/cluster.c' l='969' u='r' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='970' u='r' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='973' u='w' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='978' u='r' c='clusterBumpConfigEpochWithoutConsensus'/>
+<use f='redis/src/cluster.c' l='1033' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1033' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1039' u='w' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1045' u='r' c='clusterHandleConfigEpochCollision'/>
+<use f='redis/src/cluster.c' l='1469' u='r' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1591' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1592' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1835' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1858' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1943' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1949' u='w' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2129' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2380' u='r' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2526' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2537' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2837' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2838' u='w' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='2841' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='3642' u='r' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='4010' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4010' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4249' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4252' u='w' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4255' u='r' c='clusterCommand'/>
+<offset>448</offset>
+<doc f='redis/src/cluster.h' l='85'>/* Last configEpoch observed for this node */</doc>

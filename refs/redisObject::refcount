@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='416' type='int'/>
+<use f='redis/src/aof.c' l='1068' macro='1' u='w'/>
+<offset>32</offset>
+<use f='redis/src/db.c' l='203' u='r' c='dbUnshareStringValue'/>
+<use f='redis/src/debug.c' l='302' u='r' c='debugCommand'/>
+<use f='redis/src/debug.c' l='423' u='r' c='_redisAssertPrintClientInfo'/>
+<use f='redis/src/debug.c' l='430' u='r' c='redisLogObjectDebugInfo'/>
+<use f='redis/src/networking.c' l='192' u='r' c='dupLastObjectIfNeeded'/>
+<use f='redis/src/object.c' l='44' u='w' c='createObject'/>
+<use f='redis/src/object.c' l='67' u='w' c='createEmbeddedStringObject'/>
+<use f='redis/src/object.c' l='301' u='w' c='incrRefCount'/>
+<use f='redis/src/object.c' l='305' u='r' c='decrRefCount'/>
+<use f='redis/src/object.c' l='306' u='r' c='decrRefCount'/>
+<use f='redis/src/object.c' l='317' u='w' c='decrRefCount'/>
+<use f='redis/src/object.c' l='341' u='w' c='resetRefCount'/>
+<use f='redis/src/object.c' l='383' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/object.c' l='726' u='r' c='objectCommand'/>
+<use f='redis/src/rdb.c' l='668' macro='1' u='w'/>
+<use f='redis/src/scripting.c' l='420' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/t_string.c' l='341' u='r' c='incrDecrCommand'/>

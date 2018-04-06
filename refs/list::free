@@ -1,0 +1,20 @@
+<dec f='redis/src/adlist.h' l='51' type='void (*)(void *)'/>
+<use f='redis/src/adlist.c' l='50' u='w' c='listCreate'/>
+<use f='redis/src/adlist.c' l='67' u='r' c='listRelease'/>
+<use f='redis/src/adlist.c' l='67' u='r' c='listRelease'/>
+<use f='redis/src/adlist.c' l='169' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='169' u='r' c='listDelNode'/>
+<use f='redis/src/adlist.c' l='251' u='w' c='listDup'/>
+<use f='redis/src/adlist.c' l='251' u='r' c='listDup'/>
+<offset>192</offset>
+<use f='redis/src/aof.c' l='74' macro='1' u='w'/>
+<use f='redis/src/aof.c' l='574' macro='1' u='w'/>
+<use f='redis/src/cluster.c' l='669' macro='1' u='w'/>
+<use f='redis/src/db.c' l='596' macro='1' u='w'/>
+<use f='redis/src/networking.c' l='111' macro='1' u='w'/>
+<use f='redis/src/networking.c' l='124' macro='1' u='w'/>
+<use f='redis/src/object.c' l='186' macro='1' u='w'/>
+<use f='redis/src/redis.c' l='1811' macro='1' u='w'/>
+<use f='redis/src/slowlog.c' l='106' macro='1' u='w'/>
+<use f='redis/src/sort.c' l='214' macro='1' u='w'/>
+<use f='redis/src/t_list.c' l='276' macro='1' u='w'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/adlist.h' l='90'/>
+<use f='redis/src/adlist.c' l='183' u='c'/>
+<use f='redis/src/adlist.c' l='199' u='c'/>
+<use f='redis/src/adlist.c' l='226' u='c'/>
+<use f='redis/src/adlist.c' l='253' u='c'/>
+<use f='redis/src/adlist.c' l='290' u='c'/>
+<doc f='redis/src/adlist.h' l='89'>/* Directions for iterators */</doc>
+<use f='redis/src/t_list.c' l='223' u='c'/>

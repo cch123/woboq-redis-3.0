@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.h' l='169' type='uint16_t'/>
+<dec f='redis/src/cluster.h' l='236' type='uint16_t'/>
+<use f='redis/src/cluster.c' l='1303' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1335' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1337' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1350' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1652' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1682' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1720' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2123' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2258' u='w' c='clusterSendPing'/>
+<offset>17600</offset>
+<doc f='redis/src/cluster.h' l='169'>/* port last time it was seen */</doc>
+<doc f='redis/src/cluster.h' l='236'>/* Sender TCP base port */</doc>

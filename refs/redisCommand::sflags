@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='920' type='char *'/>
+<offset>192</offset>
+<doc f='redis/src/redis.h' l='920'>/* Flags as string representation, one char per flag. */</doc>
+<use f='redis/src/redis.c' l='1892' u='r' c='populateCommandTable'/>

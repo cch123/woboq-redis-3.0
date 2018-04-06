@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lua.h' l='112' type='lua_State * lua_newthread(lua_State * L)'/>
+<def f='redis/deps/lua/src/lapi.c' l='140' ll='150' macro='1' type='lua_State * lua_newthread(lua_State * L)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='577' u='c' c='luaB_cocreate'/>

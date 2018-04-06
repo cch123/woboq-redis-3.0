@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='985' type='dictEntry *'/>
+<offset>320</offset>
+<use f='redis/src/t_hash.c' l='331' u='w' c='hashTypeNext'/>
+<use f='redis/src/t_hash.c' l='364' u='r' c='hashTypeCurrentFromHashTable'/>
+<use f='redis/src/t_hash.c' l='366' u='r' c='hashTypeCurrentFromHashTable'/>

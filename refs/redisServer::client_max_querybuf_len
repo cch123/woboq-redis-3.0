@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='731' type='size_t'/>
+<offset>11904</offset>
+<doc f='redis/src/redis.h' l='731'>/* Limit for client query buffer length */</doc>
+<use f='redis/src/networking.c' l='1216' u='r' c='readQueryFromClient'/>
+<use f='redis/src/redis.c' l='1417' u='w' c='initServerConfig'/>

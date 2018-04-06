@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1142' type='int compareStringObjects(robj * a, robj * b)'/>
+<def f='redis/src/object.c' l='507' ll='509' type='int compareStringObjects(robj * a, robj * b)'/>
+<use f='redis/src/object.c' l='527' u='c' c='equalStringObjects'/>
+<doc f='redis/src/object.c' l='506'>/* Wrapper for compareStringObjectsWithFlags() using binary comparison. */</doc>
+<use f='redis/src/sort.c' l='152' u='c' c='sortCompare'/>
+<use f='redis/src/sort.c' l='168' u='c' c='sortCompare'/>
+<use f='redis/src/sort.c' l='178' u='c' c='sortCompare'/>
+<use f='redis/src/t_zset.c' l='123' u='c' c='zslInsert'/>
+<use f='redis/src/t_zset.c' l='197' u='c' c='zslDelete'/>
+<use f='redis/src/t_zset.c' l='396' u='c' c='zslGetRank'/>
+<use f='redis/src/t_zset.c' l='547' u='c' c='compareStringObjectsForLexRange'/>
+<use f='redis/src/t_zset.c' l='568' u='c' c='zslIsInLexRange'/>
+<use f='redis/src/t_zset.c' l='845' u='c' c='zzlIsInLexRange'/>

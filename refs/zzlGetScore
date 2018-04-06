@@ -1,0 +1,20 @@
+<dec f='redis/src/redis.h' l='1216' type='double zzlGetScore(unsigned char * sptr)'/>
+<use f='redis/src/aof.c' l='892' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/debug.c' l='190' u='c' c='computeDatasetDigest'/>
+<def f='redis/src/t_zset.c' l='635' ll='654' type='double zzlGetScore(unsigned char * sptr)'/>
+<use f='redis/src/t_zset.c' l='750' u='c' c='zzlIsInRange'/>
+<use f='redis/src/t_zset.c' l='756' u='c' c='zzlIsInRange'/>
+<use f='redis/src/t_zset.c' l='776' u='c' c='zzlFirstInRange'/>
+<use f='redis/src/t_zset.c' l='804' u='c' c='zzlLastInRange'/>
+<use f='redis/src/t_zset.c' l='925' u='c' c='zzlFind'/>
+<use f='redis/src/t_zset.c' l='984' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='1025' u='c' c='zzlDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='1120' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1684' u='c' c='zuiNext'/>
+<use f='redis/src/t_zset.c' l='2156' u='c' c='zrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2293' u='c' c='genericZrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='2429' u='c' c='zcountCommand'/>
+<use f='redis/src/t_zset.c' l='2434' u='c' c='zcountCommand'/>
+<doc f='redis/src/t_zset.c' l='631'>/*-----------------------------------------------------------------------------
+ * Ziplist-backed sorted set API
+ *----------------------------------------------------------------------------*/</doc>

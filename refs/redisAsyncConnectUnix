@@ -1,0 +1,2 @@
+<dec f='redis/deps/hiredis/async.h' l='106' type='redisAsyncContext * redisAsyncConnectUnix(const char * path)'/>
+<def f='redis/deps/hiredis/async.c' l='176' ll='192' type='redisAsyncContext * redisAsyncConnectUnix(const char * path)'/>

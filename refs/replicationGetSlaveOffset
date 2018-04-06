@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1172' type='long long replicationGetSlaveOffset()'/>
+<use f='redis/src/cluster.c' l='2133' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2571' u='c' c='clusterGetSlaveRank'/>
+<use f='redis/src/cluster.c' l='2775' u='c' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='3008' u='c' c='clusterHandleManualFailover'/>
+<def f='redis/src/replication.c' l='1917' ll='1933' type='long long replicationGetSlaveOffset()'/>
+<doc f='redis/src/replication.c' l='1915'>/* Return the slave replication offset for this instance, that is
+ * the offset for which we already processed the master replication stream. */</doc>

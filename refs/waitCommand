@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1528' type='void waitCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='279' u='r'/>
+<use f='redis/src/redis.c' l='279' u='r'/>
+<use f='redis/src/redis.c' l='279' u='r'/>
+<use f='redis/src/redis.c' l='279' u='r'/>
+<def f='redis/src/replication.c' l='1839' ll='1868' type='void waitCommand(redisClient * c)'/>
+<doc f='redis/src/replication.c' l='1837'>/* WAIT for N replicas to acknowledge the processing of our latest
+ * write command (and all the previous commands). */</doc>

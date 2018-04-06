@@ -1,0 +1,15 @@
+<dec f='redis/src/cluster.h' l='221' type='uint32_t'/>
+<use f='redis/src/cluster.c' l='1531' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2019' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2028' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2049' u='r' c='clusterReadHandler'/>
+<use f='redis/src/cluster.c' l='2151' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2270' u='w' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2332' u='w' c='clusterSendPublish'/>
+<use f='redis/src/cluster.c' l='2367' u='r' c='clusterSendFail'/>
+<use f='redis/src/cluster.c' l='2382' u='r' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2417' u='w' c='clusterRequestFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2430' u='w' c='clusterSendFailoverAuth'/>
+<use f='redis/src/cluster.c' l='2443' u='w' c='clusterSendMFStart'/>
+<offset>32</offset>
+<doc f='redis/src/cluster.h' l='221'>/* Total length of this message */</doc>

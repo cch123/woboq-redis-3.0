@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lcode.h' l='69' type='int luaK_getlabel(FuncState * fs)'/>
+<def f='redis/deps/lua/src/lcode.c' l='94' ll='97' type='int luaK_getlabel(FuncState * fs)'/>
+<use f='redis/deps/lua/src/lcode.c' l='180' u='c' c='luaK_patchtohere'/>
+<use f='redis/deps/lua/src/lcode.c' l='338' u='c' c='code_label'/>
+<use f='redis/deps/lua/src/lcode.c' l='404' u='c' c='exp2reg'/>
+<doc f='redis/deps/lua/src/lcode.c' l='90'>/*
+** returns current `pc&apos; and marks it as a jump target (to avoid wrong
+** optimizations with consecutive instructions not in the same basic block).
+*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='998' u='c' c='whilestat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1014' u='c' c='repeatstat'/>

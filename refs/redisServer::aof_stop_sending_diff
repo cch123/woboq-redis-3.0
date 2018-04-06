@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='767' type='int'/>
+<use f='redis/src/aof.c' l='106' u='r' c='aofChildWriteDiffData'/>
+<use f='redis/src/aof.c' l='1194' u='w' c='aofChildPipeReadable'/>
+<use f='redis/src/aof.c' l='1232' u='w' c='aofCreatePipes'/>
+<offset>13952</offset>
+<doc f='redis/src/redis.h' l='767'>/* If true stop sending accumulated diffs
+                                      to child process. */</doc>

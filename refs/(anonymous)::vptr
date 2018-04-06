@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='982' type='unsigned char *'/>
+<offset>192</offset>
+<use f='redis/src/t_hash.c' l='283' u='w' c='hashTypeInitIterator'/>
+<use f='redis/src/t_hash.c' l='310' u='r' c='hashTypeNext'/>
+<use f='redis/src/t_hash.c' l='329' u='w' c='hashTypeNext'/>
+<use f='redis/src/t_hash.c' l='353' u='r' c='hashTypeCurrentFromZiplist'/>

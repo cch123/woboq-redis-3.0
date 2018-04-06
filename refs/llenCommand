@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1417' type='void llenCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='151' u='r'/>
+<use f='redis/src/redis.c' l='151' u='r'/>
+<use f='redis/src/redis.c' l='151' u='r'/>
+<use f='redis/src/redis.c' l='151' u='r'/>
+<def f='redis/src/t_list.c' l='406' ll='410' type='void llenCommand(redisClient * c)'/>

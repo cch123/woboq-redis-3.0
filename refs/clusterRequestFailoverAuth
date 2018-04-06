@@ -1,0 +1,8 @@
+<def f='redis/src/cluster.c' l='2406' ll='2419' type='void clusterRequestFailoverAuth()'/>
+<use f='redis/src/cluster.c' l='2821' u='c' c='clusterHandleSlaveFailover'/>
+<doc f='redis/src/cluster.c' l='2400'>/* This function sends a FAILOVE_AUTH_REQUEST message to every node in order to
+ * see if there is the quorum for this slave instance to failover its failing
+ * master.
+ *
+ * Note that we send the failover request to everybody, master and slave nodes,
+ * but only the masters are supposed to reply to our query. */</doc>

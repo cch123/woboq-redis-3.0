@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lstate.h' l='116' type='lu_byte'/>
+<offset>800</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='64' u='w' c='lua_sethook'/>
+<use f='redis/deps/lua/src/ldebug.c' l='75' u='r' c='lua_gethookmask'/>
+<use f='redis/deps/lua/src/ldo.c' l='300' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='317' u='r' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='336' u='r' c='callrethooks'/>
+<use f='redis/deps/lua/src/ldo.c' l='347' u='r' c='luaD_poscall'/>
+<use f='redis/deps/lua/src/lstate.c' l='90' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='125' u='w' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/lstate.c' l='125' u='r' c='luaE_newthread'/>
+<use f='redis/deps/lua/src/lvm.c' l='61' u='r' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='392' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='393' u='r' c='luaV_execute'/>

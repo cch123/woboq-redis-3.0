@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1131' type='robj * createHashObject()'/>
+<def f='redis/src/object.c' l='212' ll='217' type='robj * createHashObject()'/>
+<use f='redis/src/rdb.c' l='941' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='399' u='c' c='hashTypeLookupWriteOrCreate'/>

@@ -1,0 +1,34 @@
+<dec f='redis/src/latency.h' l='50' type='struct latencySample [160]'/>
+<offset>64</offset>
+<doc f='redis/src/latency.h' l='50'>/* Latest history. */</doc>
+<use f='redis/src/latency.c' l='108' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='108' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='115' u='m' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='116' u='m' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='117' u='m' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='121' u='m' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='122' u='m' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='176' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='179' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='181' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='182' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='183' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='184' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='186' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='189' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='190' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='207' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='208' u='m' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='484' u='m' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='486' u='m' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='487' u='m' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='508' u='m' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='509' u='m' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='527' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='530' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='532' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='532' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='533' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='533' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='537' u='m' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='546' u='m' c='latencyCommandGenSparkeline'/>

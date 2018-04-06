@@ -1,0 +1,8 @@
+<dec f='include/netinet/in.h' l='381' type='uint16_t htons(uint16_t __hostshort)'/>
+<use f='redis/src/cluster.c' l='2111' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2116' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2123' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2124' u='c' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2258' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2259' u='c' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2269' u='c' c='clusterSendPing'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1495' type='void hkeysCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='203' u='r'/>
+<use f='redis/src/redis.c' l='203' u='r'/>
+<use f='redis/src/redis.c' l='203' u='r'/>
+<use f='redis/src/redis.c' l='203' u='r'/>
+<def f='redis/src/t_hash.c' l='743' ll='745' type='void hkeysCommand(redisClient * c)'/>

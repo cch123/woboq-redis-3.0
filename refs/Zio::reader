@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lzio.h' l='59' type='lua_Reader'/>
+<offset>128</offset>
+<use f='redis/deps/lua/src/lzio.c' l='26' u='r' c='luaZ_fill'/>
+<use f='redis/deps/lua/src/lzio.c' l='50' u='w' c='luaZ_init'/>

@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lua.h' l='358' type='int'/>
+<offset>928</offset>
+<doc f='redis/deps/lua/src/lua.h' l='357'>/* private part */</doc>
+<doc f='redis/deps/lua/src/lua.h' l='358'>/* active function */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='95' u='w' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='99' u='w' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='128' u='r' c='lua_getlocal'/>
+<use f='redis/deps/lua/src/ldebug.c' l='139' u='r' c='lua_setlocal'/>
+<use f='redis/deps/lua/src/ldebug.c' l='244' u='r' c='lua_getinfo'/>
+<use f='redis/deps/lua/src/ldebug.c' l='245' u='r' c='lua_getinfo'/>
+<use f='redis/deps/lua/src/ldo.c' l='190' u='w' c='luaD_callhook'/>
+<use f='redis/deps/lua/src/ldo.c' l='192' u='w' c='luaD_callhook'/>

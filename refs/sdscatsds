@@ -1,0 +1,20 @@
+<dec f='redis/deps/hiredis/sds.h' l='67' type='sds sdscatsds(sds s, const sds t)'/>
+<def f='redis/deps/hiredis/sds.c' l='265' ll='267' type='sds sdscatsds(sds s, const sds t)'/>
+<doc f='redis/deps/hiredis/sds.c' l='261'>/* Append the specified sds &apos;t&apos; to the existing sds &apos;s&apos;.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<dec f='redis/src/sds.h' l='67' type='sds sdscatsds(sds s, const sds t)'/>
+<use f='redis/src/cluster.c' l='3706' u='c' c='clusterGenNodesDescription'/>
+<use f='redis/src/config.c' l='1352' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1643' u='c' c='rewriteConfigBindOption'/>
+<use f='redis/src/config.c' l='1663' u='c' c='rewriteConfigGetContentFromState'/>
+<use f='redis/src/debug.c' l='378' u='c' c='debugCommand'/>
+<use f='redis/src/notify.c' l='112' u='c' c='notifyKeyspaceEvent'/>
+<use f='redis/src/notify.c' l='124' u='c' c='notifyKeyspaceEvent'/>
+<def f='redis/src/sds.c' l='265' ll='267' type='sds sdscatsds(sds s, const sds t)'/>
+<doc f='redis/src/sds.c' l='261'>/* Append the specified sds &apos;t&apos; to the existing sds &apos;s&apos;.
+ *
+ * After the call, the modified sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<use f='redis/src/util.c' l='564' u='c' c='getAbsolutePath'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1431' type='void sinterstoreCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='166' u='r'/>
+<use f='redis/src/redis.c' l='166' u='r'/>
+<use f='redis/src/redis.c' l='166' u='r'/>
+<use f='redis/src/redis.c' l='166' u='r'/>
+<def f='redis/src/t_set.c' l='729' ll='731' type='void sinterstoreCommand(redisClient * c)'/>

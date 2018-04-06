@@ -1,0 +1,9 @@
+scanCallback|scanCallback
+scanCommand|scanCommand
+scanGenericCommand|scanGenericCommand
+scriptCommand|scriptCommand
+scriptingEnableGlobalsProtection|scriptingEnableGlobalsProtection
+scriptingInit|scriptingInit
+scriptingRelease|scriptingRelease
+scriptingReset|scriptingReset
+scardCommand|scardCommand

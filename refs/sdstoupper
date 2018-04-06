@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/sds.h' l='88' type='void sdstoupper(sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='636' ll='640' type='void sdstoupper(sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='635'>/* Apply toupper() to every character of the sds string &apos;s&apos;. */</doc>
+<dec f='redis/src/sds.h' l='88' type='void sdstoupper(sds s)'/>
+<def f='redis/src/sds.c' l='636' ll='640' type='void sdstoupper(sds s)'/>
+<doc f='redis/src/sds.c' l='635'>/* Apply toupper() to every character of the sds string &apos;s&apos;. */</doc>

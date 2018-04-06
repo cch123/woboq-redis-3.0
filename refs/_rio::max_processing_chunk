@@ -1,0 +1,10 @@
+<dec f='redis/src/rio.h' l='61' type='size_t'/>
+<use f='redis/src/rio.h' l='95' u='r' c='rioWrite'/>
+<use f='redis/src/rio.h' l='95' u='r' c='rioWrite'/>
+<use f='redis/src/rio.h' l='95' u='r' c='rioWrite'/>
+<use f='redis/src/rio.h' l='108' u='r' c='rioRead'/>
+<use f='redis/src/rio.h' l='108' u='r' c='rioRead'/>
+<use f='redis/src/rio.h' l='108' u='r' c='rioRead'/>
+<offset>448</offset>
+<doc f='redis/src/rio.h' l='60'>/* maximum single read or write chunk size */</doc>
+<use f='redis/src/rdb.c' l='1142' u='w' c='rdbLoad'/>

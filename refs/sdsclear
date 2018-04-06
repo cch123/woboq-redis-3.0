@@ -1,0 +1,14 @@
+<dec f='redis/deps/hiredis/sds.h' l='83' type='void sdsclear(sds s)'/>
+<def f='redis/deps/hiredis/sds.c' l='116' ll='121' type='void sdsclear(sds s)'/>
+<doc f='redis/deps/hiredis/sds.c' l='112'>/* Modify an sds string on-place to make it empty (zero length).
+ * However all the existing buffer is not discarded but set as free space
+ * so that next append operations will not require allocations up to the
+ * number of bytes previously available. */</doc>
+<dec f='redis/src/sds.h' l='83' type='void sdsclear(sds s)'/>
+<use f='redis/src/aof.c' l='407' u='c' c='flushAppendOnlyFile'/>
+<use f='redis/src/rio.c' l='229' u='c' c='rioFdsetWrite'/>
+<def f='redis/src/sds.c' l='116' ll='121' type='void sdsclear(sds s)'/>
+<doc f='redis/src/sds.c' l='112'>/* Modify an sds string in-place to make it empty (zero length).
+ * However all the existing buffer is not discarded but set as free space
+ * so that next append operations will not require allocations up to the
+ * number of bytes previously available. */</doc>

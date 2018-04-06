@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1168' type='void processClientsWaitingReplicas()'/>
+<use f='redis/src/redis.c' l='1295' u='c' c='beforeSleep'/>
+<def f='redis/src/replication.c' l='1882' ll='1913' type='void processClientsWaitingReplicas()'/>
+<doc f='redis/src/replication.c' l='1880'>/* Check if there are clients blocked in WAIT that can be unblocked since
+ * we received enough ACKs from slaves. */</doc>

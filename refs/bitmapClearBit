@@ -1,0 +1,3 @@
+<def f='redis/src/cluster.c' l='3311' ll='3315' type='void bitmapClearBit(unsigned char * bitmap, int pos)'/>
+<use f='redis/src/cluster.c' l='3328' u='c' c='clusterNodeClearSlotBit'/>
+<doc f='redis/src/cluster.c' l='3310'>/* Clear the bit at position &apos;pos&apos; in a bitmap. */</doc>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='164' type='8'/>
+<use f='redis/deps/lua/src/lcode.c' l='481' u='r' c='luaK_storevar'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='164'>/*	A B	UpValue[B] := R(A)				*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='388' c='symbexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='451' c='luaV_execute'/>

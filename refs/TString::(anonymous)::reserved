@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='203' type='lu_byte'/>
+<offset>80</offset>
+<use f='redis/deps/lua/src/llex.c' l='70' u='w' c='luaX_init'/>
+<use f='redis/deps/lua/src/llex.c' l='430' u='r' c='llex'/>
+<use f='redis/deps/lua/src/llex.c' l='431' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lstring.c' l='61' u='w' c='newlstr'/>

@@ -1,0 +1,11 @@
+<dec f='redis/deps/hiredis/sds.h' l='71' type='sds sdscatvprintf(sds s, const char * fmt, struct __va_list_tag * ap)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='839' u='c' c='redisvFormatCommand'/>
+<def f='redis/deps/hiredis/sds.c' l='373' ll='408' type='sds sdscatvprintf(sds s, const char * fmt, struct __va_list_tag * ap)'/>
+<use f='redis/deps/hiredis/sds.c' l='430' u='c' c='sdscatprintf'/>
+<doc f='redis/deps/hiredis/sds.c' l='372'>/* Like sdscatpritf() but gets va_list instead of being variadic. */</doc>
+<dec f='redis/src/sds.h' l='71' type='sds sdscatvprintf(sds s, const char * fmt, struct __va_list_tag * ap)'/>
+<use f='redis/src/networking.c' l='390' u='c' c='addReplyErrorFormat'/>
+<use f='redis/src/networking.c' l='415' u='c' c='addReplyStatusFormat'/>
+<def f='redis/src/sds.c' l='373' ll='408' type='sds sdscatvprintf(sds s, const char * fmt, struct __va_list_tag * ap)'/>
+<use f='redis/src/sds.c' l='430' u='c' c='sdscatprintf'/>
+<doc f='redis/src/sds.c' l='372'>/* Like sdscatprintf() but gets va_list instead of being variadic. */</doc>

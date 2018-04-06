@@ -1,0 +1,28 @@
+<dec f='redis/src/redis.h' l='732' type='int'/>
+<use f='redis/src/aof.c' l='1045' u='r' c='rewriteAppendOnlyFile'/>
+<offset>11968</offset>
+<doc f='redis/src/redis.h' l='732'>/* Total number of configured DBs */</doc>
+<use f='redis/src/cluster.c' l='3521' u='r' c='verifyClusterConfigWithData'/>
+<use f='redis/src/config.c' l='216' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='217' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1063' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1808' u='r' c='rewriteConfig'/>
+<use f='redis/src/db.c' l='216' u='r' c='emptyDb'/>
+<use f='redis/src/db.c' l='226' u='r' c='selectDb'/>
+<use f='redis/src/debug.c' l='123' u='r' c='computeDatasetDigest'/>
+<use f='redis/src/rdb.c' l='651' u='r' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='1188' u='r' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1189' u='r' c='rdbLoad'/>
+<use f='redis/src/redis.c' l='783' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='784' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='799' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='1016' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1016' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1020' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1027' u='r' c='databasesCron'/>
+<use f='redis/src/redis.c' l='1118' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1412' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1773' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1799' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='3020' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3226' u='r' c='freeMemoryIfNeeded'/>

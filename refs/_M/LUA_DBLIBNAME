@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lualib.h' l='36'/>
+<use f='redis/deps/lua/src/ldblib.c' l='395' u='c'/>
+<use f='redis/deps/lua/src/linit.c' l='25' u='c'/>
+<use f='redis/src/scripting.c' l='584' u='c'/>

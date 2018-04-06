@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='667' type='int'/>
+<offset>1152</offset>
+<doc f='redis/src/redis.h' l='666'>/* Networking */</doc>
+<doc f='redis/src/redis.h' l='667'>/* TCP listening port */</doc>
+<use f='redis/src/cluster.c' l='438' u='r' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='447' u='r' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='467' u='r' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='2123' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/config.c' l='126' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='127' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='127' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1061' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1790' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1405' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1776' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1777' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2668' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3448' u='r' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3457' u='r' c='redisAsciiArt'/>
+<use f='redis/src/redis.c' l='3563' u='r' c='redisSetProcTitle'/>
+<use f='redis/src/redis.c' l='3672' u='r' c='main'/>
+<use f='redis/src/replication.c' l='1303' u='r' c='syncWithMaster'/>
+<use f='redis/src/sentinel.c' l='407' u='w' c='initSentinelConfig'/>
+<use f='redis/src/sentinel.c' l='2261' u='r' c='sentinelSendHello'/>

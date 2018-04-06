@@ -1,0 +1,9 @@
+<dec f='include/string.h' l='128' type='char * strncpy(char *restrict __dest, const char *restrict __src, size_t __n)'/>
+<doc f='include/string.h' l='127'>/* Copy no more than N characters of SRC to DEST.  */</doc>
+<use f='redis/deps/hiredis/net.c' l='366' u='c' c='redisContextConnectUnix'/>
+<use f='redis/deps/linenoise/linenoise.c' l='671' u='c' c='linenoiseEditHistoryNext'/>
+<use f='redis/deps/lua/src/lobject.c' l='184' u='c' c='luaO_chunkid'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='740' u='c' c='scanformat'/>
+<use f='redis/src/anet.c' l='363' u='c' c='anetUnixGenericConnect'/>
+<use f='redis/src/anet.c' l='502' u='c' c='anetUnixServer'/>
+<use f='redis/src/anet.c' l='572' u='c' c='anetPeerToString'/>

@@ -1,0 +1,5 @@
+<def f='redis/deps/linenoise/linenoise.c' l='656' ll='676' type='void linenoiseEditHistoryNext(struct linenoiseState * l, int dir)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='809' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='812' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='836' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='839' u='c' c='linenoiseEdit'/>

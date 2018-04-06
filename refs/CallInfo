@@ -1,0 +1,11 @@
+<def f='redis/deps/lua/src/lstate.h' l='48' ll='55'/>
+<size>40</size>
+<doc f='redis/deps/lua/src/lstate.h' l='45'>/*
+** informations about a call
+*/</doc>
+<mbr r='CallInfo::base' o='0' t='StkId'/>
+<mbr r='CallInfo::func' o='64' t='StkId'/>
+<mbr r='CallInfo::top' o='128' t='StkId'/>
+<mbr r='CallInfo::savedpc' o='192' t='const Instruction *'/>
+<mbr r='CallInfo::nresults' o='256' t='int'/>
+<mbr r='CallInfo::tailcalls' o='288' t='int'/>

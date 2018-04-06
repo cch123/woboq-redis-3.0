@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1507' type='void publishCommand(redisClient * c)'/>
+<def f='redis/src/pubsub.c' l='317' ll='324' type='void publishCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='257' u='r'/>
+<use f='redis/src/redis.c' l='257' u='r'/>
+<use f='redis/src/redis.c' l='257' u='r'/>
+<use f='redis/src/redis.c' l='257' u='r'/>

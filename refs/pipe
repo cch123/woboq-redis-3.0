@@ -1,0 +1,9 @@
+<dec f='include/unistd.h' l='420' type='int pipe(int * __pipedes)'/>
+<doc f='include/unistd.h' l='416'>/* Create a one-way communication channel (pipe).
+   If successful, two file descriptors are stored in PIPEDES;
+   bytes written on PIPEDES[1] can be read from PIPEDES[0].
+   Returns 0 if successful, -1 if not.  */</doc>
+<use f='redis/src/aof.c' l='1218' u='c' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1219' u='c' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1220' u='c' c='aofCreatePipes'/>
+<use f='redis/src/rdb.c' l='1403' u='c' c='rdbSaveToSlavesSockets'/>

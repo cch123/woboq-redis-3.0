@@ -1,0 +1,13 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='188' type='int redisBufferWrite(redisContext * c, int * done)'/>
+<use f='redis/deps/hiredis/async.c' l='537' u='c' c='redisAsyncHandleWrite'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1171' ll='1198' type='int redisBufferWrite(redisContext * c, int * done)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1222' u='c' c='redisGetReply'/>
+<doc f='redis/deps/hiredis/hiredis.c' l='1162'>/* Write the output buffer to the socket.
+ *
+ * Returns REDIS_OK when the buffer is empty, or (a part of) the buffer was
+ * succesfully written to the socket. When the buffer is empty after the
+ * write operation, &quot;done&quot; is set to 1 (if given).
+ *
+ * Returns REDIS_ERR if an error occured trying to write and sets
+ * c-&gt;errstr to hold the appropriate error string.
+ */</doc>

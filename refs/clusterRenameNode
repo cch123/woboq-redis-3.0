@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='903' ll='914' type='void clusterRenameNode(clusterNode * node, char * newname)'/>
+<use f='redis/src/cluster.c' l='1695' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='899'>/* This is only used after the handshake. When we connect a given IP/PORT
+ * as a result of CLUSTER MEET we don&apos;t have the node name yet, so we
+ * pick a random one, and will fix it when we receive the PONG request using
+ * this function. */</doc>

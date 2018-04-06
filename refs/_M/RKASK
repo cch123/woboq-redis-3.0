@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='130'/>
+<use f='redis/deps/lua/src/lcode.c' l='456' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='462' u='c'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='129'>/* code a constant index as a RK value */</doc>

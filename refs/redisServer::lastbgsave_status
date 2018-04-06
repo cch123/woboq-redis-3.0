@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='784' type='int'/>
+<offset>14816</offset>
+<doc f='redis/src/redis.h' l='784'>/* REDIS_OK or REDIS_ERR */</doc>
+<use f='redis/src/rdb.c' l='754' u='w' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='797' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1249' u='w' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/rdb.c' l='1252' u='w' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/rdb.c' l='1265' u='w' c='backgroundSaveDoneHandlerDisk'/>
+<use f='redis/src/redis.c' l='1192' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1829' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2206' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2750' u='r' c='genRedisInfoString'/>
+<use f='redis/src/scripting.c' l='336' u='r' c='luaRedisGenericCommand'/>

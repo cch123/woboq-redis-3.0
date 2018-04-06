@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1014' type='void getRandomHexChars(char * p, unsigned int len)'/>
+<use f='redis/src/cluster.c' l='525' u='c' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='651' u='c' c='createClusterNode'/>
+<use f='redis/src/rdb.c' l='703' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/redis.c' l='1400' u='c' c='initServerConfig'/>
+<def f='redis/src/util.c' l='444' ll='515' type='void getRandomHexChars(char * p, unsigned int len)'/>
+<doc f='redis/src/util.c' l='440'>/* Generate the Redis &quot;Run ID&quot;, a SHA1-sized random number that identifies a
+ * given execution of Redis, so that if you are talking with an instance
+ * having run_id == A, and you reconnect and it has run_id == B, you can be
+ * sure that it is either a different instance or it was restarted. */</doc>

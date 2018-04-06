@@ -1,0 +1,7 @@
+<def f='redis/src/scripting.c' l='608' ll='638' type='void scriptingEnableGlobalsProtection(lua_State * lua)'/>
+<use f='redis/src/scripting.c' l='762' u='c' c='scriptingInit'/>
+<doc f='redis/src/scripting.c' l='603'>/* This function installs metamethods in the global table _G that prevent
+ * the creation of globals accidentally.
+ *
+ * It should be the last to be called in the scripting engine initialization
+ * sequence, because it may interact with creation of globals. */</doc>

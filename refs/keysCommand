@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1399' type='void keysCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='335' ll='360' type='void keysCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='223' u='r'/>
+<use f='redis/src/redis.c' l='223' u='r'/>
+<use f='redis/src/redis.c' l='223' u='r'/>
+<use f='redis/src/redis.c' l='223' u='r'/>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lualib.h' l='28' type='int luaopen_os(lua_State * L)'/>
+<use f='redis/deps/lua/src/linit.c' l='22' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='22' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='22' u='r'/>
+<use f='redis/deps/lua/src/linit.c' l='22' u='r'/>
+<def f='redis/deps/lua/src/loslib.c' l='239' ll='242' macro='1' type='int luaopen_os(lua_State * L)'/>

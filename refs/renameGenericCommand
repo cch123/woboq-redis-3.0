@@ -1,0 +1,3 @@
+<def f='redis/src/db.c' l='663' ll='699' type='void renameGenericCommand(redisClient * c, int nx)'/>
+<use f='redis/src/db.c' l='702' u='c' c='renameCommand'/>
+<use f='redis/src/db.c' l='706' u='c' c='renamenxCommand'/>

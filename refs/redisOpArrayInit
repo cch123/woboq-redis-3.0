@@ -1,0 +1,3 @@
+<def f='redis/src/redis.c' l='1937' ll='1940' type='void redisOpArrayInit(redisOpArray * oa)'/>
+<use f='redis/src/redis.c' l='2050' u='c' c='call'/>
+<doc f='redis/src/redis.c' l='1935'>/* ========================== Redis OP Array API ============================ */</doc>

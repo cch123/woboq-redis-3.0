@@ -1,0 +1,38 @@
+<dec f='redis/src/adlist.h' l='73' type='list * listCreate()'/>
+<def f='redis/src/adlist.c' l='41' ll='53' type='list * listCreate()'/>
+<use f='redis/src/adlist.c' l='248' u='c' c='listDup'/>
+<doc f='redis/src/adlist.c' l='36'>/* Create a new list. The created list can be freed with
+ * AlFreeList(), but private value of every node need to be freed
+ * by the user before to call AlFreeList().
+ *
+ * On error, NULL is returned. Otherwise the pointer to the new list. */</doc>
+<doc f='redis/src/adlist.h' l='72'>/* Prototypes */</doc>
+<use f='redis/src/aof.c' l='73' u='c' c='aofRewriteBufferReset'/>
+<use f='redis/src/aof.c' l='569' u='c' c='createFakeClient'/>
+<use f='redis/src/aof.c' l='572' u='c' c='createFakeClient'/>
+<use f='redis/src/bio.c' l='102' u='c' c='bioInit'/>
+<use f='redis/src/cluster.c' l='665' u='c' c='createClusterNode'/>
+<use f='redis/src/config.c' l='1293' u='c' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/db.c' l='425' u='c' c='scanGenericCommand'/>
+<use f='redis/src/multi.c' l='218' u='c' c='watchForKey'/>
+<use f='redis/src/networking.c' l='108' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='120' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='122' u='c' c='createClient'/>
+<use f='redis/src/object.c' l='184' u='c' c='createListObject'/>
+<use f='redis/src/pubsub.c' l='70' u='c' c='pubsubSubscribeChannel'/>
+<use f='redis/src/redis.c' l='1759' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1760' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1761' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1762' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1764' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1765' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1766' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1810' u='c' c='initServer'/>
+<use f='redis/src/replication.c' l='1737' u='c' c='replicationScriptCacheInit'/>
+<use f='redis/src/replication.c' l='1754' u='c' c='replicationScriptCacheFlush'/>
+<use f='redis/src/sentinel.c' l='432' u='c' c='initSentinel'/>
+<use f='redis/src/slowlog.c' l='104' u='c' c='slowlogInit'/>
+<use f='redis/src/sort.c' l='213' u='c' c='sortCommand'/>
+<use f='redis/src/t_list.c' l='275' u='c' c='listTypeConvert'/>
+<use f='redis/src/t_list.c' l='796' u='c' c='blockForKeys'/>
+<use f='redis/src/t_list.c' l='957' u='c' c='handleClientsBlockedOnLists'/>

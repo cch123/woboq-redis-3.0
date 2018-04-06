@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lobject.h' l='376' type='const char * luaO_pushfstring(lua_State * L, const char * fmt)'/>
+<use f='redis/deps/lua/src/ldebug.c' l='613' u='c' c='addinfo'/>
+<use f='redis/deps/lua/src/llex.c' l='81' u='c' c='luaX_token2str'/>
+<use f='redis/deps/lua/src/llex.c' l='82' u='c' c='luaX_token2str'/>
+<use f='redis/deps/lua/src/llex.c' l='105' u='c' c='luaX_lexerror'/>
+<use f='redis/deps/lua/src/llex.c' l='107' u='c' c='luaX_lexerror'/>
+<def f='redis/deps/lua/src/lobject.c' l='172' ll='179' type='const char * luaO_pushfstring(lua_State * L, const char * fmt)'/>
+<use f='redis/deps/lua/src/lparser.c' l='67' u='c' c='error_expected'/>
+<use f='redis/deps/lua/src/lparser.c' l='73' u='c' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='74' u='c' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='109' u='c' c='check_match'/>
+<use f='redis/deps/lua/src/lundump.c' l='38' u='c' c='error'/>

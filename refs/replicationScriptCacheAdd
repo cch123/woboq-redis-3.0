@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1166' type='void replicationScriptCacheAdd(sds sha1)'/>
+<def f='redis/src/replication.c' l='1759' ll='1778' type='void replicationScriptCacheAdd(sds sha1)'/>
+<doc f='redis/src/replication.c' l='1757'>/* Add an entry into the script cache, if we reach max number of entries the
+ * oldest is removed from the list. */</doc>
+<use f='redis/src/scripting.c' l='1084' u='c' c='evalGenericCommand'/>

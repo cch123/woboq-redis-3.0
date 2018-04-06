@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.c' l='74' type='void clusterSetNodeAsMaster(clusterNode * n)'/>
+<use f='redis/src/cluster.c' l='489' u='c' c='clusterReset'/>
+<def f='redis/src/cluster.c' l='1406' ll='1417' type='void clusterSetNodeAsMaster(clusterNode * n)'/>
+<use f='redis/src/cluster.c' l='1752' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1946' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2653' u='c' c='clusterFailoverReplaceYourMaster'/>
+<doc f='redis/src/cluster.c' l='1403'>/* Reconfigure the specified node &apos;n&apos; as a master. This function is called when
+ * a node that we believed to be a slave is now acting as master in order to
+ * update the state of the node. */</doc>

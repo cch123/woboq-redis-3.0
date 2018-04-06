@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1514' type='void askingCommand(redisClient * c)'/>
+<def f='redis/src/cluster.c' l='4719' ll='4726' type='void askingCommand(redisClient * c)'/>
+<doc f='redis/src/cluster.c' l='4715'>/* The ASKING command is required after a -ASK redirection.
+ * The client should issue ASKING before to actually send the command to
+ * the target instance. See the Redis Cluster specification for more
+ * information. */</doc>
+<use f='redis/src/networking.c' l='909' u='r' c='resetClient'/>
+<use f='redis/src/redis.c' l='265' u='r'/>
+<use f='redis/src/redis.c' l='265' u='r'/>
+<use f='redis/src/redis.c' l='265' u='r'/>
+<use f='redis/src/redis.c' l='265' u='r'/>

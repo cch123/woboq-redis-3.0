@@ -1,0 +1,5 @@
+<def f='redis/src/debug.c' l='659' ll='682' type='void logStackTrace(ucontext_t * uc)'/>
+<use f='redis/src/debug.c' l='820' u='c' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='908' u='c' c='watchdogSignalHandler'/>
+<doc f='redis/src/debug.c' l='657'>/* Logs the stack trace using the backtrace() call. This function is designed
+ * to be called from signal handlers safely. */</doc>

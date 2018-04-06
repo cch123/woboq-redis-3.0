@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.c' l='76' type='sds representRedisNodeFlags(sds ci, uint16_t flags)'/>
+<use f='redis/src/cluster.c' l='1299' u='c' c='clusterProcessGossipSection'/>
+<def f='redis/src/cluster.c' l='3601' ll='3613' type='sds representRedisNodeFlags(sds ci, uint16_t flags)'/>
+<use f='redis/src/cluster.c' l='3630' u='c' c='clusterGenNodeDescription'/>
+<doc f='redis/src/cluster.c' l='3599'>/* Concatenate the comma separated list of node flags to the given SDS
+ * string &apos;ci&apos;. */</doc>

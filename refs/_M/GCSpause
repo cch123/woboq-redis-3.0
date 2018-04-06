@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lgc.h' l='17'/>
+<use f='redis/deps/lua/src/lapi.c' l='934' u='c'/>
+<doc f='redis/deps/lua/src/lgc.h' l='14'>/*
+** Possible states of the Garbage Collector
+*/</doc>
+<use f='redis/deps/lua/src/lgc.c' l='560' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='600' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='618' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='621' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='654' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='169' u='c'/>

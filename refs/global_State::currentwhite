@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lstate.h' l='72' type='lu_byte'/>
+<offset>256</offset>
+<use f='redis/deps/lua/src/lfunc.c' l='61' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lfunc.c' l='69' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lfunc.c' l='103' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='120' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='410' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='416' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='457' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='486' u='w' c='luaC_freeall'/>
+<use f='redis/deps/lua/src/lgc.c' l='548' u='w' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='548' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='670' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='689' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='705' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='153' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='154' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstring.c' l='59' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstring.c' l='88' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstring.c' l='101' macro='1' u='r'/>

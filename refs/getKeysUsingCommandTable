@@ -1,0 +1,4 @@
+<def f='redis/src/db.c' l='983' ll='1000' type='int * getKeysUsingCommandTable(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<use f='redis/src/db.c' l='1017' u='c' c='getKeysFromCommand'/>
+<doc f='redis/src/db.c' l='981'>/* The base case is to use the keys position as given in the command table
+ * (firstkey, lastkey, step). */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='703' type='long long'/>
+<offset>7168</offset>
+<doc f='redis/src/redis.h' l='703'>/* Number of failed lookups of keys */</doc>
+<use f='redis/src/db.c' l='66' u='w' c='lookupKeyRead'/>
+<use f='redis/src/redis.c' l='1726' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2851' u='r' c='genRedisInfoString'/>

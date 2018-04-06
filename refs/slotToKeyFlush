@@ -1,0 +1,4 @@
+<dec f='redis/src/db.c' l='38' type='void slotToKeyFlush()'/>
+<use f='redis/src/db.c' l='221' u='c' c='emptyDb'/>
+<use f='redis/src/db.c' l='258' u='c' c='flushdbCommand'/>
+<def f='redis/src/db.c' l='1144' ll='1147' type='void slotToKeyFlush()'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='109' type='dict *'/>
+<use f='redis/src/cluster.c' l='401' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1083' u='r' c='clusterBlacklistCleanup'/>
+<use f='redis/src/cluster.c' l='1088' u='r' c='clusterBlacklistCleanup'/>
+<use f='redis/src/cluster.c' l='1099' u='r' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1104' u='r' c='clusterBlacklistAddNode'/>
+<use f='redis/src/cluster.c' l='1117' u='r' c='clusterBlacklistExists'/>
+<offset>256</offset>
+<doc f='redis/src/cluster.h' l='109'>/* Nodes we don&apos;t re-add for a few seconds. */</doc>

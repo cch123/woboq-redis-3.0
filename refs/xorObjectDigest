@@ -1,0 +1,2 @@
+<def f='redis/src/debug.c' l='71' ll='75' type='void xorObjectDigest(unsigned char * digest, robj * o)'/>
+<use f='redis/src/debug.c' l='168' u='c' c='computeDatasetDigest'/>

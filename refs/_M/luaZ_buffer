@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lzio.h' l='32'/>
+<use f='redis/deps/lua/src/llex.c' l='95' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='173' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='185' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='205' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='273' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='329' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='428' u='c'/>

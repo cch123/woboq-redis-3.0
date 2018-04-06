@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='797' type='long long'/>
+<offset>15360</offset>
+<doc f='redis/src/redis.h' l='797'>/* Global replication offset */</doc>
+<use f='redis/src/cluster.c' l='2135' u='r' c='clusterBuildMessageHdr'/>
+<use f='redis/src/redis.c' l='1505' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2300' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2969' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='80' u='w' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='85' u='r' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='111' u='r' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='128' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='146' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='388' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='426' u='r' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='1448' u='w' c='replicationSetMaster'/>
+<use f='redis/src/replication.c' l='1463' u='w' c='replicationUnsetMaster'/>
+<use f='redis/src/replication.c' l='1523' u='r' c='roleCommand'/>

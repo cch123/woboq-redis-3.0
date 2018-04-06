@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1381' type='void setCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='125' u='r'/>
+<use f='redis/src/redis.c' l='125' u='r'/>
+<use f='redis/src/redis.c' l='125' u='r'/>
+<use f='redis/src/redis.c' l='125' u='r'/>
+<def f='redis/src/t_string.c' l='94' ll='128' type='void setCommand(redisClient * c)'/>
+<doc f='redis/src/t_string.c' l='93'>/* SET key value [NX] [XX] [EX &lt;seconds&gt;] [PX &lt;milliseconds&gt;] */</doc>

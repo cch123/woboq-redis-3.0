@@ -1,0 +1,7 @@
+<dec f='include/stdio.h' l='180' type='int rename(const char * __old, const char * __new)'/>
+<doc f='include/stdio.h' l='179'>/* Rename file OLD to NEW.  */</doc>
+<use f='redis/deps/lua/src/loslib.c' l='53' u='c' c='os_rename'/>
+<use f='redis/src/aof.c' l='1163' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1440' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/rdb.c' l='746' u='c' c='rdbSave'/>
+<use f='redis/src/replication.c' l='1000' u='c' c='readSyncBulkPayload'/>

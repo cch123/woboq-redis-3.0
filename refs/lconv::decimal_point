@@ -1,0 +1,5 @@
+<dec f='include/locale.h' l='57' type='char *'/>
+<use f='redis/deps/lua/src/llex.c' l='183' u='r' c='trydecpoint'/>
+<offset>0</offset>
+<doc f='include/locale.h' l='55'>/* Numeric (non-monetary) information.  */</doc>
+<doc f='include/locale.h' l='57'>/* Decimal point character.  */</doc>

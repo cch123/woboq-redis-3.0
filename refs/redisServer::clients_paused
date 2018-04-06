@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='682' type='int'/>
+<offset>3840</offset>
+<doc f='redis/src/redis.h' l='682'>/* True if clients are currently paused */</doc>
+<use f='redis/src/networking.c' l='1710' u='r' c='pauseClients'/>
+<use f='redis/src/networking.c' l='1712' u='w' c='pauseClients'/>
+<use f='redis/src/networking.c' l='1718' u='r' c='clientsArePaused'/>
+<use f='redis/src/networking.c' l='1725' u='w' c='clientsArePaused'/>
+<use f='redis/src/networking.c' l='1740' u='r' c='clientsArePaused'/>
+<use f='redis/src/redis.c' l='1768' u='w' c='initServer'/>

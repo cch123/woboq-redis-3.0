@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1189' type='void stopAppendOnly()'/>
+<def f='redis/src/aof.c' l='206' ll='231' type='void stopAppendOnly()'/>
+<doc f='redis/src/aof.c' l='204'>/* Called when the user switches from &quot;appendonly yes&quot; to &quot;appendonly no&quot;
+ * at runtime using the CONFIG command. */</doc>
+<use f='redis/src/config.c' l='720' u='c' c='configSetCommand'/>
+<use f='redis/src/replication.c' l='1040' u='c' c='readSyncBulkPayload'/>

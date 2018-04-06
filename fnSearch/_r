@@ -1,0 +1,5 @@
+_redisAssert|_redisAssert
+_redisAssertPrintClientInfo|_redisAssertPrintClientInfo
+_redisAssertPrintObject|_redisAssertPrintObject
+_redisAssertWithInfo|_redisAssertWithInfo
+_redisPanic|_redisPanic

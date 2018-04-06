@@ -1,0 +1,24 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='49'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='45'>/* When an error occurs, the err flag in a context is set to hold the type of
+ * error that occured. REDIS_ERR_IO means there was an I/O error and you
+ * should use the &quot;errno&quot; variable to find out what is wrong.
+ * For other values, the &quot;errstr&quot; field will hold a description. */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='984' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1147' u='c'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1184' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='77' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='87' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='106' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='117' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='169' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='189' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='205' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='210' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='221' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='231' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='237' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='246' u='c'/>
+<use f='redis/deps/hiredis/net.c' l='250' u='c'/>
+<use f='redis/src/redis-cli.c' l='568' u='c'/>
+<use f='redis/src/redis-cli.c' l='724' u='c'/>
+<use f='redis/src/redis-cli.c' l='738' u='c'/>

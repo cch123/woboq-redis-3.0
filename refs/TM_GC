@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/ltm.h' l='21' type='2'/>
+<use f='redis/deps/lua/src/lgc.c' l='136' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='136' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='136' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='458' u='r' c='GCTM'/>

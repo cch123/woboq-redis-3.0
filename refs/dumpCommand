@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1517' type='void dumpCommand(redisClient * c)'/>
+<def f='redis/src/cluster.c' l='4359' ll='4377' type='void dumpCommand(redisClient * c)'/>
+<doc f='redis/src/cluster.c' l='4356'>/* DUMP keyname
+ * DUMP is actually not used by Redis Cluster but it is the obvious
+ * complement of RESTORE and can be useful for different applications. */</doc>
+<use f='redis/src/redis.c' l='268' u='r'/>
+<use f='redis/src/redis.c' l='268' u='r'/>
+<use f='redis/src/redis.c' l='268' u='r'/>
+<use f='redis/src/redis.c' l='268' u='r'/>

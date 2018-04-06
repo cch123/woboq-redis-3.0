@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='929' type='long long'/>
+<offset>512</offset>
+<use f='redis/src/redis.c' l='1930' u='w' c='resetCommandTableStats'/>
+<use f='redis/src/redis.c' l='2082' u='w' c='call'/>
+<use f='redis/src/redis.c' l='3002' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3003' u='r' c='genRedisInfoString'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/debug.c' l='723' type='void memtest_non_destructive_invert(void * addr, size_t size)'/>
+<use f='redis/src/debug.c' l='773' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='779' u='c' c='memtest_test_linux_anonymous_maps'/>
+<def f='redis/src/memtest.c' l='246' ll='254' type='void memtest_non_destructive_invert(void * addr, size_t size)'/>

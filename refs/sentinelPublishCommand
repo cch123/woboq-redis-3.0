@@ -1,0 +1,12 @@
+<dec f='redis/src/sentinel.c' l='387' type='void sentinelPublishCommand(redisClient * c)'/>
+<use f='redis/src/sentinel.c' l='397'/>
+<use f='redis/src/sentinel.c' l='397'/>
+<use f='redis/src/sentinel.c' l='397'/>
+<use f='redis/src/sentinel.c' l='397'/>
+<def f='redis/src/sentinel.c' l='2965' ll='2972' type='void sentinelPublishCommand(redisClient * c)'/>
+<doc f='redis/src/sentinel.c' l='2959'>/* Our fake PUBLISH command: it is actually useful only to receive hello messages
+ * from the other sentinel instances, and publishing to a channel other than
+ * SENTINEL_HELLO_CHANNEL is forbidden.
+ *
+ * Because we have a Sentinel PUBLISH, the code to send hello messages is the same
+ * for all the three kind of instances: masters, slaves, sentinels. */</doc>

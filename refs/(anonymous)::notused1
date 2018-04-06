@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='171' type='uint16_t'/>
+<dec f='redis/src/cluster.h' l='235' type='char [32]'/>
+<use f='redis/src/cluster.c' l='2260' u='w' c='clusterSendPing'/>
+<offset>17344</offset>
+<doc f='redis/src/cluster.h' l='171'>/* Some room for future improvements. */</doc>
+<doc f='redis/src/cluster.h' l='235'>/* 32 bytes reserved for future usage. */</doc>

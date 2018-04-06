@@ -1,0 +1,28 @@
+<def f='redis/src/sentinel.c' l='896' ll='996' type='sentinelRedisInstance * createSentinelRedisInstance(char * name, int flags, char * hostname, int port, int quorum, sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='1269' u='c' c='sentinelResetMasterAndChangeAddress'/>
+<use f='redis/src/sentinel.c' l='1342' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1417' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1429' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1843' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2146' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2749' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='876'>/* Create a redis instance, the following fields must be populated by the
+ * caller if needed:
+ * runid: set to NULL but will be populated once INFO output is received.
+ * info_refresh: is set to 0 to mean that we never received INFO so far.
+ *
+ * If SRI_MASTER is set into initial flags the instance is added to
+ * sentinel.masters table.
+ *
+ * if SRI_SLAVE or SRI_SENTINEL is set then &apos;master&apos; must be not NULL and the
+ * instance is added into master-&gt;slaves or master-&gt;sentinels table.
+ *
+ * If the instance is a slave or sentinel, the name parameter is ignored and
+ * is created automatically as hostname:port.
+ *
+ * The function fails if hostname can&apos;t be resolved or port is out of range.
+ * When this happens NULL is returned and errno is set accordingly to the
+ * createSentinelAddr() function.
+ *
+ * The function may also fail and return NULL with errno set to EBUSY if
+ * a master or slave with the same name already exists. */</doc>

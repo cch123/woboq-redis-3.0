@@ -1,0 +1,4 @@
+<dec f='redis/src/sparkline.h' l='35' type='double'/>
+<offset>0</offset>
+<use f='redis/src/sparkline.c' l='74' u='w' c='sparklineSequenceAddSample'/>
+<use f='redis/src/sparkline.c' l='118' u='r' c='sparklineRenderRange'/>

@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='187' type='int redisBufferRead(redisContext * c)'/>
+<use f='redis/deps/hiredis/async.c' l='515' u='c' c='redisAsyncHandleRead'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1134' ll='1160' type='int redisBufferRead(redisContext * c)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1228' u='c' c='redisGetReply'/>
+<doc f='redis/deps/hiredis/hiredis.c' l='1129'>/* Use this function to handle a read event on the descriptor. It will try
+ * and read some bytes from the socket and feed them to the reply parser.
+ *
+ * After this function is called, you may use redisContextReadReply to
+ * see if there is a reply available. */</doc>

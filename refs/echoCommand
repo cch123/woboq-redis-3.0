@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1379' type='void echoCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='228' u='r'/>
+<use f='redis/src/redis.c' l='228' u='r'/>
+<use f='redis/src/redis.c' l='228' u='r'/>
+<use f='redis/src/redis.c' l='228' u='r'/>
+<def f='redis/src/redis.c' l='2460' ll='2462' type='void echoCommand(redisClient * c)'/>

@@ -1,0 +1,9 @@
+<dec f='include/netinet/in.h' l='259' type='struct in6_addr'/>
+<offset>64</offset>
+<doc f='include/netinet/in.h' l='259'>/* IPv6 address */</doc>
+<use f='redis/src/anet.c' l='223' u='a' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='540' u='a' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='569' u='a' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='608' u='a' c='anetSockName'/>
+<use f='redis/src/cluster.c' l='1244' u='a' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1267' u='a' c='clusterStartHandshake'/>

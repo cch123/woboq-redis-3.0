@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1132' type='robj * createZsetObject()'/>
+<def f='redis/src/object.c' l='219' ll='228' type='robj * createZsetObject()'/>
+<use f='redis/src/rdb.c' l='908' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_zset.c' l='1204' u='c' c='zaddGenericCommand'/>
+<use f='redis/src/t_zset.c' l='1935' u='c' c='zunionInterGenericCommand'/>

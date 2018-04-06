@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='1330' type='unsigned int getKeysInSlot(unsigned int hashslot, robj ** keys, unsigned int count)'/>
+<use f='redis/src/cluster.c' l='4081' u='c' c='clusterCommand'/>
+<def f='redis/src/db.c' l='1149' ll='1163' type='unsigned int getKeysInSlot(unsigned int hashslot, robj ** keys, unsigned int count)'/>

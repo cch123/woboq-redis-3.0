@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='3718' ll='3728' type='int getSlotOrReply(redisClient * c, robj * o)'/>
+<use f='redis/src/cluster.c' l='3859' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3904' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3714'>/* -----------------------------------------------------------------------------
+ * CLUSTER command
+ * -------------------------------------------------------------------------- */</doc>

@@ -1,0 +1,8 @@
+<dec f='redis/src/aof.c' l='42' type='void aofUpdateCurrentSize()'/>
+<use f='redis/src/aof.c' l='707' u='c' c='loadAppendOnlyFile'/>
+<def f='redis/src/aof.c' l='1347' ll='1360' type='void aofUpdateCurrentSize()'/>
+<use f='redis/src/aof.c' l='1463' u='c' c='backgroundRewriteDoneHandler'/>
+<doc f='redis/src/aof.c' l='1343'>/* Update the server.aof_current_size field explicitly using stat(2)
+ * to check the size of the file. This is useful after a rewrite or after
+ * a restart, normally the size is updated just adding the write length
+ * to the current length, that is much faster. */</doc>

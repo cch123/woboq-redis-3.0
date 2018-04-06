@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1405' type='void bgrewriteaofCommand(redisClient * c)'/>
+<def f='redis/src/aof.c' l='1323' ll='1334' type='void bgrewriteaofCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='231' u='r'/>
+<use f='redis/src/redis.c' l='231' u='r'/>
+<use f='redis/src/redis.c' l='231' u='r'/>
+<use f='redis/src/redis.c' l='231' u='r'/>

@@ -1,0 +1,9 @@
+<def f='redis/src/replication.c' l='125' ll='148' type='void feedReplicationBacklog(void * ptr, size_t len)'/>
+<use f='redis/src/replication.c' l='164' u='c' c='feedReplicationBacklogWithObject'/>
+<use f='redis/src/replication.c' l='221' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='233' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='235' u='c' c='replicationFeedSlaves'/>
+<doc f='redis/src/replication.c' l='121'>/* Add data to the replication backlog.
+ * This function also increments the global replication offset stored at
+ * server.master_repl_offset, because there is no case where we want to feed
+ * the backlog without incrementing the buffer. */</doc>

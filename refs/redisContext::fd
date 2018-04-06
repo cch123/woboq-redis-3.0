@@ -1,0 +1,30 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='169' type='int'/>
+<offset>1056</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='1004' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1005' u='r' c='redisFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1014' u='r' c='redisFreeKeepFd'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1015' u='w' c='redisFreeKeepFd'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1110' u='w' c='redisConnectFd'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1142' u='r' c='redisBufferRead'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1179' u='r' c='redisBufferWrite'/>
+<use f='redis/deps/hiredis/net.c' l='58' u='r' c='redisContextCloseFd'/>
+<use f='redis/deps/hiredis/net.c' l='59' u='r' c='redisContextCloseFd'/>
+<use f='redis/deps/hiredis/net.c' l='60' u='w' c='redisContextCloseFd'/>
+<use f='redis/deps/hiredis/net.c' l='76' u='r' c='redisSetReuseAddr'/>
+<use f='redis/deps/hiredis/net.c' l='90' u='w' c='redisCreateSocket'/>
+<use f='redis/deps/hiredis/net.c' l='105' u='r' c='redisSetBlocking'/>
+<use f='redis/deps/hiredis/net.c' l='116' u='r' c='redisSetBlocking'/>
+<use f='redis/deps/hiredis/net.c' l='126' u='r' c='redisKeepAlive'/>
+<use f='redis/deps/hiredis/net.c' l='168' u='r' c='redisSetTcpNoDelay'/>
+<use f='redis/deps/hiredis/net.c' l='183' u='r' c='redisContextWaitReady'/>
+<use f='redis/deps/hiredis/net.c' l='230' u='r' c='redisCheckSocketError'/>
+<use f='redis/deps/hiredis/net.c' l='245' u='r' c='redisContextSetTimeout'/>
+<use f='redis/deps/hiredis/net.c' l='249' u='r' c='redisContextSetTimeout'/>
+<use f='redis/deps/hiredis/net.c' l='285' u='w' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='367' u='r' c='redisContextConnectUnix'/>
+<use f='redis/src/redis-cli.c' l='401' u='r' c='cliConnect'/>
+<use f='redis/src/redis-cli.c' l='1320' u='r' c='slaveMode'/>
+<use f='redis/src/redis-cli.c' l='1354' u='r' c='getRDB'/>
+<use f='redis/src/redis-cli.c' l='1401' u='r' c='pipeMode'/>
+<use f='redis/src/sentinel.c' l='306' u='r' c='redisAeAttach'/>
+<use f='redis/src/sentinel.c' l='2256' u='r' c='sentinelSendHello'/>

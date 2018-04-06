@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='22' type='Closure * luaF_newCclosure(lua_State * L, int nelems, Table * e)'/>
+<use f='redis/deps/lua/src/lapi.c' l='491' u='c' c='lua_pushcclosure'/>
+<use f='redis/deps/lua/src/lapi.c' l='840' u='c' c='f_Ccall'/>
+<def f='redis/deps/lua/src/lfunc.c' l='23' ll='30' type='Closure * luaF_newCclosure(lua_State * L, int nelems, Table * e)'/>

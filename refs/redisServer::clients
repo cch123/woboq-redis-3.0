@@ -1,0 +1,24 @@
+<dec f='redis/src/redis.h' l='678' type='list *'/>
+<offset>3520</offset>
+<doc f='redis/src/redis.h' l='678'>/* List of active clients */</doc>
+<use f='redis/src/blocked.c' l='171' u='r' c='disconnectAllBlockedClients'/>
+<use f='redis/src/multi.c' l='289' u='r' c='touchWatchedKeysOnFlush'/>
+<use f='redis/src/networking.c' l='126' u='r' c='createClient'/>
+<use f='redis/src/networking.c' l='597' u='r' c='acceptCommonHandler'/>
+<use f='redis/src/networking.c' l='742' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='744' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='1237' u='r' c='getClientsMaxBuffers'/>
+<use f='redis/src/networking.c' l='1360' u='r' c='getAllClientsInfoString'/>
+<use f='redis/src/networking.c' l='1361' u='r' c='getAllClientsInfoString'/>
+<use f='redis/src/networking.c' l='1436' u='r' c='clientCommand'/>
+<use f='redis/src/networking.c' l='1729' u='r' c='clientsArePaused'/>
+<use f='redis/src/redis.c' l='971' u='r' c='clientsCron'/>
+<use f='redis/src/redis.c' l='976' u='r' c='clientsCron'/>
+<use f='redis/src/redis.c' l='983' u='r' c='clientsCron'/>
+<use f='redis/src/redis.c' l='984' u='r' c='clientsCron'/>
+<use f='redis/src/redis.c' l='1136' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1759' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2685' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1604' u='r' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1606' u='r' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1660' u='r' c='replicationResurrectCachedMaster'/>

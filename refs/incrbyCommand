@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1394' type='void incrbyCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='208' u='r'/>
+<use f='redis/src/redis.c' l='208' u='r'/>
+<use f='redis/src/redis.c' l='208' u='r'/>
+<use f='redis/src/redis.c' l='208' u='r'/>
+<def f='redis/src/t_string.c' l='371' ll='376' type='void incrbyCommand(redisClient * c)'/>

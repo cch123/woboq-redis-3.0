@@ -1,0 +1,39 @@
+<dec f='redis/src/redis.h' l='822' type='int'/>
+<offset>16480</offset>
+<doc f='redis/src/redis.h' l='822'>/* Replication status if the instance is a slave */</doc>
+<use f='redis/src/cluster.c' l='2723' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/config.c' l='256' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/networking.c' l='673' u='w' c='replicationHandleMasterDisconnection'/>
+<use f='redis/src/rdb.c' l='1122' u='r' c='rdbLoadProgressCallback'/>
+<use f='redis/src/redis.c' l='1496' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2259' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2882' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2886' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2890' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2900' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='469' u='r' c='syncCommand'/>
+<use f='redis/src/replication.c' l='824' u='r' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='831' u='w' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='1025' u='w' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1222' u='r' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1241' u='r' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1246' u='w' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1254' u='r' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1361' u='w' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1373' u='w' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1398' u='w' c='connectWithMaster'/>
+<use f='redis/src/replication.c' l='1407' u='r' c='undoConnectWithMaster'/>
+<use f='redis/src/replication.c' l='1408' u='r' c='undoConnectWithMaster'/>
+<use f='redis/src/replication.c' l='1412' u='w' c='undoConnectWithMaster'/>
+<use f='redis/src/replication.c' l='1424' u='r' c='cancelReplicationHandshake'/>
+<use f='redis/src/replication.c' l='1426' u='r' c='cancelReplicationHandshake'/>
+<use f='redis/src/replication.c' l='1427' u='r' c='cancelReplicationHandshake'/>
+<use f='redis/src/replication.c' l='1447' u='w' c='replicationSetMaster'/>
+<use f='redis/src/replication.c' l='1470' u='w' c='replicationUnsetMaster'/>
+<use f='redis/src/replication.c' l='1546' u='r' c='roleCommand'/>
+<use f='redis/src/replication.c' l='1657' u='w' c='replicationResurrectCachedMaster'/>
+<use f='redis/src/replication.c' l='1941' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1942' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1950' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1958' u='r' c='replicationCron'/>
+<use f='redis/src/replication.c' l='1966' u='r' c='replicationCron'/>

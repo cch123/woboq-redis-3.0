@@ -1,0 +1,7 @@
+<def f='redis/src/cluster.c' l='1289' ll='1357' type='void clusterProcessGossipSection(clusterMsg * hdr, clusterLink * link)'/>
+<use f='redis/src/cluster.c' l='1661' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1864' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='1285'>/* Process the gossip section of PING or PONG packets.
+ * Note that this function assumes that the packet is already sanity-checked
+ * by the caller, not in the content of the gossip section, but in the
+ * length. */</doc>

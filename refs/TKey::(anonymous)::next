@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lobject.h' l='326' type='struct Node *'/>
+<offset>128</offset>
+<doc f='redis/deps/lua/src/lobject.h' l='326'>/* for chaining */</doc>
+<use f='redis/deps/lua/src/ltable.c' l='154' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='287' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ltable.c' l='412' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='412' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='413' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ltable.c' l='415' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ltable.c' l='420' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ltable.c' l='420' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='421' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ltable.c' l='445' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='460' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='486' macro='1' u='r'/>

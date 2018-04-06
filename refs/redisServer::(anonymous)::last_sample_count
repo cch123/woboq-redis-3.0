@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='722' type='long long'/>
+<offset>64</offset>
+<doc f='redis/src/redis.h' l='722'>/* Count in last sample */</doc>
+<use f='redis/src/redis.c' l='882' u='r' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='892' u='w' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='1737' u='w' c='resetServerStats'/>

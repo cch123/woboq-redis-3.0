@@ -1,0 +1,15 @@
+<dec f='redis/deps/lua/src/lobject.h' l='245' type='int'/>
+<offset>736</offset>
+<use f='redis/deps/lua/src/ldump.c' l='116' u='r' c='DumpDebug'/>
+<use f='redis/deps/lua/src/lfunc.c' l='132' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='146' u='r' c='luaF_freeproto'/>
+<use f='redis/deps/lua/src/lfunc.c' l='165' u='r' c='luaF_getlocalname'/>
+<use f='redis/deps/lua/src/lgc.c' l='216' u='r' c='traverseproto'/>
+<use f='redis/deps/lua/src/lgc.c' l='315' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lparser.c' l='146' u='r' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='147' u='r' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='147' u='a' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='149' u='r' c='registerlocalvar'/>
+<use f='redis/deps/lua/src/lparser.c' l='370' u='r' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='371' u='w' c='close_func'/>
+<use f='redis/deps/lua/src/lundump.c' l='146' u='w' c='LoadDebug'/>

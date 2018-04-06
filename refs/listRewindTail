@@ -1,0 +1,2 @@
+<dec f='redis/src/adlist.h' l='86' type='void listRewindTail(list * list, listIter * li)'/>
+<def f='redis/src/adlist.c' l='202' ll='205' type='void listRewindTail(list * list, listIter * li)'/>

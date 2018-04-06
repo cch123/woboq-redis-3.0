@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/llex.h' l='51' type='SemInfo'/>
+<offset>64</offset>
+<use f='redis/deps/lua/src/llex.c' l='455' u='a' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='461' u='a' c='luaX_lookahead'/>
+<use f='redis/deps/lua/src/lparser.c' l='59' u='m' c='anchor_token'/>
+<use f='redis/deps/lua/src/lparser.c' l='120' u='m' c='str_checkname'/>
+<use f='redis/deps/lua/src/lparser.c' l='633' u='m' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='733' u='m' c='simpleexp'/>
+<use f='redis/deps/lua/src/lparser.c' l='737' u='m' c='simpleexp'/>

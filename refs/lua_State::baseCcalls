@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='115' type='unsigned short'/>
+<offset>784</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='115'>/* nested C calls when resuming coroutine */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='86' u='r' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='427' u='w' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='447' u='r' c='lua_yield'/>
+<use f='redis/deps/lua/src/lstate.c' l='96' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='208' u='w' c='lua_close'/>

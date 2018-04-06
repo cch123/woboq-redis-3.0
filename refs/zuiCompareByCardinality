@@ -1,0 +1,2 @@
+<def f='redis/src/t_zset.c' l='1817' ll='1819' type='int zuiCompareByCardinality(const void * s1, const void * s2)'/>
+<use f='redis/src/t_zset.c' l='1933' u='r' c='zunionInterGenericCommand'/>

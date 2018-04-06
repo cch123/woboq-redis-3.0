@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='86' type='int'/>
+<use f='redis/deps/lua/src/lapi.c' l='942' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='943' u='w' c='lua_gc'/>
+<offset>1152</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='86'>/* size of pause between successive GCs */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='r' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lstate.c' l='178' u='w' c='lua_newstate'/>

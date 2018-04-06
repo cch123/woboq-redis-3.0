@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1001' type='dictType'/>
+<def f='redis/src/redis.c' l='545' ll='552' type='dictType'/>
+<use f='redis/src/redis.c' l='1800' u='a' c='initServer'/>
+<doc f='redis/src/redis.c' l='544'>/* Db-&gt;dict, keys are sds strings, vals are Redis objects. */</doc>

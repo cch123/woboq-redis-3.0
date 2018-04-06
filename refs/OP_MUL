@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='173' type='14'/>
+<use f='redis/deps/lua/src/lcode.c' l='635' c='constfolding'/>
+<use f='redis/deps/lua/src/lcode.c' l='769' u='r' c='luaK_posfix'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='173'>/*	A B C	R(A) := RK(B) * RK(C)				*/</doc>
+<use f='redis/deps/lua/src/lvm.c' l='482' c='luaV_execute'/>

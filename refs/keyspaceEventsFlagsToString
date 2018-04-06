@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1298' type='sds keyspaceEventsFlagsToString(int flags)'/>
+<use f='redis/src/config.c' l='1218' u='c' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1592' u='c' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<def f='redis/src/notify.c' l='67' ll='86' type='sds keyspaceEventsFlagsToString(int flags)'/>
+<doc f='redis/src/notify.c' l='63'>/* This function does exactly the revese of the function above: it gets
+ * as input an integer with the xored flags and returns a string representing
+ * the selected classes. The string returned is an sds string that needs to
+ * be released with sdsfree(). */</doc>

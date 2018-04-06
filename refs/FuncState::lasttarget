@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lparser.h' l='66' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='37' u='r' c='luaK_nil'/>
+<use f='redis/deps/lua/src/lcode.c' l='95' u='w' c='luaK_getlabel'/>
+<offset>416</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='66'>/* `pc&apos; of last `jump target&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='337' u='w' c='open_func'/>

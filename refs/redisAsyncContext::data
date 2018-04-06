@@ -1,0 +1,15 @@
+<dec f='redis/deps/hiredis/async.h' l='70' type='void *'/>
+<use f='redis/deps/hiredis/async.c' l='121' u='w' c='redisAsyncInitialize'/>
+<offset>1408</offset>
+<doc f='redis/deps/hiredis/async.h' l='69'>/* Not used by hiredis */</doc>
+<use f='redis/src/sentinel.c' l='1626' u='w' c='sentinelKillLink'/>
+<use f='redis/src/sentinel.c' l='1638' u='r' c='sentinelDisconnectInstanceFromContext'/>
+<use f='redis/src/sentinel.c' l='1657' u='r' c='sentinelLinkEstablishedCallback'/>
+<use f='redis/src/sentinel.c' l='1718' u='w' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1742' u='w' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='2029' u='r' c='sentinelInfoReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2045' u='r' c='sentinelDiscardReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2053' u='r' c='sentinelPingReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2092' u='r' c='sentinelPublishReplyCallback'/>
+<use f='redis/src/sentinel.c' l='2202' u='r' c='sentinelReceiveHelloMessages'/>
+<use f='redis/src/sentinel.c' l='3083' u='r' c='sentinelReceiveIsMasterDownReply'/>

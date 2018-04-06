@@ -1,0 +1,47 @@
+<def f='redis/src/redis.h' l='514' ll='560'/>
+<size>16776</size>
+<doc f='redis/src/redis.h' l='512'>/* With multiplexing we need to take per-client state.
+ * Clients are taken in a linked list. */</doc>
+<mbr r='redisClient::id' o='0' t='uint64_t'/>
+<mbr r='redisClient::fd' o='64' t='int'/>
+<mbr r='redisClient::db' o='128' t='redisDb *'/>
+<mbr r='redisClient::dictid' o='192' t='int'/>
+<mbr r='redisClient::name' o='256' t='robj *'/>
+<mbr r='redisClient::querybuf' o='320' t='sds'/>
+<mbr r='redisClient::querybuf_peak' o='384' t='size_t'/>
+<mbr r='redisClient::argc' o='448' t='int'/>
+<mbr r='redisClient::argv' o='512' t='robj **'/>
+<mbr r='redisClient::cmd' o='576' t='struct redisCommand *'/>
+<mbr r='redisClient::lastcmd' o='640' t='struct redisCommand *'/>
+<mbr r='redisClient::reqtype' o='704' t='int'/>
+<mbr r='redisClient::multibulklen' o='736' t='int'/>
+<mbr r='redisClient::bulklen' o='768' t='long'/>
+<mbr r='redisClient::reply' o='832' t='list *'/>
+<mbr r='redisClient::reply_bytes' o='896' t='unsigned long'/>
+<mbr r='redisClient::sentlen' o='960' t='int'/>
+<mbr r='redisClient::ctime' o='1024' t='time_t'/>
+<mbr r='redisClient::lastinteraction' o='1088' t='time_t'/>
+<mbr r='redisClient::obuf_soft_limit_reached_time' o='1152' t='time_t'/>
+<mbr r='redisClient::flags' o='1216' t='int'/>
+<mbr r='redisClient::authenticated' o='1248' t='int'/>
+<mbr r='redisClient::replstate' o='1280' t='int'/>
+<mbr r='redisClient::repl_put_online_on_ack' o='1312' t='int'/>
+<mbr r='redisClient::repldbfd' o='1344' t='int'/>
+<mbr r='redisClient::repldboff' o='1408' t='off_t'/>
+<mbr r='redisClient::repldbsize' o='1472' t='off_t'/>
+<mbr r='redisClient::replpreamble' o='1536' t='sds'/>
+<mbr r='redisClient::reploff' o='1600' t='long long'/>
+<mbr r='redisClient::repl_ack_off' o='1664' t='long long'/>
+<mbr r='redisClient::repl_ack_time' o='1728' t='long long'/>
+<mbr r='redisClient::replrunid' o='1792' t='char [41]'/>
+<mbr r='redisClient::slave_listening_port' o='2144' t='int'/>
+<mbr r='redisClient::mstate' o='2176' t='multiState'/>
+<mbr r='redisClient::btype' o='2368' t='int'/>
+<mbr r='redisClient::bpop' o='2432' t='blockingState'/>
+<mbr r='redisClient::woff' o='2752' t='long long'/>
+<mbr r='redisClient::watched_keys' o='2816' t='list *'/>
+<mbr r='redisClient::pubsub_channels' o='2880' t='dict *'/>
+<mbr r='redisClient::pubsub_patterns' o='2944' t='list *'/>
+<mbr r='redisClient::peerid' o='3008' t='sds'/>
+<mbr r='redisClient::bufpos' o='3072' t='int'/>
+<mbr r='redisClient::buf' o='3104' t='char [16384]'/>

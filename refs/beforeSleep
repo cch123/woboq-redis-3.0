@@ -1,0 +1,5 @@
+<def f='redis/src/redis.c' l='1263' ll='1303' type='void beforeSleep(struct aeEventLoop * eventLoop)'/>
+<use f='redis/src/redis.c' l='3684' u='r' c='main'/>
+<doc f='redis/src/redis.c' l='1260'>/* This function gets called every time Redis is entering the
+ * main loop of the event driven library, that is, before to sleep
+ * for ready file descriptors. */</doc>

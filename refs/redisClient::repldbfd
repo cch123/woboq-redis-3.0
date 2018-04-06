@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='539' type='int'/>
+<offset>1344</offset>
+<doc f='redis/src/redis.h' l='539'>/* replication DB file descriptor */</doc>
+<use f='redis/src/networking.c' l='759' u='r' c='freeClient'/>
+<use f='redis/src/networking.c' l='759' u='r' c='freeClient'/>
+<use f='redis/src/replication.c' l='576' u='w' c='syncCommand'/>
+<use f='redis/src/replication.c' l='706' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='707' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='725' u='r' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='726' u='w' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='784' u='w' c='updateSlavesWaitingBgsave'/>
+<use f='redis/src/replication.c' l='785' u='r' c='updateSlavesWaitingBgsave'/>

@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='871' type='dict *'/>
+<offset>18944</offset>
+<doc f='redis/src/redis.h' l='870'>/* Pubsub */</doc>
+<doc f='redis/src/redis.h' l='871'>/* Map channels to list of subscribed clients */</doc>
+<use f='redis/src/cluster.c' l='1893' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1893' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/pubsub.c' l='68' u='r' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='71' u='r' c='pubsubSubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='100' u='r' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='110' u='r' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='232' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='333' u='r' c='pubsubCommand'/>
+<use f='redis/src/pubsub.c' l='358' u='r' c='pubsubCommand'/>
+<use f='redis/src/redis.c' l='1809' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2852' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2852' u='r' c='genRedisInfoString'/>

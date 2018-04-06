@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1436' type='void sscanCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='172' u='r'/>
+<use f='redis/src/redis.c' l='172' u='r'/>
+<use f='redis/src/redis.c' l='172' u='r'/>
+<use f='redis/src/redis.c' l='172' u='r'/>
+<def f='redis/src/t_set.c' l='911' ll='919' type='void sscanCommand(redisClient * c)'/>

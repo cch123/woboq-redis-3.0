@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>syncio.c source code [redis/src/syncio.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/syncio.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='syncio.c.html'>syncio.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/* Synchronous socket and file I/O operations useful across the core.</i></td></tr>
+<tr><th id="2">2</th><td><i> *</i></td></tr>
+<tr><th id="3">3</th><td><i> * Copyright (c) 2009-2010, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="4">4</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="5">5</th><td><i> *</i></td></tr>
+<tr><th id="6">6</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="7">7</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="8">8</th><td><i> *</i></td></tr>
+<tr><th id="9">9</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="10">10</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="11">11</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="12">12</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="13">13</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="14">14</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="15">15</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="16">16</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="17">17</th><td><i> *</i></td></tr>
+<tr><th id="18">18</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="19">19</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="20">20</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="21">21</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="22">22</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="23">23</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="24">24</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="25">25</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="26">26</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="27">27</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="28">28</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="29">29</th><td><i> */</i></td></tr>
+<tr><th id="30">30</th><td></td></tr>
+<tr><th id="31">31</th><td><u>#include <a href="redis.h.html">"redis.h"</a></u></td></tr>
+<tr><th id="32">32</th><td></td></tr>
+<tr><th id="33">33</th><td><i>/* ----------------- Blocking sockets I/O with timeouts --------------------- */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* Redis performs most of the I/O in a nonblocking way, with the exception</i></td></tr>
+<tr><th id="36">36</th><td><i> * of the SYNC command where the slave does it in a blocking way, and</i></td></tr>
+<tr><th id="37">37</th><td><i> * the MIGRATE command that must be blocking in order to be atomic from the</i></td></tr>
+<tr><th id="38">38</th><td><i> * point of view of the two instances (one migrating the key and one receiving</i></td></tr>
+<tr><th id="39">39</th><td><i> * the key). This is why need the following blocking I/O functions.</i></td></tr>
+<tr><th id="40">40</th><td><i> *</i></td></tr>
+<tr><th id="41">41</th><td><i> * All the functions take the timeout in milliseconds. */</i></td></tr>
+<tr><th id="42">42</th><td></td></tr>
+<tr><th id="43">43</th><td><u>#define <dfn class="macro" id="_M/REDIS_SYNCIO_RESOLUTION" data-ref="_M/REDIS_SYNCIO_RESOLUTION">REDIS_SYNCIO_RESOLUTION</dfn> 10 /* Resolution in milliseconds */</u></td></tr>
+<tr><th id="44">44</th><td></td></tr>
+<tr><th id="45">45</th><td><i>/* Write the specified payload to 'fd'. If writing the whole payload will be</i></td></tr>
+<tr><th id="46">46</th><td><i> * done within 'timeout' milliseconds the operation succeeds and 'size' is</i></td></tr>
+<tr><th id="47">47</th><td><i> * returned. Otherwise the operation fails, -1 is returned, and an unspecified</i></td></tr>
+<tr><th id="48">48</th><td><i> * partial write could be performed against the file descriptor. */</i></td></tr>
+<tr><th id="49">49</th><td><a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="decl def fn" id="syncWrite" title='syncWrite' data-ref="syncWrite">syncWrite</dfn>(<em>int</em> <dfn class="local col1 decl" id="1fd" title='fd' data-type='int' data-ref="1fd">fd</dfn>, <em>char</em> *<dfn class="local col2 decl" id="2ptr" title='ptr' data-type='char *' data-ref="2ptr">ptr</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col3 decl" id="3size" title='size' data-type='ssize_t' data-ref="3size">size</dfn>, <em>long</em> <em>long</em> <dfn class="local col4 decl" id="4timeout" title='timeout' data-type='long long' data-ref="4timeout">timeout</dfn>) {</td></tr>
+<tr><th id="50">50</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col5 decl" id="5nwritten" title='nwritten' data-type='ssize_t' data-ref="5nwritten">nwritten</dfn>, <dfn class="local col6 decl" id="6ret" title='ret' data-type='ssize_t' data-ref="6ret">ret</dfn> = <a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a>;</td></tr>
+<tr><th id="51">51</th><td>    <em>long</em> <em>long</em> <dfn class="local col7 decl" id="7start" title='start' data-type='long long' data-ref="7start">start</dfn> = <a class="ref fn" href="redis.h.html#mstime" title='mstime' data-ref="mstime">mstime</a>();</td></tr>
+<tr><th id="52">52</th><td>    <em>long</em> <em>long</em> <dfn class="local col8 decl" id="8remaining" title='remaining' data-type='long long' data-ref="8remaining">remaining</dfn> = <a class="local col4 ref" href="#4timeout" title='timeout' data-ref="4timeout">timeout</a>;</td></tr>
+<tr><th id="53">53</th><td></td></tr>
+<tr><th id="54">54</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="55">55</th><td>        <em>long</em> <em>long</em> <dfn class="local col9 decl" id="9wait" title='wait' data-type='long long' data-ref="9wait">wait</dfn> = (<a class="local col8 ref" href="#8remaining" title='remaining' data-ref="8remaining">remaining</a> &gt; <a class="macro" href="#43" title="10" data-ref="_M/REDIS_SYNCIO_RESOLUTION">REDIS_SYNCIO_RESOLUTION</a>) ?</td></tr>
+<tr><th id="56">56</th><td>                          <a class="local col8 ref" href="#8remaining" title='remaining' data-ref="8remaining">remaining</a> : <a class="macro" href="#43" title="10" data-ref="_M/REDIS_SYNCIO_RESOLUTION">REDIS_SYNCIO_RESOLUTION</a>;</td></tr>
+<tr><th id="57">57</th><td>        <em>long</em> <em>long</em> <dfn class="local col0 decl" id="10elapsed" title='elapsed' data-type='long long' data-ref="10elapsed">elapsed</dfn>;</td></tr>
+<tr><th id="58">58</th><td></td></tr>
+<tr><th id="59">59</th><td>        <i>/* Optimistically try to write before checking if the file descriptor</i></td></tr>
+<tr><th id="60">60</th><td><i>         * is actually writable. At worst we get EAGAIN. */</i></td></tr>
+<tr><th id="61">61</th><td>        <a class="local col5 ref" href="#5nwritten" title='nwritten' data-ref="5nwritten">nwritten</a> = <a class="ref fn" href="../../include/unistd.h.html#write" title='write' data-ref="write">write</a>(<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd">fd</a>,<a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a>,<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a>);</td></tr>
+<tr><th id="62">62</th><td>        <b>if</b> (<a class="local col5 ref" href="#5nwritten" title='nwritten' data-ref="5nwritten">nwritten</a> == -<var>1</var>) {</td></tr>
+<tr><th id="63">63</th><td>            <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> != <a class="macro" href="../../include/asm-generic/errno-base.h.html#14" title="11" data-ref="_M/EAGAIN">EAGAIN</a>) <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="64">64</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="65">65</th><td>            <a class="local col2 ref" href="#2ptr" title='ptr' data-ref="2ptr">ptr</a> += <a class="local col5 ref" href="#5nwritten" title='nwritten' data-ref="5nwritten">nwritten</a>;</td></tr>
+<tr><th id="66">66</th><td>            <a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a> -= <a class="local col5 ref" href="#5nwritten" title='nwritten' data-ref="5nwritten">nwritten</a>;</td></tr>
+<tr><th id="67">67</th><td>        }</td></tr>
+<tr><th id="68">68</th><td>        <b>if</b> (<a class="local col3 ref" href="#3size" title='size' data-ref="3size">size</a> == <var>0</var>) <b>return</b> <a class="local col6 ref" href="#6ret" title='ret' data-ref="6ret">ret</a>;</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>        <i>/* Wait */</i></td></tr>
+<tr><th id="71">71</th><td>        <a class="ref fn" href="ae.h.html#aeWait" title='aeWait' data-ref="aeWait">aeWait</a>(<a class="local col1 ref" href="#1fd" title='fd' data-ref="1fd">fd</a>,<a class="macro" href="ae.h.html#41" title="2" data-ref="_M/AE_WRITABLE">AE_WRITABLE</a>,<a class="local col9 ref" href="#9wait" title='wait' data-ref="9wait">wait</a>);</td></tr>
+<tr><th id="72">72</th><td>        <a class="local col0 ref" href="#10elapsed" title='elapsed' data-ref="10elapsed">elapsed</a> = <a class="ref fn" href="redis.h.html#mstime" title='mstime' data-ref="mstime">mstime</a>() - <a class="local col7 ref" href="#7start" title='start' data-ref="7start">start</a>;</td></tr>
+<tr><th id="73">73</th><td>        <b>if</b> (<a class="local col0 ref" href="#10elapsed" title='elapsed' data-ref="10elapsed">elapsed</a> &gt;= <a class="local col4 ref" href="#4timeout" title='timeout' data-ref="4timeout">timeout</a>) {</td></tr>
+<tr><th id="74">74</th><td>            <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="macro" href="../../include/asm-generic/errno.h.html#92" title="110" data-ref="_M/ETIMEDOUT">ETIMEDOUT</a>;</td></tr>
+<tr><th id="75">75</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="76">76</th><td>        }</td></tr>
+<tr><th id="77">77</th><td>        <a class="local col8 ref" href="#8remaining" title='remaining' data-ref="8remaining">remaining</a> = <a class="local col4 ref" href="#4timeout" title='timeout' data-ref="4timeout">timeout</a> - <a class="local col0 ref" href="#10elapsed" title='elapsed' data-ref="10elapsed">elapsed</a>;</td></tr>
+<tr><th id="78">78</th><td>    }</td></tr>
+<tr><th id="79">79</th><td>}</td></tr>
+<tr><th id="80">80</th><td></td></tr>
+<tr><th id="81">81</th><td><i>/* Read the specified amount of bytes from 'fd'. If all the bytes are read</i></td></tr>
+<tr><th id="82">82</th><td><i> * within 'timeout' milliseconds the operation succeed and 'size' is returned.</i></td></tr>
+<tr><th id="83">83</th><td><i> * Otherwise the operation fails, -1 is returned, and an unspecified amount of</i></td></tr>
+<tr><th id="84">84</th><td><i> * data could be read from the file descriptor. */</i></td></tr>
+<tr><th id="85">85</th><td><a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="decl def fn" id="syncRead" title='syncRead' data-ref="syncRead">syncRead</dfn>(<em>int</em> <dfn class="local col1 decl" id="11fd" title='fd' data-type='int' data-ref="11fd">fd</dfn>, <em>char</em> *<dfn class="local col2 decl" id="12ptr" title='ptr' data-type='char *' data-ref="12ptr">ptr</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col3 decl" id="13size" title='size' data-type='ssize_t' data-ref="13size">size</dfn>, <em>long</em> <em>long</em> <dfn class="local col4 decl" id="14timeout" title='timeout' data-type='long long' data-ref="14timeout">timeout</dfn>) {</td></tr>
+<tr><th id="86">86</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col5 decl" id="15nread" title='nread' data-type='ssize_t' data-ref="15nread">nread</dfn>, <dfn class="local col6 decl" id="16totread" title='totread' data-type='ssize_t' data-ref="16totread">totread</dfn> = <var>0</var>;</td></tr>
+<tr><th id="87">87</th><td>    <em>long</em> <em>long</em> <dfn class="local col7 decl" id="17start" title='start' data-type='long long' data-ref="17start">start</dfn> = <a class="ref fn" href="redis.h.html#mstime" title='mstime' data-ref="mstime">mstime</a>();</td></tr>
+<tr><th id="88">88</th><td>    <em>long</em> <em>long</em> <dfn class="local col8 decl" id="18remaining" title='remaining' data-type='long long' data-ref="18remaining">remaining</dfn> = <a class="local col4 ref" href="#14timeout" title='timeout' data-ref="14timeout">timeout</a>;</td></tr>
+<tr><th id="89">89</th><td></td></tr>
+<tr><th id="90">90</th><td>    <b>if</b> (<a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a> == <var>0</var>) <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="91">91</th><td>    <b>while</b>(<var>1</var>) {</td></tr>
+<tr><th id="92">92</th><td>        <em>long</em> <em>long</em> <dfn class="local col9 decl" id="19wait" title='wait' data-type='long long' data-ref="19wait">wait</dfn> = (<a class="local col8 ref" href="#18remaining" title='remaining' data-ref="18remaining">remaining</a> &gt; <a class="macro" href="#43" title="10" data-ref="_M/REDIS_SYNCIO_RESOLUTION">REDIS_SYNCIO_RESOLUTION</a>) ?</td></tr>
+<tr><th id="93">93</th><td>                          <a class="local col8 ref" href="#18remaining" title='remaining' data-ref="18remaining">remaining</a> : <a class="macro" href="#43" title="10" data-ref="_M/REDIS_SYNCIO_RESOLUTION">REDIS_SYNCIO_RESOLUTION</a>;</td></tr>
+<tr><th id="94">94</th><td>        <em>long</em> <em>long</em> <dfn class="local col0 decl" id="20elapsed" title='elapsed' data-type='long long' data-ref="20elapsed">elapsed</dfn>;</td></tr>
+<tr><th id="95">95</th><td></td></tr>
+<tr><th id="96">96</th><td>        <i>/* Optimistically try to read before checking if the file descriptor</i></td></tr>
+<tr><th id="97">97</th><td><i>         * is actually readable. At worst we get EAGAIN. */</i></td></tr>
+<tr><th id="98">98</th><td>        <a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a> = <a class="ref fn" href="../../include/unistd.h.html#read" title='read' data-ref="read">read</a>(<a class="local col1 ref" href="#11fd" title='fd' data-ref="11fd">fd</a>,<a class="local col2 ref" href="#12ptr" title='ptr' data-ref="12ptr">ptr</a>,<a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a>);</td></tr>
+<tr><th id="99">99</th><td>        <b>if</b> (<a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a> == <var>0</var>) <b>return</b> -<var>1</var>; <i>/* short read. */</i></td></tr>
+<tr><th id="100">100</th><td>        <b>if</b> (<a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a> == -<var>1</var>) {</td></tr>
+<tr><th id="101">101</th><td>            <b>if</b> (<a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> != <a class="macro" href="../../include/asm-generic/errno-base.h.html#14" title="11" data-ref="_M/EAGAIN">EAGAIN</a>) <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="102">102</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="103">103</th><td>            <a class="local col2 ref" href="#12ptr" title='ptr' data-ref="12ptr">ptr</a> += <a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a>;</td></tr>
+<tr><th id="104">104</th><td>            <a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a> -= <a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a>;</td></tr>
+<tr><th id="105">105</th><td>            <a class="local col6 ref" href="#16totread" title='totread' data-ref="16totread">totread</a> += <a class="local col5 ref" href="#15nread" title='nread' data-ref="15nread">nread</a>;</td></tr>
+<tr><th id="106">106</th><td>        }</td></tr>
+<tr><th id="107">107</th><td>        <b>if</b> (<a class="local col3 ref" href="#13size" title='size' data-ref="13size">size</a> == <var>0</var>) <b>return</b> <a class="local col6 ref" href="#16totread" title='totread' data-ref="16totread">totread</a>;</td></tr>
+<tr><th id="108">108</th><td></td></tr>
+<tr><th id="109">109</th><td>        <i>/* Wait */</i></td></tr>
+<tr><th id="110">110</th><td>        <a class="ref fn" href="ae.h.html#aeWait" title='aeWait' data-ref="aeWait">aeWait</a>(<a class="local col1 ref" href="#11fd" title='fd' data-ref="11fd">fd</a>,<a class="macro" href="ae.h.html#40" title="1" data-ref="_M/AE_READABLE">AE_READABLE</a>,<a class="local col9 ref" href="#19wait" title='wait' data-ref="19wait">wait</a>);</td></tr>
+<tr><th id="111">111</th><td>        <a class="local col0 ref" href="#20elapsed" title='elapsed' data-ref="20elapsed">elapsed</a> = <a class="ref fn" href="redis.h.html#mstime" title='mstime' data-ref="mstime">mstime</a>() - <a class="local col7 ref" href="#17start" title='start' data-ref="17start">start</a>;</td></tr>
+<tr><th id="112">112</th><td>        <b>if</b> (<a class="local col0 ref" href="#20elapsed" title='elapsed' data-ref="20elapsed">elapsed</a> &gt;= <a class="local col4 ref" href="#14timeout" title='timeout' data-ref="14timeout">timeout</a>) {</td></tr>
+<tr><th id="113">113</th><td>            <a class="macro" href="../../include/x86_64-linux-gnu/bits/errno.h.html#54" title="(*__errno_location ())" data-ref="_M/errno">errno</a> = <a class="macro" href="../../include/asm-generic/errno.h.html#92" title="110" data-ref="_M/ETIMEDOUT">ETIMEDOUT</a>;</td></tr>
+<tr><th id="114">114</th><td>            <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="115">115</th><td>        }</td></tr>
+<tr><th id="116">116</th><td>        <a class="local col8 ref" href="#18remaining" title='remaining' data-ref="18remaining">remaining</a> = <a class="local col4 ref" href="#14timeout" title='timeout' data-ref="14timeout">timeout</a> - <a class="local col0 ref" href="#20elapsed" title='elapsed' data-ref="20elapsed">elapsed</a>;</td></tr>
+<tr><th id="117">117</th><td>    }</td></tr>
+<tr><th id="118">118</th><td>}</td></tr>
+<tr><th id="119">119</th><td></td></tr>
+<tr><th id="120">120</th><td><i>/* Read a line making sure that every char will not require more than 'timeout'</i></td></tr>
+<tr><th id="121">121</th><td><i> * milliseconds to be read.</i></td></tr>
+<tr><th id="122">122</th><td><i> *</i></td></tr>
+<tr><th id="123">123</th><td><i> * On success the number of bytes read is returned, otherwise -1.</i></td></tr>
+<tr><th id="124">124</th><td><i> * On success the string is always correctly terminated with a 0 byte. */</i></td></tr>
+<tr><th id="125">125</th><td><a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="decl def fn" id="syncReadLine" title='syncReadLine' data-ref="syncReadLine">syncReadLine</dfn>(<em>int</em> <dfn class="local col1 decl" id="21fd" title='fd' data-type='int' data-ref="21fd">fd</dfn>, <em>char</em> *<dfn class="local col2 decl" id="22ptr" title='ptr' data-type='char *' data-ref="22ptr">ptr</dfn>, <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col3 decl" id="23size" title='size' data-type='ssize_t' data-ref="23size">size</dfn>, <em>long</em> <em>long</em> <dfn class="local col4 decl" id="24timeout" title='timeout' data-type='long long' data-ref="24timeout">timeout</dfn>) {</td></tr>
+<tr><th id="126">126</th><td>    <a class="typedef" href="../../include/x86_64-linux-gnu/sys/types.h.html#ssize_t" title='ssize_t' data-type='__ssize_t' data-ref="ssize_t">ssize_t</a> <dfn class="local col5 decl" id="25nread" title='nread' data-type='ssize_t' data-ref="25nread">nread</dfn> = <var>0</var>;</td></tr>
+<tr><th id="127">127</th><td></td></tr>
+<tr><th id="128">128</th><td>    <a class="local col3 ref" href="#23size" title='size' data-ref="23size">size</a>--;</td></tr>
+<tr><th id="129">129</th><td>    <b>while</b>(<a class="local col3 ref" href="#23size" title='size' data-ref="23size">size</a>) {</td></tr>
+<tr><th id="130">130</th><td>        <em>char</em> <dfn class="local col6 decl" id="26c" title='c' data-type='char' data-ref="26c">c</dfn>;</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+<tr><th id="132">132</th><td>        <b>if</b> (<a class="ref fn" href="#syncRead" title='syncRead' data-ref="syncRead">syncRead</a>(<a class="local col1 ref" href="#21fd" title='fd' data-ref="21fd">fd</a>,&amp;<a class="local col6 ref" href="#26c" title='c' data-ref="26c">c</a>,<var>1</var>,<a class="local col4 ref" href="#24timeout" title='timeout' data-ref="24timeout">timeout</a>) == -<var>1</var>) <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="133">133</th><td>        <b>if</b> (<a class="local col6 ref" href="#26c" title='c' data-ref="26c">c</a> == <kbd>'\n'</kbd>) {</td></tr>
+<tr><th id="134">134</th><td>            *<a class="local col2 ref" href="#22ptr" title='ptr' data-ref="22ptr">ptr</a> = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="135">135</th><td>            <b>if</b> (<a class="local col5 ref" href="#25nread" title='nread' data-ref="25nread">nread</a> &amp;&amp; *(<a class="local col2 ref" href="#22ptr" title='ptr' data-ref="22ptr">ptr</a>-<var>1</var>) == <kbd>'\r'</kbd>) *(<a class="local col2 ref" href="#22ptr" title='ptr' data-ref="22ptr">ptr</a>-<var>1</var>) = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="136">136</th><td>            <b>return</b> <a class="local col5 ref" href="#25nread" title='nread' data-ref="25nread">nread</a>;</td></tr>
+<tr><th id="137">137</th><td>        } <b>else</b> {</td></tr>
+<tr><th id="138">138</th><td>            *<a class="local col2 ref" href="#22ptr" title='ptr' data-ref="22ptr">ptr</a>++ = <a class="local col6 ref" href="#26c" title='c' data-ref="26c">c</a>;</td></tr>
+<tr><th id="139">139</th><td>            *<a class="local col2 ref" href="#22ptr" title='ptr' data-ref="22ptr">ptr</a> = <kbd>'\0'</kbd>;</td></tr>
+<tr><th id="140">140</th><td>            <a class="local col5 ref" href="#25nread" title='nread' data-ref="25nread">nread</a>++;</td></tr>
+<tr><th id="141">141</th><td>        }</td></tr>
+<tr><th id="142">142</th><td>        <a class="local col3 ref" href="#23size" title='size' data-ref="23size">size</a>--;</td></tr>
+<tr><th id="143">143</th><td>    }</td></tr>
+<tr><th id="144">144</th><td>    <b>return</b> <a class="local col5 ref" href="#25nread" title='nread' data-ref="25nread">nread</a>;</td></tr>
+<tr><th id="145">145</th><td>}</td></tr>
+<tr><th id="146">146</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

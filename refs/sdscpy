@@ -1,0 +1,9 @@
+<dec f='redis/deps/hiredis/sds.h' l='69' type='sds sdscpy(sds s, const char * t)'/>
+<def f='redis/deps/hiredis/sds.c' l='290' ll='292' type='sds sdscpy(sds s, const char * t)'/>
+<doc f='redis/deps/hiredis/sds.c' l='288'>/* Like sdscpylen() but &apos;t&apos; must be a null-termined string so that the length
+ * of the string is obtained with strlen(). */</doc>
+<dec f='redis/src/sds.h' l='69' type='sds sdscpy(sds s, const char * t)'/>
+<use f='redis/src/redis-cli.c' l='1769' u='c' c='findBigKeys'/>
+<def f='redis/src/sds.c' l='290' ll='292' type='sds sdscpy(sds s, const char * t)'/>
+<doc f='redis/src/sds.c' l='288'>/* Like sdscpylen() but &apos;t&apos; must be a null-termined string so that the length
+ * of the string is obtained with strlen(). */</doc>

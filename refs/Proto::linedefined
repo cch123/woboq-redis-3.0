@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lobject.h' l='246' type='int'/>
+<offset>768</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='159' u='r' c='funcinfo'/>
+<use f='redis/deps/lua/src/ldump.c' l='132' u='r' c='DumpFunction'/>
+<use f='redis/deps/lua/src/lfunc.c' l='134' u='w' c='luaF_newproto'/>
+<use f='redis/deps/lua/src/lparser.c' l='72' u='r' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='75' u='r' c='errorlimit'/>
+<use f='redis/deps/lua/src/lparser.c' l='580' u='w' c='body'/>
+<use f='redis/deps/lua/src/lundump.c' l='168' u='w' c='LoadFunction'/>

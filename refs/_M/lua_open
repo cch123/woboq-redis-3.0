@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lua.h' l='287'/>
+<doc f='redis/deps/lua/src/lua.h' l='283'>/*
+** compatibility macros and functions
+*/</doc>
+<use f='redis/src/scripting.c' l='645' u='c'/>

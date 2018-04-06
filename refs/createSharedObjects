@@ -1,0 +1,3 @@
+<def f='redis/src/redis.c' l='1307' ll='1395' type='void createSharedObjects()'/>
+<use f='redis/src/redis.c' l='1770' u='c' c='initServer'/>
+<doc f='redis/src/redis.c' l='1305'>/* =========================== Server initialization ======================== */</doc>

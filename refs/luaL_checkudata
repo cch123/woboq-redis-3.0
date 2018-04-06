@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='66' type='void * luaL_checkudata(lua_State * L, int ud, const char * tname)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='124' ll='137' macro='1' type='void * luaL_checkudata(lua_State * L, int ud, const char * tname)'/>
+<use f='redis/deps/lua/src/liolib.c' l='54' u='c' c='tofile'/>
+<use f='redis/deps/lua/src/liolib.c' l='54' u='c' c='io_pclose'/>
+<use f='redis/deps/lua/src/liolib.c' l='54' u='c' c='io_fclose'/>
+<use f='redis/deps/lua/src/liolib.c' l='54' u='c' c='io_gc'/>
+<use f='redis/deps/lua/src/liolib.c' l='54' u='c' c='io_tostring'/>
+<use f='redis/deps/lua/src/loadlib.c' l='287' u='c' c='gctm'/>

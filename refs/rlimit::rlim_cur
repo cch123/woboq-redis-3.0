@@ -1,0 +1,5 @@
+<dec f='include/x86_64-linux-gnu/bits/resource.h' l='142' type='rlim_t'/>
+<offset>0</offset>
+<doc f='include/x86_64-linux-gnu/bits/resource.h' l='141'>/* The current (soft) limit.  */</doc>
+<use f='redis/src/redis.c' l='1570' u='r' c='adjustOpenFilesLimit'/>
+<use f='redis/src/redis.c' l='1584' u='w' c='adjustOpenFilesLimit'/>

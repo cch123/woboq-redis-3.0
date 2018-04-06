@@ -1,0 +1,8 @@
+<def f='redis/src/replication.c' l='823' ll='832' type='void replicationAbortSyncTransfer()'/>
+<use f='redis/src/replication.c' l='942' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1002' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1016' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1055' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1425' u='c' c='cancelReplicationHandshake'/>
+<use f='redis/src/replication.c' l='1954' u='c' c='replicationCron'/>
+<doc f='redis/src/replication.c' l='822'>/* Abort the async download of the bulk dataset while SYNC-ing with master */</doc>

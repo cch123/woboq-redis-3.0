@@ -1,0 +1,2 @@
+<def f='redis/src/t_zset.c' l='323' ll='350' type='unsigned long zslDeleteRangeByLex(zskiplist * zsl, zlexrangespec * range, dict * dict)'/>
+<use f='redis/src/t_zset.c' l='1454' u='c' c='zremrangeGenericCommand'/>

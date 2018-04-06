@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lua.h' l='194' type='int lua_setmetatable(lua_State * L, int objindex)'/>
+<def f='redis/deps/lua/src/lapi.c' l='697' ll='731' macro='1' type='int lua_setmetatable(lua_State * L, int objindex)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='112' u='c' c='luaB_setmetatable'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='442' u='c' c='luaB_newproxy'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='640' u='c' c='base_open'/>
+<use f='redis/deps/lua/src/ldblib.c' l='42' u='c' c='db_setmetatable'/>
+<use f='redis/deps/lua/src/liolib.c' l='90' u='c' c='newfile'/>
+<use f='redis/deps/lua/src/loadlib.c' l='273' u='c' c='ll_register'/>
+<use f='redis/deps/lua/src/loadlib.c' l='577' u='c' c='ll_seeall'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='851' u='c' c='createmetatable'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='384' u='c' c='json_create_config'/>

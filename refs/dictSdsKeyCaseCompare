@@ -1,0 +1,16 @@
+<dec f='redis/src/config.c' l='1246' type='int dictSdsKeyCaseCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/config.c' l='1258'/>
+<use f='redis/src/config.c' l='1258'/>
+<use f='redis/src/config.c' l='1267'/>
+<use f='redis/src/config.c' l='1267'/>
+<def f='redis/src/redis.c' l='440' ll='446' type='int dictSdsKeyCaseCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/redis.c' l='559'/>
+<use f='redis/src/redis.c' l='559'/>
+<use f='redis/src/redis.c' l='579'/>
+<use f='redis/src/redis.c' l='579'/>
+<use f='redis/src/redis.c' l='624'/>
+<use f='redis/src/redis.c' l='624'/>
+<use f='redis/src/redis.c' l='646'/>
+<use f='redis/src/redis.c' l='646'/>
+<doc f='redis/src/redis.c' l='438'>/* A case insensitive version used for the command lookup table and other
+ * places where case insensitive non binary-safe comparison is needed. */</doc>

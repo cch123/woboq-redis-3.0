@@ -1,0 +1,2 @@
+<dec f='include/asm-generic/errno-base.h' l='31'/>
+<use f='redis/src/aof.c' l='368' u='c'/>

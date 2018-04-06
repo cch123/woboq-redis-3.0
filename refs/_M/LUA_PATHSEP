@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='132'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='120'>/*
+@@ LUA_PATHSEP is the character that separates templates in a path.
+@@ LUA_PATH_MARK is the string that marks the substitution points in a
+@* template.
+@@ LUA_EXECDIR in a Windows path is replaced by the executable&apos;s
+@* directory.
+@@ LUA_IGMARK is a mark to ignore all before it when bulding the
+@* luaopen_ function name.
+** CHANGE them if for some reason your system cannot use those
+** characters. (E.g., if one of those characters is a common character
+** in file/directory names.) Probably you do not need to change them.
+*/</doc>
+<use f='redis/deps/lua/src/loadlib.c' l='342' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='344' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='599' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='599' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='600' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='600' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='652' u='c'/>

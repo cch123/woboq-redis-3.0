@@ -1,0 +1,7 @@
+<dec f='include/stdlib.h' l='187' type='unsigned long strtoul(const char *restrict __nptr, char **restrict __endptr, int __base)'/>
+<doc f='include/stdlib.h' l='186'>/* Convert a string to an unsigned long integer.  */</doc>
+<use f='redis/deps/lua/src/lbaselib.c' l='67' u='c' c='luaB_tonumber'/>
+<use f='redis/deps/lua/src/lobject.c' l='95' u='c' c='luaO_str2d'/>
+<use f='redis/src/db.c' l='403' u='c' c='parseScanCursorOrReply'/>
+<use f='redis/src/debug.c' l='753' u='c' c='memtest_test_linux_anonymous_maps'/>
+<use f='redis/src/debug.c' l='754' u='c' c='memtest_test_linux_anonymous_maps'/>

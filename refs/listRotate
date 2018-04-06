@@ -1,0 +1,4 @@
+<dec f='redis/src/adlist.h' l='87' type='void listRotate(list * list)'/>
+<def f='redis/src/adlist.c' l='328' ll='341' type='void listRotate(list * list)'/>
+<doc f='redis/src/adlist.c' l='327'>/* Rotate the list removing the tail node and inserting it to the head. */</doc>
+<use f='redis/src/redis.c' l='983' u='c' c='clientsCron'/>

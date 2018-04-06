@@ -1,0 +1,5 @@
+<dec f='redis/src/util.h' l='41' type='int d2string(char * buf, size_t len, double value)'/>
+<use f='redis/src/t_zset.c' l='956' u='c' c='zzlInsertAt'/>
+<def f='redis/src/util.c' l='403' ll='438' type='int d2string(char * buf, size_t len, double value)'/>
+<doc f='redis/src/util.c' l='401'>/* Convert a double to a string representation. Returns the number of bytes
+ * required. The representation should always be parsable by strtod(3). */</doc>

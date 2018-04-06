@@ -1,0 +1,9 @@
+<def f='redis/src/sentinel.c' l='1676' ll='1684' type='void sentinelSendAuthIfNeeded(sentinelRedisInstance * ri, redisAsyncContext * c)'/>
+<use f='redis/src/sentinel.c' l='1724' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1748' u='c' c='sentinelReconnectInstance'/>
+<doc f='redis/src/sentinel.c' l='1670'>/* Send the AUTH command with the specified master password if needed.
+ * Note that for slaves the password set for the master is used.
+ *
+ * We don&apos;t check at all if the command was successfully transmitted
+ * to the instance as if it fails Sentinel will detect the instance down,
+ * will disconnect and reconnect the link and so forth. */</doc>

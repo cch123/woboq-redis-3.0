@@ -1,0 +1,23 @@
+<dec f='redis/src/redis.h' l='734' type='clientBufferLimitsConfig [3]'/>
+<offset>12032</offset>
+<use f='redis/src/config.c' l='504' u='m' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='505' u='m' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='506' u='m' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='886' u='m' c='configSetCommand'/>
+<use f='redis/src/config.c' l='887' u='m' c='configSetCommand'/>
+<use f='redis/src/config.c' l='888' u='m' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1186' u='m' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1187' u='m' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1188' u='m' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1606' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1608' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1610' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1616' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1618' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1622' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/networking.c' l='1623' u='m' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/networking.c' l='1624' u='m' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/networking.c' l='1626' u='m' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/networking.c' l='1627' u='m' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/networking.c' l='1640' u='m' c='checkClientOutputBufferLimits'/>
+<use f='redis/src/redis.c' l='1518' u='w' c='initServerConfig'/>

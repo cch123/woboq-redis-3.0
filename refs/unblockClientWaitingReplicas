@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1169' type='void unblockClientWaitingReplicas(redisClient * c)'/>
+<use f='redis/src/blocked.c' l='135' u='c' c='unblockClient'/>
+<def f='redis/src/replication.c' l='1874' ll='1878' type='void unblockClientWaitingReplicas(redisClient * c)'/>
+<doc f='redis/src/replication.c' l='1870'>/* This is called by unblockClient() to perform the blocking op type
+ * specific cleanup. We just remove the client from the list of clients
+ * waiting for replica acks. Never call it directly, call unblockClient()
+ * instead. */</doc>

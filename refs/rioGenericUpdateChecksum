@@ -1,0 +1,6 @@
+<dec f='redis/src/rio.h' l='136' type='void rioGenericUpdateChecksum(rio * r, const void * buf, size_t len)'/>
+<use f='redis/src/rdb.c' l='647' u='r' c='rdbSaveRio'/>
+<use f='redis/src/rdb.c' l='1114' u='c' c='rdbLoadProgressCallback'/>
+<def f='redis/src/rio.c' l='289' ll='291' type='void rioGenericUpdateChecksum(rio * r, const void * buf, size_t len)'/>
+<doc f='redis/src/rio.c' l='287'>/* This function can be installed both in memory and file streams when checksum
+ * computation is needed. */</doc>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='458' type='dict *'/>
+<offset>256</offset>
+<doc f='redis/src/redis.h' l='458'>/* WATCHED keys for MULTI/EXEC CAS */</doc>
+<use f='redis/src/multi.c' l='216' u='r' c='watchForKey'/>
+<use f='redis/src/multi.c' l='219' u='r' c='watchForKey'/>
+<use f='redis/src/multi.c' l='246' u='r' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='251' u='r' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='266' u='r' c='touchWatchedKey'/>
+<use f='redis/src/multi.c' l='266' u='r' c='touchWatchedKey'/>
+<use f='redis/src/multi.c' l='267' u='r' c='touchWatchedKey'/>
+<use f='redis/src/redis.c' l='1804' u='w' c='initServer'/>

@@ -1,0 +1,1 @@
+<def f='redis/deps/lua/src/strbuf.h' l='83' ll='86' type='int strbuf_allocated(strbuf_t * s)'/>

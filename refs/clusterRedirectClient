@@ -1,0 +1,14 @@
+<dec f='redis/src/cluster.h' l='254' type='void clusterRedirectClient(redisClient * c, clusterNode * n, int hashslot, int error_code)'/>
+<def f='redis/src/cluster.c' l='4936' ll='4958' type='void clusterRedirectClient(redisClient * c, clusterNode * n, int hashslot, int error_code)'/>
+<use f='redis/src/cluster.c' l='4978' u='c' c='clusterRedirectBlockedClientIfNeeded'/>
+<use f='redis/src/cluster.c' l='4995' u='c' c='clusterRedirectBlockedClientIfNeeded'/>
+<use f='redis/src/cluster.c' l='4998' u='c' c='clusterRedirectBlockedClientIfNeeded'/>
+<doc f='redis/src/cluster.c' l='4929'>/* Send the client the right redirection code, according to error_code
+ * that should be set to one of REDIS_CLUSTER_REDIR_* macros.
+ *
+ * If REDIS_CLUSTER_REDIR_ASK or REDIS_CLUSTER_REDIR_MOVED error codes
+ * are used, then the node &apos;n&apos; should not be NULL, but should be the
+ * node we want to mention in the redirection. Moreover hashslot should
+ * be set to the hash slot that caused the redirection. */</doc>
+<use f='redis/src/redis.c' l='2175' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2182' u='c' c='processCommand'/>

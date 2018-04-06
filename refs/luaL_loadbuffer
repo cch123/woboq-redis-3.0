@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='78' type='int luaL_loadbuffer(lua_State * L, const char * buff, size_t sz, const char * name)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='609' ll='615' macro='1' type='int luaL_loadbuffer(lua_State * L, const char * buff, size_t size, const char * name)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='619' u='c' c='luaL_loadstring'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='281' u='c' c='luaB_loadstring'/>
+<use f='redis/deps/lua/src/ldblib.c' l='309' u='c' c='db_debug'/>
+<use f='redis/src/scripting.c' l='635' u='c' c='scriptingEnableGlobalsProtection'/>
+<use f='redis/src/scripting.c' l='726' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='746' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='897' u='c' c='luaCreateFunction'/>

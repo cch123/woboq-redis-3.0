@@ -1,0 +1,10 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='185' type='void redisFree(redisContext * c)'/>
+<use f='redis/deps/hiredis/async.c' l='160' u='c' c='redisAsyncConnect'/>
+<use f='redis/deps/hiredis/async.c' l='186' u='c' c='redisAsyncConnectUnix'/>
+<use f='redis/deps/hiredis/async.c' l='305' u='c' c='__redisAsyncFree'/>
+<def f='redis/deps/hiredis/hiredis.c' l='1003' ll='1011' type='void redisFree(redisContext * c)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1016' u='c' c='redisFreeKeepFd'/>
+<use f='redis/src/redis-cli.c' l='378' u='c' c='cliConnect'/>
+<use f='redis/src/redis-cli.c' l='392' u='c' c='cliConnect'/>
+<use f='redis/src/redis-cli.c' l='562' u='c' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='729' u='c' c='reconnectingRedisCommand'/>

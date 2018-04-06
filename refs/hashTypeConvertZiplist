@@ -1,0 +1,2 @@
+<def f='redis/src/t_hash.c' l='410' ll='448' type='void hashTypeConvertZiplist(robj * o, int enc)'/>
+<use f='redis/src/t_hash.c' l='452' u='c' c='hashTypeConvert'/>

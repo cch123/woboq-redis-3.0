@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='744' type='int'/>
+<use f='redis/src/aof.c' l='1308' u='w' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1327' u='w' c='bgrewriteaofCommand'/>
+<use f='redis/src/aof.c' l='1505' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>12992</offset>
+<doc f='redis/src/redis.h' l='744'>/* Rewrite once BGSAVE terminates. */</doc>
+<use f='redis/src/redis.c' l='1151' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1431' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2756' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2774' u='r' c='genRedisInfoString'/>

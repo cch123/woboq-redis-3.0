@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lobject.h' l='328' type='TValue'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lgc.c' l='368' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='147' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='173' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='254' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='320' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='409' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='484' macro='1' u='a'/>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1124' type='size_t stringObjectLen(robj * o)'/>
+<use f='redis/src/hyperloglog.c' l='1131' u='c' c='isHLLObjectOrReply'/>
+<use f='redis/src/hyperloglog.c' l='1142' u='c' c='isHLLObjectOrReply'/>
+<def f='redis/src/object.c' l='531' ll='540' type='size_t stringObjectLen(robj * o)'/>
+<use f='redis/src/replication.c' l='224' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/t_string.c' l='207' u='c' c='setrangeCommand'/>
+<use f='redis/src/t_string.c' l='429' u='c' c='appendCommand'/>
+<use f='redis/src/t_string.c' l='437' u='c' c='appendCommand'/>
+<use f='redis/src/t_string.c' l='456' u='c' c='strlenCommand'/>

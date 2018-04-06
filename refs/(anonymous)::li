@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='961' type='listTypeIterator *'/>
+<offset>0</offset>
+<use f='redis/src/t_list.c' l='150' u='w' c='listTypeNext'/>
+<use f='redis/src/t_list.c' l='177' u='r' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='202' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='203' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='219' u='r' c='listTypeInsert'/>
+<use f='redis/src/t_list.c' l='233' u='r' c='listTypeEqual'/>
+<use f='redis/src/t_list.c' l='246' u='r' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='256' u='r' c='listTypeDelete'/>

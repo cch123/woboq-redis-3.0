@@ -1,0 +1,5 @@
+<dec f='redis/src/cluster.h' l='16'/>
+<doc f='redis/src/cluster.h' l='14'>/* The following defines are amount of time, sometimes expressed as
+ * multiplicators of the node timeout value (when ending with MULT). */</doc>
+<use f='redis/src/config.c' l='1854' u='c'/>
+<use f='redis/src/redis.c' l='1470' u='c'/>

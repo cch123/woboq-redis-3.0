@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='24' type='void luaG_aritherror(lua_State * L, const TValue * p1, const TValue * p2)'/>
+<def f='redis/deps/lua/src/ldebug.c' l='588' ll='593' type='void luaG_aritherror(lua_State * L, const TValue * p1, const TValue * p2)'/>
+<use f='redis/deps/lua/src/lvm.c' l='336' u='c' c='Arith'/>

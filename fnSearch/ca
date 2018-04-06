@@ -1,0 +1,5 @@
+catAppendOnlyExpireAtCommand|catAppendOnlyExpireAtCommand
+catAppendOnlyGenericCommand|catAppendOnlyGenericCommand
+catClientInfoString|catClientInfoString
+call|call
+cancelReplicationHandshake|cancelReplicationHandshake

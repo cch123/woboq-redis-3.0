@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lstate.h' l='126' type='ptrdiff_t'/>
+<offset>1408</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='126'>/* current error handling function (stack index) */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='619' u='r' c='luaG_errormsg'/>
+<use f='redis/deps/lua/src/ldebug.c' l='620' u='r' c='luaG_errormsg'/>
+<use f='redis/deps/lua/src/ldo.c' l='89' u='w' c='resetstack'/>
+<use f='redis/deps/lua/src/ldo.c' l='462' u='r' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/ldo.c' l='463' u='w' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/ldo.c' l='476' u='w' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/ldo.c' l='514' u='r' c='luaD_protectedparser'/>
+<use f='redis/deps/lua/src/lstate.c' l='100' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='204' u='w' c='lua_close'/>

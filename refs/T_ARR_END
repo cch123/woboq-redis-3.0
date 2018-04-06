@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lua_cjson.c' l='83' type='3'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='410' u='r' c='json_create_config'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1200' u='r' c='json_parse_array_context'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1211' u='r' c='json_parse_array_context'/>

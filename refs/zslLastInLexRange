@@ -1,0 +1,5 @@
+<def f='redis/src/t_zset.c' l='608' ll='629' type='zskiplistNode * zslLastInLexRange(zskiplist * zsl, zlexrangespec * range)'/>
+<use f='redis/src/t_zset.c' l='2537' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2677' u='c' c='genericZrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='606'>/* Find the last node that is contained in the specified range.
+ * Returns NULL when no element is contained in the range. */</doc>

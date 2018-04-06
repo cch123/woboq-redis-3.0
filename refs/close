@@ -1,0 +1,67 @@
+<dec f='include/unistd.h' l='356' type='int close(int __fd)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1005' u='c' c='redisFree'/>
+<doc f='include/unistd.h' l='352'>/* Close the file descriptor FD.
+
+   This function is a cancellation point and therefore not marked with
+   __THROW.  */</doc>
+<use f='redis/deps/hiredis/net.c' l='59' u='c' c='redisContextCloseFd'/>
+<use f='redis/src/ae_epoll.c' l='68' u='c' c='aeApiFree'/>
+<use f='redis/src/anet.c' l='259' u='c' c='anetCreateSocket'/>
+<use f='redis/src/anet.c' l='317' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='331' u='c' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='374' u='c' c='anetUnixGenericConnect'/>
+<use f='redis/src/anet.c' l='423' u='c' c='anetListen'/>
+<use f='redis/src/anet.c' l='429' u='c' c='anetListen'/>
+<use f='redis/src/anet.c' l='439' u='c' c='anetV6Only'/>
+<use f='redis/src/aof.c' l='210' u='c' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='244' u='c' c='startAppendOnly'/>
+<use f='redis/src/aof.c' l='1238' u='c' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1245' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1246' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1247' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1248' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1249' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1250' u='c' c='aofClosePipes'/>
+<use f='redis/src/aof.c' l='1389' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1443' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1444' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1453' u='c' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/bio.c' l='176' u='c' c='bioProcessBackgroundJobs'/>
+<use f='redis/src/cluster.c' l='334' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='339' u='c' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='383' u='c' c='clusterLockConfig'/>
+<use f='redis/src/cluster.c' l='561' u='c' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='4483' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4504' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4531' u='c' c='migrateCloseSocket'/>
+<use f='redis/src/cluster.c' l='4545' u='c' c='migrateCloseTimedoutSockets'/>
+<use f='redis/src/config.c' l='1735' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/config.c' l='1765' u='c' c='rewriteConfigOverwriteFile'/>
+<use f='redis/src/debug.c' l='681' u='c' c='logStackTrace'/>
+<use f='redis/src/networking.c' l='79' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='590' u='c' c='acceptCommonHandler'/>
+<use f='redis/src/networking.c' l='735' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='759' u='c' c='freeClient'/>
+<use f='redis/src/rdb.c' l='1324' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1325' u='c' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1509' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/rdb.c' l='1510' u='c' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/redis-cli.c' l='1390' u='c' c='getRDB'/>
+<use f='redis/src/redis.c' l='377' u='c' c='redisLogFromHandler'/>
+<use f='redis/src/redis.c' l='2314' u='c' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2315' u='c' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2317' u='c' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='3400' u='c' c='daemonize'/>
+<use f='redis/src/replication.c' l='725' u='c' c='sendBulkToSlave'/>
+<use f='redis/src/replication.c' l='827' u='c' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='828' u='c' c='replicationAbortSyncTransfer'/>
+<use f='redis/src/replication.c' l='1021' u='c' c='readSyncBulkPayload'/>
+<use f='redis/src/replication.c' l='1223' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1371' u='c' c='syncWithMaster'/>
+<use f='redis/src/replication.c' l='1391' u='c' c='connectWithMaster'/>
+<use f='redis/src/replication.c' l='1410' u='c' c='undoConnectWithMaster'/>
+<use f='redis/src/replication.c' l='1616' u='c' c='replicationCacheMaster'/>
+<use f='redis/src/sentinel.c' l='1609' u='c' c='sentinelFlushConfig'/>
+<use f='redis/src/sentinel.c' l='1613' u='c' c='sentinelFlushConfig'/>
+<use f='redis/src/zmalloc.c' l='275' u='c' c='zmalloc_get_rss'/>
+<use f='redis/src/zmalloc.c' l='278' u='c' c='zmalloc_get_rss'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/sentinel.c' l='386' type='void sentinelSetCommand(redisClient * c)'/>
+<use f='redis/src/sentinel.c' l='2780' u='c' c='sentinelCommand'/>
+<def f='redis/src/sentinel.c' l='2872' ll='2957' type='void sentinelSetCommand(redisClient * c)'/>
+<doc f='redis/src/sentinel.c' l='2871'>/* SENTINEL SET &lt;mastername&gt; [&lt;option&gt; &lt;value&gt; ...] */</doc>

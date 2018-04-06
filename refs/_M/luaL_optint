@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='105'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='54' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='82' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='121' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='199' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='345' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='269' u='c'/>
+<use f='redis/deps/lua/src/loslib.c' l='217' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='649' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='120' u='c'/>
+<use f='redis/deps/lua/src/ltablib.c' l='150' u='c'/>

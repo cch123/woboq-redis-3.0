@@ -1,0 +1,6 @@
+<def f='redis/src/debug.c' l='101' ll='105' type='void mixObjectDigest(unsigned char * digest, robj * o)'/>
+<use f='redis/src/debug.c' l='154' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='160' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='216' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='234' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/debug.c' l='237' u='c' c='computeDatasetDigest'/>

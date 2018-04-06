@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1388' type='void setbitCommand(redisClient * c)'/>
+<def f='redis/src/bitops.c' l='212' ll='258' type='void setbitCommand(redisClient * c)'/>
+<doc f='redis/src/bitops.c' l='211'>/* SETBIT key offset bitvalue */</doc>
+<use f='redis/src/redis.c' l='133' u='r'/>
+<use f='redis/src/redis.c' l='133' u='r'/>
+<use f='redis/src/redis.c' l='133' u='r'/>
+<use f='redis/src/redis.c' l='133' u='r'/>

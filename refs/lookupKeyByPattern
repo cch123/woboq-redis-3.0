@@ -1,0 +1,20 @@
+<def f='redis/src/sort.c' l='61' ll='133' type='robj * lookupKeyByPattern(redisDb * db, robj * pattern, robj * subst)'/>
+<use f='redis/src/sort.c' l='431' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='495' u='c' c='sortCommand'/>
+<use f='redis/src/sort.c' l='525' u='c' c='sortCommand'/>
+<doc f='redis/src/sort.c' l='45'>/* Return the value associated to the key with a name obtained using
+ * the following rules:
+ *
+ * 1) The first occurrence of &apos;*&apos; in &apos;pattern&apos; is substituted with &apos;subst&apos;.
+ *
+ * 2) If &apos;pattern&apos; matches the &quot;-&gt;&quot; string, everything on the left of
+ *    the arrow is treated as the name of a hash field, and the part on the
+ *    left as the key name containing a hash. The value of the specified
+ *    field is returned.
+ *
+ * 3) If &apos;pattern&apos; equals &quot;#&quot;, the function simply returns &apos;subst&apos; itself so
+ *    that the SORT command can be used like: SORT key GET # to retrieve
+ *    the Set/List elements directly.
+ *
+ * The returned object will always have its refcount increased by 1
+ * when it is non-NULL. */</doc>

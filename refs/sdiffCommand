@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1434' type='void sdiffCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='169' u='r'/>
+<use f='redis/src/redis.c' l='169' u='r'/>
+<use f='redis/src/redis.c' l='169' u='r'/>
+<use f='redis/src/redis.c' l='169' u='r'/>
+<def f='redis/src/t_set.c' l='903' ll='905' type='void sdiffCommand(redisClient * c)'/>

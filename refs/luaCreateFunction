@@ -1,0 +1,12 @@
+<def f='redis/src/scripting.c' l='888' ll='922' type='int luaCreateFunction(redisClient * c, lua_State * lua, char * funcname, robj * body)'/>
+<use f='redis/src/scripting.c' l='992' u='c' c='evalGenericCommand'/>
+<use f='redis/src/scripting.c' l='1178' u='c' c='scriptCommand'/>
+<doc f='redis/src/scripting.c' l='879'>/* Define a lua function with the specified function name and body.
+ * The function name musts be a 2 characters long string, since all the
+ * functions we defined in the Lua context are in the form:
+ *
+ *   f_&lt;hex sha1 sum&gt;
+ *
+ * On success REDIS_OK is returned, and nothing is left on the Lua stack.
+ * On error REDIS_ERR is returned and an appropriate error is set in the
+ * client context. */</doc>

@@ -1,0 +1,17 @@
+<dec f='redis/src/ziplist.h' l='41' type='unsigned char * ziplistDelete(unsigned char * zl, unsigned char ** p)'/>
+<use f='redis/src/t_hash.c' l='190' u='c' c='hashTypeSet'/>
+<use f='redis/src/t_hash.c' l='237' u='c' c='hashTypeDelete'/>
+<use f='redis/src/t_hash.c' l='238' u='c' c='hashTypeDelete'/>
+<use f='redis/src/t_list.c' l='91' u='c' c='listTypePop'/>
+<use f='redis/src/t_list.c' l='249' u='c' c='listTypeDelete'/>
+<use f='redis/src/t_list.c' l='467' u='c' c='lsetCommand'/>
+<use f='redis/src/t_zset.c' l='944' u='c' c='zzlDelete'/>
+<use f='redis/src/t_zset.c' l='945' u='c' c='zzlDelete'/>
+<use f='redis/src/t_zset.c' l='1028' u='c' c='zzlDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='1029' u='c' c='zzlDeleteRangeByScore'/>
+<use f='redis/src/t_zset.c' l='1055' u='c' c='zzlDeleteRangeByLex'/>
+<use f='redis/src/t_zset.c' l='1056' u='c' c='zzlDeleteRangeByLex'/>
+<def f='redis/src/ziplist.c' l='773' ll='783' type='unsigned char * ziplistDelete(unsigned char * zl, unsigned char ** p)'/>
+<doc f='redis/src/ziplist.c' l='770'>/* Delete a single entry from the ziplist, pointed to by *p.
+ * Also update *p in place, to be able to iterate over the
+ * ziplist, while deleting entries. */</doc>

@@ -1,0 +1,4 @@
+<def f='redis/src/rdb.c' l='1112' ll='1127' type='void rdbLoadProgressCallback(rio * r, const void * buf, size_t len)'/>
+<use f='redis/src/rdb.c' l='1141' u='r' c='rdbLoad'/>
+<doc f='redis/src/rdb.c' l='1110'>/* Track loading progress in order to serve client&apos;s from time to time
+   and if needed calculate rdb checksum  */</doc>

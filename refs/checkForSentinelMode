@@ -1,0 +1,4 @@
+<def f='redis/src/redis.c' l='3522' ll='3529' type='int checkForSentinelMode(int argc, char ** argv)'/>
+<use f='redis/src/redis.c' l='3583' u='c' c='main'/>
+<doc f='redis/src/redis.c' l='3520'>/* Returns 1 if there is --sentinel among the arguments or if
+ * argv[0] is exactly &quot;redis-sentinel&quot;. */</doc>

@@ -1,0 +1,5 @@
+<dec f='include/ctype.h' l='197'/>
+<use f='redis/deps/lua/src/llex.c' l='201' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='427' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='236' u='c'/>
+<use f='redis/deps/lua/src/lua_struct.c' l='371' u='c'/>

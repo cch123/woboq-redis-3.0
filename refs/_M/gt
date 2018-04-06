@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lstate.h' l='22'/>
+<use f='redis/deps/lua/src/lapi.c' l='67' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='81' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='629' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='750' u='c'/>
+<doc f='redis/deps/lua/src/lstate.h' l='21'>/* table of globals */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='500' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='259' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='508' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='74' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='101' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='124' u='c'/>
+<use f='redis/deps/lua/src/lstate.c' l='124' u='c'/>

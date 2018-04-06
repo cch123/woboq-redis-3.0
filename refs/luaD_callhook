@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/ldo.h' l='41' type='void luaD_callhook(lua_State * L, int event, int line)'/>
+<def f='redis/deps/lua/src/ldo.c' l='181' ll='205' type='void luaD_callhook(lua_State * L, int event, int line)'/>
+<use f='redis/deps/lua/src/ldo.c' l='302' u='c' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='318' u='c' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='334' u='c' c='callrethooks'/>
+<use f='redis/deps/lua/src/ldo.c' l='337' u='c' c='callrethooks'/>
+<use f='redis/deps/lua/src/lvm.c' l='66' u='c' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='75' u='c' c='traceexec'/>

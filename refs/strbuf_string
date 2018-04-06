@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='64' type='char * strbuf_string(strbuf_t * s, int * len)'/>
+<def f='redis/deps/lua/src/strbuf.h' l='145' ll='151' type='char * strbuf_string(strbuf_t * s, int * len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='724' u='c' c='json_encode'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='942' u='c' c='json_next_string_token'/>

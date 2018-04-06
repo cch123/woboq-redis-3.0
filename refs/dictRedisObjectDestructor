@@ -1,0 +1,15 @@
+<def f='redis/src/redis.c' l='448' ll='454' type='void dictRedisObjectDestructor(void * privdata, void * val)'/>
+<use f='redis/src/redis.c' l='530'/>
+<use f='redis/src/redis.c' l='530'/>
+<use f='redis/src/redis.c' l='540'/>
+<use f='redis/src/redis.c' l='540'/>
+<use f='redis/src/redis.c' l='551'/>
+<use f='redis/src/redis.c' l='551'/>
+<use f='redis/src/redis.c' l='561'/>
+<use f='redis/src/redis.c' l='561'/>
+<use f='redis/src/redis.c' l='590'/>
+<use f='redis/src/redis.c' l='591'/>
+<use f='redis/src/redis.c' l='590'/>
+<use f='redis/src/redis.c' l='591'/>
+<use f='redis/src/redis.c' l='602'/>
+<use f='redis/src/redis.c' l='602'/>

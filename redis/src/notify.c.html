@@ -1,0 +1,148 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>notify.c source code [redis/src/notify.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/src/notify.c'; var root_path = '../..'; var data_path = '../../../data';</script>
+<script src='../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='..'>redis</a>/<a href='./'>src</a>/<a href='notify.c.html'>notify.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i> * Copyright (c) 2013, Salvatore Sanfilippo &lt;antirez at gmail dot com&gt;</i></td></tr>
+<tr><th id="3">3</th><td><i> * All rights reserved.</i></td></tr>
+<tr><th id="4">4</th><td><i> *</i></td></tr>
+<tr><th id="5">5</th><td><i> * Redistribution and use in source and binary forms, with or without</i></td></tr>
+<tr><th id="6">6</th><td><i> * modification, are permitted provided that the following conditions are met:</i></td></tr>
+<tr><th id="7">7</th><td><i> *</i></td></tr>
+<tr><th id="8">8</th><td><i> *   * Redistributions of source code must retain the above copyright notice,</i></td></tr>
+<tr><th id="9">9</th><td><i> *     this list of conditions and the following disclaimer.</i></td></tr>
+<tr><th id="10">10</th><td><i> *   * Redistributions in binary form must reproduce the above copyright</i></td></tr>
+<tr><th id="11">11</th><td><i> *     notice, this list of conditions and the following disclaimer in the</i></td></tr>
+<tr><th id="12">12</th><td><i> *     documentation and/or other materials provided with the distribution.</i></td></tr>
+<tr><th id="13">13</th><td><i> *   * Neither the name of Redis nor the names of its contributors may be used</i></td></tr>
+<tr><th id="14">14</th><td><i> *     to endorse or promote products derived from this software without</i></td></tr>
+<tr><th id="15">15</th><td><i> *     specific prior written permission.</i></td></tr>
+<tr><th id="16">16</th><td><i> *</i></td></tr>
+<tr><th id="17">17</th><td><i> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"</i></td></tr>
+<tr><th id="18">18</th><td><i> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</i></td></tr>
+<tr><th id="19">19</th><td><i> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</i></td></tr>
+<tr><th id="20">20</th><td><i> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE</i></td></tr>
+<tr><th id="21">21</th><td><i> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</i></td></tr>
+<tr><th id="22">22</th><td><i> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</i></td></tr>
+<tr><th id="23">23</th><td><i> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</i></td></tr>
+<tr><th id="24">24</th><td><i> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</i></td></tr>
+<tr><th id="25">25</th><td><i> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</i></td></tr>
+<tr><th id="26">26</th><td><i> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</i></td></tr>
+<tr><th id="27">27</th><td><i> * POSSIBILITY OF SUCH DAMAGE.</i></td></tr>
+<tr><th id="28">28</th><td><i> */</i></td></tr>
+<tr><th id="29">29</th><td></td></tr>
+<tr><th id="30">30</th><td><u>#include <a href="redis.h.html">"redis.h"</a></u></td></tr>
+<tr><th id="31">31</th><td></td></tr>
+<tr><th id="32">32</th><td><i>/* This file implements keyspace events notification via Pub/Sub ad</i></td></tr>
+<tr><th id="33">33</th><td><i> * described at <a href="http://redis.io/topics/keyspace-events">http://redis.io/topics/keyspace-events</a>. */</i></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><i>/* Turn a string representing notification classes into an integer</i></td></tr>
+<tr><th id="36">36</th><td><i> * representing notification classes flags xored.</i></td></tr>
+<tr><th id="37">37</th><td><i> *</i></td></tr>
+<tr><th id="38">38</th><td><i> * The function returns -1 if the input contains characters not mapping to</i></td></tr>
+<tr><th id="39">39</th><td><i> * any class. */</i></td></tr>
+<tr><th id="40">40</th><td><em>int</em> <dfn class="decl def fn" id="keyspaceEventsStringToFlags" title='keyspaceEventsStringToFlags' data-ref="keyspaceEventsStringToFlags">keyspaceEventsStringToFlags</dfn>(<em>char</em> *<dfn class="local col1 decl" id="1classes" title='classes' data-type='char *' data-ref="1classes">classes</dfn>) {</td></tr>
+<tr><th id="41">41</th><td>    <em>char</em> *<dfn class="local col2 decl" id="2p" title='p' data-type='char *' data-ref="2p">p</dfn> = <a class="local col1 ref" href="#1classes" title='classes' data-ref="1classes">classes</a>;</td></tr>
+<tr><th id="42">42</th><td>    <em>int</em> <dfn class="local col3 decl" id="3c" title='c' data-type='int' data-ref="3c">c</dfn>, <dfn class="local col4 decl" id="4flags" title='flags' data-type='int' data-ref="4flags">flags</dfn> = <var>0</var>;</td></tr>
+<tr><th id="43">43</th><td></td></tr>
+<tr><th id="44">44</th><td>    <b>while</b>((<a class="local col3 ref" href="#3c" title='c' data-ref="3c">c</a> = *<a class="local col2 ref" href="#2p" title='p' data-ref="2p">p</a>++) != <kbd>'\0'</kbd>) {</td></tr>
+<tr><th id="45">45</th><td>        <b>switch</b>(<a class="local col3 ref" href="#3c" title='c' data-ref="3c">c</a>) {</td></tr>
+<tr><th id="46">46</th><td>        <b>case</b> <kbd>'A'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#387" title="((1&lt;&lt;2) | (1&lt;&lt;3) | (1&lt;&lt;4) | (1&lt;&lt;5) | (1&lt;&lt;6) | (1&lt;&lt;7) | (1&lt;&lt;8) | (1&lt;&lt;9))" data-ref="_M/REDIS_NOTIFY_ALL">REDIS_NOTIFY_ALL</a>; <b>break</b>;</td></tr>
+<tr><th id="47">47</th><td>        <b>case</b> <kbd>'g'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#379" title="(1&lt;&lt;2)" data-ref="_M/REDIS_NOTIFY_GENERIC">REDIS_NOTIFY_GENERIC</a>; <b>break</b>;</td></tr>
+<tr><th id="48">48</th><td>        <b>case</b> <kbd>'$'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#380" title="(1&lt;&lt;3)" data-ref="_M/REDIS_NOTIFY_STRING">REDIS_NOTIFY_STRING</a>; <b>break</b>;</td></tr>
+<tr><th id="49">49</th><td>        <b>case</b> <kbd>'l'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#381" title="(1&lt;&lt;4)" data-ref="_M/REDIS_NOTIFY_LIST">REDIS_NOTIFY_LIST</a>; <b>break</b>;</td></tr>
+<tr><th id="50">50</th><td>        <b>case</b> <kbd>'s'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#382" title="(1&lt;&lt;5)" data-ref="_M/REDIS_NOTIFY_SET">REDIS_NOTIFY_SET</a>; <b>break</b>;</td></tr>
+<tr><th id="51">51</th><td>        <b>case</b> <kbd>'h'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#383" title="(1&lt;&lt;6)" data-ref="_M/REDIS_NOTIFY_HASH">REDIS_NOTIFY_HASH</a>; <b>break</b>;</td></tr>
+<tr><th id="52">52</th><td>        <b>case</b> <kbd>'z'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#384" title="(1&lt;&lt;7)" data-ref="_M/REDIS_NOTIFY_ZSET">REDIS_NOTIFY_ZSET</a>; <b>break</b>;</td></tr>
+<tr><th id="53">53</th><td>        <b>case</b> <kbd>'x'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#385" title="(1&lt;&lt;8)" data-ref="_M/REDIS_NOTIFY_EXPIRED">REDIS_NOTIFY_EXPIRED</a>; <b>break</b>;</td></tr>
+<tr><th id="54">54</th><td>        <b>case</b> <kbd>'e'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#386" title="(1&lt;&lt;9)" data-ref="_M/REDIS_NOTIFY_EVICTED">REDIS_NOTIFY_EVICTED</a>; <b>break</b>;</td></tr>
+<tr><th id="55">55</th><td>        <b>case</b> <kbd>'K'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#377" title="(1&lt;&lt;0)" data-ref="_M/REDIS_NOTIFY_KEYSPACE">REDIS_NOTIFY_KEYSPACE</a>; <b>break</b>;</td></tr>
+<tr><th id="56">56</th><td>        <b>case</b> <kbd>'E'</kbd>: <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a> |= <a class="macro" href="redis.h.html#378" title="(1&lt;&lt;1)" data-ref="_M/REDIS_NOTIFY_KEYEVENT">REDIS_NOTIFY_KEYEVENT</a>; <b>break</b>;</td></tr>
+<tr><th id="57">57</th><td>        <b>default</b>: <b>return</b> -<var>1</var>;</td></tr>
+<tr><th id="58">58</th><td>        }</td></tr>
+<tr><th id="59">59</th><td>    }</td></tr>
+<tr><th id="60">60</th><td>    <b>return</b> <a class="local col4 ref" href="#4flags" title='flags' data-ref="4flags">flags</a>;</td></tr>
+<tr><th id="61">61</th><td>}</td></tr>
+<tr><th id="62">62</th><td></td></tr>
+<tr><th id="63">63</th><td><i>/* This function does exactly the revese of the function above: it gets</i></td></tr>
+<tr><th id="64">64</th><td><i> * as input an integer with the xored flags and returns a string representing</i></td></tr>
+<tr><th id="65">65</th><td><i> * the selected classes. The string returned is an sds string that needs to</i></td></tr>
+<tr><th id="66">66</th><td><i> * be released with sdsfree(). */</i></td></tr>
+<tr><th id="67">67</th><td><a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="decl def fn" id="keyspaceEventsFlagsToString" title='keyspaceEventsFlagsToString' data-ref="keyspaceEventsFlagsToString">keyspaceEventsFlagsToString</dfn>(<em>int</em> <dfn class="local col5 decl" id="5flags" title='flags' data-type='int' data-ref="5flags">flags</dfn>) {</td></tr>
+<tr><th id="68">68</th><td>    <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col6 decl" id="6res" title='res' data-type='sds' data-ref="6res">res</dfn>;</td></tr>
+<tr><th id="69">69</th><td></td></tr>
+<tr><th id="70">70</th><td>    <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdsempty" title='sdsempty' data-ref="sdsempty">sdsempty</a>();</td></tr>
+<tr><th id="71">71</th><td>    <b>if</b> ((<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#387" title="((1&lt;&lt;2) | (1&lt;&lt;3) | (1&lt;&lt;4) | (1&lt;&lt;5) | (1&lt;&lt;6) | (1&lt;&lt;7) | (1&lt;&lt;8) | (1&lt;&lt;9))" data-ref="_M/REDIS_NOTIFY_ALL">REDIS_NOTIFY_ALL</a>) == <a class="macro" href="redis.h.html#387" title="((1&lt;&lt;2) | (1&lt;&lt;3) | (1&lt;&lt;4) | (1&lt;&lt;5) | (1&lt;&lt;6) | (1&lt;&lt;7) | (1&lt;&lt;8) | (1&lt;&lt;9))" data-ref="_M/REDIS_NOTIFY_ALL">REDIS_NOTIFY_ALL</a>) {</td></tr>
+<tr><th id="72">72</th><td>        <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"A"</q>,<var>1</var>);</td></tr>
+<tr><th id="73">73</th><td>    } <b>else</b> {</td></tr>
+<tr><th id="74">74</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#379" title="(1&lt;&lt;2)" data-ref="_M/REDIS_NOTIFY_GENERIC">REDIS_NOTIFY_GENERIC</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"g"</q>,<var>1</var>);</td></tr>
+<tr><th id="75">75</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#380" title="(1&lt;&lt;3)" data-ref="_M/REDIS_NOTIFY_STRING">REDIS_NOTIFY_STRING</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"$"</q>,<var>1</var>);</td></tr>
+<tr><th id="76">76</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#381" title="(1&lt;&lt;4)" data-ref="_M/REDIS_NOTIFY_LIST">REDIS_NOTIFY_LIST</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"l"</q>,<var>1</var>);</td></tr>
+<tr><th id="77">77</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#382" title="(1&lt;&lt;5)" data-ref="_M/REDIS_NOTIFY_SET">REDIS_NOTIFY_SET</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"s"</q>,<var>1</var>);</td></tr>
+<tr><th id="78">78</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#383" title="(1&lt;&lt;6)" data-ref="_M/REDIS_NOTIFY_HASH">REDIS_NOTIFY_HASH</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"h"</q>,<var>1</var>);</td></tr>
+<tr><th id="79">79</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#384" title="(1&lt;&lt;7)" data-ref="_M/REDIS_NOTIFY_ZSET">REDIS_NOTIFY_ZSET</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"z"</q>,<var>1</var>);</td></tr>
+<tr><th id="80">80</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#385" title="(1&lt;&lt;8)" data-ref="_M/REDIS_NOTIFY_EXPIRED">REDIS_NOTIFY_EXPIRED</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"x"</q>,<var>1</var>);</td></tr>
+<tr><th id="81">81</th><td>        <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#386" title="(1&lt;&lt;9)" data-ref="_M/REDIS_NOTIFY_EVICTED">REDIS_NOTIFY_EVICTED</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"e"</q>,<var>1</var>);</td></tr>
+<tr><th id="82">82</th><td>    }</td></tr>
+<tr><th id="83">83</th><td>    <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#377" title="(1&lt;&lt;0)" data-ref="_M/REDIS_NOTIFY_KEYSPACE">REDIS_NOTIFY_KEYSPACE</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"K"</q>,<var>1</var>);</td></tr>
+<tr><th id="84">84</th><td>    <b>if</b> (<a class="local col5 ref" href="#5flags" title='flags' data-ref="5flags">flags</a> &amp; <a class="macro" href="redis.h.html#378" title="(1&lt;&lt;1)" data-ref="_M/REDIS_NOTIFY_KEYEVENT">REDIS_NOTIFY_KEYEVENT</a>) <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>,<q>"E"</q>,<var>1</var>);</td></tr>
+<tr><th id="85">85</th><td>    <b>return</b> <a class="local col6 ref" href="#6res" title='res' data-ref="6res">res</a>;</td></tr>
+<tr><th id="86">86</th><td>}</td></tr>
+<tr><th id="87">87</th><td></td></tr>
+<tr><th id="88">88</th><td><i>/* The API provided to the rest of the Redis core is a simple function:</i></td></tr>
+<tr><th id="89">89</th><td><i> *</i></td></tr>
+<tr><th id="90">90</th><td><i> * notifyKeyspaceEvent(char *event, robj *key, int dbid);</i></td></tr>
+<tr><th id="91">91</th><td><i> *</i></td></tr>
+<tr><th id="92">92</th><td><i> * 'event' is a C string representing the event name.</i></td></tr>
+<tr><th id="93">93</th><td><i> * 'key' is a Redis object representing the key name.</i></td></tr>
+<tr><th id="94">94</th><td><i> * 'dbid' is the database ID where the key lives.  */</i></td></tr>
+<tr><th id="95">95</th><td><em>void</em> <dfn class="decl def fn" id="notifyKeyspaceEvent" title='notifyKeyspaceEvent' data-ref="notifyKeyspaceEvent">notifyKeyspaceEvent</dfn>(<em>int</em> <dfn class="local col7 decl" id="7type" title='type' data-type='int' data-ref="7type">type</dfn>, <em>char</em> *<dfn class="local col8 decl" id="8event" title='event' data-type='char *' data-ref="8event">event</dfn>, <a class="typedef" href="redis.h.html#robj" title='robj' data-type='struct redisObject' data-ref="robj">robj</a> *<dfn class="local col9 decl" id="9key" title='key' data-type='robj *' data-ref="9key">key</dfn>, <em>int</em> <dfn class="local col0 decl" id="10dbid" title='dbid' data-type='int' data-ref="10dbid">dbid</dfn>) {</td></tr>
+<tr><th id="96">96</th><td>    <a class="typedef" href="sds.h.html#sds" title='sds' data-type='char *' data-ref="sds">sds</a> <dfn class="local col1 decl" id="11chan" title='chan' data-type='sds' data-ref="11chan">chan</dfn>;</td></tr>
+<tr><th id="97">97</th><td>    <a class="typedef" href="redis.h.html#robj" title='robj' data-type='struct redisObject' data-ref="robj">robj</a> *<dfn class="local col2 decl" id="12chanobj" title='chanobj' data-type='robj *' data-ref="12chanobj">chanobj</dfn>, *<dfn class="local col3 decl" id="13eventobj" title='eventobj' data-type='robj *' data-ref="13eventobj">eventobj</dfn>;</td></tr>
+<tr><th id="98">98</th><td>    <em>int</em> <dfn class="local col4 decl" id="14len" title='len' data-type='int' data-ref="14len">len</dfn> = -<var>1</var>;</td></tr>
+<tr><th id="99">99</th><td>    <em>char</em> <dfn class="local col5 decl" id="15buf" title='buf' data-type='char [24]' data-ref="15buf">buf</dfn>[<var>24</var>];</td></tr>
+<tr><th id="100">100</th><td></td></tr>
+<tr><th id="101">101</th><td>    <i>/* If notifications for this class of events are off, return ASAP. */</i></td></tr>
+<tr><th id="102">102</th><td>    <b>if</b> (!(<a class="ref" href="redis.h.html#server" title='server' data-ref="server">server</a>.<a class="ref field" href="redis.h.html#redisServer::notify_keyspace_events" title='redisServer::notify_keyspace_events' data-ref="redisServer::notify_keyspace_events">notify_keyspace_events</a> &amp; <a class="local col7 ref" href="#7type" title='type' data-ref="7type">type</a>)) <b>return</b>;</td></tr>
+<tr><th id="103">103</th><td></td></tr>
+<tr><th id="104">104</th><td>    <a class="local col3 ref" href="#13eventobj" title='eventobj' data-ref="13eventobj">eventobj</a> = <a class="ref fn" href="redis.h.html#createStringObject" title='createStringObject' data-ref="createStringObject">createStringObject</a>(<a class="local col8 ref" href="#8event" title='event' data-ref="8event">event</a>,<a class="ref fn" href="../../include/string.h.html#strlen" title='strlen' data-ref="strlen">strlen</a>(<a class="local col8 ref" href="#8event" title='event' data-ref="8event">event</a>));</td></tr>
+<tr><th id="105">105</th><td></td></tr>
+<tr><th id="106">106</th><td>    <i>/* __keyspace@&lt;db&gt;__:&lt;key&gt; &lt;event&gt; notifications. */</i></td></tr>
+<tr><th id="107">107</th><td>    <b>if</b> (<a class="ref" href="redis.h.html#server" title='server' data-ref="server">server</a>.<a class="ref field" href="redis.h.html#redisServer::notify_keyspace_events" title='redisServer::notify_keyspace_events' data-ref="redisServer::notify_keyspace_events">notify_keyspace_events</a> &amp; <a class="macro" href="redis.h.html#377" title="(1&lt;&lt;0)" data-ref="_M/REDIS_NOTIFY_KEYSPACE">REDIS_NOTIFY_KEYSPACE</a>) {</td></tr>
+<tr><th id="108">108</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<q>"__keyspace@"</q>,<var>11</var>);</td></tr>
+<tr><th id="109">109</th><td>        <a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a> = <a class="ref fn" href="util.h.html#ll2string" title='ll2string' data-ref="ll2string">ll2string</a>(<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>,<b>sizeof</b>(<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>),<a class="local col0 ref" href="#10dbid" title='dbid' data-ref="10dbid">dbid</a>);</td></tr>
+<tr><th id="110">110</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>, <a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a>);</td></tr>
+<tr><th id="111">111</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <q>"__:"</q>, <var>3</var>);</td></tr>
+<tr><th id="112">112</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatsds" title='sdscatsds' data-ref="sdscatsds">sdscatsds</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <a class="local col9 ref" href="#9key" title='key' data-ref="9key">key</a>-&gt;<a class="ref field" href="redis.h.html#redisObject::ptr" title='redisObject::ptr' data-ref="redisObject::ptr">ptr</a>);</td></tr>
+<tr><th id="113">113</th><td>        <a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a> = <a class="ref fn" href="redis.h.html#createObject" title='createObject' data-ref="createObject">createObject</a>(<a class="macro" href="redis.h.html#180" title="0" data-ref="_M/REDIS_STRING">REDIS_STRING</a>, <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>);</td></tr>
+<tr><th id="114">114</th><td>        <a class="ref fn" href="redis.h.html#pubsubPublishMessage" title='pubsubPublishMessage' data-ref="pubsubPublishMessage">pubsubPublishMessage</a>(<a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a>, <a class="local col3 ref" href="#13eventobj" title='eventobj' data-ref="13eventobj">eventobj</a>);</td></tr>
+<tr><th id="115">115</th><td>        <a class="ref fn" href="redis.h.html#decrRefCount" title='decrRefCount' data-ref="decrRefCount">decrRefCount</a>(<a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a>);</td></tr>
+<tr><th id="116">116</th><td>    }</td></tr>
+<tr><th id="117">117</th><td></td></tr>
+<tr><th id="118">118</th><td>    <i>/* __keyevente@&lt;db&gt;__:&lt;event&gt; &lt;key&gt; notifications. */</i></td></tr>
+<tr><th id="119">119</th><td>    <b>if</b> (<a class="ref" href="redis.h.html#server" title='server' data-ref="server">server</a>.<a class="ref field" href="redis.h.html#redisServer::notify_keyspace_events" title='redisServer::notify_keyspace_events' data-ref="redisServer::notify_keyspace_events">notify_keyspace_events</a> &amp; <a class="macro" href="redis.h.html#378" title="(1&lt;&lt;1)" data-ref="_M/REDIS_NOTIFY_KEYEVENT">REDIS_NOTIFY_KEYEVENT</a>) {</td></tr>
+<tr><th id="120">120</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdsnewlen" title='sdsnewlen' data-ref="sdsnewlen">sdsnewlen</a>(<q>"__keyevent@"</q>,<var>11</var>);</td></tr>
+<tr><th id="121">121</th><td>        <b>if</b> (<a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a> == -<var>1</var>) <a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a> = <a class="ref fn" href="util.h.html#ll2string" title='ll2string' data-ref="ll2string">ll2string</a>(<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>,<b>sizeof</b>(<a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>),<a class="local col0 ref" href="#10dbid" title='dbid' data-ref="10dbid">dbid</a>);</td></tr>
+<tr><th id="122">122</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <a class="local col5 ref" href="#15buf" title='buf' data-ref="15buf">buf</a>, <a class="local col4 ref" href="#14len" title='len' data-ref="14len">len</a>);</td></tr>
+<tr><th id="123">123</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatlen" title='sdscatlen' data-ref="sdscatlen">sdscatlen</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <q>"__:"</q>, <var>3</var>);</td></tr>
+<tr><th id="124">124</th><td>        <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a> = <a class="ref fn" href="sds.h.html#sdscatsds" title='sdscatsds' data-ref="sdscatsds">sdscatsds</a>(<a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>, <a class="local col3 ref" href="#13eventobj" title='eventobj' data-ref="13eventobj">eventobj</a>-&gt;<a class="ref field" href="redis.h.html#redisObject::ptr" title='redisObject::ptr' data-ref="redisObject::ptr">ptr</a>);</td></tr>
+<tr><th id="125">125</th><td>        <a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a> = <a class="ref fn" href="redis.h.html#createObject" title='createObject' data-ref="createObject">createObject</a>(<a class="macro" href="redis.h.html#180" title="0" data-ref="_M/REDIS_STRING">REDIS_STRING</a>, <a class="local col1 ref" href="#11chan" title='chan' data-ref="11chan">chan</a>);</td></tr>
+<tr><th id="126">126</th><td>        <a class="ref fn" href="redis.h.html#pubsubPublishMessage" title='pubsubPublishMessage' data-ref="pubsubPublishMessage">pubsubPublishMessage</a>(<a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a>, <a class="local col9 ref" href="#9key" title='key' data-ref="9key">key</a>);</td></tr>
+<tr><th id="127">127</th><td>        <a class="ref fn" href="redis.h.html#decrRefCount" title='decrRefCount' data-ref="decrRefCount">decrRefCount</a>(<a class="local col2 ref" href="#12chanobj" title='chanobj' data-ref="12chanobj">chanobj</a>);</td></tr>
+<tr><th id="128">128</th><td>    }</td></tr>
+<tr><th id="129">129</th><td>    <a class="ref fn" href="redis.h.html#decrRefCount" title='decrRefCount' data-ref="decrRefCount">decrRefCount</a>(<a class="local col3 ref" href="#13eventobj" title='eventobj' data-ref="13eventobj">eventobj</a>);</td></tr>
+<tr><th id="130">130</th><td>}</td></tr>
+<tr><th id="131">131</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

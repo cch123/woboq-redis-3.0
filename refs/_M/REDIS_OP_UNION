@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='333'/>
+<doc f='redis/src/redis.h' l='332'>/* Sets operations codes */</doc>
+<use f='redis/src/t_set.c' l='472' u='c'/>
+<use f='redis/src/t_zset.c' l='1981' u='c'/>
+<use f='redis/src/t_zset.c' l='2072' u='c'/>
+<use f='redis/src/t_zset.c' l='2085' u='c'/>

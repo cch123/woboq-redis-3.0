@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.c' l='64' type='int clusterDelNodeSlots(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='1759' u='c' c='clusterProcessPacket'/>
+<def f='redis/src/cluster.c' l='3363' ll='3371' type='int clusterDelNodeSlots(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='3843' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3361'>/* Delete all the slots associated with the specified node.
+ * The number of deleted slots is returned. */</doc>

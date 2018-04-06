@@ -1,0 +1,24 @@
+<dec f='include/stdio.h' l='242' type='int fflush(FILE * __stream)'/>
+<doc f='include/stdio.h' l='238'>/* Flush STREAM, or all streams if STREAM is NULL.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/deps/linenoise/linenoise.c' l='327' u='c' c='linenoiseBeep'/>
+<use f='redis/deps/linenoise/linenoise.c' l='923' u='c' c='linenoisePrintKeyCodes'/>
+<use f='redis/deps/linenoise/linenoise.c' l='968' u='c' c='linenoise'/>
+<use f='redis/deps/lua/src/liolib.c' l='471' u='c' c='io_flush'/>
+<use f='redis/deps/lua/src/liolib.c' l='476' u='c' c='f_flush'/>
+<use f='redis/src/aof.c' l='1113' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1157' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/memtest.c' l='75' u='c' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='87' u='c' c='memtest_progress_step'/>
+<use f='redis/src/rdb.c' l='740' u='c' c='rdbSave'/>
+<use f='redis/src/redis-cli.c' l='677' u='c' c='cliSendCommand'/>
+<use f='redis/src/redis-cli.c' l='709' u='c' c='cliSendCommand'/>
+<use f='redis/src/redis-cli.c' l='727' u='c' c='reconnectingRedisCommand'/>
+<use f='redis/src/redis-cli.c' l='1127' u='c' c='latencyMode'/>
+<use f='redis/src/redis-cli.c' l='1180' u='c' c='showLatencyDistSamples'/>
+<use f='redis/src/redis.c' l='330' u='c' c='redisLogRaw'/>
+<use f='redis/src/rio.c' l='118' u='c' c='rioFileWrite'/>
+<use f='redis/src/rio.c' l='138' u='c' c='rioFileFlush'/>
+<use f='redis/src/zmalloc.c' l='118' u='c' c='zmalloc_default_oom'/>

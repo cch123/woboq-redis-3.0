@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1529' type='void pfselftestCommand(redisClient * c)'/>
+<def f='redis/src/hyperloglog.c' l='1351' ll='1451' type='void pfselftestCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='281' u='r'/>
+<use f='redis/src/redis.c' l='281' u='r'/>
+<use f='redis/src/redis.c' l='281' u='r'/>
+<use f='redis/src/redis.c' l='281' u='r'/>

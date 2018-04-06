@@ -1,0 +1,6 @@
+<dec f='redis/src/slowlog.h' l='36' type='int'/>
+<offset>64</offset>
+<use f='redis/src/slowlog.c' l='53' u='w' c='slowlogCreateEntry'/>
+<use f='redis/src/slowlog.c' l='95' u='r' c='slowlogFreeEntry'/>
+<use f='redis/src/slowlog.c' l='159' u='r' c='slowlogCommand'/>
+<use f='redis/src/slowlog.c' l='160' u='r' c='slowlogCommand'/>

@@ -1,0 +1,23 @@
+<dec f='redis/deps/lua/src/lua.h' l='190' type='void lua_settable(lua_State * L, int idx)'/>
+<def f='redis/deps/lua/src/lapi.c' l='645' ll='654' macro='1' type='void lua_settable(lua_State * L, int idx)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='371' u='c' c='luaL_findtable'/>
+<use f='redis/deps/lua/src/loadlib.c' l='276' u='c' c='ll_register'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='553' u='c' c='mp_decode_to_lua_array'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='565' u='c' c='mp_decode_to_lua_hash'/>
+<use f='redis/src/scripting.c' l='121' u='c' c='redisProtocolToLuaType_Status'/>
+<use f='redis/src/scripting.c' l='131' u='c' c='redisProtocolToLuaType_Error'/>
+<use f='redis/src/scripting.c' l='150' u='c' c='redisProtocolToLuaType_MultiBulk'/>
+<use f='redis/src/scripting.c' l='170' u='c' c='luaPushError'/>
+<use f='redis/src/scripting.c' l='497' u='c' c='luaRedisReturnSingleFieldTable'/>
+<use f='redis/src/scripting.c' l='661' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='666' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='671' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='675' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='679' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='683' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='687' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='692' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='697' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='700' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='710' u='c' c='scriptingInit'/>
+<use f='redis/src/scripting.c' l='714' u='c' c='scriptingInit'/>

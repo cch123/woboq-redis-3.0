@@ -1,0 +1,21 @@
+<dec f='redis/src/latency.h' l='43' type='uint32_t'/>
+<offset>32</offset>
+<doc f='redis/src/latency.h' l='43'>/* Latency in milliseconds. */</doc>
+<use f='redis/src/latency.c' l='116' u='r' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='117' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='122' u='w' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='179' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='181' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='182' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='183' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='184' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='186' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='208' u='r' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='487' u='r' c='latencyCommandReplyWithSamples'/>
+<use f='redis/src/latency.c' l='509' u='r' c='latencyCommandReplyWithLatestEvents'/>
+<use f='redis/src/latency.c' l='530' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='532' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='532' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='533' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='533' u='r' c='latencyCommandGenSparkeline'/>
+<use f='redis/src/latency.c' l='546' u='r' c='latencyCommandGenSparkeline'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/adlist.h' l='75' type='list * listAddNodeHead(list * list, void * value)'/>
+<def f='redis/src/adlist.c' l='80' ll='98' type='list * listAddNodeHead(list * list, void * value)'/>
+<doc f='redis/src/adlist.c' l='74'>/* Add a new node to the list, to head, containing the specified &apos;value&apos;
+ * pointer as value.
+ *
+ * On error, NULL is returned and no operation is performed (i.e. the
+ * list remains unaltered).
+ * On success the &apos;list&apos; pointer you pass to the function is returned. */</doc>
+<use f='redis/src/replication.c' l='1776' u='c' c='replicationScriptCacheAdd'/>
+<use f='redis/src/slowlog.c' l='115' u='c' c='slowlogPushEntryIfNeeded'/>
+<use f='redis/src/t_list.c' l='65' u='c' c='listTypePush'/>

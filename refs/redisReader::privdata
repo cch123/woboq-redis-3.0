@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='139' type='void *'/>
+<offset>4416</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='493' u='r' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='637' u='r' c='redisReaderGetReply'/>

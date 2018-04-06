@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/llex.h' l='31' type='279'/>
+<use f='redis/deps/lua/src/llex.c' l='400' u='r' c='llex'/>
+<use f='redis/deps/lua/src/lparser.c' l='556' c='parlist'/>
+<use f='redis/deps/lua/src/lparser.c' l='752' c='simpleexp'/>

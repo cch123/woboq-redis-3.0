@@ -1,0 +1,21 @@
+<dec f='redis/deps/lua/src/lobject.h' l='63' type='int'/>
+<use f='redis/deps/lua/src/lapi.c' l='339' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='505' macro='1' u='w'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lcode.c' l='266' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ldebug.c' l='186' macro='1' u='w'/>
+<use f='redis/deps/lua/src/ldump.c' l='93' macro='1' u='r'/>
+<use f='redis/deps/lua/src/llex.c' l='122' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lobject.c' l='80' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lobject.c' l='80' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ltable.c' l='107' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lundump.c' l='117' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lvm.c' l='199' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='261' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='261' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='278' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='416' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lvm.c' l='510' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='511' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lvm.c' l='572' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='579' macro='1' u='r'/>

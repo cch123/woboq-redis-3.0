@@ -1,0 +1,8 @@
+<dec f='include/netdb.h' l='573' type='socklen_t'/>
+<use f='redis/deps/hiredis/net.c' l='298' u='r' c='_redisContextConnectTcp'/>
+<use f='redis/deps/hiredis/net.c' l='311' u='r' c='_redisContextConnectTcp'/>
+<offset>128</offset>
+<doc f='include/netdb.h' l='573'>/* Length of socket address.  */</doc>
+<use f='redis/src/anet.c' l='301' u='r' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='312' u='r' c='anetTcpGenericConnect'/>
+<use f='redis/src/anet.c' l='467' u='r' c='_anetTcpServer'/>

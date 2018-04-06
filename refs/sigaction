@@ -1,0 +1,18 @@
+<def f='include/x86_64-linux-gnu/bits/sigaction.h' l='24' ll='50'/>
+<dec f='include/signal.h' l='257' type='int sigaction(int __sig, const struct sigaction *restrict __act, struct sigaction *restrict __oact)'/>
+<size>152</size>
+<doc f='include/signal.h' l='256'>/* Get and/or set the action for signal SIG.  */</doc>
+<doc f='include/x86_64-linux-gnu/bits/sigaction.h' l='23'>/* Structure describing the action to be taken when a signal arrives.  */</doc>
+<mbr r='sigaction::__sigaction_handler' o='0' t='union (anonymous union at /usr/include/x86_64-linux-gnu/bits/sigaction.h:28:5)'/>
+<mbr r='sigaction::sa_mask' o='64' t='__sigset_t'/>
+<mbr r='sigaction::sa_flags' o='1088' t='int'/>
+<mbr r='sigaction::sa_restorer' o='1152' t='void (*)(void)'/>
+<use f='redis/src/debug.c' l='867' u='c' c='sigsegvHandler'/>
+<use f='redis/src/debug.c' l='942' u='c' c='enableWatchdog'/>
+<use f='redis/src/debug.c' l='964' u='c' c='disableWatchdog'/>
+<use f='redis/src/redis.c' l='3503' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3504' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3510' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3511' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3512' u='c' c='setupSignalHandlers'/>
+<use f='redis/src/redis.c' l='3513' u='c' c='setupSignalHandlers'/>

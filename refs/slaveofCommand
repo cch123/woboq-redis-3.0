@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1454' type='void slaveofCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='249' u='r'/>
+<use f='redis/src/redis.c' l='249' u='r'/>
+<use f='redis/src/redis.c' l='249' u='r'/>
+<use f='redis/src/redis.c' l='249' u='r'/>
+<def f='redis/src/replication.c' l='1473' ll='1509' type='void slaveofCommand(redisClient * c)'/>

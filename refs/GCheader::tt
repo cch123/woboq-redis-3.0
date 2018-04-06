@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='43' type='lu_byte'/>
+<offset>64</offset>
+<use f='redis/deps/lua/src/lgc.c' l='72' u='r' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='281' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='379' u='r' c='freeobj'/>
+<use f='redis/deps/lua/src/lgc.c' l='412' u='r' c='sweeplist'/>
+<use f='redis/deps/lua/src/lgc.c' l='690' u='w' c='luaC_link'/>

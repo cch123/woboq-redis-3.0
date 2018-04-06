@@ -1,0 +1,9 @@
+<dec f='redis/src/util.h' l='43' type='int pathIsBaseName(char * path)'/>
+<use f='redis/src/config.c' l='334' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='389' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='618' u='c' c='configSetCommand'/>
+<def f='redis/src/util.c' l='573' ll='575' type='int pathIsBaseName(char * path)'/>
+<doc f='redis/src/util.c' l='569'>/* Return true if the specified path is just a file basename without any
+ * relative or absolute path. This function just checks that no / or \
+ * character exists inside the specified path, that&apos;s enough in the
+ * environments where Redis runs. */</doc>

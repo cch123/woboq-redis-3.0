@@ -1,0 +1,6 @@
+<def f='redis/src/help.h' l='6' ll='19' type='char *[12]'/>
+<use f='redis/src/redis-cli.c' l='218' u='r' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='228' u='r' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='250' u='r' c='cliOutputCommandHelp'/>
+<use f='redis/src/redis-cli.c' l='279' u='r' c='cliOutputHelp'/>
+<use f='redis/src/redis-cli.c' l='281' u='r' c='cliOutputHelp'/>

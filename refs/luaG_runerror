@@ -1,0 +1,22 @@
+<dec f='redis/deps/lua/src/ldebug.h' l='28' type='void luaG_runerror(lua_State * L, const char * fmt)'/>
+<use f='redis/deps/lua/src/lapi.c' l='208' u='c' c='lua_replace'/>
+<use f='redis/deps/lua/src/ldebug.c' l='574' u='c' c='luaG_typeerror'/>
+<use f='redis/deps/lua/src/ldebug.c' l='577' u='c' c='luaG_typeerror'/>
+<use f='redis/deps/lua/src/ldebug.c' l='600' u='c' c='luaG_ordererror'/>
+<use f='redis/deps/lua/src/ldebug.c' l='602' u='c' c='luaG_ordererror'/>
+<def f='redis/deps/lua/src/ldebug.c' l='631' ll='637' type='void luaG_runerror(lua_State * L, const char * fmt)'/>
+<use f='redis/deps/lua/src/ldo.c' l='175' u='c' c='growCI'/>
+<use f='redis/deps/lua/src/ldo.c' l='373' u='c' c='luaD_call'/>
+<use f='redis/deps/lua/src/ldo.c' l='448' u='c' c='lua_yield'/>
+<use f='redis/deps/lua/src/lmem.c' l='52' u='c' c='luaM_growaux_'/>
+<use f='redis/deps/lua/src/lmem.c' l='67' u='c' c='luaM_toobig'/>
+<use f='redis/deps/lua/src/ltable.c' l='156' u='c' c='findindex'/>
+<use f='redis/deps/lua/src/ltable.c' l='282' u='c' c='setnodevector'/>
+<use f='redis/deps/lua/src/ltable.c' l='500' u='c' c='luaH_set'/>
+<use f='redis/deps/lua/src/ltable.c' l='502' u='c' c='luaH_set'/>
+<use f='redis/deps/lua/src/lvm.c' l='130' u='c' c='luaV_gettable'/>
+<use f='redis/deps/lua/src/lvm.c' l='161' u='c' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='299' u='c' c='luaV_concat'/>
+<use f='redis/deps/lua/src/lvm.c' l='672' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='674' u='c' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='676' u='c' c='luaV_execute'/>

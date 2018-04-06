@@ -1,0 +1,12 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='110' type='int'/>
+<offset>64</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='110'>/* index in parent (array) object */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='124' u='r' c='createStringObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='149' u='r' c='createArrayObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='166' u='r' c='createIntegerObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='181' u='r' c='createNilObject'/>
+<use f='redis/deps/hiredis/hiredis.c' l='342' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='346' u='r' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='349' u='w' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='490' u='w' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='634' u='w' c='redisReaderGetReply'/>

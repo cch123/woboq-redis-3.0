@@ -1,0 +1,25 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='129' type='char *'/>
+<offset>1088</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='129'>/* Read buffer */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='195' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='196' u='r' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='197' u='w' c='__redisReaderSetError'/>
+<use f='redis/deps/hiredis/hiredis.c' l='252' u='r' c='readBytes'/>
+<use f='redis/deps/hiredis/hiredis.c' l='319' u='r' c='readLine'/>
+<use f='redis/deps/hiredis/hiredis.c' l='322' u='r' c='readLine'/>
+<use f='redis/deps/hiredis/hiredis.c' l='397' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='400' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='401' u='r' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='566' u='w' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='568' u='r' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='580' u='r' c='redisReaderFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='581' u='r' c='redisReaderFree'/>
+<use f='redis/deps/hiredis/hiredis.c' l='595' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='596' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='597' u='w' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='601' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='604' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='610' u='w' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='611' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='653' u='r' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='655' u='r' c='redisReaderGetReply'/>

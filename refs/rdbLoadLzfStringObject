@@ -1,0 +1,2 @@
+<def f='redis/src/rdb.c' l='249' ll='266' type='robj * rdbLoadLzfStringObject(rio * rdb)'/>
+<use f='redis/src/rdb.c' l='346' u='c' c='rdbGenericLoadStringObject'/>

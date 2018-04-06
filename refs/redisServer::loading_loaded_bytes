@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='690' type='off_t'/>
+<offset>6272</offset>
+<use f='redis/src/rdb.c' l='1090' u='w' c='startLoading'/>
+<use f='redis/src/rdb.c' l='1100' u='w' c='loadingProgress'/>
+<use f='redis/src/redis.c' l='2785' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2787' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2795' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2806' u='r' c='genRedisInfoString'/>

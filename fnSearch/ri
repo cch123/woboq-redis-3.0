@@ -1,0 +1,15 @@
+rioFlush|rioFlush
+rioRead|rioRead
+rioTell|rioTell
+rioWrite|rioWrite
+rioWriteBulkObject|rioWriteBulkObject
+rioFreeFdset|rioFreeFdset
+rioGenericUpdateChecksum|rioGenericUpdateChecksum
+rioInitWithBuffer|rioInitWithBuffer
+rioInitWithFdset|rioInitWithFdset
+rioInitWithFile|rioInitWithFile
+rioSetAutoSync|rioSetAutoSync
+rioWriteBulkCount|rioWriteBulkCount
+rioWriteBulkDouble|rioWriteBulkDouble
+rioWriteBulkLongLong|rioWriteBulkLongLong
+rioWriteBulkString|rioWriteBulkString

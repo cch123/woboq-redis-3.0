@@ -1,0 +1,21 @@
+<dec f='redis/src/redis.h' l='291'/>
+<doc f='redis/src/redis.h' l='290'>/* List related stuff */</doc>
+<use f='redis/src/t_list.c' l='59' u='c'/>
+<use f='redis/src/t_list.c' l='64' u='c'/>
+<use f='redis/src/t_list.c' l='82' u='c'/>
+<use f='redis/src/t_list.c' l='96' u='c'/>
+<use f='redis/src/t_list.c' l='315' u='c'/>
+<use f='redis/src/t_list.c' l='324' u='c'/>
+<use f='redis/src/t_list.c' l='374' u='c'/>
+<use f='redis/src/t_list.c' l='387' u='c'/>
+<use f='redis/src/t_list.c' l='400' u='c'/>
+<use f='redis/src/t_list.c' l='502' u='c'/>
+<use f='redis/src/t_list.c' l='518' u='c'/>
+<use f='redis/src/t_list.c' l='662' u='c'/>
+<use f='redis/src/t_list.c' l='709' u='c'/>
+<use f='redis/src/t_list.c' l='894' u='c'/>
+<use f='redis/src/t_list.c' l='897' u='c'/>
+<use f='redis/src/t_list.c' l='986' u='c'/>
+<use f='redis/src/t_list.c' l='1045' u='c'/>
+<use f='redis/src/t_list.c' l='1065' u='c'/>
+<use f='redis/src/t_list.c' l='1085' u='c'/>

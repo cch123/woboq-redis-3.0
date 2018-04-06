@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lparser.h' l='48' ll='51'/>
+<size>2</size>
+<mbr r='upvaldesc::k' o='0' t='lu_byte'/>
+<mbr r='upvaldesc::info' o='8' t='lu_byte'/>

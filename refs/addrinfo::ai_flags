@@ -1,0 +1,5 @@
+<dec f='include/netdb.h' l='569' type='int'/>
+<offset>0</offset>
+<doc f='include/netdb.h' l='569'>/* Input flags.  */</doc>
+<use f='redis/src/anet.c' l='210' u='w' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='455' u='w' c='_anetTcpServer'/>

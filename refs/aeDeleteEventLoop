@@ -1,0 +1,3 @@
+<dec f='redis/src/ae.h' l='102' type='void aeDeleteEventLoop(aeEventLoop * eventLoop)'/>
+<def f='redis/src/ae.c' l='124' ll='129' type='void aeDeleteEventLoop(aeEventLoop * eventLoop)'/>
+<use f='redis/src/redis.c' l='3686' u='c' c='main'/>

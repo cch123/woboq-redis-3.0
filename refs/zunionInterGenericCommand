@@ -1,0 +1,3 @@
+<def f='redis/src/t_zset.c' l='1843' ll='2082' type='void zunionInterGenericCommand(redisClient * c, robj * dstkey, int op)'/>
+<use f='redis/src/t_zset.c' l='2085' u='c' c='zunionstoreCommand'/>
+<use f='redis/src/t_zset.c' l='2089' u='c' c='zinterstoreCommand'/>

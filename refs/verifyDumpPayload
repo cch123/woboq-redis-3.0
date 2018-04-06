@@ -1,0 +1,6 @@
+<def f='redis/src/cluster.c' l='4337' ll='4354' type='int verifyDumpPayload(unsigned char * p, size_t len)'/>
+<use f='redis/src/cluster.c' l='4411' u='c' c='restoreCommand'/>
+<doc f='redis/src/cluster.c' l='4333'>/* Verify that the RDB version of the dump payload matches the one of this Redis
+ * instance and that the checksum is ok.
+ * If the DUMP payload looks valid REDIS_OK is returned, otherwise REDIS_ERR
+ * is returned. */</doc>

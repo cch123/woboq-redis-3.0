@@ -1,0 +1,4 @@
+<dec f='include/x86_64-linux-gnu/bits/fcntl-linux.h' l='232'/>
+<dec f='include/x86_64-linux-gnu/sys/file.h' l='46'/>
+<use f='redis/src/cluster.c' l='372' u='c'/>
+<doc f='include/x86_64-linux-gnu/sys/file.h' l='45'>/* Can be OR&apos;d in to one of the above.  */</doc>

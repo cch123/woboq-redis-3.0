@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1225' type='int processCommand(redisClient * c)'/>
+<use f='redis/src/networking.c' l='1161' u='c' c='processInputBuffer'/>
+<def f='redis/src/redis.c' l='2126' ll='2305' type='int processCommand(redisClient * c)'/>
+<doc f='redis/src/redis.c' l='2118'>/* If this function gets called we already read a whole
+ * command, arguments are in the client argv/argc fields.
+ * processCommand() execute the command or prepare the
+ * server for a bulk read from the client.
+ *
+ * If 1 is returned the client is still alive and valid and
+ * other operations can be performed by the caller. Otherwise
+ * if 0 is returned the client was destroyed (i.e. after QUIT). */</doc>

@@ -1,0 +1,9 @@
+<def f='redis/src/networking.c' l='204' ll='219' type='int _addReplyToBuffer(redisClient * c, char * s, size_t len)'/>
+<use f='redis/src/networking.c' l='331' u='c' c='addReply'/>
+<use f='redis/src/networking.c' l='342' u='c' c='addReply'/>
+<use f='redis/src/networking.c' l='348' u='c' c='addReply'/>
+<use f='redis/src/networking.c' l='362' u='c' c='addReplySds'/>
+<use f='redis/src/networking.c' l='372' u='c' c='addReplyString'/>
+<doc f='redis/src/networking.c' l='200'>/* -----------------------------------------------------------------------------
+ * Low level functions to add more data to output buffers.
+ * -------------------------------------------------------------------------- */</doc>

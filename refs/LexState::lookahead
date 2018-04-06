@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/llex.h' l='60' type='Token'/>
+<offset>256</offset>
+<doc f='redis/deps/lua/src/llex.h' l='60'>/* look ahead token */</doc>
+<use f='redis/deps/lua/src/llex.c' l='143' u='m' c='luaX_setinput'/>
+<use f='redis/deps/lua/src/llex.c' l='450' u='m' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='451' u='r' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='452' u='m' c='luaX_next'/>
+<use f='redis/deps/lua/src/llex.c' l='461' u='m' c='luaX_lookahead'/>
+<use f='redis/deps/lua/src/llex.c' l='461' u='m' c='luaX_lookahead'/>
+<use f='redis/deps/lua/src/lparser.c' l='517' u='m' c='constructor'/>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='336'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='331'>/*
+@@ LUA_COMPAT_VARARG controls compatibility with old vararg feature.
+** CHANGE it to undefined as soon as your programs use only &apos;...&apos; to
+** access vararg parameters (instead of the old &apos;arg&apos; table).
+*/</doc>
+<use f='redis/deps/lua/src/ldo.c' l='215' u='a'/>
+<use f='redis/deps/lua/src/lparser.c' l='558' u='a'/>

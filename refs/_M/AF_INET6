@@ -1,0 +1,12 @@
+<dec f='include/x86_64-linux-gnu/bits/socket.h' l='100'/>
+<use f='redis/deps/hiredis/net.c' l='275' u='c'/>
+<use f='redis/src/anet.c' l='223' u='c'/>
+<use f='redis/src/anet.c' l='465' u='c'/>
+<use f='redis/src/anet.c' l='489' u='c'/>
+<use f='redis/src/anet.c' l='540' u='c'/>
+<use f='redis/src/anet.c' l='567' u='c'/>
+<use f='redis/src/anet.c' l='569' u='c'/>
+<use f='redis/src/anet.c' l='608' u='c'/>
+<use f='redis/src/cluster.c' l='1243' u='c'/>
+<use f='redis/src/cluster.c' l='1246' u='c'/>
+<use f='redis/src/cluster.c' l='1266' u='c'/>

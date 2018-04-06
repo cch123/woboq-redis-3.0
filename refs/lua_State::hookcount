@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='119' type='int'/>
+<offset>864</offset>
+<use f='redis/deps/lua/src/ldebug.c' l='63' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lstate.c' l='93' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lstate.c' l='128' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lvm.c' l='64' u='r' c='traceexec'/>
+<use f='redis/deps/lua/src/lvm.c' l='65' macro='1' u='w'/>
+<use f='redis/deps/lua/src/lvm.c' l='393' u='w' c='luaV_execute'/>

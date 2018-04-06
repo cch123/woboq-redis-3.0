@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lstate.h' l='123' type='GCObject *'/>
+<offset>1216</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='123'>/* list of open upvalues in this stack */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='130' u='r' c='correctstack'/>
+<use f='redis/deps/lua/src/lfunc.c' l='55' u='a' c='luaF_findupval'/>
+<use f='redis/deps/lua/src/lfunc.c' l='99' u='r' c='luaF_close'/>
+<use f='redis/deps/lua/src/lfunc.c' l='99' u='r' c='luaF_close'/>
+<use f='redis/deps/lua/src/lfunc.c' l='102' u='w' c='luaF_close'/>
+<use f='redis/deps/lua/src/lgc.c' l='413' u='a' c='sweeplist'/>
+<use f='redis/deps/lua/src/lstate.c' l='94' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lvm.c' l='619' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='642' u='r' c='luaV_execute'/>

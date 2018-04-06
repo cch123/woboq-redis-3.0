@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/ltm.h' l='20' type='1'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='143' u='r' c='luaV_settable'/>
+<use f='redis/deps/lua/src/lvm.c' l='151' u='r' c='luaV_settable'/>

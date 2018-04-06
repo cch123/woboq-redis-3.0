@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lzio.h' l='16'/>
+<use f='redis/deps/lua/src/llex.c' l='231' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='282' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='302' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='358' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='409' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='28' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='37' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='38' u='c'/>
+<use f='redis/deps/lua/src/lzio.c' l='61' u='c'/>

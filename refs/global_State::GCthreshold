@@ -1,0 +1,33 @@
+<dec f='redis/deps/lua/src/lstate.h' l='82' type='lu_mem'/>
+<use f='redis/deps/lua/src/lapi.c' l='143' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='352' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='447' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='466' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='477' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='489' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='580' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='906' u='w' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='910' u='w' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='929' u='w' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='931' u='w' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='932' u='r' c='lua_gc'/>
+<use f='redis/deps/lua/src/lapi.c' l='994' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lapi.c' l='1028' macro='1' u='r'/>
+<offset>896</offset>
+<use f='redis/deps/lua/src/ldo.c' l='219' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='380' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldo.c' l='497' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lgc.c' l='461' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='463' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='469' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='615' u='r' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='623' u='w' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='626' u='w' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='w' c='luaC_step'/>
+<use f='redis/deps/lua/src/lgc.c' l='59' u='w' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/llex.c' l='123' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lstate.c' l='80' u='w' c='f_luaopen'/>
+<use f='redis/deps/lua/src/lstate.c' l='162' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lvm.c' l='465' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='537' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lvm.c' l='740' macro='1' u='r'/>

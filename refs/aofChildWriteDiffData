@@ -1,0 +1,5 @@
+<def f='redis/src/aof.c' l='94' ll='120' type='void aofChildWriteDiffData(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/aof.c' l='165' u='r' c='aofRewriteBufferAppend'/>
+<doc f='redis/src/aof.c' l='91'>/* Event handler used to send data to the child process doing the AOF
+ * rewrite. We send pieces of our AOF differences buffer so that the final
+ * write when the child finishes the rewrite will be small. */</doc>

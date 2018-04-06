@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='610' type='clientBufferLimitsConfig [3]'/>
+<def f='redis/src/config.c' l='53' ll='57' type='clientBufferLimitsConfig [3]'/>
+<use f='redis/src/config.c' l='1607' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1609' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1611' u='m' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/redis.c' l='1518' u='r' c='initServerConfig'/>

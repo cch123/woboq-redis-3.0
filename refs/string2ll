@@ -1,0 +1,15 @@
+<dec f='redis/src/util.h' l='39' type='int string2ll(const char * s, size_t slen, long long * value)'/>
+<use f='redis/src/networking.c' l='1013' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/networking.c' l='1060' u='c' c='processMultibulkBuffer'/>
+<use f='redis/src/object.c' l='359' u='c' c='isObjectRepresentableAsLongLong'/>
+<use f='redis/src/scripting.c' l='96' u='c' c='redisProtocolToLuaType_Int'/>
+<use f='redis/src/scripting.c' l='105' u='c' c='redisProtocolToLuaType_Bulk'/>
+<use f='redis/src/scripting.c' l='140' u='c' c='redisProtocolToLuaType_MultiBulk'/>
+<use f='redis/src/t_zset.c' l='1714' u='c' c='zuiLongLongFromValue'/>
+<use f='redis/src/t_zset.c' l='1720' u='c' c='zuiLongLongFromValue'/>
+<def f='redis/src/util.c' l='322' ll='383' type='int string2ll(const char * s, size_t slen, long long * value)'/>
+<use f='redis/src/util.c' l='391' u='c' c='string2l'/>
+<doc f='redis/src/util.c' l='319'>/* Convert a string into a long long. Returns 1 if the string could be parsed
+ * into a (non-overflowing) long long, 0 otherwise. The value will be set to
+ * the parsed value when appropriate. */</doc>
+<use f='redis/src/ziplist.c' l='322' u='c' c='zipTryEncoding'/>

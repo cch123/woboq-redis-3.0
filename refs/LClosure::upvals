@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lobject.h' l='305' type='UpVal *[1]'/>
+<use f='redis/deps/lua/src/lapi.c' l='1051' u='r' c='aux_upvalue'/>
+<offset>320</offset>
+<use f='redis/deps/lua/src/ldo.c' l='503' u='w' c='f_parser'/>
+<use f='redis/deps/lua/src/lfunc.c' l='39' u='w' c='luaF_newLclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='236' u='r' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lgc.c' l='236' u='r' c='traverseclosure'/>
+<use f='redis/deps/lua/src/lvm.c' l='429' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='452' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='733' u='w' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='733' u='r' c='luaV_execute'/>
+<use f='redis/deps/lua/src/lvm.c' l='736' u='w' c='luaV_execute'/>

@@ -1,0 +1,2 @@
+<def f='redis/src/sort.c' l='38' ll='43' type='redisSortOperation * createSortOperation(int type, robj * pattern)'/>
+<use f='redis/src/sort.c' l='269' u='c' c='sortCommand'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/dict.h' l='94' type='long long'/>
+<offset>320</offset>
+<doc f='redis/src/dict.h' l='93'>/* unsafe iterator fingerprint for misuse detection. */</doc>
+<use f='redis/src/dict.c' l='584' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='616' u='r' c='dictReleaseIterator'/>

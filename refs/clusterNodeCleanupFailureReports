@@ -1,0 +1,8 @@
+<def f='redis/src/cluster.c' l='713' ll='727' type='void clusterNodeCleanupFailureReports(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='756' u='c' c='clusterNodeDelFailureReport'/>
+<use f='redis/src/cluster.c' l='764' u='c' c='clusterNodeFailureReportsCount'/>
+<doc f='redis/src/cluster.c' l='708'>/* Remove failure reports that are too old, where too old means reasonably
+ * older than the global node timeout. Note that anyway for a node to be
+ * flagged as FAIL we need to have a local PFAIL state that is at least
+ * older than the global node timeout, so we don&apos;t just trust the number
+ * of failure reports from other nodes. */</doc>

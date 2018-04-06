@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='538' type='int'/>
+<offset>1312</offset>
+<doc f='redis/src/redis.h' l='538'>/* Install slave write handler on ACK. */</doc>
+<use f='redis/src/networking.c' l='103' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='169' u='r' c='prepareClientToWrite'/>
+<use f='redis/src/replication.c' l='402' u='w' c='masterTryPartialResynchronization'/>
+<use f='redis/src/replication.c' l='631' u='r' c='replconfCommand'/>
+<use f='redis/src/replication.c' l='663' u='w' c='putSlaveOnline'/>
+<use f='redis/src/replication.c' l='776' u='w' c='updateSlavesWaitingBgsave'/>

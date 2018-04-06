@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='62' type='int strbuf_empty_length(strbuf_t * s)'/>
+<def f='redis/deps/lua/src/strbuf.h' l='90' ll='93' type='int strbuf_empty_length(strbuf_t * s)'/>
+<use f='redis/deps/lua/src/strbuf.h' l='97' u='c' c='strbuf_ensure_empty_length'/>
+<doc f='redis/deps/lua/src/strbuf.h' l='88'>/* Return bytes remaining in the string buffer
+ * Ensure there is space for a NULL terminator. */</doc>
+<use f='redis/deps/lua/src/strbuf.c' l='186' u='c' c='strbuf_append_string'/>
+<use f='redis/deps/lua/src/strbuf.c' l='191' u='c' c='strbuf_append_string'/>
+<use f='redis/deps/lua/src/strbuf.c' l='234' u='c' c='strbuf_append_fmt_retry'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='998' type='dictType'/>
+<use f='redis/src/object.c' l='223' u='a' c='createZsetObject'/>
+<def f='redis/src/redis.c' l='535' ll='542' type='dictType'/>
+<doc f='redis/src/redis.c' l='534'>/* Sorted sets hash (note: a skiplist is used in addition to the hash table) */</doc>
+<use f='redis/src/t_zset.c' l='1111' u='a' c='zsetConvert'/>

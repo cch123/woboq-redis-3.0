@@ -1,0 +1,5 @@
+<def f='redis/src/t_zset.c' l='949' ll='972' type='unsigned char * zzlInsertAt(unsigned char * zl, unsigned char * eptr, robj * ele, double score)'/>
+<use f='redis/src/t_zset.c' l='990' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='995' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='1006' u='c' c='zzlInsert'/>
+<use f='redis/src/t_zset.c' l='1153' u='c' c='zsetConvert'/>

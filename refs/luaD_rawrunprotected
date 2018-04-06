@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/ldo.h' l='52' type='int luaD_rawrunprotected(lua_State * L, Pfunc f, void * ud)'/>
+<def f='redis/deps/lua/src/ldo.c' l='111' ll='121' type='int luaD_rawrunprotected(lua_State * L, Pfunc f, void * ud)'/>
+<use f='redis/deps/lua/src/ldo.c' l='428' u='c' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='464' u='c' c='luaD_pcall'/>
+<use f='redis/deps/lua/src/lstate.c' l='182' u='c' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='209' u='c' c='lua_close'/>

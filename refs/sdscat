@@ -1,0 +1,88 @@
+<dec f='redis/deps/hiredis/sds.h' l='66' type='sds sdscat(sds s, const char * t)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='748' u='c' c='redisvFormatCommand'/>
+<def f='redis/deps/hiredis/sds.c' l='257' ll='259' type='sds sdscat(sds s, const char * t)'/>
+<use f='redis/deps/hiredis/sds.c' l='405' u='c' c='sdscatvprintf'/>
+<use f='redis/deps/hiredis/sds.c' l='959' u='c' c='sdsjoin'/>
+<use f='redis/deps/hiredis/sds.c' l='960' u='c' c='sdsjoin'/>
+<doc f='redis/deps/hiredis/sds.c' l='253'>/* Append the specified null termianted C string to the sds string &apos;s&apos;.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<dec f='redis/src/sds.h' l='66' type='sds sdscat(sds s, const char * t)'/>
+<use f='redis/src/cluster.c' l='3603' u='c' c='representRedisNodeFlags'/>
+<use f='redis/src/cluster.c' l='3608' u='c' c='representRedisNodeFlags'/>
+<use f='redis/src/config.c' l='593' u='c' c='loadServerConfig'/>
+<use f='redis/src/config.c' l='598' u='c' c='loadServerConfig'/>
+<use f='redis/src/config.c' l='599' u='c' c='loadServerConfig'/>
+<use f='redis/src/latency.c' l='241' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='260' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='389' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='391' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='396' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='398' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='411' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='416' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='426' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='430' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='434' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='438' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='442' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='446' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='450' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='454' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='458' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='462' u='c' c='createLatencyReport'/>
+<use f='redis/src/latency.c' l='466' u='c' c='createLatencyReport'/>
+<use f='redis/src/redis-cli.c' l='211' u='c' c='cliVersion'/>
+<use f='redis/src/redis-cli.c' l='334' u='c' c='completionCallback'/>
+<use f='redis/src/redis-cli.c' l='424' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='425' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='434' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='437' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='441' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='459' u='c' c='cliFormatReplyTTY'/>
+<use f='redis/src/redis-cli.c' l='505' u='c' c='cliFormatReplyRaw'/>
+<use f='redis/src/redis-cli.c' l='524' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='537' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='543' u='c' c='cliFormatReplyCSV'/>
+<use f='redis/src/redis-cli.c' l='619' u='c' c='cliReadReply'/>
+<use f='redis/src/redis-cli.c' l='624' u='c' c='cliReadReply'/>
+<use f='redis/src/redis.c' l='2626' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2678' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2705' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2729' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2815' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2860' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2978' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2993' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3009' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3018' u='c' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='3625' u='c' c='main'/>
+<use f='redis/src/redis.c' l='3626' u='c' c='main'/>
+<use f='redis/src/redis.c' l='3627' u='c' c='main'/>
+<use f='redis/src/redis.c' l='3631' u='c' c='main'/>
+<use f='redis/src/replication.c' l='1078' u='c' c='sendSynchronousCommand'/>
+<use f='redis/src/scripting.c' l='891' u='c' c='luaCreateFunction'/>
+<def f='redis/src/sds.c' l='257' ll='259' type='sds sdscat(sds s, const char * t)'/>
+<use f='redis/src/sds.c' l='405' u='c' c='sdscatvprintf'/>
+<use f='redis/src/sds.c' l='959' u='c' c='sdsjoin'/>
+<use f='redis/src/sds.c' l='960' u='c' c='sdsjoin'/>
+<doc f='redis/src/sds.c' l='253'>/* Append the specified null termianted C string to the sds string &apos;s&apos;.
+ *
+ * After the call, the passed sds string is no longer valid and all the
+ * references must be substituted with the new pointer returned by the call. */</doc>
+<use f='redis/src/sentinel.c' l='2425' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2426' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2427' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2428' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2429' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2430' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2431' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2433' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2434' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2435' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2436' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2437' u='c' c='addReplySentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='2805' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sentinel.c' l='2816' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/util.c' l='539' u='c' c='getAbsolutePath'/>

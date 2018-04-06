@@ -1,0 +1,5 @@
+<dec f='include/ctype.h' l='203'/>
+<use f='redis/deps/hiredis/hiredis.c' l='226' u='c'/>
+<use f='redis/deps/hiredis/sds.c' l='758' u='c'/>
+<use f='redis/deps/linenoise/linenoise.c' l='921' u='c'/>
+<use f='redis/src/sds.c' l='758' u='c'/>

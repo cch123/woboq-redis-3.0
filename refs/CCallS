@@ -1,0 +1,6 @@
+<def f='redis/deps/lua/src/lapi.c' l='831' ll='834'/>
+<size>16</size>
+<doc f='redis/deps/lua/src/lapi.c' l='828'>/*
+** Execute a protected C call.
+*/</doc>
+<doc f='redis/deps/lua/src/lapi.c' l='831'>/* data to `f_Ccall&apos; */</doc>

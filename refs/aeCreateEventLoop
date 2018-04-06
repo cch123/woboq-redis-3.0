@@ -1,0 +1,4 @@
+<dec f='redis/src/ae.h' l='101' type='aeEventLoop * aeCreateEventLoop(int setsize)'/>
+<def f='redis/src/ae.c' l='63' ll='92' type='aeEventLoop * aeCreateEventLoop(int setsize)'/>
+<doc f='redis/src/ae.h' l='100'>/* Prototypes */</doc>
+<use f='redis/src/redis.c' l='1772' u='c' c='initServer'/>

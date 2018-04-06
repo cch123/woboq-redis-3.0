@@ -1,0 +1,9 @@
+<def f='redis/src/sentinel.c' l='1692' ll='1701' type='void sentinelSetClientName(sentinelRedisInstance * ri, redisAsyncContext * c, char * type)'/>
+<use f='redis/src/sentinel.c' l='1725' u='c' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1749' u='c' c='sentinelReconnectInstance'/>
+<doc f='redis/src/sentinel.c' l='1686'>/* Use CLIENT SETNAME to name the connection in the Redis instance as
+ * sentinel-&lt;first_8_chars_of_runid&gt;-&lt;connection_type&gt;
+ * The connection type is &quot;cmd&quot; or &quot;pubsub&quot; as specified by &apos;type&apos;.
+ *
+ * This makes it possible to list all the sentinel instances connected
+ * to a Redis servewr with CLIENT LIST, grepping for a specific name format. */</doc>

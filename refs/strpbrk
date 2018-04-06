@@ -1,0 +1,2 @@
+<dec f='include/string.h' l='310' type='char * strpbrk(const char * __s, const char * __accept)'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='503' u='c' c='str_find_aux'/>

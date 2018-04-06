@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='100'/>
+<use f='redis/deps/lua/src/ldump.c' l='93' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='80' u='c'/>
+<use f='redis/deps/lua/src/lobject.c' l='80' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='107' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='261' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='261' u='c'/>

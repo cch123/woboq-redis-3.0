@@ -1,0 +1,7 @@
+<dec f='redis/src/anet.h' l='71' type='int anetKeepAlive(char * err, int fd, int interval)'/>
+<def f='redis/src/anet.c' l='95' ll='139' type='int anetKeepAlive(char * err, int fd, int interval)'/>
+<doc f='redis/src/anet.c' l='92'>/* Set TCP keep alive option to detect dead peers. The interval option
+ * is only used for Linux as we are using Linux-specific APIs to set
+ * the probe send time, interval, and count. */</doc>
+<use f='redis/src/networking.c' l='75' u='c' c='createClient'/>
+<use f='redis/src/redis-cli.c' l='401' u='c' c='cliConnect'/>

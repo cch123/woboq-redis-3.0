@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1081' type='robj * listTypePop(robj * subject, int where)'/>
+<def f='redis/src/t_list.c' l='75' ll='110' type='robj * listTypePop(robj * subject, int where)'/>
+<use f='redis/src/t_list.c' l='498' u='c' c='popGenericCommand'/>
+<use f='redis/src/t_list.c' l='729' u='c' c='rpoplpushCommand'/>
+<use f='redis/src/t_list.c' l='987' u='c' c='handleClientsBlockedOnLists'/>
+<use f='redis/src/t_list.c' l='1046' u='c' c='blockingPopGenericCommand'/>

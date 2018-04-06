@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='505'/>
+<use f='redis/deps/lua/src/lua.h' l='99' u='c'/>

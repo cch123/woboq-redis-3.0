@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='686' type='uint64_t'/>
+<offset>6080</offset>
+<doc f='redis/src/redis.h' l='686'>/* Next client unique ID. Incremental. */</doc>
+<use f='redis/src/networking.c' l='86' u='w' c='createClient'/>
+<use f='redis/src/redis.c' l='1480' u='w' c='initServerConfig'/>

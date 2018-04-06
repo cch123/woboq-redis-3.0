@@ -1,0 +1,4 @@
+<def f='redis/src/t_zset.c' l='1381' ll='1479' type='void zremrangeGenericCommand(redisClient * c, int rangetype)'/>
+<use f='redis/src/t_zset.c' l='1482' u='c' c='zremrangebyrankCommand'/>
+<use f='redis/src/t_zset.c' l='1486' u='c' c='zremrangebyscoreCommand'/>
+<use f='redis/src/t_zset.c' l='1490' u='c' c='zremrangebylexCommand'/>

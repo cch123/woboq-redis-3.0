@@ -1,0 +1,6 @@
+<def f='redis/src/memtest.c' l='121' ll='147' type='void memtest_fill_random(unsigned long * l, size_t bytes)'/>
+<use f='redis/src/memtest.c' l='229' u='c' c='memtest_test'/>
+<doc f='redis/src/memtest.c' l='117'>/* Fill words stepping a single page at every write, so we continue to
+ * touch all the pages in the smallest amount of time reducing the
+ * effectiveness of caches, and making it hard for the OS to transfer
+ * pages on the swap. */</doc>

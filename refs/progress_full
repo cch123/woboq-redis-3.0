@@ -1,0 +1,4 @@
+<def f='redis/src/memtest.c' l='61' type='size_t'/>
+<use f='redis/src/memtest.c' l='74' u='w' c='memtest_progress_start'/>
+<use f='redis/src/memtest.c' l='83' u='r' c='memtest_progress_step'/>
+<doc f='redis/src/memtest.c' l='61'>/* How many chars to write to fill the progress bar. */</doc>

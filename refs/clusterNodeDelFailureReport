@@ -1,0 +1,14 @@
+<def f='redis/src/cluster.c' l='740' ll='758' type='int clusterNodeDelFailureReport(clusterNode * node, clusterNode * sender)'/>
+<use f='redis/src/cluster.c' l='880' u='c' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='1321' u='c' c='clusterProcessGossipSection'/>
+<doc f='redis/src/cluster.c' l='729'>/* Remove the failing report for &apos;node&apos; if it was previously considered
+ * failing by &apos;sender&apos;. This function is called when a node informs us via
+ * gossip that a node is OK from its point of view (no FAIL or PFAIL flags).
+ *
+ * Note that this function is called relatively often as it gets called even
+ * when there are no nodes failing, and is O(N), however when the cluster is
+ * fine the failure reports list is empty so the function runs in constant
+ * time.
+ *
+ * The function returns 1 if the failure report was found and removed.
+ * Otherwise 0 is returned. */</doc>

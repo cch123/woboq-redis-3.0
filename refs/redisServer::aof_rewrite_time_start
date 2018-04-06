@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='753' type='time_t'/>
+<use f='redis/src/aof.c' l='227' u='w' c='stopAppendOnly'/>
+<use f='redis/src/aof.c' l='1309' u='w' c='rewriteAppendOnlyFileBackground'/>
+<use f='redis/src/aof.c' l='1501' u='r' c='backgroundRewriteDoneHandler'/>
+<use f='redis/src/aof.c' l='1502' u='w' c='backgroundRewriteDoneHandler'/>
+<offset>13440</offset>
+<doc f='redis/src/redis.h' l='753'>/* Current AOF rewrite start time. */</doc>
+<use f='redis/src/redis.c' l='1434' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2759' u='r' c='genRedisInfoString'/>

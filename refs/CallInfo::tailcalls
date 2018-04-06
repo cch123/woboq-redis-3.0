@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='54' type='int'/>
+<offset>288</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='54'>/* number of tail calls lost under this entry */</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='91' u='r' c='lua_getstack'/>
+<use f='redis/deps/lua/src/ldebug.c' l='546' u='r' c='getfuncname'/>
+<use f='redis/deps/lua/src/ldo.c' l='295' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='336' u='w' c='callrethooks'/>
+<use f='redis/deps/lua/src/lvm.c' l='626' u='w' c='luaV_execute'/>

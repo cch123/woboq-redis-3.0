@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='2282' ll='2293' type='void sentinelForceHelloUpdateDictOfRedisInstances(dict * instances)'/>
+<use f='redis/src/sentinel.c' l='2307' u='c' c='sentinelForceHelloUpdateForMaster'/>
+<use f='redis/src/sentinel.c' l='2308' u='c' c='sentinelForceHelloUpdateForMaster'/>
+<doc f='redis/src/sentinel.c' l='2280'>/* Reset last_pub_time in all the instances in the specified dictionary
+ * in order to force the delivery of an Hello update ASAP. */</doc>

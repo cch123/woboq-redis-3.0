@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1345' type='void clusterInit()'/>
+<doc f='redis/src/redis.h' l='1344'>/* Cluster */</doc>
+<def f='redis/src/cluster.c' l='391' ll='471' type='void clusterInit()'/>
+<use f='redis/src/redis.c' l='1876' u='c' c='initServer'/>

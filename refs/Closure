@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lobject.h' l='309' ll='312'/>
+<size>56</size>
+<mbr r='Closure::c' o='0' t='CClosure'/>
+<mbr r='Closure::l' o='0' t='LClosure'/>

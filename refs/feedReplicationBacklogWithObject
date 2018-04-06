@@ -1,0 +1,5 @@
+<def f='redis/src/replication.c' l='152' ll='165' type='void feedReplicationBacklogWithObject(robj * o)'/>
+<use f='redis/src/replication.c' l='198' u='c' c='replicationFeedSlaves'/>
+<use f='redis/src/replication.c' l='234' u='c' c='replicationFeedSlaves'/>
+<doc f='redis/src/replication.c' l='150'>/* Wrapper for feedReplicationBacklog() that takes Redis string objects
+ * as input. */</doc>

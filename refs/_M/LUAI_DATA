@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='188'/>
+<use f='redis/deps/lua/src/lobject.h' l='365' u='c'/>
+<use f='redis/deps/lua/src/ltm.h' l='46' u='c'/>
+<use f='redis/deps/lua/src/llex.h' l='40' u='c'/>
+<use f='redis/deps/lua/src/lopcodes.h' l='252' u='c'/>
+<use f='redis/deps/lua/src/lopcodes.h' l='261' u='c'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/cluster.c' l='2998' ll='3016' type='void clusterHandleManualFailover()'/>
+<use f='redis/src/cluster.c' l='3245' u='c' c='clusterCron'/>
+<doc f='redis/src/cluster.c' l='2996'>/* This function is called from the cluster cron function in order to go
+ * forward with a manual failover state machine. */</doc>

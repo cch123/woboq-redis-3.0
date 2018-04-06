@@ -1,0 +1,12 @@
+<dec f='include/stdio.h' l='858' type='int fileno(FILE * __stream)'/>
+<doc f='include/stdio.h' l='857'>/* Return the system file descriptor for STREAM.  */</doc>
+<use f='redis/src/aof.c' l='607' u='c' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1114' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1158' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/cluster.c' l='109' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/rdb.c' l='741' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='1091' u='c' c='startLoading'/>
+<use f='redis/src/redis-cli.c' l='853' u='c' c='readArgFromStdin'/>
+<use f='redis/src/redis-cli.c' l='976' u='c' c='repl'/>
+<use f='redis/src/redis-cli.c' l='2211' u='c' c='main'/>
+<use f='redis/src/rio.c' l='119' u='c' c='rioFileWrite'/>

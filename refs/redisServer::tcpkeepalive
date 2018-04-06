@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='729' type='int'/>
+<offset>11840</offset>
+<doc f='redis/src/redis.h' l='729'>/* Set SO_KEEPALIVE if non-zero. */</doc>
+<use f='redis/src/config.c' l='121' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='122' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='699' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1033' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1796' u='r' c='rewriteConfig'/>
+<use f='redis/src/networking.c' l='74' u='r' c='createClient'/>
+<use f='redis/src/networking.c' l='75' u='r' c='createClient'/>
+<use f='redis/src/redis.c' l='1415' u='w' c='initServerConfig'/>

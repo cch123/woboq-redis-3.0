@@ -1,0 +1,27 @@
+<def f='redis/src/networking.c' l='153' ll='182' type='int prepareClientToWrite(redisClient * c)'/>
+<use f='redis/src/networking.c' l='321' u='c' c='addReply'/>
+<use f='redis/src/networking.c' l='357' u='c' c='addReplySds'/>
+<use f='redis/src/networking.c' l='371' u='c' c='addReplyString'/>
+<use f='redis/src/networking.c' l='427' u='c' c='addDeferredMultiBulkLength'/>
+<doc f='redis/src/networking.c' l='131'>/* This function is called every time we are going to transmit new data
+ * to the client. The behavior is the following:
+ *
+ * If the client should receive new data (normal clients will) the function
+ * returns REDIS_OK, and make sure to install the write handler in our event
+ * loop so that when the socket is writable new data gets written.
+ *
+ * If the client should not receive new data, because it is a fake client
+ * (used to load AOF in memory), a master or because the setup of the write
+ * handler failed, the function returns REDIS_ERR.
+ *
+ * The function may return REDIS_OK without actually installing the write
+ * event handler in the following cases:
+ *
+ * 1) The event handler should already be installed since the output buffer
+ *    already contained something.
+ * 2) The client is a slave but not yet online, so we want to just accumulate
+ *    writes in the buffer but not actually sending them yet.
+ *
+ * Typically gets called every time a reply is built, before adding more
+ * data to the clients output buffers. If the function returns REDIS_ERR no
+ * data should be appended to the output buffers. */</doc>

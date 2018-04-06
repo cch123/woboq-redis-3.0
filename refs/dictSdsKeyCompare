@@ -1,0 +1,16 @@
+<def f='redis/src/redis.c' l='426' ll='436' type='int dictSdsKeyCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/redis.c' l='467' u='c' c='dictObjKeyCompare'/>
+<use f='redis/src/redis.c' l='495' u='c' c='dictEncObjKeyCompare'/>
+<use f='redis/src/redis.c' l='549'/>
+<use f='redis/src/redis.c' l='549'/>
+<use f='redis/src/redis.c' l='569'/>
+<use f='redis/src/redis.c' l='569'/>
+<use f='redis/src/redis.c' l='612'/>
+<use f='redis/src/redis.c' l='612'/>
+<use f='redis/src/redis.c' l='634'/>
+<use f='redis/src/redis.c' l='634'/>
+<dec f='redis/src/sentinel.c' l='348' type='int dictSdsKeyCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/sentinel.c' l='364' u='r'/>
+<use f='redis/src/sentinel.c' l='364' u='r'/>
+<use f='redis/src/sentinel.c' l='377'/>
+<use f='redis/src/sentinel.c' l='377'/>

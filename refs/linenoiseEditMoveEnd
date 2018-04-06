@@ -1,0 +1,6 @@
+<def f='redis/deps/linenoise/linenoise.c' l='645' ll='650' type='void linenoiseEditMoveEnd(struct linenoiseState * l)'/>
+<use f='redis/deps/linenoise/linenoise.c' l='774' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='851' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='864' u='c' c='linenoiseEdit'/>
+<use f='redis/deps/linenoise/linenoise.c' l='886' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='644'>/* Move cursor to the end of the line. */</doc>

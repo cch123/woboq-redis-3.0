@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='723' type='long long [16]'/>
+<offset>128</offset>
+<use f='redis/src/redis.c' l='887' u='w' c='trackInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='901' u='r' c='getInstantaneousMetric'/>
+<use f='redis/src/redis.c' l='1738' u='r' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='1739' u='r' c='resetServerStats'/>

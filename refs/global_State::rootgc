@@ -1,0 +1,14 @@
+<dec f='redis/deps/lua/src/lstate.h' l='75' type='GCObject *'/>
+<offset>320</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='75'>/* list of all collectable objects */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='422' u='r' c='sweeplist'/>
+<use f='redis/deps/lua/src/lgc.c' l='423' u='w' c='sweeplist'/>
+<use f='redis/deps/lua/src/lgc.c' l='487' u='a' c='luaC_freeall'/>
+<use f='redis/deps/lua/src/lgc.c' l='550' u='a' c='atomic'/>
+<use f='redis/deps/lua/src/lgc.c' l='640' u='a' c='luaC_fullgc'/>
+<use f='redis/deps/lua/src/lgc.c' l='687' u='r' c='luaC_link'/>
+<use f='redis/deps/lua/src/lgc.c' l='688' u='w' c='luaC_link'/>
+<use f='redis/deps/lua/src/lgc.c' l='697' u='r' c='luaC_linkupval'/>
+<use f='redis/deps/lua/src/lgc.c' l='698' u='w' c='luaC_linkupval'/>
+<use f='redis/deps/lua/src/lstate.c' l='170' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='172' u='a' c='lua_newstate'/>

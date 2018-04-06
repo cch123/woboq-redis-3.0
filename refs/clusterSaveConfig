@@ -1,0 +1,15 @@
+<def f='redis/src/cluster.c' l='297' ll='342' type='int clusterSaveConfig(int do_fsync)'/>
+<use f='redis/src/cluster.c' l='345' u='c' c='clusterSaveConfigOrDie'/>
+<use f='redis/src/cluster.c' l='4041' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='285'>/* Cluster node configuration is exactly the same as CLUSTER NODES output.
+ *
+ * This function writes the node config and returns 0, on error -1
+ * is returned.
+ *
+ * Note: we need to write the file in an atomic way from the point of view
+ * of the POSIX filesystem semantics, so that if the server is stopped
+ * or crashes during the write, we&apos;ll end with either the old file or the
+ * new one. Since we have the full payload to write available we can use
+ * a single write to write the whole file. If the pre-existing file was
+ * bigger we pad our payload with newlines that are anyway ignored and truncate
+ * the file afterward. */</doc>

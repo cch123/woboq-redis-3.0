@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1126' type='robj * createStringObjectFromLongDouble(long double value, int humanfriendly)'/>
+<use f='redis/src/db.c' l='384' u='c' c='scanCallback'/>
+<def f='redis/src/object.c' l='118' ll='152' type='robj * createStringObjectFromLongDouble(long double value, int humanfriendly)'/>
+<doc f='redis/src/object.c' l='112'>/* Create a string object from a long double. If humanfriendly is non-zero
+ * it does not use exponential format and trims trailing zeroes at the end,
+ * however this results in loss of precision. Otherwise exp format is used
+ * and the output of snprintf() is not modified.
+ *
+ * The &apos;humanfriendly&apos; option is used for INCRBYFLOAT and HINCRBYFLOAT. */</doc>
+<use f='redis/src/t_hash.c' l='568' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='400' u='c' c='incrbyfloatCommand'/>

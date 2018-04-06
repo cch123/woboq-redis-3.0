@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='694' type='struct redisCommand *'/>
+<offset>6464</offset>
+<use f='redis/src/db.c' l='815' u='r' c='propagateExpire'/>
+<use f='redis/src/redis.c' l='1532' u='w' c='initServerConfig'/>

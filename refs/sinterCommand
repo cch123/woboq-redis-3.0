@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1430' type='void sinterCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='165' u='r'/>
+<use f='redis/src/redis.c' l='165' u='r'/>
+<use f='redis/src/redis.c' l='171' u='r'/>
+<use f='redis/src/redis.c' l='171' u='r'/>
+<use f='redis/src/redis.c' l='165' u='r'/>
+<use f='redis/src/redis.c' l='165' u='r'/>
+<use f='redis/src/redis.c' l='171' u='r'/>
+<use f='redis/src/redis.c' l='171' u='r'/>
+<def f='redis/src/t_set.c' l='725' ll='727' type='void sinterCommand(redisClient * c)'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/cluster.h' l='120' type='int'/>
+<use f='redis/src/cluster.c' l='407' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='2606' u='r' c='clusterLogCantFailover'/>
+<use f='redis/src/cluster.c' l='2610' u='w' c='clusterLogCantFailover'/>
+<use f='redis/src/cluster.c' l='2717' u='w' c='clusterHandleSlaveFailover'/>
+<offset>3146368</offset>
+<doc f='redis/src/cluster.h' l='120'>/* Why a slave is currently not able to
+                                   failover. See the CANT_FAILOVER_* macros. */</doc>

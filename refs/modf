@@ -1,0 +1,2 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='115' type='double modf(double __x, double * __iptr)'/>
+<use f='redis/deps/lua/src/lmathlib.c' l='98' u='c' c='math_modf'/>

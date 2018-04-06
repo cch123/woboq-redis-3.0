@@ -1,0 +1,4 @@
+<def f='redis/src/hyperloglog.c' l='1027' ll='1034' type='int hllAdd(robj * o, unsigned char * ele, size_t elesize)'/>
+<use f='redis/src/hyperloglog.c' l='1173' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1404' u='c' c='pfselftestCommand'/>
+<doc f='redis/src/hyperloglog.c' l='1026'>/* Call hllDenseAdd() or hllSparseAdd() according to the HLL encoding. */</doc>

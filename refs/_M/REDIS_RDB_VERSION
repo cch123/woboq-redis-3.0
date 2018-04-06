@@ -1,0 +1,8 @@
+<dec f='redis/src/rdb.h' l='41'/>
+<doc f='redis/src/rdb.h' l='39'>/* The current RDB version. When the format changes in a way that is no longer
+ * backward compatible this number gets incremented. */</doc>
+<use f='redis/src/cluster.c' l='4322' u='c'/>
+<use f='redis/src/cluster.c' l='4323' u='c'/>
+<use f='redis/src/cluster.c' l='4348' u='c'/>
+<use f='redis/src/rdb.c' l='648' u='c'/>
+<use f='redis/src/rdb.c' l='1152' u='c'/>

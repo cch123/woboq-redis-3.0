@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1458' type='void msetnxCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='213' u='r'/>
+<use f='redis/src/redis.c' l='213' u='r'/>
+<use f='redis/src/redis.c' l='213' u='r'/>
+<use f='redis/src/redis.c' l='213' u='r'/>
+<def f='redis/src/t_string.c' l='321' ll='323' type='void msetnxCommand(redisClient * c)'/>

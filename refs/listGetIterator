@@ -1,0 +1,8 @@
+<dec f='redis/src/adlist.h' l='79' type='listIter * listGetIterator(list * list, int direction)'/>
+<def f='redis/src/adlist.c' l='178' ll='189' type='listIter * listGetIterator(list * list, int direction)'/>
+<use f='redis/src/adlist.c' l='253' u='c' c='listDup'/>
+<use f='redis/src/adlist.c' l='290' u='c' c='listSearchKey'/>
+<doc f='redis/src/adlist.c' l='174'>/* Returns a list iterator &apos;iter&apos;. After the initialization every
+ * call to listNext() will return the next element of the list.
+ *
+ * This function can&apos;t fail. */</doc>

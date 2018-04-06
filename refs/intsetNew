@@ -1,0 +1,4 @@
+<dec f='redis/src/intset.h' l='41' type='intset * intsetNew()'/>
+<def f='redis/src/intset.c' l='97' ll='102' type='intset * intsetNew()'/>
+<doc f='redis/src/intset.c' l='96'>/* Create an empty intset. */</doc>
+<use f='redis/src/object.c' l='206' u='c' c='createIntsetObject'/>

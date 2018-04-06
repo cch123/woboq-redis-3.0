@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='762' type='int'/>
+<use f='redis/src/aof.c' l='1007' u='r' c='aofReadDiffFromParent'/>
+<use f='redis/src/aof.c' l='1125' u='r' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1227' u='w' c='aofCreatePipes'/>
+<use f='redis/src/aof.c' l='1246' u='r' c='aofClosePipes'/>
+<offset>13792</offset>

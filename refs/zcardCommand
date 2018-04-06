@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1469' type='void zcardCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='189' u='r'/>
+<use f='redis/src/redis.c' l='189' u='r'/>
+<use f='redis/src/redis.c' l='189' u='r'/>
+<use f='redis/src/redis.c' l='189' u='r'/>
+<def f='redis/src/t_zset.c' l='2738' ll='2746' type='void zcardCommand(redisClient * c)'/>

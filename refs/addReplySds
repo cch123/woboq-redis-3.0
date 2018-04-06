@@ -1,0 +1,36 @@
+<dec f='redis/src/redis.h' l='1039' type='void addReplySds(redisClient * c, sds s)'/>
+<use f='redis/src/blocked.c' l='176' u='c' c='disconnectAllBlockedClients'/>
+<use f='redis/src/cluster.c' l='4036' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4038' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4502' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4593' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4698' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4706' u='c' c='migrateCommand'/>
+<use f='redis/src/cluster.c' l='4938' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/cluster.c' l='4943' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/cluster.c' l='4945' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/cluster.c' l='4947' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/cluster.c' l='4951' u='c' c='clusterRedirectClient'/>
+<use f='redis/src/debug.c' l='381' u='c' c='debugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1148' u='c' c='isHLLObjectOrReply'/>
+<use f='redis/src/hyperloglog.c' l='1180' u='c' c='pfaddCommand'/>
+<use f='redis/src/hyperloglog.c' l='1222' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1262' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1303' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1325' u='c' c='pfmergeCommand'/>
+<use f='redis/src/hyperloglog.c' l='1476' u='c' c='pfdebugCommand'/>
+<use f='redis/src/hyperloglog.c' l='1540' u='c' c='pfdebugCommand'/>
+<def f='redis/src/networking.c' l='356' ll='368' type='void addReplySds(redisClient * c, sds s)'/>
+<use f='redis/src/redis.c' l='2216' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='3043' u='c' c='infoCommand'/>
+<use f='redis/src/redis.c' l='3045' u='c' c='infoCommand'/>
+<use f='redis/src/replication.c' l='345' u='c' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='1499' u='c' c='slaveofCommand'/>
+<use f='redis/src/scripting.c' l='825' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='838' u='c' c='luaReplyToRedisReply'/>
+<use f='redis/src/scripting.c' l='1189' u='c' c='scriptCommand'/>
+<use f='redis/src/scripting.c' l='1191' u='c' c='scriptCommand'/>
+<use f='redis/src/sentinel.c' l='2712' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2716' u='c' c='sentinelCommand'/>
+<use f='redis/src/sentinel.c' l='2846' u='c' c='sentinelInfoCommand'/>
+<use f='redis/src/sentinel.c' l='2848' u='c' c='sentinelInfoCommand'/>

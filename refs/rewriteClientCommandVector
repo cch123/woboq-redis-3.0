@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1053' type='void rewriteClientCommandVector(redisClient * c, int argc)'/>
+<use f='redis/src/cluster.c' l='4685' u='c' c='migrateCommand'/>
+<use f='redis/src/db.c' l='899' u='c' c='expireGenericCommand'/>
+<def f='redis/src/networking.c' l='1516' ll='1541' type='void rewriteClientCommandVector(redisClient * c, int argc)'/>
+<doc f='redis/src/networking.c' l='1513'>/* Rewrite the command vector of the client. All the new objects ref count
+ * is incremented. The old command vector is freed, and the old objects
+ * ref count is decremented. */</doc>
+<use f='redis/src/t_list.c' l='1064' u='c' c='blockingPopGenericCommand'/>
+<use f='redis/src/t_set.c' l='400' u='c' c='spopCommand'/>

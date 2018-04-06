@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='903' type='char *'/>
+<offset>20160</offset>
+<use f='redis/src/debug.c' l='396' u='w' c='_redisAssert'/>
+<use f='redis/src/debug.c' l='816' u='r' c='sigsegvHandler'/>
+<use f='redis/src/redis.c' l='1547' u='w' c='initServerConfig'/>

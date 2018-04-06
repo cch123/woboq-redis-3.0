@@ -1,0 +1,11 @@
+<dec f='redis/deps/hiredis/fmacros.h' l='15'/>
+<use f='include/features.h' l='186' u='a'/>
+<use f='include/features.h' l='231' u='a'/>
+<use f='include/features.h' l='231' u='c'/>
+<use f='include/features.h' l='248' u='a'/>
+<use f='include/features.h' l='252' u='a'/>
+<use f='include/features.h' l='278' u='a'/>
+<use f='include/features.h' l='280' u='c'/>
+<use f='include/features.h' l='285' u='c'/>
+<use f='include/features.h' l='286' u='c'/>
+<dec f='redis/src/fmacros.h' l='45'/>

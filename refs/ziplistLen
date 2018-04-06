@@ -1,0 +1,9 @@
+<dec f='redis/src/ziplist.h' l='45' type='unsigned int ziplistLen(unsigned char * zl)'/>
+<use f='redis/src/rdb.c' l='1051' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_hash.c' l='266' u='c' c='hashTypeLength'/>
+<use f='redis/src/t_list.c' l='55' u='c' c='listTypePush'/>
+<use f='redis/src/t_list.c' l='114' u='c' c='listTypeLength'/>
+<use f='redis/src/t_list.c' l='362' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_zset.c' l='696' u='c' c='zzlLength'/>
+<def f='redis/src/ziplist.c' l='880' ll='895' type='unsigned int ziplistLen(unsigned char * zl)'/>
+<doc f='redis/src/ziplist.c' l='879'>/* Return length of ziplist. */</doc>

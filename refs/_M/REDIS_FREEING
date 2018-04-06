@@ -1,0 +1,7 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='71'/>
+<use f='redis/deps/hiredis/async.c' l='297' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='314' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='460' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='580' u='c'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='69'>/* Flag specific to the async API which means that the context should be clean
+ * up as soon as possible. */</doc>

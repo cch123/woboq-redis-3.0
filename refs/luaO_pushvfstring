@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='374' type='const char * luaO_pushvfstring(lua_State * L, const char * fmt, struct __va_list_tag * argp)'/>
+<use f='redis/deps/lua/src/lapi.c' l='467' u='c' c='lua_pushvfstring'/>
+<use f='redis/deps/lua/src/lapi.c' l='479' u='c' c='lua_pushfstring'/>
+<use f='redis/deps/lua/src/ldebug.c' l='634' u='c' c='luaG_runerror'/>
+<def f='redis/deps/lua/src/lobject.c' l='111' ll='169' type='const char * luaO_pushvfstring(lua_State * L, const char * fmt, struct __va_list_tag * argp)'/>
+<use f='redis/deps/lua/src/lobject.c' l='176' u='c' c='luaO_pushfstring'/>
+<doc f='redis/deps/lua/src/lobject.c' l='110'>/* this function handles only `%d&apos;, `%c&apos;, %f, %p, and `%s&apos; formats */</doc>

@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lundump.h' l='20' type='int luaU_dump(lua_State * L, const Proto * f, lua_Writer w, void * data, int strip)'/>
+<use f='redis/deps/lua/src/lapi.c' l='882' u='c' c='lua_dump'/>
+<def f='redis/deps/lua/src/ldump.c' l='153' ll='164' type='int luaU_dump(lua_State * L, const Proto * f, lua_Writer w, void * data, int strip)'/>
+<doc f='redis/deps/lua/src/ldump.c' l='150'>/*
+** dump Lua function as precompiled chunk
+*/</doc>

@@ -1,0 +1,9 @@
+<def f='redis/src/networking.c' l='46' ll='53' type='size_t getStringObjectSdsUsedMemory(robj * o)'/>
+<use f='redis/src/networking.c' l='229' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='245' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='293' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='309' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='450' u='c' c='setDeferredMultiBulkLength'/>
+<use f='redis/src/networking.c' l='840' u='c' c='sendReplyToClient'/>
+<doc f='redis/src/networking.c' l='44'>/* Return the amount of memory used by the sds string at object-&gt;ptr
+ * for a string object. */</doc>

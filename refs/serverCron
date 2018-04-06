@@ -1,0 +1,20 @@
+<def f='redis/src/redis.c' l='1067' ll='1258' type='int serverCron(struct aeEventLoop * eventLoop, long long id, void * clientData)'/>
+<use f='redis/src/redis.c' l='1837' u='r' c='initServer'/>
+<doc f='redis/src/redis.c' l='1048'>/* This is our timer interrupt, called server.hz times per second.
+ * Here is where we do a number of things that need to be done asynchronously.
+ * For instance:
+ *
+ * - Active expired keys collection (it is also performed in a lazy way on
+ *   lookup).
+ * - Software watchdog.
+ * - Update some statistic.
+ * - Incremental rehashing of the DBs hash tables.
+ * - Triggering BGSAVE / AOF rewrite, and handling of terminated children.
+ * - Clients timeout of different kinds.
+ * - Replication reconnection.
+ * - Many more...
+ *
+ * Everything directly called here will be called server.hz times per second,
+ * so in order to throttle execution of things we want to do less frequently
+ * a macro is used: run_with_period(milliseconds) { .... }
+ */</doc>

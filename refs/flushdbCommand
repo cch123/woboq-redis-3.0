@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='1438' type='void flushdbCommand(redisClient * c)'/>
+<def f='redis/src/db.c' l='253' ll='260' type='void flushdbCommand(redisClient * c)'/>
+<doc f='redis/src/db.c' l='249'>/*-----------------------------------------------------------------------------
+ * Type agnostic commands operating on the key space
+ *----------------------------------------------------------------------------*/</doc>
+<use f='redis/src/redis.c' l='241' u='r'/>
+<use f='redis/src/redis.c' l='241' u='r'/>
+<use f='redis/src/redis.c' l='241' u='r'/>
+<use f='redis/src/redis.c' l='241' u='r'/>

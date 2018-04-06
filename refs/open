@@ -1,0 +1,2 @@
+<dec f='include/fcntl.h' l='156' type='int open(const char * __file, int __oflag)'/>
+<use f='redis/src/zmalloc.c' l='273' u='c' c='zmalloc_get_rss'/>

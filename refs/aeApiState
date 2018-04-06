@@ -1,0 +1,4 @@
+<def f='redis/src/ae_epoll.c' l='34' ll='37'/>
+<size>16</size>
+<mbr r='aeApiState::epfd' o='0' t='int'/>
+<mbr r='aeApiState::events' o='64' t='struct epoll_event *'/>

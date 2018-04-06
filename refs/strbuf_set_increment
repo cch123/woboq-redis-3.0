@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='54' type='void strbuf_set_increment(strbuf_t * s, int increment)'/>
+<def f='redis/deps/lua/src/strbuf.c' l='84' ll='92' type='void strbuf_set_increment(strbuf_t * s, int increment)'/>

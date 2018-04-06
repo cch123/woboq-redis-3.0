@@ -1,0 +1,8 @@
+<def f='redis/src/sentinel.c' l='2111' ll='2196' type='void sentinelProcessHelloMessage(char * hello, int hello_len)'/>
+<use f='redis/src/sentinel.c' l='2226' u='c' c='sentinelReceiveHelloMessages'/>
+<use f='redis/src/sentinel.c' l='2970' u='c' c='sentinelPublishCommand'/>
+<doc f='redis/src/sentinel.c' l='2106'>/* Process an hello message received via Pub/Sub in master or slave instance,
+ * or sent directly to this sentinel via the (fake) PUBLISH command of Sentinel.
+ *
+ * If the master name specified in the message is not known, the message is
+ * discarded. */</doc>

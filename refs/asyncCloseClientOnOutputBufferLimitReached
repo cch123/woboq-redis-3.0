@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1057' type='void asyncCloseClientOnOutputBufferLimitReached(redisClient * c)'/>
+<use f='redis/src/networking.c' l='248' u='c' c='_addReplyObjectToList'/>
+<use f='redis/src/networking.c' l='281' u='c' c='_addReplySdsToList'/>
+<use f='redis/src/networking.c' l='312' u='c' c='_addReplyStringToList'/>
+<use f='redis/src/networking.c' l='456' u='c' c='setDeferredMultiBulkLength'/>
+<def f='redis/src/networking.c' l='1659' ll='1669' type='void asyncCloseClientOnOutputBufferLimitReached(redisClient * c)'/>
+<doc f='redis/src/networking.c' l='1652'>/* Asynchronously close a client if soft or hard limit is reached on the
+ * output buffer size. The caller can check if the client will be closed
+ * checking if the client REDIS_CLOSE_ASAP flag is set.
+ *
+ * Note: we need to close the client asynchronously because this function is
+ * called from contexts where the client can&apos;t be freed safely, i.e. from the
+ * lower level functions pushing data inside the client output buffers. */</doc>

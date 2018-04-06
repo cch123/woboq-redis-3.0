@@ -1,0 +1,4 @@
+<dec f='redis/src/sentinel.c' l='334' type='sentinelRedisInstance * sentinelSelectSlave(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='2715' u='c' c='sentinelCommand'/>
+<def f='redis/src/sentinel.c' l='3477' ll='3518' type='sentinelRedisInstance * sentinelSelectSlave(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3553' u='c' c='sentinelFailoverSelectSlave'/>

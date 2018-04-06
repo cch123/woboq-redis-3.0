@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lcode.h' l='73' type='void luaK_setlist(FuncState * fs, int base, int nelems, int tostore)'/>
+<def f='redis/deps/lua/src/lcode.c' l='819' ll='830' type='void luaK_setlist(FuncState * fs, int base, int nelems, int tostore)'/>
+<use f='redis/deps/lua/src/lparser.c' l='469' u='c' c='closelistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='479' u='c' c='lastlistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='485' u='c' c='lastlistfield'/>

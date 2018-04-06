@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/llimits.h' l='78'/>
+<use f='redis/deps/lua/src/lcode.c' l='204' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='64' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='100' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='430' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='28' u='c'/>
+<use f='redis/deps/lua/src/lfunc.c' l='38' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='171' u='c'/>
+<use f='redis/deps/lua/src/lgc.c' l='548' u='c'/>
+<use f='redis/deps/lua/src/llex.c' l='70' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='169' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='201' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='202' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='571' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='292' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='362' u='c'/>
+<use f='redis/deps/lua/src/ltm.c' l='54' u='c'/>

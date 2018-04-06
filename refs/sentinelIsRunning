@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1358' type='void sentinelIsRunning()'/>
+<use f='redis/src/redis.c' l='3676' u='c' c='main'/>
+<def f='redis/src/sentinel.c' l='439' ll='456' type='void sentinelIsRunning()'/>
+<doc f='redis/src/sentinel.c' l='437'>/* This function gets called when the server is in Sentinel mode, started,
+ * loaded the configuration, and is ready for normal operations. */</doc>

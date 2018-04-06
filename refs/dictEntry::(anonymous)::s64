@@ -1,0 +1,6 @@
+<dec f='redis/src/dict.h' l='52' type='int64_t'/>
+<offset>0</offset>
+<use f='redis/src/db.c' l='780' macro='1' u='w'/>
+<use f='redis/src/db.c' l='795' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='717' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='841' macro='1' u='r'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='315'/>
+<doc f='redis/src/redis.h' l='314'>/* Append only defines */</doc>
+<use f='redis/src/config.c' l='347' u='c'/>
+<use f='redis/src/config.c' l='702' u='c'/>
+<use f='redis/src/config.c' l='1140' u='c'/>
+<use f='redis/src/config.c' l='1845' u='c'/>

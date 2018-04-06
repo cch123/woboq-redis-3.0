@@ -1,0 +1,17 @@
+<dec f='redis/src/redis.h' l='801' type='long long'/>
+<offset>15616</offset>
+<doc f='redis/src/redis.h' l='801'>/* Backlog actual data length */</doc>
+<use f='redis/src/redis.c' l='1510' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2973' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='74' u='w' c='createReplicationBacklog'/>
+<use f='redis/src/replication.c' l='108' u='w' c='resizeReplicationBacklog'/>
+<use f='redis/src/replication.c' l='141' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='143' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='144' u='w' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='147' u='r' c='feedReplicationBacklog'/>
+<use f='redis/src/replication.c' l='307' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='317' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='328' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='337' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='349' u='r' c='addReplyReplicationBacklog'/>
+<use f='redis/src/replication.c' l='384' u='r' c='masterTryPartialResynchronization'/>

@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1004' type='dictType'/>
+<def f='redis/src/redis.c' l='585' ll='592' type='dictType'/>
+<doc f='redis/src/redis.c' l='584'>/* Hash type hash table (note that small hashes are represented with ziplists) */</doc>
+<use f='redis/src/t_hash.c' l='422' u='a' c='hashTypeConvertZiplist'/>

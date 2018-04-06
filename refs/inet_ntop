@@ -1,0 +1,14 @@
+<dec f='include/arpa/inet.h' l='64' type='const char * inet_ntop(int __af, const void *restrict __cp, char *restrict __buf, socklen_t __len)'/>
+<doc f='include/arpa/inet.h' l='61'>/* Convert a Internet address in binary network format for interface
+   type AF in buffer starting at CP to presentation form and place
+   result in buffer of length LEN astarting at BUF.  */</doc>
+<use f='redis/src/anet.c' l='220' u='c' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='223' u='c' c='anetGenericResolve'/>
+<use f='redis/src/anet.c' l='536' u='c' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='540' u='c' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='565' u='c' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='569' u='c' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='604' u='c' c='anetSockName'/>
+<use f='redis/src/anet.c' l='608' u='c' c='anetSockName'/>
+<use f='redis/src/cluster.c' l='1262' u='c' c='clusterStartHandshake'/>
+<use f='redis/src/cluster.c' l='1266' u='c' c='clusterStartHandshake'/>

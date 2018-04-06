@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lua.h' l='171' type='int lua_pushthread(lua_State * L)'/>
+<def f='redis/deps/lua/src/lapi.c' l='519' ll='525' macro='1' type='int lua_pushthread(lua_State * L)'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='149' u='c' c='luaB_setfenv'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='599' u='c' c='luaB_corunning'/>

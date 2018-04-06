@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='1340' type='int * zunionInterGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<def f='redis/src/db.c' l='1029' ll='1053' type='int * zunionInterGetKeys(struct redisCommand * cmd, robj ** argv, int argc, int * numkeys)'/>
+<doc f='redis/src/db.c' l='1026'>/* Helper function to extract keys from following commands:
+ * ZUNIONSTORE &lt;destkey&gt; &lt;num-keys&gt; &lt;key&gt; &lt;key&gt; ... &lt;key&gt; &lt;options&gt;
+ * ZINTERSTORE &lt;destkey&gt; &lt;num-keys&gt; &lt;key&gt; &lt;key&gt; ... &lt;key&gt; &lt;options&gt; */</doc>
+<use f='redis/src/redis.c' l='179' u='r'/>
+<use f='redis/src/redis.c' l='179' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='179' u='r'/>
+<use f='redis/src/redis.c' l='179' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>

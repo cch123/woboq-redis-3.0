@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lauxlib.h' l='80' type='int luaL_loadstring(lua_State * L, const char * s)'/>
+<def f='redis/deps/lua/src/lauxlib.c' l='618' ll='620' macro='1' type='int luaL_loadstring(lua_State * L, const char * s)'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='650' type='pid_t'/>
+<offset>0</offset>
+<doc f='redis/src/redis.h' l='649'>/* General */</doc>
+<doc f='redis/src/redis.h' l='650'>/* Main process pid. */</doc>
+<use f='redis/src/redis.c' l='322' u='r' c='redisLogRaw'/>
+<use f='redis/src/redis.c' l='1757' u='w' c='initServer'/>

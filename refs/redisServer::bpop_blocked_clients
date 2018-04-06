@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='850' type='unsigned int'/>
+<offset>17984</offset>
+<doc f='redis/src/redis.h' l='849'>/* Blocked clients */</doc>
+<doc f='redis/src/redis.h' l='850'>/* Number of clients blocked by lists */</doc>
+<use f='redis/src/blocked.c' l='103' u='w' c='blockClient'/>
+<use f='redis/src/blocked.c' l='144' u='w' c='unblockClient'/>
+<use f='redis/src/redis.c' l='1452' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2687' u='r' c='genRedisInfoString'/>

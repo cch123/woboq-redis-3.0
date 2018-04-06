@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='242'/>
+<use f='redis/src/cluster.c' l='4724' u='c'/>
+<use f='redis/src/cluster.c' l='4902' u='c'/>
+<use f='redis/src/networking.c' l='910' u='c'/>
+<use f='redis/src/scripting.c' l='364' u='c'/>
+<use f='redis/src/scripting.c' l='365' u='c'/>

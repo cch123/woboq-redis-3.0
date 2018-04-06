@@ -1,0 +1,5 @@
+<dec f='redis/src/sha1.h' l='11' type='unsigned char [64]'/>
+<offset>224</offset>
+<use f='redis/src/sha1.c' l='141' u='a' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='142' u='r' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='149' u='a' c='SHA1Update'/>

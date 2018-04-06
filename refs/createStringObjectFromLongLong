@@ -1,0 +1,23 @@
+<dec f='redis/src/redis.h' l='1125' type='robj * createStringObjectFromLongLong(long long value)'/>
+<use f='redis/src/aof.c' l='490' u='c' c='catAppendOnlyExpireAtCommand'/>
+<use f='redis/src/db.c' l='517' u='c' c='scanGenericCommand'/>
+<use f='redis/src/db.c' l='529' u='c' c='scanGenericCommand'/>
+<def f='redis/src/object.c' l='95' ll='110' type='robj * createStringObjectFromLongLong(long long value)'/>
+<use f='redis/src/rdb.c' l='188' u='c' c='rdbLoadIntegerObject'/>
+<use f='redis/src/t_hash.c' l='130' u='c' c='hashTypeGetObject'/>
+<use f='redis/src/t_hash.c' l='385' u='c' c='hashTypeCurrentObject'/>
+<use f='redis/src/t_hash.c' l='540' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_list.c' l='88' u='c' c='listTypePop'/>
+<use f='redis/src/t_list.c' l='188' u='c' c='listTypeGet'/>
+<use f='redis/src/t_list.c' l='431' u='c' c='lindexCommand'/>
+<use f='redis/src/t_set.c' l='173' u='c' c='setTypeNextObject'/>
+<use f='redis/src/t_set.c' l='237' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_set.c' l='390' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='497' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='526' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_set.c' l='656' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_set.c' l='690' u='c' c='sinterGenericCommand'/>
+<use f='redis/src/t_string.c' l='348' u='c' c='incrDecrCommand'/>
+<use f='redis/src/t_zset.c' l='670' u='c' c='ziplistGetObject'/>
+<use f='redis/src/t_zset.c' l='1123' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1735' u='c' c='zuiObjectFromValue'/>

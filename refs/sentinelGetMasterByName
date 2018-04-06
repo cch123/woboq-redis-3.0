@@ -1,0 +1,15 @@
+<dec f='redis/src/sentinel.c' l='325' type='sentinelRedisInstance * sentinelGetMasterByName(char * name)'/>
+<def f='redis/src/sentinel.c' l='1119' ll='1126' type='sentinelRedisInstance * sentinelGetMasterByName(char * name)'/>
+<use f='redis/src/sentinel.c' l='1353' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1361' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1368' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1373' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1380' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1388' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1398' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1408' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1415' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='1427' u='c' c='sentinelHandleConfiguration'/>
+<use f='redis/src/sentinel.c' l='2122' u='c' c='sentinelProcessHelloMessage'/>
+<use f='redis/src/sentinel.c' l='2694' u='c' c='sentinelCommand'/>
+<doc f='redis/src/sentinel.c' l='1118'>/* Master lookup by name */</doc>

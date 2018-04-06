@@ -1,0 +1,2 @@
+<def f='redis/src/ae_epoll.c' l='65' ll='71' type='void aeApiFree(aeEventLoop * eventLoop)'/>
+<use f='redis/src/ae.c' l='125' u='c' c='aeDeleteEventLoop'/>

@@ -1,0 +1,11 @@
+<def f='redis/src/rio.h' l='39' ll='85'/>
+<size>104</size>
+<mbr r='_rio::read' o='0' t='size_t (*)(struct _rio *, void *, size_t)'/>
+<mbr r='_rio::write' o='64' t='size_t (*)(struct _rio *, const void *, size_t)'/>
+<mbr r='_rio::tell' o='128' t='off_t (*)(struct _rio *)'/>
+<mbr r='_rio::flush' o='192' t='int (*)(struct _rio *)'/>
+<mbr r='_rio::update_cksum' o='256' t='void (*)(struct _rio *, const void *, size_t)'/>
+<mbr r='_rio::cksum' o='320' t='uint64_t'/>
+<mbr r='_rio::processed_bytes' o='384' t='size_t'/>
+<mbr r='_rio::max_processing_chunk' o='448' t='size_t'/>
+<mbr r='_rio::io' o='512' t='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/rio.h:64:5)'/>

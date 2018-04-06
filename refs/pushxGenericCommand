@@ -1,0 +1,5 @@
+<def f='redis/src/t_list.c' l='331' ll='383' type='void pushxGenericCommand(redisClient * c, robj * refval, robj * val, int where)'/>
+<use f='redis/src/t_list.c' l='387' u='c' c='lpushxCommand'/>
+<use f='redis/src/t_list.c' l='392' u='c' c='rpushxCommand'/>
+<use f='redis/src/t_list.c' l='398' u='c' c='linsertCommand'/>
+<use f='redis/src/t_list.c' l='400' u='c' c='linsertCommand'/>

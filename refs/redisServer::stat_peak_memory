@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='704' type='size_t'/>
+<offset>7232</offset>
+<doc f='redis/src/redis.h' l='704'>/* Max used memory record */</doc>
+<use f='redis/src/rdb.c' l='1101' u='r' c='loadingProgress'/>
+<use f='redis/src/rdb.c' l='1102' u='w' c='loadingProgress'/>
+<use f='redis/src/redis.c' l='1102' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1103' u='w' c='serverCron'/>
+<use f='redis/src/redis.c' l='1827' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2700' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2701' u='w' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2704' u='r' c='genRedisInfoString'/>
+<use f='redis/src/redis.c' l='2719' u='r' c='genRedisInfoString'/>

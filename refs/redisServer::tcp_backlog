@@ -1,0 +1,15 @@
+<dec f='redis/src/redis.h' l='668' type='int'/>
+<offset>1184</offset>
+<doc f='redis/src/redis.h' l='668'>/* TCP listen() backlog */</doc>
+<use f='redis/src/config.c' l='131' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='132' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='1062' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1791' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1406' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1642' u='r' c='checkTcpBacklogSettings'/>
+<use f='redis/src/redis.c' l='1643' u='r' c='checkTcpBacklogSettings'/>
+<use f='redis/src/redis.c' l='1679' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1685' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1697' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1701' u='r' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1784' u='r' c='initServer'/>

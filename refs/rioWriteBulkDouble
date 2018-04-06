@@ -1,0 +1,5 @@
+<dec f='redis/src/rio.h' l='134' type='size_t rioWriteBulkDouble(rio * r, double d)'/>
+<use f='redis/src/aof.c' l='902' u='c' c='rewriteSortedSetObject'/>
+<use f='redis/src/aof.c' l='929' u='c' c='rewriteSortedSetObject'/>
+<def f='redis/src/rio.c' l='344' ll='350' type='size_t rioWriteBulkDouble(rio * r, double d)'/>
+<doc f='redis/src/rio.c' l='343'>/* Write a double value in the format: &quot;$&lt;count&gt;\r\n&lt;payload&gt;\r\n&quot; */</doc>

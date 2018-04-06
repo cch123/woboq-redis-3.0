@@ -1,0 +1,16 @@
+<dec f='redis/src/cluster.h' l='225' type='uint16_t'/>
+<use f='redis/src/cluster.c' l='1290' u='r' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1549' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2269' u='w' c='clusterSendPing'/>
+<offset>112</offset>
+<doc f='redis/src/cluster.h' l='225'>/* Only used for some kind of messages. */</doc>
+<dec f='redis/src/sha1.h' l='10' type='u_int32_t [2]'/>
+<offset>160</offset>
+<use f='redis/src/sha1.c' l='125' u='w' c='SHA1Init'/>
+<use f='redis/src/sha1.c' l='125' u='w' c='SHA1Init'/>
+<use f='redis/src/sha1.c' l='135' u='r' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='136' u='w' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='137' u='w' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='138' u='w' c='SHA1Update'/>
+<use f='redis/src/sha1.c' l='179' u='r' c='SHA1Final'/>
+<use f='redis/src/sha1.c' l='185' u='r' c='SHA1Final'/>

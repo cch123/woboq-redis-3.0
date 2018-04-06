@@ -1,0 +1,16 @@
+<def f='redis/deps/hiredis/dict.h' l='51' ll='58'/>
+<size>48</size>
+<mbr r='dictType::hashFunction' o='0' t='unsigned int (*)(const void *)'/>
+<mbr r='dictType::keyDup' o='64' t='void *(*)(void *, const void *)'/>
+<mbr r='dictType::valDup' o='128' t='void *(*)(void *, const void *)'/>
+<mbr r='dictType::keyCompare' o='192' t='int (*)(void *, const void *, const void *)'/>
+<mbr r='dictType::keyDestructor' o='256' t='void (*)(void *, void *)'/>
+<mbr r='dictType::valDestructor' o='320' t='void (*)(void *, void *)'/>
+<def f='redis/src/dict.h' l='58' ll='65'/>
+<size>48</size>
+<mbr r='dictType::hashFunction' o='0' t='unsigned int (*)(const void *)'/>
+<mbr r='dictType::keyDup' o='64' t='void *(*)(void *, const void *)'/>
+<mbr r='dictType::valDup' o='128' t='void *(*)(void *, const void *)'/>
+<mbr r='dictType::keyCompare' o='192' t='int (*)(void *, const void *, const void *)'/>
+<mbr r='dictType::keyDestructor' o='256' t='void (*)(void *, void *)'/>
+<mbr r='dictType::valDestructor' o='320' t='void (*)(void *, void *)'/>

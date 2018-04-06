@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='43' type='lu_byte'/>
+<offset>72</offset>
+<use f='redis/deps/lua/src/lgc.c' l='170' u='w' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='171' u='w' c='traversetable'/>
+<use f='redis/deps/lua/src/lgc.c' l='357' u='r' c='cleartable'/>

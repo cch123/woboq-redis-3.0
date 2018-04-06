@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='772' type='long long'/>
+<offset>14144</offset>
+<doc f='redis/src/redis.h' l='772'>/* Used to restore dirty on failed BGSAVE */</doc>
+<use f='redis/src/rdb.c' l='770' u='w' c='rdbSaveBackground'/>
+<use f='redis/src/rdb.c' l='1247' u='r' c='backgroundSaveDoneHandlerDisk'/>

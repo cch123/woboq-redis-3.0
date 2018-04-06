@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/luaconf.h' l='395'/>
+<use f='redis/deps/lua/src/luaconf.h' l='413' u='c'/>
+<doc f='redis/deps/lua/src/luaconf.h' l='394'>/* int has at least 32 bits */</doc>
+<use f='redis/deps/lua/src/lopcodes.h' l='56' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='41' u='c'/>

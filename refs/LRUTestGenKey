@@ -1,0 +1,5 @@
+<def f='redis/src/redis-cli.c' l='2032' ll='2035' type='void LRUTestGenKey(char * buf, size_t buflen)'/>
+<use f='redis/src/redis-cli.c' l='2055' u='c' c='LRUTestMode'/>
+<use f='redis/src/redis-cli.c' l='2063' u='c' c='LRUTestMode'/>
+<doc f='redis/src/redis-cli.c' l='2030'>/* Generates a key name among a set of lru_test_sample_size keys, using
+ * an 80-20 distribution. */</doc>

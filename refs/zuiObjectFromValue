@@ -1,0 +1,6 @@
+<def f='redis/src/t_zset.c' l='1730' ll='1740' type='robj * zuiObjectFromValue(zsetopval * val)'/>
+<use f='redis/src/t_zset.c' l='1780' u='c' c='zuiFind'/>
+<use f='redis/src/t_zset.c' l='1791' u='c' c='zuiFind'/>
+<use f='redis/src/t_zset.c' l='1967' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2005' u='c' c='zunionInterGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2008' u='c' c='zunionInterGenericCommand'/>

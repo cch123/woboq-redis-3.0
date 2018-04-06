@@ -1,0 +1,11 @@
+<def f='redis/src/rdb.c' l='638' ll='690' type='int rdbSaveRio(rio * rdb, int * error)'/>
+<use f='redis/src/rdb.c' l='708' u='c' c='rdbSaveRioWithEOFMark'/>
+<use f='redis/src/rdb.c' l='734' u='c' c='rdbSave'/>
+<doc f='redis/src/rdb.c' l='630'>/* Produces a dump of the database in RDB format sending it to the specified
+ * Redis I/O channel. On success REDIS_OK is returned, otherwise REDIS_ERR
+ * is returned and part of the output, or all the output, can be
+ * missing because of I/O errors.
+ *
+ * When the function returns REDIS_ERR and if &apos;error&apos; is not NULL, the
+ * integer pointed by &apos;error&apos; is set to the value of errno just after the I/O
+ * error. */</doc>

@@ -1,0 +1,17 @@
+<dec f='redis/deps/lua/src/lstate.h' l='80' type='GCObject *'/>
+<offset>640</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='80'>/* last element of list of userdata to be GC */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='116' u='r' c='marktmu'/>
+<use f='redis/deps/lua/src/lgc.c' l='122' u='r' c='marktmu'/>
+<use f='redis/deps/lua/src/lgc.c' l='145' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='146' u='w' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='148' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='149' u='r' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='150' u='w' c='luaC_separateudata'/>
+<use f='redis/deps/lua/src/lgc.c' l='447' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='451' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='452' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='454' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='478' u='r' c='luaC_callGCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='593' u='r' c='singlestep'/>
+<use f='redis/deps/lua/src/lstate.c' l='176' u='w' c='lua_newstate'/>

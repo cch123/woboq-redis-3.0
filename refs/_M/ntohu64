@@ -1,0 +1,7 @@
+<dec f='redis/src/endianconv.h' l='71'/>
+<use f='redis/src/cluster.c' l='1586' u='c'/>
+<use f='redis/src/cluster.c' l='1587' u='c'/>
+<use f='redis/src/cluster.c' l='1597' u='c'/>
+<use f='redis/src/cluster.c' l='1938' u='c'/>
+<use f='redis/src/cluster.c' l='2450' u='c'/>
+<use f='redis/src/cluster.c' l='2451' u='c'/>

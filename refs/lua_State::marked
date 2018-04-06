@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lstate.h' l='101' macro='1' type='lu_byte'/>
+<offset>72</offset>
+<use f='redis/deps/lua/src/lstate.c' l='154' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstate.c' l='155' u='w' c='lua_newstate'/>

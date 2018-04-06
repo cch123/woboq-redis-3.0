@@ -1,0 +1,3 @@
+<def f='redis/deps/lua/src/lua_bit.c' l='163' ll='188' macro='1' type='int luaopen_bit(lua_State * L)'/>
+<dec f='redis/src/scripting.c' l='577' type='int luaopen_bit(lua_State * L)'/>
+<use f='redis/src/scripting.c' l='588' u='r' c='luaLoadLibraries'/>

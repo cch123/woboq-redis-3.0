@@ -1,0 +1,5 @@
+<dec f='redis/src/anet.h' l='66' type='int anetEnableTcpNoDelay(char * err, int fd)'/>
+<def f='redis/src/anet.c' l='151' ll='154' type='int anetEnableTcpNoDelay(char * err, int fd)'/>
+<use f='redis/src/cluster.c' l='588' u='c' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='4497' u='c' c='migrateGetSocket'/>
+<use f='redis/src/networking.c' l='73' u='c' c='createClient'/>

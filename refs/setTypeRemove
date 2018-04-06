@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1258' type='int setTypeRemove(robj * subject, robj * value)'/>
+<def f='redis/src/t_set.c' l='81' ll='98' type='int setTypeRemove(robj * setobj, robj * value)'/>
+<use f='redis/src/t_set.c' l='285' u='c' c='sremCommand'/>
+<use f='redis/src/t_set.c' l='329' u='c' c='smoveCommand'/>
+<use f='redis/src/t_set.c' l='394' u='c' c='spopCommand'/>
+<use f='redis/src/t_set.c' l='850' u='c' c='sunionDiffGenericCommand'/>

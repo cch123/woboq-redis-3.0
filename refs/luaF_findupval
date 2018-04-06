@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lfunc.h' l='25' type='UpVal * luaF_findupval(lua_State * L, StkId level)'/>
+<def f='redis/deps/lua/src/lfunc.c' l='53' ll='79' type='UpVal * luaF_findupval(lua_State * L, StkId level)'/>
+<use f='redis/deps/lua/src/lvm.c' l='736' u='c' c='luaV_execute'/>

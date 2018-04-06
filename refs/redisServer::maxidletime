@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='728' type='int'/>
+<offset>11808</offset>
+<doc f='redis/src/redis.h' l='728'>/* Client timeout in seconds */</doc>
+<use f='redis/src/config.c' l='116' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='117' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='695' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1032' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1795' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='909' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='914' u='r' c='clientsCronHandleTimeout'/>
+<use f='redis/src/redis.c' l='1414' u='w' c='initServerConfig'/>

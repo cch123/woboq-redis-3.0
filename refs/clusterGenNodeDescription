@@ -1,0 +1,7 @@
+<def f='redis/src/cluster.c' l='3619' ll='3681' type='sds clusterGenNodeDescription(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='3705' u='c' c='clusterGenNodesDescription'/>
+<use f='redis/src/cluster.c' l='4159' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3615'>/* Generate a csv-alike representation of the specified cluster node.
+ * See clusterGenNodesDescription() top comment for more information.
+ *
+ * The function returns the string representation as an SDS string. */</doc>

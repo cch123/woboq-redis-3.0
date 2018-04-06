@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.c' l='289' type='struct evictionPoolEntry * evictionPoolAlloc()'/>
+<use f='redis/src/redis.c' l='1805' u='c' c='initServer'/>
+<def f='redis/src/redis.c' l='3099' ll='3109' type='struct evictionPoolEntry * evictionPoolAlloc()'/>
+<doc f='redis/src/redis.c' l='3098'>/* Create a new eviction pool. */</doc>

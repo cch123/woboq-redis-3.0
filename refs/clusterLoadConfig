@@ -1,0 +1,8 @@
+<def f='redis/src/cluster.c' l='90' ll='283' type='int clusterLoadConfig(char * filename)'/>
+<use f='redis/src/cluster.c' l='420' u='c' c='clusterInit'/>
+<doc f='redis/src/cluster.c' l='84'>/* Load the cluster config from &apos;filename&apos;.
+ *
+ * If the file does not exist or is zero-length (this may happen because
+ * when we lock the nodes.conf file, we create a zero-length one for the
+ * sake of locking if it does not already exist), REDIS_ERR is returned.
+ * If the configuration was loaded from the file, REDIS_OK is returned. */</doc>

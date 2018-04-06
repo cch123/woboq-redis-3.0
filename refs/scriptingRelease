@@ -1,0 +1,4 @@
+<def f='redis/src/scripting.c' l='769' ll='772' type='void scriptingRelease()'/>
+<use f='redis/src/scripting.c' l='775' u='c' c='scriptingReset'/>
+<doc f='redis/src/scripting.c' l='767'>/* Release resources related to Lua scripting.
+ * This function is used in order to reset the scripting environment. */</doc>

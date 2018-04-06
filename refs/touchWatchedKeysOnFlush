@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1102' type='void touchWatchedKeysOnFlush(int dbid)'/>
+<use f='redis/src/db.c' l='246' u='c' c='signalFlushedDb'/>
+<def f='redis/src/multi.c' l='284' ll='305' type='void touchWatchedKeysOnFlush(int dbid)'/>
+<doc f='redis/src/multi.c' l='280'>/* On FLUSHDB or FLUSHALL all the watched keys that are present before the
+ * flush but will be deleted as effect of the flushing operation should
+ * be touched. &quot;dbid&quot; is the DB that&apos;s getting the flush. -1 if it is
+ * a FLUSHALL operation (all the DBs flushed). */</doc>

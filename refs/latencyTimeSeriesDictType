@@ -1,0 +1,2 @@
+<def f='redis/src/latency.c' l='50' ll='57' type='dictType'/>
+<use f='redis/src/latency.c' l='91' u='a' c='latencyMonitorInit'/>

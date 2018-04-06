@@ -1,0 +1,8 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='77'/>
+<use f='redis/deps/hiredis/async.c' l='389' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='450' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='451' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='595' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='608' u='c'/>
+<use f='redis/deps/hiredis/async.c' l='618' u='c'/>
+<doc f='redis/deps/hiredis/hiredis.h' l='76'>/* Flag that is set when the async context has one or more subscriptions. */</doc>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>lzio.c source code [redis/deps/lua/src/lzio.c] - Woboq Code Browser</title>
+<link rel="stylesheet" href="../../../../../data/qtcreator.css" title="QtCreator"/>
+<link rel="alternate stylesheet" href="../../../../../data/kdevelop.css" title="KDevelop"/>
+<script type="text/javascript" src="../../../../../data/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="../../../../../data/jquery/jquery-ui.min.js"></script>
+<script>var file = 'redis/deps/lua/src/lzio.c'; var root_path = '../../../..'; var data_path = '../../../../../data';</script>
+<script src='../../../../../data/codebrowser.js'></script>
+</head>
+<body><div id='header'><h1 id='breadcrumb'><span>Browse the source code of </span><a href='../../..'>redis</a>/<a href='../..'>deps</a>/<a href='..'>lua</a>/<a href='./'>src</a>/<a href='lzio.c.html'>lzio.c</a></h1></div>
+<hr/><div id='content'><table class="code">
+<tr><th id="1">1</th><td><i>/*</i></td></tr>
+<tr><th id="2">2</th><td><i>** $Id: lzio.c,v 1.31.1.1 2007/12/27 13:02:25 roberto Exp $</i></td></tr>
+<tr><th id="3">3</th><td><i>** a generic input stream interface</i></td></tr>
+<tr><th id="4">4</th><td><i>** See Copyright Notice in lua.h</i></td></tr>
+<tr><th id="5">5</th><td><i>*/</i></td></tr>
+<tr><th id="6">6</th><td></td></tr>
+<tr><th id="7">7</th><td></td></tr>
+<tr><th id="8">8</th><td><u>#include <a href="../../../../include/string.h.html">&lt;string.h&gt;</a></u></td></tr>
+<tr><th id="9">9</th><td></td></tr>
+<tr><th id="10">10</th><td><u>#define <dfn class="macro" id="_M/lzio_c" data-ref="_M/lzio_c">lzio_c</dfn></u></td></tr>
+<tr><th id="11">11</th><td><u>#define <dfn class="macro" id="_M/LUA_CORE" data-ref="_M/LUA_CORE">LUA_CORE</dfn></u></td></tr>
+<tr><th id="12">12</th><td></td></tr>
+<tr><th id="13">13</th><td><u>#include <a href="lua.h.html">"lua.h"</a></u></td></tr>
+<tr><th id="14">14</th><td></td></tr>
+<tr><th id="15">15</th><td><u>#include <a href="llimits.h.html">"llimits.h"</a></u></td></tr>
+<tr><th id="16">16</th><td><u>#include <a href="lmem.h.html">"lmem.h"</a></u></td></tr>
+<tr><th id="17">17</th><td><u>#include <a href="lstate.h.html">"lstate.h"</a></u></td></tr>
+<tr><th id="18">18</th><td><u>#include <a href="lzio.h.html">"lzio.h"</a></u></td></tr>
+<tr><th id="19">19</th><td></td></tr>
+<tr><th id="20">20</th><td></td></tr>
+<tr><th id="21">21</th><td><em>int</em> <dfn class="decl def fn" id="luaZ_fill" title='luaZ_fill' data-ref="luaZ_fill">luaZ_fill</dfn> (<a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col1 decl" id="1z" title='z' data-type='ZIO *' data-ref="1z">z</dfn>) {</td></tr>
+<tr><th id="22">22</th><td>  <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="2size" title='size' data-type='size_t' data-ref="2size">size</dfn>;</td></tr>
+<tr><th id="23">23</th><td>  <a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col3 decl" id="3L" title='L' data-type='lua_State *' data-ref="3L">L</dfn> = <a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::L" title='Zio::L' data-ref="Zio::L">L</a>;</td></tr>
+<tr><th id="24">24</th><td>  <em>const</em> <em>char</em> *<dfn class="local col4 decl" id="4buff" title='buff' data-type='const char *' data-ref="4buff">buff</dfn>;</td></tr>
+<tr><th id="25">25</th><td>  <a class="macro" href="llimits.h.html#111" title="((void) 0)" data-ref="_M/lua_unlock">lua_unlock</a>(L);</td></tr>
+<tr><th id="26">26</th><td>  <a class="local col4 ref" href="#4buff" title='buff' data-ref="4buff">buff</a> = <a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::reader" title='Zio::reader' data-ref="Zio::reader">reader</a>(<a class="local col3 ref" href="#3L" title='L' data-ref="3L">L</a>, <a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::data" title='Zio::data' data-ref="Zio::data">data</a>, &amp;<a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a>);</td></tr>
+<tr><th id="27">27</th><td>  <a class="macro" href="llimits.h.html#110" title="((void) 0)" data-ref="_M/lua_lock">lua_lock</a>(L);</td></tr>
+<tr><th id="28">28</th><td>  <b>if</b> (<a class="local col4 ref" href="#4buff" title='buff' data-ref="4buff">buff</a> == <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span> || <a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a> == <var>0</var>) <b>return</b> <a class="macro" href="lzio.h.html#16" title="(-1)" data-ref="_M/EOZ">EOZ</a>;</td></tr>
+<tr><th id="29">29</th><td>  <a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a> = <a class="local col2 ref" href="#2size" title='size' data-ref="2size">size</a> - <var>1</var>;</td></tr>
+<tr><th id="30">30</th><td>  <a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a> = <a class="local col4 ref" href="#4buff" title='buff' data-ref="4buff">buff</a>;</td></tr>
+<tr><th id="31">31</th><td>  <b>return</b> <a class="macro" href="lzio.h.html#20" title="((int)(((unsigned char)((*(z-&gt;p++))))))" data-ref="_M/char2int">char2int</a>(*(<a class="local col1 ref" href="#1z" title='z' data-ref="1z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a>++));</td></tr>
+<tr><th id="32">32</th><td>}</td></tr>
+<tr><th id="33">33</th><td></td></tr>
+<tr><th id="34">34</th><td></td></tr>
+<tr><th id="35">35</th><td><em>int</em> <dfn class="decl def fn" id="luaZ_lookahead" title='luaZ_lookahead' data-ref="luaZ_lookahead">luaZ_lookahead</dfn> (<a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col5 decl" id="5z" title='z' data-type='ZIO *' data-ref="5z">z</dfn>) {</td></tr>
+<tr><th id="36">36</th><td>  <b>if</b> (<a class="local col5 ref" href="#5z" title='z' data-ref="5z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a> == <var>0</var>) {</td></tr>
+<tr><th id="37">37</th><td>    <b>if</b> (<a class="ref fn" href="#luaZ_fill" title='luaZ_fill' data-ref="luaZ_fill">luaZ_fill</a>(<a class="local col5 ref" href="#5z" title='z' data-ref="5z">z</a>) == <a class="macro" href="lzio.h.html#16" title="(-1)" data-ref="_M/EOZ">EOZ</a>)</td></tr>
+<tr><th id="38">38</th><td>      <b>return</b> <a class="macro" href="lzio.h.html#16" title="(-1)" data-ref="_M/EOZ">EOZ</a>;</td></tr>
+<tr><th id="39">39</th><td>    <b>else</b> {</td></tr>
+<tr><th id="40">40</th><td>      <a class="local col5 ref" href="#5z" title='z' data-ref="5z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a>++;  <i>/* luaZ_fill removed first byte; put back it */</i></td></tr>
+<tr><th id="41">41</th><td>      <a class="local col5 ref" href="#5z" title='z' data-ref="5z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a>--;</td></tr>
+<tr><th id="42">42</th><td>    }</td></tr>
+<tr><th id="43">43</th><td>  }</td></tr>
+<tr><th id="44">44</th><td>  <b>return</b> <a class="macro" href="lzio.h.html#20" title="((int)(((unsigned char)((*z-&gt;p)))))" data-ref="_M/char2int">char2int</a>(*<a class="local col5 ref" href="#5z" title='z' data-ref="5z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a>);</td></tr>
+<tr><th id="45">45</th><td>}</td></tr>
+<tr><th id="46">46</th><td></td></tr>
+<tr><th id="47">47</th><td></td></tr>
+<tr><th id="48">48</th><td><em>void</em> <dfn class="decl def fn" id="luaZ_init" title='luaZ_init' data-ref="luaZ_init">luaZ_init</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col6 decl" id="6L" title='L' data-type='lua_State *' data-ref="6L">L</dfn>, <a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col7 decl" id="7z" title='z' data-type='ZIO *' data-ref="7z">z</dfn>, <a class="typedef" href="lua.h.html#lua_Reader" title='lua_Reader' data-type='const char *(*)(lua_State *, void *, size_t *)' data-ref="lua_Reader">lua_Reader</a> <dfn class="local col8 decl" id="8reader" title='reader' data-type='lua_Reader' data-ref="8reader">reader</dfn>, <em>void</em> *<dfn class="local col9 decl" id="9data" title='data' data-type='void *' data-ref="9data">data</dfn>) {</td></tr>
+<tr><th id="49">49</th><td>  <a class="local col7 ref" href="#7z" title='z' data-ref="7z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::L" title='Zio::L' data-ref="Zio::L">L</a> = <a class="local col6 ref" href="#6L" title='L' data-ref="6L">L</a>;</td></tr>
+<tr><th id="50">50</th><td>  <a class="local col7 ref" href="#7z" title='z' data-ref="7z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::reader" title='Zio::reader' data-ref="Zio::reader">reader</a> = <a class="local col8 ref" href="#8reader" title='reader' data-ref="8reader">reader</a>;</td></tr>
+<tr><th id="51">51</th><td>  <a class="local col7 ref" href="#7z" title='z' data-ref="7z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::data" title='Zio::data' data-ref="Zio::data">data</a> = <a class="local col9 ref" href="#9data" title='data' data-ref="9data">data</a>;</td></tr>
+<tr><th id="52">52</th><td>  <a class="local col7 ref" href="#7z" title='z' data-ref="7z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a> = <var>0</var>;</td></tr>
+<tr><th id="53">53</th><td>  <a class="local col7 ref" href="#7z" title='z' data-ref="7z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a> = <span class="macro" title="((void*)0)" data-ref="_M/NULL">NULL</span>;</td></tr>
+<tr><th id="54">54</th><td>}</td></tr>
+<tr><th id="55">55</th><td></td></tr>
+<tr><th id="56">56</th><td></td></tr>
+<tr><th id="57">57</th><td><i>/* --------------------------------------------------------------- read --- */</i></td></tr>
+<tr><th id="58">58</th><td><span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="decl def fn" id="luaZ_read" title='luaZ_read' data-ref="luaZ_read">luaZ_read</dfn> (<a class="typedef" href="lzio.h.html#ZIO" title='ZIO' data-type='struct Zio' data-ref="ZIO">ZIO</a> *<dfn class="local col0 decl" id="10z" title='z' data-type='ZIO *' data-ref="10z">z</dfn>, <em>void</em> *<dfn class="local col1 decl" id="11b" title='b' data-type='void *' data-ref="11b">b</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col2 decl" id="12n" title='n' data-type='size_t' data-ref="12n">n</dfn>) {</td></tr>
+<tr><th id="59">59</th><td>  <b>while</b> (<a class="local col2 ref" href="#12n" title='n' data-ref="12n">n</a>) {</td></tr>
+<tr><th id="60">60</th><td>    <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col3 decl" id="13m" title='m' data-type='size_t' data-ref="13m">m</dfn>;</td></tr>
+<tr><th id="61">61</th><td>    <b>if</b> (<a class="ref fn" href="#luaZ_lookahead" title='luaZ_lookahead' data-ref="luaZ_lookahead">luaZ_lookahead</a>(<a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>) == <a class="macro" href="lzio.h.html#16" title="(-1)" data-ref="_M/EOZ">EOZ</a>)</td></tr>
+<tr><th id="62">62</th><td>      <b>return</b> <a class="local col2 ref" href="#12n" title='n' data-ref="12n">n</a>;  <i>/* return number of missing bytes */</i></td></tr>
+<tr><th id="63">63</th><td>    <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a> = (<a class="local col2 ref" href="#12n" title='n' data-ref="12n">n</a> &lt;= <a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a>) ? <a class="local col2 ref" href="#12n" title='n' data-ref="12n">n</a> : <a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a>;  <i>/* min. between n and z-&gt;n */</i></td></tr>
+<tr><th id="64">64</th><td>    <a class="ref fn" href="../../../../include/string.h.html#memcpy" title='memcpy' data-ref="memcpy">memcpy</a>(<a class="local col1 ref" href="#11b" title='b' data-ref="11b">b</a>, <a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a>, <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a>);</td></tr>
+<tr><th id="65">65</th><td>    <a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::n" title='Zio::n' data-ref="Zio::n">n</a> -= <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a>;</td></tr>
+<tr><th id="66">66</th><td>    <a class="local col0 ref" href="#10z" title='z' data-ref="10z">z</a>-&gt;<a class="ref field" href="lzio.h.html#Zio::p" title='Zio::p' data-ref="Zio::p">p</a> += <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a>;</td></tr>
+<tr><th id="67">67</th><td>    <a class="local col1 ref" href="#11b" title='b' data-ref="11b">b</a> = (<em>char</em> *)<a class="local col1 ref" href="#11b" title='b' data-ref="11b">b</a> + <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a>;</td></tr>
+<tr><th id="68">68</th><td>    <a class="local col2 ref" href="#12n" title='n' data-ref="12n">n</a> -= <a class="local col3 ref" href="#13m" title='m' data-ref="13m">m</a>;</td></tr>
+<tr><th id="69">69</th><td>  }</td></tr>
+<tr><th id="70">70</th><td>  <b>return</b> <var>0</var>;</td></tr>
+<tr><th id="71">71</th><td>}</td></tr>
+<tr><th id="72">72</th><td></td></tr>
+<tr><th id="73">73</th><td><i>/* ------------------------------------------------------------------------ */</i></td></tr>
+<tr><th id="74">74</th><td><em>char</em> *<dfn class="decl def fn" id="luaZ_openspace" title='luaZ_openspace' data-ref="luaZ_openspace">luaZ_openspace</dfn> (<a class="typedef" href="lua.h.html#lua_State" title='lua_State' data-type='struct lua_State' data-ref="lua_State">lua_State</a> *<dfn class="local col4 decl" id="14L" title='L' data-type='lua_State *' data-ref="14L">L</dfn>, <a class="typedef" href="lzio.h.html#Mbuffer" title='Mbuffer' data-type='struct Mbuffer' data-ref="Mbuffer">Mbuffer</a> *<dfn class="local col5 decl" id="15buff" title='buff' data-type='Mbuffer *' data-ref="15buff">buff</dfn>, <span class='typedef' title='size_t' data-type='unsigned long' data-ref="size_t">size_t</span> <dfn class="local col6 decl" id="16n" title='n' data-type='size_t' data-ref="16n">n</dfn>) {</td></tr>
+<tr><th id="75">75</th><td>  <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &gt; <a class="local col5 ref" href="#15buff" title='buff' data-ref="15buff">buff</a>-&gt;<a class="ref field" href="lzio.h.html#Mbuffer::buffsize" title='Mbuffer::buffsize' data-ref="Mbuffer::buffsize">buffsize</a>) {</td></tr>
+<tr><th id="76">76</th><td>    <b>if</b> (<a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> &lt; <a class="macro" href="llimits.h.html#105" title="32" data-ref="_M/LUA_MINBUFFER">LUA_MINBUFFER</a>) <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a> = <a class="macro" href="llimits.h.html#105" title="32" data-ref="_M/LUA_MINBUFFER">LUA_MINBUFFER</a>;</td></tr>
+<tr><th id="77">77</th><td>    <a class="macro" href="lzio.h.html#39" title="((((buff)-&gt;buffer)=((char *)(((((size_t)((n)+1)) &lt;= ((size_t)(~(size_t)0)-2)/(sizeof(char))) ? luaM_realloc_(L, ((buff)-&gt;buffer), ((buff)-&gt;buffsize)*(sizeof(char)), (n)*(sizeof(char))) : luaM_toobig(L))))), (buff)-&gt;buffsize = n)" data-ref="_M/luaZ_resizebuffer">luaZ_resizebuffer</a>(<a class="local col4 ref" href="#14L" title='L' data-ref="14L">L</a>, <a class="local col5 ref" href="#15buff" title='buff' data-ref="15buff">buff</a>, <a class="local col6 ref" href="#16n" title='n' data-ref="16n">n</a>);</td></tr>
+<tr><th id="78">78</th><td>  }</td></tr>
+<tr><th id="79">79</th><td>  <b>return</b> <a class="local col5 ref" href="#15buff" title='buff' data-ref="15buff">buff</a>-&gt;<a class="ref field" href="lzio.h.html#Mbuffer::buffer" title='Mbuffer::buffer' data-ref="Mbuffer::buffer">buffer</a>;</td></tr>
+<tr><th id="80">80</th><td>}</td></tr>
+<tr><th id="81">81</th><td></td></tr>
+<tr><th id="82">82</th><td></td></tr>
+<tr><th id="83">83</th><td></td></tr>
+</table><hr/><p id='footer'>
+Generated on <em>2018-Apr-06</em> from project redis revision <em>77d3b16</em><br />Powered by <a href='https://woboq.com'><img alt='Woboq' src='https://code.woboq.org/woboq-16.png' width='41' height='16' /></a> <a href='https://code.woboq.org'>Code Browser</a> 2.1
+<br/>Generator usage only permitted with license.</p>
+</div></body></html>

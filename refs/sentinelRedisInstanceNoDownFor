@@ -1,0 +1,5 @@
+<def f='redis/src/sentinel.c' l='1288' ll='1295' type='int sentinelRedisInstanceNoDownFor(sentinelRedisInstance * ri, mstime_t ms)'/>
+<use f='redis/src/sentinel.c' l='1966' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='1989' u='c' c='sentinelRefreshInstanceInfo'/>
+<doc f='redis/src/sentinel.c' l='1286'>/* Return non-zero if there was no SDOWN or ODOWN error associated to this
+ * instance in the latest &apos;ms&apos; milliseconds. */</doc>

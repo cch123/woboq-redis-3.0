@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='710' type='long long'/>
+<offset>7616</offset>
+<doc f='redis/src/redis.h' l='710'>/* Number of unaccepted PSYNC requests. */</doc>
+<use f='redis/src/redis.c' l='1733' u='w' c='resetServerStats'/>
+<use f='redis/src/redis.c' l='2847' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='506' u='w' c='syncCommand'/>

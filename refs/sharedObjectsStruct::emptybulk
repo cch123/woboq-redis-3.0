@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='568' type='robj *'/>
+<offset>192</offset>
+<use f='redis/src/redis.c' l='1313' u='w' c='createSharedObjects'/>
+<use f='redis/src/t_string.c' l='242' u='r' c='getrangeCommand'/>
+<use f='redis/src/t_string.c' l='263' u='r' c='getrangeCommand'/>

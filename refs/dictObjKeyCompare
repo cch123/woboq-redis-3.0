@@ -1,0 +1,3 @@
+<def f='redis/src/redis.c' l='463' ll='468' type='int dictObjKeyCompare(void * privdata, const void * key1, const void * key2)'/>
+<use f='redis/src/redis.c' l='601'/>
+<use f='redis/src/redis.c' l='601'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1065' type='int clientsArePaused()'/>
+<use f='redis/src/cluster.c' l='2978' u='c' c='resetManualFailover'/>
+<use f='redis/src/cluster.c' l='2980' u='c' c='resetManualFailover'/>
+<use f='redis/src/networking.c' l='1129' u='c' c='processInputBuffer'/>
+<def f='redis/src/networking.c' l='1717' ll='1741' type='int clientsArePaused()'/>
+<doc f='redis/src/networking.c' l='1715'>/* Return non-zero if clients are currently paused. As a side effect the
+ * function checks if the pause time was reached and clear it. */</doc>
+<use f='redis/src/redis.c' l='1235' u='c' c='serverCron'/>

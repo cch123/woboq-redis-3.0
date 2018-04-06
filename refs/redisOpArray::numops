@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='633' type='int'/>
+<offset>64</offset>
+<use f='redis/src/redis.c' l='1939' u='w' c='redisOpArrayInit'/>
+<use f='redis/src/redis.c' l='1947' u='r' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='1948' u='r' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='1954' u='w' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='1955' u='r' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='1959' u='r' c='redisOpArrayFree'/>
+<use f='redis/src/redis.c' l='1963' u='w' c='redisOpArrayFree'/>
+<use f='redis/src/redis.c' l='1964' u='r' c='redisOpArrayFree'/>
+<use f='redis/src/redis.c' l='2105' u='r' c='call'/>
+<use f='redis/src/redis.c' l='2109' u='r' c='call'/>

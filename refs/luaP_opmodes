@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='252' type='const lu_byte [38]'/>
+<use f='redis/deps/lua/src/lcode.c' l='111' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='330' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='334' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='335' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='340' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='345' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='366' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='369' macro='1' u='r'/>
+<def f='redis/deps/lua/src/lopcodes.c' l='61' ll='101' type='const lu_byte [38]'/>

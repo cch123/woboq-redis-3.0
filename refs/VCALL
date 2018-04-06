@@ -1,0 +1,12 @@
+<dec f='redis/deps/lua/src/lparser.h' l='33' type='13'/>
+<use f='redis/deps/lua/src/lcode.c' l='281' u='r' c='luaK_setreturns'/>
+<use f='redis/deps/lua/src/lcode.c' l='293' u='r' c='luaK_setoneret'/>
+<use f='redis/deps/lua/src/lcode.c' l='328' c='luaK_dischargevars'/>
+<doc f='redis/deps/lua/src/lparser.h' l='33'>/* info = instruction pc */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='30' u='r' c='adjust_assign'/>
+<use f='redis/deps/lua/src/lparser.c' l='30' u='r' c='lastlistfield'/>
+<use f='redis/deps/lua/src/lparser.c' l='30' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='651' u='r' c='funcargs'/>
+<use f='redis/deps/lua/src/lparser.c' l='1229' u='r' c='exprstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='30' u='r' c='retstat'/>
+<use f='redis/deps/lua/src/lparser.c' l='1250' u='r' c='retstat'/>

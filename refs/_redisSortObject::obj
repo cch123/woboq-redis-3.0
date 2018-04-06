@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='938' type='robj *'/>
+<offset>0</offset>
+<use f='redis/src/sort.c' l='152' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='152' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='178' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='178' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='180' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='180' u='r' c='sortCompare'/>
+<use f='redis/src/sort.c' l='350' u='w' c='sortCommand'/>
+<use f='redis/src/sort.c' l='360' u='w' c='sortCommand'/>
+<use f='redis/src/sort.c' l='396' u='w' c='sortCommand'/>
+<use f='redis/src/sort.c' l='414' u='w' c='sortCommand'/>
+<use f='redis/src/sort.c' l='431' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='435' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='491' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='496' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='520' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='526' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='560' u='r' c='sortCommand'/>

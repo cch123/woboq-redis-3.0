@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='663' type='int'/>
+<offset>736</offset>
+<doc f='redis/src/redis.h' l='663'>/* Number of times the cron function run */</doc>
+<use f='redis/src/redis.c' l='1080' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1117' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1133' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1226' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1239' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1242' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1247' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1252' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1256' u='w' c='serverCron'/>
+<use f='redis/src/redis.c' l='1813' u='w' c='initServer'/>
+<use f='redis/src/replication.c' l='1985' u='r' c='replicationCron'/>

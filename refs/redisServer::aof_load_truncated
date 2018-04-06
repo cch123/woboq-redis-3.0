@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='759' type='int'/>
+<use f='redis/src/aof.c' l='695' u='r' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='718' u='r' c='loadAppendOnlyFile'/>
+<offset>13728</offset>
+<doc f='redis/src/redis.h' l='759'>/* Don&apos;t stop on unexpected AOF EOF. */</doc>
+<use f='redis/src/config.c' l='376' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='743' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1101' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1873' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1441' u='w' c='initServerConfig'/>

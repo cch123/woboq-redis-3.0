@@ -1,0 +1,5 @@
+<def f='redis/src/cluster.c' l='1176' ll='1206' type='void clearNodeFailureIfNeeded(clusterNode * node)'/>
+<use f='redis/src/cluster.c' l='1742' u='c' c='clusterProcessPacket'/>
+<doc f='redis/src/cluster.c' l='1173'>/* This function is called only if a node is marked as FAIL, but we are able
+ * to reach it again. It checks if there are the conditions to undo the FAIL
+ * state. */</doc>

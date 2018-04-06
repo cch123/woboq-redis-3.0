@@ -1,0 +1,2 @@
+<def f='redis/deps/hiredis/async.c' l='400' ll='476' type='void redisProcessCallbacks(redisAsyncContext * ac)'/>
+<use f='redis/deps/hiredis/async.c' l='520' u='c' c='redisAsyncHandleRead'/>

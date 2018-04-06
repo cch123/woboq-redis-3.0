@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1140' type='int getLongDoubleFromObjectOrReply(redisClient * c, robj * o, long double * target, const char * msg)'/>
+<def f='redis/src/object.c' l='608' ll='620' type='int getLongDoubleFromObjectOrReply(redisClient * c, robj * o, long double * target, const char * msg)'/>
+<use f='redis/src/t_hash.c' l='554' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_hash.c' l='557' u='c' c='hincrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='391' u='c' c='incrbyfloatCommand'/>
+<use f='redis/src/t_string.c' l='392' u='c' c='incrbyfloatCommand'/>

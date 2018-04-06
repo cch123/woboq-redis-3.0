@@ -1,0 +1,25 @@
+<dec f='redis/src/dict.h' l='167' type='unsigned int dictGetSomeKeys(dict * d, dictEntry ** des, unsigned int count)'/>
+<def f='redis/src/dict.c' l='686' ll='751' type='unsigned int dictGetSomeKeys(dict * d, dictEntry ** des, unsigned int count)'/>
+<doc f='redis/src/dict.c' l='664'>/* This function samples the dictionary to return a few keys from random
+ * locations.
+ *
+ * It does not guarantee to return all the keys specified in &apos;count&apos;, nor
+ * it does guarantee to return non-duplicated elements, however it will make
+ * some effort to do both things.
+ *
+ * Returned pointers to hash table entries are stored into &apos;des&apos; that
+ * points to an array of dictEntry pointers. The array must have room for
+ * at least &apos;count&apos; elements, that is the argument we pass to the function
+ * to tell how many random elements we need.
+ *
+ * The function returns the number of items stored into &apos;des&apos;, that may
+ * be less than &apos;count&apos; if the hash table has less than &apos;count&apos; elements
+ * inside, or if not enough elements were found in a reasonable amount of
+ * steps.
+ *
+ * Note that this function is not suitable when you need a good distribution
+ * of the returned items, but only when you need to &quot;sample&quot; a given number
+ * of continuous elements to run some kind of algorithm or to produce
+ * statistics. However the function is much faster than dictGetRandomKey()
+ * at producing N elements. */</doc>
+<use f='redis/src/redis.c' l='3134' u='c' c='evictionPoolPopulate'/>

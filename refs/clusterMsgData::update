@@ -1,0 +1,9 @@
+<dec f='redis/src/cluster.h' l='214' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:212:5)'/>
+<use f='redis/src/cluster.c' l='1938' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1941' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1956' u='m' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2379' u='m' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2380' u='m' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2381' u='m' c='clusterSendUpdate'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='211'>/* UPDATE */</doc>

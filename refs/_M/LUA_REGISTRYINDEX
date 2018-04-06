@@ -1,0 +1,20 @@
+<dec f='redis/deps/lua/src/lua.h' l='36'/>
+<use f='redis/deps/lua/src/lapi.c' l='56' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='61' u='c'/>
+<doc f='redis/deps/lua/src/lua.h' l='33'>/*
+** pseudo-indices
+*/</doc>
+<use f='redis/deps/lua/src/lauxlib.c' l='113' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='119' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='128' u='c'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='247' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='23' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='211' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='247' u='c'/>
+<use f='redis/deps/lua/src/ldblib.c' l='253' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='61' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='265' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='276' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='455' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='547' u='c'/>
+<use f='redis/deps/lua/src/loadlib.c' l='656' u='c'/>

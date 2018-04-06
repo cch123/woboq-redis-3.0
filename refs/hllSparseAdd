@@ -1,0 +1,18 @@
+<def f='redis/src/hyperloglog.c' l='638' ll='882' type='int hllSparseAdd(robj * o, unsigned char * ele, size_t elesize)'/>
+<use f='redis/src/hyperloglog.c' l='1031' u='c' c='hllAdd'/>
+<doc f='redis/src/hyperloglog.c' l='622'>/* &quot;Add&quot; the element in the sparse hyperloglog data structure.
+ * Actually nothing is added, but the max 0 pattern counter of the subset
+ * the element belongs to is incremented if needed.
+ *
+ * The object &apos;o&apos; is the String object holding the HLL. The function requires
+ * a reference to the object in order to be able to enlarge the string if
+ * needed.
+ *
+ * On success, the function returns 1 if the cardinality changed, or 0
+ * if the register for this element was not updated.
+ * On error (if the representation is invalid) -1 is returned.
+ *
+ * As a side effect the function may promote the HLL representation from
+ * sparse to dense: this happens when a register requires to be set to a value
+ * not representable with the sparse representation, or when the resulting
+ * size would be greater than server.hll_sparse_max_bytes. */</doc>

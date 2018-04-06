@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/ldo.h' l='32'/>
+<doc f='redis/deps/lua/src/ldo.h' l='31'>/* results from luaD_precall */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='305' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='377' u='c'/>
+<use f='redis/deps/lua/src/ldo.c' l='389' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='592' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='613' u='c'/>

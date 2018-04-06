@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1471' type='void zscoreCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='190' u='r'/>
+<use f='redis/src/redis.c' l='190' u='r'/>
+<use f='redis/src/redis.c' l='190' u='r'/>
+<use f='redis/src/redis.c' l='190' u='r'/>
+<def f='redis/src/t_zset.c' l='2748' ll='2776' type='void zscoreCommand(redisClient * c)'/>

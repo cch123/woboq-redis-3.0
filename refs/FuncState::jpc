@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lparser.h' l='67' type='int'/>
+<use f='redis/deps/lua/src/lcode.c' l='60' u='r' c='luaK_jump'/>
+<use f='redis/deps/lua/src/lcode.c' l='62' u='w' c='luaK_jump'/>
+<use f='redis/deps/lua/src/lcode.c' l='164' u='r' c='dischargejpc'/>
+<use f='redis/deps/lua/src/lcode.c' l='165' u='w' c='dischargejpc'/>
+<use f='redis/deps/lua/src/lcode.c' l='181' u='a' c='luaK_patchtohere'/>
+<offset>448</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='67'>/* list of pending jumps to `pc&apos; */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='338' u='w' c='open_func'/>

@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='832' type='time_t'/>
+<offset>16960</offset>
+<doc f='redis/src/redis.h' l='832'>/* Unix time at which link with master went down */</doc>
+<use f='redis/src/cluster.c' l='2727' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/networking.c' l='674' u='w' c='replicationHandleMasterDisconnection'/>
+<use f='redis/src/redis.c' l='1500' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2903' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1449' u='w' c='replicationSetMaster'/>

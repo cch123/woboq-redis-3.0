@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.h' l='107' type='int'/>
+<use f='redis/src/cluster.c' l='398' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='1149' u='r' c='markNodeAsFailingIfNeeded'/>
+<use f='redis/src/cluster.c' l='2687' u='r' c='clusterHandleSlaveFailover'/>
+<use f='redis/src/cluster.c' l='3438' u='w' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3444' u='w' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='3455' u='r' c='clusterUpdateState'/>
+<use f='redis/src/cluster.c' l='4030' u='r' c='clusterCommand'/>
+<offset>160</offset>
+<doc f='redis/src/cluster.h' l='107'>/* Num of master nodes with at least one slot */</doc>

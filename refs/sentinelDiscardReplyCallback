@@ -1,0 +1,12 @@
+<dec f='redis/src/sentinel.c' l='337' type='void sentinelDiscardReplyCallback(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='1681' u='r' c='sentinelSendAuthIfNeeded'/>
+<use f='redis/src/sentinel.c' l='1696' u='r' c='sentinelSetClientName'/>
+<def f='redis/src/sentinel.c' l='2044' ll='2050' type='void sentinelDiscardReplyCallback(redisAsyncContext * c, void * reply, void * privdata)'/>
+<use f='redis/src/sentinel.c' l='2079' u='r' c='sentinelPingReplyCallback'/>
+<use f='redis/src/sentinel.c' l='3330' u='r' c='sentinelSendSlaveOf'/>
+<use f='redis/src/sentinel.c' l='3335' u='r' c='sentinelSendSlaveOf'/>
+<use f='redis/src/sentinel.c' l='3340' u='r' c='sentinelSendSlaveOf'/>
+<use f='redis/src/sentinel.c' l='3350' u='r' c='sentinelSendSlaveOf'/>
+<use f='redis/src/sentinel.c' l='3355' u='r' c='sentinelSendSlaveOf'/>
+<doc f='redis/src/sentinel.c' l='2042'>/* Just discard the reply. We use this when we are not monitoring the return
+ * value of the command but its effects directly. */</doc>

@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='743' type='off_t'/>
+<use f='redis/src/aof.c' l='356' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='388' u='w' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='402' u='w' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='608' u='w' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='708' u='r' c='loadAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1356' u='w' c='aofUpdateCurrentSize'/>
+<use f='redis/src/aof.c' l='1464' u='r' c='backgroundRewriteDoneHandler'/>
+<offset>12928</offset>
+<doc f='redis/src/redis.h' l='743'>/* AOF current size. */</doc>
+<use f='redis/src/redis.c' l='1205' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1209' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='2772' u='r' c='genRedisInfoString'/>

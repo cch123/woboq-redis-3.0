@@ -1,0 +1,16 @@
+<dec f='redis/deps/lua/src/lua.h' l='39'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='240' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='259' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='430' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='435' u='c'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='562' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='392' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='401' u='c'/>
+<use f='redis/deps/lua/src/liolib.c' l='403' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='551' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='552' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='557' u='c'/>
+<use f='redis/deps/lua/src/lstrlib.c' l='566' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='198' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='1326' u='c'/>
+<use f='redis/deps/lua/src/lua_cmsgpack.c' l='856' u='c'/>

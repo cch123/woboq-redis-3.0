@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='757' type='int'/>
+<use f='redis/src/aof.c' l='383' u='w' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='396' u='r' c='flushAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='399' u='w' c='flushAppendOnlyFile'/>
+<offset>13664</offset>
+<doc f='redis/src/redis.h' l='757'>/* REDIS_OK or REDIS_ERR */</doc>
+<use f='redis/src/redis.c' l='1227' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1830' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2207' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2213' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2761' u='r' c='genRedisInfoString'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1177' type='void loadingProgress(off_t pos)'/>
+<use f='redis/src/aof.c' l='635' u='c' c='loadAppendOnlyFile'/>
+<def f='redis/src/rdb.c' l='1099' ll='1103' type='void loadingProgress(off_t pos)'/>
+<use f='redis/src/rdb.c' l='1124' u='c' c='rdbLoadProgressCallback'/>
+<doc f='redis/src/rdb.c' l='1098'>/* Refresh the loading progress info */</doc>

@@ -1,0 +1,20 @@
+<dec f='include/netinet/in.h' l='377' type='uint16_t ntohs(uint16_t __netshort)'/>
+<use f='redis/src/anet.c' l='537' u='c' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='541' u='c' c='anetTcpAccept'/>
+<use f='redis/src/anet.c' l='566' u='c' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='570' u='c' c='anetPeerToString'/>
+<use f='redis/src/anet.c' l='605' u='c' c='anetSockName'/>
+<use f='redis/src/anet.c' l='609' u='c' c='anetSockName'/>
+<use f='redis/src/cluster.c' l='1290' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1295' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1303' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1335' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1337' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1350' u='c' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='1532' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1533' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1543' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1549' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1652' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1682' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1720' u='c' c='clusterProcessPacket'/>

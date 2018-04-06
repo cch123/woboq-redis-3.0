@@ -1,0 +1,7 @@
+<dec f='include/unistd.h' l='214'/>
+<use f='redis/deps/linenoise/linenoise.c' l='318' u='c'/>
+<use f='redis/deps/linenoise/linenoise.c' l='948' u='c'/>
+<use f='redis/src/debug.c' l='666' u='c'/>
+<use f='redis/src/redis-cli.c' l='1364' u='c'/>
+<use f='redis/src/redis.c' l='365' u='c'/>
+<use f='redis/src/redis.c' l='3398' u='c'/>

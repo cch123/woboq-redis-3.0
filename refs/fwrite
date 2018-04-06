@@ -1,0 +1,10 @@
+<dec f='include/stdio.h' l='715' type='size_t fwrite(const void *restrict __ptr, size_t __size, size_t __n, FILE *restrict __s)'/>
+<doc f='include/stdio.h' l='711'>/* Write chunks of generic data to STREAM.
+
+   This function is a possible cancellation point and therefore not
+   marked with __THROW.  */</doc>
+<use f='redis/deps/lua/src/liolib.c' l='425' u='c' c='g_write'/>
+<use f='redis/src/redis-cli.c' l='627' u='c' c='cliReadReply'/>
+<use f='redis/src/rio.c' l='112' u='c' c='rioFileWrite'/>
+<use f='redis/src/ziplist.c' l='939' u='c' c='ziplistRepr'/>
+<use f='redis/src/ziplist.c' l='943' u='c' c='ziplistRepr'/>

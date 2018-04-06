@@ -1,0 +1,2 @@
+<dec f='redis/deps/lua/src/lua.h' l='142' type='int lua_equal(lua_State * L, int idx1, int idx2)'/>
+<def f='redis/deps/lua/src/lapi.c' l='287' ll='296' macro='1' type='int lua_equal(lua_State * L, int index1, int index2)'/>

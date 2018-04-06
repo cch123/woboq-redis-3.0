@@ -1,0 +1,4 @@
+<def f='redis/deps/lua/src/lobject.h' l='332' ll='335'/>
+<size>40</size>
+<mbr r='Node::i_val' o='0' t='TValue'/>
+<mbr r='Node::i_key' o='128' t='TKey'/>

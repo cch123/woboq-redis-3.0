@@ -1,0 +1,4 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='144' type='void redisReaderFree(redisReader * r)'/>
+<def f='redis/deps/hiredis/hiredis.c' l='577' ll='583' type='void redisReaderFree(redisReader * r)'/>
+<use f='redis/deps/hiredis/hiredis.c' l='1009' u='c' c='redisFree'/>
+<use f='redis/src/redis-cli.c' l='1543' u='c' c='pipeMode'/>

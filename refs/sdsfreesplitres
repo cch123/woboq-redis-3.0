@@ -1,0 +1,23 @@
+<dec f='redis/deps/hiredis/sds.h' l='86' type='void sdsfreesplitres(sds * tokens, int count)'/>
+<def f='redis/deps/hiredis/sds.c' l='731' ll='736' type='void sdsfreesplitres(sds * tokens, int count)'/>
+<doc f='redis/deps/hiredis/sds.c' l='730'>/* Free the result returned by sdssplitlen(), or do nothing if &apos;tokens&apos; is NULL. */</doc>
+<dec f='redis/src/sds.h' l='86' type='void sdsfreesplitres(sds * tokens, int count)'/>
+<use f='redis/src/cluster.c' l='154' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='259' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/config.c' l='109' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='546' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='557' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='752' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='763' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='777' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='852' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='864' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='870' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='890' u='c' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1365' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1671' u='c' c='rewriteConfigReleaseState'/>
+<use f='redis/src/redis-cli.c' l='1028' u='c' c='repl'/>
+<def f='redis/src/sds.c' l='731' ll='736' type='void sdsfreesplitres(sds * tokens, int count)'/>
+<doc f='redis/src/sds.c' l='730'>/* Free the result returned by sdssplitlen(), or do nothing if &apos;tokens&apos; is NULL. */</doc>
+<use f='redis/src/sentinel.c' l='1902' u='c' c='sentinelRefreshInstanceInfo'/>
+<use f='redis/src/sentinel.c' l='2195' u='c' c='sentinelProcessHelloMessage'/>

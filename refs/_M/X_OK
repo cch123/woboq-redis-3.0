@@ -1,0 +1,5 @@
+<dec f='include/unistd.h' l='286'/>
+<use f='redis/src/sentinel.c' l='1375' u='c'/>
+<use f='redis/src/sentinel.c' l='1382' u='c'/>
+<use f='redis/src/sentinel.c' l='2908' u='c'/>
+<use f='redis/src/sentinel.c' l='2919' u='c'/>

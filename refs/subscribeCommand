@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='1503' type='void subscribeCommand(redisClient * c)'/>
+<def f='redis/src/pubsub.c' l='277' ll='283' type='void subscribeCommand(redisClient * c)'/>
+<doc f='redis/src/pubsub.c' l='273'>/*-----------------------------------------------------------------------------
+ * Pubsub commands implementation
+ *----------------------------------------------------------------------------*/</doc>
+<use f='redis/src/redis.c' l='253' u='r'/>
+<use f='redis/src/redis.c' l='253' u='r'/>
+<use f='redis/src/redis.c' l='253' u='r'/>
+<use f='redis/src/redis.c' l='253' u='r'/>
+<use f='redis/src/redis.c' l='2249' u='r' c='processCommand'/>
+<use f='redis/src/sentinel.c' l='393'/>
+<use f='redis/src/sentinel.c' l='393'/>
+<use f='redis/src/sentinel.c' l='393'/>
+<use f='redis/src/sentinel.c' l='393'/>

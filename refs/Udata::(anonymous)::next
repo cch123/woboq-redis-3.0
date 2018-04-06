@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='43' type='GCObject *'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lgc.c' l='454' u='r' c='GCTM'/>
+<use f='redis/deps/lua/src/lgc.c' l='455' u='w' c='GCTM'/>
+<use f='redis/deps/lua/src/lstring.c' l='107' u='w' c='luaS_newudata'/>

@@ -1,0 +1,5 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='60' type='void linenoisePrintKeyCodes()'/>
+<def f='redis/deps/linenoise/linenoise.c' l='903' ll='926' type='void linenoisePrintKeyCodes()'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='900'>/* This special mode is used by linenoise in order to print scan codes
+ * on screen for debugging / development purposes. It is implemented
+ * by the linenoise_example program using the --keycodes option. */</doc>

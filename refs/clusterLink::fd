@@ -1,0 +1,15 @@
+<dec f='redis/src/cluster.h' l='41' type='int'/>
+<use f='redis/src/cluster.c' l='545' u='w' c='createClusterLink'/>
+<use f='redis/src/cluster.c' l='553' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='554' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='555' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='561' u='r' c='freeClusterLink'/>
+<use f='redis/src/cluster.c' l='598' u='w' c='clusterAcceptHandler'/>
+<use f='redis/src/cluster.c' l='1361' u='r' c='nodeIp2String'/>
+<use f='redis/src/cluster.c' l='1633' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1991' u='r' c='clusterWriteHandler'/>
+<use f='redis/src/cluster.c' l='2067' u='r' c='clusterSendMessage'/>
+<use f='redis/src/cluster.c' l='3079' u='w' c='clusterCron'/>
+<use f='redis/src/cluster.c' l='3081' u='r' c='clusterCron'/>
+<offset>64</offset>
+<doc f='redis/src/cluster.h' l='41'>/* TCP socket file descriptor */</doc>

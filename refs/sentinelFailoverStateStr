@@ -1,0 +1,3 @@
+<def f='redis/src/sentinel.c' l='2387' ll='2398' type='const char * sentinelFailoverStateStr(int state)'/>
+<use f='redis/src/sentinel.c' l='2450' u='c' c='addReplySentinelRedisInstance'/>
+<doc f='redis/src/sentinel.c' l='2385'>/* =========================== SENTINEL command ============================= */</doc>

@@ -1,0 +1,13 @@
+<def f='redis/deps/lua/src/llex.h' l='55' ll='67'/>
+<size>96</size>
+<mbr r='LexState::current' o='0' t='int'/>
+<mbr r='LexState::linenumber' o='32' t='int'/>
+<mbr r='LexState::lastline' o='64' t='int'/>
+<mbr r='LexState::t' o='128' t='Token'/>
+<mbr r='LexState::lookahead' o='256' t='Token'/>
+<mbr r='LexState::fs' o='384' t='struct FuncState *'/>
+<mbr r='LexState::L' o='448' t='struct lua_State *'/>
+<mbr r='LexState::z' o='512' t='ZIO *'/>
+<mbr r='LexState::buff' o='576' t='Mbuffer *'/>
+<mbr r='LexState::source' o='640' t='TString *'/>
+<mbr r='LexState::decpoint' o='704' t='char'/>

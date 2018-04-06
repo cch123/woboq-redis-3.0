@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lua.h' l='334' type='int lua_getinfo(lua_State * L, const char * what, lua_Debug * ar)'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='47' u='c' c='luaL_argerror'/>
+<use f='redis/deps/lua/src/lauxlib.c' l='76' u='c' c='luaL_where'/>
+<use f='redis/deps/lua/src/lbaselib.c' l='125' u='c' c='getfunc'/>
+<use f='redis/deps/lua/src/ldblib.c' l='118' u='c' c='db_getinfo'/>
+<use f='redis/deps/lua/src/ldblib.c' l='353' u='c' c='db_errorfb'/>
+<def f='redis/deps/lua/src/ldebug.c' l='232' ll='259' macro='1' type='int lua_getinfo(lua_State * L, const char * what, lua_Debug * ar)'/>
+<use f='redis/deps/lua/src/loadlib.c' l='510' u='c' c='setfenv'/>
+<use f='redis/src/scripting.c' l='162' u='c' c='luaPushError'/>

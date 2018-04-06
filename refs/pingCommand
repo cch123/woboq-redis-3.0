@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='1378' type='void pingCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='227' u='r'/>
+<use f='redis/src/redis.c' l='227' u='r'/>
+<use f='redis/src/redis.c' l='227' u='r'/>
+<use f='redis/src/redis.c' l='227' u='r'/>
+<use f='redis/src/redis.c' l='2210' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2248' u='r' c='processCommand'/>
+<def f='redis/src/redis.c' l='2437' ll='2458' type='void pingCommand(redisClient * c)'/>
+<doc f='redis/src/redis.c' l='2435'>/* The PING command. It works in a different way if the client is in
+ * in Pub/Sub mode. */</doc>
+<use f='redis/src/sentinel.c' l='391'/>
+<use f='redis/src/sentinel.c' l='391'/>
+<use f='redis/src/sentinel.c' l='391'/>
+<use f='redis/src/sentinel.c' l='391'/>

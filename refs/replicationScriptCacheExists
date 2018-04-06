@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1167' type='int replicationScriptCacheExists(sds sha1)'/>
+<def f='redis/src/replication.c' l='1782' ll='1784' type='int replicationScriptCacheExists(sds sha1)'/>
+<doc f='redis/src/replication.c' l='1780'>/* Returns non-zero if the specified entry exists inside the cache, that is,
+ * if all the slaves are aware of this script SHA1. */</doc>
+<use f='redis/src/scripting.c' l='1078' u='c' c='evalGenericCommand'/>

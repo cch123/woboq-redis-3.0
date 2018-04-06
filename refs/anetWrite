@@ -1,0 +1,4 @@
+<dec f='redis/src/anet.h' l='63' type='int anetWrite(int fd, char * buf, int count)'/>
+<def f='redis/src/anet.c' l='407' ll='418' type='int anetWrite(int fd, char * buf, int count)'/>
+<doc f='redis/src/anet.c' l='405'>/* Like write(2) but make sure &apos;count&apos; is read before to return
+ * (unless error is encountered) */</doc>

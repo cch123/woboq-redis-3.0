@@ -1,0 +1,20 @@
+<dec f='redis/src/cluster.h' l='111' type='clusterNode *[16384]'/>
+<use f='redis/src/cluster.c' l='246' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='866' u='r' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='867' u='w' c='clusterDelNode'/>
+<use f='redis/src/cluster.c' l='1462' u='r' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='3378' u='r' c='clusterCloseAllSlots'/>
+<use f='redis/src/cluster.c' l='3379' u='r' c='clusterCloseAllSlots'/>
+<use f='redis/src/cluster.c' l='3533' u='r' c='verifyClusterConfigWithData'/>
+<use f='redis/src/cluster.c' l='3549' u='w' c='verifyClusterConfigWithData'/>
+<use f='redis/src/cluster.c' l='3674' u='r' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3676' u='r' c='clusterGenNodeDescription'/>
+<use f='redis/src/cluster.c' l='3885' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3886' u='w' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3928' u='w' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3931' u='w' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3962' u='r' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3977' u='w' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='4849' u='r' c='getNodeByQuery'/>
+<use f='redis/src/cluster.c' l='4992' u='r' c='clusterRedirectBlockedClientIfNeeded'/>
+<offset>1048896</offset>

@@ -1,0 +1,20 @@
+<dec f='include/x86_64-linux-gnu/bits/mathcalls.h' l='234' type='int __isnan(double __value)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='596' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='601' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='607' macro='1' u='c'/>
+<use f='redis/src/object.c' l='558' macro='1' u='c'/>
+<use f='redis/src/object.c' l='596' macro='1' u='c'/>
+<use f='redis/src/rdb.c' l='382' macro='1' u='c'/>
+<use f='redis/src/sort.c' l='446' macro='1' u='c'/>
+<use f='redis/src/t_string.c' l='396' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='115' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='443' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='447' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='455' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='459' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='1227' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='1264' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='1832' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='1949' macro='1' u='c'/>
+<use f='redis/src/t_zset.c' l='2002' macro='1' u='c'/>
+<use f='redis/src/util.c' l='404' macro='1' u='c'/>

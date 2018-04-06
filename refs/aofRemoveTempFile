@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1186' type='void aofRemoveTempFile(pid_t childpid)'/>
+<use f='redis/src/aof.c' l='225' u='c' c='stopAppendOnly'/>
+<def f='redis/src/aof.c' l='1336' ll='1341' type='void aofRemoveTempFile(pid_t childpid)'/>
+<use f='redis/src/aof.c' l='1499' u='c' c='backgroundRewriteDoneHandler'/>

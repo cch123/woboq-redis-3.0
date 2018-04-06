@@ -1,0 +1,6 @@
+<def f='redis/deps/lua/src/ldo.c' l='485' ll='489'/>
+<size>40</size>
+<doc f='redis/deps/lua/src/ldo.c' l='482'>/*
+** Execute a protected parser.
+*/</doc>
+<doc f='redis/deps/lua/src/ldo.c' l='485'>/* data to `f_parser&apos; */</doc>

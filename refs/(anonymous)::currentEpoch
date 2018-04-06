@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='226' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='1586' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2128' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2450' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<offset>128</offset>
+<doc f='redis/src/cluster.h' l='226'>/* The epoch accordingly to the sending node. */</doc>

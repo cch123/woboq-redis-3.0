@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lobject.h' l='128'/>
+<use f='redis/deps/lua/src/lapi.c' l='550' u='c'/>
+<use f='redis/deps/lua/src/lapi.c' l='664' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='252' u='c'/>
+<use f='redis/deps/lua/src/ltable.c' l='526' u='c'/>

@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='910' type='redisClient *'/>
+<offset>0</offset>
+<use f='redis/src/pubsub.c' l='46' u='r' c='listMatchPubsubPattern'/>
+<use f='redis/src/pubsub.c' l='46' u='r' c='listMatchPubsubPattern'/>
+<use f='redis/src/pubsub.c' l='137' u='w' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='159' u='w' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='260' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='261' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='262' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='263' u='r' c='pubsubPublishMessage'/>
+<use f='redis/src/pubsub.c' l='264' u='r' c='pubsubPublishMessage'/>

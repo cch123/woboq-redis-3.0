@@ -1,0 +1,22 @@
+<dec f='redis/src/redis.h' l='846' type='unsigned long long'/>
+<offset>17856</offset>
+<doc f='redis/src/redis.h' l='846'>/* Max number of memory bytes to use */</doc>
+<use f='redis/src/config.c' l='228' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='634' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='635' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='636' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1030' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1830' u='r' c='rewriteConfig'/>
+<use f='redis/src/networking.c' l='870' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='871' u='r' c='sendReplyToClient'/>
+<use f='redis/src/object.c' l='394' u='r' c='tryObjectEncoding'/>
+<use f='redis/src/redis.c' l='1453' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1870' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1872' u='w' c='initServer'/>
+<use f='redis/src/redis.c' l='2193' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='3214' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3220' u='r' c='freeMemoryIfNeeded'/>
+<use f='redis/src/redis.c' l='3680' u='r' c='main'/>
+<use f='redis/src/redis.c' l='3680' u='r' c='main'/>
+<use f='redis/src/redis.c' l='3681' u='r' c='main'/>
+<use f='redis/src/scripting.c' l='347' u='r' c='luaRedisGenericCommand'/>

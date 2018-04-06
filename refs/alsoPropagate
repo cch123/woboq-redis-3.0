@@ -1,0 +1,4 @@
+<dec f='redis/src/redis.h' l='1232' type='void alsoPropagate(struct redisCommand * cmd, int dbid, robj ** argv, int argc, int target)'/>
+<def f='redis/src/redis.c' l='2020' ll='2024' type='void alsoPropagate(struct redisCommand * cmd, int dbid, robj ** argv, int argc, int target)'/>
+<doc f='redis/src/redis.c' l='2018'>/* Used inside commands to schedule the propagation of additional commands
+ * after the current command is propagated to AOF / Replication. */</doc>

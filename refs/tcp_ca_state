@@ -1,0 +1,2 @@
+<def f='include/netinet/tcp.h' l='201' ll='208'/>
+<doc f='include/netinet/tcp.h' l='200'>/* Values for tcpi_state.  */</doc>

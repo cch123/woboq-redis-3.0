@@ -1,0 +1,14 @@
+<dec f='redis/src/redis.h' l='1104' type='void flagTransaction(redisClient * c)'/>
+<def f='redis/src/multi.c' l='81' ll='84' type='void flagTransaction(redisClient * c)'/>
+<doc f='redis/src/multi.c' l='79'>/* Flag the transacation as DIRTY_EXEC so that EXEC will fail.
+ * Should be called every time there is an error while queueing a command. */</doc>
+<use f='redis/src/redis.c' l='2141' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2147' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2156' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2174' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2181' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2196' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2212' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2231' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2263' u='c' c='processCommand'/>
+<use f='redis/src/redis.c' l='2286' u='c' c='processCommand'/>

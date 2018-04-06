@@ -1,0 +1,4 @@
+<dec f='redis/src/sentinel.c' l='323' type='void sentinelDisconnectCallback(const redisAsyncContext * c, int status)'/>
+<def f='redis/src/sentinel.c' l='1665' ll='1668' type='void sentinelDisconnectCallback(const redisAsyncContext * c, int status)'/>
+<use f='redis/src/sentinel.c' l='1723' u='r' c='sentinelReconnectInstance'/>
+<use f='redis/src/sentinel.c' l='1747' u='r' c='sentinelReconnectInstance'/>

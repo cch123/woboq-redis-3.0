@@ -1,0 +1,5 @@
+<dec f='redis/src/help.h' l='22' type='char *'/>
+<use f='redis/src/redis-cli.c' l='236' u='r' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='237' u='r' c='cliInitHelp'/>
+<use f='redis/src/redis-cli.c' l='246' u='r' c='cliOutputCommandHelp'/>
+<offset>0</offset>

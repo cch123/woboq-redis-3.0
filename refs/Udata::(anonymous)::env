@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lobject.h' l='220' type='struct Table *'/>
+<use f='redis/deps/lua/src/lapi.c' l='626' u='r' c='lua_getfenv'/>
+<use f='redis/deps/lua/src/lapi.c' l='747' u='w' c='lua_setfenv'/>
+<offset>192</offset>
+<use f='redis/deps/lua/src/lgc.c' l='80' u='r' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='80' u='r' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lstring.c' l='105' u='w' c='luaS_newudata'/>

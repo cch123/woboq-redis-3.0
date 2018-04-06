@@ -1,0 +1,17 @@
+<def f='redis/src/hyperloglog.c' l='967' ll='1024' type='uint64_t hllCount(struct hllhdr * hdr, int * invalid)'/>
+<use f='redis/src/hyperloglog.c' l='1228' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1260' u='c' c='pfcountCommand'/>
+<use f='redis/src/hyperloglog.c' l='1417' u='c' c='pfselftestCommand'/>
+<use f='redis/src/hyperloglog.c' l='1417' u='c' c='pfselftestCommand'/>
+<use f='redis/src/hyperloglog.c' l='1424' u='c' c='pfselftestCommand'/>
+<doc f='redis/src/hyperloglog.c' l='956'>/* Return the approximated cardinality of the set based on the harmonic
+ * mean of the registers values. &apos;hdr&apos; points to the start of the SDS
+ * representing the String object holding the HLL representation.
+ *
+ * If the sparse representation of the HLL object is not valid, the integer
+ * pointed by &apos;invalid&apos; is set to non-zero, otherwise it is left untouched.
+ *
+ * hllCount() supports a special internal-only encoding of HLL_RAW, that
+ * is, hdr-&gt;registers will point to an uint8_t array of HLL_REGISTERS element.
+ * This is useful in order to speedup PFCOUNT when called against multiple
+ * keys (no need to work with 6-bit integers encoding). */</doc>

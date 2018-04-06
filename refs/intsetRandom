@@ -1,0 +1,4 @@
+<dec f='redis/src/intset.h' l='45' type='int64_t intsetRandom(intset * is)'/>
+<def f='redis/src/intset.c' l='260' ll='262' type='int64_t intsetRandom(intset * is)'/>
+<doc f='redis/src/intset.c' l='259'>/* Return random member */</doc>
+<use f='redis/src/t_set.c' l='201' u='c' c='setTypeRandomElement'/>

@@ -1,0 +1,4 @@
+<def f='redis/src/redis.h' l='937' ll='943'/>
+<size>16</size>
+<mbr r='_redisSortObject::obj' o='0' t='robj *'/>
+<mbr r='_redisSortObject::u' o='64' t='union (anonymous union at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/redis.h:939:5)'/>

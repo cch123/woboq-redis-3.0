@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='1326' type='long long emptyDb(void (*)(void *) callback)'/>
+<use f='redis/src/cluster.c' l='491' u='c' c='clusterReset'/>
+<def f='redis/src/db.c' l='212' ll='223' type='long long emptyDb(void (*)(void *) callback)'/>
+<use f='redis/src/db.c' l='264' u='c' c='flushallCommand'/>
+<use f='redis/src/debug.c' l='270' u='c' c='debugCommand'/>
+<use f='redis/src/debug.c' l='278' u='c' c='debugCommand'/>
+<use f='redis/src/replication.c' l='1007' u='c' c='readSyncBulkPayload'/>

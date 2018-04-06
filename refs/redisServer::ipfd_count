@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='674' type='int'/>
+<offset>2912</offset>
+<doc f='redis/src/redis.h' l='674'>/* Used slots in ipfd[] */</doc>
+<use f='redis/src/redis.c' l='1410' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1777' u='a' c='initServer'/>
+<use f='redis/src/redis.c' l='1793' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='1844' u='r' c='initServer'/>
+<use f='redis/src/redis.c' l='2314' u='r' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='3671' u='r' c='main'/>

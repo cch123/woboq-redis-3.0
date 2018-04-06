@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='515' type='uint64_t'/>
+<offset>0</offset>
+<doc f='redis/src/redis.h' l='515'>/* Client incremental unique ID. */</doc>
+<use f='redis/src/networking.c' l='86' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='1334' u='r' c='catClientInfoString'/>
+<use f='redis/src/networking.c' l='1443' u='r' c='clientCommand'/>
+<use f='redis/src/rdb.c' l='1344' u='r' c='backgroundSaveDoneHandlerSocket'/>
+<use f='redis/src/rdb.c' l='1421' u='r' c='rdbSaveToSlavesSockets'/>
+<use f='redis/src/replication.c' l='64' u='r' c='replicationGetSlaveName'/>

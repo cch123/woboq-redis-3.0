@@ -1,0 +1,4 @@
+<dec f='redis/src/anet.h' l='59' type='int anetTcp6Server(char * err, int port, char * bindaddr, int backlog)'/>
+<def f='redis/src/anet.c' l='487' ll='490' type='int anetTcp6Server(char * err, int port, char * bindaddr, int backlog)'/>
+<use f='redis/src/redis.c' l='1678' u='c' c='listenToPort'/>
+<use f='redis/src/redis.c' l='1696' u='c' c='listenToPort'/>

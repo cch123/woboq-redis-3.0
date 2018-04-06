@@ -1,0 +1,6 @@
+<dec f='redis/src/cluster.h' l='199' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/../../../src/cluster.h:196:5)'/>
+<use f='redis/src/cluster.c' l='1291' u='m' c='clusterProcessGossipSection'/>
+<use f='redis/src/cluster.c' l='2246' u='m' c='clusterSendPing'/>
+<use f='redis/src/cluster.c' l='2253' u='m' c='clusterSendPing'/>
+<offset>0</offset>
+<doc f='redis/src/cluster.h' l='195'>/* PING, MEET and PONG */</doc>

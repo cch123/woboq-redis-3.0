@@ -1,0 +1,7 @@
+<def f='redis/src/redis.c' l='501' ll='522' type='unsigned int dictEncObjHash(const void * key)'/>
+<use f='redis/src/redis.c' l='526'/>
+<use f='redis/src/redis.c' l='526'/>
+<use f='redis/src/redis.c' l='536'/>
+<use f='redis/src/redis.c' l='536'/>
+<use f='redis/src/redis.c' l='586'/>
+<use f='redis/src/redis.c' l='586'/>

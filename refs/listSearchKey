@@ -1,0 +1,23 @@
+<dec f='redis/src/adlist.h' l='83' type='listNode * listSearchKey(list * list, void * key)'/>
+<def f='redis/src/adlist.c' l='285' ll='306' type='listNode * listSearchKey(list * list, void * key)'/>
+<doc f='redis/src/adlist.c' l='276'>/* Search the list for a node matching a given key.
+ * The match is performed using the &apos;match&apos; method
+ * set with listSetMatchMethod(). If no &apos;match&apos; method
+ * is set, the &apos;value&apos; pointer of every node is directly
+ * compared with the &apos;key&apos; pointer.
+ *
+ * On success the first matching node pointer is returned
+ * (search starts from head). If no matching node exists
+ * NULL is returned. */</doc>
+<use f='redis/src/multi.c' l='248' u='c' c='unwatchAllKeys'/>
+<use f='redis/src/networking.c' l='742' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='750' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='763' u='c' c='freeClient'/>
+<use f='redis/src/networking.c' l='781' u='c' c='freeClient'/>
+<use f='redis/src/pubsub.c' l='103' u='c' c='pubsubUnsubscribeChannel'/>
+<use f='redis/src/pubsub.c' l='130' u='c' c='pubsubSubscribePattern'/>
+<use f='redis/src/pubsub.c' l='156' u='c' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/pubsub.c' l='161' u='c' c='pubsubUnsubscribePattern'/>
+<use f='redis/src/replication.c' l='1604' u='c' c='replicationCacheMaster'/>
+<use f='redis/src/replication.c' l='1875' u='c' c='unblockClientWaitingReplicas'/>
+<use f='redis/src/t_list.c' l='824' u='c' c='unblockClientWaitingData'/>

@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='919' type='int'/>
+<offset>128</offset>
+<use f='redis/src/redis.c' l='2145' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2145' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2146' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2493' u='r' c='addReplyCommand'/>
+<use f='redis/src/redis.c' l='2549' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2549' u='r' c='commandCommand'/>
+<use f='redis/src/redis.c' l='2550' u='r' c='commandCommand'/>
+<use f='redis/src/scripting.c' l='302' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='302' u='r' c='luaRedisGenericCommand'/>
+<use f='redis/src/scripting.c' l='303' u='r' c='luaRedisGenericCommand'/>

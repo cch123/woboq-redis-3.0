@@ -1,0 +1,8 @@
+<def f='redis/src/dict.h' l='69' ll='74'/>
+<size>32</size>
+<doc f='redis/src/dict.h' l='67'>/* This is our hash table structure. Every dictionary has two of this as we
+ * implement incremental rehashing, for the old to the new table. */</doc>
+<mbr r='dictht::table' o='0' t='dictEntry **'/>
+<mbr r='dictht::size' o='64' t='unsigned long'/>
+<mbr r='dictht::sizemask' o='128' t='unsigned long'/>
+<mbr r='dictht::used' o='192' t='unsigned long'/>

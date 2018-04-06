@@ -1,0 +1,8 @@
+<dec f='redis/src/ziplist.h' l='34' type='unsigned char * ziplistNew()'/>
+<use f='redis/src/object.c' l='192' u='c' c='createZiplistObject'/>
+<use f='redis/src/object.c' l='213' u='c' c='createHashObject'/>
+<use f='redis/src/object.c' l='231' u='c' c='createZsetZiplistObject'/>
+<use f='redis/src/rdb.c' l='1023' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_zset.c' l='1138' u='c' c='zsetConvert'/>
+<def f='redis/src/ziplist.c' l='418' ll='426' type='unsigned char * ziplistNew()'/>
+<doc f='redis/src/ziplist.c' l='417'>/* Create a new empty ziplist. */</doc>

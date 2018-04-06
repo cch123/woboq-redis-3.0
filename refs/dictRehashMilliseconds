@@ -1,0 +1,5 @@
+<dec f='redis/src/dict.h' l='175' type='int dictRehashMilliseconds(dict * d, int ms)'/>
+<def f='redis/src/dict.c' l='298' ll='307' type='int dictRehashMilliseconds(dict * d, int ms)'/>
+<doc f='redis/src/dict.c' l='297'>/* Rehash for an amount of time between ms milliseconds and ms+1 milliseconds */</doc>
+<use f='redis/src/redis.c' l='679' u='c' c='incrementallyRehash'/>
+<use f='redis/src/redis.c' l='684' u='c' c='incrementallyRehash'/>

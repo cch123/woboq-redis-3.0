@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.c' l='62' type='int clusterAddSlot(clusterNode * n, int slot)'/>
+<use f='redis/src/cluster.c' l='256' u='c' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='1484' u='c' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='2660' u='c' c='clusterFailoverReplaceYourMaster'/>
+<def f='redis/src/cluster.c' l='3342' ll='3347' type='int clusterAddSlot(clusterNode * n, int slot)'/>
+<use f='redis/src/cluster.c' l='3544' u='c' c='verifyClusterConfigWithData'/>
+<use f='redis/src/cluster.c' l='3889' u='c' c='clusterCommand'/>
+<use f='redis/src/cluster.c' l='3980' u='c' c='clusterCommand'/>
+<doc f='redis/src/cluster.c' l='3338'>/* Add the specified slot to the list of slots that node &apos;n&apos; will
+ * serve. Return REDIS_OK if the operation ended with success.
+ * If the slot is already assigned to another instance this is considered
+ * an error and REDIS_ERR is returned. */</doc>

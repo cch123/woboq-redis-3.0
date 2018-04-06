@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='890' type='mstime_t'/>
+<offset>19776</offset>
+<doc f='redis/src/redis.h' l='890'>/* Start time of script, milliseconds time */</doc>
+<use f='redis/src/db.c' l='836' u='r' c='expireIfNeeded'/>
+<use f='redis/src/scripting.c' l='549' u='r' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='1016' u='w' c='evalGenericCommand'/>

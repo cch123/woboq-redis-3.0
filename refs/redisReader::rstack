@@ -1,0 +1,20 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='134' type='redisReadTask [9]'/>
+<offset>1344</offset>
+<use f='redis/deps/hiredis/hiredis.c' l='339' u='a' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='340' u='a' c='moveToNextTask'/>
+<use f='redis/deps/hiredis/hiredis.c' l='356' u='a' c='processLineItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='390' u='a' c='processBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='443' u='a' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='488' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='489' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='490' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='491' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='492' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='493' u='m' c='processMultiBulkItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='508' u='a' c='processItem'/>
+<use f='redis/deps/hiredis/hiredis.c' l='632' u='m' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='633' u='m' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='634' u='m' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='635' u='m' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='636' u='m' c='redisReaderGetReply'/>
+<use f='redis/deps/hiredis/hiredis.c' l='637' u='m' c='redisReaderGetReply'/>

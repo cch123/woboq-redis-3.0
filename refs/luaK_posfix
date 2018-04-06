@@ -1,0 +1,3 @@
+<dec f='redis/deps/lua/src/lcode.h' l='72' type='void luaK_posfix(FuncState * fs, BinOpr op, expdesc * v1, expdesc * v2)'/>
+<def f='redis/deps/lua/src/lcode.c' l='737' ll='781' type='void luaK_posfix(FuncState * fs, BinOpr op, expdesc * e1, expdesc * e2)'/>
+<use f='redis/deps/lua/src/lparser.c' l='848' u='c' c='subexpr'/>

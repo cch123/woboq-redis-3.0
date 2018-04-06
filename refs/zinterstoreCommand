@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1493' type='void zinterstoreCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<use f='redis/src/redis.c' l='180' u='r'/>
+<def f='redis/src/t_zset.c' l='2088' ll='2090' type='void zinterstoreCommand(redisClient * c)'/>

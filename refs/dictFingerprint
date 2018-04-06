@@ -1,0 +1,9 @@
+<def f='redis/src/dict.c' l='523' ll='553' type='long long dictFingerprint(dict * d)'/>
+<use f='redis/src/dict.c' l='584' u='c' c='dictNext'/>
+<use f='redis/src/dict.c' l='616' u='c' c='dictReleaseIterator'/>
+<doc f='redis/src/dict.c' l='517'>/* A fingerprint is a 64 bit number that represents the state of the dictionary
+ * at a given time, it&apos;s just a few dict properties xored together.
+ * When an unsafe iterator is initialized, we get the dict fingerprint, and check
+ * the fingerprint again when the iterator is released.
+ * If the two fingerprints are different it means that the user of the iterator
+ * performed forbidden operations against the dictionary while iterating. */</doc>

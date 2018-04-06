@@ -1,0 +1,12 @@
+<dec f='redis/src/cluster.h' l='189' type='uint64_t'/>
+<dec f='redis/src/cluster.h' l='227' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='1587' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='1938' u='r' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2129' u='w' c='clusterBuildMessageHdr'/>
+<use f='redis/src/cluster.c' l='2380' u='w' c='clusterSendUpdate'/>
+<use f='redis/src/cluster.c' l='2451' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<offset>192</offset>
+<doc f='redis/src/cluster.h' l='189'>/* Config epoch of the specified instance. */</doc>
+<doc f='redis/src/cluster.h' l='227'>/* The config epoch if it&apos;s a master, or the last
+                               epoch advertised by its master if it is a
+                               slave. */</doc>

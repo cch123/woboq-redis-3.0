@@ -1,0 +1,7 @@
+<dec f='redis/src/redis.h' l='677' type='int'/>
+<offset>3488</offset>
+<doc f='redis/src/redis.h' l='677'>/* Used slots in cfd[] */</doc>
+<use f='redis/src/cluster.c' l='433' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='448' u='a' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='454' u='r' c='clusterInit'/>
+<use f='redis/src/redis.c' l='2317' u='r' c='closeListeningSockets'/>

@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='1091' type='void unblockClientWaitingData(redisClient * c)'/>
+<use f='redis/src/blocked.c' l='133' u='c' c='unblockClient'/>
+<def f='redis/src/t_list.c' l='810' ll='837' type='void unblockClientWaitingData(redisClient * c)'/>
+<doc f='redis/src/t_list.c' l='808'>/* Unblock a client that&apos;s waiting in a blocking operation such as BLPOP.
+ * You should never call this function directly, but unblockClient() instead. */</doc>

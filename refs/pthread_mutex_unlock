@@ -1,0 +1,5 @@
+<dec f='include/pthread.h' l='773' type='int pthread_mutex_unlock(pthread_mutex_t * __mutex)'/>
+<doc f='include/pthread.h' l='772'>/* Unlock a mutex.  */</doc>
+<use f='redis/src/bio.c' l='137' u='c' c='bioCreateBackgroundJob'/>
+<use f='redis/src/bio.c' l='172' u='c' c='bioProcessBackgroundJobs'/>
+<use f='redis/src/bio.c' l='197' u='c' c='bioPendingJobsOfType'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='619' type='robj **'/>
+<offset>0</offset>
+<use f='redis/src/redis.c' l='1951' u='w' c='redisOpArrayAppend'/>
+<use f='redis/src/redis.c' l='1966' u='r' c='redisOpArrayFree'/>
+<use f='redis/src/redis.c' l='1967' u='r' c='redisOpArrayFree'/>
+<use f='redis/src/redis.c' l='2111' u='r' c='call'/>

@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='40' type='lu_int32'/>
+<offset>64</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='40'>/* number of elements */</doc>
+<use f='redis/deps/lua/src/lgc.c' l='390' u='w' c='freeobj'/>
+<use f='redis/deps/lua/src/lgc.c' l='434' u='r' c='checkSizes'/>
+<use f='redis/deps/lua/src/lstate.c' l='164' u='w' c='lua_newstate'/>
+<use f='redis/deps/lua/src/lstring.c' l='68' u='w' c='newlstr'/>
+<use f='redis/deps/lua/src/lstring.c' l='69' u='r' c='newlstr'/>

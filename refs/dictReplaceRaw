@@ -1,0 +1,9 @@
+<dec f='redis/src/dict.h' l='155' type='dictEntry * dictReplaceRaw(dict * d, void * key)'/>
+<use f='redis/src/db.c' l='779' u='c' c='setExpire'/>
+<def f='redis/src/dict.c' l='402' ll='406' type='dictEntry * dictReplaceRaw(dict * d, void * key)'/>
+<doc f='redis/src/dict.c' l='396'>/* dictReplaceRaw() is simply a version of dictAddRaw() that always
+ * returns the hash entry of the specified key, even if the key already
+ * exists and can&apos;t be added (in that case the entry of the already
+ * existing key is returned.)
+ *
+ * See dictAddRaw() for more information. */</doc>

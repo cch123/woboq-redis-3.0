@@ -1,0 +1,5 @@
+<dec f='redis/src/redis.h' l='947' type='robj *'/>
+<offset>64</offset>
+<use f='redis/src/sort.c' l='41' u='w' c='createSortOperation'/>
+<use f='redis/src/sort.c' l='495' u='r' c='sortCommand'/>
+<use f='redis/src/sort.c' l='525' u='r' c='sortCommand'/>

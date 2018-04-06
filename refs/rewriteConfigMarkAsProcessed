@@ -1,0 +1,11 @@
+<def f='redis/src/config.c' l='1303' ll='1307' type='void rewriteConfigMarkAsProcessed(struct rewriteConfigState * state, char * option)'/>
+<use f='redis/src/config.c' l='1391' u='c' c='rewriteConfigRewriteLine'/>
+<use f='redis/src/config.c' l='1468' u='c' c='rewriteConfigStringOption'/>
+<use f='redis/src/config.c' l='1555' u='c' c='rewriteConfigSaveOption'/>
+<use f='redis/src/config.c' l='1563' u='c' c='rewriteConfigDirOption'/>
+<use f='redis/src/config.c' l='1578' u='c' c='rewriteConfigSlaveofOption'/>
+<use f='redis/src/config.c' l='1635' u='c' c='rewriteConfigBindOption'/>
+<doc f='redis/src/config.c' l='1299'>/* Add the specified option to the set of processed options.
+ * This is useful as only unused lines of processed options will be blanked
+ * in the config file, while options the rewrite process does not understand
+ * remain untouched. */</doc>

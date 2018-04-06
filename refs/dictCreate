@@ -1,0 +1,40 @@
+<dec f='redis/deps/hiredis/dict.h' l='115' type='dict * dictCreate(dictType * type, void * privDataPtr)'/>
+<def f='redis/deps/hiredis/dict.c' l='73' ll='77' type='dict * dictCreate(dictType * type, void * privDataPtr)'/>
+<use f='redis/deps/hiredis/async.c' l='137' u='c' c='redisAsyncInitialize'/>
+<use f='redis/deps/hiredis/async.c' l='138' u='c' c='redisAsyncInitialize'/>
+<doc f='redis/deps/hiredis/dict.c' l='72'>/* Create a new hash table */</doc>
+<dec f='redis/src/dict.h' l='150' type='dict * dictCreate(dictType * type, void * privDataPtr)'/>
+<doc f='redis/src/dict.h' l='149'>/* API */</doc>
+<use f='redis/src/cluster.c' l='400' u='c' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='402' u='c' c='clusterInit'/>
+<use f='redis/src/config.c' l='1322' u='c' c='rewriteConfigReadOldFile'/>
+<use f='redis/src/config.c' l='1323' u='c' c='rewriteConfigReadOldFile'/>
+<def f='redis/src/dict.c' l='168' ll='175' type='dict * dictCreate(dictType * type, void * privDataPtr)'/>
+<doc f='redis/src/dict.c' l='167'>/* Create a new hash table */</doc>
+<use f='redis/src/latency.c' l='91' u='c' c='latencyMonitorInit'/>
+<use f='redis/src/networking.c' l='115' u='c' c='createClient'/>
+<use f='redis/src/networking.c' l='121' u='c' c='createClient'/>
+<use f='redis/src/object.c' l='199' u='c' c='createSetObject'/>
+<use f='redis/src/object.c' l='223' u='c' c='createZsetObject'/>
+<use f='redis/src/redis.c' l='1479' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1529' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1530' u='c' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='1800' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1801' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1802' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1803' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1804' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='1809' u='c' c='initServer'/>
+<use f='redis/src/replication.c' l='1736' u='c' c='replicationScriptCacheInit'/>
+<use f='redis/src/scripting.c' l='653' u='c' c='scriptingInit'/>
+<use f='redis/src/sentinel.c' l='427' u='c' c='initSentinel'/>
+<use f='redis/src/sentinel.c' l='968' u='c' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='972' u='c' c='createSentinelRedisInstance'/>
+<use f='redis/src/sentinel.c' l='1168' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='1171' u='c' c='sentinelResetMaster'/>
+<use f='redis/src/sentinel.c' l='3242' u='c' c='sentinelGetLeader'/>
+<use f='redis/src/t_hash.c' l='422' u='c' c='hashTypeConvertZiplist'/>
+<use f='redis/src/t_set.c' l='228' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_set.c' l='477' u='c' c='srandmemberWithCountCommand'/>
+<use f='redis/src/t_zset.c' l='1111' u='c' c='zsetConvert'/>
+<use f='redis/src/t_zset.c' l='1982' u='c' c='zunionInterGenericCommand'/>

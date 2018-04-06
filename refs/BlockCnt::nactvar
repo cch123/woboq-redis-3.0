@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lparser.c' l='43' type='lu_byte'/>
+<use f='redis/deps/lua/src/lparser.c' l='219' u='r' c='markupval'/>
+<use f='redis/deps/lua/src/lparser.c' l='288' u='w' c='enterblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='299' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='301' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='986' u='r' c='breakstat'/>
+<offset>96</offset>
+<doc f='redis/deps/lua/src/lparser.c' l='43'>/* # active locals outside the breakable structure */</doc>

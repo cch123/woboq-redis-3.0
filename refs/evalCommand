@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1520' type='void evalCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<use f='redis/src/redis.c' l='271' u='r'/>
+<def f='redis/src/scripting.c' l='1094' ll='1096' type='void evalCommand(redisClient * c)'/>

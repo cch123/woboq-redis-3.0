@@ -1,0 +1,6 @@
+<dec f='redis/deps/hiredis/hiredis.h' l='132' type='size_t'/>
+<offset>1280</offset>
+<doc f='redis/deps/hiredis/hiredis.h' l='132'>/* Max length of unused buffer */</doc>
+<use f='redis/deps/hiredis/hiredis.c' l='567' u='w' c='redisReaderCreate'/>
+<use f='redis/deps/hiredis/hiredis.c' l='595' u='r' c='redisReaderFeed'/>
+<use f='redis/deps/hiredis/hiredis.c' l='595' u='r' c='redisReaderFeed'/>

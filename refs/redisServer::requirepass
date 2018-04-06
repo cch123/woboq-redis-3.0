@@ -1,0 +1,13 @@
+<dec f='redis/src/redis.h' l='660' type='char *'/>
+<offset>576</offset>
+<doc f='redis/src/redis.h' l='660'>/* Pass for AUTH command, or NULL */</doc>
+<use f='redis/src/config.c' l='384' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='626' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='627' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1023' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1023' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1828' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1445' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2154' u='r' c='processCommand'/>
+<use f='redis/src/redis.c' l='2424' u='r' c='authCommand'/>
+<use f='redis/src/redis.c' l='2426' u='r' c='authCommand'/>

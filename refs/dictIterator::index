@@ -1,0 +1,15 @@
+<dec f='redis/deps/hiredis/dict.h' l='71' type='int'/>
+<use f='redis/deps/hiredis/dict.c' l='262' u='w' c='dictGetIterator'/>
+<use f='redis/deps/hiredis/dict.c' l='271' u='w' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='272' u='r' c='dictNext'/>
+<use f='redis/deps/hiredis/dict.c' l='274' u='r' c='dictNext'/>
+<offset>64</offset>
+<dec f='redis/src/dict.h' l='90' type='long'/>
+<offset>64</offset>
+<use f='redis/src/dict.c' l='561' u='w' c='dictGetIterator'/>
+<use f='redis/src/dict.c' l='580' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='586' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='587' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='590' u='w' c='dictNext'/>
+<use f='redis/src/dict.c' l='596' u='r' c='dictNext'/>
+<use f='redis/src/dict.c' l='612' u='r' c='dictReleaseIterator'/>

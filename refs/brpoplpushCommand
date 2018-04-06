@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1479' type='void brpoplpushCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='149' u='r'/>
+<use f='redis/src/redis.c' l='149' u='r'/>
+<use f='redis/src/redis.c' l='149' u='r'/>
+<use f='redis/src/redis.c' l='149' u='r'/>
+<def f='redis/src/t_list.c' l='1092' ll='1119' type='void brpoplpushCommand(redisClient * c)'/>

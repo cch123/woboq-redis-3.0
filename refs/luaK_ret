@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/lcode.h' l='65' type='void luaK_ret(FuncState * fs, int first, int nret)'/>
+<def f='redis/deps/lua/src/lcode.c' l='69' ll='71' type='void luaK_ret(FuncState * fs, int first, int nret)'/>
+<use f='redis/deps/lua/src/lparser.c' l='361' u='c' c='close_func'/>
+<use f='redis/deps/lua/src/lparser.c' l='1267' u='c' c='retstat'/>

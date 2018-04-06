@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1425' type='void smoveCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='160' u='r'/>
+<use f='redis/src/redis.c' l='160' u='r'/>
+<use f='redis/src/redis.c' l='160' u='r'/>
+<use f='redis/src/redis.c' l='160' u='r'/>
+<def f='redis/src/t_set.c' l='305' ll='356' type='void smoveCommand(redisClient * c)'/>

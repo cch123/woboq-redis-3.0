@@ -1,0 +1,8 @@
+<dec f='redis/deps/lua/src/lstate.h' l='71' type='void *'/>
+<use f='redis/deps/lua/src/lapi.c' l='1010' u='r' c='lua_getallocf'/>
+<use f='redis/deps/lua/src/lapi.c' l='1019' u='w' c='lua_setallocf'/>
+<offset>192</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='71'>/* auxiliary data to `frealloc&apos; */</doc>
+<use f='redis/deps/lua/src/lmem.c' l='79' u='r' c='luaM_realloc_'/>
+<use f='redis/deps/lua/src/lstate.c' l='115' u='r' c='close_state'/>
+<use f='redis/deps/lua/src/lstate.c' l='158' u='w' c='lua_newstate'/>

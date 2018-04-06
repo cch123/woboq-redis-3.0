@@ -1,0 +1,7 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='200' type='33'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='200'>/*	A C	R(A+3), ... ,R(A+2+C) := R(A)(R(A+1), R(A+2)); 
+                        if R(A+3) ~= nil then R(A+2)=R(A+3) else pc++	*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='406' c='symbexec'/>
+<use f='redis/deps/lua/src/ldebug.c' l='551' u='r' c='getfuncname'/>
+<use f='redis/deps/lua/src/lparser.c' l='1061' u='r' c='forbody'/>
+<use f='redis/deps/lua/src/lvm.c' l='681' c='luaV_execute'/>

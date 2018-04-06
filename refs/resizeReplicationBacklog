@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='1160' type='void resizeReplicationBacklog(long long newsize)'/>
+<use f='redis/src/config.c' l='289' u='c' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='905' u='c' c='configSetCommand'/>
+<def f='redis/src/replication.c' l='94' ll='113' type='void resizeReplicationBacklog(long long newsize)'/>
+<doc f='redis/src/replication.c' l='88'>/* This function is called when the user modifies the replication backlog
+ * size at runtime. It is up to the function to both update the
+ * server.repl_backlog_size and to resize the buffer and setup it so that
+ * it contains the same data as the previous one (possibly less data, but
+ * the most recent bytes, or the same data and more free space in case the
+ * buffer is enlarged). */</doc>

@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/fpconv.h' l='18' type='int fpconv_g_fmt(char * , double , int )'/>
+<def f='redis/deps/lua/src/fpconv.c' l='174' ll='197' type='int fpconv_g_fmt(char * str, double num, int precision)'/>
+<doc f='redis/deps/lua/src/fpconv.c' l='173'>/* Assumes there is always at least 32 characters available in the target buffer */</doc>
+<use f='redis/deps/lua/src/lua_cjson.c' l='614' u='c' c='json_append_number'/>

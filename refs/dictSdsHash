@@ -1,0 +1,15 @@
+<def f='redis/src/redis.c' l='475' ll='477' type='unsigned int dictSdsHash(const void * key)'/>
+<use f='redis/src/redis.c' l='546'/>
+<use f='redis/src/redis.c' l='546'/>
+<use f='redis/src/redis.c' l='566'/>
+<use f='redis/src/redis.c' l='566'/>
+<use f='redis/src/redis.c' l='609'/>
+<use f='redis/src/redis.c' l='609'/>
+<use f='redis/src/redis.c' l='631'/>
+<use f='redis/src/redis.c' l='631'/>
+<dec f='redis/src/sentinel.c' l='347' type='unsigned int dictSdsHash(const void * key)'/>
+<use f='redis/src/sentinel.c' l='361' u='r'/>
+<use f='redis/src/sentinel.c' l='361' u='r'/>
+<use f='redis/src/sentinel.c' l='374'/>
+<use f='redis/src/sentinel.c' l='374'/>
+<doc f='redis/src/sentinel.c' l='345'>/* ========================= Dictionary types =============================== */</doc>

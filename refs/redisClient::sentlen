@@ -1,0 +1,16 @@
+<dec f='redis/src/redis.h' l='530' type='int'/>
+<offset>960</offset>
+<doc f='redis/src/redis.h' l='530'>/* Amount of bytes already sent in the current
+                               buffer or object being sent. */</doc>
+<use f='redis/src/networking.c' l='98' u='w' c='createClient'/>
+<use f='redis/src/networking.c' l='826' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='826' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='828' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='833' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='835' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='848' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='848' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='850' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='854' u='r' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='856' u='w' c='sendReplyToClient'/>
+<use f='redis/src/networking.c' l='891' u='w' c='sendReplyToClient'/>

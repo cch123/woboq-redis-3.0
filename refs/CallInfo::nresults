@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lstate.h' l='53' type='int'/>
+<offset>256</offset>
+<doc f='redis/deps/lua/src/lstate.h' l='53'>/* expected number of results from this function */</doc>
+<use f='redis/deps/lua/src/ldo.c' l='296' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='316' u='w' c='luaD_precall'/>
+<use f='redis/deps/lua/src/ldo.c' l='351' u='r' c='luaD_poscall'/>

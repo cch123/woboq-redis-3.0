@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='1958' ll='1970' type='void redisOpArrayFree(redisOpArray * oa)'/>
+<use f='redis/src/redis.c' l='2113' u='c' c='call'/>

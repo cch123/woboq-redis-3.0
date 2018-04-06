@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/strbuf.h' l='53' type='void strbuf_init(strbuf_t * s, int len)'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='318' u='c' c='json_cfg_encode_keep_buffer'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='397' u='c' c='json_create_config'/>
+<use f='redis/deps/lua/src/lua_cjson.c' l='716' u='c' c='json_encode'/>
+<def f='redis/deps/lua/src/strbuf.c' l='44' ll='66' type='void strbuf_init(strbuf_t * s, int len)'/>
+<use f='redis/deps/lua/src/strbuf.c' l='76' u='c' c='strbuf_new'/>

@@ -1,0 +1,13 @@
+<def f='redis/deps/lua/src/lobject.h' l='338' ll='348'/>
+<size>64</size>
+<mbr r='Table::next' o='0' t='GCObject *'/>
+<mbr r='Table::tt' o='64' t='lu_byte'/>
+<mbr r='Table::marked' o='72' t='lu_byte'/>
+<mbr r='Table::flags' o='80' t='lu_byte'/>
+<mbr r='Table::lsizenode' o='88' t='lu_byte'/>
+<mbr r='Table::metatable' o='128' t='struct Table *'/>
+<mbr r='Table::array' o='192' t='TValue *'/>
+<mbr r='Table::node' o='256' t='Node *'/>
+<mbr r='Table::lastfree' o='320' t='Node *'/>
+<mbr r='Table::gclist' o='384' t='GCObject *'/>
+<mbr r='Table::sizearray' o='448' t='int'/>

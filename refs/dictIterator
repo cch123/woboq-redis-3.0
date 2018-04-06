@@ -1,0 +1,19 @@
+<def f='redis/deps/hiredis/dict.h' l='69' ll='73'/>
+<size>32</size>
+<mbr r='dictIterator::ht' o='0' t='dict *'/>
+<mbr r='dictIterator::index' o='64' t='int'/>
+<mbr r='dictIterator::entry' o='128' t='dictEntry *'/>
+<mbr r='dictIterator::nextEntry' o='192' t='dictEntry *'/>
+<def f='redis/src/dict.h' l='88' ll='95'/>
+<size>48</size>
+<doc f='redis/src/dict.h' l='84'>/* If safe is set to 1 this is a safe iterator, that means, you can call
+ * dictAdd, dictFind, and other functions against the dictionary even while
+ * iterating. Otherwise it is a non safe iterator, and only dictNext()
+ * should be called while iterating. */</doc>
+<mbr r='dictIterator::d' o='0' t='dict *'/>
+<mbr r='dictIterator::index' o='64' t='long'/>
+<mbr r='dictIterator::table' o='128' t='int'/>
+<mbr r='dictIterator::safe' o='160' t='int'/>
+<mbr r='dictIterator::entry' o='192' t='dictEntry *'/>
+<mbr r='dictIterator::nextEntry' o='256' t='dictEntry *'/>
+<mbr r='dictIterator::fingerprint' o='320' t='long long'/>

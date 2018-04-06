@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.c' l='69' type='int bitmapTestBit(unsigned char * bitmap, int pos)'/>
+<use f='redis/src/cluster.c' l='1454' u='c' c='clusterUpdateSlotsConfigWith'/>
+<use f='redis/src/cluster.c' l='1832' u='c' c='clusterProcessPacket'/>
+<use f='redis/src/cluster.c' l='2524' u='c' c='clusterSendFailoverAuthIfNeeded'/>
+<def f='redis/src/cluster.c' l='3297' ll='3301' type='int bitmapTestBit(unsigned char * bitmap, int pos)'/>
+<use f='redis/src/cluster.c' l='3319' u='c' c='clusterNodeSetSlotBit'/>
+<use f='redis/src/cluster.c' l='3327' u='c' c='clusterNodeClearSlotBit'/>
+<use f='redis/src/cluster.c' l='3335' u='c' c='clusterNodeGetSlotBit'/>
+<doc f='redis/src/cluster.c' l='3295'>/* Test bit &apos;pos&apos; in a generic bitmap. Return 1 if the bit is set,
+ * otherwise 0. */</doc>

@@ -1,0 +1,12 @@
+<def f='redis/src/t_zset.c' l='534' ll='537' type='void zslFreeLexRange(zlexrangespec * spec)'/>
+<use f='redis/src/t_zset.c' l='1478' u='c' c='zremrangeGenericCommand'/>
+<use f='redis/src/t_zset.c' l='2490' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2503' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2549' u='c' c='zlexcountCommand'/>
+<use f='redis/src/t_zset.c' l='2589' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2600' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2621' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2685' u='c' c='genericZrangebylexCommand'/>
+<use f='redis/src/t_zset.c' l='2726' u='c' c='genericZrangebylexCommand'/>
+<doc f='redis/src/t_zset.c' l='532'>/* Free a lex range structure, must be called only after zelParseLexRange()
+ * populated the structure with success (REDIS_OK returned). */</doc>

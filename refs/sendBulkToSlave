@@ -1,0 +1,2 @@
+<def f='redis/src/replication.c' l='676' ll='730' type='void sendBulkToSlave(aeEventLoop * el, int fd, void * privdata, int mask)'/>
+<use f='redis/src/replication.c' l='797' u='r' c='updateSlavesWaitingBgsave'/>

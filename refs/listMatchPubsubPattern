@@ -1,0 +1,3 @@
+<dec f='redis/src/redis.h' l='1292' type='int listMatchPubsubPattern(void * a, void * b)'/>
+<def f='redis/src/pubsub.c' l='43' ll='48' type='int listMatchPubsubPattern(void * a, void * b)'/>
+<use f='redis/src/redis.c' l='1812' u='r' c='initServer'/>

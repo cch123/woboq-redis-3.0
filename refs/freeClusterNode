@@ -1,0 +1,3 @@
+<def f='redis/src/cluster.c' l='813' ll='837' type='void freeClusterNode(clusterNode * n)'/>
+<use f='redis/src/cluster.c' l='885' u='c' c='clusterDelNode'/>
+<doc f='redis/src/cluster.c' l='812'>/* Low level cleanup of the node structure. Only called by clusterDelNode(). */</doc>

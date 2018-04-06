@@ -1,0 +1,10 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='207' type='37'/>
+<use f='redis/deps/lua/src/lopcodes.h' l='211' u='r'/>
+<use f='redis/deps/lua/src/lopcodes.h' l='211' u='r'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='207'>/*	A B	R(A), R(A+1), ..., R(A+B-1) = vararg		*/</doc>
+<use f='redis/deps/lua/src/ldebug.c' l='328' macro='1' u='r'/>
+<use f='redis/deps/lua/src/ldebug.c' l='463' c='symbexec'/>
+<use f='redis/deps/lua/src/lopcodes.c' l='16' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lopcodes.c' l='61' macro='1' u='r'/>
+<use f='redis/deps/lua/src/lparser.c' l='757' u='r' c='simpleexp'/>
+<use f='redis/deps/lua/src/lvm.c' l='743' c='luaV_execute'/>

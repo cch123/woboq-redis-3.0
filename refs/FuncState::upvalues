@@ -1,0 +1,9 @@
+<dec f='redis/deps/lua/src/lparser.h' l='73' type='upvaldesc [60]'/>
+<offset>600</offset>
+<doc f='redis/deps/lua/src/lparser.h' l='73'>/* upvalues */</doc>
+<use f='redis/deps/lua/src/lparser.c' l='188' u='m' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='188' u='m' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='201' u='m' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='202' u='m' c='indexupvalue'/>
+<use f='redis/deps/lua/src/lparser.c' l='322' u='m' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='323' u='m' c='pushclosure'/>

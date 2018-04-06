@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lstate.h' l='124' type='GCObject *'/>
+<offset>1280</offset>
+<use f='redis/deps/lua/src/lgc.c' l='101' u='w' c='reallymarkobject'/>
+<use f='redis/deps/lua/src/lgc.c' l='299' u='r' c='propagatemark'/>
+<use f='redis/deps/lua/src/lgc.c' l='300' u='w' c='propagatemark'/>

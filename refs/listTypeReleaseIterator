@@ -1,0 +1,8 @@
+<dec f='redis/src/redis.h' l='1084' type='void listTypeReleaseIterator(listTypeIterator * li)'/>
+<use f='redis/src/debug.c' l='163' u='c' c='computeDatasetDigest'/>
+<use f='redis/src/sort.c' l='355' u='c' c='sortCommand'/>
+<def f='redis/src/t_list.c' l='139' ll='141' type='void listTypeReleaseIterator(listTypeIterator * li)'/>
+<use f='redis/src/t_list.c' l='281' u='c' c='listTypeConvert'/>
+<use f='redis/src/t_list.c' l='357' u='c' c='pushxGenericCommand'/>
+<use f='redis/src/t_list.c' l='675' u='c' c='lremCommand'/>
+<doc f='redis/src/t_list.c' l='138'>/* Clean up the iterator. */</doc>

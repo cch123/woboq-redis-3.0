@@ -1,0 +1,6 @@
+<def f='redis/src/redis.h' l='471' ll='476'/>
+<size>24</size>
+<mbr r='multiState::commands' o='0' t='multiCmd *'/>
+<mbr r='multiState::count' o='64' t='int'/>
+<mbr r='multiState::minreplicas' o='96' t='int'/>
+<mbr r='multiState::minreplicas_timeout' o='128' t='time_t'/>

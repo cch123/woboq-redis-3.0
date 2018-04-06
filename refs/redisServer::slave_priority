@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='834' type='int'/>
+<offset>17056</offset>
+<doc f='redis/src/redis.h' l='834'>/* Reported in INFO and used by Sentinel. */</doc>
+<use f='redis/src/config.c' l='513' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='942' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1070' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1825' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1504' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2908' u='r' c='genRedisInfoString'/>

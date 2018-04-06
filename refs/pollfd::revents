@@ -1,0 +1,7 @@
+<dec f='include/x86_64-linux-gnu/sys/poll.h' l='43' type='short'/>
+<offset>48</offset>
+<doc f='include/x86_64-linux-gnu/sys/poll.h' l='43'>/* Types of events that actually occurred.  */</doc>
+<use f='redis/src/ae.c' l='440' u='r' c='aeWait'/>
+<use f='redis/src/ae.c' l='441' u='r' c='aeWait'/>
+<use f='redis/src/ae.c' l='442' u='r' c='aeWait'/>
+<use f='redis/src/ae.c' l='443' u='r' c='aeWait'/>

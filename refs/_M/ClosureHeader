@@ -1,0 +1,6 @@
+<dec f='redis/deps/lua/src/lobject.h' l='291'/>
+<use f='redis/deps/lua/src/lobject.h' l='296' u='c'/>
+<use f='redis/deps/lua/src/lobject.h' l='303' u='c'/>
+<doc f='redis/deps/lua/src/lobject.h' l='287'>/*
+** Closures
+*/</doc>

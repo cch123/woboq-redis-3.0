@@ -1,0 +1,10 @@
+<dec f='redis/src/redis.h' l='889' type='mstime_t'/>
+<offset>19712</offset>
+<doc f='redis/src/redis.h' l='889'>/* Script timeout in milliseconds */</doc>
+<use f='redis/src/config.c' l='471' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='824' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1054' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1850' u='r' c='rewriteConfig'/>
+<use f='redis/src/redis.c' l='1476' u='w' c='initServerConfig'/>
+<use f='redis/src/scripting.c' l='550' u='r' c='luaMaskCountHook'/>
+<use f='redis/src/scripting.c' l='1018' u='r' c='evalGenericCommand'/>

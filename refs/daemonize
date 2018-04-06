@@ -1,0 +1,2 @@
+<def f='redis/src/redis.c' l='3387' ll='3402' type='void daemonize()'/>
+<use f='redis/src/redis.c' l='3649' u='c' c='main'/>

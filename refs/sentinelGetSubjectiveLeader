@@ -1,0 +1,1 @@
+<dec f='redis/src/sentinel.c' l='326' type='char * sentinelGetSubjectiveLeader(sentinelRedisInstance * master)'/>

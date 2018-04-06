@@ -1,0 +1,5 @@
+<dec f='redis/deps/linenoise/linenoise.h' l='58' type='void linenoiseClearScreen()'/>
+<def f='redis/deps/linenoise/linenoise.c' l='317' ll='321' type='void linenoiseClearScreen()'/>
+<use f='redis/deps/linenoise/linenoise.c' l='889' u='c' c='linenoiseEdit'/>
+<doc f='redis/deps/linenoise/linenoise.c' l='316'>/* Clear the screen. Used to handle ctrl+l */</doc>
+<use f='redis/src/redis-cli.c' l='1007' u='c' c='repl'/>

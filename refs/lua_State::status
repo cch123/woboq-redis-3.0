@@ -1,0 +1,13 @@
+<dec f='redis/deps/lua/src/lstate.h' l='102' type='lu_byte'/>
+<use f='redis/deps/lua/src/lapi.c' l='891' u='r' c='lua_status'/>
+<offset>80</offset>
+<use f='redis/deps/lua/src/ldo.c' l='100' u='w' c='luaD_throw'/>
+<use f='redis/deps/lua/src/ldo.c' l='387' u='r' c='resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='394' u='w' c='resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='421' u='r' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='421' u='r' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='430' u='w' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='436' u='r' c='lua_resume'/>
+<use f='redis/deps/lua/src/ldo.c' l='450' u='w' c='lua_yield'/>
+<use f='redis/deps/lua/src/lstate.c' l='97' u='w' c='preinit_state'/>
+<use f='redis/deps/lua/src/lvm.c' l='395' u='r' c='luaV_execute'/>

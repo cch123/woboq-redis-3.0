@@ -1,0 +1,12 @@
+<dec f='redis/src/redis.h' l='1301' type='void loadServerConfig(char * filename, char * options)'/>
+<doc f='redis/src/redis.h' l='1300'>/* Configuration */</doc>
+<use f='redis/src/config.c' l='221' u='c' c='loadServerConfigFromString'/>
+<def f='redis/src/config.c' l='575' ll='603' type='void loadServerConfig(char * filename, char * options)'/>
+<doc f='redis/src/config.c' l='568'>/* Load the server configuration from the specified filename.
+ * The function appends the additional configuration directives stored
+ * in the &apos;options&apos; string to the config file before loading.
+ *
+ * Both filename and options can be NULL, in such a case are considered
+ * empty. This way loadServerConfig can be used to just load a file or
+ * just load a string. */</doc>
+<use f='redis/src/redis.c' l='3644' u='c' c='main'/>

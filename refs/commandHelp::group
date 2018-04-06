@@ -1,0 +1,4 @@
+<dec f='redis/src/help.h' l='25' type='int'/>
+<use f='redis/src/redis-cli.c' l='250' u='r' c='cliOutputCommandHelp'/>
+<use f='redis/src/redis-cli.c' l='305' u='r' c='cliOutputHelp'/>
+<offset>192</offset>

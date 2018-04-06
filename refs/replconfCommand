@@ -1,0 +1,19 @@
+<dec f='redis/src/redis.h' l='1527' type='void replconfCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='240' u='r'/>
+<use f='redis/src/redis.c' l='240' u='r'/>
+<use f='redis/src/redis.c' l='240' u='r'/>
+<use f='redis/src/redis.c' l='240' u='r'/>
+<use f='redis/src/redis.c' l='2278' u='r' c='processCommand'/>
+<def f='redis/src/replication.c' l='597' ll='647' type='void replconfCommand(redisClient * c)'/>
+<doc f='redis/src/replication.c' l='585'>/* REPLCONF &lt;option&gt; &lt;value&gt; &lt;option&gt; &lt;value&gt; ...
+ * This command is used by a slave in order to configure the replication
+ * process before starting it with the SYNC command.
+ *
+ * Currently the only use of this command is to communicate to the master
+ * what is the listening port of the Slave redis instance, so that the
+ * master can accurately list slaves and their listening ports in
+ * the INFO output.
+ *
+ * In the future the same command can be used in order to configure
+ * the replication to initiate an incremental replication instead of a
+ * full resync. */</doc>

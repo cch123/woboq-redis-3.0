@@ -1,0 +1,5 @@
+<dec f='include/stdlib.h' l='515' type='void abort()'/>
+<doc f='include/stdlib.h' l='514'>/* Abort execution and generate a core-dump.  */</doc>
+<use f='redis/deps/lua/src/fpconv.c' l='62' u='c' c='fpconv_update_locale'/>
+<use f='redis/deps/lua/src/fpconv.c' l='130' u='c' c='fpconv_strtod'/>
+<use f='redis/src/zmalloc.c' l='119' u='c' c='zmalloc_default_oom'/>

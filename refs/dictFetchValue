@@ -1,0 +1,23 @@
+<dec f='redis/src/dict.h' l='160' type='void * dictFetchValue(dict * d, const void * key)'/>
+<use f='redis/src/cluster.c' l='4471' u='c' c='migrateGetSocket'/>
+<use f='redis/src/cluster.c' l='4525' u='c' c='migrateCloseSocket'/>
+<use f='redis/src/config.c' l='1290' u='c' c='rewriteConfigAddLineNumberToOption'/>
+<use f='redis/src/config.c' l='1389' u='c' c='rewriteConfigRewriteLine'/>
+<def f='redis/src/dict.c' l='510' ll='515' type='void * dictFetchValue(dict * d, const void * key)'/>
+<use f='redis/src/latency.c' l='99' u='c' c='latencyAddSample'/>
+<use f='redis/src/latency.c' l='160' u='c' c='analyzeLatencyForEvent'/>
+<use f='redis/src/latency.c' l='572' u='c' c='latencyCommand'/>
+<use f='redis/src/multi.c' l='216' u='c' c='watchForKey'/>
+<use f='redis/src/multi.c' l='246' u='c' c='unwatchAllKeys'/>
+<use f='redis/src/multi.c' l='267' u='c' c='touchWatchedKey'/>
+<use f='redis/src/pubsub.c' l='358' u='c' c='pubsubCommand'/>
+<use f='redis/src/redis.c' l='1975' u='c' c='lookupCommand'/>
+<use f='redis/src/redis.c' l='1982' u='c' c='lookupCommandByCString'/>
+<use f='redis/src/redis.c' l='1995' u='c' c='lookupCommandOrOriginal'/>
+<use f='redis/src/redis.c' l='1997' u='c' c='lookupCommandOrOriginal'/>
+<use f='redis/src/redis.c' l='2538' u='c' c='commandCommand'/>
+<use f='redis/src/scripting.c' l='1082' u='c' c='evalGenericCommand'/>
+<use f='redis/src/sentinel.c' l='1039' u='c' c='sentinelRedisInstanceLookupSlave'/>
+<use f='redis/src/sentinel.c' l='1123' u='c' c='sentinelGetMasterByName'/>
+<use f='redis/src/sentinel.c' l='2610' u='c' c='sentinelGetMasterByNameOrReplyError'/>
+<use f='redis/src/t_list.c' l='822' u='c' c='unblockClientWaitingData'/>

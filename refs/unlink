@@ -1,0 +1,13 @@
+<dec f='include/unistd.h' l='829' type='int unlink(const char * __name)'/>
+<doc f='include/unistd.h' l='828'>/* Remove the link NAME.  */</doc>
+<use f='redis/src/aof.c' l='1165' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1173' u='c' c='rewriteAppendOnlyFile'/>
+<use f='redis/src/aof.c' l='1340' u='c' c='aofRemoveTempFile'/>
+<use f='redis/src/debug.c' l='860' u='c' c='sigsegvHandler'/>
+<use f='redis/src/rdb.c' l='748' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='759' u='c' c='rdbSave'/>
+<use f='redis/src/rdb.c' l='816' u='c' c='rdbRemoveTempFile'/>
+<use f='redis/src/redis.c' l='1782' u='c' c='initServer'/>
+<use f='redis/src/redis.c' l='2320' u='c' c='closeListeningSockets'/>
+<use f='redis/src/redis.c' l='2370' u='c' c='prepareForShutdown'/>
+<use f='redis/src/replication.c' l='829' u='c' c='replicationAbortSyncTransfer'/>

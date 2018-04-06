@@ -1,0 +1,8 @@
+<dec f='redis/src/intset.h' l='47' type='uint32_t intsetLen(intset * is)'/>
+<def f='redis/src/intset.c' l='275' ll='277' type='uint32_t intsetLen(intset * is)'/>
+<doc f='redis/src/intset.c' l='274'>/* Return intset length */</doc>
+<use f='redis/src/rdb.c' l='1057' u='c' c='rdbLoadObject'/>
+<use f='redis/src/t_set.c' l='61' u='c' c='setTypeAdd'/>
+<use f='redis/src/t_set.c' l='212' u='c' c='setTypeSize'/>
+<use f='redis/src/t_set.c' l='232' u='c' c='setTypeConvert'/>
+<use f='redis/src/t_zset.c' l='1621' u='c' c='zuiLength'/>

@@ -1,0 +1,16 @@
+<dec f='redis/src/replication.c' l='43' type='void putSlaveOnline(redisClient * slave)'/>
+<use f='redis/src/replication.c' l='632' u='c' c='replconfCommand'/>
+<def f='redis/src/replication.c' l='661' ll='674' type='void putSlaveOnline(redisClient * slave)'/>
+<use f='redis/src/replication.c' l='728' u='c' c='sendBulkToSlave'/>
+<doc f='redis/src/replication.c' l='649'>/* This function puts a slave in the online state, and should be called just
+ * after a slave received the RDB file for the initial synchronization, and
+ * we are finally ready to send the incremental stream of commands.
+ *
+ * It does a few things:
+ *
+ * 1) Put the slave in ONLINE state (useless when the function is called
+ *    because state is already ONLINE but repl_put_online_on_ack is true).
+ * 2) Make sure the writable event is re-installed, since calling the SYNC
+ *    command disables it, so that we can accumulate output buffer without
+ *    sending it to the slave.
+ * 3) Update the count of good slaves. */</doc>

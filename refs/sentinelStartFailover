@@ -1,0 +1,5 @@
+<dec f='redis/src/sentinel.c' l='336' type='void sentinelStartFailover(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='2721' u='c' c='sentinelCommand'/>
+<def f='redis/src/sentinel.c' l='3363' ll='3374' type='void sentinelStartFailover(sentinelRedisInstance * master)'/>
+<use f='redis/src/sentinel.c' l='3413' u='c' c='sentinelStartFailoverIfNeeded'/>
+<doc f='redis/src/sentinel.c' l='3362'>/* Setup the master state to start a failover. */</doc>

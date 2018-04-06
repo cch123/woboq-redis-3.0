@@ -1,0 +1,44 @@
+<dec f='redis/src/redis.h' l='1305' type='void rewriteConfigRewriteLine(struct rewriteConfigState * state, char * option, sds line, int force)'/>
+<def f='redis/src/config.c' l='1387' ll='1420' type='void rewriteConfigRewriteLine(struct rewriteConfigState * state, char * option, sds line, int force)'/>
+<use f='redis/src/config.c' l='1448' u='c' c='rewriteConfigBytesOption'/>
+<use f='redis/src/config.c' l='1457' u='c' c='rewriteConfigYesNoOption'/>
+<use f='redis/src/config.c' l='1479' u='c' c='rewriteConfigStringOption'/>
+<use f='redis/src/config.c' l='1487' u='c' c='rewriteConfigNumericalOption'/>
+<use f='redis/src/config.c' l='1495' u='c' c='rewriteConfigOctalOption'/>
+<use f='redis/src/config.c' l='1521' u='c' c='rewriteConfigEnumOption'/>
+<use f='redis/src/config.c' l='1538' u='c' c='rewriteConfigSyslogfacilityOption'/>
+<use f='redis/src/config.c' l='1552' u='c' c='rewriteConfigSaveOption'/>
+<use f='redis/src/config.c' l='1583' u='c' c='rewriteConfigSlaveofOption'/>
+<use f='redis/src/config.c' l='1597' u='c' c='rewriteConfigNotifykeyspaceeventsOption'/>
+<use f='redis/src/config.c' l='1623' u='c' c='rewriteConfigClientoutputbufferlimitOption'/>
+<use f='redis/src/config.c' l='1646' u='c' c='rewriteConfigBindOption'/>
+<doc f='redis/src/config.c' l='1371'>/* Rewrite the specified configuration option with the new &quot;line&quot;.
+ * It progressively uses lines of the file that were already used for the same
+ * configuration option in the old version of the file, removing that line from
+ * the map of options -&gt; line numbers.
+ *
+ * If there are lines associated with a given configuration option and
+ * &quot;force&quot; is non-zero, the line is appended to the configuration file.
+ * Usually &quot;force&quot; is true when an option has not its default value, so it
+ * must be rewritten even if not present previously.
+ *
+ * The first time a line is appended into a configuration file, a comment
+ * is added to show that starting from that point the config file was generated
+ * by CONFIG REWRITE.
+ *
+ * &quot;line&quot; is either used, or freed, so the caller does not need to free it
+ * in any way. */</doc>
+<use f='redis/src/sentinel.c' l='1470' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1477' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1485' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1493' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1501' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1509' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1517' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1524' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1530' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1550' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1563' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1571' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1577' u='c' c='rewriteConfigSentinelOption'/>
+<use f='redis/src/sentinel.c' l='1584' u='c' c='rewriteConfigSentinelOption'/>

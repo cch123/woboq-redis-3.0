@@ -1,0 +1,47 @@
+<dec f='redis/src/redis.h' l='652' type='int'/>
+<offset>128</offset>
+<doc f='redis/src/redis.h' l='652'>/* serverCron() calls frequency in hertz */</doc>
+<use f='redis/src/config.c' l='323' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='324' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='324' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='325' u='r' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='325' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='669' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='670' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='670' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='671' u='r' c='configSetCommand'/>
+<use f='redis/src/config.c' l='671' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1073' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1871' u='r' c='rewriteConfig'/>
+<use f='redis/src/db.c' l='53' macro='1' u='r'/>
+<use f='redis/src/debug.c' l='947' u='r' c='enableWatchdog'/>
+<use f='redis/src/latency.c' l='453' u='r' c='createLatencyReport'/>
+<use f='redis/src/object.c' l='47' macro='1' u='r'/>
+<use f='redis/src/object.c' l='68' macro='1' u='r'/>
+<use f='redis/src/object.c' l='693' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='790' u='r' c='activeExpireCycle'/>
+<use f='redis/src/redis.c' l='972' u='r' c='clientsCron'/>
+<use f='redis/src/redis.c' l='1080' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1080' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1117' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1117' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1133' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1133' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1226' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1226' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1239' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1239' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1242' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1242' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1247' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1247' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1252' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1252' macro='1' u='r'/>
+<use f='redis/src/redis.c' l='1257' u='r' c='serverCron'/>
+<use f='redis/src/redis.c' l='1402' u='w' c='initServerConfig'/>
+<use f='redis/src/redis.c' l='2671' u='r' c='genRedisInfoString'/>
+<use f='redis/src/replication.c' l='1985' u='r' c='replicationCron'/>
+<use f='redis/src/sentinel.c' l='1599' u='r' c='sentinelFlushConfig'/>
+<use f='redis/src/sentinel.c' l='1602' u='w' c='sentinelFlushConfig'/>
+<use f='redis/src/sentinel.c' l='1604' u='w' c='sentinelFlushConfig'/>
+<use f='redis/src/sentinel.c' l='3898' u='w' c='sentinelTimer'/>

@@ -1,0 +1,6 @@
+<dec f='redis/src/ae.h' l='91' type='time_t'/>
+<use f='redis/src/ae.c' l='72' u='w' c='aeCreateEventLoop'/>
+<use f='redis/src/ae.c' l='285' u='r' c='processTimeEvents'/>
+<use f='redis/src/ae.c' l='292' u='w' c='processTimeEvents'/>
+<offset>128</offset>
+<doc f='redis/src/ae.h' l='91'>/* Used to detect system clock skew */</doc>

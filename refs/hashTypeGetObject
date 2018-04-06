@@ -1,0 +1,11 @@
+<dec f='redis/src/redis.h' l='1272' type='robj * hashTypeGetObject(robj * o, robj * key)'/>
+<use f='redis/src/sort.c' l='117' u='c' c='lookupKeyByPattern'/>
+<def f='redis/src/t_hash.c' l='118' ll='145' type='robj * hashTypeGetObject(robj * o, robj * field)'/>
+<use f='redis/src/t_hash.c' l='522' u='c' c='hincrbyCommand'/>
+<use f='redis/src/t_hash.c' l='556' u='c' c='hincrbyfloatCommand'/>
+<doc f='redis/src/t_hash.c' l='112'>/* Higher level function of hashTypeGet*() that always returns a Redis
+ * object (either new or with refcount incremented), so that the caller
+ * can retain a reference or call decrRefCount after the usage.
+ *
+ * The lower level function can prevent copy on write so it is
+ * the preferred way of doing read operations. */</doc>

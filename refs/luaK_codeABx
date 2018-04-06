@@ -1,0 +1,11 @@
+<dec f='redis/deps/lua/src/lcode.h' l='45' type='int luaK_codeABx(FuncState * fs, OpCode o, int A, unsigned int Bx)'/>
+<use f='redis/deps/lua/src/lcode.c' l='63' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lcode.c' l='316' u='c' c='luaK_dischargevars'/>
+<use f='redis/deps/lua/src/lcode.c' l='355' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='359' u='c' c='discharge2reg'/>
+<use f='redis/deps/lua/src/lcode.c' l='486' u='c' c='luaK_storevar'/>
+<def f='redis/deps/lua/src/lcode.c' l='812' ll='816' type='int luaK_codeABx(FuncState * fs, OpCode o, int a, unsigned int bc)'/>
+<use f='redis/deps/lua/src/lparser.c' l='320' u='c' c='pushclosure'/>
+<use f='redis/deps/lua/src/lparser.c' l='1053' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1060' macro='1' u='c'/>
+<use f='redis/deps/lua/src/lparser.c' l='1082' u='c' c='fornum'/>

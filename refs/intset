@@ -1,0 +1,5 @@
+<def f='redis/src/intset.h' l='35' ll='39'/>
+<size>8</size>
+<mbr r='intset::encoding' o='0' t='uint32_t'/>
+<mbr r='intset::length' o='32' t='uint32_t'/>
+<mbr r='intset::contents' o='64' t='int8_t []'/>

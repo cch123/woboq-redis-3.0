@@ -1,0 +1,12 @@
+<dec f='include/features.h' l='340'/>
+<use f='include/x86_64-linux-gnu/sys/cdefs.h' l='295' u='c'/>
+<use f='include/x86_64-linux-gnu/sys/select.h' l='127' u='c'/>
+<use f='include/stdlib.h' l='957' u='c'/>
+<use f='include/string.h' l='633' u='c'/>
+<use f='include/stdio.h' l='935' u='c'/>
+<use f='include/unistd.h' l='1150' u='c'/>
+<use f='include/x86_64-linux-gnu/sys/socket.h' l='279' u='c'/>
+<use f='include/fcntl.h' l='287' u='c'/>
+<use f='include/x86_64-linux-gnu/sys/poll.h' l='75' u='c'/>
+<use f='include/setjmp.h' l='108' u='c'/>
+<use f='include/x86_64-linux-gnu/sys/syslog.h' l='206' u='c'/>

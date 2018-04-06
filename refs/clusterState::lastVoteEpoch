@@ -1,0 +1,10 @@
+<dec f='redis/src/cluster.h' l='133' type='uint64_t'/>
+<use f='redis/src/cluster.c' l='146' u='w' c='clusterLoadConfig'/>
+<use f='redis/src/cluster.c' l='310' u='r' c='clusterSaveConfig'/>
+<use f='redis/src/cluster.c' l='408' u='w' c='clusterInit'/>
+<use f='redis/src/cluster.c' l='516' u='w' c='clusterReset'/>
+<use f='redis/src/cluster.c' l='2476' u='r' c='clusterSendFailoverAuthIfNeeded'/>
+<use f='redis/src/cluster.c' l='2544' u='w' c='clusterSendFailoverAuthIfNeeded'/>
+<offset>3146688</offset>
+<doc f='redis/src/cluster.h' l='132'>/* The followign fields are used by masters to take state on elections. */</doc>
+<doc f='redis/src/cluster.h' l='133'>/* Epoch of the last vote granted. */</doc>

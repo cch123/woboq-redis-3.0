@@ -1,0 +1,10 @@
+<def f='redis/src/rdb.c' l='700' ll='716' type='int rdbSaveRioWithEOFMark(rio * rdb, int * error)'/>
+<use f='redis/src/rdb.c' l='1445' u='c' c='rdbSaveToSlavesSockets'/>
+<doc f='redis/src/rdb.c' l='692'>/* This is just a wrapper to rdbSaveRio() that additionally adds a prefix
+ * and a suffix to the generated RDB dump. The prefix is:
+ *
+ * $EOF:&lt;40 bytes unguessable hex string&gt;\r\n
+ *
+ * While the suffix is the 40 bytes hex string we announced in the prefix.
+ * This way processes receiving the payload can understand when it ends
+ * without doing any processing of the content. */</doc>

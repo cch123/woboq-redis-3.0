@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ltable.h' l='24' type='TValue * luaH_setstr(lua_State * L, Table * t, TString * key)'/>
+<use f='redis/deps/lua/src/ldo.c' l='225' u='c' c='adjust_varargs'/>
+<use f='redis/deps/lua/src/llex.c' l='120' u='c' c='luaX_newstring'/>
+<def f='redis/deps/lua/src/ltable.c' l='520' ll='529' type='TValue * luaH_setstr(lua_State * L, Table * t, TString * key)'/>

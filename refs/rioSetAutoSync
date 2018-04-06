@@ -1,0 +1,11 @@
+<dec f='redis/src/rio.h' l='137' type='void rioSetAutoSync(rio * r, off_t bytes)'/>
+<use f='redis/src/aof.c' l='1044' u='c' c='rewriteAppendOnlyFile'/>
+<def f='redis/src/rio.c' l='301' ll='304' type='void rioSetAutoSync(rio * r, off_t bytes)'/>
+<doc f='redis/src/rio.c' l='293'>/* Set the file-based rio object to auto-fsync every &apos;bytes&apos; file written.
+ * By default this is set to zero that means no automatic file sync is
+ * performed.
+ *
+ * This feature is useful in a few contexts since when we rely on OS write
+ * buffers sometimes the OS buffers way too much, resulting in too many
+ * disk I/O concentrated in very little time. When we fsync in an explicit
+ * way instead the I/O pressure is more distributed across time. */</doc>

@@ -1,0 +1,9 @@
+<dec f='redis/src/rdb.h' l='95' type='int rdbLoadType(rio * rdb)'/>
+<def f='redis/src/rdb.c' l='56' ll='60' type='int rdbLoadType(rio * rdb)'/>
+<use f='redis/src/rdb.c' l='473' u='c' c='rdbLoadObjectType'/>
+<use f='redis/src/rdb.c' l='1165' u='c' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1169' u='c' c='rdbLoad'/>
+<use f='redis/src/rdb.c' l='1178' u='c' c='rdbLoad'/>
+<doc f='redis/src/rdb.c' l='53'>/* Load a &quot;type&quot; in RDB format, that is a one byte unsigned integer.
+ * This function is not only used to load object types, but also special
+ * &quot;types&quot; like the end-of-file type, the EXPIRE type, and so forth. */</doc>

@@ -1,0 +1,9 @@
+<dec f='redis/src/redis.h' l='777' type='int'/>
+<offset>14464</offset>
+<doc f='redis/src/redis.h' l='777'>/* Use compression in RDB? */</doc>
+<use f='redis/src/config.c' l='307' u='w' c='loadServerConfigFromString'/>
+<use f='redis/src/config.c' l='919' u='w' c='configSetCommand'/>
+<use f='redis/src/config.c' l='1091' u='r' c='configGetCommand'/>
+<use f='redis/src/config.c' l='1810' u='r' c='rewriteConfig'/>
+<use f='redis/src/rdb.c' l='285' u='r' c='rdbSaveRawString'/>
+<use f='redis/src/redis.c' l='1446' u='w' c='initServerConfig'/>

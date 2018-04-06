@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/llimits.h' l='93'/>
+<doc f='redis/deps/lua/src/llimits.h' l='92'>/* maximum stack for a Lua function */</doc>
+<use f='redis/deps/lua/src/lcode.c' l='202' u='c'/>
+<use f='redis/deps/lua/src/ldebug.c' l='277' u='c'/>

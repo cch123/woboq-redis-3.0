@@ -1,0 +1,4 @@
+<dec f='redis/deps/lua/src/ldo.h' l='33'/>
+<use f='redis/deps/lua/src/ldo.c' l='326' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='596' u='c'/>
+<use f='redis/deps/lua/src/lvm.c' l='630' u='c'/>

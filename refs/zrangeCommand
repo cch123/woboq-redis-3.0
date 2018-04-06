@@ -1,0 +1,6 @@
+<dec f='redis/src/redis.h' l='1461' type='void zrangeCommand(redisClient * c)'/>
+<use f='redis/src/redis.c' l='181' u='r'/>
+<use f='redis/src/redis.c' l='181' u='r'/>
+<use f='redis/src/redis.c' l='181' u='r'/>
+<use f='redis/src/redis.c' l='181' u='r'/>
+<def f='redis/src/t_zset.c' l='2194' ll='2196' type='void zrangeCommand(redisClient * c)'/>

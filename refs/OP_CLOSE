@@ -1,0 +1,5 @@
+<dec f='redis/deps/lua/src/lopcodes.h' l='204' type='35'/>
+<doc f='redis/deps/lua/src/lopcodes.h' l='204'>/*	A 	close all variables in the stack up to (&gt;=) R(A)*/</doc>
+<use f='redis/deps/lua/src/lparser.c' l='301' u='r' c='leaveblock'/>
+<use f='redis/deps/lua/src/lparser.c' l='986' u='r' c='breakstat'/>
+<use f='redis/deps/lua/src/lvm.c' l='719' c='luaV_execute'/>

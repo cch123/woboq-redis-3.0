@@ -1,0 +1,29 @@
+<dec f='redis/deps/lua/src/lobject.h' l='327' type='struct (anonymous struct at /vagrant/data/redis-v3.0.0/deps/lua/src/lobject.h:324:3)'/>
+<offset>0</offset>
+<use f='redis/deps/lua/src/lgc.c' l='64' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='65' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='191' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='191' macro='1' u='a'/>
+<use f='redis/deps/lua/src/lgc.c' l='191' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='148' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='149' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='154' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='287' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='288' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='384' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='412' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='412' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='413' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='415' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='420' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='420' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='421' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='425' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='425' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='443' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='443' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='445' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='458' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='458' macro='1' u='a'/>
+<use f='redis/deps/lua/src/ltable.c' l='460' macro='1' u='m'/>
+<use f='redis/deps/lua/src/ltable.c' l='486' macro='1' u='m'/>
